@@ -14,30 +14,44 @@
 
   (let [video-ref (hooks/use-ref "video-ref")
         [audio-muted? set-audio-muted!] (hooks/use-state true)
-        [is-playback-ready? set-is-playback-ready!] (hooks/use-state false)
+        #_#_[is-playback-ready? set-is-playback-ready!] (hooks/use-state false)
         toggle-audio (hooks/use-callback
                       [video-ref audio-muted?]
                       (fn
                         [_]
                         (set-audio-muted! (not audio-muted?))))
 
-        canplay-handler (fn []
-                          (set-is-playback-ready! true))]
+        #_#_canplay-handler (fn []
+                              (js/window.alert "Can Play!")
+                              (set-is-playback-ready! true))]
 
-    (hooks/use-layout-effect
-     [video-ref]
-     (when @video-ref
-       (.addEventListener @video-ref "canplay" canplay-handler)
+    #_(hooks/use-effect
+       [video-ref]
+       (when @video-ref
+         (let [ready-state (j/get @video-ref :readyState)]
 
-       (fn []
-         (.removeEventListener @video-ref "canplay" canplay-handler))))
+           (.addEventListener @video-ref "error" (fn [e]
+                                                   (tap> {:error e})
+                                                   (js/window.alert "Video Playback Error:" e)))
 
-    (hooks/use-layout-effect
-     [should-play? is-playback-ready?]
+           ;;  Playback is ready
+           (if (= ready-state 4)
+             (set-is-playback-ready! true)
+             (.addEventListener @video-ref "canplay" canplay-handler)))
+
+         (fn []
+           (.removeEventListener @video-ref "canplay" canplay-handler))))
+
+    (hooks/use-effect
+     [should-play?]
      (if should-play?
        (.play @video-ref)
        (when (not (j/get @video-ref :paused))
          (.pause @video-ref))))
+
+    #_(hooks/use-effect
+       [video-ref]
+       (.play @video-ref))
 
     (d/div {:class "w-full h-full relative background-video"}
            ($ MuxPlayer
@@ -47,10 +61,8 @@
                :muted audio-muted?
                :loop true
                :playsInline ""
-               :autoPlay false
-               :playing (fn [] (tap> "Playing Son!"))
+               :autoPlay should-play?
                :streamType "on-demand"
-               :canplay (fn [] (tap> "Can Play Son!"))
                :preferplayback "mse"})
 
            (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"

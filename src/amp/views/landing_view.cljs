@@ -32,7 +32,7 @@
 
     ($ :div {:ref container-ref
              :class ""}
-       (d/p amp.config/git-hash)
+       #_(d/p amp.config/git-hash)
 
        (d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
               ($ progress-menu {:total-sections 3}))

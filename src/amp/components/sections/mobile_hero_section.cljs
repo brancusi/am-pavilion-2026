@@ -33,8 +33,9 @@
                   (d/div {:class "absolute
                                   h-screen
                                   w-screen"}
+                         (d/p is-active?)
                          ($ video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                              :should-play? true}))
+                                              :should-play? is-active?}))
 
                   (d/div {:class "absolute deep-yellow opacity-70 w-3/4 p-4"}
                          (d/div {:class "font-futura"}
