@@ -71,15 +71,15 @@
                          "Why not reach out?")
 
                         (d/a
-                         {:href "mailto:az@amp.dev?subject=Let's%20build"
+                         {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
                           :target "_blank"
                           :class "font-fira-code
                       font-light
                       text-slate-300 
                       text-2xl
                       "}
-                         "az@amp.dev"))
+                         "hello@armenianpavilion2026.org"))
 
                        (d/div {:class "flex"}
                               (d/span {:class "text-xs text-white font-fira-code font-light"}
-                                      "Copyright © 2025 Art Tech Design Inc.")))))))
+                                      "Copyright © 2025 AZ Studios Inc.")))))))

@@ -56,4 +56,4 @@
                                     ($ about-event)))
                                 ($ lower-panel-cta {:cta-title "Learn More"
                                                     :is-visible? visited?
-                                                    :on-click (fn [] (scroll-to-id "about-tech"))})))))))
+                                                    :on-click (fn [] (scroll-to-id "about-work"))})))))))

@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/bsd2yit.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +12,48 @@
     font-style: normal;
     font-display: swap;
   }
+
+@font-face {
+  font-family: "futura-100";
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "futura-100";
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "futura-100";
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "futura-100";
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "futura-100";
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "futura-100";
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "futura-100-book";
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "futura-100-book";
+  font-weight: 400;
+  font-style: italic;
+}
 
 .hero-nav-links {
     color: #131313;
@@ -70,8 +114,16 @@
     background: linear-gradient(246.25deg, #dd0ba2 -88.21%, #752941 174.55%);
 }
 
-.yo-grad {
-  background: linear-gradient(246.25deg, #4260FC -88.21%, #045394 174.55%);
+.blue-light-grad {
+     background: linear-gradient(246.25deg, #74BCC4 -88.21%, #D7FAFF 174.55%);
+}
+
+.light-red-grad {
+     background: linear-gradient(246.25deg, #C47474 -88.21%, #FFF2E8 174.55%);
+}
+
+.blue-purple-grad {
+     background: linear-gradient(125.25deg, #49A1FF -88.21%, #D089FF 174.55%);
 }
 
 .playable-text-background {
@@ -81,6 +133,19 @@
 .section-background {
     z-index: -1;
 }
+
+.warm-yellow {
+  background-color: #FFD400;
+}
+
+.deep-yellow {
+  background-color: #FCB93D;
+}
+
+.light-blue-font-color {
+  color: #24A399;
+}
+
 
 .background-video mux-player {
   --media-object-fit: cover;

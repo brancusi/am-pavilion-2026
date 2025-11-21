@@ -41,7 +41,7 @@
                                    id
                                    (str "#" id))]
                           (gsap/window-to
-                           {:duration (or duration 0.25)
+                           {:duration (or duration 0.35)
                             :scrollTo {:y id
                                        :autoKill true}
                             :ease "power2.inOut"}))))]

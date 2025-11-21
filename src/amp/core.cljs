@@ -5,6 +5,7 @@
             ["gsap/ScrollTrigger" :refer [ScrollTrigger]]
             ["gsap/SplitText" :refer [SplitText]]
             ["react-dom/client" :as rdom]
+            [amp.hooks.use-media-query :refer [use-media-query]]
             [amp.components.navs.logo-nav :refer [logo-nav]]
             [amp.components.navs.donation-nav :refer [donation-nav]]
             [amp.components.navs.side-nav :refer [side-nav]]
@@ -16,13 +17,15 @@
             [helix.core :refer [$]]))
 
 (defnc app []
-  ($ MainProvider {:default-state {:current-section "hero"
-                                   :current-subsection "start"}}
-     ($ router
-        ($ logo-nav)
-        ($ donation-nav)
-        #_($ side-nav)
-        ($ section-transitioner))))
+  (let [is-desktop? (use-media-query :md)]
+    ($ MainProvider {:default-state {:current-section "hero"
+                                     :current-subsection "start"}}
+       ($ router
+          (when is-desktop?
+            ($ logo-nav))
+          ($ donation-nav)
+          #_($ side-nav)
+          ($ section-transitioner)))))
 
 (defonce root (rdom/createRoot (js/document.getElementById "app")))
 

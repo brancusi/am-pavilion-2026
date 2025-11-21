@@ -12,6 +12,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        futura: ["futura-100", "sans-serif"],
+
+        // For Book (400)
+        "futura-book": ["futura-100-book", "sans-serif"],
+
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
         "fira-code": ["FiraCode", "monospace"],
       },

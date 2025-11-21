@@ -29,12 +29,6 @@
                   flex-col
                   w-full"}
 
-         (d/div {:class "w-full h-full"}
-                ($ lazy-image {:src "https://atd-722658831.imgix.net/9_00121606.jpg"
-                               :transition {:duration 0.25
-                                            :opacity 1}
-                               :should-load? true}))
-
          (d/div
           {:class "text-slate-300
                    font-light
@@ -43,15 +37,15 @@
                    flex-col
                    h-full
                    py-8
-                   md:w-3/4
-                   w-3/4
+                   md:w-3/4 w-full
+                   p-8
                    text-lg
                    md:text-2xl"}
 
           (d/p {:class "mt-12
                         mb-16
-                        italic
                         font-bold
+                        font-futura
                         text-5xl"}
                "THE STUDIO")
 

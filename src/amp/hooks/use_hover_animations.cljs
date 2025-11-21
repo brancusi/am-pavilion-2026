@@ -9,17 +9,31 @@
    Returns  [on-mouse-over on-mouse-out] callbacks that will play the animation.
 
    Example: (use-hover-animations dom-element-ref)"
-  [ref & {:keys [over out]}]
-  (let [over-handler (hooks/use-callback
-                      [ref]
+  [ref & {:keys [target
+                 initial
+                 over
+                 out]}]
+  (let [target (or target ref)
+
+        clear-tween! (fn []
+                       (.killTweensOf gsap @target))
+
+        over-handler (hooks/use-callback
+                      [ref target]
                       (fn []
-                        (.to gsap @ref
-                             (clj->js over))))
+                        (clear-tween!)
+                        (.to gsap @target (clj->js over))))
         out-handler (hooks/use-callback
-                     [ref]
+                     [ref target]
                      (fn []
-                       (.to gsap @ref
-                            (clj->js out))))]
+                       (clear-tween!)
+                       (.to gsap @target (clj->js out))))]
+
+    (when initial
+      (hooks/use-layout-effect
+       [ref target]
+       (when @target
+         (.set gsap @target (clj->js initial)))))
 
     (hooks/use-layout-effect [ref]
                              (when @ref

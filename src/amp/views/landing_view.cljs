@@ -1,10 +1,14 @@
 (ns amp.views.landing-view
   (:require [amp.components.section :refer [section]]
+            [amp.views.hero-image-view :refer [hero-image-view]]
             [amp.components.sections.quote-section :refer [quote-section]]
             [amp.components.sections.video-section :refer [video-section]]
             [amp.components.sections.what-section :refer [what-section]]
             [amp.components.sections.work-overview :refer [work-overview]]
             [amp.components.sections.non-profit :refer [non-profit-section]]
+            [amp.components.elements.lazy-image :refer [lazy-image]]
+            [amp.components.sections.about-biennale :refer [about-biennale-section]]
+            [amp.components.sections.team-section :refer [team-section]]
             [amp.components.ui.main-button :refer [main-button]]
             [amp.components.sections.contact-section :refer [contact-section]]
             [amp.lib.defnc :refer [defnc]]
@@ -55,9 +59,49 @@
              :section-id "hero"}
             ($ hero-header)))
 
-       ($ work-overview)
+       ($ hero-image-view {:img-src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif"})
+       #_(d/div {:class "h-screen w-screen overflow-hidden"}
+                ($ lazy-image {:src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif?w=1200&auto=compress&auto=format"
+                               :transition {:duration 0.25
+                                            :opacity 1}
+                               :should-load? true}))
 
-       #_($ non-profit-section)
+       ($ work-overview)
+       ($ team-section)
+       ($ about-biennale-section)
+       ($ non-profit-section)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        #_($ section
             {:key "video-section"
@@ -91,8 +135,8 @@
                              :gradient-class "purple-grad"
                              :section-id "what"}))
 
-       ($ section
-          {:key "contact"
-           :section-id "contact"}
-          ($ contact-section {:force-on? false
-                              :section-id "contact"})))))
+       #_($ section
+            {:key "contact"
+             :section-id "contact"}
+            ($ contact-section {:force-on? false
+                                :section-id "contact"})))))

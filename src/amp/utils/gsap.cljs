@@ -8,6 +8,13 @@
        @ref
        (clj->js args)))
 
+(defn to-element
+  [el args]
+  (.to gsap
+       el
+       (clj->js args)))
+
+
 (defn fromTo
   [ref from-args to-args]
   (.fromTo gsap
