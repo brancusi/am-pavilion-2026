@@ -6,7 +6,7 @@
    [helix.dom :as d]
    [amp.components.ui.main-button :refer [main-button]]
    [helix.core :refer [$]]
-   [amp.hooks.use-media-query :refer [use-media-query]]
+   [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [helix.hooks :as hooks]))
 
 (def images
@@ -21,15 +21,15 @@
     :credit "Artnews"}])
 
 (defnc title []
-  (d/div {:class "md:flex
+  (d/div {:class "lg:flex
                     w-full
-                    md:h-2/5
+                    lg:h-2/5
                     z-20
                     items-center
                     justify-between
                     bg-black/10
-                    md:p-12 p-4
-                    md:text-6xl text-3xl
+                    lg:p-12 p-4
+                    lg:text-6xl text-3xl
                     font-futura
                     font-bold
                     text-slate-800"}
@@ -52,7 +52,7 @@
         [images set-images] (hooks/use-state images)
         image-gallery-container-ref (hooks/use-ref "image-gallery-container-ref")
 
-        is-desktop? (use-media-query :md)]
+        is-desktop? (use-touch-enabled)]
     (d/section {:ref outer-ctx
                 :class "h-full 
                           w-full
@@ -69,18 +69,18 @@
                                  overflow-hidden
                                  relative
                                  w-full
-                                 md:p-12 p-4"}
+                                 lg:p-12 p-4"}
                       ($ title)
 
                       (d/div {:class "flex overflow-hidden relative"}
-                             (d/div {:class "md:w-1/2 
-                                               md:p-16 p-4"}
+                             (d/div {:class "lg:w-1/2 
+                                               lg:p-16 p-4"}
                                     ($ copy-block {:title ""
                                                    :copy "Funds go to keep THE STUDIO alive for six months in Venice.  Your support ensures the artist’s residency, covers materials and fabrication, pays our production crew, builds and ships the pavilion, and funds public programs and the exhibition catalogue.  Gifts are handled by Fallen Angels, a registered 501(c)(3) non‑profit; donations to a 501(c)(3) are tax‑deductible"})
 
                                     (d/div {:class "flex flex-col mb-12 font-futura"}
                                            (d/p {:class "font-bold text-4xl text-slate-800 lowercase"} "What Your Donation Funds")
-                                           (d/ul {:class "list-disc list-inside text-slate-800"}
+                                           (d/ul {:class "list-disc list-outside ml-5 text-slate-800"}
                                                  (d/li {} "Artist & team residency in Venice")
                                                  (d/li {} "Fabrication materials and modular blocks")
                                                  (d/li {} "Production crew & documentation (video, photography, editing)")
@@ -88,7 +88,7 @@
                                                  (d/li {} "Public programs & education")
                                                  (d/li {} "Archival filming & catalogue")))))
 
-                      (d/div {:class "md:absolute md:bottom-[40px] md:left-1/2 md:-translate-x-1/2"}
+                      (d/div {:class "lg:absolute lg:bottom-[40px] lg:left-1/2 lg:-translate-x-1/2"}
                              ($ main-button
                                 {:title "Donate Now"
                                  :additional-classes "text-2xl"

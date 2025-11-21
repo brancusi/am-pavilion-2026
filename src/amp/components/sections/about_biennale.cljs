@@ -5,7 +5,7 @@
    [amp.lib.defnc :refer [defnc]]
    [helix.dom :as d]
    [helix.core :refer [$]]
-   [amp.hooks.use-media-query :refer [use-media-query]]
+   [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [helix.hooks :as hooks]))
 
 (def images
@@ -17,18 +17,39 @@
     :credit "Artnews"}
    {:src "https://atd-722658831.imgix.net/biennale/6431873131_844b5c6d48_b-112659047.jpg"
     :caption "Arsenale"
-    :credit "Artnews"}])
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/Edificio-E-delle-Sale-dArmi-sud-Arsenale-di-Venezia_01-406863818.jpg"
+    :caption "Arsenale"
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/GettyImages-1396739612-2882003488.jpg"
+    :caption "Arsenale"
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/arsenale-venezia-cosa-vedere-come-visitare-408454160.jpg"
+    :caption "Arsenale"
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/Pavilions-tours-plan.png"
+    :caption "Arsenale"
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/Pavilions-tours-plan.png"
+    :caption "Arsenale"
+    :credit "Artnews"}
+   {:src "https://atd-722658831.imgix.net/biennale/IMG_1754-scaled-1386547518.jpg"
+    :caption "Arsenale"
+    :credit "Artnews"}
+
+   ;;    
+   ])
 
 (defnc title []
-  (d/div {:class "md:flex
+  (d/div {:class "lg:flex
                   w-full
-                  md:h-2/5
+                  lg:h-2/5
                   z-20
                   items-center
                   justify-between
                   bg-black/10
-                  md:p-12 p-4
-                  md:text-6xl text-3xl
+                  lg:p-12 p-4
+                  lg:text-6xl text-3xl
                   font-futura
                   font-bold
                   text-slate-800"}
@@ -45,7 +66,7 @@
                          flex-col
                          font-futura
                          font-bold
-                         md:text-right
+                         lg:text-right
                          italic
                          text-white/60"}
                 (d/p {:class ""}
@@ -69,7 +90,7 @@
         [images set-images] (hooks/use-state images)
         image-gallery-container-ref (hooks/use-ref "image-gallery-container-ref")
 
-        is-desktop? (use-media-query :md)]
+        is-desktop? (use-touch-enabled)]
     (d/section {:ref outer-ctx
                 :class "h-full 
                         w-full
@@ -86,12 +107,12 @@
                                overflow-hidden
                                relative
                                w-full
-                               md:p-12 p-4"}
+                               lg:p-12 p-4"}
                       ($ title)
 
                       (d/div {:class "flex overflow-hidden relative"}
-                             (d/div {:class "md:w-1/2 
-                                             md:p-16 p-4"}
+                             (d/div {:class "lg:w-1/2 
+                                             lg:p-16 p-4"}
                                     ($ copy-block {:title "the biennale"
                                                    :copy "The Venice Biennale is the most prestigious platform for contemporary art in the world—the cultural equivalent of the Olympics.  Every two years, nations convene in the Giardini and Arsenale to present the best of their artists.  The 61st International Art Exhibition will run from May 9 to November 22 2026 and, following the unexpected passing of curator Koyo Kouoh, will be realized exactly as she conceived it."})
 
@@ -106,9 +127,9 @@
                              (when (and is-desktop? visited?)
                                (d/div {:ref image-gallery-container-ref
                                        :class "ml-8
-                                                                                           w-7/12 
-                                                                                           relative
-                                                                                           overflow-hidden"}
+                                               w-7/12
+                                               relative
+                                               overflow-hidden"}
                                       (d/div {:class "absolute h-full"}
                                              ($ lazy-image-gallery
                                                 {:images images

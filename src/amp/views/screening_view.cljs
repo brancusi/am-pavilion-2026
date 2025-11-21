@@ -47,19 +47,19 @@
            (d/div {:class "flex min-w-full h-full items-center justify-center p-4 grow"}
 
                   (d/div {:class "w-full sm:w-3/4"}
-                         (d/p {:class "text-xl md:text-3xl font-fira-code"}
+                         (d/p {:class "text-xl lg:text-3xl font-fira-code"}
                               title)
-                         (d/p {:class "text-md md:text-xl font-fira-code mb-4"}
+                         (d/p {:class "text-md lg:text-xl font-fira-code mb-4"}
                               (str date))
                          (d/div {:class "my-4"}
                                 ($ VideoPlayer {:playback-id current-route-production-id}))
-                         (d/div {:class "flex flex-col text-md md:text-xl font-fira-code"}
-                                (when shot-by (d/p {:class "text-md md:text-xl font-fira-code"}
+                         (d/div {:class "flex flex-col text-md lg:text-xl font-fira-code"}
+                                (when shot-by (d/p {:class "text-md lg:text-xl font-fira-code"}
                                                    (str "Shot by: " shot-by)))
                                 (when contact
                                   (d/div
-                                   (d/span {:class "text-md md:text-xl font-fira-code"}
+                                   (d/span {:class "text-md lg:text-xl font-fira-code"}
                                            "Contact: ")
-                                   (d/a {:class "text-md md:text-xl font-fira-code"
+                                   (d/a {:class "text-md lg:text-xl font-fira-code"
                                          :href (str "mailto:" contact)}
                                         contact)))))))))

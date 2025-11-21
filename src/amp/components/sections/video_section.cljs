@@ -27,4 +27,4 @@
                            flex items-center justify-items-center justify-center"}
 
                   ($ video-background {:playback-id playback-id
-                                       :should-play? false #_is-active?})))))
+                                       :should-play? is-active?})))))

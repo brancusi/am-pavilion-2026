@@ -9,7 +9,7 @@
                      :xl "1280px"
                      :2xl "1536px"})
 
-(defn use-media-query
+(defn use-media-breakpoint
   [breakpoint]
 
   (let [[matches? set-matches!] (hooks/use-state false)]
@@ -18,6 +18,30 @@
      [breakpoint]
 
      (let [query (str "(min-width: " (breakpoint breakpoint-map) ")")
+           media-query-list (js/window.matchMedia query)
+           change-handler (fn [_]
+                            (set-matches! (.-matches media-query-list)))]
+
+       (.addEventListener
+        media-query-list
+        "change"
+        change-handler)
+
+       (change-handler nil)
+
+       (fn []
+         (.removeEventListener media-query-list "change" change-handler))))
+    matches?))
+
+(defn use-touch-enabled
+  []
+
+  (let [[matches? set-matches!] (hooks/use-state false)]
+
+    (hooks/use-layout-effect
+     []
+
+     (let [query "(hover: hover) and (pointer: fine)"
            media-query-list (js/window.matchMedia query)
            change-handler (fn [_]
                             (set-matches! (.-matches media-query-list)))]

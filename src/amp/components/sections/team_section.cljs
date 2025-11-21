@@ -3,7 +3,7 @@
    [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
    [amp.components.elements.lazy-image-gallery :refer [lazy-image-gallery]]
 
-   [amp.hooks.use-media-query :refer [use-media-query]]
+   [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
    [helix.dom :as d]
    [helix.core :refer [$]]
@@ -191,10 +191,10 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
                                   warm-yellow
                                   pointer-events-none"})
                   (d/p {:class "relative z-10
-                                text-3xl whitespace-nowrap md:text-2xl font-bold lowercase
+                                text-3xl whitespace-nowrap lg:text-2xl font-bold lowercase
                                 pointer-events-none"}
                        name))
-           (d/p {:class "text-6xl md:text-8xl font-bold lowercase
+           (d/p {:class "text-6xl lg:text-8xl font-bold lowercase
                          z-20
                          mb-4"}
                 role)
@@ -209,8 +209,8 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
 
 (defnc team-members
   [{:keys [flash-images-handler]}]
-  (d/div {:class "w-full md:w-4/12
-                  md:pl-32 px-8 py-16"}
+  (d/div {:class "w-full lg:w-4/12
+                  lg:pl-32 px-8 py-16"}
          ($ team-member-card {:data tony-card-data
                               :images tony-images
                               :flash-images-handler flash-images-handler})
@@ -227,7 +227,7 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
   (let [outer-ctx (hooks/use-ref "outer-ctx")
         [visited? is-active?] (use-scroll-trigger outer-ctx)
         [images set-images] (hooks/use-state zadik-images)
-        is-desktop? (use-media-query :md)
+        is-desktop? (use-touch-enabled)
         image-gallery-container-ref (hooks/use-ref "image-gallery-container-ref")]
     (d/section {:ref outer-ctx
                 :class "relative

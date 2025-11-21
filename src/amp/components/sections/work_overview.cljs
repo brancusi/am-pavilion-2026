@@ -37,10 +37,10 @@
                    flex-col
                    h-full
                    py-8
-                   md:w-3/4 w-full
+                   lg:w-3/4 w-full
                    p-8
                    text-lg
-                   md:text-2xl"}
+                   lg:text-2xl"}
 
           (d/p {:class "mt-12
                         mb-16

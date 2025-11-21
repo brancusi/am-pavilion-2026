@@ -30,8 +30,8 @@
                         "-translate-y-full opacity-0"))}
          (d/div
           (d/p
-           {:class "text-md md:text-md font-fira-code"}
-           "THE STUDIO will open from May 10 to November 23, 2026"))
+           {:class "text-md lg:text-md font-fira-code"}
+           "THE STUDIO will open from May 9 to November 22, 2026"))
          (d/div {:class "flex justify-end"}
                 ($ main-button {:title cta-title
                                 :additional-classes "text-2xl"

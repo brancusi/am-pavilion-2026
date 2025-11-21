@@ -38,7 +38,7 @@
                     ml-4
                     mt-4
                     w-1/5
-                    md:w-32"
+                    lg:w-32"
             :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
            (d/img {:src "images/graphics/biennale_logo.png"}))))
 

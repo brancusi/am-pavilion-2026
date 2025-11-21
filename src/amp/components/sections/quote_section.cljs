@@ -78,9 +78,9 @@
                        #_#_:class "w-full h-full items-center justify-center flex"}
                       (if children
                         children
-                        (d/div {:class "border-2 border-red-500"} #_{:class "text-white flex items-center justify-center h-full flex-col md:w-3/4 w-3/4"}
-                               (d/p #_{:class "text-4xl md:text-5xl font-bold mb-2"} header)
+                        (d/div {:class "border-2 border-red-500"} #_{:class "text-white flex items-center justify-center h-full flex-col lg:w-3/4 w-3/4"}
+                               (d/p #_{:class "text-4xl lg:text-5xl font-bold mb-2"} header)
                                (d/div (mapv (fn [line]
                                               (d/p {:key line
-                                                    #_#_:class "text-2xl md:text-4xl"} line))
+                                                    #_#_:class "text-2xl lg:text-4xl"} line))
                                             quote))))))))

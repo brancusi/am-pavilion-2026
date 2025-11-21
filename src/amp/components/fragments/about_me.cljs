@@ -16,18 +16,18 @@
                 (d/div
                  {:class "flex flex-col"}
                  (d/p {:class "text-2xl 
-                       md:text-4xl 
+                       lg:text-4xl 
                        mb-4"}
                       "THE STUDIO")
-                 (d/p {:class "text-md md:text-xl mb-4"}
+                 (d/p {:class "text-md lg:text-xl mb-4"}
                       "The Armenian Pavilion at the 2026 Venice Biennale becomes Zadik Zadikian’s living, breathing studio.")
-                 (d/p {:class "text-md md:text-xl mb-4"}
+                 (d/p {:class "text-md lg:text-xl mb-4"}
                       "Every day, a team fabricates simple units of plaster and pigment.")
-                 (d/p {:class "text-md md:text-xl mb-4"}
+                 (d/p {:class "text-md lg:text-xl mb-4"}
                       "Structures rise, fall, and rise again — walls, pyramids, horizons.")
-                 (d/p {:class "text-md md:text-xl"}
+                 (d/p {:class "text-md lg:text-xl"}
                       "Nothing is fixed. Nothing is final.")
-                 (d/p {:class "text-md md:text-xl"}
+                 (d/p {:class "text-md lg:text-xl"}
                       "The cycle of work is the work itself.")))
          #_(d/div {:class "flex justify-between
                          items-center

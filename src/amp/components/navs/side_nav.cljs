@@ -75,7 +75,7 @@
                     fixed
                     z-20
                     w-full
-                    md:w-1/2
+                    lg:w-1/2
                     lg:w-1/4
                     h-screen
                     

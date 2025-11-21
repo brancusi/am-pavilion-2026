@@ -7,7 +7,7 @@
             [amp.hooks.use-window-resize :refer [use-window-size]]
             [amp.utils.window :as win-utils]
             [amp.components.ui.main-button :refer [main-button]]
-            [amp.hooks.use-media-query :refer [use-media-query]]
+            [amp.hooks.use-media-query :refer [use-touch-enabled]]
             [amp.lib.defnc :refer [defnc]]
             [helix.core :refer [$]]
             [helix.dom :as d]
@@ -18,7 +18,7 @@
 (defnc donation-nav
   []
   (let [comp-ref (hooks/use-ref "comp-ref")
-        is-desktop? (use-media-query :md)
+        is-desktop? (use-touch-enabled)
         dimensions (use-window-size)
 
         [visited? is-active?] (use-scroll-trigger comp-ref :start (fn [] (win-utils/height))
@@ -40,7 +40,7 @@
       (d/div {:ref comp-ref
               :class "fixed
                       opacity-90
-                      z-30
+                      z-40
                       text-xl
                       mr-8
                       mt-4
@@ -54,7 +54,7 @@
       (d/div {:ref comp-ref
               :class "fixed 
                           opacity-90
-                          z-30
+                          z-40
                           text-xl
                       w-full
                           "}

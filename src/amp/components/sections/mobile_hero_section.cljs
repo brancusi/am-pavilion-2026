@@ -32,23 +32,20 @@
 
                   (d/div {:class "absolute
                                   h-screen
-                                  w-screen
-                           "}
+                                  w-screen"}
                          ($ video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                              :should-play? is-active?}))
+                                              :should-play? true}))
 
                   (d/div {:class "absolute deep-yellow opacity-70 w-3/4 p-4"}
                          (d/div {:class "font-futura"}
                                 (d/p {:class "text-5xl font-bold"}
                                      "venice biennale 2026 armenian pavilion")
-                                (d/p {:class "text-4xl mt-4"}
-                                     "Be a Patron of ‘The Studio’")))
-                  (d/div {:class "absolute bottom-[40px]"}
+                                (d/p {:class "text-4xl mt-4 italic"}
+                                     "Be a Patron of "
+                                     (d/span {:class "font-bold uppercase"}
+                                             "The Studio"))))
+                  (d/div {:class "absolute bottom-0 pb-4"}
                          ($ main-button
                             {:title "Donate Now"
                              :additional-classes "text-2xl"
-                             :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))
-
-
-                  #_($ writing-card
-                       ($ about-event))))))
+                             :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))))

@@ -11,21 +11,33 @@
 
 (defnc video-background
   [{:keys [should-play? playback-id]}]
+
   (let [video-ref (hooks/use-ref "video-ref")
         [audio-muted? set-audio-muted!] (hooks/use-state true)
+        [is-playback-ready? set-is-playback-ready!] (hooks/use-state false)
         toggle-audio (hooks/use-callback
                       [video-ref audio-muted?]
                       (fn
                         [_]
-                        (set-audio-muted! (not audio-muted?))))]
+                        (set-audio-muted! (not audio-muted?))))
 
-    (hooks/use-effect
-     [should-play? video-ref]
+        canplay-handler (fn []
+                          (set-is-playback-ready! true))]
+
+    (hooks/use-layout-effect
+     [video-ref]
      (when @video-ref
-       (if should-play?
-         (.play @video-ref)
-         (when (not (j/get @video-ref :paused))
-           (.pause @video-ref)))))
+       (.addEventListener @video-ref "canplay" canplay-handler)
+
+       (fn []
+         (.removeEventListener @video-ref "canplay" canplay-handler))))
+
+    (hooks/use-layout-effect
+     [should-play? is-playback-ready?]
+     (if should-play?
+       (.play @video-ref)
+       (when (not (j/get @video-ref :paused))
+         (.pause @video-ref))))
 
     (d/div {:class "w-full h-full relative background-video"}
            ($ MuxPlayer
@@ -36,7 +48,9 @@
                :loop true
                :playsInline ""
                :autoPlay false
+               :playing (fn [] (tap> "Playing Son!"))
                :streamType "on-demand"
+               :canplay (fn [] (tap> "Can Play Son!"))
                :preferplayback "mse"})
 
            (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"

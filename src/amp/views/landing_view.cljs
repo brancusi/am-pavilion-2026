@@ -11,12 +11,13 @@
             [amp.components.sections.team-section :refer [team-section]]
             [amp.components.ui.main-button :refer [main-button]]
             [amp.components.sections.contact-section :refer [contact-section]]
+
             [amp.lib.defnc :refer [defnc]]
             [amp.reducers.requires]
             [amp.components.hero-header :refer [hero-header]]
             [amp.components.navs.progress-menu :refer [progress-menu]]
             [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
-            [amp.hooks.use-media-query :refer [use-media-query]]
+            [amp.hooks.use-media-query :refer [use-media-breakpoint use-touch-enabled]]
             [amp.components.playful-titles :refer [playful-titles]]
 
             [helix.core :refer [$]]
@@ -26,7 +27,7 @@
 (defnc landing-view []
   (let [container-ref (hooks/use-ref "container-ref")
         #_#_current-index (use-scroll-progress 6 container-ref {:throttle-interval 200})
-        is-desktop? (use-media-query :md)]
+        is-desktop? (use-touch-enabled)]
 
     ($ :div {:ref container-ref
              :class ""}
