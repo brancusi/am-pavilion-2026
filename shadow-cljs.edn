@@ -12,19 +12,21 @@
         :asset-path "/js"
         :modules
         {:app {:init-fn amp.core/init!}}
+        :build-hooks [(git-hash/hook)]
         :devtools {:reload-strategy :full
                    :repl-pprint true
                    :preloads [amp.dev user]}
         :dev {:js-options {:output-feature-set :es-unsupported
                            :language-in :unsupported}
               :compiler-options {:output-feature-set :es8
-                                 :closure-defines {amp.config/sanity-endpoint "https://sfsmp6cu.api.sanity.io/v2021-10-21/data/query/production?query="}}}}
+                                 :closure-defines {amp.config/git-hash "https://sfsmp6cu.api.sanity.io/v2021-10-21/data/query/production?query="}}}}
 
   :release {:target :browser
             :output-dir "release/js"
             :asset-path "/js"
             :modules
             {:app {:init-fn amp.core/init!}}
+            :build-hooks [(git-hash/hook)]
             :js-options {:output-feature-set :es-unsupported
                          :language-in :unsupported}
             :compiler-options {:output-feature-set :es8

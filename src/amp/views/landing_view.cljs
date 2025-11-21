@@ -19,6 +19,7 @@
             [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
             [amp.hooks.use-media-query :refer [use-media-breakpoint use-touch-enabled]]
             [amp.components.playful-titles :refer [playful-titles]]
+            [amp.config]
 
             [helix.core :refer [$]]
             [helix.dom :as d]
@@ -31,6 +32,7 @@
 
     ($ :div {:ref container-ref
              :class ""}
+       (d/p amp.config/git-hash)
 
        (d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
               ($ progress-menu {:total-sections 3}))

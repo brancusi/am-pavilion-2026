@@ -1,5 +1,5 @@
 {:paths
- ["src"]
+ ["src" "build"]
  :deps {lilactown/helix {:mvn/version "0.2.2"}
         applied-science/js-interop {:mvn/version "0.3.3"}
         nano-id/nano-id {:mvn/version "1.0.0"}
