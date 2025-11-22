@@ -62,19 +62,18 @@
              :section-id "hero"}
             ($ hero-header)))
 
-       ($ hero-image-view {:img-src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif"})
-       #_(d/div {:class "h-screen w-screen overflow-hidden"}
-                ($ lazy-image {:src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif?w=1200&auto=compress&auto=format"
-                               :transition {:duration 0.25
-                                            :opacity 1}
-                               :should-load? true}))
+       ($ hero-image-view
+          {:img-src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif"}
+
+          (d/div (d/span {} "Rendering - ")
+                 (d/span {:class "italic font-bold"} "THE ORANGE ONE")
+                 (d/span {} " - © Zadik Zadikian 2026")))
 
        ($ work-overview)
        ($ team-section)
        ($ about-biennale-section)
        ($ non-profit-section)
-
-
+       ($ contact-section)
 
 
 

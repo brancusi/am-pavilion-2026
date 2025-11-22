@@ -1,9 +1,11 @@
 (ns amp.components.sections.contact-section
   (:require [helix.core :refer [$]]
             [amp.components.sections.video-section :refer [video-section]]
+            [amp.config]
             [helix.hooks :as hooks]
             [helix.dom :as d]
             ["gsap" :refer [gsap]]
+            [amp.views.hero-image-view :refer [hero-image-view]]
             [amp.components.elements.rotating-lazy-image-gallery :refer [rotating-lazy-image-gallery]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
             ["gsap/SplitText" :refer [SplitText]]
@@ -20,10 +22,6 @@
 
         [visited? is-active?] (use-scroll-trigger outer-ctx)]
 
-    (hooks/use-effect
-     :once
-     (get-gallery-images! "various-tech-shots" set-background-images!))
-
     (d/section {:ref outer-ctx
                 :class "h-screen 
                     w-screen
@@ -39,14 +37,12 @@
                 (d/div {:class "z-10 absolute w-full h-full"}
                        (d/div {:class "w-screen h-screen relative"}
                               (d/div {:class "absolute w-full h-full"}
-                                     ($ video-section {:playback-id "00nSnRtn1iiwDRr7LaRfgALt4fZz2uWqXg9Ry9hx1loU"})))
-                       #_($ video-section {:playback-id "4xg96n14D7TLhM5S02g2v4kUD00gpNMpyYLNGGcyk8U3k"})
-                       #_($ rotating-lazy-image-gallery {:images background-images
-                                                         :transition {:duration 0.3
-                                                                      :opacity 1}
-                                                         :should-play? is-active?
-                                                         :should-load? visited?
-                                                         :rate 3000})))
+                                     ($ hero-image-view
+                                        {:img-src "https://atd-722658831.imgix.net/stacks/FileName_131354_001DenoisedBeauty_ViewLayer_012.tif"}
+
+                                        (d/div (d/span {} "Rendering - ")
+                                               (d/span {:class "italic font-bold"} "THE ORANGE ONE")
+                                               (d/span {} " - © Zadik Zadikian 2026")))))))
 
 
                (d/div
@@ -60,26 +56,31 @@
                                   text-white
                                   text-md
                                   "}
-                        "If you want to know something. Become that thing, and then study yourself.")
+                        "Armenian Pavilion 2026.")
 
-                       (d/div
-                        (d/div
-                         {:class "font-fira-code
+                       (d/div {:class "lg:text-2xl font-fira-code
                                   font-light
-                                  text-white
-                                  text-2xl"}
-                         "Why not reach out?")
+                                  text-white"}
+                              (d/div
+                               {:class "text-2xl"}
+                               "Get In Touch")
 
-                        (d/a
-                         {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
-                          :target "_blank"
-                          :class "font-fira-code
-                      font-light
-                      text-slate-300 
-                      text-2xl
-                      "}
-                         "hello@armenianpavilion2026.org"))
+                              (d/div {:class "flex flex-col space-y-2 mt-2"}
+                                     (d/a
+                                      {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
+                                       :target "_blank"
+                                       :class "font-fira-code
+                                         font-light
+                                         text-slate-300"}
+                                      "hello@armenianpavilion2026.org")
+                                     (d/a
+                                      {:href "tel:+13234041152"
+                                       :target "_blank"
+                                       :class "text-slate-300"}
+                                      "+1 323-404-1152")))
 
-                       (d/div {:class "flex"}
-                              (d/span {:class "text-xs text-white font-fira-code font-light"}
-                                      "Copyright © 2025 AZ Studios Inc.")))))))
+                       (d/div {:class "flex justify-between mt-4 text-xs"}
+                              (d/span {:class "text-white font-fira-code font-light"}
+                                      "© 2025 AZ Studios Inc.")
+                              (d/span {:class "text-slate-900 font-fira-code font-light"}
+                                      (str "Version " amp.config/git-hash))))))))

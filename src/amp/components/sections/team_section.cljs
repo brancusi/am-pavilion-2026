@@ -209,17 +209,26 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
 
 (defnc team-members
   [{:keys [flash-images-handler]}]
-  (d/div {:class "w-full lg:w-4/12
-                  lg:pl-32 px-8 py-16"}
-         ($ team-member-card {:data tony-card-data
-                              :images tony-images
-                              :flash-images-handler flash-images-handler})
-         ($ team-member-card {:data tina-card-data
-                              :images tina-images
-                              :flash-images-handler flash-images-handler})
-         ($ team-member-card {:data zadik-card-data
-                              :images zadik-images
-                              :flash-images-handler flash-images-handler})))
+  (d/div {:class "w-full
+                  flex flex-col
+                  items-center justify-center
+                  
+                  "}
+         (d/div {:class "items-center justify-center
+                         w-full md:w-10/12
+                  
+                  
+                  lg:pl-32 px-8 py-16
+                         "}
+                ($ team-member-card {:data tony-card-data
+                                     :images tony-images
+                                     :flash-images-handler flash-images-handler})
+                ($ team-member-card {:data tina-card-data
+                                     :images tina-images
+                                     :flash-images-handler flash-images-handler})
+                ($ team-member-card {:data zadik-card-data
+                                     :images zadik-images
+                                     :flash-images-handler flash-images-handler}))))
 
 (defnc team-section  [{:keys [gradient-class
                               is-visible?

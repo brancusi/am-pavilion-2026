@@ -106,7 +106,7 @@
                                flex-col
                                overflow-hidden
                                relative
-                               w-full
+                               w-full md:w-10/12 lg:w-full
                                lg:p-12 p-4"}
                       ($ title)
 

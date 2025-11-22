@@ -37,7 +37,7 @@
                    flex-col
                    h-full
                    py-8
-                   lg:w-3/4 w-full
+                   md:w-3/4 w-full
                    p-8
                    text-lg
                    lg:text-2xl"}
