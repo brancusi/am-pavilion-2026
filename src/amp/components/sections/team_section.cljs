@@ -10,134 +10,133 @@
    [helix.hooks :as hooks]))
 
 (def zadik-images
-  [{:src "https://atd-722658831.imgix.net/artwork/2.webp"
-    :caption "Zadik image 01 caption"}
+  [{:src "https://atd-722658831.imgix.net/zadik/shovel-nails.webp"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/zz-portrait.tiff"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/single_stack_1970s.tif"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/golden_water_heater.tif"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/Untitled-10.psd"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/Untitled-76.psd"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/golden_kitchen.tif"
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/artwork/2.webp"
+    :caption nil}
+
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 02 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 03 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 04 caption"}
+    :caption nil}
+   {:src "https://atd-722658831.imgix.net/zadik/ps1_entrance_1.tif"
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 05 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 06 caption"}
+    :caption nil}
+
    {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Zadik image 07 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 08 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 09 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 10 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 11 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 12 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Zadik image 13 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 14 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 15 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 16 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Zadik image 17 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Zadik image 18 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Zadik image 19 caption"}
-   {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Zadik image 20 caption"}])
+    :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/zadik/Untitled-18.psd" :caption nil}
+
+   {:src "https://atd-722658831.imgix.net/artwork/2.webp?fit=crop&w=214&h=172&dpr=2&q=50&auto=format%2Ccompress&cacheID=1763536997" :caption nil}])
 
 (def tina-images
   [{:src "https://atd-722658831.imgix.net/artwork/2.webp"
-    :caption "Tina image 01 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 02 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 03 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 04 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 05 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 06 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Tina image 07 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 08 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 09 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 10 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 11 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 12 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Tina image 13 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 14 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 15 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 16 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/full_back-1.webp"
-    :caption "Tina image 17 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/3.webp"
-    :caption "Tina image 18 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Tina image 19 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/artwork/0.webp"
-    :caption "Tina image 20 caption"}])
+    :caption nil}])
 
 (def tony-images
   [{:src "https://atd-722658831.imgix.net/tony/jean-michel-basquiat-basquiat-tony-shafrazi-gallery-1999-(vintage-basquiat)-1315018087.jpg"
-    :caption "Tony image 01 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-1745911128.jpg"
-    :caption "Tony image 02 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/Haring_Shafrazi_Gallery_Poster_sig_master-3718979807.jpg"
-    :caption "Tony image 03 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/PALMER_VOL-07_TONY-SHAFRAZI_G-2448239116.jpg"
-    :caption "Tony image 04 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/shafrazi_10-e1426165121106-2104617331.jpg"
-    :caption "Tony image 05 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-dc36ac7f-7545-421c-842d-fb9f691dd22-resize-750-3792148717.jpg"
-    :caption "Tony image 06 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/jean-michel-basquiat-basquiat-tony-shafrazi-gallery-1999-(vintage-basquiat)-1315018087.jpg"
-    :caption "Tony image 07 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-1745911128.jpg"
-    :caption "Tony image 08 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/PALMER_VOL-07_TONY-SHAFRAZI_G-2448239116.jpg"
-    :caption "Tony image 09 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/shafrazi_10-e1426165121106-2104617331.jpg"
-    :caption "Tony image 10 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-dc36ac7f-7545-421c-842d-fb9f691dd22-resize-750-3792148717.jpg"
-    :caption "Tony image 11 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/jean-michel-basquiat-basquiat-tony-shafrazi-gallery-1999-(vintage-basquiat)-1315018087.jpg"
-    :caption "Tony image 12 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/Haring_Shafrazi_Gallery_Poster_sig_master-3718979807.jpg"
-    :caption "Tony image 13 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/PALMER_VOL-07_TONY-SHAFRAZI_G-2448239116.jpg"
-    :caption "Tony image 14 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-dc36ac7f-7545-421c-842d-fb9f691dd22-resize-750-3792148717.jpg"
-    :caption "Tony image 15 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/shafrazi_10-e1426165121106-2104617331.jpg"
-    :caption "Tony image 16 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/jean-michel-basquiat-basquiat-tony-shafrazi-gallery-1999-(vintage-basquiat)-1315018087.jpg"
-    :caption "Tony image 17 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/Haring_Shafrazi_Gallery_Poster_sig_master-3718979807.jpg"
-    :caption "Tony image 18 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-1745911128.jpg"
-    :caption "Tony image 19 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/PALMER_VOL-07_TONY-SHAFRAZI_G-2448239116.jpg"
-    :caption "Tony image 20 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/tony-shafrazi-dc36ac7f-7545-421c-842d-fb9f691dd22-resize-750-3792148717.jpg"
-    :caption "Tony image 21 caption"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/tony/shafrazi_10-e1426165121106-2104617331.jpg"
-    :caption "Tony image 22 caption"}])
+    :caption nil}])
 
 
 (def tony-card-data {:name "Tony Shafrazi"
@@ -216,10 +215,7 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
                   "}
          (d/div {:class "items-center justify-center
                          w-full md:w-10/12
-                  
-                  
-                  lg:pl-32 px-8 py-16
-                         "}
+                         lg:pl-32 px-8 py-16"}
                 ($ team-member-card {:data tony-card-data
                                      :images tony-images
                                      :flash-images-handler flash-images-handler})

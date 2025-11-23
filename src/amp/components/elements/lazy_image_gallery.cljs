@@ -4,6 +4,7 @@
    [amp.hooks.use-hover-animations :refer [use-hover-animations]]
    [amp.hooks.use-container-size :refer [use-container-size]]
    [amp.utils.gsap :as gsap :refer [to-ref to-element]]
+   [amp.utils.debug :refer [spy]]
    [helix.dom :as d]
    [helix.core :refer [$]]
    [helix.hooks :as hooks]))
@@ -14,16 +15,82 @@
                     (/ 3 4)
                     (/ 9 16)])
 
+(def image-sizes
+  {1 [[200 200] [300 300] [400 400] [500 500] [600 600]
+      [700 700] [800 800] [900 900] [1000 1000] [1200 1200]]
+
+   (/ 16 9) [[320 180] [480 270] [640 360] [800 450] [960 540]
+             [1120 630] [1280 720] [1440 810] [1600 900] [1920 1080]]
+
+   (/ 4 3) [[320 240] [400 300] [480 360] [640 480] [800 600]
+            [960 720] [1120 840] [1280 960] [1440 1080] [1600 1200]]
+
+   (/ 3 4) [[240 320] [300 400] [360 480] [480 640] [600 800]
+            [720 960] [840 1120] [960 1280] [1080 1440] [1200 1600]]
+
+   (/ 9 16) [[180 320] [270 480] [360 640] [450 800] [540 960]
+             [630 1120] [720 1280] [810 1440] [900 1600] [1080 1920]]})
+
+(defn check-column-dimensions
+  [columns]
+  (reduce (fn [total-height dimensions]
+            (+ total-height (second dimensions)))
+          0
+          columns))
+
+(defn aspect-column
+  [width height]
+  (let [initial-images (loop [accumulated-height 0
+                              result []]
+                         (if (>= accumulated-height height)
+                           result
+                           (let [aspect-ratio (rand-nth aspect-ratios)
+                                 img-height (Math/round (* width aspect-ratio))]
+                             (recur (+ accumulated-height img-height)
+                                    (conj result (with-meta [width img-height] {:aspect-ratio aspect-ratio}))))))
+        total-height (check-column-dimensions initial-images)
+        scale-factor (/ height total-height)]
+    (mapv (fn [dimensions]
+            (let [[w h] dimensions]
+              (with-meta
+                [w (* h scale-factor)]
+                (meta dimensions))))
+          initial-images)))
+
+(defn all-image-sizes
+  []
+  (vec (mapcat val image-sizes)))
+
+(defn find-closest-size
+  [target-width target-height]
+  (let [sizes (all-image-sizes)]
+    (reduce (fn [closest [w h]]
+              (let [closest-diff (+ (Math/abs (- (first closest) target-width))
+                                    (Math/abs (- (second closest) target-height)))
+                    current-diff (+ (Math/abs (- w target-width))
+                                    (Math/abs (- h target-height)))]
+                (if (< current-diff closest-diff)
+                  [w h]
+                  closest)))
+            (first sizes)
+            sizes)))
+
 (defn build-masonary-grid-slots
-  [total-cols total-rows total-width]
-  (let [column-width (Math/round (/ total-width total-cols))]
+  [cols width height]
+  (let [column-width (Math/round (/ width cols))]
     (mapcat (fn [_]
-              (map (fn [_]
-                     (let [aspect-ratio (rand-nth aspect-ratios)
-                           img-height (Math/round (* column-width aspect-ratio))]
-                       [column-width img-height]))
-                   (range total-cols)))
-            (range total-rows))))
+              (aspect-column column-width height))
+            (range cols))))
+
+(comment
+
+
+  (check-column-dimensions (aspect-column 300 800))
+
+  (build-masonary-grid-slots 3 500 800)
+
+  ;;Keep from folding
+  )
 
 
 (defnc image-layer
@@ -46,6 +113,9 @@
                      :src (or prev-src current-src)
                      :class "absolute
                                z-10
+                               w-full
+                               h-full
+                               object-cover
                                overflow-hidden"
                      :onLoad (fn [e]
                                (to-ref
@@ -60,6 +130,9 @@
                      :ref transition-ref
                      :class "absolute
                              z-20
+                             w-full
+                             h-full
+                             object-cover
                              overflow-hidden"
                      :style {:opacity 0}
                      :onLoad (fn [_]
@@ -71,7 +144,7 @@
                                                (set-prev-src nil)
                                                (set-current-src img-src))}))})))))
 (defnc caption-layer
-  [{:keys [target-ref caption credit]}]
+  [{:keys [target-ref caption credit other]}]
   (d/div {:class "absolute
                   z-20
                   bottom-0 
@@ -93,7 +166,7 @@
                               text-xs"}
                      credit))))
 
-(defnc image-card [{:keys [width height img-src caption credit key idx]}]
+(defnc image-card [{:keys [width height img-src caption credit other key idx]}]
   (let [trigger-ref (hooks/use-ref "trigger-ref")
         target-ref (hooks/use-ref "target-ref")]
 
@@ -117,10 +190,10 @@
 
            ($ image-layer {:img-src img-src})
 
-           ($ caption-layer {:target-ref target-ref
-                             :caption caption
-                             :credit credit}))))
-
+           (when caption
+             ($ caption-layer {:target-ref target-ref
+                               :caption caption
+                               :credit credit})))))
 
 (defnc lazy-image-gallery  [{:keys [images is-visible? image-gallery-container-ref]}]
   (let [outer-ctx (hooks/use-ref "outer-ctx")
@@ -131,11 +204,11 @@
                                                                         8
                                                                         200))]
     (hooks/use-layout-effect
-     [(:width gallery-dimensions)]
+     [(:width gallery-dimensions) (:height gallery-dimensions)]
      (set-masonary-grid-slots (build-masonary-grid-slots
                                3
-                               8
-                               (:width gallery-dimensions))))
+                               (:width gallery-dimensions)
+                               (:height gallery-dimensions))))
 
     (d/section {:ref outer-ctx
                 :class "overflow-hidden h-full"}
@@ -143,14 +216,19 @@
                                gap-0
                                h-full"
                        :style {:background-image "repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.1) 4px, rgba(255,255,255,0.1) 5px)"}}
-                      (map-indexed (fn [idx [width height]]
-                                     (let [{:keys [src caption]} (rand-nth images)
-                                           sized-image-src (str src "?w=" width "&h=" height "&fit=crop&auto=format,compress&crop=faces,edges")]
+                      (map-indexed (fn [idx dimensions]
+                                     (let [{:keys [src caption credit]} (rand-nth images)
+                                           aspect-ratio (-> dimensions meta :aspect-ratio)
+                                           closest-match (find-closest-size (first dimensions) (second dimensions))
+                                           [width height] dimensions
+                                           [closest-width closest-height] closest-match
+                                           sized-image-src (str src "?w=" closest-width "&h=" closest-height "&fit=crop&auto=format,compress&crop=faces,edges")]
                                        ($ image-card {:key idx
                                                       :width width
                                                       :height height
                                                       :img-src sized-image-src
-                                                      :caption "Tony with Basquiat!"
-                                                      :credit "Aram Zadikian 2025"
+                                                      :caption caption
+                                                      :credit credit
+                                                      :other (str aspect-ratio)
                                                       :idx idx})))
                                    masonary-grid-slots)))))

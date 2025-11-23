@@ -34,7 +34,7 @@
                          (d/div {:class "w-full h-full absolute pink-grad opacity-30"})
                          (d/div {:class "flex 
                                          flex-col
-                                         w-1/2
+                                         w-1/2 lg:w-3/4 xl:w-1/2
                                          h-full
                                          items-center
                                          justify-center
@@ -48,12 +48,7 @@
                                                                       flex
                                                                       items-center
                                                                       justify-center"}
-                                 ($ quote-section {:section-id "main-quote"
-                                                   :from {:opacity 0
-                                                          :duration 0.5
-                                                          :ease "expo.inOut",
-                                                          :stagger 0.02}}
-                                    ($ about-event)))
+                                 ($ about-event))
                                 ($ lower-panel-cta {:cta-title "Learn More"
                                                     :is-visible? visited?
                                                     :on-click (fn [] (scroll-to-id "about-work"))})))))))

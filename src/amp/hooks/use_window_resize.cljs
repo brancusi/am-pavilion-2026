@@ -25,8 +25,8 @@
   (let [[dimensions set-dimensions!] (hooks/use-state {:width (win-utils/width)
                                                        :height (win-utils/height)})
         resize-handler (fn [& _]
-                         (set-dimensions! (spy {:width (win-utils/width)
-                                                :height (win-utils/height)})))]
+                         (set-dimensions! {:width (win-utils/width)
+                                           :height (win-utils/height)}))]
     (hooks/use-layout-effect
      []
      (.addEventListener js/window "resize" resize-handler)
