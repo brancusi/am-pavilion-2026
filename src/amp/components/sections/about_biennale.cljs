@@ -10,32 +10,23 @@
 
 (def images
   [{:src "https://atd-722658831.imgix.net/biennale/metalocus_venice-biennale-corderie-arsenale-photo-giulio-squillacciotti_01.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/arsenale-venezia.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/6431873131_844b5c6d48_b-112659047.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/Edificio-E-delle-Sale-dArmi-sud-Arsenale-di-Venezia_01-406863818.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/GettyImages-1396739612-2882003488.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/arsenale-venezia-cosa-vedere-come-visitare-408454160.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/Pavilions-tours-plan.png"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/Pavilions-tours-plan.png"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
    {:src "https://atd-722658831.imgix.net/biennale/IMG_1754-scaled-1386547518.jpg"
-    :caption "Arsenale"
-    :credit "Artnews"}
+    :caption nil}
 
    ;;    
    ])
