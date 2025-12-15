@@ -48,7 +48,6 @@
 
     (d/div {:class "relative"}
            (when has-state-view?
-             (d/p (str "hi" state-view-id))
              (for-indexed [{:keys [view uuid]} idx view-stack]
                           (let [stack-size (count view-stack)
                                 is-active? (= idx (- stack-size 1))]

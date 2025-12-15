@@ -10,8 +10,15 @@
 
         :output-dir "public/js"
         :asset-path "/js"
+        :module-loader true
         :modules
-        {:app {:init-fn amp.core/init!}}
+        {:main {:init-fn amp.core/init!}
+
+         :landing-view {:entries [amp.views.landing-view]
+                        :depends-on #{:main}}
+
+         :budget-view {:entries [amp.views.budget-view]
+                       :depends-on #{:main}}}
         :build-hooks [(git-hash/hook)]
         :devtools {:reload-strategy :full
                    :repl-pprint true
@@ -24,8 +31,15 @@
   :release {:target :browser
             :output-dir "release/js"
             :asset-path "/js"
+            :module-loader true
             :modules
-            {:app {:init-fn amp.core/init!}}
+            {:main {:init-fn amp.core/init!}
+
+             :landing-view {:entries [amp.views.landing-view]
+                            :depends-on #{:main}}
+
+             :budget-view {:entries [amp.views.budget-view]
+                           :depends-on #{:main}}}
             :build-hooks [(git-hash/hook)]
             :js-options {:output-feature-set :es-unsupported
                          :language-in :unsupported}

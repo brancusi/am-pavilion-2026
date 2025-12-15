@@ -19,7 +19,7 @@
     "release": "run-s clean:release shadow:release postcss:release fonts:release images:release misc:release html:release",
     "dev": "run-p -l *:dev",
     "build": "run-s *:build",
-    "clean:release": "rm -f release/js/app*.js release/css/main*.css"
+    "clean:release": "rm -f release/js/*.js release/css/main*.css"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",

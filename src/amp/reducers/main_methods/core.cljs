@@ -13,8 +13,8 @@
 
   (let [new-state (assoc state
                          :current-route match)]
-    (js/console.log {:from "inside reducer"
-                     :match match
-                     :old-state state
-                     :new-state new-state})
+    #_(js/console.log {:from "inside reducer"
+                       :match match
+                       :old-state state
+                       :new-state new-state})
     new-state))

@@ -1,13 +1,9 @@
 (ns amp.services.router
   (:require [amp.lib.defnc :refer [defnc]]
             [amp.providers.main-provider :refer [use-main-state]]
-            [amp.views.budget-view :as budget-view]
-            [amp.views.contact-view :as contact-view]
-            [amp.views.landing-view :as landing-view]
-            [amp.views.services-view :as services-view]
-            [amp.views.screening-view :as screening-view]
             [helix.hooks :as hooks]
             [reitit.frontend :as rf]
+            [amp.utils.lazy-loading :refer [lazy-component]]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
 
@@ -18,14 +14,14 @@
 (def site-map [{:id ::budget
                 :path "budget"
                 :title "Budget"
-                :view budget-view/budget-view}])
+                :view (lazy-component amp.views.budget-view/budget-view)}])
 
 (defn routes
   []
   (into ["/"
          [""
           {:name :home
-           :view landing-view/landing-view
+           :view (lazy-component amp.views.landing-view/landing-view)
            :controllers [{:start (log-fn "start" "landing controller")
                           :stop (log-fn "stop" "landing controller")}]}]]
         (map (fn [{:keys [id path view]}]
