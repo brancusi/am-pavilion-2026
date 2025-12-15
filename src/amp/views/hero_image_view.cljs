@@ -26,7 +26,7 @@
            (d/div {:class "relative origin-bottom-right"
                    :style {:transform "rotate(-90deg) translateX(100%)"}}
                   (d/div {:class ""}
-                         (d/p {:class "absolute
+                         (d/div {:class "absolute
                                        bottom-0
                                        font-fira-code
                                        bg-white/60
@@ -36,4 +36,4 @@
                                        mb-4
                                        text-slate-700
                                        whitespace-nowrap"}
-                              children))))))
+                                children))))))
