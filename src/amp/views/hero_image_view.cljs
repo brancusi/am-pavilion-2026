@@ -1,16 +1,20 @@
 (ns amp.views.hero-image-view
   (:require
    [amp.components.elements.lazy-image :refer [lazy-image]]
-   [amp.hooks.use-window-resize :refer [use-window-size]]
+
+   [amp.hooks.use-container-size :refer [use-container-size]]
    [amp.lib.defnc :refer [defnc]]
    [amp.reducers.requires]
    [helix.core :refer [$]]
+   [helix.hooks :as hooks]
    [helix.dom :as d]))
 
 (defnc hero-image-view
-  [{:keys [img-src caption children]}]
-  (let [dimensions (use-window-size)]
-    (d/div {:class "relative w-full h-screen overflow-hidden"}
+  [{:keys [img-src children]}]
+  (let [image-container (hooks/use-ref "image-container")
+        dimensions (use-container-size image-container)]
+    (d/div {:class "w-full h-screen overflow-hidden"
+            :ref image-container}
            (d/div {:class "h-full w-full overflow-hidden "}
                   ($ lazy-image {:src img-src
                                  :w (:width dimensions)

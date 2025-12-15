@@ -1,7 +1,7 @@
 (ns amp.services.router
   (:require [amp.lib.defnc :refer [defnc]]
             [amp.providers.main-provider :refer [use-main-state]]
-            [amp.views.about-view :as about-view]
+            [amp.views.budget-view :as budget-view]
             [amp.views.contact-view :as contact-view]
             [amp.views.landing-view :as landing-view]
             [amp.views.services-view :as services-view]
@@ -15,22 +15,10 @@
   (fn [_]
     (apply js/console.log params)))
 
-(def site-map [{:id ::services
-                :path "services"
-                :title "Services"
-                :view services-view/services-view}
-               {:id ::about
-                :path "about"
-                :title "About"
-                :view about-view/about-view}
-               {:id ::screening
-                :path "screening"
-                :title "Screening"
-                :view screening-view/screening-view}
-               {:id ::contact
-                :path "contact"
-                :title "Contact"
-                :view contact-view/contact-view}])
+(def site-map [{:id ::budget
+                :path "budget"
+                :title "Budget"
+                :view budget-view/budget-view}])
 
 (defn routes
   []

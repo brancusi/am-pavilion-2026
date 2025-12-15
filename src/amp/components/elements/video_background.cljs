@@ -10,7 +10,8 @@
             [helix.hooks :as hooks]))
 
 (defnc video-background
-  [{:keys [should-play? playback-id]}]
+  [{:keys [should-play? allow-audio? playback-id]
+    :or  {allow-audio? true}}]
 
   (let [video-ref (hooks/use-ref "video-ref")
         [audio-muted? set-audio-muted!] (hooks/use-state true)
@@ -65,9 +66,10 @@
                :streamType "on-demand"
                :preferplayback "mse"})
 
-           (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"
-                   :on-click toggle-audio}
-                  ($
-                   (if audio-muted?
-                     icons/SpeakerWaveIcon
-                     icons/SpeakerXMarkIcon) {:className "w-6 h-6"})))))
+           (when allow-audio?
+             (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"
+                     :on-click toggle-audio}
+                    ($
+                     (if audio-muted?
+                       icons/SpeakerWaveIcon
+                       icons/SpeakerXMarkIcon) {:className "w-6 h-6"}))))))

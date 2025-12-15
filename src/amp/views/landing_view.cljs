@@ -1,6 +1,9 @@
 (ns amp.views.landing-view
   (:require [amp.components.section :refer [section]]
             [amp.views.hero-image-view :refer [hero-image-view]]
+            [amp.components.navs.logo-nav :refer [logo-nav]]
+            [amp.components.navs.donation-nav :refer [donation-nav]]
+
             [amp.components.sections.quote-section :refer [quote-section]]
             [amp.components.sections.video-section :refer [video-section]]
             [amp.components.sections.what-section :refer [what-section]]
@@ -33,6 +36,9 @@
     ($ :div {:ref container-ref
              :class ""}
        #_(d/p amp.config/git-hash)
+       (when is-desktop?
+         ($ logo-nav))
+       ($ donation-nav)
 
        (d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
               ($ progress-menu {:total-sections 3}))

@@ -16,9 +16,10 @@
     "misc:release": "cp -rf ./resources/misc/* ./release/",
     "misc:dev": "cp -rf ./resources/misc/* ./public/",
     "html:release": "node build/update-html.js",
-    "release": "run-s *:release",
+    "release": "run-s clean:release shadow:release postcss:release fonts:release images:release misc:release html:release",
     "dev": "run-p -l *:dev",
-    "build": "run-s *:build"
+    "build": "run-s *:build",
+    "clean:release": "rm -f release/js/app*.js release/css/main*.css"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",

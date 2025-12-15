@@ -1,12 +1,13 @@
-(ns amp.views.about-view
+(ns amp.views.budget-view
   (:require [amp.lib.defnc :refer [defnc]]
             [amp.reducers.requires]
+            [amp.components.sections.budget-section :refer [budget-section]]
             [helix.core :refer [$]]
             ["gsap" :refer [gsap]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
-(defnc about-view
+(defnc budget-view
   [{:keys [active
            intro-complete-callback
            outro-complete-callback]}]
@@ -23,4 +24,4 @@
                 :duration 1})))
 
     (d/div {:ref comp-ref}
-           (d/p "About"))))
+           ($ budget-section))))
