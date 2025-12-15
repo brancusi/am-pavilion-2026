@@ -65,6 +65,7 @@
      (let [st (.create ScrollTrigger #js{:trigger @ref
                                          :start start
                                          :end end
+                                         :invalidateOnRefresh true
                                          :onRefresh (fn [_])
                                          :onEnter (fn [self]
                                                     (set-visited! true)
@@ -74,7 +75,14 @@
                                                      (set-is-active! (.-isActive self))
                                                      (when on-toggle
                                                        (on-toggle self)))
-                                         :markers markers?})]
+                                         :markers markers?})
+           resize-observer (js/ResizeObserver.
+                            (fn [_entries]
+                              (.refresh ScrollTrigger)))]
 
-       (fn [] (.kill st))))
+       (.observe resize-observer js/document.body)
+
+       (fn [] (.kill st)
+         (.disconnect resize-observer))))
+
     [visited? is-active?]))

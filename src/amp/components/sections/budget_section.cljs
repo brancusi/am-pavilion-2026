@@ -1,20 +1,17 @@
 (ns amp.components.sections.budget-section
-  (:require [amp.components.sections.quote-section :refer [quote-section]]
-            [amp.components.section :refer [section]]
-            [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
-            ["@heroicons/react/24/outline" :as icons]
-            [amp.components.ui.main-button :refer [main-button]]
-            [amp.views.hero-image-view :refer [hero-image-view]]
-            [amp.hooks.use-media-query :refer [use-media-breakpoint use-touch-enabled]]
-            [amp.components.elements.video-background :refer [video-background]]
-            [amp.components.sections.contact-section :refer [contact-section]]
-            [amp.components.elements.lazy-image :refer [lazy-image]]
-            [amp.components.elements.budget-table :refer [budget-table]]
-            [amp.components.elements.captioned-image :refer [captioned-image]]
-            [amp.lib.defnc :refer [defnc]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   [amp.components.elements.budget-table :refer [budget-table]]
+   [amp.components.elements.captioned-image :refer [captioned-image]]
+   [amp.components.elements.video-background :refer [video-background]]
+   [amp.components.section :refer [section]]
+   [amp.components.sections.contact-section :refer [contact-section]]
+   [amp.components.ui.main-button :refer [main-button]]
+   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
+   [amp.hooks.use-media-query :refer [use-touch-enabled]]
+   [amp.lib.defnc :refer [defnc]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
 
 (def cost-data
   [{:title "Venue Ops"
@@ -254,15 +251,15 @@
      (d/div
       {:class "w-full h-full flex flex-col gap-4 mt-12"}
       (let [outer-ctx (hooks/use-ref "outer-ctx")
-            [visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})]
+            [visited? is-visible?] (use-intersection-observer outer-ctx)]
         (d/div {:class ""
                 :ref outer-ctx}
                (if is-desktop?
                  ($ video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                      :should-play? is-active?
+                                      :should-play? is-visible?
                                       :allow-audio? true})
                  ($ video-background {:playback-id "7qwSp8dt00X2Qht88MC86zyKRc4mykJno5TpkflUuN5E"
-                                      :should-play? is-active?
+                                      :should-play? is-visible?
                                       :allow-audio? false}))))
       ($ captioned-image
          {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
@@ -361,6 +358,97 @@
    (d/p {:class "p-4 mt-10 text-sm md:text-base text-slate-400"}
         "If you would like a receipt letter for your records, please include your name and email address with the transfer memo.")))
 
+(defnc press-release
+  []
+  (let [[expanded? set-expanded] (hooks/use-state false)]
+    (d/div {:class ""}
+           ;; Header
+           (d/div {:class "p-4 mt-12"}
+                  (d/p {:class "text-5xl font-futura font-bold"}
+                       "PRESS RELEASE"))
+
+           ;; Always visible teaser content
+           (d/div {}
+                  (d/p {:class "p-4 text-3xl font-futura italic"}
+                       "Nov 15, 2025")
+
+                  (d/div {:class "px-4 text-lg md:text-xl leading-relaxed text-slate-300"}
+
+                         ;; Headline
+                         (d/p {:class "font-bold italic mb-6 text-pink-600"}
+                              "Artist Zadik Zadikian and legendary art dealer Tony Shafrazi to represent Armenia at the 61st Venice Biennale")
+
+                         ;; Dateline - always visible
+                         (d/p {:class "font-medium mb-6"}
+                              (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
+                              "The Ministry of Culture of the Republic of Armenia has selected "
+                              (d/span {:class "font-semibold"} "Zadik Zadikian")
+                              " to represent Armenia at the "
+                              (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
+                              " in 2026. Led by legendary art dealer "
+                              (d/span {:class "font-semibold"} "Tony Shafrazi")
+                              " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage.")))
+
+           ;; Expandable full content
+           (when expanded?
+             (d/div {:class "px-4 text-lg md:text-xl leading-relaxed text-slate-300"}
+
+                    ;; Context / history
+                    (d/p {:class "mb-6"}
+                         "This collaboration marks a historic and deeply resonant moment in both Zadikian's and Shafrazi's lives and careers: a symbolic return to Armenia and a shared mission to present a world-class national Pavilion to a global audience.")
+
+                    (d/p {:class "mb-6"}
+                         "Zadikian—who left Soviet Armenia at nineteen and experienced a radical cultural rupture upon arriving in the United States—came of age artistically through an uncommon trajectory. From San Francisco during the height of the countercultural moment, working with "
+                         (d/span {:class "italic"} "Benjamin Bufano")
+                         ", to New York, where he assisted "
+                         (d/span {:class "italic"} "Richard Serra")
+                         " on monumental oil-stick wall drawings—one of which Serra titled "
+                         (d/span {:class "italic"} "Zadikian")
+                         "—the artist now returns with a project of uncommon ambition and conceptual rigor.")
+
+                    ;; Project description
+                    (d/p {:class "mb-6"}
+                         (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                         "transforms the Armenian Pavilion into an active site of sustained, concentrated making. Throughout the Biennale, Zadikian and his team will fabricate primordial plaster units on site—ranging from palm-sized objects to human-scale forms—each one a three-dimensional articulation of distilled color, ratio, and reflectivity.")
+
+                    ;; Quote
+                    (d/p {:class "mb-6 italic"}
+                         "\" We're creating material that transforms by its very nature into sculpture—material with a clarity of line and reflection so immediate that the eye can fly across it,\" says Zadikian.")
+
+                    ;; Shafrazi quote
+                    (d/p {:class "mb-6 italic"}
+                         "For Shafrazi, the work's insistence on touch is central: \" It's haptic. Do you know how important that is? That's what makes it. \"")
+
+                    ;; Sensory emphasis
+                    (d/p {:class "mb-6"}
+                         "The Pavilion privileges a form of seeing grounded in the body—through weight, temperature, balance, and texture—rather than spectacle or narrative. Units will be cast, stacked, dismantled, and restacked throughout the exhibition, remaining in constant motion.")
+
+                    ;; Curatorial alignment
+                    (d/p {:class "mb-6"}
+                         "By presenting the studio in its raw, working state—without performance or theatrical staging—"
+                         (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                         "aligns closely with the Biennale's curatorial framework, "
+                         (d/span {:class "italic"} "In Minor Keys")
+                         ". The work responds not with commentary or illustration, but with material intelligence, meditative clarity, and poetic restraint—tuning visitors to the lower frequencies: the modest, the elemental, the sanctuary.")
+
+                    ;; Practice shift
+                    (d/p {:class "mb-6"}
+                         "The project marks an inner shift for Zadikian, turning away from the bombast of gold toward a quieter thread that has long run through his practice: plaster and pigment. The work foregrounds the rigor, repetition, and material intelligence that have underpinned his oeuvre for decades.")
+
+                    ;; Closing
+                    (d/p {}
+                         "In a cultural moment dominated by speed, novelty, and distraction, "
+                         (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                         "turns toward repetition, exactitude, and touch. Drawing on childhood experiences working with Armenian tuff stone and a lifelong intimacy with plaster, Zadikian produces units that appear plain at first glance, yet reveal unexpected depth through surface, edge, and volume. Together, they form a precise yet open-ended vocabulary—a language of blocks, strata, and intervals that underwrites a larger meditation on resilience, renewal, and the rediscovery of origins.")))
+
+           ;; Read more / Read less button
+           (when (not expanded?)
+             (d/div {:class "flex justify-center p-4 mt-6"}
+                    ($ main-button
+                       {:on-click #(set-expanded (not expanded?))
+                        :class "px-8 py-3"
+                        :title "Read more"}))))))
+
 (defnc budget-section
   []
   ($ section
@@ -373,6 +461,7 @@
                flex items-center justify-center flex-col"}
       (d/div {:class "flex flex-col w-full lg:w-8/12"}
              ($ header)
+             ($ press-release)
              ($ about)
              ($ cost-breakdown)
              ($ non-profit)
