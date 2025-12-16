@@ -2,7 +2,7 @@
   (:require [helix.core :refer [$]]
             [helix.hooks :as hooks]
             [helix.dom :as d]
-            ["@heroicons/react/24/outline" :as icons]
+            ["@heroicons/react/24/outline" :refer [SpeakerWaveIcon]]
             [applied-science.js-interop :as j]
             [amp.lib.defnc :refer [defnc]]))
 
@@ -11,4 +11,4 @@
                              on-mouse-out-handler]}]
   (d/div
    {:class "w-6 h-6"}
-   ($ icons/SpeakerWaveIcon)))
+   ($ SpeakerWaveIcon)))

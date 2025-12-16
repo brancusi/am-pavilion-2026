@@ -1,5 +1,5 @@
 (ns amp.components.navs.side-nav
-  (:require ["@heroicons/react/24/outline" :as icons]
+  (:require ["@heroicons/react/24/outline" :refer [ArrowUpRightIcon]]
             [amp.hooks.use-hover-animations :refer [use-hover-animations]]
             [amp.hooks.use-toggle :refer [use-toggle]]
             [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
@@ -125,8 +125,6 @@
                   opacity-90
                   bg-teal-600"}
 
-                   ($ icons/ArrowUpRightIcon))
+                   ($ ArrowUpRightIcon)))
             ($ flyout-menu {:is-open? menu-open?})))))
-
-
 

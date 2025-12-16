@@ -1,6 +1,6 @@
 (ns amp.components.elements.budget-table
   (:require
-   ["@heroicons/react/24/outline" :as icons]
+   ["@heroicons/react/24/outline" :refer [ChevronRightIcon]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -58,15 +58,15 @@
                  (d/div {:class "w-1/12 flex justify-end items-center "}
                         (d/div {:class (str "w-5 h-5 transition-transform "
                                             (when (expanded-items item-id) "rotate-90"))}
-                               ($ icons/ChevronRightIcon))))
-          (when (expanded-items item-id)
-            (d/div {:class "text-base bg-slate-900"}
-                   (d/ul {:class "pt-2"}
-                         (map-indexed (fn [idx detail]
-                                        ($ detail-line-item
-                                           {:idx idx
-                                            :detail detail}))
-                                      (:details item))))))))
+                               ($ ChevronRightIcon)))
+                 (when (expanded-items item-id)
+                   (d/div {:class "text-base bg-slate-900"}
+                          (d/ul {:class "pt-2"}
+                                (map-indexed (fn [idx detail]
+                                               ($ detail-line-item
+                                                  {:idx idx
+                                                   :detail detail}))
+                                             (:details item)))))))))
 
 (defnc budget-table
   [{:keys [cost-data]}]

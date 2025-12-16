@@ -1,6 +1,5 @@
 (ns amp.components.navs.donation-nav
-  (:require ["@heroicons/react/24/outline" :as icons]
-            [amp.utils.debug :refer [spy]]
+  (:require [amp.utils.debug :refer [spy]]
             [amp.hooks.use-hover-animations :refer [use-hover-animations]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
             [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
@@ -62,6 +61,5 @@
                 {:title "Donate Now"
                  :additional-classes "text-2xl"
                  :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")})))))
-
 
 

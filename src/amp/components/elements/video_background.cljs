@@ -1,5 +1,5 @@
 (ns amp.components.elements.video-background
-  (:require ["@heroicons/react/24/outline" :as icons]
+  (:require ["@heroicons/react/24/outline" :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
             ["@mux/mux-player-react$default" :as MuxPlayer]
             [applied-science.js-interop :as j]
             [amp.components.elements.lazy-image :refer [lazy-image]]
@@ -69,7 +69,7 @@
            (when allow-audio?
              (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"
                      :on-click toggle-audio}
-                    ($
-                     (if audio-muted?
-                       icons/SpeakerWaveIcon
-                       icons/SpeakerXMarkIcon) {:className "w-6 h-6"}))))))
+                    ($ (if audio-muted?
+                         SpeakerWaveIcon
+                         SpeakerXMarkIcon)
+                       {:className "w-6 h-6"}))))))

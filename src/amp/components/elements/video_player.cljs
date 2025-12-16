@@ -1,6 +1,5 @@
 (ns amp.components.elements.video-player
-  (:require ["@heroicons/react/24/outline" :as icons]
-            ["@mux/mux-player-react$default" :as MuxPlayer]
+  (:require ["@mux/mux-player-react$default" :as MuxPlayer]
             [applied-science.js-interop :as j]
             [amp.components.elements.lazy-image :refer [lazy-image]]
             [amp.hooks.use-can-play-background-video :refer [use-can-play-background-video]]

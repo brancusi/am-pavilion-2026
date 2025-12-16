@@ -3,7 +3,7 @@
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
-   ["@heroicons/react/24/outline" :refer [ArrowUpRightIcon ArrowRightIcon]]))
+   ["@heroicons/react/24/outline" :refer [ArrowRightIcon]]))
 
 (defnc main-button
   [{:keys [title

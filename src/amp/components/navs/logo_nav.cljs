@@ -1,6 +1,5 @@
 (ns amp.components.navs.logo-nav
-  (:require ["@heroicons/react/24/outline" :as icons]
-            [amp.hooks.use-hover-animations :refer [use-hover-animations]]
+  (:require [amp.hooks.use-hover-animations :refer [use-hover-animations]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
             [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
             [amp.utils.window :as win-utils]
@@ -41,6 +40,5 @@
                     lg:w-32"
             :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
            (d/img {:src "images/graphics/biennale_logo.png"}))))
-
 
 
