@@ -9,11 +9,14 @@ const outputHtmlPath = path.join(__dirname, "../release/index.html");
 // Parse manifest.edn to get the hashed filename
 const manifest = fs.readFileSync(manifestPath, "utf8");
 const match = manifest.match(/:output-name\s+"([^"]+)"/);
-const hashedFilename = match ? match[1] : "app.js";
+const hashedFilename = match ? match[1] : "main.js";
 
 // Read and update HTML
 let html = fs.readFileSync(htmlPath, "utf8");
-html = html.replace("/js/app.js", `/js/${hashedFilename}`);
+html = html.replace(
+  /<script async src="js\/main\.js"><\/script>/,
+  `<script async src="js/${hashedFilename}"></script>`
+);
 
 // Write updated HTML
 fs.writeFileSync(outputHtmlPath, html);

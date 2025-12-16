@@ -1,13 +1,8 @@
 (ns amp.components.elements.video-player
-  (:require ["@heroicons/react/24/outline" :as icons]
-            ["@mux/mux-player-react$default" :as MuxPlayer]
-            [applied-science.js-interop :as j]
-            [amp.components.elements.lazy-image :refer [lazy-image]]
-            [amp.hooks.use-can-play-background-video :refer [use-can-play-background-video]]
-            [amp.lib.defnc :refer [defnc]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   ["@mux/mux-player-react$default" :as MuxPlayer]
+   [amp.lib.defnc :refer [defnc]]
+   [helix.core :refer [$]]))
 
 (defnc VideoPlayer
   [{:keys [playback-id]}]

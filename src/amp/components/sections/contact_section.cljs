@@ -1,19 +1,12 @@
 (ns amp.components.sections.contact-section
-  (:require [helix.core :refer [$]]
-            [amp.components.sections.video-section :refer [video-section]]
-            [amp.config]
-            [helix.hooks :as hooks]
-            [helix.dom :as d]
-            ["gsap" :refer [gsap]]
-            [amp.views.hero-image-view :refer [hero-image-view]]
-            [amp.components.elements.captioned-image :refer [captioned-image]]
-            [amp.components.elements.rotating-lazy-image-gallery :refer [rotating-lazy-image-gallery]]
-            [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
-            ["gsap/SplitText" :refer [SplitText]]
-            [amp.api.cms :refer [get-gallery-images!] :as cms]
-            [amp.components.elements.lazy-image :refer [lazy-image]]
-            [applied-science.js-interop :as j]
-            [amp.lib.defnc :refer [defnc]]))
+  (:require
+   [amp.components.elements.captioned-image :refer [captioned-image]]
+   [amp.config]
+   [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
+   [amp.lib.defnc :refer [defnc]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
 
 (defnc contact-section [{:keys [gradient-class
                                 is-visible?

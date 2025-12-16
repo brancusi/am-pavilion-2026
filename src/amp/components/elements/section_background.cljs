@@ -2,7 +2,6 @@
   (:require [helix.core :refer [$]]
             [helix.hooks :as hooks]
             [helix.dom :as d]
-            ["@heroicons/react/24/outline" :as icons]
             [applied-science.js-interop :as j]
             [amp.lib.defnc :refer [defnc]]))
 

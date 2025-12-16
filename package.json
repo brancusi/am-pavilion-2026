@@ -19,18 +19,16 @@
     "release": "run-s clean:release shadow:release postcss:release fonts:release images:release misc:release html:release",
     "dev": "run-p -l *:dev",
     "build": "run-s *:build",
-    "clean:release": "rm -f release/js/app*.js release/css/main*.css"
+    "clean:release": "rm -f release/js/*.js release/css/main*.css"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.12",
-    "@heroicons/react": "2.0.16",
+    "@headlessui/react": "^2.2.0",
     "@mux/mux-player-react": "^3.8.0",
     "@tailwindcss/forms": "^0.5.3",
     "axios": "^1.3.5",
     "cross-env": "^7.0.3",
     "deepmerge": "^4.3.1",
     "gsap": "^3.13.0",
-    "hls.js": "^1.6.14",
     "netlify-cli": "^23.11.0",
     "platform": "1.3.5",
     "react": "^19.2.0",
