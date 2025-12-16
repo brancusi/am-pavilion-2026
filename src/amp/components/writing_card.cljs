@@ -1,13 +1,10 @@
 (ns amp.components.writing-card
-  (:require [amp.api.cms]
-            [amp.api.cms :refer [get-gallery-images!] :as cms]
-            [amp.components.elements.rotating-lazy-image-gallery :refer [rotating-lazy-image-gallery]]
-            [amp.components.sections.quote-section :refer [quote-section]]
-            [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
-            [amp.lib.defnc :refer [defnc]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   [amp.components.sections.quote-section :refer [quote-section]]
+   [amp.lib.defnc :refer [defnc]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
 
 (defnc writing-card
   [{:keys [children]}]

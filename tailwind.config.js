@@ -7,7 +7,7 @@ const screens = {
 module.exports = {
   content:
     process.env.NODE_ENV == "production"
-      ? ["./release/js/app.*.js", "./src/**/*.cljs", "./src/**/*.cljc"]
+      ? ["./release/js/main.*.js", "./src/**/*.cljs", "./src/**/*.cljc"]
       : ["./public/js/cljs-runtime/*.js"],
   theme: {
     extend: {
