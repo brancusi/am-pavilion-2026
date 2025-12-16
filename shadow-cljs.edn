@@ -17,6 +17,9 @@
          :landing-view {:entries [amp.views.landing-view]
                         :depends-on #{:main}}
 
+         :video-background {:entries [amp.components.elements.video-background]
+                            :depends-on #{:main}}
+
          :budget-view {:entries [amp.views.budget-view]
                        :depends-on #{:main}}}
         :build-hooks [(git-hash/hook)]
@@ -37,6 +40,9 @@
 
              :landing-view {:entries [amp.views.landing-view]
                             :depends-on #{:main}}
+
+             :video-background {:entries [amp.components.elements.video-background]
+                                :depends-on #{:main}}
 
              :budget-view {:entries [amp.views.budget-view]
                            :depends-on #{:main}}}

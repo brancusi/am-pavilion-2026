@@ -1,14 +1,17 @@
 (ns amp.components.sections.mobile-hero-section
-  (:require [amp.components.elements.video-background :refer [video-background]]
-            [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
-            [amp.lib.defnc :refer [defnc]]
-            [amp.components.fragments.about-me :refer [about-event]]
-            [amp.providers.main-provider :refer [use-main-state]]
-            [amp.components.writing-card :refer [writing-card]]
-            [amp.components.ui.main-button :refer [main-button]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   [amp.utils.lazy-loading :refer-macros [lazy-component]]
+   [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
+   [amp.lib.defnc :refer [defnc]]
+   [amp.components.fragments.about-me :refer [about-event]]
+   [amp.providers.main-provider :refer [use-main-state]]
+   [amp.components.writing-card :refer [writing-card]]
+   [amp.components.ui.main-button :refer [main-button]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
+
+(def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
 (defnc mobile-hero-section
   []
@@ -34,8 +37,8 @@
                                   h-screen
                                   w-screen"}
                          (d/p is-active?)
-                         ($ video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                              :should-play? is-active?}))
+                         ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
+                                                   :should-play? is-active?}))
 
                   (d/div {:class "absolute deep-yellow opacity-70 w-3/4 p-4"}
                          (d/div {:class "font-futura"}

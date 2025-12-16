@@ -3,7 +3,7 @@
             [amp.providers.main-provider :refer [use-main-state]]
             [helix.hooks :as hooks]
             [reitit.frontend :as rf]
-            [amp.utils.lazy-loading :refer [lazy-component]]
+            [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
 

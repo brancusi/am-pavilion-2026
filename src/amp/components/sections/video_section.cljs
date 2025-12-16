@@ -1,11 +1,14 @@
 (ns amp.components.sections.video-section
-  (:require [amp.components.elements.video-background :refer [video-background]]
-            [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
-            [amp.lib.defnc :refer [defnc]]
-            [amp.providers.main-provider :refer [use-main-state]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   [amp.utils.lazy-loading :refer-macros [lazy-component]]
+   [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
+   [amp.lib.defnc :refer [defnc]]
+   [amp.providers.main-provider :refer [use-main-state]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
+
+(def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
 (defnc video-section
   [{:keys [playback-id]}]
@@ -26,5 +29,5 @@
                            relative 
                            flex items-center justify-items-center justify-center"}
 
-                  ($ video-background {:playback-id playback-id
-                                       :should-play? is-active?})))))
+                  ($ lazy-video-background {:playback-id playback-id
+                                            :should-play? is-active?})))))

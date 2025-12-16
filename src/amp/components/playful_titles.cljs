@@ -1,6 +1,6 @@
 (ns amp.components.playful-titles
   (:require ["gsap" :refer [gsap]]
-            [amp.components.elements.video-background :refer [video-background]]
+
             [amp.components.hover-title :refer [hover-title]]
             [amp.components.nav-link :refer [nav-link]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]

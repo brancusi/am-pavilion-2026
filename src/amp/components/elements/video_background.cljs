@@ -1,11 +1,9 @@
 (ns amp.components.elements.video-background
   (:require
-   [amp.components.icons :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
    ["@mux/mux-player-react$default" :as MuxPlayer]
-   [applied-science.js-interop :as j]
-   [amp.components.elements.lazy-image :refer [lazy-image]]
-
+   [amp.components.icons :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
    [amp.lib.defnc :refer [defnc]]
+   [applied-science.js-interop :as j]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))

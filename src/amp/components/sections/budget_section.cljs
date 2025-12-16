@@ -1,8 +1,9 @@
 (ns amp.components.sections.budget-section
   (:require
+   [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.components.elements.budget-table :refer [budget-table]]
    [amp.components.elements.captioned-image :refer [captioned-image]]
-   [amp.components.elements.video-background :refer [video-background]]
+
    [amp.components.section :refer [section]]
    [amp.components.sections.contact-section :refer [contact-section]]
    [amp.components.ui.main-button :refer [main-button]]
@@ -12,6 +13,8 @@
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
+
+(def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
 (def cost-data
   [{:title "Venue Ops"
@@ -247,7 +250,6 @@
                    (d/div {:class "w-12 mt-12 border-t border-pink-500"})))
 
 
-
      (d/div
       {:class "w-full h-full flex flex-col gap-4 mt-12"}
       (let [outer-ctx (hooks/use-ref "outer-ctx")
@@ -255,12 +257,12 @@
         (d/div {:class ""
                 :ref outer-ctx}
                (if is-desktop?
-                 ($ video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                      :should-play? is-visible?
-                                      :allow-audio? true})
-                 ($ video-background {:playback-id "7qwSp8dt00X2Qht88MC86zyKRc4mykJno5TpkflUuN5E"
-                                      :should-play? is-visible?
-                                      :allow-audio? false}))))
+                 ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
+                                           :should-play? is-visible?
+                                           :allow-audio? true})
+                 ($ lazy-video-background {:playback-id "7qwSp8dt00X2Qht88MC86zyKRc4mykJno5TpkflUuN5E"
+                                           :should-play? is-visible?
+                                           :allow-audio? false}))))
       ($ captioned-image
          {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
           :caption "BLUE YELLOW BLUE YELLOW"
