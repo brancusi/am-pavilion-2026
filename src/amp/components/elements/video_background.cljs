@@ -1,13 +1,14 @@
 (ns amp.components.elements.video-background
-  (:require ["@heroicons/react/24/outline" :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
-            ["@mux/mux-player-react$default" :as MuxPlayer]
-            [applied-science.js-interop :as j]
-            [amp.components.elements.lazy-image :refer [lazy-image]]
-            [amp.hooks.use-can-play-background-video :refer [use-can-play-background-video]]
-            [amp.lib.defnc :refer [defnc]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
+  (:require
+   [amp.components.icons :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
+   ["@mux/mux-player-react$default" :as MuxPlayer]
+   [applied-science.js-interop :as j]
+   [amp.components.elements.lazy-image :refer [lazy-image]]
+
+   [amp.lib.defnc :refer [defnc]]
+   [helix.core :refer [$]]
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
 
 (defnc video-background
   [{:keys [should-play? allow-audio? playback-id]

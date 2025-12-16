@@ -1,6 +1,6 @@
 (ns amp.components.elements.budget-table
   (:require
-   ["@heroicons/react/24/outline" :refer [ChevronRightIcon]]
+   [amp.components.icons :refer [ChevronRightIcon]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -28,8 +28,7 @@
 (defnc detail-line-item
   [{:keys [idx detail]}]
   (let [is-odd-detail? (odd? idx)]
-    (d/li {:key (:title detail)
-           :class (str "px-4 py-2 flex justify-between items-center "
+    (d/li {:class (str "px-4 py-2 flex justify-between items-center "
                        (if is-odd-detail? "bg-slate-700/50" ""))}
           (d/span (:title detail))
           (d/span {:class "text-slate-300 font-medium"}
@@ -40,8 +39,7 @@
   (let [item-id (str "item-" idx)
         section-total (calculate-section-total (:details item))
         is-odd (odd? idx)]
-    (d/li {:key item-id
-           :class (str "overflow-hidden " (if is-odd "" "bg-slate-800"))}
+    (d/li {:class (str "overflow-hidden " (if is-odd "" "bg-slate-800"))}
           (d/div {:class "flex justify-between items-center px-4 py-4 cursor-pointer transition-colors"
                   :on-click #(set-expanded-items
                               (fn [prev]
@@ -58,15 +56,16 @@
                  (d/div {:class "w-1/12 flex justify-end items-center "}
                         (d/div {:class (str "w-5 h-5 transition-transform "
                                             (when (expanded-items item-id) "rotate-90"))}
-                               ($ ChevronRightIcon)))
-                 (when (expanded-items item-id)
-                   (d/div {:class "text-base bg-slate-900"}
-                          (d/ul {:class "pt-2"}
-                                (map-indexed (fn [idx detail]
-                                               ($ detail-line-item
-                                                  {:idx idx
-                                                   :detail detail}))
-                                             (:details item)))))))))
+                               ($ ChevronRightIcon))))
+          (when (expanded-items item-id)
+            (d/div {:class "text-base bg-slate-900"}
+                   (d/ul {:class "pt-2"}
+                         (map-indexed (fn [idx detail]
+                                        ($ detail-line-item
+                                           {:idx idx
+                                            :key (str "detail-" idx)
+                                            :detail detail}))
+                                      (:details item))))))))
 
 (defnc budget-table
   [{:keys [cost-data]}]
@@ -76,6 +75,7 @@
            (fn [idx item]
              ($ section-line-item
                 {:idx idx
+                 :key (str idx "-section")
                  :item item
                  :set-expanded-items set-expanded-items
                  :expanded-items expanded-items}))
