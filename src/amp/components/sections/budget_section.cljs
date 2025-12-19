@@ -3,12 +3,15 @@
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.components.elements.budget-table :refer [budget-table]]
    [amp.components.elements.captioned-image :refer [captioned-image]]
-
+   [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.section :refer [section]]
    [amp.components.sections.contact-section :refer [contact-section]]
    [amp.components.ui.main-button :refer [main-button]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
+   [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
+   [amp.components.navs.back-up-nav :refer [back-up-nav]]
+   [amp.components.elements.aspect-box :refer [aspect-box]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -16,235 +19,330 @@
 
 (def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
+(def section-classes "mt-12 flex flex-col w-full h-full text-lg md:text-xl leading-relaxed")
+
+(defn css
+  [& classes]
+  (apply str (interpose " " classes)))
+
 (def cost-data
   [{:title "Venue Ops"
+    :description "Secures and operates the Venice exhibition venue: exclusive rental, public-facing staffing, required approvals, insurance coverage, minor architectural adjustments, lighting, and statutory taxes—ensuring the Pavilion is compliant, safe, and fully exhibition-ready."
     :details [{:title "Venue rent" :amount 130000}
-              {:title "Staffing" :amount 75000}
+              {:title "Base staff" :amount 50000}
+              {:title "Mediator" :amount 25000}
+              {:title "Cleaning" :amount 7000}
               {:title "Utilities" :amount 0}
-              {:title "Permits & insurance" :amount 16000}
-              {:title "Construction" :amount 17000}
+              {:title "Permits" :amount 10000}
+              {:title "Fire cert" :amount 3500}
+              {:title "Liability ins." :amount 2500}
+              {:title "Build-outs" :amount 9500}
               {:title "Lighting" :amount 7500}
-              {:title "Taxes & VAT" :amount 53900}
-              {:title "Contingency" :amount 30040}]}
+              {:title "Signage tax" :amount 1500}
+              {:title "VAT" :amount 53900}]}
 
    {:title "Administration"
-    :details [{:title "Curators & artists" :amount 60000}
-              {:title "Admin support" :amount 32500}
-              {:title "Engineering" :amount 4500}
-              {:title "Legal & accounting" :amount 15000}
-              {:title "Bookkeeping & HR" :amount 6800}
-              {:title "Software tools" :amount 900}
-              {:title "Travel & lodging" :amount 44000}
-              {:title "Proposal travel" :amount 16000}
-              {:title "Contingency" :amount 16720}]}
+    :description "Leadership and project management supporting curatorial direction, artist oversight, coordination, compliance, and travel—keeping the Pavilion contract-ready, fiscally transparent, and operationally stable across the full production timeline."
+    :details [{:title "Tony (Curator)" :amount 15000}
+              {:title "Tina (Curator)" :amount 15000}
+              {:title "Zadik (Artist)" :amount 15000}
+              {:title "Aram (Artist)" :amount 15000}
+              {:title "Admin support" :amount 10000}
+              {:title "Venice coord." :amount 22500}
+              {:title "Engineer" :amount 4500}
+              {:title "Legal" :amount 6000}
+              {:title "Accounting" :amount 9000}
+              {:title "Bookkeeping" :amount 4800}
+              {:title "HR/Payroll" :amount 2000}
+              {:title "Software/tools" :amount 900}
+              {:title "Flights/local" :amount 12000}
+              {:title "Lodging/per diem" :amount 19500}
+              {:title "Pitch dev" :amount 3500}
+              {:title "Proposal travel" :amount 12500}]}
 
    {:title "Production"
+    :description "Core fabrication of the work: materials, gilding inputs, casting infrastructure, studio overhead, and skilled labor—supporting precision, durability, and museum-level finish in the sculptural units."
     :details [{:title "Foam core" :amount 17500}
               {:title "Pigments" :amount 12500}
               {:title "Plaster" :amount 3750}
               {:title "Gold leaf" :amount 35000}
               {:title "Gold sizing" :amount 3530}
+              {:title "Expendables" :amount 2500}
               {:title "Glass" :amount 3000}
               {:title "Studio rent" :amount 15360}
-              {:title "Utilities & ins." :amount 7200}
+              {:title "Utilities/ins." :amount 7200}
               {:title "Gilders" :amount 33600}
               {:title "Casters" :amount 72000}
-              {:title "Assistants" :amount 24000}
-              {:title "Crates" :amount 15000}
-              {:title "Supplies" :amount 10000}
-              {:title "Packing labor" :amount 6000}
-              {:title "Shipping LA–Venice" :amount 30000}
-              {:title "Shipping Venice–LA" :amount 30000}
-              {:title "Insurance" :amount 12000}
-              {:title "Install crew" :amount 16200}
-              {:title "Contingency" :amount 34914}]}
+              {:title "Assistants" :amount 24000}]}
 
    {:title "Logistics"
-    :details [{:title "Port handling" :amount 2500}
-              {:title "Barge transport" :amount 6000}
-              {:title "Local trucking" :amount 2400}
-              {:title "Forklift & crew" :amount 1800}
+    :description "International and local movement of the work: crating, packing, freight, installation/uninstallation labor, port handling, barge and trucking transfers, storage, and waste removal—ensuring secure handling across Venice’s complex access conditions."
+    :details [{:title "Crates" :amount 15000}
+              {:title "Supplies" :amount 10000}
+              {:title "Packers" :amount 6000}
+              {:title "Ship LA–Venice" :amount 30000}
+              {:title "Ship Venice–LA" :amount 30000}
+              {:title "Insurance" :amount 12000}
+              {:title "Installers" :amount 7200}
+              {:title "Uninstallers" :amount 9000}
+              {:title "Port handling" :amount 2500}
+              {:title "Barge (inbound)" :amount 3000}
+              {:title "Truck (inbound)" :amount 1200}
+              {:title "Barge (to site)" :amount 3000}
+              {:title "Forklift" :amount 1300}
+              {:title "Handling crew" :amount 500}
               {:title "Short storage" :amount 1200}
               {:title "Crate storage" :amount 2000}
               {:title "Waste removal" :amount 1000}
-              {:title "Reverse logistics" :amount 6700}
-              {:title "Contingency" :amount 2240}]}
+              {:title "Barge (return)" :amount 3000}
+              {:title "Truck (return)" :amount 1200}
+              {:title "Port (return)" :amount 2500}]}
 
    {:title "Opening Week"
+    :description "Opening reception and public-facing diplomatic visibility: hospitality, staffing, security, rentals, technical support, press/VIP coordination, translation, water transport support, and public talks."
     :details [{:title "Catering food" :amount 7000}
               {:title "Catering drinks" :amount 2250}
-              {:title "Event staff" :amount 2500}
-              {:title "Coordinator" :amount 3000}
+              {:title "Catering staff" :amount 2500}
+              {:title "Event coord." :amount 3000}
               {:title "Security" :amount 1200}
               {:title "Rentals" :amount 2500}
               {:title "A/V & tech" :amount 1500}
               {:title "Event media" :amount 2500}
               {:title "Invitations" :amount 1000}
-              {:title "VIP staff" :amount 5500}
-              {:title "Protocol support" :amount 1000}
-              {:title "Press materials" :amount 900}
+              {:title "VIP/press staff" :amount 1500}
+              {:title "VIP hospitality" :amount 1800}
+              {:title "VIP liaison" :amount 2250}
+              {:title "Protocol" :amount 1000}
+              {:title "Press packets" :amount 400}
+              {:title "Press A/V" :amount 500}
               {:title "Interpreter" :amount 700}
               {:title "Water taxis" :amount 960}
               {:title "Public talks" :amount 1200}
+              {:title "Talk staff" :amount 800}
               {:title "Accessibility" :amount 250}
-              {:title "Signage" :amount 300}
-              {:title "Contingency" :amount 3606}]}
+              {:title "Program signage" :amount 300}]}
 
    {:title "Studio Ops"
-    :details [{:title "Part-time staff" :amount 18000}
-              {:title "Full-time staff" :amount 30000}
+    :description "Seven-month operation of THE STUDIO on-site: staffing, ongoing materials and expendables, local equipment needs, lodging/per diem, and daily maintenance—supporting continuous execution during the Biennale."
+    :details [{:title "PT assistants" :amount 18000}
+              {:title "FT assistants" :amount 30000}
               {:title "Temp staff" :amount 25000}
-              {:title "Materials" :amount 5000}
+              {:title "Local materials" :amount 5000}
               {:title "Expendables" :amount 7000}
-              {:title "Equipment" :amount 7500}
-              {:title "Lodging & per diem" :amount 40000}
-              {:title "Waste" :amount 1400}
-              {:title "Contingency" :amount 13390}]}
+              {:title "Local equip." :amount 7500}
+              {:title "Lodging/per diem" :amount 40000}
+              {:title "Rubbish" :amount 1400}]}
 
    {:title "Marketing"
-    :details [{:title "Visual identity" :amount 12500}
+    :description "Visibility and communications campaign: brand system, website, press toolkit, PR writing, advertising, outdoor placements, social media strategy, and media buys—positioning the Pavilion with institutional clarity and global reach."
+    :details [{:title "Visual ID" :amount 12500}
               {:title "Press kit" :amount 7500}
               {:title "Website" :amount 12000}
               {:title "OOH design" :amount 3500}
-              {:title "Exhibition graphics" :amount 5000}
+              {:title "Exh graphics" :amount 5000}
               {:title "Copywriting" :amount 1500}
               {:title "PR writing" :amount 3500}
-              {:title "OOH placement" :amount 8400}
-              {:title "Posters" :amount 8000}
-              {:title "Social ads" :amount 5000}
+              {:title "Totem OOH" :amount 8400}
+              {:title "Poster print" :amount 5000}
+              {:title "City posters" :amount 3000}
+              {:title "Social ad spend" :amount 5000}
               {:title "Campaign mgmt" :amount 5000}
-              {:title "Digital ads" :amount 7500}
-              {:title "Print ads" :amount 10000}
-              {:title "PR pre-opening" :amount 10000}
+              {:title "Digital pub ads" :amount 7500}
+              {:title "Print pub ads" :amount 10000}
+              {:title "PR pre-open" :amount 10000}
               {:title "PR ongoing" :amount 10000}
-              {:title "Marketing fee" :amount 7500}
-              {:title "Contingency" :amount 11690}]}
+              {:title "Marketing fee" :amount 7500}]}
 
    {:title "Publication"
+    :description "Catalogue and printed collateral: commissioned writing, design, editing, printing, and limited-run branded materials—extending the Pavilion into libraries, archives, and institutional discourse."
     :details [{:title "Curatorial essay" :amount 2500}
               {:title "Commissioned essays" :amount 8000}
               {:title "Artist texts" :amount 1500}
               {:title "Wall texts" :amount 1500}
-              {:title "Catalogue design" :amount 10000}
-              {:title "Editing & layout" :amount 7500}
-              {:title "Catalogue print" :amount 24000}
+              {:title "Cat design" :amount 10000}
+              {:title "Edit & layout" :amount 7500}
+              {:title "Cat print" :amount 24000}
+              {:title "Cat misc" :amount 1000}
               {:title "Tote design" :amount 3500}
-              {:title "Tote printing" :amount 4500}
+              {:title "Tote print" :amount 4500}
+              {:title "Tote misc" :amount 500}
               {:title "Stationery design" :amount 2500}
               {:title "Stationery print" :amount 1500}
-              {:title "Misc & proofs" :amount 1750}
-              {:title "Contingency" :amount 6875}]}
+              {:title "Stationery misc" :amount 250}]}
 
    {:title "Documentation"
-    :details [{:title "Camera rental" :amount 10000}
+    :description "Permanent record of the Pavilion: professional cinematography, sound, photography, editing/color, social deliverables, and archival storage—supporting press, scholarship, donor stewardship, and legacy."
+    :details [{:title "Camera pkg" :amount 10000}
               {:title "Film crew" :amount 24900}
-              {:title "Sound recording" :amount 2800}
+              {:title "Sound record" :amount 2800}
               {:title "Install photos" :amount 1750}
               {:title "Final photos" :amount 1800}
               {:title "Event photos" :amount 1400}
-              {:title "Film editing" :amount 5400}
+              {:title "Edit (assembly)" :amount 3000}
+              {:title "Edit (final)" :amount 2400}
               {:title "Sound mix" :amount 1600}
               {:title "Social clips" :amount 6000}
-              {:title "Archiving" :amount 750}
-              {:title "Contingency" :amount 5640}]}])
+              {:title "Archiving" :amount 750}]}])
 
 (defnc cost-breakdown
   []
   (d/div
-   {:class "flex flex-col justify-center h-full w-full py-8 text-2xl"}
+   {:class (css section-classes "justify-center py-8")
+    :id "budget"}
 
-   (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold"}
+   (d/p {:class "p-4 text-5xl font-futura font-bold"}
         "BUDGET")
 
-   (d/div {:class "p-4 mb-12"}
-          (d/p {}
-               "The total budget for the Armenian Pavilion 2026 is approximately "
-               (d/span {:class "font-bold"}
-                       "1,4M Euro, ")
-               (d/span {:class "font-bold"}
-                       "1,6M USD")
-               ", covering all aspects of production, installation, operations, marketing, and documentation."))
+   (d/div {:class "p-4 mb-6"}
+          (d/p {:class "text-lg md:text-xl leading-relaxed text-slate-300"}
+               (d/span {}
+                       "The Armenian Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
+                       "structured to meet the standards of the most rigorous national presentations. ")
+               (d/span {}
+                       "With a total budget of approximately ")
+               (d/span {:class "font-bold text-white"} "€1.4M")
+               (d/span {:class "text-slate-300"} " (")
+               (d/span {:class "font-bold text-white"} "$1.6M USD")
+               (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
+               (d/span {:class "font-semibold text-pink-400"} "production, installation, operations, communications,")
+               (d/span {:class "text-slate-300"} " and ")
+               (d/span {:class "font-semibold text-pink-400"} "documentation")
+               (d/span {:class "text-slate-300"} ". ")
+
+               (d/span {:class "block mt-6"}
+                       "Unlike projects that culminate at opening, this Pavilion is designed as a ")
+               (d/span {:class "font-semibold italic text-slate-100"} "seven-month operational commitment")
+               (d/span {:class "text-slate-300"} ": a living environment that functions simultaneously as exhibition space, working studio, public forum, and diplomatic platform—requiring sustained staffing, materials, logistics, and institutional oversight throughout the Biennale. ")
+
+               (d/span {:class "block mt-6"}
+                       "Significant investment secures venue readiness and compliance, supports curatorial and administrative leadership, funds museum-scale fabrication and specialized craft, and addresses Venice-specific transport, storage, installation, and return logistics. ")
+               (d/span {:class "font-medium text-slate-100"} "THE STUDIO")
+               (d/span {:class "text-slate-300"} " is budgeted as an ongoing on-site operation, ensuring continuous execution, maintenance, and evolution of the work across the exhibition period—distinguishing the Pavilion from static presentations. ")
+
+               (d/span {:class "block mt-6"}
+                       "Public visibility and long-term legacy are strengthened through opening week programs, marketing and PR, publication, and comprehensive film and photographic documentation—ensuring the Pavilion’s impact extends into international media, scholarship, and archives. ")
+
+               (d/span {:class "block mt-6 text-slate-400"}
+                       "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies.")))
 
    ($ budget-table
       {:cost-data cost-data})))
 
+(defnc section-link
+  [{:keys [title anchor]}]
+  (let [scroll-to-id (use-scroll-to-id)]
+    (d/button {:on-click #(scroll-to-id anchor)
+               :class "hover:text-pink-400 transition-colors"}
+              title " " ($ ChevronRightIcon {:class "w-6 h-6 inline-block ml-1"}))))
+
 (defnc header
   []
-  (d/div
-   (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-12 px-4"}
-          (d/img {:src "images/graphics/biennale_logo.png"}))
+  (d/div {:class ""}
+         (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-12 px-4"}
+                (d/img {:src "images/graphics/biennale_logo.png"}))
 
-   (d/div {:class "text-xl italic text-white px-4 mt-12 mb-8"}
-          (d/ul {}
-                (d/li {}
-                      "Armenian Pavilion")
-                (d/li {}
-                      "Artist: Zadik Zadikian")
-                (d/li {}
-                      "Curator: Tony Shafrazi")
-                (d/li {}
-                      "Curator: Tina Chakarian")
-                (d/li {}
-                      "2026 Venice Biennale")))))
+         (d/div {:class " italic text-white px-4 my-12"}
+                (d/ul {}
+                      (d/li {}
+                            "Armenian Pavilion")
+                      (d/li {}
+                            "Artist: Zadik Zadikian")
+                      (d/li {}
+                            "Curator: Tony Shafrazi")
+                      (d/li {}
+                            "Curator: Tina Chakarian")
+                      (d/li {}
+                            "2026 Venice Biennale")))
 
+         (d/div {:class "w-full p-4 mt-8"}
+                (d/div {:class "text-2xl text-white space-y-4 flex flex-col justify-start items-start"}
+                       ($ section-link
+                          {:title "1. Exhibition Press Release"
+                           :anchor "press-release"})
+                       ($ section-link
+                          {:title "2. The Studio"
+                           :anchor "about"})
+                       ($ section-link
+                          {:title "3. Budget"
+                           :anchor "budget"})
+                       ($ section-link
+                          {:title "4. Location"
+                           :anchor "location"})
+                       ($ section-link
+                          {:title "5. Donation Info"
+                           :anchor "donation"})))))
 (defnc about
   []
   (let [is-desktop? (use-touch-enabled)]
     (d/div
-     {:class "text-white
-                     
-                     flex
-                     justify-center
-                     flex-col
-                     h-full
-                     
-                      w-full
-                     
-                     text-2xl
-                     lg:text-2xl"}
+     {:class (css section-classes
+                  "text-white
+                     justify-center")
+      :id "about"}
 
      (d/div {:class "p-4"}
             (d/p {:class "
-                          mb-8
-                          font-bold
-                          font-futura
-                          text-5xl"}
+                     mb-8
+                     font-bold
+                     font-futura
+                     text-5xl"}
                  "THE STUDIO")
 
             (d/p
-             {:class "leading-relaxed text-lg md:text-xl"}
+             {:class ""}
              (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-             "is conceived as a living, evolving workspace—an active site of fabrication, touch, and continual reconfiguration. Throughout the Biennale, "
-             (d/span {:class "font-semibold italic"} "Zadik Zadikian and his team")
-             " transform the Armenian Pavilion into a functioning studio where plaster units are cast, pigmented, stacked, dismantled, and rebuilt in shifting constellations. "
-             (d/span {:class "italic"} "This is not a performance or a simulation,")
-             " but the studio made visible: an oasis and natural habitat in which "
-             (d/span {:class "font-medium"} "making itself becomes the work."))
+             "presents a body of sculptural work by "
+             (d/span {:class "font-semibold"} "Zadik Zadikian")
+             ", composed of discrete, serially produced units. Each unit is a complete work—materially resolved, formally precise, and conceptually sufficient. "
+             "The Pavilion does not stage an event, a performance, or a process. "
+             (d/span {:class "italic"} "It presents objects."))
 
             (d/p
-             {:class "mt-6 leading-relaxed text-lg md:text-xl"}
-             "At the heart of the project is an "
-             (d/span {:class "font-semibold"} "invented casting process")
-             ", in which liquid plaster is poured onto flat glass, producing planes of exceptional smoothness reinforced with lightweight foam cores. Pigment is embedded at the moment of formation, saturating each unit from within, while select pieces are "
-             (d/span {:class "font-semibold text-yellow-400"} "gilded in 24-karat gold")
-             ", marking moments where the elemental meets the transcendent. These blocks recall "
-             (d/span {:class "italic"} "Armenian tufo")
-             "—humble, ancient, and foundational—returning to Zadikian as memory, metaphor, and form, and mirroring the diasporic condition of "
-             (d/span {:class "italic"} "endurance through fragmentation and reinvention."))
+             {:class "mt-6"}
+             "The work consists of plaster units "
+             "pigmented through their full depth, calibrated in scale, and defined by strict attention to surface, edge, and volume. "
+             "Select units are marked by restrained applications of "
+             (d/span {:class "font-semibold text-yellow-400"} "24-karat gold")
+             ". Together, the works form a coherent system governed by internal logic rather than narrative or symbolism. "
+             "Meaning arises through direct encounter with the object as it exists—"
+             (d/span {:class "italic"} "not through instruction, participation, or spectacle."))
 
             (d/p
-             {:class "mt-6 leading-relaxed text-lg md:text-xl"}
-             "Guided by the ethos of "
+             {:class "mt-6"}
+             "This position situates "
+             (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+             "within a lineage of post-Minimal and Conceptual practice, recalling the serial clarity of "
+             (d/span {:class "italic"} "Sol LeWitt")
+             " and the refusal of expressive excess that defined a generation committed to objecthood. "
+             "Like those precedents, the work does not ask what the object represents, "
+             "but insists on "
+             (d/span {:class "font-medium"} "what it is."))
+
+            (d/p
+             {:class "mt-6"}
+             "The Pavilion operates as a neutral container—an armature that allows the work to be seen with restraint and precision. "
+             "While the artist and his team remain present on site throughout the Biennale, their labor is not framed as performance. "
+             "Making is neither dramatized nor aestheticized. "
+             "The studio here is not a spectacle, but a condition of necessity: "
+             "the place where work exists because it must.")
+
+            (d/p
+             {:class "mt-6"}
+             "This approach resonates closely with the Biennale’s curatorial framework, "
              (d/span {:class "italic font-medium"} "In Minor Keys")
-             ", "
+             ". Rather than amplification or declaration, the project advances through reduction, attention, and precision. "
+             "The modest, repeatable unit—easily overlooked—becomes the site of sustained focus. "
+             "Through rigor rather than scale, the work asserts its presence.")
+
+            (d/p
+             {:class "mt-6"}
+             "Philosophically, "
              (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-             "elevates the quiet, easily overlooked unit through care, repetition, and precision. Over seven months, structures are endlessly assembled and disassembled like "
-             (d/span {:class "italic"} "musical modulations")
-             ", remaining perpetually unfinished. Visitors are invited into this process through touch, making "
-             (d/span {:class "font-medium"} "haptic experience a mode of knowledge and participation.")
-             " In this communal space of slowness and attention, "
-             (d/span {:class "font-bold"} "THE STUDIO becomes the artwork itself")
-             ": a place where making is continuous, form is fluid, and the elemental reveals its quiet, enduring power.")
+             "approaches what "
+             (d/span {:class "italic"} "Immanuel Kant")
+             " described as the thing as such: the object freed from instrumental meaning, encountered on its own terms. "
+             "The works do not illustrate ideas, nor do they perform identity. "
+             (d/span {:class "font-medium"} "They stand as themselves—unadorned, resolute, and sufficient."))
 
             (d/div {:class "flex items-center justify-center"}
                    (d/div {:class "w-12 mt-12 border-t border-pink-500"})))
@@ -256,116 +354,103 @@
             [visited? is-visible?] (use-intersection-observer outer-ctx)]
         (d/div {:class ""
                 :ref outer-ctx}
-               (if is-desktop?
-                 ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                           :should-play? is-visible?
-                                           :allow-audio? true})
-                 ($ lazy-video-background {:playback-id "7qwSp8dt00X2Qht88MC86zyKRc4mykJno5TpkflUuN5E"
-                                           :should-play? is-visible?
-                                           :allow-audio? false}))))
+               ($ aspect-box {:ar "16/9"}
+                  ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
+                                            :should-play? is-visible?
+                                            :allow-audio? true}))))
       ($ captioned-image
-         {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
+         {:img-src "https://atd-722658831.imgix.net/artwork/blue_yellow_blue_yellow.jpg"
           :caption "BLUE YELLOW BLUE YELLOW"
-          :credit "© Zadik Zadikian 2026"})
-
-      ($ captioned-image
-         {:img-src "https://atd-722658831.imgix.net/photos/DSC02376%20Large.jpeg"
-          :caption "Stacked units"
-          :credit "Los Angeles, 2025"})
-
-      ($ captioned-image
-         {:img-src "https://atd-722658831.imgix.net/photos/DSC02363%20Large.jpeg"
-          :caption "Making of blue unit"
-          :credit "Los Angeles, 2025"})))))
+          :credit "© Zadik Zadikian 2026"})))))
 
 (defnc non-profit
   []
-  (d/div
-   (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold"}
-        "DONATION INFORMATION")
+  (d/div {:class section-classes :id "donation"}
+         (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold"}
+              "DONATION INFORMATION")
 
-   (d/div {:class "px-4 mb-12 text-lg md:text-xl leading-relaxed text-slate-300"}
+         (d/div {:class "px-4 mb-12 text-slate-300"}
 
-          (d/p {}
-               "The Armenian Pavilion 2026 is supported through "
-               (d/span {:class "font-semibold"} "Fallen Angels Inc.")
-               ", a registered "
-               (d/span {:class "font-semibold"} "501(c)(3)")
-               " non-profit organization. "
-               (d/span {:class "font-semibold"} "Contributions are tax deductible")
-               " to the extent permitted by law.")
+                (d/p {}
+                     "The Armenian Pavilion 2026 is supported through "
+                     (d/span {:class "font-semibold"} "Fallen Angels Inc.")
+                     ", a registered "
+                     (d/span {:class "font-semibold"} "501(c)(3)")
+                     " public non-profit organization. "
+                     (d/span {:class "font-semibold"} "Contributions are tax deductible")
+                     " to the extent permitted by law.")
 
-          (d/div {:class "mt-6 space-y-1"}
-                 (d/p {}
-                      (d/span {:class "font-semibold"} "Organization: ")
-                      "Fallen Angels Inc.")
-                 (d/p {}
-                      (d/span {:class "font-semibold"} "EIN: ")
-                      (d/span {:class "font-bold text-slate-100"} "92-2395513"))
-                 (d/p {}
-                      (d/span {:class "font-semibold"} "Located in: ")
-                      (d/span {:class "font-bold text-slate-100"} "Los Angeles, CA")))
+                (d/div {:class "mt-6 space-y-1"}
+                       (d/p {}
+                            (d/span {:class "font-semibold"} "Organization: ")
+                            "Fallen Angels Inc.")
+                       (d/p {}
+                            (d/span {:class "font-semibold"} "EIN: ")
+                            (d/span {:class "font-bold text-slate-100"} "92-2395513"))
+                       (d/p {}
+                            (d/span {:class "font-semibold"} "Located in: ")
+                            (d/span {:class "font-bold text-slate-100"} "Los Angeles, CA")))
 
-          (d/div {:class "mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10"}
+                (d/div {:class "mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10"}
 
-                 ;; Domestic
-                 (d/div
-                  (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
-                       "Domestic "
-                       (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
+                       ;; Domestic
+                       (d/div
+                        (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
+                             "Domestic "
+                             (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
 
-                  (d/div {:class "space-y-3"}
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Name:")
-                                (d/span {:class "text-right"} "Fallen Angels Inc."))
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Routing:")
-                                (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "091311229"))
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Account #:")
-                                (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "202535309341"))
-                         (d/div {:class "flex items-start justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Address:")
-                                (d/div {:class "text-right leading-snug"}
-                                       (d/p {} "Choice Financial Group")
-                                       (d/p {} "4501 23rd Avenue S")
-                                       (d/p {} "Fargo, ND 58104")))))
+                        (d/div {:class "space-y-3"}
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Name:")
+                                      (d/span {:class "text-right"} "Fallen Angels Inc."))
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Routing:")
+                                      (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "091311229"))
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Account #:")
+                                      (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "202535309341"))
+                               (d/div {:class "flex items-start justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Address:")
+                                      (d/div {:class "text-right leading-snug"}
+                                             (d/p {} "Choice Financial Group")
+                                             (d/p {} "4501 23rd Avenue S")
+                                             (d/p {} "Fargo, ND 58104")))))
 
-                 ;; International
-                 (d/div
-                  (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
-                       "International "
-                       (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
+                       ;; International
+                       (d/div
+                        (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
+                             "International "
+                             (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
 
-                  (d/div {:class "space-y-3"}
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Name:")
-                                (d/span {:class "text-right"} "Fallen Angels Inc."))
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "SWIFT/BIC:")
-                                (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "CHFGUS44021"))
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "ABA/Routing:")
-                                (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "091311229"))
-                         (d/div {:class "flex items-baseline justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "IBAN/Account #:")
-                                (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "202535309341"))
-                         (d/div {:class "flex items-start justify-between gap-6"}
-                                (d/span {:class "font-semibold"} "Address:")
-                                (d/div {:class "text-right leading-snug"}
-                                       (d/p {} "Choice Financial Group")
-                                       (d/p {} "4501 23rd Avenue S")
-                                       (d/p {} "Fargo, ND 58104")))))))
+                        (d/div {:class "space-y-3"}
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Name:")
+                                      (d/span {:class "text-right"} "Fallen Angels Inc."))
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "SWIFT/BIC:")
+                                      (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "CHFGUS44021"))
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "ABA/Routing:")
+                                      (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "091311229"))
+                               (d/div {:class "flex items-baseline justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "IBAN/Account #:")
+                                      (d/span {:class "text-right font-bold text-slate-100 tracking-wide"} "202535309341"))
+                               (d/div {:class "flex items-start justify-between gap-6"}
+                                      (d/span {:class "font-semibold"} "Address:")
+                                      (d/div {:class "text-right leading-snug"}
+                                             (d/p {} "Choice Financial Group")
+                                             (d/p {} "4501 23rd Avenue S")
+                                             (d/p {} "Fargo, ND 58104")))))))
 
-   (d/p {:class "p-4 mt-10 text-sm md:text-base text-slate-400"}
-        "If you would like a receipt letter for your records, please include your name and email address with the transfer memo.")))
+         (d/p {:class "p-4 mt-10 text-sm md:text-base text-slate-400"}
+              "If you would like a receipt letter for your records, please include your name and email address with the transfer memo.")))
 
 (defnc press-release
   []
   (let [[expanded? set-expanded] (hooks/use-state false)]
-    (d/div {:class ""}
+    (d/div {:class section-classes :id "press-release"}
            ;; Header
-           (d/div {:class "p-4 mt-12"}
+           (d/div {:class "p-4"}
                   (d/p {:class "text-5xl font-futura font-bold"}
                        "PRESS RELEASE"))
 
@@ -374,7 +459,7 @@
                   (d/p {:class "p-4 text-3xl font-futura italic"}
                        "Nov 15, 2025")
 
-                  (d/div {:class "px-4 text-lg md:text-xl leading-relaxed text-slate-300"}
+                  (d/div {:class "px-4 text-slate-300"}
 
                          ;; Headline
                          (d/p {:class "font-bold italic mb-6 text-pink-600"}
@@ -393,7 +478,7 @@
 
            ;; Expandable full content
            (when expanded?
-             (d/div {:class "px-4 text-lg md:text-xl leading-relaxed text-slate-300"}
+             (d/div {:class "px-4 text-slate-300"}
 
                     ;; Context / history
                     (d/p {:class "mb-6"}
@@ -451,11 +536,202 @@
                         :class "px-8 py-3"
                         :title "Read more"}))))))
 
+(defnc space-section
+  []
+  (d/div {:class section-classes :id "location"}
+         (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold uppercase"}
+              "Location information")
+
+         (d/div {:class "px-4 text-slate-300 italic mb-12 border-b border-slate-600 pb-12"}
+                (d/p {:class "leading-relaxed text-lg md:text-xl"}
+                     "The Armenian Pavilion 2026 unfolds across "
+                     (d/span {:class "font-semibold text-slate-100"} "three contiguous sites")
+                     " within the historic Arsenale of Venice—"
+                     (d/span {:class "font-semibold"} "an interior studio")
+                     ", "
+                     (d/span {:class "font-semibold"} "an open-air church courtyard")
+                     ", and "
+                     (d/span {:class "font-semibold"} "a canal-side outpost")
+                     ".")
+                (d/p {:class "mt-4 leading-relaxed text-lg md:text-xl"}
+                     "Together, these spaces form a single spatial constellation: "
+                     (d/span {:class "font-medium"} "a place of work")
+                     ", "
+                     (d/span {:class "font-medium"} "a place of weather and ruin")
+                     ", and "
+                     (d/span {:class "font-medium"} "a public-facing threshold")
+                     "—each distinct, yet inseparable."))
+
+         ;; --------------------------
+         ;; #1 — TESA 41
+         ;; --------------------------
+         (d/div
+          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
+               "#1 — TESA 41 (MAIN STUDIO)")
+
+          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
+                 (d/p {}
+                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                      " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
+                      (d/span {:class "font-semibold"} "5,000 square feet")
+                      " ("
+                      (d/span {:class "font-semibold"} "≈465 square meters")
+                      ") of expansive industrial volume that functions as the "
+                      (d/span {:class "italic"} "operational and conceptual heart")
+                      " of the project.")
+
+                 (d/p {}
+                      "Defined by scale, clarity, and architectural restraint, it is built for sustained "
+                      (d/span {:class "font-medium"} "fabrication")
+                      ", "
+                      (d/span {:class "font-medium"} "assembly")
+                      ", and "
+                      (d/span {:class "font-medium"} "reconfiguration")
+                      " across the full duration of the Biennale.")
+
+                 (d/p {}
+                      "Here, the Pavilion operates as a "
+                      (d/span {:class "font-semibold"} "working studio")
+                      " rather than a static exhibition: a place of continuous "
+                      (d/span {:class "font-medium"} "making")
+                      ", "
+                      (d/span {:class "font-medium"} "stacking")
+                      ", "
+                      (d/span {:class "font-medium"} "dismantling")
+                      ", and "
+                      (d/span {:class "font-medium"} "rebuilding")
+                      ". The interior volume allows the work to expand "
+                      (d/span {:class "font-medium"} "horizontally")
+                      " and "
+                      (d/span {:class "font-medium"} "vertically")
+                      ", accommodating both monumental arrangements and intimate moments of material attention.")
+
+                 (d/p {:class "pt-2"}
+                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                      " anchors the Pavilion physically and philosophically—establishing "
+                      (d/span {:class "italic"} "the studio as the artwork itself")
+                      "."))
+
+          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                 (let [is-desktop? (use-touch-enabled)
+                       outer-ctx (hooks/use-ref "outer-ctx")
+                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                   (d/div {:class ""
+                           :ref outer-ctx}
+                          ($ lazy-video-background {:playback-id "KE8WAwG3HNzHl01MfXZ8xAkMx5bLISQByLnYRSrp02J1w"
+                                                    :should-play? is-visible?
+                                                    :allow-audio? false})))))
+
+         (d/div {:class "border-t border-slate-600 my-12"})
+
+         ;; --------------------------
+         ;; #2 — GIARDINO 25
+         ;; --------------------------
+         (d/div
+          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
+               "#2 — GIARDINO 25 (CHURCH COURTYARD)")
+
+          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
+                 (d/p {}
+                      (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
+                      " is an adjacent open-air courtyard formed from the remains of a former church. "
+                      "Only the original perimeter walls remain; the roof has long since collapsed—"
+                      "leaving the space exposed to "
+                      (d/span {:class "font-medium"} "light")
+                      ", "
+                      (d/span {:class "font-medium"} "weather")
+                      ", and "
+                      (d/span {:class "font-medium"} "time")
+                      ".")
+
+                 (d/p {}
+                      "What survives is a richly textured architectural shell marked by age, erosion, and history. "
+                      "The courtyard’s stone walls, uneven surfaces, and traces of former sacred use create an atmosphere of "
+                      (d/span {:class "italic"} "quiet intensity")
+                      " and material depth.")
+
+                 (d/p {}
+                      "In contrast to the controlled interior of Tesa 41, Giardino 25 functions as a "
+                      (d/span {:class "font-semibold"} "threshold space")
+                      "—neither fully inside nor fully outside—where the work enters into direct dialogue with "
+                      (d/span {:class "font-medium"} "ruin")
+                      ", "
+                      (d/span {:class "font-medium"} "open sky")
+                      ", and "
+                      (d/span {:class "font-medium"} "changing light")
+                      ".")
+
+                 (d/p {:class "pt-2"}
+                      (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
+                      " extends the Pavilion outward—allowing the project to breathe within an environment shaped as much by "
+                      (d/span {:class "italic"} "absence")
+                      " as by structure."))
+
+          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                 (let [is-desktop? (use-touch-enabled)
+                       outer-ctx (hooks/use-ref "outer-ctx")
+                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                   (d/div {:class ""
+                           :ref outer-ctx}
+                          ($ lazy-video-background {:playback-id "00r6626C33zSItHxx4iRh1oJPgP1tsH01qR00bNkN7i4go"
+                                                    :should-play? is-visible?
+                                                    :allow-audio? false})))))
+
+
+         (d/div {:class "border-t border-slate-600 my-12"})
+
+         ;; --------------------------
+         ;; #3 — OUTPOST
+         ;; --------------------------
+         (d/div
+          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
+               "#3 — OUTPOST (CANAL WALKWAY)")
+
+          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
+                 (d/p {}
+                      "The "
+                      (d/span {:class "font-semibold text-slate-100"} "Outpost")
+                      " occupies a brick- and stone-laid walkway that projects into the main canal of the Arsenale. "
+                      "Positioned directly in front of "
+                      (d/span {:class "font-medium"} "Tesa 41")
+                      " and "
+                      (d/span {:class "font-medium"} "Giardino 25")
+                      ", this narrow but critical site serves as the Pavilion’s most "
+                      (d/span {:class "font-semibold"} "publicly visible point of contact")
+                      ".")
+
+                 (d/p {}
+                      "The Outpost can be seen from a major pedestrian route leading into the central Arsenale exhibition grounds. "
+                      "Visitors cross a well-known, heavily trafficked bridge and encounter this site "
+                      (d/span {:class "italic"} "before")
+                      " reaching the main Biennale axis.")
+
+                 (d/p {}
+                      "As a result, the Outpost functions as a "
+                      (d/span {:class "font-semibold"} "signal")
+                      " and a "
+                      (d/span {:class "font-semibold"} "threshold")
+                      "—an early, unavoidable presence that announces the Pavilion to thousands of passersby, including those who may never enter the interior spaces.")
+
+                 (d/p {:class "pt-2"}
+                      "This location extends the Pavilion into the daily flow of the Biennale—establishing a continuous visual and conceptual presence along the canal."))
+
+          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                 (let [is-desktop? (use-touch-enabled)
+                       outer-ctx (hooks/use-ref "outer-ctx")
+                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                   (d/div {:class ""
+                           :ref outer-ctx}
+                          ($ lazy-video-background {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
+                                                    :should-play? is-visible?
+                                                    :allow-audio? false})))))))
+
 (defnc budget-section
   []
   ($ section
      {:key "budget-section"
       :section-id "budget-section"}
+     ($ back-up-nav)
      (d/div
       {:class "w-full h-full
                text-white
@@ -466,5 +742,6 @@
              ($ press-release)
              ($ about)
              ($ cost-breakdown)
+             ($ space-section)
              ($ non-profit)
              ($ contact-section)))))

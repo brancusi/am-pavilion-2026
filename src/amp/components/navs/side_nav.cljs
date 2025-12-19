@@ -100,11 +100,10 @@
                                  :rotation 0})
 
      (use-toggle-animations
-      comp-ref
-      :on {:background-color "#FF01D6"}
-      :off {:background-color "#67C5CB"}
-      :is-on? menu-open?
-      :initial true)
+      {:target comp-ref
+       :on-to {:background-color "#FF01D6"}
+       :off-to {:background-color "#67C5CB"}
+       :is-on? menu-open?})
 
      (d/div {:class "relative"}
 

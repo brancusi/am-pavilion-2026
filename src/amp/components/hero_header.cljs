@@ -5,7 +5,7 @@
    [amp.components.sections.video-section :refer [video-section]]
    [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
    [amp.components.ui.lower-panel-cta :refer [lower-panel-cta]]
-   [amp.hooks.use-scroll-to :refer [use-scroll-to]]
+   [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -14,7 +14,7 @@
 (defnc hero-header
   []
   (let [outer-ctx (hooks/use-ref "outer-ctx")
-        {:keys [scroll-to-id]} (use-scroll-to)
+        scroll-to-id (use-scroll-to-id)
         [visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})]
 
     (d/div {:id "hero"

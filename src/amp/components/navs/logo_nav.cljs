@@ -22,11 +22,10 @@
                           :out {:opacity 0.7})
 
     (use-toggle-animations
-     comp-ref
-     :on {:y 0}
-     :off {:y -250}
-     :is-on? is-active?
-     :initial false)
+     {:target comp-ref
+      :on-to {:y 0}
+      :off-to {:y -250}
+      :is-on? is-active?})
 
     (d/div {:ref comp-ref
             :class "fixed 

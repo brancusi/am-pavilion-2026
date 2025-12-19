@@ -12,18 +12,62 @@
 (defn calculate-section-total [details]
   (reduce + (map :amount details)))
 
+
+(comment
+
+  (calculate-section-total [{:title "Crates" :amount 15000}
+                            {:title "Supplies" :amount 10000}
+                            {:title "Packing labor" :amount 6000}
+                            {:title "Ship LA–Venice" :amount 30000}
+                            {:title "Ship Venice–LA" :amount 30000}
+                            {:title "Insurance" :amount 12000}
+                            {:title "Install crew" :amount 16200}
+                            {:title "Port handling" :amount 2500}
+                            {:title "Barge transport" :amount 6000}
+                            {:title "Local trucking" :amount 2400}
+                            {:title "Forklift & crew" :amount 1800}
+                            {:title "Short storage" :amount 1200}
+                            {:title "Crate storage" :amount 2000}
+                            {:title "Waste removal" :amount 1000}
+                            {:title "Reverse logistics" :amount 6700}
+                            {:title "Contingency" :amount 14160}])
+
+  ;;Keep from folding
+  )
+
 (defnc total-section
   [{:keys [cost-data]}]
-  (let [grand-total (reduce + (map #(calculate-section-total (:details %)) cost-data))]
-    (d/li {:class "bg-slate-200 text-slate-900 flex justify-between items-center px-4 py-4 mt-4"}
-          (d/div {:class "w-6/12 "}
-                 (d/h3 {:class "font-semibold text-2xl"}
-                       "BUDGET"))
-          (d/div {:class "w-1/12 "})
-          (d/div {:class "w-4/12 flex justify-end items-center space-x-4 "}
-                 (d/span {:class "font-medium "}
-                         (format-currency grand-total)))
-          (d/div {:class "w-1/12"}))))
+  (let [sub-total (reduce + (map #(calculate-section-total (:details %)) cost-data))
+        contingency (* sub-total 0.1)
+        grand-total (+ sub-total contingency)]
+    (d/div {:class "flex flex-col"}
+           (d/li {:class "bg-slate-200 text-slate-900 flex justify-between items-center px-4 py-2 mt-4"}
+                 (d/div {:class "w-6/12 "}
+                        (d/h3 {:class "text-xl italic"}
+                              "Sub total"))
+                 (d/div {:class "w-1/12 "})
+                 (d/div {:class "w-4/12 flex justify-end items-center space-x-4 "}
+                        (d/span {:class "font-medium "}
+                                (format-currency sub-total)))
+                 (d/div {:class "w-1/12"}))
+           (d/li {:class "bg-slate-300 text-slate-900 flex justify-between items-center px-4 py-2"}
+                 (d/div {:class "w-6/12 "}
+                        (d/h3 {:class "text-xl italic"}
+                              "Contingency 10%"))
+                 (d/div {:class "w-1/12 "})
+                 (d/div {:class "w-4/12 flex justify-end items-center space-x-4 "}
+                        (d/span {:class "font-medium "}
+                                (format-currency (* sub-total 0.1))))
+                 (d/div {:class "w-1/12"}))
+           (d/li {:class "bg-slate-200 text-slate-900 flex justify-between items-center px-4 py-4"}
+                 (d/div {:class "w-6/12 "}
+                        (d/h3 {:class "font-semibold text-2xl"}
+                              "TOTAL"))
+                 (d/div {:class "w-1/12 "})
+                 (d/div {:class "w-4/12 flex justify-end items-center space-x-4 "}
+                        (d/span {:class "font-medium "}
+                                (format-currency grand-total)))
+                 (d/div {:class "w-1/12"})))))
 
 (defnc detail-line-item
   [{:keys [idx detail]}]
@@ -58,8 +102,11 @@
                                             (when (expanded-items item-id) "rotate-90"))}
                                ($ ChevronRightIcon))))
           (when (expanded-items item-id)
-            (d/div {:class "text-base bg-slate-900"}
-                   (d/ul {:class "pt-2"}
+            (d/div {:class ""}
+                   (d/div {:class "text-base bg-slate-200/10 text-white"}
+                          (d/p {:class "p-4"}
+                               (:description item)))
+                   (d/ul {:class ""}
                          (map-indexed (fn [idx detail]
                                         ($ detail-line-item
                                            {:idx idx
