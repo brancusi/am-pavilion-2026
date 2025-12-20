@@ -238,8 +238,17 @@
 (defnc header
   []
   (d/div {:class ""}
+
+
          (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4"}
                 (d/img {:src "images/graphics/biennale_logo.png"}))
+
+         ;; Create main header text that explain the purpose of the document for potential donors
+         (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
+                (d/h1 {:class "font-helvetica font-bold text-5xl lg:text-6xl text-white mb-6"}
+                      "ARMENIAN PAVILION 2026 VENICE BIENNALE"))
+
+
 
          #_(d/div {:class " italic text-white px-4 my-12"}
                   (d/ul {}
@@ -260,13 +269,13 @@
                           {:title "1. Exhibition Press Release"
                            :anchor "press-release"})
                        ($ section-link
-                          {:title "2. The Studio"
+                          {:title "2. Overview - THE STUDIO"
                            :anchor "about"})
                        ($ section-link
                           {:title "3. Budget"
                            :anchor "budget"})
                        ($ section-link
-                          {:title "4. Location"
+                          {:title "4. Location Details"
                            :anchor "location"})
                        ($ section-link
                           {:title "5. Donation Info"
@@ -286,7 +295,7 @@
                      font-bold
                      font-helvetica
                      text-5xl"}
-                 "THE STUDIO")
+                 "OVERVIEW - THE STUDIO")
 
             (d/div {:class "text-xl"}
                    (d/p
@@ -459,26 +468,18 @@
                        "PRESS RELEASE"))
 
            ;; Always visible teaser content
-           (d/div {:class ""}
-                  (d/p {:class "p-4 text-3xl font-helvetica italic"}
-                       "Nov 15, 2025")
+           (d/div {:class "px-4 text-slate-100"}
 
-                  (d/div {:class "px-4 text-slate-100"}
-
-                         ;; Headline
-                         (d/p {:class "font-bold italic mb-6 text-pink-600"}
-                              "Artist Zadik Zadikian and legendary art dealer Tony Shafrazi to represent Armenia at the 61st Venice Biennale")
-
-                         ;; Dateline - always visible
-                         (d/p {:class "font-medium text-xl mb-6"}
-                              (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
-                              "The Ministry of Culture of the Republic of Armenia has selected "
-                              (d/span {:class "font-semibold"} "Zadik Zadikian")
-                              " to represent Armenia at the "
-                              (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
-                              " in 2026. Led by legendary art dealer "
-                              (d/span {:class "font-semibold"} "Tony Shafrazi")
-                              " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage.")))
+                  ;; Dateline - always visible
+                  (d/p {:class "font-medium text-xl mb-6"}
+                       (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
+                       "The Ministry of Culture of the Republic of Armenia has selected "
+                       (d/span {:class "font-semibold"} "Zadik Zadikian")
+                       " to represent Armenia at the "
+                       (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
+                       " in 2026. Led by legendary art dealer "
+                       (d/span {:class "font-semibold"} "Tony Shafrazi")
+                       " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage."))
 
            ;; Expandable full content
            (when expanded?
