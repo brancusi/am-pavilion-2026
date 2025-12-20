@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         futura: ["futura-100", "sans-serif"],
+        helvetica: ["helvetica-neue", "sans-serif"],
 
         // For Book (400)
         "futura-book": ["futura-100-book", "sans-serif"],

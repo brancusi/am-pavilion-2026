@@ -13,7 +13,7 @@
   [{:keys [img-src children]}]
   (let [image-container (hooks/use-ref "image-container")
         dimensions (use-container-size image-container)]
-    (d/div {:class "w-full h-screen overflow-hidden"
+    (d/div {:class "w-full h-full overflow-hidden"
             :ref image-container}
            (d/div {:class "h-full w-full overflow-hidden "}
                   ($ lazy-image {:src img-src
@@ -25,8 +25,9 @@
 
            (d/div {:class "relative origin-bottom-right"
                    :style {:transform "rotate(-90deg) translateX(100%)"}}
-                  (d/div {:class ""}
-                         (d/div {:class "absolute
+                  (when children
+                    (d/div {:class ""}
+                           (d/div {:class "absolute
                                        bottom-0
                                        font-fira-code
                                        bg-white/60
@@ -36,4 +37,4 @@
                                        mb-4
                                        text-slate-700
                                        whitespace-nowrap"}
-                                children))))))
+                                  children)))))))

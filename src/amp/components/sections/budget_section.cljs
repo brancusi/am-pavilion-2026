@@ -19,7 +19,7 @@
 
 (def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
-(def section-classes "mt-12 flex flex-col w-full h-full text-lg md:text-xl leading-relaxed")
+(def section-classes "mt-8 flex flex-col w-full h-full text-lg md:text-xl  font-helvetica")
 
 (defn css
   [& classes]
@@ -190,11 +190,11 @@
    {:class (css section-classes "justify-center py-8")
     :id "budget"}
 
-   (d/p {:class "p-4 text-5xl font-futura font-bold"}
+   (d/p {:class "p-4 text-5xl font-helvetica font-bold"}
         "BUDGET")
 
-   (d/div {:class "p-4 mb-6"}
-          (d/p {:class "text-lg md:text-xl leading-relaxed text-slate-300"}
+   (d/div {:class "p-4 mb-6 font-medium"}
+          (d/p {:class "text-xl  text-slate-100"}
                (d/span {}
                        "The Armenian Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
                        "structured to meet the standards of the most rigorous national presentations. ")
@@ -216,13 +216,13 @@
 
                (d/span {:class "block mt-6"}
                        "Significant investment secures venue readiness and compliance, supports curatorial and administrative leadership, funds museum-scale fabrication and specialized craft, and addresses Venice-specific transport, storage, installation, and return logistics. ")
-               (d/span {:class "font-medium text-slate-100"} "THE STUDIO")
-               (d/span {:class "text-slate-300"} " is budgeted as an ongoing on-site operation, ensuring continuous execution, maintenance, and evolution of the work across the exhibition period—distinguishing the Pavilion from static presentations. ")
+
+               (d/span {:class "block mt-6"} "THE STUDIO is budgeted as an ongoing on-site operation, ensuring continuous execution, maintenance, and evolution of the work across the exhibition period—distinguishing the Pavilion from static presentations. ")
 
                (d/span {:class "block mt-6"}
                        "Public visibility and long-term legacy are strengthened through opening week programs, marketing and PR, publication, and comprehensive film and photographic documentation—ensuring the Pavilion’s impact extends into international media, scholarship, and archives. ")
 
-               (d/span {:class "block mt-6 text-slate-400"}
+               (d/span {:class "block italic mt-6 font-normal text-lg"}
                        "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies.")))
 
    ($ budget-table
@@ -238,23 +238,23 @@
 (defnc header
   []
   (d/div {:class ""}
-         (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-12 px-4"}
+         (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4"}
                 (d/img {:src "images/graphics/biennale_logo.png"}))
 
-         (d/div {:class " italic text-white px-4 my-12"}
-                (d/ul {}
-                      (d/li {}
-                            "Armenian Pavilion")
-                      (d/li {}
-                            "Artist: Zadik Zadikian")
-                      (d/li {}
-                            "Curator: Tony Shafrazi")
-                      (d/li {}
-                            "Curator: Tina Chakarian")
-                      (d/li {}
-                            "2026 Venice Biennale")))
+         #_(d/div {:class " italic text-white px-4 my-12"}
+                  (d/ul {}
+                        (d/li {}
+                              "Armenian Pavilion")
+                        (d/li {}
+                              "Artist: Zadik Zadikian")
+                        (d/li {}
+                              "Curator: Tony Shafrazi")
+                        (d/li {}
+                              "Curator: Tina Chakarian")
+                        (d/li {}
+                              "2026 Venice Biennale")))
 
-         (d/div {:class "w-full p-4 mt-8"}
+         (d/div {:class "w-full px-4 mt-16"}
                 (d/div {:class "text-2xl text-white space-y-4 flex flex-col justify-start items-start"}
                        ($ section-link
                           {:title "1. Exhibition Press Release"
@@ -284,68 +284,69 @@
             (d/p {:class "
                      mb-8
                      font-bold
-                     font-futura
+                     font-helvetica
                      text-5xl"}
                  "THE STUDIO")
 
-            (d/p
-             {:class ""}
-             (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-             "presents a body of sculptural work by "
-             (d/span {:class "font-semibold"} "Zadik Zadikian")
-             ", composed of discrete, serially produced units. Each unit is a complete work—materially resolved, formally precise, and conceptually sufficient. "
-             "The Pavilion does not stage an event, a performance, or a process. "
-             (d/span {:class "italic"} "It presents objects."))
+            (d/div {:class "text-xl"}
+                   (d/p
+                    {:class ""}
+                    (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                    "presents a body of sculptural work by "
+                    (d/span {:class "font-semibold"} "Zadik Zadikian")
+                    ", composed of discrete, serially produced units. Each unit is a complete work—materially resolved, formally precise, and conceptually sufficient. "
+                    "The Pavilion does not stage an event, a performance, or a process. "
+                    (d/span {:class "italic"} "It presents objects."))
 
-            (d/p
-             {:class "mt-6"}
-             "The work consists of plaster units "
-             "pigmented through their full depth, calibrated in scale, and defined by strict attention to surface, edge, and volume. "
-             "Select units are marked by restrained applications of "
-             (d/span {:class "font-semibold text-yellow-400"} "24-karat gold")
-             ". Together, the works form a coherent system governed by internal logic rather than narrative or symbolism. "
-             "Meaning arises through direct encounter with the object as it exists—"
-             (d/span {:class "italic"} "not through instruction, participation, or spectacle."))
+                   (d/p
+                    {:class "mt-6"}
+                    "The work consists of plaster units "
+                    "pigmented through their full depth, calibrated in scale, and defined by strict attention to surface, edge, and volume. "
+                    "Select units are marked by restrained applications of "
+                    (d/span {:class "font-semibold text-yellow-400"} "24-karat gold")
+                    ". Together, the works form a coherent system governed by internal logic rather than narrative or symbolism. "
+                    "Meaning arises through direct encounter with the object as it exists—"
+                    (d/span {:class "italic"} "not through instruction, participation, or spectacle."))
 
-            (d/p
-             {:class "mt-6"}
-             "This position situates "
-             (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-             "within a lineage of post-Minimal and Conceptual practice, recalling the serial clarity of "
-             (d/span {:class "italic"} "Sol LeWitt")
-             " and the refusal of expressive excess that defined a generation committed to objecthood. "
-             "Like those precedents, the work does not ask what the object represents, "
-             "but insists on "
-             (d/span {:class "font-medium"} "what it is."))
+                   (d/p
+                    {:class "mt-6"}
+                    "This position situates "
+                    (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                    "within a lineage of post-Minimal and Conceptual practice, recalling the serial clarity of "
+                    (d/span {:class "italic"} "Sol LeWitt")
+                    " and the refusal of expressive excess that defined a generation committed to objecthood. "
+                    "Like those precedents, the work does not ask what the object represents, "
+                    "but insists on "
+                    (d/span {:class "font-medium"} "what it is."))
 
-            (d/p
-             {:class "mt-6"}
-             "The Pavilion operates as a neutral container—an armature that allows the work to be seen with restraint and precision. "
-             "While the artist and his team remain present on site throughout the Biennale, their labor is not framed as performance. "
-             "Making is neither dramatized nor aestheticized. "
-             "The studio here is not a spectacle, but a condition of necessity: "
-             "the place where work exists because it must.")
+                   (d/p
+                    {:class "mt-6"}
+                    "The Pavilion operates as a neutral container—an armature that allows the work to be seen with restraint and precision. "
+                    "While the artist and his team remain present on site throughout the Biennale, their labor is not framed as performance. "
+                    "Making is neither dramatized nor aestheticized. "
+                    "The studio here is not a spectacle, but a condition of necessity: "
+                    "the place where work exists because it must.")
 
-            (d/p
-             {:class "mt-6"}
-             "This approach resonates closely with the Biennale’s curatorial framework, "
-             (d/span {:class "italic font-medium"} "In Minor Keys")
-             ". Rather than amplification or declaration, the project advances through reduction, attention, and precision. "
-             "The modest, repeatable unit—easily overlooked—becomes the site of sustained focus. "
-             "Through rigor rather than scale, the work asserts its presence.")
+                   (d/p
+                    {:class "mt-6"}
+                    "This approach resonates closely with the Biennale’s curatorial framework, "
+                    (d/span {:class "italic font-medium"} "In Minor Keys")
+                    ". Rather than amplification or declaration, the project advances through reduction, attention, and precision. "
+                    "The modest, repeatable unit—easily overlooked—becomes the site of sustained focus. "
+                    "Through rigor rather than scale, the work asserts its presence.")
 
-            (d/p
-             {:class "mt-6"}
-             "Philosophically, "
-             (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-             "approaches what "
-             (d/span {:class "italic"} "Immanuel Kant")
-             " described as the thing as such: the object freed from instrumental meaning, encountered on its own terms. "
-             "The works do not illustrate ideas, nor do they perform identity. "
-             (d/span {:class "font-medium"} "They stand as themselves—unadorned, resolute, and sufficient."))
+                   (d/p
+                    {:class "mt-6"}
+                    "Philosophically, "
+                    (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
+                    "approaches what "
+                    (d/span {:class "italic"} "Immanuel Kant")
+                    " described as the thing as such: the object freed from instrumental meaning, encountered on its own terms. "
+                    "The works do not illustrate ideas, nor do they perform identity. "
+                    (d/span {:class "font-medium"} "They stand as themselves—unadorned, resolute, and sufficient."))
 
-            (d/div {:class "flex items-center justify-center"}
-                   (d/div {:class "w-12 mt-12 border-t border-pink-500"})))
+                   (d/div {:class "flex items-center justify-center"}
+                          (d/div {:class "w-12 mt-12 border-t border-pink-500"}))))
 
 
      (d/div
@@ -361,12 +362,15 @@
       ($ captioned-image
          {:img-src "https://atd-722658831.imgix.net/artwork/blue_yellow_blue_yellow.jpg"
           :caption "BLUE YELLOW BLUE YELLOW"
-          :credit "© Zadik Zadikian 2026"})))))
+          :credit "© Zadik Zadikian 2026"})
+      ($ aspect-box {:ar "16/9"}
+         ($ captioned-image
+            {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"}))))))
 
 (defnc non-profit
   []
   (d/div {:class section-classes :id "donation"}
-         (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold"}
+         (d/p {:class "mb-8 p-4 text-5xl font-helvetica font-bold"}
               "DONATION INFORMATION")
 
          (d/div {:class "px-4 mb-12 text-slate-300"}
@@ -395,7 +399,7 @@
 
                        ;; Domestic
                        (d/div
-                        (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
+                        (d/p {:class "text-3xl font-helvetica font-bold text-slate-100 mb-4"}
                              "Domestic "
                              (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
 
@@ -418,7 +422,7 @@
 
                        ;; International
                        (d/div
-                        (d/p {:class "text-3xl font-futura font-bold text-slate-100 mb-4"}
+                        (d/p {:class "text-3xl font-helvetica font-bold text-slate-100 mb-4"}
                              "International "
                              (d/span {:class "italic font-normal text-slate-300"} "Transfers"))
 
@@ -451,22 +455,22 @@
     (d/div {:class section-classes :id "press-release"}
            ;; Header
            (d/div {:class "p-4"}
-                  (d/p {:class "text-5xl font-futura font-bold"}
+                  (d/p {:class "text-5xl font-helvetica font-bold"}
                        "PRESS RELEASE"))
 
            ;; Always visible teaser content
-           (d/div {}
-                  (d/p {:class "p-4 text-3xl font-futura italic"}
+           (d/div {:class ""}
+                  (d/p {:class "p-4 text-3xl font-helvetica italic"}
                        "Nov 15, 2025")
 
-                  (d/div {:class "px-4 text-slate-300"}
+                  (d/div {:class "px-4 text-slate-100"}
 
                          ;; Headline
                          (d/p {:class "font-bold italic mb-6 text-pink-600"}
                               "Artist Zadik Zadikian and legendary art dealer Tony Shafrazi to represent Armenia at the 61st Venice Biennale")
 
                          ;; Dateline - always visible
-                         (d/p {:class "font-medium mb-6"}
+                         (d/p {:class "font-medium text-xl mb-6"}
                               (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
                               "The Ministry of Culture of the Republic of Armenia has selected "
                               (d/span {:class "font-semibold"} "Zadik Zadikian")
@@ -478,7 +482,7 @@
 
            ;; Expandable full content
            (when expanded?
-             (d/div {:class "px-4 text-slate-300"}
+             (d/div {:class "px-4 text-slate-100 text-xl"}
 
                     ;; Context / history
                     (d/p {:class "mb-6"}
@@ -500,7 +504,7 @@
 
                     ;; Quote
                     (d/p {:class "mb-6 italic"}
-                         "\" We're creating material that transforms by its very nature into sculpture—material with a clarity of line and reflection so immediate that the eye can fly across it,\" says Zadikian.")
+                         "\"We're creating material that transforms by its very nature into sculpture—material with a clarity of line and reflection so immediate that the eye can fly across it,\" says Zadikian.")
 
                     ;; Shafrazi quote
                     (d/p {:class "mb-6 italic"}
@@ -539,192 +543,193 @@
 (defnc space-section
   []
   (d/div {:class section-classes :id "location"}
-         (d/p {:class "mb-8 p-4 text-5xl font-futura font-bold uppercase"}
+         (d/p {:class "p-4 text-5xl font-bold uppercase"}
               "Location information")
 
-         (d/div {:class "px-4 text-slate-300 italic mb-12 border-b border-slate-600 pb-12"}
-                (d/p {:class "leading-relaxed text-lg md:text-xl"}
-                     "The Armenian Pavilion 2026 unfolds across "
-                     (d/span {:class "font-semibold text-slate-100"} "three contiguous sites")
-                     " within the historic Arsenale of Venice—"
-                     (d/span {:class "font-semibold"} "an interior studio")
-                     ", "
-                     (d/span {:class "font-semibold"} "an open-air church courtyard")
-                     ", and "
-                     (d/span {:class "font-semibold"} "a canal-side outpost")
-                     ".")
-                (d/p {:class "mt-4 leading-relaxed text-lg md:text-xl"}
-                     "Together, these spaces form a single spatial constellation: "
-                     (d/span {:class "font-medium"} "a place of work")
-                     ", "
-                     (d/span {:class "font-medium"} "a place of weather and ruin")
-                     ", and "
-                     (d/span {:class "font-medium"} "a public-facing threshold")
-                     "—each distinct, yet inseparable."))
+         (d/div {:class "text-slate-100 font-medium text-xl"}
+                (d/div {:class "px-4 mb-12 border-b border-slate-600 pb-12"}
+                       (d/p {:class " "}
+                            "The Armenian Pavilion 2026 unfolds across "
+                            (d/span {:class "font-semibold"} "three contiguous sites")
+                            " within the historic Arsenale of Venice—"
+                            (d/span {:class "font-semibold"} "an interior studio")
+                            ", "
+                            (d/span {:class "font-semibold"} "an open-air church courtyard")
+                            ", and "
+                            (d/span {:class "font-semibold"} "a canal-side outpost")
+                            ".")
+                       (d/p {:class "mt-4 "}
+                            "Together, these spaces form a single spatial constellation: "
+                            (d/span {:class ""} "a place of work")
+                            ", "
+                            (d/span {:class ""} "a place of weather and ruin")
+                            ", and "
+                            (d/span {:class ""} "a public-facing threshold")
+                            "—each distinct, yet inseparable."))
 
-         ;; --------------------------
-         ;; #1 — TESA 41
-         ;; --------------------------
-         (d/div
-          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
-               "#1 — TESA 41 (MAIN STUDIO)")
+                ;; --------------------------
+                ;; #1 — TESA 41
+                ;; --------------------------
+                (d/div {:class "text-xl font-medium"}
+                       (d/p {:class "px-4 pb-4 font-bold uppercase"}
+                            "#1 — TESA 41 (MAIN STUDIO)")
 
-          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
-                 (d/p {}
-                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
-                      " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
-                      (d/span {:class "font-semibold"} "5,000 square feet")
-                      " ("
-                      (d/span {:class "font-semibold"} "≈465 square meters")
-                      ") of expansive industrial volume that functions as the "
-                      (d/span {:class "italic"} "operational and conceptual heart")
-                      " of the project.")
+                       (d/div {:class "px-4 space-y-6"}
+                              (d/p {}
+                                   (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                                   " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
+                                   (d/span {:class "font-semibold"} "5,000 square feet")
+                                   " ("
+                                   (d/span {:class "font-semibold"} "≈465 square meters")
+                                   ") of expansive industrial volume that functions as the "
+                                   (d/span {:class "italic"} "operational and conceptual heart")
+                                   " of the project.")
 
-                 (d/p {}
-                      "Defined by scale, clarity, and architectural restraint, it is built for sustained "
-                      (d/span {:class "font-medium"} "fabrication")
-                      ", "
-                      (d/span {:class "font-medium"} "assembly")
-                      ", and "
-                      (d/span {:class "font-medium"} "reconfiguration")
-                      " across the full duration of the Biennale.")
+                              (d/p {}
+                                   "Defined by scale, clarity, and architectural restraint, it is built for sustained "
+                                   (d/span {:class "font-medium"} "fabrication")
+                                   ", "
+                                   (d/span {:class "font-medium"} "assembly")
+                                   ", and "
+                                   (d/span {:class "font-medium"} "reconfiguration")
+                                   " across the full duration of the Biennale.")
 
-                 (d/p {}
-                      "Here, the Pavilion operates as a "
-                      (d/span {:class "font-semibold"} "working studio")
-                      " rather than a static exhibition: a place of continuous "
-                      (d/span {:class "font-medium"} "making")
-                      ", "
-                      (d/span {:class "font-medium"} "stacking")
-                      ", "
-                      (d/span {:class "font-medium"} "dismantling")
-                      ", and "
-                      (d/span {:class "font-medium"} "rebuilding")
-                      ". The interior volume allows the work to expand "
-                      (d/span {:class "font-medium"} "horizontally")
-                      " and "
-                      (d/span {:class "font-medium"} "vertically")
-                      ", accommodating both monumental arrangements and intimate moments of material attention.")
+                              (d/p {}
+                                   "Here, the Pavilion operates as a "
+                                   (d/span {:class "font-semibold"} "working studio")
+                                   " rather than a static exhibition: a place of continuous "
+                                   (d/span {:class "font-medium"} "making")
+                                   ", "
+                                   (d/span {:class "font-medium"} "stacking")
+                                   ", "
+                                   (d/span {:class "font-medium"} "dismantling")
+                                   ", and "
+                                   (d/span {:class "font-medium"} "rebuilding")
+                                   ". The interior volume allows the work to expand "
+                                   (d/span {:class "font-medium"} "horizontally")
+                                   " and "
+                                   (d/span {:class "font-medium"} "vertically")
+                                   ", accommodating both monumental arrangements and intimate moments of material attention.")
 
-                 (d/p {:class "pt-2"}
-                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
-                      " anchors the Pavilion physically and philosophically—establishing "
-                      (d/span {:class "italic"} "the studio as the artwork itself")
-                      "."))
+                              (d/p {:class "pt-2"}
+                                   (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                                   " anchors the Pavilion physically and philosophically—establishing "
+                                   (d/span {:class "italic"} "the studio as the artwork itself")
+                                   "."))
 
-          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
-                 (let [is-desktop? (use-touch-enabled)
-                       outer-ctx (hooks/use-ref "outer-ctx")
-                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
-                   (d/div {:class ""
-                           :ref outer-ctx}
-                          ($ lazy-video-background {:playback-id "KE8WAwG3HNzHl01MfXZ8xAkMx5bLISQByLnYRSrp02J1w"
-                                                    :should-play? is-visible?
-                                                    :allow-audio? false})))))
+                       (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                              (let [is-desktop? (use-touch-enabled)
+                                    outer-ctx (hooks/use-ref "outer-ctx")
+                                    [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                                (d/div {:class ""
+                                        :ref outer-ctx}
+                                       ($ lazy-video-background {:playback-id "KE8WAwG3HNzHl01MfXZ8xAkMx5bLISQByLnYRSrp02J1w"
+                                                                 :should-play? is-visible?
+                                                                 :allow-audio? false}))))
 
-         (d/div {:class "border-t border-slate-600 my-12"})
+                       (d/div {:class "border-t border-slate-600 my-12"})
 
-         ;; --------------------------
-         ;; #2 — GIARDINO 25
-         ;; --------------------------
-         (d/div
-          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
-               "#2 — GIARDINO 25 (CHURCH COURTYARD)")
+                       ;; --------------------------
+                       ;; #2 — GIARDINO 25
+                       ;; --------------------------
+                       (d/div
+                        (d/p {:class "px-4 pb-4 text-2xl font-helvetica font-bold uppercase"}
+                             "#2 — GIARDINO 25 (CHURCH COURTYARD)")
 
-          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
-                 (d/p {}
-                      (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
-                      " is an adjacent open-air courtyard formed from the remains of a former church. "
-                      "Only the original perimeter walls remain; the roof has long since collapsed—"
-                      "leaving the space exposed to "
-                      (d/span {:class "font-medium"} "light")
-                      ", "
-                      (d/span {:class "font-medium"} "weather")
-                      ", and "
-                      (d/span {:class "font-medium"} "time")
-                      ".")
+                        (d/div {:class "px-4 space-y-6"}
+                               (d/p {}
+                                    (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
+                                    " is an adjacent open-air courtyard formed from the remains of a former church. "
+                                    "Only the original perimeter walls remain; the roof has long since collapsed—"
+                                    "leaving the space exposed to "
+                                    (d/span {:class ""} "light")
+                                    ", "
+                                    (d/span {:class ""} "weather")
+                                    ", and "
+                                    (d/span {:class ""} "time")
+                                    ".")
 
-                 (d/p {}
-                      "What survives is a richly textured architectural shell marked by age, erosion, and history. "
-                      "The courtyard’s stone walls, uneven surfaces, and traces of former sacred use create an atmosphere of "
-                      (d/span {:class "italic"} "quiet intensity")
-                      " and material depth.")
+                               (d/p {}
+                                    "What survives is a richly textured architectural shell marked by age, erosion, and history. "
+                                    "The courtyard’s stone walls, uneven surfaces, and traces of former sacred use create an atmosphere of "
+                                    (d/span {:class "italic"} "quiet intensity")
+                                    " and material depth.")
 
-                 (d/p {}
-                      "In contrast to the controlled interior of Tesa 41, Giardino 25 functions as a "
-                      (d/span {:class "font-semibold"} "threshold space")
-                      "—neither fully inside nor fully outside—where the work enters into direct dialogue with "
-                      (d/span {:class "font-medium"} "ruin")
-                      ", "
-                      (d/span {:class "font-medium"} "open sky")
-                      ", and "
-                      (d/span {:class "font-medium"} "changing light")
-                      ".")
+                               (d/p {}
+                                    "In contrast to the controlled interior of Tesa 41, Giardino 25 functions as a "
+                                    (d/span {:class "font-semibold"} "threshold space")
+                                    "—neither fully inside nor fully outside—where the work enters into direct dialogue with "
+                                    (d/span {:class ""} "ruin")
+                                    ", "
+                                    (d/span {:class ""} "open sky")
+                                    ", and "
+                                    (d/span {:class ""} "changing light")
+                                    ".")
 
-                 (d/p {:class "pt-2"}
-                      (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
-                      " extends the Pavilion outward—allowing the project to breathe within an environment shaped as much by "
-                      (d/span {:class "italic"} "absence")
-                      " as by structure."))
+                               (d/p {:class "pt-2"}
+                                    (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
+                                    " extends the Pavilion outward—allowing the project to breathe within an environment shaped as much by "
+                                    (d/span {:class "italic"} "absence")
+                                    " as by structure."))
 
-          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
-                 (let [is-desktop? (use-touch-enabled)
-                       outer-ctx (hooks/use-ref "outer-ctx")
-                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
-                   (d/div {:class ""
-                           :ref outer-ctx}
-                          ($ lazy-video-background {:playback-id "00r6626C33zSItHxx4iRh1oJPgP1tsH01qR00bNkN7i4go"
-                                                    :should-play? is-visible?
-                                                    :allow-audio? false})))))
+                        (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                               (let [is-desktop? (use-touch-enabled)
+                                     outer-ctx (hooks/use-ref "outer-ctx")
+                                     [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                                 (d/div {:class ""
+                                         :ref outer-ctx}
+                                        ($ lazy-video-background {:playback-id "00r6626C33zSItHxx4iRh1oJPgP1tsH01qR00bNkN7i4go"
+                                                                  :should-play? is-visible?
+                                                                  :allow-audio? false})))))
 
 
-         (d/div {:class "border-t border-slate-600 my-12"})
+                       (d/div {:class "border-t border-slate-600 my-12"})
 
-         ;; --------------------------
-         ;; #3 — OUTPOST
-         ;; --------------------------
-         (d/div
-          (d/p {:class "px-4 pb-4 text-2xl font-futura font-bold uppercase"}
-               "#3 — OUTPOST (CANAL WALKWAY)")
+                       ;; --------------------------
+                       ;; #3 — OUTPOST
+                       ;; --------------------------
+                       (d/div
+                        (d/p {:class "px-4 pb-4 text-2xl font-helvetica font-bold uppercase"}
+                             "#3 — OUTPOST (CANAL WALKWAY)")
 
-          (d/div {:class "px-4 text-slate-300 leading-relaxed text-lg md:text-xl space-y-6"}
-                 (d/p {}
-                      "The "
-                      (d/span {:class "font-semibold text-slate-100"} "Outpost")
-                      " occupies a brick- and stone-laid walkway that projects into the main canal of the Arsenale. "
-                      "Positioned directly in front of "
-                      (d/span {:class "font-medium"} "Tesa 41")
-                      " and "
-                      (d/span {:class "font-medium"} "Giardino 25")
-                      ", this narrow but critical site serves as the Pavilion’s most "
-                      (d/span {:class "font-semibold"} "publicly visible point of contact")
-                      ".")
+                        (d/div {:class "px-4 space-y-6"}
+                               (d/p {}
+                                    "The "
+                                    (d/span {:class "font-semibold text-slate-100"} "Outpost")
+                                    " occupies a brick- and stone-laid walkway that projects into the main canal of the Arsenale. "
+                                    "Positioned directly in front of "
+                                    (d/span {:class "font-medium"} "Tesa 41")
+                                    " and "
+                                    (d/span {:class "font-medium"} "Giardino 25")
+                                    ", this narrow but critical site serves as the Pavilion’s most "
+                                    (d/span {:class "font-semibold"} "publicly visible point of contact")
+                                    ".")
 
-                 (d/p {}
-                      "The Outpost can be seen from a major pedestrian route leading into the central Arsenale exhibition grounds. "
-                      "Visitors cross a well-known, heavily trafficked bridge and encounter this site "
-                      (d/span {:class "italic"} "before")
-                      " reaching the main Biennale axis.")
+                               (d/p {}
+                                    "The Outpost can be seen from a major pedestrian route leading into the central Arsenale exhibition grounds. "
+                                    "Visitors cross a well-known, heavily trafficked bridge and encounter this site "
+                                    (d/span {:class "italic"} "before")
+                                    " reaching the main Biennale axis.")
 
-                 (d/p {}
-                      "As a result, the Outpost functions as a "
-                      (d/span {:class "font-semibold"} "signal")
-                      " and a "
-                      (d/span {:class "font-semibold"} "threshold")
-                      "—an early, unavoidable presence that announces the Pavilion to thousands of passersby, including those who may never enter the interior spaces.")
+                               (d/p {}
+                                    "As a result, the Outpost functions as a "
+                                    (d/span {:class "font-semibold"} "signal")
+                                    " and a "
+                                    (d/span {:class "font-semibold"} "threshold")
+                                    "—an early, unavoidable presence that announces the Pavilion to thousands of passersby, including those who may never enter the interior spaces.")
 
-                 (d/p {:class "pt-2"}
-                      "This location extends the Pavilion into the daily flow of the Biennale—establishing a continuous visual and conceptual presence along the canal."))
+                               (d/p {:class "pt-2"}
+                                    "This location extends the Pavilion into the daily flow of the Biennale—establishing a continuous visual and conceptual presence along the canal."))
 
-          (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
-                 (let [is-desktop? (use-touch-enabled)
-                       outer-ctx (hooks/use-ref "outer-ctx")
-                       [visited? is-visible?] (use-intersection-observer outer-ctx)]
-                   (d/div {:class ""
-                           :ref outer-ctx}
-                          ($ lazy-video-background {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
-                                                    :should-play? is-visible?
-                                                    :allow-audio? false})))))))
+                        (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
+                               (let [is-desktop? (use-touch-enabled)
+                                     outer-ctx (hooks/use-ref "outer-ctx")
+                                     [visited? is-visible?] (use-intersection-observer outer-ctx)]
+                                 (d/div {:class ""
+                                         :ref outer-ctx}
+                                        ($ lazy-video-background {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
+                                                                  :should-play? is-visible?
+                                                                  :allow-audio? false})))))))))
 
 (defnc budget-section
   []

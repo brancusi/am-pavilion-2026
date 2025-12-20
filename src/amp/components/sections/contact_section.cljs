@@ -30,7 +30,7 @@
 
                 (d/div {:class "w-full h-full"}
                        ($ captioned-image
-                          {:img-src "https://atd-722658831.imgix.net/stacks/FileName_131354_001DenoisedBeauty_ViewLayer_012.tif"
+                          {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
                            :caption "THE ORANGE ONE"
                            :credit "Los Angeles, 2025"})))
 

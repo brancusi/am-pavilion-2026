@@ -10,6 +10,9 @@
   (d/div {:class "w-full h-full"}
          ($ hero-image-view
             {:img-src img-src}
-            (d/div
-             (d/span {:class "italic font-bold"} caption)
-             (d/span {:class "ml-4"} credit)))))
+            (when (or caption credit)
+              (d/div
+               (when caption
+                 (d/span {:class "italic font-bold"} caption))
+               (when credit
+                 (d/span {:class "ml-4"} credit)))))))
