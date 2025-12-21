@@ -26,7 +26,7 @@
   (apply str (interpose " " classes)))
 
 (def cost-data
-  [{:title "Venue Ops"
+  [{:title "1. Space Cost"
     :description "Secures and operates the Venice exhibition venue: exclusive rental, public-facing staffing, required approvals, insurance coverage, minor architectural adjustments, lighting, and statutory taxes—ensuring the Pavilion is compliant, safe, and fully exhibition-ready."
     :details [{:title "Venue rent" :amount 130000}
               {:title "Base staff" :amount 50000}
@@ -41,7 +41,7 @@
               {:title "Signage tax" :amount 1500}
               {:title "VAT" :amount 53900}]}
 
-   {:title "Administration"
+   {:title "2. Admin"
     :description "Leadership and project management supporting curatorial direction, artist oversight, coordination, compliance, and travel—keeping the Pavilion contract-ready, fiscally transparent, and operationally stable across the full production timeline."
     :details [{:title "Tony (Curator)" :amount 15000}
               {:title "Tina (Curator)" :amount 15000}
@@ -60,11 +60,12 @@
               {:title "Pitch dev" :amount 3500}
               {:title "Proposal travel" :amount 12500}]}
 
-   {:title "Production"
-    :description "Core fabrication of the work: materials, gilding inputs, casting infrastructure, studio overhead, and skilled labor—supporting precision, durability, and museum-level finish in the sculptural units."
+   {:title "3. Production"
+    :description "Core fabrication of the work: various artist materials, gilding, casting infrastructure, studio overhead, and skilled labor—supporting precision, durability, and museum-level finish in the sculptural units."
     :details [{:title "Foam core" :amount 17500}
               {:title "Pigments" :amount 12500}
               {:title "Plaster" :amount 3750}
+              {:title "Acrylic" :amount 3500}
               {:title "Gold leaf" :amount 35000}
               {:title "Gold sizing" :amount 3530}
               {:title "Expendables" :amount 2500}
@@ -75,7 +76,7 @@
               {:title "Casters" :amount 72000}
               {:title "Assistants" :amount 24000}]}
 
-   {:title "Logistics"
+   {:title "4. Logistics"
     :description "International and local movement of the work: crating, packing, freight, installation/uninstallation labor, port handling, barge and trucking transfers, storage, and waste removal—ensuring secure handling across Venice’s complex access conditions."
     :details [{:title "Crates" :amount 15000}
               {:title "Supplies" :amount 10000}
@@ -98,7 +99,7 @@
               {:title "Truck (return)" :amount 1200}
               {:title "Port (return)" :amount 2500}]}
 
-   {:title "Opening Week"
+   {:title "5. Opening Week"
     :description "Opening reception and public-facing diplomatic visibility: hospitality, staffing, security, rentals, technical support, press/VIP coordination, translation, water transport support, and public talks."
     :details [{:title "Catering food" :amount 7000}
               {:title "Catering drinks" :amount 2250}
@@ -122,10 +123,10 @@
               {:title "Accessibility" :amount 250}
               {:title "Program signage" :amount 300}]}
 
-   {:title "Studio Ops"
+   {:title "6. Studio Optrs"
     :description "Seven-month operation of THE STUDIO on-site: staffing, ongoing materials and expendables, local equipment needs, lodging/per diem, and daily maintenance—supporting continuous execution during the Biennale."
-    :details [{:title "PT assistants" :amount 18000}
-              {:title "FT assistants" :amount 30000}
+    :details [{:title "Full-time assistants" :amount 30000}
+              {:title "Part-time assistants" :amount 18000}
               {:title "Temp staff" :amount 25000}
               {:title "Local materials" :amount 5000}
               {:title "Expendables" :amount 7000}
@@ -133,7 +134,7 @@
               {:title "Lodging/per diem" :amount 40000}
               {:title "Rubbish" :amount 1400}]}
 
-   {:title "Marketing"
+   {:title "7. Marketing"
     :description "Visibility and communications campaign: brand system, website, press toolkit, PR writing, advertising, outdoor placements, social media strategy, and media buys—positioning the Pavilion with institutional clarity and global reach."
     :details [{:title "Visual ID" :amount 12500}
               {:title "Press kit" :amount 7500}
@@ -153,16 +154,16 @@
               {:title "PR ongoing" :amount 10000}
               {:title "Marketing fee" :amount 7500}]}
 
-   {:title "Publication"
+   {:title "8. Publication"
     :description "Catalogue and printed collateral: commissioned writing, design, editing, printing, and limited-run branded materials—extending the Pavilion into libraries, archives, and institutional discourse."
     :details [{:title "Curatorial essay" :amount 2500}
               {:title "Commissioned essays" :amount 8000}
               {:title "Artist texts" :amount 1500}
               {:title "Wall texts" :amount 1500}
-              {:title "Cat design" :amount 10000}
+              {:title "Catalog design" :amount 10000}
               {:title "Edit & layout" :amount 7500}
-              {:title "Cat print" :amount 24000}
-              {:title "Cat misc" :amount 1000}
+              {:title "Catalog print" :amount 24000}
+              {:title "Catalog misc" :amount 1000}
               {:title "Tote design" :amount 3500}
               {:title "Tote print" :amount 4500}
               {:title "Tote misc" :amount 500}
@@ -170,9 +171,9 @@
               {:title "Stationery print" :amount 1500}
               {:title "Stationery misc" :amount 250}]}
 
-   {:title "Documentation"
+   {:title "9. Documentation"
     :description "Permanent record of the Pavilion: professional cinematography, sound, photography, editing/color, social deliverables, and archival storage—supporting press, scholarship, donor stewardship, and legacy."
-    :details [{:title "Camera pkg" :amount 10000}
+    :details [{:title "Film equip rentals" :amount 10000}
               {:title "Film crew" :amount 24900}
               {:title "Sound record" :amount 2800}
               {:title "Install photos" :amount 1750}
@@ -191,7 +192,7 @@
     :id "budget"}
 
    (d/p {:class "p-4 text-5xl font-helvetica font-bold"}
-        "BUDGET")
+        "3. BUDGET")
 
    (d/div {:class "p-4 mb-6 font-medium"}
           (d/p {:class "text-xl  text-slate-100"}
@@ -266,7 +267,7 @@
          (d/div {:class "w-full px-4 mt-16"}
                 (d/div {:class "text-2xl text-white space-y-4 flex flex-col justify-start items-start"}
                        ($ section-link
-                          {:title "1. Exhibition Press Release"
+                          {:title "1. Press Release"
                            :anchor "press-release"})
                        ($ section-link
                           {:title "2. Overview - THE STUDIO"
@@ -295,7 +296,7 @@
                      font-bold
                      font-helvetica
                      text-5xl"}
-                 "OVERVIEW - THE STUDIO")
+                 "2. OVERVIEW - THE STUDIO")
 
             (d/div {:class "text-xl"}
                    (d/p
@@ -360,14 +361,14 @@
 
      (d/div
       {:class "w-full h-full flex flex-col gap-4 mt-12"}
-      (let [outer-ctx (hooks/use-ref "outer-ctx")
-            [visited? is-visible?] (use-intersection-observer outer-ctx)]
-        (d/div {:class ""
-                :ref outer-ctx}
-               ($ aspect-box {:ar "16/9"}
-                  ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                            :should-play? is-visible?
-                                            :allow-audio? true}))))
+      #_(let [outer-ctx (hooks/use-ref "outer-ctx")
+              [visited? is-visible?] (use-intersection-observer outer-ctx)]
+          (d/div {:class ""
+                  :ref outer-ctx}
+                 ($ aspect-box {:ar "16/9"}
+                    ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
+                                              :should-play? is-visible?
+                                              :allow-audio? true}))))
       ($ captioned-image
          {:img-src "https://atd-722658831.imgix.net/artwork/blue_yellow_blue_yellow.jpg"
           :caption "BLUE YELLOW BLUE YELLOW"
@@ -380,7 +381,7 @@
   []
   (d/div {:class section-classes :id "donation"}
          (d/p {:class "mb-8 p-4 text-5xl font-helvetica font-bold"}
-              "DONATION INFORMATION")
+              "5. DONATION INFORMATION")
 
          (d/div {:class "px-4 mb-12 text-slate-300"}
 
@@ -465,7 +466,7 @@
            ;; Header
            (d/div {:class "p-4"}
                   (d/p {:class "text-5xl font-helvetica font-bold"}
-                       "PRESS RELEASE"))
+                       "1. PRESS RELEASE"))
 
            ;; Always visible teaser content
            (d/div {:class "px-4 text-slate-100"}
@@ -545,7 +546,7 @@
   []
   (d/div {:class section-classes :id "location"}
          (d/p {:class "p-4 text-5xl font-bold uppercase"}
-              "Location information")
+              "4. Location information")
 
          (d/div {:class "text-slate-100 font-medium text-xl"}
                 (d/div {:class "px-4 mb-12 border-b border-slate-600 pb-12"}

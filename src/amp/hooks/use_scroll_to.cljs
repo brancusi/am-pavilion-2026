@@ -19,6 +19,18 @@
                     :autoKill false}
          :ease "power2.inOut"})))))
 
+(defn use-scroll-to-ref
+  []
+  (hooks/use-callback
+   :auto-deps
+   (fn [ref & [duration]]
+     (when-let [el (.-current ref)]
+       (gsap/window-to
+        {:duration (or duration 0.35)
+         :scrollTo {:y el
+                    :autoKill false}
+         :ease "power2.inOut"})))))
+
 (defn use-scroll-to-top
   [& {:keys [duration]
       :or {duration 0.35}}]
