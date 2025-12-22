@@ -32,7 +32,7 @@
               {:title "Base staff" :amount 50000}
               {:title "Mediator" :amount 25000}
               {:title "Cleaning" :amount 7000}
-              {:title "Utilities" :amount 0}
+              {:title "Utilities" :amount 5000}
               {:title "Permits" :amount 10000}
               {:title "Fire cert" :amount 3500}
               {:title "Liability ins." :amount 2500}
@@ -49,10 +49,10 @@
               {:title "Aram (Artist)" :amount 15000}
               {:title "Admin support" :amount 10000}
               {:title "Venice coord." :amount 22500}
-              {:title "Engineer" :amount 4500}
+              {:title "Engineer" :amount 5500}
               {:title "Legal" :amount 6000}
               {:title "Accounting" :amount 9000}
-              {:title "Bookkeeping" :amount 4800}
+              {:title "Bookkeeping" :amount 3500}
               {:title "HR/Payroll" :amount 2000}
               {:title "Software/tools" :amount 900}
               {:title "Flights/local" :amount 12000}
@@ -64,13 +64,13 @@
     :description "Core fabrication of the work: various artist materials, gilding, casting infrastructure, studio overhead, and skilled labor—supporting precision, durability, and museum-level finish in the sculptural units."
     :details [{:title "Foam core" :amount 17500}
               {:title "Pigments" :amount 12500}
-              {:title "Plaster" :amount 3750}
+              {:title "Plaster" :amount 7750}
               {:title "Acrylic" :amount 3500}
-              {:title "Gold leaf" :amount 35000}
-              {:title "Gold sizing" :amount 3530}
+              {:title "Gold leaf" :amount 25000}
+              {:title "Gold sizing" :amount 2530}
               {:title "Expendables" :amount 2500}
               {:title "Glass" :amount 3000}
-              {:title "Studio rent" :amount 15360}
+              {:title "Studio rent (LA)" :amount 15360}
               {:title "Utilities/ins." :amount 7200}
               {:title "Gilders" :amount 33600}
               {:title "Casters" :amount 72000}
@@ -230,7 +230,7 @@
           (d/span {:class "text-slate-300"} ". ")
 
           ;; Venue logic (non-permanent pavilion + cost comparison)
-          (d/span {:class "block mt-6"}
+          (d/span {:class "block my-6"}
                   "As Armenia does not maintain a permanent national pavilion in Venice, a venue must be secured through rental—"
                   "as is customary for many smaller and non-permanent participating nations. ")
           (d/span {:class "text-slate-300"}
@@ -244,19 +244,20 @@
                   " in base rent, before construction, staffing, utilities, logistics, and operating overhead. ")
 
           ;; Why this venue is essential to THE STUDIO
-          (d/span {:class "block mt-6"}
-                  "Crucially, the nature of ")
-          (d/span {:class "font-semibold text-pink-400"} "THE STUDIO")
-          (d/span {:class "text-slate-300"}
-                  " makes this venue choice not only strategic but essential. ")
-          (d/span {:class "text-slate-300"}
-                  "The work is conceived to be produced, refined, and evolved ")
-          (d/span {:class "font-semibold italic text-slate-100"} "on site")
-          (d/span {:class "text-slate-300"}
-                  ", allowing the Pavilion to function simultaneously as exhibition space and working studio. ")
-          (d/span {:class "text-slate-300"}
-                  "This approach meets extremely tight production and installation deadlines while maintaining full artistic and technical control—"
-                  "conditions that would be far more difficult, costly, or even impossible under a traditional off-site fabrication and transport model. ")
+          (d/div {:class "mt-6"}
+                 (d/span {:class "mt-6"}
+                         "Crucially, the nature of ")
+                 (d/span {:class "font-semibold text-pink-400"} "THE STUDIO")
+                 (d/span {:class "text-slate-300"}
+                         " makes this venue choice not only strategic but essential. ")
+                 (d/span {:class "text-slate-300"}
+                         "The work is conceived to be produced, refined, and evolved ")
+                 (d/span {:class "font-semibold italic text-slate-100"} "on site")
+                 (d/span {:class "text-slate-300"}
+                         ", allowing the Pavilion to function simultaneously as exhibition space and working studio. ")
+                 (d/span {:class "text-slate-300"}
+                         "This approach meets extremely tight production and installation deadlines while maintaining full artistic and technical control—"
+                         "conditions that would be far more difficult, costly, or even impossible under a traditional off-site fabrication and transport model. "))
 
           ;; Not a grand object (process over spectacle)
           (d/span {:class "block my-6"}
@@ -272,10 +273,10 @@
           (d/span {:class "text-slate-300"} ". ")
 
           ;; Efficiency + rigor (mutually reinforcing)
-          (d/span {:class "block mt-6"}
-                  "In this sense, cost efficiency and artistic rigor are not in opposition but mutually reinforcing. ")
-          (d/span {:class "text-slate-300"}
-                  "The Pavilion’s structure distributes resources across time, labor, materials, and public engagement—rather than concentrating them into a single object whose expense would be driven largely by transport and scale rather than meaning. ")
+          (d/div {:class "my-6"} (d/span {:class ""}
+                                         "In this sense, cost efficiency and artistic rigor are not in opposition but mutually reinforcing. ")
+                 (d/span {:class "text-slate-300"}
+                         "The Pavilion’s structure distributes resources across time, labor, materials, and public engagement—rather than concentrating them into a single object whose expense would be driven largely by transport and scale rather than meaning. "))
 
           ;; Venice realities (why still expensive)
           (d/div {:class "block my-6"}
@@ -289,7 +290,7 @@
           ;; Seven-month commitment (keep from template, but integrated)
           (d/span {:class "mt-6"}
                   "Unlike projects that culminate at opening, this Pavilion is conceived as a")
-          (d/span {:class "font-semibold italic text-slate-100"} "seven-month operational commitment")
+          (d/span {:class "font-semibold italic text-slate-100"} " seven-month operational commitment")
           (d/span {:class "text-slate-300"}
                   ": a living environment that functions simultaneously as exhibition space, working studio, public forum, and diplomatic platform—requiring sustained staffing, materials, logistics, and institutional oversight throughout the duration of the Biennale. ")
 
@@ -310,14 +311,14 @@
                   "To support the scale of this undertaking, a dedicated fundraising committee has been formed to advance the Pavilion’s financial and philanthropic efforts. ")
           (d/span {:class "block mt-4 text-slate-300"} "The committee is led by:")
 
-          (d/ul {:class "mt-3 ml-6 list-disc text-slate-100"}
-                (d/li {} "Archbishop Hovnan Derderian")
-                (d/li {} "Tony Shafrazi")
-                (d/li {} "Rafi Ourfalian")
-                (d/li {} "Khachik Khudikyan")
-                (d/li {} "Andranik Torosyan")
-                (d/li {} "Aram Alajajian")
-                (d/li {} "Vik Hovsepian"))
+          (d/ul {:class "mt-3 ml-6 list-['-'] marker:text-slate-400 text-slate-100"}
+                (d/li {:class "px-4 italic text-slate-300"} "Archbishop Hovnan Derderian")
+                (d/li {:class "px-4 italic text-slate-300"} "Tony Shafrazi")
+                (d/li {:class "px-4 italic text-slate-300"} "Rafi Ourfalian")
+                (d/li {:class "px-4 italic text-slate-300"} "Khachik Khudikyan")
+                (d/li {:class "px-4 italic text-slate-300"} "Andranik Torosyan")
+                (d/li {:class "px-4 italic text-slate-300"} "Aram Alajajian")
+                (d/li {:class "px-4 italic text-slate-300"} "Vik Hovsepian"))
 
           (d/span {:class "block mt-4 text-slate-300"}
                   "The committee plays an active role in guiding outreach, stewarding donor relationships, and advancing the fundraising strategy necessary to realize a project of this ambition and international significance. ")
@@ -350,22 +351,6 @@
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:class "font-helvetica font-bold text-5xl lg:text-6xl text-white mb-6"}
                       "ARMENIAN PAVILION 2026 VENICE BIENNALE"))
-
-
-
-
-         #_(d/div {:class " italic text-white px-4 my-12"}
-                  (d/ul {}
-                        (d/li {}
-                              "Armenian Pavilion")
-                        (d/li {}
-                              "Artist: Zadik Zadikian")
-                        (d/li {}
-                              "Curator: Tony Shafrazi")
-                        (d/li {}
-                              "Curator: Tina Chakarian")
-                        (d/li {}
-                              "2026 Venice Biennale")))
 
          (d/div {:class "w-full px-4 mt-16"}
                 (d/div {:class "text-2xl text-white space-y-4 flex flex-col justify-start items-start"}
@@ -605,19 +590,20 @@
               (d/div {:class ""}
 
                      ;; Dateline - always visible
-                     (d/p {:class "font-medium text-xl"}
-                          (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
-                          "The Ministry of Culture of the Republic of Armenia has selected "
-                          (d/span {:class "font-semibold"} "Zadik Zadikian")
-                          " to represent Armenia at the "
-                          (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
-                          " in 2026. Led by legendary art dealer "
-                          (d/span {:class "font-semibold"} "Tony Shafrazi")
-                          " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage..."))
+                     )
 
               ;; Expandable full content
-              (when expanded?
+              (if expanded?
                 (d/div {:class ""}
+                       (d/p {:class "font-medium text-xl mb-6"}
+                            (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
+                            "The Ministry of Culture of the Republic of Armenia has selected "
+                            (d/span {:class "font-semibold"} "Zadik Zadikian")
+                            " to represent Armenia at the "
+                            (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
+                            " in 2026. Led by legendary art dealer "
+                            (d/span {:class "font-semibold"} "Tony Shafrazi")
+                            " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage.")
 
                        ;; Context / history
                        (d/p {:class "mb-6"}
@@ -665,49 +651,62 @@
                        (d/p {}
                             "In a cultural moment dominated by speed, novelty, and distraction, "
                             (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-                            "turns toward repetition, exactitude, and touch. Drawing on childhood experiences working with Armenian tuff stone and a lifelong intimacy with plaster, Zadikian produces units that appear plain at first glance, yet reveal unexpected depth through surface, edge, and volume. Together, they form a precise yet open-ended vocabulary—a language of blocks, strata, and intervals that underwrites a larger meditation on resilience, renewal, and the rediscovery of origins."))))
+                            "turns toward repetition, exactitude, and touch. Drawing on childhood experiences working with Armenian tuff stone and a lifelong intimacy with plaster, Zadikian produces units that appear plain at first glance, yet reveal unexpected depth through surface, edge, and volume. Together, they form a precise yet open-ended vocabulary—a language of blocks, strata, and intervals that underwrites a larger meditation on resilience, renewal, and the rediscovery of origins.")
 
-       ;; Read more / Read less button
-       (when (not expanded?)
-         (d/div {:class "flex justify-center mt-6 px-4"}
-                ($ main-button
-                   {:on-click #(set-expanded (not expanded?))
-                    :class "px-8 py-3"
-                    :title "Read full release"})))
+                       (d/p {:class "mt-8"}
+                            (d/span {:class "text-2xl italic"} "- Nov 15th, 2025 ")))
 
-       (d/div {:class "p-4 italic text-lg my-6 mt-12"}
-              (d/span {}
-                      "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue—"
-                      "a standard and widely accepted model for many non-permanent participating nations. ")
+                (d/div
+                 (d/p {:class "font-medium text-xl"}
+                      (d/span {:class "italic"} "Yerevan / Los Angeles / Venice — ")
+                      "The Ministry of Culture of the Republic of Armenia has selected "
+                      (d/span {:class "font-semibold"} "Zadik Zadikian")
+                      " to represent Armenia at the "
+                      (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
+                      " in 2026. Led by legendary art dealer "
+                      (d/span {:class "font-semibold"} "Tony Shafrazi")
+                      " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage...")
 
-              (d/span {:class "block mt-4 text-slate-300"}
-                      "The selected site operates at a base rental cost of approximately ")
+                 (d/div {:class "flex justify-center mt-6"}
+                        ($ main-button
+                           {:on-click #(set-expanded (not expanded?))
+                            :class "px-8 py-3"
+                            :title "Read full release"})))))
 
-              (d/span {:class "font-semibold text-white"} "€130,000")
+       (d/div {:class "p-4 italic text-lg mb-6 text-slate-100"}
+              (d/span {:class "block"}
+                      "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue—a standard and widely accepted model for many non-permanent participating nations.")
 
-              (d/span {:class "text-slate-300"}
-                      ", representing a strategic and responsible choice when compared to venues in the Giardini or Arsenale, "
-                      "where base rents—when space is available at all—typically begin at ")
+              (d/div {:class "mt-6"}
+                     (d/span {:class "text-slate-300"}
+                             "The selected site operates at a base rental cost of approximately ")
 
-              (d/span {:class "font-semibold text-white"} "€400,000")
+                     (d/span {:class "font-semibold text-white"} "€130,000")
 
-              (d/span {:class "text-slate-300"}
-                      ", excluding construction, staffing, and operational expenses. ")
+                     (d/span {:class ""}
+                             ", representing a strategic and responsible choice when compared to venues in the Giardini or Arsenale, "
+                             "where base rents—when space is available at all—typically begin at ")
+
+                     (d/span {:class "font-semibold text-white"} "€400,000")
+
+                     (d/span {:class "text-slate-300"}
+                             ", excluding construction, staffing, and operational expenses. "))
 
               ;; Fundraising committee
               (d/span {:class "block mt-6"}
                       "To support the scale and international significance of this undertaking, "
                       "a dedicated fundraising committee has been formed to guide and advance the project’s philanthropic efforts. ")
 
-              (d/span {:class "block mt-4 text-slate-200"}
-                      "The committee is led by ")
+              (d/div {:class "mt-6"}
+                     (d/span {:class "mt-4 text-slate-200"}
+                             "The committee is led by ")
 
-              (d/span {:class "font-medium text-white"}
-                      "Archbishop Hovnan Derderian, Tony Shafrazi, Rafi Ourfalian, Khachik Khudikyan, "
-                      "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian.")
+                     (d/span {:class "font-medium text-white"}
+                             "Archbishop Hovnan Derderian, Tony Shafrazi, Rafi Ourfalian, Khachik Khudikyan, "
+                             "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian.")
 
-              (d/span {:class "text-slate-300"}
-                      ", ensuring the Pavilion’s successful realization through coordinated leadership, stewardship, and long-term commitment. ")))
+                     (d/span {:class "text-slate-300"}
+                             ", ensuring the Pavilion’s successful realization through coordinated leadership, stewardship, and long-term commitment. "))))
     #_(d/div {:class section-classes :id "press-release"}
              ;; Header
              (d/div {:class "p-4"}
@@ -799,17 +798,15 @@
                  "}
       (d/div {:class "text-slate-100 font-medium text-xl"}
              (d/div {:class "p-4 mb-12"}
-                    (d/p {:class " "}
+                    (d/p {:class ""}
                          "The Armenian Pavilion 2026 unfolds across "
                          (d/span {:class "font-semibold"} "three contiguous sites")
                          " within the historic Arsenale of Venice—"
                          (d/span {:class "font-semibold"} "an interior studio")
                          ", "
                          (d/span {:class "font-semibold"} "an open-air church courtyard")
-                         ", and "
-                         (d/span {:class "font-semibold"} "a canal-side outpost")
-                         ".")
-                    (d/p {:class "mt-4 "}
+                         ", and " (d/span {:class "font-semibold"} "a canal-side outpost")
+                         ". "
                          "Together, these spaces form a single spatial constellation: "
                          (d/span {:class ""} "a place of work")
                          ", "

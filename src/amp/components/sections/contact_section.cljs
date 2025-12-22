@@ -25,14 +25,12 @@
                     bg-slate-700
                     relative"}
 
-               (hooks/use-memo
-                [is-active? visited?]
+               (d/div {:class "w-full h-full"}
+                      ($ captioned-image
+                         {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
+                          :caption "THE ORANGE ONE"
+                          :credit "Los Angeles, 2025"}))
 
-                (d/div {:class "w-full h-full"}
-                       ($ captioned-image
-                          {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
-                           :caption "THE ORANGE ONE"
-                           :credit "Los Angeles, 2025"})))
 
                (d/div
                 {:class "absolute flex flex-col w-full h-2/5 z-20 items-center justify-center bg-black/50 backdrop-blur-sm"} ; Add items-center and justify-center here
