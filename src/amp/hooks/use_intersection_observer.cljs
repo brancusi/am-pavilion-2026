@@ -1,5 +1,6 @@
 (ns amp.hooks.use-intersection-observer
-  (:require [helix.hooks :as hooks]))
+  (:require [helix.hooks :as hooks]
+            [cljs.reader :as edn]))
 
 (defn use-intersection-observer
   "Modern hook using native IntersectionObserver API to detect when element is in viewport.
@@ -28,6 +29,8 @@
     (hooks/use-effect
      [ref threshold root-margin]
 
+     (tap> {:ref ref
+            :derefed @ref})
      (when @ref
        (let [observer (js/IntersectionObserver.
                        (fn [entries]
@@ -45,7 +48,10 @@
                        #js{:threshold threshold
                            :rootMargin root-margin})]
 
-         (.observe observer @ref)
+         (try
+           (.observe observer @ref)
+           (catch js/Error e
+             (tap> e)))
 
          ;; Cleanup
          (fn []

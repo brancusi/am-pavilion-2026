@@ -21,7 +21,10 @@
                             :depends-on #{:main}}
 
          :budget-view {:entries [amp.views.budget-view]
-                       :depends-on #{:main}}}
+                       :depends-on #{:main}}
+
+         :form-labs-view {:entries [amp.views.form-labs-view]
+                          :depends-on #{:main}}}
         :build-hooks [(git-hash/hook)]
         :devtools {:reload-strategy :full
                    :repl-pprint true
@@ -45,7 +48,10 @@
                                 :depends-on #{:main}}
 
              :budget-view {:entries [amp.views.budget-view]
-                           :depends-on #{:main}}}
+                           :depends-on #{:main}}
+
+             :form-labs-view {:entries [amp.views.form-labs-view]
+                              :depends-on #{:main}}}
             :build-hooks [(git-hash/hook)]
             :js-options {:output-feature-set :es-unsupported
                          :language-in :unsupported}
