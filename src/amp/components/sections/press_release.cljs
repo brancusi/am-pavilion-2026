@@ -16,7 +16,7 @@
               (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
               " in 2026. Led by legendary art dealer "
               (d/span {:class "font-semibold"} "Tony Shafrazi")
-              " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage...")))
+              " as chief curator, and Tina Chakarian as curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage...")))
 
 (defnc details
   [{:keys []}]
@@ -29,7 +29,7 @@
               (d/span {:class "font-semibold"} "61st Venice Biennale Arte")
               " in 2026. Led by legendary art dealer "
               (d/span {:class "font-semibold"} "Tony Shafrazi")
-              " as Chief Curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage.")
+              " as chief curator, and Tina Chakarian as curator, the Pavilion aligns with Armenia's broader commitment to elevating its cultural presence on the international stage.")
 
          ;; Context / history
          (d/p {:class "mb-6"}
@@ -113,7 +113,7 @@
                         "The committee is led by ")
 
                 (d/span {:class "font-medium text-white"}
-                        "Archbishop Hovnan Derderian, Tony Shafrazi, Rafi Ourfalian, Khachik Khudikyan, "
+                        "Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, "
                         "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian.")
 
                 (d/span {:class "text-slate-300"}

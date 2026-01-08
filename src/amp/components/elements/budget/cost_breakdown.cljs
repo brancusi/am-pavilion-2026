@@ -420,6 +420,7 @@
          (d/ul {:class "mt-3 ml-6 list-['-'] marker:text-slate-400 text-slate-100"}
                (d/li {:class "px-4 italic text-slate-300"} "Archbishop Hovnan Derderian")
                (d/li {:class "px-4 italic text-slate-300"} "Tony Shafrazi")
+               (d/li {:class "px-4 italic text-slate-300"} "Tina Chakarian")
                (d/li {:class "px-4 italic text-slate-300"} "Rafi Ourfalian")
                (d/li {:class "px-4 italic text-slate-300"} "Khachik Khudikyan")
                (d/li {:class "px-4 italic text-slate-300"} "Andranik Torosyan")
