@@ -68,6 +68,6 @@
 
                        (d/div {:class "flex justify-between mt-4 text-xs"}
                               (d/span {:class "text-white font-fira-code font-light"}
-                                      "© 2025 AZ Studios Inc.")
+                                      "© 2026 AZ Studios Inc.")
                               (d/span {:class "text-slate-900 font-fira-code font-light"}
                                       (str "Version " amp.config/git-hash))))))))
