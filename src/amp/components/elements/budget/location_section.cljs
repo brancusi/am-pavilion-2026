@@ -69,9 +69,9 @@
                                (d/p {}
                                     (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
                                     " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
-                                    (d/span {:class "font-semibold"} "5,000 square feet")
+                                    (d/span {:class "font-semibold"} "6,500 square feet")
                                     " ("
-                                    (d/span {:class "font-semibold"} "≈465 square meters")
+                                    (d/span {:class "font-semibold"} "~600 square meters")
                                     ") of expansive industrial volume that functions as the "
                                     (d/span {:class "italic"} "operational and conceptual heart")
                                     " of the project.")
@@ -222,7 +222,11 @@
                                          :ref outer-ctx}
                                         ($ lazy-video {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
                                                        :should-play? is-visible?
-                                                       :allow-audio? false})))))))))
+                                                       :allow-audio? false})
+                                        ($ captioned-image
+                                           {:img-src "https://atd-722658831.imgix.net/red_config_4/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2026-01-13%20at%2017.56.34-2.tif"
+                                            :caption "RED BLUE BLACK"
+                                            :credit "© Zadik Zadikian 2026"})))))))))
 
 (defnc location-section
   [{:keys [id subtitle title]}]

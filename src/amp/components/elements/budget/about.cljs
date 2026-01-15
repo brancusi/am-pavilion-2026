@@ -158,4 +158,14 @@
                     :credit "© Zadik Zadikian 2026"})
 
                 ($ captioned-image
+                   {:img-src "https://atd-722658831.imgix.net/red_config_4/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2026-01-13%20at%2017.56.34-2.tif"
+                    :caption "RED BLUE BLACK"
+                    :credit "© Zadik Zadikian 2026"})
+
+                ($ captioned-image
+                   {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
+                    :caption "RED BLUE BLACK"
+                    :credit "© Zadik Zadikian 2026"})
+
+                ($ captioned-image
                    {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"}))))

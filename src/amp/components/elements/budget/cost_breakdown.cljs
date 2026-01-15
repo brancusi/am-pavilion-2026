@@ -235,7 +235,7 @@
      {:title "Press kit",
       :amount 8500,
       :description "Production of comprehensive press materials for international media."}
-     {:title "Website", :amount 1500, :description "Design, development, and hosting of the Pavilion website. The website will be a key aspect of the project."}
+     {:title "Website", :amount 7500, :description "Design, development, and hosting of the Pavilion website. The website will be a key aspect of the project."}
      {:title "OOH design", :amount 4500, :description "Design for outdoor advertising formats."}
      {:title "Copywriting", :amount 1500, :description "Editorial copy supporting marketing and donor outreach."}
      {:title "PR writing", :amount 4500, :description "Press releases and feature pitching."}

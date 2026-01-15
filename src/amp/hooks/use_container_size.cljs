@@ -12,8 +12,10 @@
        (when @external-ref
          (let [element @external-ref
                update-size (fn [rect]
-                             (set-dimensions! {:width (.-width rect)
-                                               :height (.-height rect)}))
+                             (let [size {:width (.-width rect)
+                                         :height (.-height rect)}]
+                               (when (not= size dimensions)
+                                 (set-dimensions! size))))
                resize-observer (js/ResizeObserver.
                                 (fn [entries]
                                   (when-let [entry (first entries)]
