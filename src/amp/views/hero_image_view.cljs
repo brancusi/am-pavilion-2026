@@ -1,7 +1,6 @@
 (ns amp.views.hero-image-view
   (:require
    [amp.components.elements.lazy-image :refer [lazy-image]]
-
    [amp.hooks.use-container-size :refer [use-container-size]]
    [amp.lib.defnc :refer [defnc]]
    [amp.reducers.requires]
@@ -19,43 +18,18 @@
                                             :other-side :width})
         target-length (get dimensions target-side)
         other-length (get dimensions other-side)
-
         diff (mod target-length increment)
-
         has-diff? (> diff 0)]
     (if has-diff?
       (let [factor (/ (- increment (mod target-length increment)) target-length)
             new-target-length (+ (* target-length factor) target-length)
             aspect-ratio (/ (max target-length other-length)
                             (min target-length other-length))
-            new-dimensions (assoc {}
-                                  target-side new-target-length
-                                  other-side (math/round (* new-target-length aspect-ratio)))]
-        #_(tap> {:diff diff
-                 :factor factor
-                 :target-length target-length
-                 :other-length other-length
-                 :new-target-length new-target-length
-                 :og-dimensions dimensions
-                 :new-dimensions new-dimensions})
-
-        new-dimensions)
-
+            updated-dimensions (assoc {}
+                                      target-side new-target-length
+                                      other-side (math/round (* new-target-length aspect-ratio)))]
+        updated-dimensions)
       dimensions)))
-
-(comment
-
-  (normalize-dimensions {:width 213
-                         :height 300}
-                        :width
-                        50)
-
-
-  (- 50 (mod 213 50))
-  (get {:width 200 :height 300} :width)
-
-  ;;Keep from folding
-  )
 
 (defnc hero-image-view
   [{:keys [img-src children]}]

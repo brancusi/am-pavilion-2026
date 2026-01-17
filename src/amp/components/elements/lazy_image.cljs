@@ -63,7 +63,9 @@
         img-src-set (str src base-params "&w=" w "&h=" h "&dpr=1 1x, "
                          src base-params "&w=" w "&h=" h "&dpr=1.5 1.5x, "
                          src base-params "&w=" w "&h=" h "&dpr=2 2x, "
-                         src base-params "&w=" w "&h=" h "&dpr=3 3x")]
+                         src base-params "&w=" w "&h=" h "&dpr=3 3x")
+
+        sizes "100vw"]
 
     (hooks/use-effect
      [src should-load?]
@@ -84,8 +86,7 @@
              (d/img {:class "object-cover w-full h-full"
                      :srcSet img-src-set
                      :src img-src
-                     :sizes "(min-width: 768px) 50vw, 100vw"
-                     #_#_:loading "lazy"
+                     :sizes sizes
                      :alt ""})
              (d/div {:class "w-full h-full bg-gray-200"})))))
 

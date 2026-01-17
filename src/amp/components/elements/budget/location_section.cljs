@@ -224,7 +224,7 @@
                                                        :should-play? is-visible?
                                                        :allow-audio? false})
                                         ($ captioned-image
-                                           {:img-src "https://atd-722658831.imgix.net/red_config_4/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2026-01-13%20at%2017.56.34-2.tif"
+                                           {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
                                             :caption "RED BLUE BLACK"
                                             :credit "© Zadik Zadikian 2026"})))))))))
 

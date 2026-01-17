@@ -3,10 +3,47 @@
    [amp.components.elements.captioned-image :refer [captioned-image]]
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.components.media.image-with-overlay :refer [image-with-overlay]]
+   [amp.components.ui.overlays :refer [caption-overlay]]
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
-;; --- copy: committee-only ------------------------------------------------------
+(def committee-members
+  [{:name "Archbishop Derderian"
+    :role "Committee Lead"
+    :img-src "https://atd-722658831.imgix.net/committee/hovnan.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Tony Shafrazi"
+    :role "Chief Curator"
+    :img-src "https://atd-722658831.imgix.net/committee/tony.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Tina Chakarian"
+    :role "Curator"
+    :img-src "https://atd-722658831.imgix.net/committee/tina.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Zadik Zadikian"
+    :role "Artist"
+    :img-src "https://atd-722658831.imgix.net/committee/zadik.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Rafi Ourfalian"
+    :role "Committee Member"
+    :img-src "https://atd-722658831.imgix.net/committee/rafi.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Khachik Khudikyan"
+    :role "Committee Member"
+    :img-src "https://atd-722658831.imgix.net/committee/chris.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Andranik Torosyan"
+    :role "Committee Member"
+    :img-src "https://atd-722658831.imgix.net/committee/andy.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Aram Alajajian"
+    :role "Committee Member"
+    :img-src "https://atd-722658831.imgix.net/committee/aram.png"
+    :credit "Courtesy of the Committee"}
+   {:name "Vik Hovsepian"
+    :role "Committee Member"
+    :credit "Courtesy of the Committee"}])
 
 (defnc preview
   [{:keys []}]
@@ -46,67 +83,33 @@
          (d/p {:class "text-slate-300"}
               "The committee plays an active role in introducing prospective supporters, facilitating conversations, and strengthening long-term relationships that extend beyond opening week—ensuring the Pavilion is resourced, accountable, and delivered at the highest standard.")))
 
-;; --- UI: member gallery --------------------------------------------------------
-
-(def committee-members
-  [{:name "Archbishop Hovnan Derderian"
-    :role "Committee Lead"
-    :img-src "https://atd-722658831.imgix.net/committee/hovnan.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Tony Shafrazi"
-    :role "Chief Curator"
-    :img-src "https://atd-722658831.imgix.net/committee/tony.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Tina Chakarian"
-    :role "Curator"
-    :img-src "https://atd-722658831.imgix.net/committee/tina.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Zadik Zadikian"
-    :role "Artist"
-    :img-src "https://atd-722658831.imgix.net/committee/zadik.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Rafi Ourfalian"
-    :role "Committee Member"
-    :img-src "https://atd-722658831.imgix.net/committee/rafi.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Khachik Khudikyan"
-    :role "Committee Member"
-    :img-src "https://atd-722658831.imgix.net/committee/chris.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Andranik Torosyan"
-    :role "Committee Member"
-    :img-src "https://atd-722658831.imgix.net/committee/andy.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Aram Alajajian"
-    :role "Committee Member"
-    :img-src "https://atd-722658831.imgix.net/committee/aram.png"
-    :credit "Courtesy of the Committee"}
-   {:name "Vik Hovsepian"
-    :role "Committee Member"
-    :credit "Courtesy of the Committee"}])
-
 (defnc committee-member-card
   [{:keys [name role img-src credit]
     :as opts}]
-  (d/div {:class "rounded-2xl bg-white/5 border border-white/10 overflow-hidden shadow-sm"}
-         (d/div {:class "p-3"}
-                ;; If you prefer to use your existing captioned-image component:
-                ($ captioned-image
-                   {:img-src img-src}))
-         ;; Optional: a text row under the image, if you want stronger hierarchy
-         (d/div {:class "px-4 pb-4"}
-                (d/div {:class "text-base font-semibold text-slate-100"} name)
-                (when role
-                  (d/div {:class "text-sm text-slate-300"} role)))))
+  (let [parent-styles "font-fira-code
+                       bg-white/70
+                       px-2
+                       text-slate-700"]
+    (d/div {:class "overflow-hidden"}
+           (d/div {:class ""}
+                  ($ image-with-overlay {:img-src img-src}
+                     (d/div ($ caption-overlay {:position :tl
+                                                :rotation 90
+                                                :parent-styles parent-styles}
+                               (d/div
+                                (d/span {:class "italic text-xs"} name)))
+                            ($ caption-overlay {:position :bl
+                                                :parent-styles parent-styles}
+                               (d/div
+                                (d/span {:class "italic text-xs"} role)))))))))
 
 (defnc committee-gallery
   [{:keys []}]
   (d/div {:class "px-4 mt-6"}
          (d/div {:class "flex items-end justify-between"}
                 (d/h3 {:class "text-lg font-semibold text-slate-100"} "Committee Members"))
-         (d/div {:class "mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"}
-                (map (fn [{:keys [name role img-src credit]
-                           :as opts}]
+         (d/div {:class "mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4"}
+                (map (fn [{:keys [name role img-src credit]}]
                        (d/div {:key name}
                               (when img-src
                                 ($ committee-member-card {:name name

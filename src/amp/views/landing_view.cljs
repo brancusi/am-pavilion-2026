@@ -9,6 +9,7 @@
    [amp.components.sections.about-biennale :refer [about-biennale-section]]
    [amp.components.sections.contact-section :refer [contact-section]]
    [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
+
    [amp.components.sections.non-profit :refer [non-profit-section]]
    [amp.components.sections.team-section :refer [team-section]]
    [amp.components.sections.video-section :refer [video-section]]
