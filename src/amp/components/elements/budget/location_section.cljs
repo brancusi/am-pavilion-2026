@@ -69,9 +69,9 @@
                                (d/p {}
                                     (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
                                     " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
-                                    (d/span {:class "font-semibold"} "6,500 square feet")
+                                    (d/span {:class "font-semibold"} "5,000 square feet")
                                     " ("
-                                    (d/span {:class "font-semibold"} "~600 square meters")
+                                    (d/span {:class "font-semibold"} "~464 square meters")
                                     ") of expansive industrial volume that functions as the "
                                     (d/span {:class "italic"} "operational and conceptual heart")
                                     " of the project.")

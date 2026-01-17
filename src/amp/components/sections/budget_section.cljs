@@ -1,6 +1,7 @@
 (ns amp.components.sections.budget-section
   (:require
    [amp.components.elements.budget.about :refer [about]]
+   [amp.components.elements.budget.committe :refer [committee]]
    [amp.components.elements.budget.cost-breakdown :refer [cost-breakdown]]
    [amp.components.elements.budget.location-section :refer [location-section]]
    [amp.components.elements.budget.non-profit :refer [non-profit]]
@@ -44,11 +45,14 @@
                           {:title "3. Budget"
                            :anchor "section-3"})
                        ($ section-link
-                          {:title "4. Location Details"
+                          {:title "4. Committee"
                            :anchor "section-4"})
                        ($ section-link
-                          {:title "5. Donation Info"
-                           :anchor "section-5"})))))
+                          {:title "5. Location Details"
+                           :anchor "section-5"})
+                       ($ section-link
+                          {:title "6. Donation Info"
+                           :anchor "section-6"})))))
 
 (defnc budget-section
   []
@@ -76,11 +80,15 @@
                                 :subtitle "financials"
                                 :title "budget"})
 
-             ($ location-section {:id "section-4"
+             ($ committee {:id "section-4"
+                           :subtitle "team"
+                           :title "committee"})
+
+             ($ location-section {:id "section-5"
                                   :subtitle "venue"
                                   :title "location information"})
 
-             ($ non-profit {:id "section-5"
+             ($ non-profit {:id "section-6"
                             :subtitle "non-profit"
                             :title "donation information"})
 

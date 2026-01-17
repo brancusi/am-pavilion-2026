@@ -412,25 +412,6 @@
          (d/span {:class "block mt-6"}
                  "Public visibility and long-term legacy are strengthened through opening week programs, marketing and public relations, publication, and comprehensive film and photographic documentation—ensuring that the Pavilion’s impact extends into international media, scholarship, and institutional archives. ")
 
-         ;; Fundraising committee
-         (d/span {:class "block mt-6"}
-                 "To support the scale of this undertaking, a dedicated fundraising committee has been formed to advance the Pavilion’s financial and philanthropic efforts. ")
-         (d/span {:class "block mt-4 text-slate-300"} "The committee is led by:")
-
-         (d/ul {:class "mt-3 ml-6 list-['-'] marker:text-slate-400 text-slate-100"}
-               (d/li {:class "px-4 italic text-slate-300"} "Archbishop Hovnan Derderian")
-               (d/li {:class "px-4 italic text-slate-300"} "Tony Shafrazi")
-               (d/li {:class "px-4 italic text-slate-300"} "Tina Chakarian")
-               (d/li {:class "px-4 italic text-slate-300"} "Rafi Ourfalian")
-               (d/li {:class "px-4 italic text-slate-300"} "Khachik Khudikyan")
-               (d/li {:class "px-4 italic text-slate-300"} "Andranik Torosyan")
-               (d/li {:class "px-4 italic text-slate-300"} "Aram Alajajian")
-               (d/li {:class "px-4 italic text-slate-300"} "Vik Hovsepian"))
-
-         (d/span {:class "block mt-4 text-slate-300"}
-                 "The committee plays an active role in guiding outreach, stewarding donor relationships, and advancing the fundraising strategy necessary to realize a project of this ambition and international significance. ")
-
-         ;; Contingency (final italic note)
          (d/span {:class "block italic mt-6 font-normal text-lg text-slate-100"}
                  "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies—ensuring stability, accountability, and the successful delivery of Armenia’s national presentation on the world stage.")))
 

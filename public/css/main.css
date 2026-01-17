@@ -1338,6 +1338,9 @@ select{
   --tw-border-opacity: 1;
   border-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
 }
+.border-white\/10{
+  border-color: rgb(255 255 255 / 0.1);
+}
 .border-t-blue-400{
   --tw-border-opacity: 1;
   border-top-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
@@ -1430,6 +1433,9 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
 }
+.bg-white\/5{
+  background-color: rgb(255 255 255 / 0.05);
+}
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -1448,6 +1454,9 @@ select{
 }
 .p-8{
   padding: 2rem;
+}
+.p-3{
+  padding: 0.75rem;
 }
 .px-4{
   padding-left: 1rem;
@@ -1696,6 +1705,11 @@ select{
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .outline{
@@ -2005,6 +2019,10 @@ select{
     width: 75%;
   }
 
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -2136,6 +2154,10 @@ select{
 
   .lg\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:p-12{
