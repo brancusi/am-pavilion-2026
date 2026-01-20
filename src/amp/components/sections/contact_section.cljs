@@ -3,6 +3,8 @@
    [amp.components.elements.captioned-image :refer [captioned-image]]
    [amp.config]
    [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
+   [amp.components.media.lazy-image-with-overlay :refer [lazy-image-with-overlay]]
+
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -26,10 +28,15 @@
                     relative"}
 
                (d/div {:class "w-full h-full"}
-                      ($ captioned-image
+                      ($ lazy-image-with-overlay
                          {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
-                          :caption "THE ORANGE ONE"
-                          :credit "Los Angeles, 2025"}))
+                          :aspect-ratio 0.8
+                          :fit "crop"
+                          :active? true})
+                      #_($ captioned-image
+                           {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
+                            :caption "THE ORANGE ONE"
+                            :credit "Los Angeles, 2025"}))
 
 
                (d/div

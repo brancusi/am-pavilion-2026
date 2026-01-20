@@ -150,7 +150,6 @@
   color: #24A399;
 }
 
-
 .background-video mux-player {
   --media-object-fit: cover;
   --media-object-position: center;
@@ -183,4 +182,17 @@
   /* Target a specific section by prefixing the CSS var with (top|center|bottom) */
   --center-controls: none;
   --bottom-play-button: none;
+}
+
+.embla {
+  overflow: hidden; 
+}
+
+.embla__slide {
+  
+   flex: 0 0 auto;
+   min-width: 0;
+  max-width: 100%;
+  
+  
 }

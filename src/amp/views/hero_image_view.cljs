@@ -36,17 +36,17 @@
   (let [image-container (hooks/use-ref "image-container")
         dimensions (use-container-size image-container)
         normalized-dimensions (normalize-dimensions dimensions :width 10)]
-    (d/div {:class "w-full h-full overflow-hidden"
+    (d/div {:class ""
             :ref image-container}
-           (d/div {:class "h-full w-full overflow-hidden "}
-                  ($ lazy-image {:src img-src
-                                 :w (:width normalized-dimensions)
-
-                                 ;;  Simply force the width on this and allow the height to just flow
-                                 #_#_:h (:height normalized-dimensions)
-                                 :transition {:duration 0.25
-                                              :opacity 1}
-                                 :should-load? true}))
+           ($ lazy-image {:src img-src
+                          #_#_:w (:width normalized-dimensions)
+                          :w 350
+                          :h 350
+                          ;;  Simply force the width on this and allow the height to just flow
+                          #_#_:h (:height normalized-dimensions)
+                          :transition {:duration 0.25
+                                       :opacity 1}
+                          :should-load? true})
 
            (d/div {:class "relative origin-bottom-right"
                    :style {:transform "rotate(-90deg) translateX(100%)"}}

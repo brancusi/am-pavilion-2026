@@ -3,7 +3,7 @@
    [amp.components.elements.captioned-image :refer [captioned-image]]
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.components.media.image-with-overlay :refer [image-with-overlay]]
+   [amp.components.media.lazy-image-with-overlay :refer [lazy-image-with-overlay]]
    [amp.components.ui.overlays :refer [caption-overlay]]
    [helix.core :refer [$]]
    [helix.dom :as d]))
@@ -26,19 +26,19 @@
     :img-src "https://atd-722658831.imgix.net/committee/zadik.png"
     :credit "Courtesy of the Committee"}
    {:name "Rafi Ourfalian"
-    :role "Committee Member"
+    :role "Legal Advisor"
     :img-src "https://atd-722658831.imgix.net/committee/rafi.png"
     :credit "Courtesy of the Committee"}
    {:name "Khachik Khudikyan"
-    :role "Committee Member"
+    :role "Logistics Advisor"
     :img-src "https://atd-722658831.imgix.net/committee/chris.png"
     :credit "Courtesy of the Committee"}
    {:name "Andranik Torosyan"
-    :role "Committee Member"
+    :role "Financial Advisor"
     :img-src "https://atd-722658831.imgix.net/committee/andy.png"
     :credit "Courtesy of the Committee"}
    {:name "Aram Alajajian"
-    :role "Committee Member"
+    :role "Architect"
     :img-src "https://atd-722658831.imgix.net/committee/aram.png"
     :credit "Courtesy of the Committee"}
    {:name "Vik Hovsepian"
@@ -88,25 +88,26 @@
     :as opts}]
   (let [parent-styles "font-fira-code
                        bg-white/70
-                       px-2
+                        px-2
                        text-slate-700"]
-    (d/div {:class "overflow-hidden"}
-           (d/div {:class ""}
-                  ($ image-with-overlay {:img-src img-src}
-                     (d/div ($ caption-overlay {:position :tl
-                                                :rotation 90
-                                                :parent-styles parent-styles}
-                               (d/div
-                                (d/span {:class "italic text-xs"} name)))
-                            ($ caption-overlay {:position :bl
-                                                :parent-styles parent-styles}
-                               (d/div
-                                (d/span {:class "italic text-xs"} role)))))))))
+    (d/div {:class "relative"}
+           ($ lazy-image-with-overlay {:img-src img-src
+                                       :aspect-ratio 0.75
+                                       :active? true}
+              (d/div ($ caption-overlay {:position :tl
+                                         :rotation 90
+                                         :parent-styles parent-styles}
+                        (d/div
+                         (d/span {:class "italic text-xs"} name)))
+                     ($ caption-overlay {:position :bl
+                                         :parent-styles parent-styles}
+                        (d/div
+                         (d/span {:class "italic text-xs"} role))))))))
 
 (defnc committee-gallery
   [{:keys []}]
-  (d/div {:class "px-4 mt-6"}
-         (d/div {:class "flex items-end justify-between"}
+  (d/div {:class ""}
+         (d/div {:class "flex items-end justify-between pl-2"}
                 (d/h3 {:class "text-lg font-semibold text-slate-100"} "Committee Members"))
          (d/div {:class "mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4"}
                 (map (fn [{:keys [name role img-src credit]}]
@@ -118,11 +119,10 @@
                                                           :credit credit}))))
                      committee-members))))
 
-;; --- section component ---------------------------------------------------------
-
 (defnc committee
   [{:keys [id subtitle title]}]
-  (d/section {:id id :class "space-y-4"}
+  (d/section {:id id
+              :class "space-y-4"}
              ($ expandable-text-area-2 {:section-hint subtitle
                                         :title title
                                         :expand-button-label "Read more"

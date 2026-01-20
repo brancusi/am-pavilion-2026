@@ -2,6 +2,10 @@
   (:require
    [amp.components.elements.captioned-image :refer [captioned-image]]
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
+
+   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
+   [helix.hooks :as hooks]
+   [amp.components.media.lazy-image-gallery :refer [lazy-image-gallery]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]))
@@ -121,7 +125,6 @@
            (d/span {:class "italic"} "What does it represent?")
            ", toward a more difficult one:")
 
-          ;; Closing question / callout
           (d/div
            {:class "
                               mt-10
@@ -145,27 +148,71 @@
 
 (defnc about
   [{:keys [id subtitle title]}]
-  (d/div {:id id}
-         ($ expandable-text-area-2 {:section-hint subtitle
-                                    :title title
-                                    :expand-button-label "Read more"
-                                    :preview-text preview
-                                    :full-text details})
-         (d/div {:class "space-y-4 mt-6"}
-                ($ captioned-image
-                   {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
-                    :caption "BLUE YELLOW BLUE YELLOW"
-                    :credit "© Zadik Zadikian 2026"})
+  (let [outer-ctx (hooks/use-ref "outer-ctx")
+        [visited? is-visible?] (use-intersection-observer outer-ctx {:end "bottom"})]
+    (d/div {:id id}
+           ($ expandable-text-area-2 {:section-hint subtitle
+                                      :title title
+                                      :expand-button-label "Read more"
+                                      :preview-text preview
+                                      :full-text details})
+           (d/div {:class "mt-6"
+                   :ref outer-ctx}
+                  ($ lazy-image-gallery {:enabled? is-visible?
+                                         :slides [{:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
+                                                   :aspect-ratio 0.7
+                                                   :caption "BLUE YELLOW BLUE YELLOW"
+                                                   :credit "© Zadik Zadikian 2026"}
 
-                ($ captioned-image
-                   {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
-                    :caption "RED BLUE BLACK"
-                    :credit "© Zadik Zadikian 2026"})
+                                                  {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"
+                                                   :aspect-ratio 1.77
+                                                   :caption "BLUE BLOCK"
+                                                   :credit "© Zadik Zadikian 2026"}
 
-                ($ captioned-image
-                   {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
-                    :caption "RED BLUE BLACK"
-                    :credit "© Zadik Zadikian 2026"})
+                                                  {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
+                                                   :aspect-ratio 0.562
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}
 
-                ($ captioned-image
-                   {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"}))))
+                                                  {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
+                                                   :aspect-ratio 1
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/red_config_4/main_1_0000.tif"
+                                                   :aspect-ratio 1
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/red_config_4/green_0000.tif"
+                                                   :aspect-ratio 1
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/red_config_4/Camera.001_0000.tif"
+                                                   :aspect-ratio 1
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/red_config_4/cu_yellow_0000.tif"
+                                                   :aspect-ratio 1
+                                                   :caption "RED BLUE BLACK"
+                                                   :credit "© Zadik Zadikian 2026"}]}))
+           (d/div {:class "space-y-4 mt-6"}
+                  #_($ captioned-image
+                       {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
+                        :caption "BLUE YELLOW BLUE YELLOW"
+                        :credit "© Zadik Zadikian 2026"})
+
+                  #_($ captioned-image
+                       {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
+                        :caption "RED BLUE BLACK"
+                        :credit "© Zadik Zadikian 2026"})
+
+                  #_($ captioned-image
+                       {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
+                        :caption "RED BLUE BLACK"
+                        :credit "© Zadik Zadikian 2026"})
+
+                  #_($ captioned-image
+                       {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"})))))

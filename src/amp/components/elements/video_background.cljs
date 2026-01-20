@@ -2,6 +2,8 @@
   (:require
    ["@mux/mux-player-react$default" :as MuxPlayer]
    [amp.components.icons :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
+   [amp.hooks.use-container-size :refer [use-container-size]]
+   [amp.utils.math :refer [normalize-dimensions-v2]]
    [amp.lib.defnc :refer [defnc]]
    [applied-science.js-interop :as j]
    [helix.core :refer [$]]
@@ -9,12 +11,18 @@
    [helix.hooks :as hooks]))
 
 (defnc video-background
-  [{:keys [should-play? allow-audio? playback-id]
-    :or  {allow-audio? true}}]
+  [{:keys [should-play? allow-audio? aspect-ratio playback-id]
+    :or  {allow-audio? true
+          aspect-ratio 1.77}}]
 
   (let [video-ref (hooks/use-ref "video-ref")
         [audio-muted? set-audio-muted!] (hooks/use-state true)
         #_#_[is-playback-ready? set-is-playback-ready!] (hooks/use-state false)
+
+        dimensions (use-container-size video-ref)
+        normalized-dimensions (normalize-dimensions-v2 dimensions {:increment 10
+                                                                   :fitting-aspect-ratio aspect-ratio})
+
         toggle-audio (hooks/use-callback
                       [video-ref audio-muted?]
                       (fn
@@ -53,7 +61,13 @@
        [video-ref]
        (.play @video-ref))
 
-    (d/div {:class "w-full h-full relative background-video"}
+
+    (d/div {:class "w-full h-full relative background-video"
+            :style {:min-width (str (:width dimensions) "px")
+                    :min-height (str (/ (:width dimensions) aspect-ratio) "px")}}
+           #_(d/div {:ref video-ref
+                     :class "w-full h-full object-cover"}
+                    "Hi")
            ($ MuxPlayer
               {:playbackId playback-id
                :ref video-ref
