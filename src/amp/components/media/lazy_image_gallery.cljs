@@ -65,8 +65,8 @@
                          (map-indexed (fn [idx {:keys [img-src credit caption aspect-ratio]}]
                                         (let [is-active? (and enabled? (= idx (dec current-index)))]
                                           (d/div {:key img-src
-                                                  :class "embla__slide h-full w-full min-h-[700px] relative"}
-                                                 (d/div {:class "absolute w-full h-full"}
+                                                  :class "embla__slide h-full w-full min-h-screen relative"}
+                                                 (d/div {:class "absolute w-full h-full "}
                                                         ($ lazy-image-with-overlay
                                                            {:img-src img-src
                                                             :aspect-ratio aspect-ratio

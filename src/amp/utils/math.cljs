@@ -56,25 +56,13 @@
         aspect-ratio (/ (max width height)
                         (min width height))
 
-        updated-dimensions (if (<= fitting-aspect-ratio 1)
-                             (let [diff (mod width increment)
-                                   has-diff? (> diff 0)]
-                               (if has-diff?
-                                 (let [factor (/ (- increment (mod width increment)) width)
-                                       new-target-width (+ (* width factor) width)]
-                                   (assoc {}
-                                          :width new-target-width
-                                          :height (math/round (* new-target-width aspect-ratio))))
-                                 container-dimensions))
-                             (let [diff (mod height increment)
-                                   has-diff? (> diff 0)]
-                               (if has-diff?
-                                 (let [factor (/ (- increment (mod height increment)) height)
-                                       new-target-height (+ (* height factor) height)]
-                                   (assoc {}
-                                          :width (math/round (* new-target-height aspect-ratio))
-                                          :height new-target-height))
-                                 container-dimensions)))]
+        updated-dimensions (let [side (if (<= fitting-aspect-ratio 1) width height)
+                                 {:keys [target-side other-side]} (if (<= fitting-aspect-ratio 1) {:target-side :width :other-side :height} {:target-side :height :other-side :width})
+                                 factor (/ (- increment (mod side increment)) side)
+                                 new-target-side (+ (* side factor) side)]
+                             (assoc {}
+                                    target-side new-target-side
+                                    other-side (math/round (* new-target-side aspect-ratio))))]
 
     (clamp-to-dimensions updated-dimensions
                          {:width max-width
@@ -89,10 +77,40 @@
                         :height 10}
                        {:width 15
                         :height 15})
+  ;;=> {:width 10, :height 10}
 
-  (normalize-dimensions-v2 {:width 1000 :height 1000}
+  (normalize-dimensions-v2 {:width 849.328125 :height 849.328125}
                            {:increment 10
                             :fitting-aspect-ratio 1.77})
+  ;;=> {:width 849, :height 480}
+
+
+  (normalize-dimensions-v2 {:width 1000 :height 200}
+                           {:increment 10
+                            :fitting-aspect-ratio 1.5})
+
+
+
+
+
+
+  ;;=> {:width 1000, :height 200}
+
+  ;;=> {:width 1000, :height 565}
+  ;;=> {:width 1000, :height 500}
+
+  ;;=> {:width 850, :height 860}
+  ;;=> {:width 850, :height 860}
+  ;;=> {:width 849, :height 860}
+  ;;=> {:width 800, :height 452}
+  ;;=> {:width 1001, :height 566}
+  ;;=> {:width 1000, :height 565}
+  ;;=> {:width 849, :height 860}
+  ;;=> {:width 849, :height 849}
+  ;;=> {:width 849.328125, :height 849.328125}
+  ;;=> {:width 849.328125, :height 849.328125}
+  ;;=> {:width 1000, :height 565}
+  ;;=> {:width 1000, :height 565}
   ;;=> {:width 1009, :height 570}
   ;;=> {:width 1009, :height 570}
   ;;=> {:width 1000, :height 1000}

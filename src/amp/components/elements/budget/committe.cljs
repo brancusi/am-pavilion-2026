@@ -86,38 +86,40 @@
 (defnc committee-member-card
   [{:keys [name role img-src credit]
     :as opts}]
-  (let [parent-styles "font-fira-code
+  (let [overlay-styles "font-fira-code
                        bg-white/70
-                        px-2
-                       text-slate-700"]
-    (d/div {:class "relative"}
+                       px-1
+                       text-slate-500
+                        
+                        "]
+    (d/div {:class "w-[150px] aspect-[0.7] relative ml-2 "}
            ($ lazy-image-with-overlay {:img-src img-src
-                                       :aspect-ratio 0.75
+                                       :fit "crop"
+                                       :aspect-ratio 0.7
                                        :active? true}
-              (d/div ($ caption-overlay {:position :tl
+              (d/div {:class ""}
+                     ($ caption-overlay {:position :tl
                                          :rotation 90
-                                         :parent-styles parent-styles}
-                        (d/div
-                         (d/span {:class "italic text-xs"} name)))
+                                         :parent-styles overlay-styles}
+                        (d/span {:class "italic text-xs"} name))
                      ($ caption-overlay {:position :bl
-                                         :parent-styles parent-styles}
-                        (d/div
-                         (d/span {:class "italic text-xs"} role))))))))
+                                         :parent-styles overlay-styles}
+                        (d/span {:class "italic text-xs"} role)))))))
 
 (defnc committee-gallery
   [{:keys []}]
-  (d/div {:class ""}
-         (d/div {:class "flex items-end justify-between pl-2"}
-                (d/h3 {:class "text-lg font-semibold text-slate-100"} "Committee Members"))
-         (d/div {:class "mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4"}
-                (map (fn [{:keys [name role img-src credit]}]
-                       (d/div {:key name}
-                              (when img-src
-                                ($ committee-member-card {:name name
-                                                          :role role
-                                                          :img-src img-src
-                                                          :credit credit}))))
-                     committee-members))))
+  (d/div {:class "p-4 w-full"}
+         (d/div (d/div {:class "pl-4 "}
+                       (d/h3 {:class "text-lg font-semibold text-slate-100"} "Committee Members"))
+                (d/div {:class "mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"}
+                       (map (fn [{:keys [name role img-src credit]}]
+                              (d/div {:key name}
+                                     (when img-src
+                                       ($ committee-member-card {:name name
+                                                                 :role role
+                                                                 :img-src img-src
+                                                                 :credit credit}))))
+                            committee-members)))))
 
 (defnc committee
   [{:keys [id subtitle title]}]

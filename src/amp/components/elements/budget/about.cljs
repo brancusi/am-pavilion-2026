@@ -156,48 +156,48 @@
                                       :expand-button-label "Read more"
                                       :preview-text preview
                                       :full-text details})
-           (d/div {:class "mt-6"
+           (d/div {:class "mt-6 max-h-screen"
                    :ref outer-ctx}
                   ($ lazy-image-gallery {:enabled? is-visible?
                                          :slides [{:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
-                                                   :aspect-ratio 0.7
+                                                   :aspect-ratio 0.562
                                                    :caption "BLUE YELLOW BLUE YELLOW"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"
                                                    :aspect-ratio 1.77
                                                    :caption "BLUE BLOCK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Los Angeles 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
                                                    :aspect-ratio 0.562
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
                                                    :aspect-ratio 1
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_config_4/main_1_0000.tif"
                                                    :aspect-ratio 1
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_config_4/green_0000.tif"
                                                    :aspect-ratio 1
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_config_4/Camera.001_0000.tif"
                                                    :aspect-ratio 1
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}
+                                                   :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/red_config_4/cu_yellow_0000.tif"
                                                    :aspect-ratio 1
                                                    :caption "RED BLUE BLACK"
-                                                   :credit "© Zadik Zadikian 2026"}]}))
+                                                   :credit "Render 2026"}]}))
            (d/div {:class "space-y-4 mt-6"}
                   #_($ captioned-image
                        {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"

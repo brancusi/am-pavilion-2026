@@ -115,24 +115,28 @@
                               [visited? is-visible?] (use-intersection-observer outer-ctx)]
                           (d/div {:class "flex flex-col gap-4"
                                   :ref outer-ctx}
-                                 ($ lazy-video {:playback-id "KaA1Jf2AusJZ966KPeZrdwJ5S53kboLO4E4fGLrgTLk"
-                                                :aspect-ratio 1.77
-                                                :should-play? is-visible?
-                                                :allow-audio? false})
-                                 ($ lazy-image-with-overlay
-                                    {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
-                                     :aspect-ratio 1.34
-                                     :active? true})
+                                 (d/div {:class "w-full aspect-[16/9]"}
+                                        ($ lazy-video {:playback-id "KaA1Jf2AusJZ966KPeZrdwJ5S53kboLO4E4fGLrgTLk"
+                                                       :aspect-ratio 1.77
+                                                       :should-play? is-visible?
+                                                       :allow-audio? false}))
+                                 (d/div {:class "w-full aspect-[1.34]"}
+                                        ($ lazy-image-with-overlay
+                                           {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+                                            :aspect-ratio 1.34
+                                            :active? true}))
 
-                                 ($ lazy-image-with-overlay
-                                    {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
-                                     :aspect-ratio 1.34
-                                     :active? true})
+                                 (d/div {:class "w-full aspect-[1.34]"}
+                                        ($ lazy-image-with-overlay
+                                           {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
+                                            :aspect-ratio 1.34
+                                            :active? true}))
 
-                                 ($ lazy-image-with-overlay
-                                    {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
-                                     :aspect-ratio 1.34
-                                     :active? true})))
+                                 (d/div {:class "w-full aspect-[1.34]"}
+                                        ($ lazy-image-with-overlay
+                                           {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
+                                            :aspect-ratio 1.34
+                                            :active? true}))))
 
 
                         #_#_#_($ captioned-image
@@ -238,13 +242,15 @@
                                      [visited? is-visible?] (use-intersection-observer outer-ctx)]
                                  (d/div {:class ""
                                          :ref outer-ctx}
-                                        ($ lazy-video {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
-                                                       :should-play? is-visible?
-                                                       :allow-audio? false})
-                                        ($ lazy-image-with-overlay
-                                           {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
-                                            :aspect-ratio 0.525
-                                            :active? is-visible?})
+                                        (d/div {:class "w-full aspect-[16/9]"}
+                                               ($ lazy-video {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
+                                                              :should-play? is-visible?
+                                                              :allow-audio? false}))
+                                        (d/div {:class "w-full aspect-[0.525]"}
+                                               ($ lazy-image-with-overlay
+                                                  {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
+                                                   :aspect-ratio 0.525
+                                                   :active? is-visible?}))
                                         #_($ captioned-image
                                              {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
                                               :caption "RED BLUE BLACK"
