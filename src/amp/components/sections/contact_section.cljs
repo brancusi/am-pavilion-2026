@@ -28,7 +28,7 @@
 
                (d/div {:class "w-full aspect-[4/5]"}
                       ($ lazy-image-with-overlay
-                         {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099.tif"
+                         {:img-src "https://atd-722658831.imgix.net/blue_yellow/cu-2.jpg"
                           :aspect-ratio 0.8
                           :fit "crop"
                           :active? true}))
@@ -45,7 +45,7 @@
                                   text-white
                                   text-md
                                   "}
-                        "Armenian Pavilion 2026.")
+                        "Armenia Pavilion 2026.")
 
                        (d/div {:class "lg:text-2xl font-fira-code
                                   font-light

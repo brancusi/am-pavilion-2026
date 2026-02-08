@@ -307,7 +307,7 @@
   [{:keys []}]
   (d/div {:class "text-xl text-slate-100 p-4"}
          (d/span {}
-                 "The Armenian Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
+                 "The Armenia Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
                  "structured to meet the standards of the most rigorous national presentations. ")
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 
@@ -323,7 +323,7 @@
   [{:keys []}]
   (d/div {:class "text-xl text-slate-100 p-4"}
          (d/span {}
-                 "The Armenian Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
+                 "The Armenia Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
                  "structured to meet the standards of the most rigorous national presentations. ")
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 

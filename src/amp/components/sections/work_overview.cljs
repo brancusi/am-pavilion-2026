@@ -41,7 +41,7 @@
             "THE STUDIO")
 
        (d/p {:class "mb-8"}
-            "For the full duration of the Biennale, the Armenian Pavilion becomes a "
+            "For the full duration of the Biennale, the Armenia Pavilion becomes a "
             (d/span {:class "font-medium text-pink-600"} ":working-studio ")
             "— Zadik Zadikian’s living laboratory, a site where form is made, unmade, and made again.")
 

@@ -47,7 +47,7 @@
          ;; Project description
          (d/p {:class "mb-6"}
               (d/span {:class "font-bold text-pink-400"} "THE STUDIO ")
-              "transforms the Armenian Pavilion into an active site of sustained, concentrated making. Throughout the Biennale, Zadikian and his team will fabricate primordial plaster units on site—ranging from palm-sized objects to human-scale forms—each one a three-dimensional articulation of distilled color, ratio, and reflectivity.")
+              "transforms the Armenia Pavilion into an active site of sustained, concentrated making. Throughout the Biennale, Zadikian and his team will fabricate primordial plaster units on site—ranging from palm-sized objects to human-scale forms—each one a three-dimensional articulation of distilled color, ratio, and reflectivity.")
 
          ;; Quote
          (d/p {:class "mb-6 italic"}

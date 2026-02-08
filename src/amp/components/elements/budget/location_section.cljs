@@ -18,7 +18,7 @@
   [{:keys []}]
   (d/div {:class "p-4 mb-12"}
          (d/p {:class ""}
-              "The Armenian Pavilion 2026 unfolds across "
+              "The Armenia Pavilion 2026 unfolds across "
               (d/span {:class "font-semibold"} "three contiguous sites")
               " within the historic Arsenale of Venice—"
               (d/span {:class "font-semibold"} "an interior studio")
@@ -42,7 +42,7 @@
    (d/div {:class "text-slate-100  text-xl"}
           (d/div {:class "p-4 mb-12"}
                  (d/p {:class ""}
-                      "The Armenian Pavilion 2026 unfolds across "
+                      "The Armenia Pavilion 2026 unfolds across "
                       (d/span {:class "font-semibold"} "three contiguous sites")
                       " within the historic Arsenale of Venice—"
                       (d/span {:class "font-semibold"} "an interior studio")
@@ -70,7 +70,7 @@
                         (d/div {:class "space-y-6"}
                                (d/p {}
                                     (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
-                                    " is the primary studio and interior exhibition space for the Armenian Pavilion 2026—"
+                                    " is the primary studio and interior exhibition space for the Armenia Pavilion 2026—"
                                     (d/span {:class "font-semibold"} "5,000 square feet")
                                     " ("
                                     (d/span {:class "font-semibold"} "~464 square meters")
@@ -248,8 +248,8 @@
                                                               :allow-audio? false}))
                                         (d/div {:class "w-full aspect-[0.525]"}
                                                ($ lazy-image-with-overlay
-                                                  {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
-                                                   :aspect-ratio 0.525
+                                                  {:img-src "https://atd-722658831.imgix.net/big_red/outpost.jpg"
+                                                   :aspect-ratio 0.55
                                                    :active? is-visible?}))
                                         #_($ captioned-image
                                              {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"

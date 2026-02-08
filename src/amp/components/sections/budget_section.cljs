@@ -30,8 +30,8 @@
 
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
-                       :class "notranslate font-helvetica font-bold text-5xl lg:text-6xl text-white mb-6 uppercase"}
-                      "Armenian Pavilion 2026 Venice Biennale"))
+                       :class "notranslate font-helvetica font-bold text-4xl lg:text-6xl text-white mb-6 uppercase"}
+                      "Armenia Pavilion, Biennale Arte 2026, 61st International Art Exhibition"))
 
          (d/div {:class "w-full px-4 mt-16"}
                 (d/div {:class "text-2xl text-white space-y-4 flex flex-col justify-start items-start"}

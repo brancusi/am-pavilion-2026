@@ -20,7 +20,7 @@
                        mb-4"}
                       "THE STUDIO")
                  (d/p {:class "text-md lg:text-xl mb-4"}
-                      "The Armenian Pavilion at the 2026 Venice Biennale becomes Zadik Zadikian’s living, breathing studio.")
+                      "The Armenia Pavilion at the 2026 Venice Biennale becomes Zadik Zadikian’s living, breathing studio.")
                  (d/p {:class "text-md lg:text-xl mb-4"}
                       "Every day, a team fabricates simple units of plaster and pigment.")
                  (d/p {:class "text-md lg:text-xl mb-4"}

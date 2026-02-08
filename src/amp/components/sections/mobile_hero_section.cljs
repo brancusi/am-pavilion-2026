@@ -43,7 +43,7 @@
                   (d/div {:class "absolute deep-yellow opacity-70 w-3/4 p-4"}
                          (d/div {:class "font-futura"}
                                 (d/p {:class "text-5xl font-bold"}
-                                     "venice biennale 2026 armenian pavilion")
+                                     "venice biennale 2026 Armenia Pavilion")
                                 (d/p {:class "text-4xl mt-4 italic"}
                                      "Be a Patron of "
                                      (d/span {:class "font-bold uppercase"}

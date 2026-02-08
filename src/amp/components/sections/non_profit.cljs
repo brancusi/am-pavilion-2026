@@ -36,7 +36,7 @@
 
          (d/div {:class "flex flex-col"}
                 (d/p {:class "w-1"}
-                     "support the armenian pavilion"))))
+                     "support the Armenia Pavilion"))))
 
 (defnc copy-block
   [{:keys [title copy]}]

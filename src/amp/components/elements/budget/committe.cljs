@@ -31,7 +31,7 @@
     :credit "Courtesy of the Committee"}
    {:name "Khachik Khudikyan"
     :role "Logistics Advisor"
-    :img-src "https://atd-722658831.imgix.net/committee/chris.png"
+    :img-src "https://atd-722658831.imgix.net/committee/chris_car_2.jpg"
     :credit "Courtesy of the Committee"}
    {:name "Andranik Torosyan"
     :role "Financial Advisor"
@@ -43,7 +43,8 @@
     :credit "Courtesy of the Committee"}
    {:name "Vik Hovsepian"
     :role "Committee Member"
-    :credit "Courtesy of the Committee"}])
+    :credit "Courtesy of the Committee"
+    :img-src "https://atd-722658831.imgix.net/committee/vic.png"}])
 
 (defnc preview
   [{:keys []}]

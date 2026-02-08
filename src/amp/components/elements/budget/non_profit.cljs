@@ -18,7 +18,7 @@
              (d/div {:class "mb-12 text-slate-300"}
 
                     (d/p {}
-                         "The Armenian Pavilion 2026 is supported through "
+                         "The Armenia Pavilion 2026 is supported through "
                          (d/span {:class "font-semibold"} "Fallen Angels Inc.")
                          ", a registered "
                          (d/span {:class "font-semibold"} "501(c)(3)")
