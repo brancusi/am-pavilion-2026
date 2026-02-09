@@ -1253,7 +1253,7 @@ var $JSCompiler_unstubMethod$$, $JSCompiler_StaticMethods_edit_and_remove_pair$$
 $reagent$ratom$deref_capture$$, $reagent$ratom$notify_deref_watcher_BANG_$$, $reagent$ratom$add_w$$, $reagent$ratom$remove_w$$, $reagent$ratom$notify_w$$, $reagent$ratom$pr_atom$$, $reagent$ratom$RAtom$$, $reagent$ratom$dispose_BANG_$$, $reagent$ratom$handle_reaction_change$$, $reagent$ratom$Reaction$$, $reagent$ratom$flush_BANG_$$, $reagent$ratom$make_reaction$$, $reagent$ratom$run_in_reaction$$, $reagent$impl$template$HiccupTag$$, $goog$structs$Node$$, $JSCompiler_StaticMethods_insert$$, $threeagent$impl$virtual_scene$RenderQueueEntry$$, 
 $threeagent$impl$virtual_scene$Node$$, $threeagent$impl$virtual_scene$Scene$$, $threeagent$impl$virtual_scene$on_react_BANG_$$, $threeagent$impl$virtual_scene$extract_comp_config$$, $threeagent$impl$virtual_scene$node_data$$, $threeagent$impl$virtual_scene$fn__GT_render_fn$$, $threeagent$impl$virtual_scene$valid_child_QMARK_$$, $threeagent$impl$virtual_scene$add_node_BANG_$$, $threeagent$impl$virtual_scene$remove_node_BANG_$$, $threeagent$impl$virtual_scene$replace_node_BANG_$$, $threeagent$impl$virtual_scene$diff_fn_QMARK_$$, 
 $threeagent$impl$virtual_scene$update_child_node_BANG_$$, $threeagent$impl$virtual_scene$update_node_BANG_$$, $threeagent$impl$virtual_scene$create$$, $threeagent$entity$create$$, $threeagent$entity$destroy_BANG_$$, $threeagent$entity$IUpdateableEntityType$$, $threeagent$entity$update_BANG_$$, $threeagent$impl$threejs$set_position_BANG_$$, $threeagent$impl$threejs$set_rotation_BANG_$$, $threeagent$impl$threejs$set_scale_BANG_$$, $threeagent$impl$entities$__GT_material$$, $threeagent$impl$entities$MeshEntity$$, 
-$threeagent$impl$entities$__GT_MeshEntity$$, $threeagent$impl$entities$apply_shadow_settings_BANG_$$, $threeagent$impl$entities$LightEntity$$, $threeagent$impl$entities$__GT_LightEntity$$, $threeagent$impl$entities$apply_props_clj_BANG_$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31782$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31789$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31795$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31841$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31884$$, 
+$threeagent$impl$entities$__GT_MeshEntity$$, $threeagent$impl$entities$apply_shadow_settings_BANG_$$, $threeagent$impl$entities$LightEntity$$, $threeagent$impl$entities$__GT_LightEntity$$, $threeagent$impl$entities$apply_props_clj_BANG_$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31747$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31765$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31775$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31823$$, $threeagent$impl$entities$t_threeagent$0impl$0entities31832$$, 
 $threeagent$impl$types$Context$$, $threeagent$system$init$$, $threeagent$system$destroy$$, $threeagent$system$on_entity_added$$, $threeagent$system$on_entity_removed$$, $threeagent$system$tick$$, $threeagent$impl$system$dispatch_init$$, $threeagent$impl$scene$raw_context__GT_context$$, $threeagent$impl$scene$on_entity_removed$$, $threeagent$impl$scene$on_entity_added$$, $threeagent$impl$scene$create_entity_object$$, $threeagent$impl$scene$apply_change_BANG_$$, $threeagent$impl$scene$get_canvas$$, 
 $threeagent$impl$scene$set_shadow_map_BANG_$$, $threeagent$impl$scene$create_context$$, $threeagent$impl$scene$find_context$$, $threeagent$impl$scene$render$$, $threeagent$core$render$cljs$0core$0IFn$0_invoke$0arity$03$$, $amp$views$mockup_view$root$$, $amp$views$mockup_view$TextSpriteEntity$$, $amp$views$mockup_view$setup_scene_BANG_$$;
 $JSCompiler_unstubMethod$$ = function($JSCompiler_unstubMethod_id$$, $JSCompiler_unstubMethod_body$$) {
@@ -1327,10 +1327,10 @@ $cljs$core$_dissoc_BANG_$$ = function($JSCompiler_temp$jscomp$301_tcoll$jscomp$7
 };
 $clojure$set$rename_keys$$ = function($map$jscomp$15$$) {
   var $kmap$$ = new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$744$sky_color$$, $cljs$cst$746$skyColor$$, $cljs$cst$745$ground_color$$, $cljs$cst$747$groundColor$$], null);
-  return $APP.$cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$(function($m$jscomp$92$$, $new$_p__22748$$) {
-    var $old$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($new$_p__22748$$, 0, null);
-    $new$_p__22748$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($new$_p__22748$$, 1, null);
-    return $APP.$cljs$core$contains_QMARK_$$($map$jscomp$15$$, $old$jscomp$1$$) ? $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($m$jscomp$92$$, $new$_p__22748$$, $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map$jscomp$15$$, $old$jscomp$1$$)) : $m$jscomp$92$$;
+  return $APP.$cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$(function($m$jscomp$92$$, $new$_p__22812$$) {
+    var $old$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($new$_p__22812$$, 0, null);
+    $new$_p__22812$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($new$_p__22812$$, 1, null);
+    return $APP.$cljs$core$contains_QMARK_$$($map$jscomp$15$$, $old$jscomp$1$$) ? $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($m$jscomp$92$$, $new$_p__22812$$, $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map$jscomp$15$$, $old$jscomp$1$$)) : $m$jscomp$92$$;
   }, $APP.$cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$03$$($APP.$cljs$core$dissoc$$, $map$jscomp$15$$, $APP.$cljs$core$keys$$($kmap$$)), $kmap$$);
 };
 $reagent$impl$batching$fake_raf$$ = function($f$jscomp$418$$) {
@@ -1347,8 +1347,8 @@ $reagent$impl$batching$run_queue$$ = function($a$jscomp$280$$) {
   return $reagent$impl$batching$react_flush$$(function() {
     for (var $n__5616__auto__$$ = $a$jscomp$280$$.length, $i$jscomp$395$$ = 0;;) {
       if ($i$jscomp$395$$ < $n__5616__auto__$$) {
-        var $c_31598$$ = $a$jscomp$280$$[$i$jscomp$395$$];
-        $c_31598$$.cljsIsDirty === !0 && $c_31598$$.forceUpdate();
+        var $c_31607$$ = $a$jscomp$280$$[$i$jscomp$395$$];
+        $c_31607$$.cljsIsDirty === !0 && $c_31607$$.forceUpdate();
         $i$jscomp$395$$ += 1;
       } else {
         return null;
@@ -1362,8 +1362,8 @@ $reagent$impl$batching$ratom_flush$$ = function() {
 $reagent$impl$batching$run_funs$$ = function($fs$jscomp$2$$) {
   for (var $n__5616__auto__$jscomp$1$$ = $fs$jscomp$2$$.length, $i$jscomp$396$$ = 0;;) {
     if ($i$jscomp$396$$ < $n__5616__auto__$jscomp$1$$) {
-      var $fexpr__31588_31602$$ = $fs$jscomp$2$$[$i$jscomp$396$$];
-      $fexpr__31588_31602$$.$cljs$core$IFn$_invoke$arity$0$ ? $fexpr__31588_31602$$.$cljs$core$IFn$_invoke$arity$0$() : $fexpr__31588_31602$$.call(null);
+      var $fexpr__31602_31609$$ = $fs$jscomp$2$$[$i$jscomp$396$$];
+      $fexpr__31602_31609$$.$cljs$core$IFn$_invoke$arity$0$ ? $fexpr__31602_31609$$.$cljs$core$IFn$_invoke$arity$0$() : $fexpr__31602_31609$$.call(null);
       $i$jscomp$396$$ += 1;
     } else {
       return null;
@@ -1379,38 +1379,38 @@ $reagent$impl$batching$RenderQueue$$ = function() {
 };
 $reagent$ratom$deref_capture$$ = function($c$jscomp$181_f$jscomp$426$$, $r$jscomp$52$$) {
   $r$jscomp$52$$.$captured$ = null;
-  var $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
+  var $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
   $reagent$ratom$_STAR_ratom_context_STAR_$$ = $r$jscomp$52$$;
   try {
     var $res$jscomp$22$$ = $c$jscomp$181_f$jscomp$426$$.$cljs$core$IFn$_invoke$arity$0$ ? $c$jscomp$181_f$jscomp$426$$.$cljs$core$IFn$_invoke$arity$0$() : $c$jscomp$181_f$jscomp$426$$.call(null);
   } finally {
-    $reagent$ratom$_STAR_ratom_context_STAR_$$ = $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$;
+    $reagent$ratom$_STAR_ratom_context_STAR_$$ = $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$;
   }
   $c$jscomp$181_f$jscomp$426$$ = $r$jscomp$52$$.$captured$;
   $r$jscomp$52$$.$dirty_QMARK_$ = !1;
   a: {
-    $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = $r$jscomp$52$$.$watching$;
-    var $len$jscomp$inline_1523$$ = $c$jscomp$181_f$jscomp$426$$ == null ? 0 : $c$jscomp$181_f$jscomp$426$$.length, $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$ = $len$jscomp$inline_1523$$ === ($JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ == null ? 0 : $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$.length);
+    $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = $r$jscomp$52$$.$watching$;
+    var $len$jscomp$inline_1523$$ = $c$jscomp$181_f$jscomp$426$$ == null ? 0 : $c$jscomp$181_f$jscomp$426$$.length, $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$ = $len$jscomp$inline_1523$$ === ($JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ == null ? 0 : $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$.length);
     if ($and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$) {
       for ($and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$ = 0;;) {
         var $or__5025__auto__$jscomp$inline_1526$$ = $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$ === $len$jscomp$inline_1523$$;
         if ($or__5025__auto__$jscomp$inline_1526$$) {
-          $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = $or__5025__auto__$jscomp$inline_1526$$;
+          $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = $or__5025__auto__$jscomp$inline_1526$$;
           break a;
         }
-        if ($c$jscomp$181_f$jscomp$426$$[$and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$] === $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$[$and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$]) {
+        if ($c$jscomp$181_f$jscomp$426$$[$and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$] === $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$[$and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$]) {
           $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$ += 1;
         } else {
-          $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = !1;
+          $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = !1;
           break a;
         }
       }
-      $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = void 0;
+      $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = void 0;
     } else {
-      $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ = $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$;
+      $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ = $and__5023__auto__$jscomp$inline_1524_i$jscomp$inline_1525$$;
     }
   }
-  $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31662$jscomp$inline_1519_y$jscomp$inline_1522$$ || $r$jscomp$52$$._update_watching($c$jscomp$181_f$jscomp$426$$);
+  $JSCompiler_inline_result$jscomp$312__STAR_ratom_context_STAR__orig_val__31665$jscomp$inline_1519_y$jscomp$inline_1522$$ || $r$jscomp$52$$._update_watching($c$jscomp$181_f$jscomp$426$$);
   return $res$jscomp$22$$;
 };
 $reagent$ratom$notify_deref_watcher_BANG_$$ = function($derefed$$) {
@@ -1432,26 +1432,26 @@ $reagent$ratom$remove_w$$ = function($this$$jscomp$256$$, $JSCompiler_inline_res
 };
 $reagent$ratom$notify_w$$ = function($this$$jscomp$257$$, $old$jscomp$4$$, $new$$jscomp$3$$) {
   var $a$jscomp$281_w$jscomp$21$$ = $this$$jscomp$257$$.$watchesArr$;
-  $a$jscomp$281_w$jscomp$21$$ = $a$jscomp$281_w$jscomp$21$$ == null ? $this$$jscomp$257$$.$watchesArr$ = $APP.$cljs$core$reduce_kv$$(function($p1__31664_SHARP_$$, $p2__31665_SHARP_$$, $p3__31666_SHARP_$$) {
-    $p1__31664_SHARP_$$.push($p2__31665_SHARP_$$);
-    $p1__31664_SHARP_$$.push($p3__31666_SHARP_$$);
-    return $p1__31664_SHARP_$$;
+  $a$jscomp$281_w$jscomp$21$$ = $a$jscomp$281_w$jscomp$21$$ == null ? $this$$jscomp$257$$.$watchesArr$ = $APP.$cljs$core$reduce_kv$$(function($p1__31679_SHARP_$$, $p2__31680_SHARP_$$, $p3__31681_SHARP_$$) {
+    $p1__31679_SHARP_$$.push($p2__31680_SHARP_$$);
+    $p1__31679_SHARP_$$.push($p3__31681_SHARP_$$);
+    return $p1__31679_SHARP_$$;
   }, [], $this$$jscomp$257$$.$watches$) : $a$jscomp$281_w$jscomp$21$$;
   for (var $len$jscomp$64$$ = $a$jscomp$281_w$jscomp$21$$.length, $i$jscomp$398$$ = 0;;) {
     if ($i$jscomp$398$$ < $len$jscomp$64$$) {
-      var $k_31798$$ = $a$jscomp$281_w$jscomp$21$$[$i$jscomp$398$$], $f_31799$$ = $a$jscomp$281_w$jscomp$21$$[$i$jscomp$398$$ + 1];
-      $f_31799$$.$cljs$core$IFn$_invoke$arity$4$ ? $f_31799$$.$cljs$core$IFn$_invoke$arity$4$($k_31798$$, $this$$jscomp$257$$, $old$jscomp$4$$, $new$$jscomp$3$$) : $f_31799$$.call(null, $k_31798$$, $this$$jscomp$257$$, $old$jscomp$4$$, $new$$jscomp$3$$);
+      var $k_31847$$ = $a$jscomp$281_w$jscomp$21$$[$i$jscomp$398$$], $f_31848$$ = $a$jscomp$281_w$jscomp$21$$[$i$jscomp$398$$ + 1];
+      $f_31848$$.$cljs$core$IFn$_invoke$arity$4$ ? $f_31848$$.$cljs$core$IFn$_invoke$arity$4$($k_31847$$, $this$$jscomp$257$$, $old$jscomp$4$$, $new$$jscomp$3$$) : $f_31848$$.call(null, $k_31847$$, $this$$jscomp$257$$, $old$jscomp$4$$, $new$$jscomp$3$$);
       $i$jscomp$398$$ = 2 + $i$jscomp$398$$;
     } else {
       break;
     }
   }
 };
-$reagent$ratom$pr_atom$$ = function($writer$jscomp$66$$, $opts$jscomp$164$$, $_STAR_ratom_context_STAR__orig_val__31668$jscomp$inline_1532_s$jscomp$217$$, $v$jscomp$136$$) {
-  $APP.$cljs$core$_write$$($writer$jscomp$66$$, ["#object[reagent.ratom.", $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($_STAR_ratom_context_STAR__orig_val__31668$jscomp$inline_1532_s$jscomp$217$$), " "].join(""));
-  $_STAR_ratom_context_STAR__orig_val__31668$jscomp$inline_1532_s$jscomp$217$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
+$reagent$ratom$pr_atom$$ = function($writer$jscomp$66$$, $opts$jscomp$164$$, $_STAR_ratom_context_STAR__orig_val__31687$jscomp$inline_1532_s$jscomp$217$$, $v$jscomp$136$$) {
+  $APP.$cljs$core$_write$$($writer$jscomp$66$$, ["#object[reagent.ratom.", $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($_STAR_ratom_context_STAR__orig_val__31687$jscomp$inline_1532_s$jscomp$217$$), " "].join(""));
+  $_STAR_ratom_context_STAR__orig_val__31687$jscomp$inline_1532_s$jscomp$217$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
   $reagent$ratom$_STAR_ratom_context_STAR_$$ = null;
-  $reagent$ratom$_STAR_ratom_context_STAR_$$ = $_STAR_ratom_context_STAR__orig_val__31668$jscomp$inline_1532_s$jscomp$217$$;
+  $reagent$ratom$_STAR_ratom_context_STAR_$$ = $_STAR_ratom_context_STAR__orig_val__31687$jscomp$inline_1532_s$jscomp$217$$;
   $APP.$cljs$core$pr_writer$$($v$jscomp$136$$, $writer$jscomp$66$$, $opts$jscomp$164$$);
   return $APP.$cljs$core$_write$$($writer$jscomp$66$$, "]");
 };
@@ -1498,9 +1498,9 @@ $reagent$ratom$flush_BANG_$$ = function() {
       return null;
     }
     $reagent$ratom$rea_queue$$ = null;
-    for (var $n__5616__auto___31914$$ = $q$jscomp$36$$.length, $i_31915$$ = 0;;) {
-      if ($i_31915$$ < $n__5616__auto___31914$$) {
-        $q$jscomp$36$$[$i_31915$$]._queued_run(), $i_31915$$ += 1;
+    for (var $n__5616__auto___31953$$ = $q$jscomp$36$$.length, $i_31954$$ = 0;;) {
+      if ($i_31954$$ < $n__5616__auto___31953$$) {
+        $q$jscomp$36$$[$i_31954$$]._queued_run(), $i_31954$$ += 1;
       } else {
         break;
       }
@@ -1508,21 +1508,21 @@ $reagent$ratom$flush_BANG_$$ = function() {
   }
 };
 $reagent$ratom$make_reaction$$ = function($var_args$jscomp$446$$) {
-  for (var $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$ = [], $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$ = arguments.length, $i__5750__auto___31919_on_set$jscomp$inline_1560$$ = 0;;) {
-    if ($i__5750__auto___31919_on_set$jscomp$inline_1560$$ < $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$) {
-      $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.push(arguments[$i__5750__auto___31919_on_set$jscomp$inline_1560$$]), $i__5750__auto___31919_on_set$jscomp$inline_1560$$ += 1;
+  for (var $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$ = [], $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$ = arguments.length, $i__5750__auto___31958_on_set$jscomp$inline_1560$$ = 0;;) {
+    if ($i__5750__auto___31958_on_set$jscomp$inline_1560$$ < $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$) {
+      $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.push(arguments[$i__5750__auto___31958_on_set$jscomp$inline_1560$$]), $i__5750__auto___31958_on_set$jscomp$inline_1560$$ += 1;
     } else {
       break;
     }
   }
-  $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$ = arguments[0];
-  var $map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$ = $APP.$cljs$core$__destructure_map$$(1 < $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.length ? new $APP.$cljs$core$IndexedSeq$$($args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.slice(1), 0, null) : null);
-  $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$622$auto_run$$);
-  $i__5750__auto___31919_on_set$jscomp$inline_1560$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$624$on_set$$);
-  $map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$619$on_dispose$$);
-  $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$ = new $reagent$ratom$Reaction$$($f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$);
-  $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$._set_opts(new $APP.$cljs$core$PersistentArrayMap$$(null, 3, [$cljs$cst$622$auto_run$$, $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$, $cljs$cst$624$on_set$$, $i__5750__auto___31919_on_set$jscomp$inline_1560$$, $cljs$cst$619$on_dispose$$, $map__31771__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$], null));
-  return $f$jscomp$inline_1556_len__5749__auto___31918_reaction$jscomp$inline_1562$$;
+  $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$ = arguments[0];
+  var $map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$ = $APP.$cljs$core$__destructure_map$$(1 < $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.length ? new $APP.$cljs$core$IndexedSeq$$($args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$.slice(1), 0, null) : null);
+  $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$622$auto_run$$);
+  $i__5750__auto___31958_on_set$jscomp$inline_1560$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$624$on_set$$);
+  $map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$, $cljs$cst$619$on_dispose$$);
+  $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$ = new $reagent$ratom$Reaction$$($f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$);
+  $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$._set_opts(new $APP.$cljs$core$PersistentArrayMap$$(null, 3, [$cljs$cst$622$auto_run$$, $args__5755__auto__$jscomp$49_auto_run$jscomp$inline_1559$$, $cljs$cst$624$on_set$$, $i__5750__auto___31958_on_set$jscomp$inline_1560$$, $cljs$cst$619$on_dispose$$, $map__31817__$1$jscomp$inline_1558_on_dispose$jscomp$inline_1561$$], null));
+  return $f$jscomp$inline_1556_len__5749__auto___31957_reaction$jscomp$inline_1562$$;
 };
 $reagent$ratom$run_in_reaction$$ = function($f$jscomp$452$$, $obj$jscomp$173$$, $run$jscomp$1$$) {
   var $opts$jscomp$169$$ = new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$625$no_cache$$, !0], null), $r$jscomp$59$$ = $reagent$ratom$temp_reaction$$, $res$jscomp$24$$ = $reagent$ratom$deref_capture$$($f$jscomp$452$$, $r$jscomp$59$$);
@@ -1781,20 +1781,20 @@ $threeagent$entity$update_BANG_$$ = function($this$$jscomp$335$$, $context$jscom
     }
   }
 };
-$threeagent$impl$threejs$set_position_BANG_$$ = function($obj$jscomp$175$$, $p__31686_z$jscomp$108$$) {
-  var $x$jscomp$820$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31686_z$jscomp$108$$, 0, null), $y$jscomp$300$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31686_z$jscomp$108$$, 1, null);
-  $p__31686_z$jscomp$108$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31686_z$jscomp$108$$, 2, null);
-  $obj$jscomp$175$$.position.set($x$jscomp$820$$, $y$jscomp$300$$, $p__31686_z$jscomp$108$$);
+$threeagent$impl$threejs$set_position_BANG_$$ = function($obj$jscomp$175$$, $p__31667_z$jscomp$108$$) {
+  var $x$jscomp$820$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31667_z$jscomp$108$$, 0, null), $y$jscomp$300$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31667_z$jscomp$108$$, 1, null);
+  $p__31667_z$jscomp$108$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31667_z$jscomp$108$$, 2, null);
+  $obj$jscomp$175$$.position.set($x$jscomp$820$$, $y$jscomp$300$$, $p__31667_z$jscomp$108$$);
 };
-$threeagent$impl$threejs$set_rotation_BANG_$$ = function($obj$jscomp$176$$, $p__31690_z$jscomp$109$$) {
-  var $x$jscomp$821$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31690_z$jscomp$109$$, 0, null), $y$jscomp$301$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31690_z$jscomp$109$$, 1, null);
-  $p__31690_z$jscomp$109$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31690_z$jscomp$109$$, 2, null);
-  $obj$jscomp$176$$.setRotationFromEuler(new $module$node_modules$three$build$three_cjs$$.Euler($x$jscomp$821$$, $y$jscomp$301$$, $p__31690_z$jscomp$109$$, "XYZ"));
+$threeagent$impl$threejs$set_rotation_BANG_$$ = function($obj$jscomp$176$$, $p__31671_z$jscomp$109$$) {
+  var $x$jscomp$821$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31671_z$jscomp$109$$, 0, null), $y$jscomp$301$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31671_z$jscomp$109$$, 1, null);
+  $p__31671_z$jscomp$109$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31671_z$jscomp$109$$, 2, null);
+  $obj$jscomp$176$$.setRotationFromEuler(new $module$node_modules$three$build$three_cjs$$.Euler($x$jscomp$821$$, $y$jscomp$301$$, $p__31671_z$jscomp$109$$, "XYZ"));
 };
-$threeagent$impl$threejs$set_scale_BANG_$$ = function($obj$jscomp$177$$, $p__31696_z$jscomp$110$$) {
-  var $x$jscomp$822$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31696_z$jscomp$110$$, 0, null), $y$jscomp$302$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31696_z$jscomp$110$$, 1, null);
-  $p__31696_z$jscomp$110$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31696_z$jscomp$110$$, 2, null);
-  $obj$jscomp$177$$.scale.set($x$jscomp$822$$, $y$jscomp$302$$, $p__31696_z$jscomp$110$$);
+$threeagent$impl$threejs$set_scale_BANG_$$ = function($obj$jscomp$177$$, $p__31675_z$jscomp$110$$) {
+  var $x$jscomp$822$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31675_z$jscomp$110$$, 0, null), $y$jscomp$302$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31675_z$jscomp$110$$, 1, null);
+  $p__31675_z$jscomp$110$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__31675_z$jscomp$110$$, 2, null);
+  $obj$jscomp$177$$.scale.set($x$jscomp$822$$, $y$jscomp$302$$, $p__31675_z$jscomp$110$$);
 };
 $threeagent$impl$entities$__GT_material$$ = function($config$jscomp$12$$) {
   return $config$jscomp$12$$ instanceof $module$node_modules$three$build$three_cjs$$.Material ? $config$jscomp$12$$ : $threeagent$impl$entities$material_cache$$($config$jscomp$12$$);
@@ -1807,20 +1807,20 @@ $threeagent$impl$entities$__GT_MeshEntity$$ = function($geo_fn$jscomp$1$$) {
 };
 $threeagent$impl$entities$apply_shadow_settings_BANG_$$ = function($light$$, $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$) {
   if ($APP.$cljs$core$truth_$$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$)) {
-    var $shadow_31923__$1$$ = $light$$.shadow, $camera_obj_31924$$ = $shadow_31923__$1$$.camera, $map_size_31925$$ = $APP.$cljs$core$merge$$.$cljs$core$IFn$_invoke$arity$variadic$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$694$map_size$$.$cljs$core$IFn$_invoke$arity$1$($threeagent$impl$entities$default_light_shadow$$), $cljs$cst$694$map_size$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$)])), $camera_31926$$ = 
+    var $shadow_31835__$1$$ = $light$$.shadow, $camera_obj_31836$$ = $shadow_31835__$1$$.camera, $map_size_31837$$ = $APP.$cljs$core$merge$$.$cljs$core$IFn$_invoke$arity$variadic$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$694$map_size$$.$cljs$core$IFn$_invoke$arity$1$($threeagent$impl$entities$default_light_shadow$$), $cljs$cst$694$map_size$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$)])), $camera_31838$$ = 
     $APP.$cljs$core$merge$$.$cljs$core$IFn$_invoke$arity$variadic$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$696$camera$$.$cljs$core$IFn$_invoke$arity$1$($threeagent$impl$entities$default_light_shadow$$), $cljs$cst$696$camera$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$)]));
-    $shadow_31923__$1$$.mapSize.width = $APP.$cljs$cst$505$width$$.$cljs$core$IFn$_invoke$arity$1$($map_size_31925$$);
-    $shadow_31923__$1$$.mapSize.height = $APP.$cljs$cst$506$height$$.$cljs$core$IFn$_invoke$arity$1$($map_size_31925$$);
-    $camera_obj_31924$$.near = $cljs$cst$697$near$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
-    $camera_obj_31924$$.far = $cljs$cst$698$far$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
-    $camera_obj_31924$$.left = $APP.$cljs$cst$343$left$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
-    $camera_obj_31924$$.right = $APP.$cljs$cst$344$right$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
-    $camera_obj_31924$$.top = $cljs$cst$699$top$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
-    $camera_obj_31924$$.bottom = $cljs$cst$700$bottom$$.$cljs$core$IFn$_invoke$arity$1$($camera_31926$$);
+    $shadow_31835__$1$$.mapSize.width = $APP.$cljs$cst$505$width$$.$cljs$core$IFn$_invoke$arity$1$($map_size_31837$$);
+    $shadow_31835__$1$$.mapSize.height = $APP.$cljs$cst$506$height$$.$cljs$core$IFn$_invoke$arity$1$($map_size_31837$$);
+    $camera_obj_31836$$.near = $cljs$cst$697$near$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
+    $camera_obj_31836$$.far = $cljs$cst$698$far$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
+    $camera_obj_31836$$.left = $APP.$cljs$cst$343$left$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
+    $camera_obj_31836$$.right = $APP.$cljs$cst$344$right$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
+    $camera_obj_31836$$.top = $cljs$cst$699$top$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
+    $camera_obj_31836$$.bottom = $cljs$cst$700$bottom$$.$cljs$core$IFn$_invoke$arity$1$($camera_31838$$);
     $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$ = $cljs$cst$695$focus$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$);
     $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$ = $APP.$cljs$core$truth_$$($JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$) ? $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$ : $cljs$cst$695$focus$$.$cljs$core$IFn$_invoke$arity$1$($threeagent$impl$entities$default_light_shadow$$);
-    $shadow_31923__$1$$.focus = $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$;
-    $camera_obj_31924$$.updateProjectionMatrix();
+    $shadow_31835__$1$$.focus = $JSCompiler_inline_result$jscomp$369_or__5025__auto__$jscomp$inline_1750_shadow_cfg$$;
+    $camera_obj_31836$$.updateProjectionMatrix();
   }
   return $light$$;
 };
@@ -1831,51 +1831,51 @@ $threeagent$impl$entities$LightEntity$$ = function($create_fn$$, $update_fn$$) {
 $threeagent$impl$entities$__GT_LightEntity$$ = function($create_fn$jscomp$1$$, $update_fn$jscomp$1$$) {
   return new $threeagent$impl$entities$LightEntity$$($create_fn$jscomp$1$$, $update_fn$jscomp$1$$);
 };
-$threeagent$impl$entities$apply_props_clj_BANG_$$ = function($obj$jscomp$181$$, $G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$) {
-  $G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$ = $APP.$cljs$core$seq$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$);
-  for (var $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$ = null, $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = 0, $i__31755_31931_obj$jscomp$inline_1756$$ = 0;;) {
-    if ($i__31755_31931_obj$jscomp$inline_1756$$ < $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$) {
-      var $v_31934_vec__31762_31932$$ = $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__31755_31931_obj$jscomp$inline_1756$$), $k_31933_key$jscomp$inline_1753$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_31934_vec__31762_31932$$, 0, null);
-      $v_31934_vec__31762_31932$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_31934_vec__31762_31932$$, 1, null);
+$threeagent$impl$entities$apply_props_clj_BANG_$$ = function($obj$jscomp$181$$, $G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$) {
+  $G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$ = $APP.$cljs$core$seq$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$);
+  for (var $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$ = null, $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = 0, $i__31726_31843_obj$jscomp$inline_1756$$ = 0;;) {
+    if ($i__31726_31843_obj$jscomp$inline_1756$$ < $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$) {
+      var $v_31846_vec__31733_31844$$ = $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__31726_31843_obj$jscomp$inline_1756$$), $k_31845_key$jscomp$inline_1753$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_31846_vec__31733_31844$$, 0, null);
+      $v_31846_vec__31733_31844$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_31846_vec__31733_31844$$, 1, null);
       var $obj$jscomp$inline_1752$$ = $obj$jscomp$181$$;
-      $k_31933_key$jscomp$inline_1753$$ = $APP.$cljs$core$name$$($k_31933_key$jscomp$inline_1753$$);
-      $obj$jscomp$inline_1752$$[$k_31933_key$jscomp$inline_1753$$] = $v_31934_vec__31762_31932$$;
-      $i__31755_31931_obj$jscomp$inline_1756$$ += 1;
+      $k_31845_key$jscomp$inline_1753$$ = $APP.$cljs$core$name$$($k_31845_key$jscomp$inline_1753$$);
+      $obj$jscomp$inline_1752$$[$k_31845_key$jscomp$inline_1753$$] = $v_31846_vec__31733_31844$$;
+      $i__31726_31843_obj$jscomp$inline_1756$$ += 1;
     } else {
-      if ($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$ = $APP.$cljs$core$seq$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$)) {
-        $APP.$cljs$core$chunked_seq_QMARK_$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$) ? ($G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = $APP.$cljs$core$_chunked_first$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$), $G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$ = $APP.$cljs$core$_chunked_rest$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$), 
-        $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$ = $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$, $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = $APP.$cljs$core$count$$($G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$)) : ($G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = $APP.$cljs$core$first$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$), 
-        $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$, 0, null), $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$, 1, null), $i__31755_31931_obj$jscomp$inline_1756$$ = $obj$jscomp$181$$, 
-        $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$ = $APP.$cljs$core$name$$($G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$), $i__31755_31931_obj$jscomp$inline_1756$$[$G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$] = $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$, $G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$ = $APP.$cljs$core$next$$($G__31942_properties$jscomp$6_seq__31752_31928_seq__31752_31940__$1_temp__5823__auto___31939$$), 
-        $G__31943_chunk__31753_31929_k_31947_key$jscomp$inline_1757$$ = null, $G__31944_c__5548__auto___31941_count__31754_31930_v_31948_vec__31765_31946$$ = 0), $i__31755_31931_obj$jscomp$inline_1756$$ = 0;
+      if ($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$ = $APP.$cljs$core$seq$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$)) {
+        $APP.$cljs$core$chunked_seq_QMARK_$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$) ? ($G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = $APP.$cljs$core$_chunked_first$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$), $G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$ = $APP.$cljs$core$_chunked_rest$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$), 
+        $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$ = $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$, $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = $APP.$cljs$core$count$$($G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$)) : ($G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = $APP.$cljs$core$first$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$), 
+        $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$, 0, null), $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$, 1, null), $i__31726_31843_obj$jscomp$inline_1756$$ = $obj$jscomp$181$$, 
+        $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$ = $APP.$cljs$core$name$$($G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$), $i__31726_31843_obj$jscomp$inline_1756$$[$G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$] = $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$, $G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$ = $APP.$cljs$core$next$$($G__31857_properties$jscomp$6_seq__31723_31840_seq__31723_31855__$1_temp__5823__auto___31854$$), 
+        $G__31858_chunk__31724_31841_k_31862_key$jscomp$inline_1757$$ = null, $G__31859_c__5548__auto___31856_count__31725_31842_v_31863_vec__31736_31861$$ = 0), $i__31726_31843_obj$jscomp$inline_1756$$ = 0;
       } else {
         break;
       }
     }
   }
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31782$$ = function($meta31783$$) {
-  this.$meta31783$ = $meta31783$$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31747$$ = function($meta31748$$) {
+  this.$meta31748$ = $meta31748$$;
   this.$cljs$lang$protocol_mask$partition0$$ = 393216;
   this.$cljs$lang$protocol_mask$partition1$$ = 0;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31789$$ = function($meta31790$$) {
-  this.$meta31790$ = $meta31790$$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31765$$ = function($meta31766$$) {
+  this.$meta31766$ = $meta31766$$;
   this.$cljs$lang$protocol_mask$partition0$$ = 393216;
   this.$cljs$lang$protocol_mask$partition1$$ = 0;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31795$$ = function($meta31796$$) {
-  this.$meta31796$ = $meta31796$$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31775$$ = function($meta31776$$) {
+  this.$meta31776$ = $meta31776$$;
   this.$cljs$lang$protocol_mask$partition0$$ = 393216;
   this.$cljs$lang$protocol_mask$partition1$$ = 0;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31841$$ = function($meta31842$$) {
-  this.$meta31842$ = $meta31842$$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31823$$ = function($meta31824$$) {
+  this.$meta31824$ = $meta31824$$;
   this.$cljs$lang$protocol_mask$partition0$$ = 393216;
   this.$cljs$lang$protocol_mask$partition1$$ = 0;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31884$$ = function($meta31885$$) {
-  this.$meta31885$ = $meta31885$$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31832$$ = function($meta31833$$) {
+  this.$meta31833$ = $meta31833$$;
   this.$cljs$lang$protocol_mask$partition0$$ = 393216;
   this.$cljs$lang$protocol_mask$partition1$$ = 0;
 };
@@ -2066,41 +2066,41 @@ $threeagent$impl$scene$on_entity_removed$$ = function($cams_32723_ctx$jscomp$6$$
   $APP.$cljs$core$truth_$$($old_obj$$.isCamera) && ($APP.$cljs$core$truth_$$($old_obj$$.active) && ($cams_32723_ctx$jscomp$6$$.camera = $cams_32723_ctx$jscomp$6$$.$lastCamera$), $cams_32723_ctx$jscomp$6$$ = $cams_32723_ctx$jscomp$6$$.cameras, $cams_32723_ctx$jscomp$6$$.splice($cams_32723_ctx$jscomp$6$$.indexOf($old_obj$$), 1));
   return $callbacks$jscomp$inline_1797_node$jscomp$186$$;
 };
-$threeagent$impl$scene$on_entity_added$$ = function($ctx$jscomp$7$$, $entity_id$jscomp$inline_1821_node$jscomp$187$$, $obj$jscomp$184$$, $G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$) {
+$threeagent$impl$scene$on_entity_added$$ = function($ctx$jscomp$7$$, $entity_id$jscomp$inline_1821_node$jscomp$187$$, $obj$jscomp$184$$, $G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$) {
   var $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $cljs$cst$787$on_added$$.$cljs$core$IFn$_invoke$arity$1$($entity_id$jscomp$inline_1821_node$jscomp$187$$.$meta$);
   $APP.$cljs$core$truth_$$($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$) && ($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$ ? $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$($obj$jscomp$184$$) : $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.call(null, 
   $obj$jscomp$184$$));
-  $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $cljs$cst$787$on_added$$.$cljs$core$IFn$_invoke$arity$1$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
+  $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $cljs$cst$787$on_added$$.$cljs$core$IFn$_invoke$arity$1$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
   $APP.$cljs$core$truth_$$($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$) && ($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$ ? $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$($obj$jscomp$184$$) : $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.call(null, 
   $obj$jscomp$184$$));
-  $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $APP.$cljs$cst$199$ref$$.$cljs$core$IFn$_invoke$arity$1$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
+  $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $APP.$cljs$cst$199$ref$$.$cljs$core$IFn$_invoke$arity$1$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
   $APP.$cljs$core$truth_$$($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$) && ($entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$ ? $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.$cljs$core$IFn$_invoke$arity$1$($obj$jscomp$184$$) : $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$.call(null, 
   $obj$jscomp$184$$));
   $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$ = $entity_id$jscomp$inline_1821_node$jscomp$187$$.context;
   $entity_id$jscomp$inline_1821_node$jscomp$187$$ = $entity_id$jscomp$inline_1821_node$jscomp$187$$.id;
   var $systems$jscomp$inline_1824$$ = $ctx$jscomp$7$$.$systems$, $callbacks$jscomp$inline_1825$$ = [];
-  $G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$seq$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
-  for (var $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = null, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = 0, $i__32434_32523$jscomp$inline_1829$$ = 0;;) {
-    if ($i__32434_32523$jscomp$inline_1829$$ < $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$) {
-      var $v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$ = $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32434_32523$jscomp$inline_1829$$), $cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$, 
+  $G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$seq$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$);
+  for (var $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = null, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = 0, $i__32435_32523$jscomp$inline_1829$$ = 0;;) {
+    if ($i__32435_32523$jscomp$inline_1829$$ < $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$) {
+      var $v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$ = $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32435_32523$jscomp$inline_1829$$), $cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$, 
       0, null);
       $v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$, 1, null);
       $cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($systems$jscomp$inline_1824$$, $cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$);
       $APP.$cljs$core$truth_$$($cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$) && ($cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$ = $threeagent$system$on_entity_added$$($cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$, $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$, $entity_id$jscomp$inline_1821_node$jscomp$187$$, 
       $obj$jscomp$184$$, $v_32526$jscomp$inline_1832_vec__32442_32524$jscomp$inline_1830$$), $APP.$cljs$core$fn_QMARK_$$($cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$) && $callbacks$jscomp$inline_1825$$.push($cb_32529$jscomp$inline_1834_k_32525$jscomp$inline_1831_temp__5823__auto___32527$jscomp$inline_1833$$));
-      $i__32434_32523$jscomp$inline_1829$$ += 1;
+      $i__32435_32523$jscomp$inline_1829$$ += 1;
     } else {
-      if ($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$seq$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$)) {
-        $APP.$cljs$core$chunked_seq_QMARK_$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$) ? ($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$_chunked_first$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), 
-        $G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$_chunked_rest$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
-        $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$count$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$)) : 
-        ($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$first$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
-        $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, 0, null), $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, 
-        1, null), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($systems$jscomp$inline_1824$$, $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$), $APP.$cljs$core$truth_$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$) && 
-        ($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = $threeagent$system$on_entity_added$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$, $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$, 
-        $entity_id$jscomp$inline_1821_node$jscomp$187$$, $obj$jscomp$184$$, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$), $APP.$cljs$core$fn_QMARK_$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$) && $callbacks$jscomp$inline_1825$$.push($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$)), 
-        $G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$next$$($G__32537$jscomp$inline_1838_component_config_seq__32431_32520$jscomp$inline_1826_seq__32431_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32432_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
-        null, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32433_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = 0), $i__32434_32523$jscomp$inline_1829$$ = 0;
+      if ($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$seq$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$)) {
+        $APP.$cljs$core$chunked_seq_QMARK_$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$) ? ($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$_chunked_first$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), 
+        $G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$_chunked_rest$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
+        $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$count$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$)) : 
+        ($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$first$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
+        $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, 0, null), $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$, 
+        1, null), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($systems$jscomp$inline_1824$$, $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$), $APP.$cljs$core$truth_$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$) && 
+        ($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = $threeagent$system$on_entity_added$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$, $entity_context$jscomp$inline_1820_temp__5823__auto___32724_temp__5823__auto___32726_temp__5823__auto___32728$$, 
+        $entity_id$jscomp$inline_1821_node$jscomp$187$$, $obj$jscomp$184$$, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$), $APP.$cljs$core$fn_QMARK_$$($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$) && $callbacks$jscomp$inline_1825$$.push($G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$)), 
+        $G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$ = $APP.$cljs$core$next$$($G__32537$jscomp$inline_1838_component_config_seq__32432_32520$jscomp$inline_1826_seq__32432_32535__$1$jscomp$inline_1836_temp__5823__auto___32534$jscomp$inline_1835$$), $G__32538$jscomp$inline_1839_cb_32546$jscomp$inline_1845_chunk__32433_32521$jscomp$inline_1827_k_32542$jscomp$inline_1842_temp__5823__auto___32544__$1$jscomp$inline_1844$$ = 
+        null, $G__32539$jscomp$inline_1840_c__5548__auto___32536$jscomp$inline_1837_count__32434_32522$jscomp$inline_1828_v_32543$jscomp$inline_1843_vec__32445_32541$jscomp$inline_1841$$ = 0), $i__32435_32523$jscomp$inline_1829$$ = 0;
       } else {
         break;
       }
@@ -2150,30 +2150,30 @@ $threeagent$impl$scene$apply_change_BANG_$$ = function($chunk__32692_32799$jscom
             $parent_obj$jscomp$inline_1866$$.remove($old_obj$jscomp$inline_1861$$);
             $parent_obj$jscomp$inline_1866$$.add($chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$);
             if (!$APP.$cljs$core$truth_$$($node$jscomp$197$$.terminal_QMARK_())) {
-              for (var $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$aclone$$($children$jscomp$inline_1867$$)), $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = null, $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$ = 0, $i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$ = 0;;) {
-                if ($i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$ < $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$) {
-                  var $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ = $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$);
-                  $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.add($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
-                  $i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$ += 1;
+              for (var $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$aclone$$($children$jscomp$inline_1867$$)), $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = null, $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$ = 0, $i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$ = 0;;) {
+                if ($i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$ < $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$) {
+                  var $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ = $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$);
+                  $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.add($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
+                  $i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$ += 1;
                 } else {
-                  var $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$ = $APP.$cljs$core$seq$$($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$);
-                  if ($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$) {
-                    var $G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$ = $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$;
-                    if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$)) {
-                      var $c__5548__auto___32830$jscomp$inline_1876$$ = $APP.$cljs$core$_chunked_first$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$), $G__32831$jscomp$inline_1877$$ = $APP.$cljs$core$_chunked_rest$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$);
-                      $G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$ = $c__5548__auto___32830$jscomp$inline_1876$$;
-                      var $G__32833$jscomp$inline_1879$$ = $APP.$cljs$core$count$$($c__5548__auto___32830$jscomp$inline_1876$$);
-                      $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = $G__32831$jscomp$inline_1877$$;
-                      $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$;
-                      $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$ = $G__32833$jscomp$inline_1879$$;
+                  var $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$ = $APP.$cljs$core$seq$$($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$);
+                  if ($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$) {
+                    var $G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$ = $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$;
+                    if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$)) {
+                      var $c__5548__auto___32833$jscomp$inline_1876$$ = $APP.$cljs$core$_chunked_first$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$), $G__32834$jscomp$inline_1877$$ = $APP.$cljs$core$_chunked_rest$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$);
+                      $G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$ = $c__5548__auto___32833$jscomp$inline_1876$$;
+                      var $G__32836$jscomp$inline_1879$$ = $APP.$cljs$core$count$$($c__5548__auto___32833$jscomp$inline_1876$$);
+                      $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = $G__32834$jscomp$inline_1877$$;
+                      $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$;
+                      $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$ = $G__32836$jscomp$inline_1879$$;
                     } else {
-                      var $child_32835$jscomp$inline_1880$$ = $APP.$cljs$core$first$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$);
-                      $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.add($child_32835$jscomp$inline_1880$$);
-                      $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = $APP.$cljs$core$next$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$);
-                      $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = null;
-                      $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$ = 0;
+                      var $child_32838$jscomp$inline_1880$$ = $APP.$cljs$core$first$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$);
+                      $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.add($child_32838$jscomp$inline_1880$$);
+                      $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = $APP.$cljs$core$next$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$);
+                      $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = null;
+                      $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$ = 0;
                     }
-                    $i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$ = 0;
+                    $i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$ = 0;
                   } else {
                     break;
                   }
@@ -2193,30 +2193,30 @@ $threeagent$impl$scene$apply_change_BANG_$$ = function($chunk__32692_32799$jscom
             $APP.$cljs$cst$583$position$$), $rotation$jscomp$inline_1890$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32686__$1$jscomp$inline_1886$$, $APP.$cljs$cst$584$rotation$$), $scale$jscomp$inline_1891$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32686__$1$jscomp$inline_1886$$, $cljs$cst$661$scale$$), $entity_type$jscomp$inline_1892$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$.$entityTypes$, 
             $component_key$jscomp$inline_1888$$), $obj$jscomp$inline_1893$$ = $node$jscomp$197$$.$threejs$, $seq__32687_32777$jscomp$inline_1894$$ = $APP.$cljs$core$seq$$($threeagent$impl$scene$on_entity_removed$$($chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$, $node$jscomp$197$$, $obj$jscomp$inline_1893$$, $cljs$cst$675$component_config$$.$cljs$core$IFn$_invoke$arity$1$($old_data$jscomp$3$$)));
             $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = null;
-            for ($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ = $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = 0;;) {
-              if ($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ < $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$) {
-                var $cb_32781$jscomp$inline_1898$$ = $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
+            for ($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ = $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = 0;;) {
+              if ($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ < $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$) {
+                var $cb_32781$jscomp$inline_1898$$ = $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
                 $cb_32781$jscomp$inline_1898$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32781$jscomp$inline_1898$$.$cljs$core$IFn$_invoke$arity$0$() : $cb_32781$jscomp$inline_1898$$.call(null);
-                $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ += 1;
+                $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ += 1;
               } else {
                 var $temp__5823__auto___32786$jscomp$inline_1899$$ = $APP.$cljs$core$seq$$($seq__32687_32777$jscomp$inline_1894$$);
                 if ($temp__5823__auto___32786$jscomp$inline_1899$$) {
-                  $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$ = $temp__5823__auto___32786$jscomp$inline_1899$$;
-                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$)) {
-                    var $c__5548__auto___32788$jscomp$inline_1901$$ = $APP.$cljs$core$_chunked_first$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$), $G__32789$jscomp$inline_1902$$ = $APP.$cljs$core$_chunked_rest$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$);
-                    $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$ = $c__5548__auto___32788$jscomp$inline_1901$$;
+                  $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$ = $temp__5823__auto___32786$jscomp$inline_1899$$;
+                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$)) {
+                    var $c__5548__auto___32788$jscomp$inline_1901$$ = $APP.$cljs$core$_chunked_first$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$), $G__32789$jscomp$inline_1902$$ = $APP.$cljs$core$_chunked_rest$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$);
+                    $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$ = $c__5548__auto___32788$jscomp$inline_1901$$;
                     var $G__32791$jscomp$inline_1904$$ = $APP.$cljs$core$count$$($c__5548__auto___32788$jscomp$inline_1901$$);
                     $seq__32687_32777$jscomp$inline_1894$$ = $G__32789$jscomp$inline_1902$$;
-                    $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$;
-                    $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = $G__32791$jscomp$inline_1904$$;
+                    $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = $G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$;
+                    $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = $G__32791$jscomp$inline_1904$$;
                   } else {
-                    var $cb_32793$jscomp$inline_1905$$ = $APP.$cljs$core$first$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$);
+                    var $cb_32793$jscomp$inline_1905$$ = $APP.$cljs$core$first$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$);
                     $cb_32793$jscomp$inline_1905$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32793$jscomp$inline_1905$$.$cljs$core$IFn$_invoke$arity$0$() : $cb_32793$jscomp$inline_1905$$.call(null);
-                    $seq__32687_32777$jscomp$inline_1894$$ = $APP.$cljs$core$next$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32828$jscomp$inline_1874$$);
+                    $seq__32687_32777$jscomp$inline_1894$$ = $APP.$cljs$core$next$$($G__32790$jscomp$inline_1903_seq__32687_32787__$1$jscomp$inline_1900_temp__5823__auto___32831$jscomp$inline_1874$$);
                     $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = null;
-                    $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = 0;
+                    $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = 0;
                   }
-                  $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ = 0;
+                  $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ = 0;
                 } else {
                   break;
                 }
@@ -2226,31 +2226,31 @@ $threeagent$impl$scene$apply_change_BANG_$$ = function($chunk__32692_32799$jscom
             $threeagent$impl$threejs$set_position_BANG_$$($obj$jscomp$inline_1893$$, $position$jscomp$inline_1889$$);
             $threeagent$impl$threejs$set_rotation_BANG_$$($obj$jscomp$inline_1893$$, $rotation$jscomp$inline_1890$$);
             $threeagent$impl$threejs$set_scale_BANG_$$($obj$jscomp$inline_1893$$, $scale$jscomp$inline_1891$$);
-            $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $APP.$cljs$core$seq$$($threeagent$impl$scene$on_entity_added$$($chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$, $node$jscomp$197$$, $obj$jscomp$inline_1893$$, $component_config$jscomp$inline_1887$$));
+            $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $APP.$cljs$core$seq$$($threeagent$impl$scene$on_entity_added$$($chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$, $node$jscomp$197$$, $obj$jscomp$inline_1893$$, $component_config$jscomp$inline_1887$$));
             $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$ = null;
-            for ($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = 0;;) {
-              if ($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ < $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$) {
-                $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$ = $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$.$cljs$core$IIndexed$_nth$arity$2$(null, $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$), $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$.$cljs$core$IFn$_invoke$arity$0$() : 
-                $cb_32802$jscomp$inline_1910_count__32699_32821$jscomp$inline_1871$$.call(null), $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ += 1;
+            for ($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = 0;;) {
+              if ($count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ < $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$) {
+                $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$ = $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$.$cljs$core$IIndexed$_nth$arity$2$(null, $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$), $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$.$cljs$core$IFn$_invoke$arity$0$() : 
+                $cb_32802$jscomp$inline_1910_count__32699_32823$jscomp$inline_1871$$.call(null), $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ += 1;
               } else {
-                if ($i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$ = $APP.$cljs$core$seq$$($chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$)) {
-                  $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ = $i__32700_32822$jscomp$inline_1872_temp__5823__auto___32807$jscomp$inline_1911$$;
-                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$)) {
-                    $G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$ = $APP.$cljs$core$_chunked_first$$($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
-                    var $G__32810$jscomp$inline_1914$$ = $APP.$cljs$core$_chunked_rest$$($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
-                    $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$ = $G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$;
-                    var $G__32812$jscomp$inline_1916$$ = $APP.$cljs$core$count$$($G__32832$jscomp$inline_1878_c__5548__auto___32809$jscomp$inline_1913_seq__32697_32829__$1$jscomp$inline_1875$$);
-                    $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $G__32810$jscomp$inline_1914$$;
-                    $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$ = $G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$;
-                    $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = $G__32812$jscomp$inline_1916$$;
+                if ($i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$ = $APP.$cljs$core$seq$$($chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$)) {
+                  $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ = $i__32700_32824$jscomp$inline_1872_temp__5823__auto___32808$jscomp$inline_1911$$;
+                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$)) {
+                    $G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$ = $APP.$cljs$core$_chunked_first$$($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
+                    var $G__32811$jscomp$inline_1914$$ = $APP.$cljs$core$_chunked_rest$$($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
+                    $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$ = $G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$;
+                    var $G__32813$jscomp$inline_1916$$ = $APP.$cljs$core$count$$($G__32835$jscomp$inline_1878_c__5548__auto___32810$jscomp$inline_1913_seq__32697_32832__$1$jscomp$inline_1875$$);
+                    $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $G__32811$jscomp$inline_1914$$;
+                    $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$ = $G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$;
+                    $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = $G__32813$jscomp$inline_1916$$;
                   } else {
-                    var $cb_32814$jscomp$inline_1917$$ = $APP.$cljs$core$first$$($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
-                    $cb_32814$jscomp$inline_1917$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32814$jscomp$inline_1917$$.$cljs$core$IFn$_invoke$arity$0$() : $cb_32814$jscomp$inline_1917$$.call(null);
-                    $chunk__32698_32820$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $APP.$cljs$core$next$$($G__32811$jscomp$inline_1915_child_32823$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32808__$1$jscomp$inline_1912$$);
+                    var $cb_32816$jscomp$inline_1917$$ = $APP.$cljs$core$first$$($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
+                    $cb_32816$jscomp$inline_1917$$.$cljs$core$IFn$_invoke$arity$0$ ? $cb_32816$jscomp$inline_1917$$.$cljs$core$IFn$_invoke$arity$0$() : $cb_32816$jscomp$inline_1917$$.call(null);
+                    $chunk__32698_32822$jscomp$inline_1870_seq__32691_32798$jscomp$inline_1906$$ = $APP.$cljs$core$next$$($G__32812$jscomp$inline_1915_child_32826$jscomp$inline_1873_i__32690_32780$jscomp$inline_1897_seq__32691_32809__$1$jscomp$inline_1912$$);
                     $chunk__32692_32799$jscomp$inline_1907_context$jscomp$42_ex$jscomp$15$$ = null;
                     $chunk__32688_32778$jscomp$inline_1895_count__32693_32800$jscomp$inline_1908_new_obj$jscomp$inline_1868$$ = 0;
                   }
-                  $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32819$jscomp$inline_1869$$ = 0;
+                  $count__32689_32779$jscomp$inline_1896_i__32694_32801$jscomp$inline_1909_seq__32697_32821$jscomp$inline_1869$$ = 0;
                 } else {
                   break;
                 }
@@ -2309,52 +2309,52 @@ $threeagent$impl$scene$create_context$$ = function($dom_root$jscomp$1$$, $on_bef
   $threeagent$impl$scene$create_entity$$.$cljs$core$IFn$_invoke$arity$3$($context$jscomp$44$$, $scene_root$jscomp$2$$, $root_fn$jscomp$1_virtual_scene$jscomp$2$$.root);
   $threeagent$impl$scene$contexts$$.push($context$jscomp$44$$);
   $renderer$jscomp$4$$.setAnimationLoop(function() {
-    var $stats$jscomp$inline_1929$$ = $context$jscomp$44$$.stats, $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$ = $context$jscomp$44$$.$clock$, $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $context$jscomp$44$$.$virtualScene$, $renderer$jscomp$inline_1932$$ = $context$jscomp$44$$.renderer, $composer$jscomp$inline_1933$$ = 
-    $context$jscomp$44$$.$composer$, $scene_root$jscomp$inline_1934$$ = $context$jscomp$44$$.sceneRoot, $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $context$jscomp$44$$.$beforeRenderCb$, $after_render_cb$jscomp$inline_1936$$ = $context$jscomp$44$$.$afterRenderCb$;
+    var $stats$jscomp$inline_1929$$ = $context$jscomp$44$$.stats, $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$ = $context$jscomp$44$$.$clock$, $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $context$jscomp$44$$.$virtualScene$, $renderer$jscomp$inline_1932$$ = $context$jscomp$44$$.renderer, $composer$jscomp$inline_1933$$ = 
+    $context$jscomp$44$$.$composer$, $scene_root$jscomp$inline_1934$$ = $context$jscomp$44$$.sceneRoot, $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $context$jscomp$44$$.$beforeRenderCb$, $after_render_cb$jscomp$inline_1936$$ = $context$jscomp$44$$.$afterRenderCb$;
     $APP.$cljs$core$truth_$$($stats$jscomp$inline_1929$$) && $stats$jscomp$inline_1929$$.begin();
-    $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$ = $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$.$getDelta$();
-    for (var $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$ = [], $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$seq$$($context$jscomp$44$$.$systems$), $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = 
+    $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$ = $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$.getDelta();
+    for (var $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$ = [], $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$seq$$($context$jscomp$44$$.$systems$), $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = 
     null, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = 0, $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = 0;;) {
       if ($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ < $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$) {
-        var $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$cljs$core$IIndexed$_nth$arity$2$(null, $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$);
+        var $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$cljs$core$IIndexed$_nth$arity$2$(null, $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$);
         $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, 0, null);
         $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, 1, null);
-        $threeagent$system$tick$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$);
+        $threeagent$system$tick$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$);
         $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ += 1;
       } else {
-        if ($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$seq$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$)) {
-          $APP.$cljs$core$chunked_seq_QMARK_$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$) ? ($G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = $APP.$cljs$core$_chunked_first$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
-          $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$_chunked_rest$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
-          $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = $APP.$cljs$core$count$$($G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$)) : 
-          ($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $APP.$cljs$core$first$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, 
-          0, null), $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, 1, null), $threeagent$system$tick$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$), 
-          $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$next$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
-          $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = null, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = 0), $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = 0;
+        if ($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$seq$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$)) {
+          $APP.$cljs$core$chunked_seq_QMARK_$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$) ? ($G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = $APP.$cljs$core$_chunked_first$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
+          $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$_chunked_rest$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
+          $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = $APP.$cljs$core$count$$($G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$)) : 
+          ($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $APP.$cljs$core$first$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, 
+          0, null), $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, 1, null), $threeagent$system$tick$$($changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$), 
+          $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $APP.$cljs$core$next$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
+          $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = null, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = 0), $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = 0;
         } else {
           break;
         }
       }
     }
-    $APP.$cljs$core$truth_$$($G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$) && ($G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$.$cljs$core$IFn$_invoke$arity$1$ ? $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$.$cljs$core$IFn$_invoke$arity$1$($clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$) : 
-    $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$.call(null, $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$));
+    $APP.$cljs$core$truth_$$($G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$) && ($G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$.$cljs$core$IFn$_invoke$arity$1$ ? $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$.$cljs$core$IFn$_invoke$arity$1$($clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$) : 
+    $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$.call(null, $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$));
     $reagent$impl$batching$render_queue$$.flush_queues();
-    $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$.$renderQueue$;
-    for ($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$.remove();;) {
+    $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$.$renderQueue$;
+    for ($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$.remove();;) {
       if ($APP.$cljs$core$truth_$$($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$)) {
-        if ($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$.node, $APP.$cljs$core$truth_$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$)) {
-          $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$;
-          if (!$APP.$cljs$core$truth_$$($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.disposed)) {
-            $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$;
+        if ($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$.node, $APP.$cljs$core$truth_$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$)) {
+          $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$;
+          if (!$APP.$cljs$core$truth_$$($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.disposed)) {
+            $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$;
             $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$ = $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$.$renderFn$;
             $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$.forceReplace;
-            $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$;
-            var $new_form$jscomp$inline_2964$$ = $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.form;
-            $APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$) ? $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ : $threeagent$impl$virtual_scene$diff_fn_QMARK_$$($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$)) ? 
-            ($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$dirty$ = !1, $threeagent$impl$virtual_scene$replace_node_BANG_$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$, 
-            $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$, $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$)) : ($G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$dirty$ = !1, $threeagent$impl$virtual_scene$update_node_BANG_$$($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$, 
-            $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$, $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, !0));
+            $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$ = $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$;
+            var $new_form$jscomp$inline_2964$$ = $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.form;
+            $APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$) ? $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ : $threeagent$impl$virtual_scene$diff_fn_QMARK_$$($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$)) ? 
+            ($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$dirty$ = !1, $threeagent$impl$virtual_scene$replace_node_BANG_$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$, 
+            $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$, $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$)) : ($G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$.$dirty$ = !1, $threeagent$impl$virtual_scene$update_node_BANG_$$($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$, 
+            $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$, $new_form$jscomp$inline_2964$$, $G__32588$jscomp$inline_2548_c__5548__auto__$jscomp$inline_2545_count__32466$jscomp$inline_2539_render_fn$jscomp$inline_2961$$, $changelog$jscomp$inline_2963_system$jscomp$inline_2542_vec__32474$jscomp$inline_2541$$, !0));
           }
-          $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$.remove();
+          $entry$jscomp$inline_2554_force_replace_QMARK_$jscomp$inline_2962_i__32467$jscomp$inline_2540$$ = $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$.remove();
           continue;
         } else {
           break;
@@ -2364,31 +2364,31 @@ $threeagent$impl$scene$create_context$$ = function($dom_root$jscomp$1$$, $on_bef
       }
       break;
     }
-    $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$seq$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$);
-    $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$ = null;
-    for ($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$ = 0;;) {
-      if ($G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ < $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$) {
-        $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
-        $threeagent$impl$scene$apply_change_BANG_$$($context$jscomp$44$$, $G__32587$jscomp$inline_2547_change_32850$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$), $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ += 
+    $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$seq$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$);
+    $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$ = null;
+    for ($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$ = 0;;) {
+      if ($G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ < $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$) {
+        $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$ = $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$), 
+        $threeagent$impl$scene$apply_change_BANG_$$($context$jscomp$44$$, $G__32587$jscomp$inline_2547_change_32851$jscomp$inline_1943_chunk__32465$jscomp$inline_2538_node$jscomp$inline_2556_node$jscomp$inline_2960_vec__32477$jscomp$inline_2549$$), $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ += 
         1;
       } else {
-        if ($c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$seq$$($c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$)) {
-          $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$ = $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$) ? 
-          ($c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$_chunked_first$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$), $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = 
-          $APP.$cljs$core$_chunked_rest$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$), $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$ = $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$, 
-          $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $APP.$cljs$core$count$$($c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$), $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = 
-          $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$) : ($c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$first$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$), 
-          $threeagent$impl$scene$apply_change_BANG_$$($context$jscomp$44$$, $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$), $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = 
-          $APP.$cljs$core$next$$($G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$), $G__32859$jscomp$inline_1948_changelog_32845$jscomp$inline_1938_chunk__32711_32847$jscomp$inline_1940_seq__32710_32856__$1$jscomp$inline_1945$$ = null, $G__32860$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32848$jscomp$inline_1941_queue$jscomp$inline_2553$$ = 0), $G__32586$jscomp$inline_2546_G__32858$jscomp$inline_1947_i__32713_32849$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = 
+        if ($c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$seq$$($c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$)) {
+          $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$ = $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$) ? 
+          ($c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$_chunked_first$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$), $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = 
+          $APP.$cljs$core$_chunked_rest$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$), $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$ = $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$, 
+          $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$ = $APP.$cljs$core$count$$($c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$), $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = 
+          $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$) : ($c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $APP.$cljs$core$first$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$), 
+          $threeagent$impl$scene$apply_change_BANG_$$($context$jscomp$44$$, $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$), $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = 
+          $APP.$cljs$core$next$$($G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$), $G__32860$jscomp$inline_1948_changelog_32846$jscomp$inline_1938_chunk__32711_32848$jscomp$inline_1940_seq__32710_32857__$1$jscomp$inline_1945$$ = null, $G__32861$jscomp$inline_1949_before_render_cb$jscomp$inline_1935_count__32712_32849$jscomp$inline_1941_queue$jscomp$inline_2553$$ = 0), $G__32586$jscomp$inline_2546_G__32859$jscomp$inline_1947_i__32713_32850$jscomp$inline_1942_scene$jscomp$inline_2959_seq__32464$jscomp$inline_2537_seq__32464__$1$jscomp$inline_2544_temp__5823__auto__$jscomp$inline_2543_temp__5823__auto__$jscomp$inline_2555$$ = 
           0;
         } else {
           break;
         }
       }
     }
-    $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $context$jscomp$44$$.camera;
-    $APP.$cljs$core$truth_$$($composer$jscomp$inline_1933$$) ? $composer$jscomp$inline_1933$$.render($clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$) : $renderer$jscomp$inline_1932$$.render($scene_root$jscomp$inline_1934$$, $c__5548__auto___32857$jscomp$inline_1946_camera_32867$jscomp$inline_1951_change_32862$jscomp$inline_1950_seq__32710_32846$jscomp$inline_1939_temp__5823__auto___32855$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$);
-    $APP.$cljs$core$truth_$$($after_render_cb$jscomp$inline_1936$$) && ($after_render_cb$jscomp$inline_1936$$.$cljs$core$IFn$_invoke$arity$1$ ? $after_render_cb$jscomp$inline_1936$$.$cljs$core$IFn$_invoke$arity$1$($clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$) : $after_render_cb$jscomp$inline_1936$$.call(null, $clock$jscomp$inline_1930_delta_time_32844$jscomp$inline_1937$$));
+    $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$ = $context$jscomp$44$$.camera;
+    $APP.$cljs$core$truth_$$($composer$jscomp$inline_1933$$) ? $composer$jscomp$inline_1933$$.render($clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$) : $renderer$jscomp$inline_1932$$.render($scene_root$jscomp$inline_1934$$, $c__5548__auto___32858$jscomp$inline_1946_camera_32868$jscomp$inline_1951_change_32863$jscomp$inline_1950_seq__32710_32847$jscomp$inline_1939_temp__5823__auto___32856$jscomp$inline_1944_virtual_scene$jscomp$inline_1931$$);
+    $APP.$cljs$core$truth_$$($after_render_cb$jscomp$inline_1936$$) && ($after_render_cb$jscomp$inline_1936$$.$cljs$core$IFn$_invoke$arity$1$ ? $after_render_cb$jscomp$inline_1936$$.$cljs$core$IFn$_invoke$arity$1$($clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$) : $after_render_cb$jscomp$inline_1936$$.call(null, $clock$jscomp$inline_1930_delta_time_32845$jscomp$inline_1937$$));
     return $APP.$cljs$core$truth_$$($stats$jscomp$inline_1929$$) ? $stats$jscomp$inline_1929$$.end() : null;
   });
   return $context$jscomp$44$$;
@@ -2407,52 +2407,52 @@ $threeagent$impl$scene$render$$ = function($dom_root$jscomp$4_new_virtual_scene$
     var $on_after_render$jscomp$inline_3262$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32717__$1$jscomp$inline_3260_scene_root$jscomp$inline_3266$$, $cljs$cst$793$on_after_render$$), $shadow_map$jscomp$inline_3263$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32717__$1$jscomp$inline_3260_scene_root$jscomp$inline_3266$$, $cljs$cst$794$shadow_map$$), $entity_types$jscomp$inline_3264$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32717__$1$jscomp$inline_3260_scene_root$jscomp$inline_3266$$, 
     $cljs$cst$795$entity_types$$), $systems$jscomp$inline_3265$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__32717__$1$jscomp$inline_3260_scene_root$jscomp$inline_3266$$, $cljs$cst$781$systems$$);
     $map__32717__$1$jscomp$inline_3260_scene_root$jscomp$inline_3266$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.sceneRoot;
-    var $virtual_scene$jscomp$inline_3267$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.$virtualScene$, $renderer$jscomp$inline_3268$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.renderer, $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.$systems$, 
-    $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($threeagent$impl$scene$raw_context__GT_context$$($JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$), $cljs$cst$781$systems$$, $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$), 
-    $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = [];
-    $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = $APP.$cljs$core$seq$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$);
-    for (var $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = null, $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 0, $i__32503_32636$jscomp$inline_3373$$ = 0;;) {
-      if ($i__32503_32636$jscomp$inline_3373$$ < $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$) {
-        var $cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$ = $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32503_32636$jscomp$inline_3373$$);
-        $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$, 0, null);
-        $cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$, 1, null);
-        $cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$ = $threeagent$system$destroy$$($cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$, $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$);
-        $APP.$cljs$core$fn_QMARK_$$($cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$) && $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.push($cb_32640$jscomp$inline_3376_system_32639$jscomp$inline_3375_vec__32510_32637$jscomp$inline_3374$$);
-        $i__32503_32636$jscomp$inline_3373$$ += 1;
+    var $virtual_scene$jscomp$inline_3267$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.$virtualScene$, $renderer$jscomp$inline_3268$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.renderer, $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = $JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$.$systems$, 
+    $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($threeagent$impl$scene$raw_context__GT_context$$($JSCompiler_temp$jscomp$2983_temp__5821__auto__$jscomp$inline_2969$$), $cljs$cst$781$systems$$, $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$), 
+    $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = [];
+    $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = $APP.$cljs$core$seq$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$);
+    for (var $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = null, $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 0, $i__32503_32637$jscomp$inline_3373$$ = 0;;) {
+      if ($i__32503_32637$jscomp$inline_3373$$ < $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$) {
+        var $cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$ = $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32503_32637$jscomp$inline_3373$$);
+        $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$, 0, null);
+        $cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$, 1, null);
+        $cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$ = $threeagent$system$destroy$$($cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$, $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$);
+        $APP.$cljs$core$fn_QMARK_$$($cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$) && $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.push($cb_32641$jscomp$inline_3376_system_32640$jscomp$inline_3375_vec__32510_32638$jscomp$inline_3374$$);
+        $i__32503_32637$jscomp$inline_3373$$ += 1;
       } else {
-        if ($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = $APP.$cljs$core$seq$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$)) {
-          $APP.$cljs$core$chunked_seq_QMARK_$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$) ? ($G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = $APP.$cljs$core$_chunked_first$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$), 
-          $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = $APP.$cljs$core$_chunked_rest$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$), 
-          $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$, $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
-          $APP.$cljs$core$count$$($G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$)) : ($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = $APP.$cljs$core$first$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$), 
-          $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$, 0, null), $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = 
-          $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$, 1, null), $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = 
-          $threeagent$system$destroy$$($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$, $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$), $APP.$cljs$core$fn_QMARK_$$($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$) && 
-          $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.push($G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$), $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = 
-          $APP.$cljs$core$next$$($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$), $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = null, $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
-          0), $i__32503_32636$jscomp$inline_3373$$ = 0;
+        if ($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = $APP.$cljs$core$seq$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$)) {
+          $APP.$cljs$core$chunked_seq_QMARK_$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$) ? ($G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = $APP.$cljs$core$_chunked_first$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$), 
+          $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = $APP.$cljs$core$_chunked_rest$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$), 
+          $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$, $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
+          $APP.$cljs$core$count$$($G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$)) : ($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = $APP.$cljs$core$first$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$), 
+          $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$, 0, null), $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = 
+          $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$, 1, null), $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = 
+          $threeagent$system$destroy$$($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$, $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$), $APP.$cljs$core$fn_QMARK_$$($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$) && 
+          $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.push($G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$), $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = 
+          $APP.$cljs$core$next$$($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$), $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = null, $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
+          0), $i__32503_32637$jscomp$inline_3373$$ = 0;
         } else {
           break;
         }
       }
     }
-    $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$seq$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$);
-    $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = null;
-    for ($G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = 0;;) {
-      if ($G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ < $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$) {
-        $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$), 
-        $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$ ? $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$() : 
-        $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.call(null), $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ += 1;
+    $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$seq$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$);
+    $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = null;
+    for ($G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = 0;;) {
+      if ($G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ < $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$) {
+        $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$), 
+        $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$ ? $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$() : 
+        $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.call(null), $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ += 1;
       } else {
         if ($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$seq$$($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$)) {
-          $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$) ? ($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = 
-          $APP.$cljs$core$_chunked_first$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = $APP.$cljs$core$_chunked_rest$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), 
-          $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$, $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = 
-          $APP.$cljs$core$count$$($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$), $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$, 
-          $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$) : ($G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$ = 
-          $APP.$cljs$core$first$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$ ? $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$() : 
-          $G__32648$jscomp$inline_3380_G__32666$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32633$jscomp$inline_3370_seq__32500_32646__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32645$jscomp$inline_3377$$.call(null), $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$next$$($G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), 
-          $G__32665$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = null, $G__32649$jscomp$inline_3381_G__32664$jscomp$inline_3394_cb_32655$jscomp$inline_3385_chunk__32501_32634$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32654$jscomp$inline_3384_vec__32513_32652$jscomp$inline_3383$$ = 0), $G__32650$jscomp$inline_3382_c__5548__auto___32647$jscomp$inline_3379_count__32502_32635$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
+          $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$) ? ($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = 
+          $APP.$cljs$core$_chunked_first$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = $APP.$cljs$core$_chunked_rest$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), 
+          $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$, $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = 
+          $APP.$cljs$core$count$$($c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$), $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$, 
+          $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$) : ($G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$ = 
+          $APP.$cljs$core$first$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$ ? $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.$cljs$core$IFn$_invoke$arity$0$() : 
+          $G__32649$jscomp$inline_3380_G__32667$jscomp$inline_3396_cb$jscomp$inline_3390_seq__32500_32634$jscomp$inline_3370_seq__32500_32647__$1$jscomp$inline_3378_systems$jscomp$inline_3366_temp__5823__auto___32646$jscomp$inline_3377$$.call(null), $c__5548__auto__$jscomp$inline_3393_context__$1$jscomp$inline_3368_seq__32516$jscomp$inline_3386_temp__5823__auto__$jscomp$inline_3391$$ = $APP.$cljs$core$next$$($G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$), 
+          $G__32666$jscomp$inline_3395_callbacks$jscomp$inline_3369_chunk__32517$jscomp$inline_3387_seq__32516__$1$jscomp$inline_3392$$ = null, $G__32650$jscomp$inline_3381_G__32665$jscomp$inline_3394_cb_32656$jscomp$inline_3385_chunk__32501_32635$jscomp$inline_3371_count__32518$jscomp$inline_3388_system_32655$jscomp$inline_3384_vec__32513_32653$jscomp$inline_3383$$ = 0), $G__32651$jscomp$inline_3382_c__5548__auto___32648$jscomp$inline_3379_count__32502_32636$jscomp$inline_3372_i__32519$jscomp$inline_3389$$ = 
           0;
         } else {
           break;
@@ -2525,23 +2525,23 @@ $amp$views$mockup_view$setup_scene_BANG_$$ = function($container$$) {
   $APP.$cljs$core$reset_BANG_$$($amp$views$mockup_view$controls_atom$$, $controls_33001$$);
   $APP.$cljs$core$reset_BANG_$$($amp$views$mockup_view$context_atom$$, $ctx$jscomp$15$$);
 };
-$APP.$amp$views$mockup_view$mockup_view$$ = function($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21928__auto__$jscomp$86$$) {
-  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$), $G__32980_33010_maybe_ref__21928__auto__$jscomp$86$$], null);
-  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, 0, null);
-  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$ = $APP.$cljs$core$__destructure_map$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$);
-  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$611$active$$);
-  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$612$intro_complete_callback$$);
-  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$613$outro_complete_callback$$);
+$APP.$amp$views$mockup_view$mockup_view$$ = function($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21780__auto__$jscomp$86$$) {
+  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$), $G__32980_33010_maybe_ref__21780__auto__$jscomp$86$$], null);
+  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, 0, null);
+  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$ = $APP.$cljs$core$__destructure_map$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$);
+  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$611$active$$);
+  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$612$intro_complete_callback$$);
+  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $APP.$cljs$cst$613$outro_complete_callback$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $container_ref$jscomp$2$$ = $APP.$helix$hooks$use_ref$$(null);
-  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     var $temp__5823__auto___33011$$ = $APP.$cljs$core$_deref$$($container_ref$jscomp$2$$);
     $APP.$cljs$core$truth_$$($temp__5823__auto___33011$$) && ($APP.$cljs$core$truth_$$($APP.$cljs$core$_deref$$($amp$views$mockup_view$context_atom$$)) ? $threeagent$impl$scene$render$$($temp__5823__auto___33011$$, $APP.$cljs$core$PersistentArrayMap$EMPTY$$) : $amp$views$mockup_view$setup_scene_BANG_$$($temp__5823__auto___33011$$));
   });
-  $G__32980_33010_maybe_ref__21928__auto__$jscomp$86$$ = [];
-  $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21928__auto__$jscomp$86$$) : $APP.$helix$hooks$raw_use_layout_effect$$.call(null, $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21928__auto__$jscomp$86$$);
-  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$ = {className:"w-screen h-screen fixed inset-0 z-50", style:{touchAction:$APP.$helix$impl$props$__GT_js$$("none")}, ref:$container_ref$jscomp$2$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("canvas", $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$) : $APP.$helix$core$jsx$$.call(null, "canvas", $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21927__auto__$jscomp$86_vec__32975$$);
+  $G__32980_33010_maybe_ref__21780__auto__$jscomp$86$$ = [];
+  $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21780__auto__$jscomp$86$$) : $APP.$helix$hooks$raw_use_layout_effect$$.call(null, $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$, $G__32980_33010_maybe_ref__21780__auto__$jscomp$86$$);
+  $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$ = {className:"w-screen h-screen fixed inset-0 z-50", style:{touchAction:$APP.$helix$impl$props$__GT_js$$("none")}, ref:$container_ref$jscomp$2$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("canvas", $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$) : $APP.$helix$core$jsx$$.call(null, "canvas", $G__32979_33009_G__32982_map__32978_map__32978__$1_props__21778__auto__$jscomp$86_vec__32975$$);
 };
 $APP.$cljs$core$BitmapIndexedNode$$.prototype.$inode_without_BANG_$ = $JSCompiler_unstubMethod$$(8, function($edit__$1$$, $n$jscomp$125_shift$jscomp$6$$, $hash$jscomp$5$$, $key$jscomp$154$$, $removed_leaf_QMARK_$$) {
   var $bit$jscomp$2$$ = 1 << ($hash$jscomp$5$$ >>> $n$jscomp$125_shift$jscomp$6$$ & 31);
@@ -2589,9 +2589,9 @@ $APP.$cljs$core$HashCollisionNode$$.prototype.$inode_without_BANG_$ = $JSCompile
   --$edit__$1$jscomp$4_editable$jscomp$6$$.$cnt$;
   return $edit__$1$jscomp$4_editable$jscomp$6$$;
 });
-$APP.$cljs$core$TransientArrayMap$$.prototype.$cljs$core$ITransientMap$_dissoc_BANG_$arity$2$ = $JSCompiler_unstubMethod$$(5, function($G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$, $key$jscomp$150$$) {
+$APP.$cljs$core$TransientArrayMap$$.prototype.$cljs$core$ITransientMap$_dissoc_BANG_$arity$2$ = $JSCompiler_unstubMethod$$(5, function($G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$, $key$jscomp$150$$) {
   if (this.$editable_QMARK_$) {
-    return $G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$ = $APP.$cljs$core$array_index_of$$(this.$arr$, $key$jscomp$150$$), $G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$ >= 0 && (this.$arr$[$G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$] = this.$arr$[this.len - 2], this.$arr$[$G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$ + 1] = this.$arr$[this.len - 1], $G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$ = this.$arr$, $G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$.pop(), $G__20987_26198_idx$jscomp$27_tcoll$jscomp$36$$.pop(), 
+    return $G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$ = $APP.$cljs$core$array_index_of$$(this.$arr$, $key$jscomp$150$$), $G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$ >= 0 && (this.$arr$[$G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$] = this.$arr$[this.len - 2], this.$arr$[$G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$ + 1] = this.$arr$[this.len - 1], $G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$ = this.$arr$, $G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$.pop(), $G__20987_25195_idx$jscomp$27_tcoll$jscomp$36$$.pop(), 
     this.len -= 2), this;
   }
   throw Error("dissoc! after persistent!");
@@ -2623,9 +2623,9 @@ $APP.$goog$Uri$QueryData$$.prototype.$getCount$ = $JSCompiler_unstubMethod$$(0, 
   return this.$count_$;
 });
 var $cljs$core$gensym_counter$$ = null, $cljs$core$vector$$ = function $cljs$core$vector$$($var_args$jscomp$243$$) {
-  for (var $args__5755__auto__$jscomp$2$$ = [], $len__5749__auto___25526$$ = arguments.length, $i__5750__auto___25528$$ = 0;;) {
-    if ($i__5750__auto___25528$$ < $len__5749__auto___25526$$) {
-      $args__5755__auto__$jscomp$2$$.push(arguments[$i__5750__auto___25528$$]), $i__5750__auto___25528$$ += 1;
+  for (var $args__5755__auto__$jscomp$2$$ = [], $len__5749__auto___24717$$ = arguments.length, $i__5750__auto___24718$$ = 0;;) {
+    if ($i__5750__auto___24718$$ < $len__5749__auto___24717$$) {
+      $args__5755__auto__$jscomp$2$$.push(arguments[$i__5750__auto___24718$$]), $i__5750__auto___24718$$ += 1;
     } else {
       break;
     }
@@ -2646,9 +2646,9 @@ var $clojure$set$difference$$ = function $clojure$set$difference$$($var_args$jsc
     case 2:
       return $clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$(arguments[0], arguments[1]);
     default:
-      for (var $args_arr__5774__auto__$jscomp$71$$ = [], $len__5749__auto___22800$$ = arguments.length, $i__5750__auto___22801$$ = 0;;) {
-        if ($i__5750__auto___22801$$ < $len__5749__auto___22800$$) {
-          $args_arr__5774__auto__$jscomp$71$$.push(arguments[$i__5750__auto___22801$$]), $i__5750__auto___22801$$ += 1;
+      for (var $args_arr__5774__auto__$jscomp$71$$ = [], $len__5749__auto___22910$$ = arguments.length, $i__5750__auto___22911$$ = 0;;) {
+        if ($i__5750__auto___22911$$ < $len__5749__auto___22910$$) {
+          $args_arr__5774__auto__$jscomp$71$$.push(arguments[$i__5750__auto___22911$$]), $i__5750__auto___22911$$ += 1;
         } else {
           break;
         }
@@ -2667,11 +2667,11 @@ $clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$ = function($s1$jscomp$
 $clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$variadic$ = function($s1$jscomp$12$$, $s2$jscomp$9$$, $sets$jscomp$2$$) {
   return $APP.$cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$($clojure$set$difference$$, $s1$jscomp$12$$, $APP.$cljs$core$conj$$.$cljs$core$IFn$_invoke$arity$2$($sets$jscomp$2$$, $s2$jscomp$9$$));
 };
-$clojure$set$difference$$.$cljs$lang$applyTo$ = function($G__22712_seq22709$$) {
-  var $G__22711$$ = $APP.$cljs$core$first$$($G__22712_seq22709$$), $seq22709__$1_seq22709__$2$$ = $APP.$cljs$core$next$$($G__22712_seq22709$$);
-  $G__22712_seq22709$$ = $APP.$cljs$core$first$$($seq22709__$1_seq22709__$2$$);
-  $seq22709__$1_seq22709__$2$$ = $APP.$cljs$core$next$$($seq22709__$1_seq22709__$2$$);
-  return this.$cljs$core$IFn$_invoke$arity$variadic$($G__22711$$, $G__22712_seq22709$$, $seq22709__$1_seq22709__$2$$);
+$clojure$set$difference$$.$cljs$lang$applyTo$ = function($G__22786_seq22784$$) {
+  var $G__22785$$ = $APP.$cljs$core$first$$($G__22786_seq22784$$), $seq22784__$1_seq22784__$2$$ = $APP.$cljs$core$next$$($G__22786_seq22784$$);
+  $G__22786_seq22784$$ = $APP.$cljs$core$first$$($seq22784__$1_seq22784__$2$$);
+  $seq22784__$1_seq22784__$2$$ = $APP.$cljs$core$next$$($seq22784__$1_seq22784__$2$$);
+  return this.$cljs$core$IFn$_invoke$arity$variadic$($G__22785$$, $G__22786_seq22784$$, $seq22784__$1_seq22784__$2$$);
 };
 $clojure$set$difference$$.$cljs$lang$maxFixedArity$ = 2;
 var $cljs$cst$716$perspective_camera$$ = new $APP.$cljs$core$Keyword$$(null, "perspective-camera", "perspective-camera", 1944836071), $cljs$cst$808$antialias$$ = new $APP.$cljs$core$Keyword$$(null, "antialias", "antialias", -2073640634), $cljs$cst$625$no_cache$$ = new $APP.$cljs$core$Keyword$$(null, "no-cache", "no-cache", 1588056370), $cljs$cst$622$auto_run$$ = new $APP.$cljs$core$Keyword$$(null, "auto-run", "auto-run", 1958400437), $cljs$cst$760$angle$$ = new $APP.$cljs$core$Keyword$$(null, "angle", 
@@ -2731,7 +2731,7 @@ $APP.$JSCompiler_prototypeAlias$$.queue_render = function($c$jscomp$178$$) {
   return $reagent$impl$batching$enqueue$$(this, this.$componentQueue$, $c$jscomp$178$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.schedule = function() {
-  function $G__31589$$() {
+  function $G__31606$$() {
     return $this$$jscomp$248$$.run_queues();
   }
   var $this$$jscomp$248$$ = this;
@@ -2739,7 +2739,7 @@ $APP.$JSCompiler_prototypeAlias$$.schedule = function() {
     return null;
   }
   this.$scheduled_QMARK_$ = !0;
-  return $reagent$impl$batching$next_tick$$.$cljs$core$IFn$_invoke$arity$1$ ? $reagent$impl$batching$next_tick$$.$cljs$core$IFn$_invoke$arity$1$($G__31589$$) : $reagent$impl$batching$next_tick$$.call(null, $G__31589$$);
+  return $reagent$impl$batching$next_tick$$.$cljs$core$IFn$_invoke$arity$1$ ? $reagent$impl$batching$next_tick$$.$cljs$core$IFn$_invoke$arity$1$($G__31606$$) : $reagent$impl$batching$next_tick$$.call(null, $G__31606$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.flush_before_flush = function() {
   var $temp__5827__auto__$jscomp$4$$ = this.$beforeFlush$;
@@ -2829,9 +2829,9 @@ var $reagent$ratom$atom$$ = function $reagent$ratom$atom$$($var_args$jscomp$443$
     case 1:
       return $reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$(arguments[0]);
     default:
-      for (var $args_arr__5774__auto__$jscomp$82$$ = [], $len__5749__auto___31809$$ = arguments.length, $i__5750__auto___31810$$ = 0;;) {
-        if ($i__5750__auto___31810$$ < $len__5749__auto___31809$$) {
-          $args_arr__5774__auto__$jscomp$82$$.push(arguments[$i__5750__auto___31810$$]), $i__5750__auto___31810$$ += 1;
+      for (var $args_arr__5774__auto__$jscomp$82$$ = [], $len__5749__auto___31869$$ = arguments.length, $i__5750__auto___31870$$ = 0;;) {
+        if ($i__5750__auto___31870$$ < $len__5749__auto___31869$$) {
+          $args_arr__5774__auto__$jscomp$82$$.push(arguments[$i__5750__auto___31870$$]), $i__5750__auto___31870$$ += 1;
         } else {
           break;
         }
@@ -2842,63 +2842,63 @@ var $reagent$ratom$atom$$ = function $reagent$ratom$atom$$($var_args$jscomp$443$
 $reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$ = function($x$jscomp$791$$) {
   return new $reagent$ratom$RAtom$$($x$jscomp$791$$, null, null, null);
 };
-$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$variadic$ = function($x$jscomp$792$$, $meta$jscomp$75_p__31674$$) {
-  var $map__31675__$1_validator$jscomp$5$$ = $APP.$cljs$core$__destructure_map$$($meta$jscomp$75_p__31674$$);
-  $meta$jscomp$75_p__31674$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31675__$1_validator$jscomp$5$$, $APP.$cljs$cst$2$meta$$);
-  $map__31675__$1_validator$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31675__$1_validator$jscomp$5$$, $APP.$cljs$cst$47$validator$$);
-  return new $reagent$ratom$RAtom$$($x$jscomp$792$$, $meta$jscomp$75_p__31674$$, $map__31675__$1_validator$jscomp$5$$, null);
+$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$variadic$ = function($x$jscomp$792$$, $meta$jscomp$75_p__31695$$) {
+  var $map__31696__$1_validator$jscomp$5$$ = $APP.$cljs$core$__destructure_map$$($meta$jscomp$75_p__31695$$);
+  $meta$jscomp$75_p__31695$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31696__$1_validator$jscomp$5$$, $APP.$cljs$cst$2$meta$$);
+  $map__31696__$1_validator$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31696__$1_validator$jscomp$5$$, $APP.$cljs$cst$47$validator$$);
+  return new $reagent$ratom$RAtom$$($x$jscomp$792$$, $meta$jscomp$75_p__31695$$, $map__31696__$1_validator$jscomp$5$$, null);
 };
-$reagent$ratom$atom$$.$cljs$lang$applyTo$ = function($seq31671_seq31671__$1$$) {
-  var $G__31672$$ = $APP.$cljs$core$first$$($seq31671_seq31671__$1$$);
-  $seq31671_seq31671__$1$$ = $APP.$cljs$core$next$$($seq31671_seq31671__$1$$);
-  return this.$cljs$core$IFn$_invoke$arity$variadic$($G__31672$$, $seq31671_seq31671__$1$$);
+$reagent$ratom$atom$$.$cljs$lang$applyTo$ = function($seq31690_seq31690__$1$$) {
+  var $G__31691$$ = $APP.$cljs$core$first$$($seq31690_seq31690__$1$$);
+  $seq31690_seq31690__$1$$ = $APP.$cljs$core$next$$($seq31690_seq31690__$1$$);
+  return this.$cljs$core$IFn$_invoke$arity$variadic$($G__31691$$, $seq31690_seq31690__$1$$);
 };
 $reagent$ratom$atom$$.$cljs$lang$maxFixedArity$ = 1;
 $APP.$JSCompiler_prototypeAlias$$ = $reagent$ratom$Reaction$$.prototype;
 $APP.$JSCompiler_prototypeAlias$$._peek_at = function() {
-  var $_STAR_ratom_context_STAR__orig_val__31723$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
+  var $_STAR_ratom_context_STAR__orig_val__31750$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$;
   $reagent$ratom$_STAR_ratom_context_STAR_$$ = null;
   try {
     return this.$cljs$core$IDeref$_deref$arity$1$(null);
   } finally {
-    $reagent$ratom$_STAR_ratom_context_STAR_$$ = $_STAR_ratom_context_STAR__orig_val__31723$$;
+    $reagent$ratom$_STAR_ratom_context_STAR_$$ = $_STAR_ratom_context_STAR__orig_val__31750$$;
   }
 };
 $APP.$JSCompiler_prototypeAlias$$._handle_change = function($sender$jscomp$2$$, $oldval$jscomp$4$$, $newval$jscomp$6$$) {
   return $oldval$jscomp$4$$ === $newval$jscomp$6$$ || this.$dirty_QMARK_$ ? null : this.$auto_run$ == null ? (this.$dirty_QMARK_$ = !0, $reagent$ratom$rea_queue$$ == null && ($reagent$ratom$rea_queue$$ = [], $reagent$impl$batching$render_queue$$.$scheduled_QMARK_$ === !1 && $reagent$impl$batching$render_queue$$.schedule()), $reagent$ratom$rea_queue$$.push(this)) : this.$auto_run$ === !0 ? this._run(!1) : this.$auto_run$.$cljs$core$IFn$_invoke$arity$1$ ? this.$auto_run$.$cljs$core$IFn$_invoke$arity$1$(this) : 
   this.$auto_run$.call(null, this);
 };
-$APP.$JSCompiler_prototypeAlias$$._update_watching = function($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$) {
-  var $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$set$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$), $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$ = $APP.$cljs$core$set$$(this.$watching$);
-  this.$watching$ = $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$;
-  $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$seq$$($clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$, $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$));
-  for (var $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = null, $G__31861_count__31727_31849_i__31732$$ = 0, $G__31859_i__31728_31850$$ = 0;;) {
-    if ($G__31859_i__31728_31850$$ < $G__31861_count__31727_31849_i__31732$$) {
-      var $w_31851$$ = $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31859_i__31728_31850$$);
-      $cljs$core$_add_watch$$($w_31851$$, this);
-      $G__31859_i__31728_31850$$ += 1;
+$APP.$JSCompiler_prototypeAlias$$._update_watching = function($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$) {
+  var $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$set$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$), $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$ = $APP.$cljs$core$set$$(this.$watching$);
+  this.$watching$ = $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$;
+  $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$seq$$($clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$, $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$));
+  for (var $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = null, $G__31906_count__31754_31893_i__31761$$ = 0, $G__31904_i__31755_31894$$ = 0;;) {
+    if ($G__31904_i__31755_31894$$ < $G__31906_count__31754_31893_i__31761$$) {
+      var $w_31895$$ = $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31904_i__31755_31894$$);
+      $cljs$core$_add_watch$$($w_31895$$, this);
+      $G__31904_i__31755_31894$$ += 1;
     } else {
-      if ($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$seq$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$)) {
-        $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$) ? ($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$_chunked_first$$($G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$), 
-        $G__31859_i__31728_31850$$ = $APP.$cljs$core$_chunked_rest$$($G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$), $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$, $G__31861_count__31727_31849_i__31732$$ = $APP.$cljs$core$count$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$), 
-        $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $G__31859_i__31728_31850$$) : ($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$first$$($G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$), $cljs$core$_add_watch$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$, 
-        this), $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$next$$($G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$), $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = null, $G__31861_count__31727_31849_i__31732$$ = 0), $G__31859_i__31728_31850$$ = 0;
+      if ($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$seq$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$)) {
+        $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$) ? ($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$_chunked_first$$($G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$), 
+        $G__31904_i__31755_31894$$ = $APP.$cljs$core$_chunked_rest$$($G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$), $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$, $G__31906_count__31754_31893_i__31761$$ = $APP.$cljs$core$count$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$), 
+        $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $G__31904_i__31755_31894$$) : ($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$first$$($G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$), $cljs$core$_add_watch$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$, 
+        this), $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$next$$($G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$), $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = null, $G__31906_count__31754_31893_i__31761$$ = 0), $G__31904_i__31755_31894$$ = 0;
       } else {
         break;
       }
     }
   }
-  $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$, $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$));
-  $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$ = null;
-  for ($G__31861_count__31727_31849_i__31732$$ = $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = 0;;) {
-    if ($G__31861_count__31727_31849_i__31732$$ < $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$) {
-      $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31861_count__31727_31849_i__31732$$), $cljs$core$_remove_watch$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$, this), $G__31861_count__31727_31849_i__31732$$ += 1;
+  $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($clojure$set$difference$$.$cljs$core$IFn$_invoke$arity$2$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$, $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$));
+  $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$ = null;
+  for ($G__31906_count__31754_31893_i__31761$$ = $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = 0;;) {
+    if ($G__31906_count__31754_31893_i__31761$$ < $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$) {
+      $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31906_count__31754_31893_i__31761$$), $cljs$core$_remove_watch$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$, this), $G__31906_count__31754_31893_i__31761$$ += 1;
     } else {
-      if ($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$)) {
-        $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$ = $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$) ? ($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$_chunked_first$$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$), $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = $APP.$cljs$core$_chunked_rest$$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$), 
-        $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$ = $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$, $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$count$$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$), $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$, 
-        $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = $G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$) : ($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$ = $APP.$cljs$core$first$$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$), $cljs$core$_remove_watch$$($G__31874_c__5548__auto___31858_derefed$jscomp$1_seq__31725_31847_temp__5823__auto___31856_w$jscomp$25_w_31863$$, 
-        this), $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31729_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$next$$($G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$), $G__31873_chunk__31730_old$jscomp$8_seq__31729__$1$$ = null, $G__31860_G__31872_chunk__31726_31848_count__31731_seq__31725_31857__$1$$ = 0), $G__31861_count__31727_31849_i__31732$$ = 0;
+      if ($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$)) {
+        $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$ = $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$) ? ($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$_chunked_first$$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$), $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = $APP.$cljs$core$_chunked_rest$$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$), 
+        $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$ = $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$, $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$count$$($c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$), $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$, 
+        $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = $G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$) : ($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$ = $APP.$cljs$core$first$$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$), $cljs$core$_remove_watch$$($G__31919_c__5548__auto___31903_derefed$jscomp$1_seq__31752_31891_temp__5823__auto___31900_w$jscomp$25_w_31908$$, 
+        this), $c__5548__auto__$jscomp$11_new$$jscomp$7_seq__31758_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$next$$($G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$), $G__31918_chunk__31759_old$jscomp$8_seq__31758__$1$$ = null, $G__31905_G__31917_chunk__31753_31892_count__31760_seq__31752_31901__$1$$ = 0), $G__31906_count__31754_31893_i__31761$$ = 0;
       } else {
         return null;
       }
@@ -2911,8 +2911,8 @@ $APP.$JSCompiler_prototypeAlias$$._queued_run = function() {
 $APP.$JSCompiler_prototypeAlias$$._try_capture = function($e$jscomp$214_f__$1$jscomp$17$$) {
   try {
     return this.$caught$ = null, $reagent$ratom$deref_capture$$($e$jscomp$214_f__$1$jscomp$17$$, this);
-  } catch ($e31736$$) {
-    return this.$caught$ = this.state = $e$jscomp$214_f__$1$jscomp$17$$ = $e31736$$, this.$dirty_QMARK_$ = !1;
+  } catch ($e31773$$) {
+    return this.$caught$ = this.state = $e$jscomp$214_f__$1$jscomp$17$$ = $e31773$$, this.$dirty_QMARK_$ = !1;
   }
 };
 $APP.$JSCompiler_prototypeAlias$$._run = function($check_res$jscomp$23$$) {
@@ -2921,15 +2921,15 @@ $APP.$JSCompiler_prototypeAlias$$._run = function($check_res$jscomp$23$$) {
   this.$nocache_QMARK_$ || (this.state = $check_res$jscomp$23$$, this.$watches$ == null || $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($oldstate$jscomp$3$$, $check_res$jscomp$23$$) || $reagent$ratom$notify_w$$(this, $oldstate$jscomp$3$$, $check_res$jscomp$23$$));
   return $check_res$jscomp$23$$;
 };
-$APP.$JSCompiler_prototypeAlias$$._set_opts = function($auto_run__$1_p__31738$$) {
-  var $map__31739__$1_no_cache$$ = $APP.$cljs$core$__destructure_map$$($auto_run__$1_p__31738$$);
-  $auto_run__$1_p__31738$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31739__$1_no_cache$$, $cljs$cst$622$auto_run$$);
-  var $on_set$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31739__$1_no_cache$$, $cljs$cst$624$on_set$$), $on_dispose$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31739__$1_no_cache$$, $cljs$cst$619$on_dispose$$);
-  $map__31739__$1_no_cache$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31739__$1_no_cache$$, $cljs$cst$625$no_cache$$);
-  $auto_run__$1_p__31738$$ != null && (this.$auto_run$ = $auto_run__$1_p__31738$$);
+$APP.$JSCompiler_prototypeAlias$$._set_opts = function($auto_run__$1_p__31778$$) {
+  var $map__31779__$1_no_cache$$ = $APP.$cljs$core$__destructure_map$$($auto_run__$1_p__31778$$);
+  $auto_run__$1_p__31778$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_no_cache$$, $cljs$cst$622$auto_run$$);
+  var $on_set$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_no_cache$$, $cljs$cst$624$on_set$$), $on_dispose$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_no_cache$$, $cljs$cst$619$on_dispose$$);
+  $map__31779__$1_no_cache$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_no_cache$$, $cljs$cst$625$no_cache$$);
+  $auto_run__$1_p__31778$$ != null && (this.$auto_run$ = $auto_run__$1_p__31778$$);
   $on_set$$ != null && (this.$on_set$ = $on_set$$);
   $on_dispose$$ != null && (this.$on_dispose$ = $on_dispose$$);
-  return $map__31739__$1_no_cache$$ != null ? this.$nocache_QMARK_$ = $map__31739__$1_no_cache$$ : null;
+  return $map__31779__$1_no_cache$$ != null ? this.$nocache_QMARK_$ = $map__31779__$1_no_cache$$ : null;
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IPrintWithWriter$_pr_writer$arity$3$ = function($a$jscomp$295$$, $w$jscomp$26$$, $opts$jscomp$168$$) {
   return $reagent$ratom$pr_atom$$($w$jscomp$26$$, $opts$jscomp$168$$, "Reaction", new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$108$val$$, this.$cljs$core$IDeref$_deref$arity$1$(null)], null));
@@ -2941,21 +2941,21 @@ $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IEquiv$_equiv$arity$2$ = function($
   return this === $other$jscomp$137$$;
 };
 $APP.$JSCompiler_prototypeAlias$$.$reagent$ratom$IDisposable$dispose_BANG_$arity$1$ = function() {
-  var $s$jscomp$218_temp__5827__auto__$jscomp$8$$ = this.state, $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = this.$watching$;
+  var $s$jscomp$218_temp__5827__auto__$jscomp$8$$ = this.state, $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = this.$watching$;
   this.$auto_run$ = this.state = this.$watching$ = null;
   this.$dirty_QMARK_$ = !0;
-  $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$set$$($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$));
-  for (var $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ = null, $G__31901_count__31743_31889_fexpr__31745_31908$$ = 0, $G__31899_i__31744_31890$$ = 0;;) {
-    if ($G__31899_i__31744_31890$$ < $G__31901_count__31743_31889_fexpr__31745_31908$$) {
-      var $w_31891$$ = $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31899_i__31744_31890$$);
-      $cljs$core$_remove_watch$$($w_31891$$, this);
-      $G__31899_i__31744_31890$$ += 1;
+  $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$set$$($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$));
+  for (var $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ = null, $G__31940_count__31782_31928_fexpr__31788_31947$$ = 0, $G__31938_i__31783_31929$$ = 0;;) {
+    if ($G__31938_i__31783_31929$$ < $G__31940_count__31782_31928_fexpr__31788_31947$$) {
+      var $w_31930$$ = $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__31938_i__31783_31929$$);
+      $cljs$core$_remove_watch$$($w_31930$$, this);
+      $G__31938_i__31783_31929$$ += 1;
     } else {
-      if ($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $APP.$cljs$core$seq$$($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$)) {
-        $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ = $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$) ? ($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $APP.$cljs$core$_chunked_first$$($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$), $G__31899_i__31744_31890$$ = 
-        $APP.$cljs$core$_chunked_rest$$($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$), $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ = $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$, $G__31901_count__31743_31889_fexpr__31745_31908$$ = $APP.$cljs$core$count$$($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$), $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = 
-        $G__31899_i__31744_31890$$) : ($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $APP.$cljs$core$first$$($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$), $cljs$core$_remove_watch$$($c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$, this), $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $APP.$cljs$core$next$$($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$), 
-        $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ = null, $G__31901_count__31743_31889_fexpr__31745_31908$$ = 0), $G__31899_i__31744_31890$$ = 0;
+      if ($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $APP.$cljs$core$seq$$($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$)) {
+        $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ = $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$) ? ($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $APP.$cljs$core$_chunked_first$$($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$), $G__31938_i__31783_31929$$ = 
+        $APP.$cljs$core$_chunked_rest$$($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$), $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ = $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$, $G__31940_count__31782_31928_fexpr__31788_31947$$ = $APP.$cljs$core$count$$($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$), $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = 
+        $G__31938_i__31783_31929$$) : ($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $APP.$cljs$core$first$$($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$), $cljs$core$_remove_watch$$($c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$, this), $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $APP.$cljs$core$next$$($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$), 
+        $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ = null, $G__31940_count__31782_31928_fexpr__31788_31947$$ = 0), $G__31938_i__31783_31929$$ = 0;
       } else {
         break;
       }
@@ -2966,10 +2966,10 @@ $APP.$JSCompiler_prototypeAlias$$.$reagent$ratom$IDisposable$dispose_BANG_$arity
   if ($s$jscomp$218_temp__5827__auto__$jscomp$8$$ == null) {
     return null;
   }
-  $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$ = $s$jscomp$218_temp__5827__auto__$jscomp$8$$.length;
-  for ($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ = 0;;) {
-    if ($G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ < $c__5548__auto___31898_n__5616__auto__$jscomp$2_seq__31741_31887_temp__5823__auto___31896_w_31903_wg$$) {
-      $G__31901_count__31743_31889_fexpr__31745_31908$$ = $s$jscomp$218_temp__5827__auto__$jscomp$8$$[$G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$], $G__31901_count__31743_31889_fexpr__31745_31908$$.$cljs$core$IFn$_invoke$arity$1$ ? $G__31901_count__31743_31889_fexpr__31745_31908$$.$cljs$core$IFn$_invoke$arity$1$(this) : $G__31901_count__31743_31889_fexpr__31745_31908$$.call(null, this), $G__31900_chunk__31742_31888_i$jscomp$399_seq__31741_31897__$1$$ += 1;
+  $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$ = $s$jscomp$218_temp__5827__auto__$jscomp$8$$.length;
+  for ($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ = 0;;) {
+    if ($G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ < $c__5548__auto___31937_n__5616__auto__$jscomp$2_seq__31780_31926_temp__5823__auto___31935_w_31942_wg$$) {
+      $G__31940_count__31782_31928_fexpr__31788_31947$$ = $s$jscomp$218_temp__5827__auto__$jscomp$8$$[$G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$], $G__31940_count__31782_31928_fexpr__31788_31947$$.$cljs$core$IFn$_invoke$arity$1$ ? $G__31940_count__31782_31928_fexpr__31788_31947$$.$cljs$core$IFn$_invoke$arity$1$(this) : $G__31940_count__31782_31928_fexpr__31788_31947$$.call(null, this), $G__31939_chunk__31781_31927_i$jscomp$399_seq__31780_31936__$1$$ += 1;
     } else {
       return null;
     }
@@ -2984,20 +2984,20 @@ $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IReset$_reset_BANG_$arity$2$ = func
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$ISwap$_swap_BANG_$arity$2$ = function($JSCompiler_temp_const$jscomp$320_a$jscomp$299$$, $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$) {
   $JSCompiler_temp_const$jscomp$320_a$jscomp$299$$ = this.$cljs$core$IReset$_reset_BANG_$arity$2$;
-  var $G__31746$jscomp$inline_1550$$ = this._peek_at();
-  $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$ = $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.$cljs$core$IFn$_invoke$arity$1$ ? $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.$cljs$core$IFn$_invoke$arity$1$($G__31746$jscomp$inline_1550$$) : $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.call(null, $G__31746$jscomp$inline_1550$$);
+  var $G__31792$jscomp$inline_1550$$ = this._peek_at();
+  $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$ = $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.$cljs$core$IFn$_invoke$arity$1$ ? $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.$cljs$core$IFn$_invoke$arity$1$($G__31792$jscomp$inline_1550$$) : $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$.call(null, $G__31792$jscomp$inline_1550$$);
   return $JSCompiler_temp_const$jscomp$320_a$jscomp$299$$.call(this, null, $JSCompiler_inline_result$jscomp$322_f__$1$jscomp$19$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$ISwap$_swap_BANG_$arity$3$ = function($JSCompiler_temp_const$jscomp$323_a$jscomp$300$$, $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$, $x$jscomp$797$$) {
   $JSCompiler_temp_const$jscomp$323_a$jscomp$300$$ = this.$cljs$core$IReset$_reset_BANG_$arity$2$;
-  var $G__31747$jscomp$inline_1552$$ = this._peek_at();
-  $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$ = $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.$cljs$core$IFn$_invoke$arity$2$ ? $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.$cljs$core$IFn$_invoke$arity$2$($G__31747$jscomp$inline_1552$$, $x$jscomp$797$$) : $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.call(null, $G__31747$jscomp$inline_1552$$, $x$jscomp$797$$);
+  var $G__31794$jscomp$inline_1552$$ = this._peek_at();
+  $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$ = $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.$cljs$core$IFn$_invoke$arity$2$ ? $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.$cljs$core$IFn$_invoke$arity$2$($G__31794$jscomp$inline_1552$$, $x$jscomp$797$$) : $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$.call(null, $G__31794$jscomp$inline_1552$$, $x$jscomp$797$$);
   return $JSCompiler_temp_const$jscomp$323_a$jscomp$300$$.call(this, null, $JSCompiler_inline_result$jscomp$325_f__$1$jscomp$20$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$ISwap$_swap_BANG_$arity$4$ = function($JSCompiler_temp_const$jscomp$326_a$jscomp$301$$, $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$, $x$jscomp$798$$, $y$jscomp$295$$) {
   $JSCompiler_temp_const$jscomp$326_a$jscomp$301$$ = this.$cljs$core$IReset$_reset_BANG_$arity$2$;
-  var $G__31749$jscomp$inline_1554$$ = this._peek_at();
-  $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$ = $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.$cljs$core$IFn$_invoke$arity$3$ ? $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.$cljs$core$IFn$_invoke$arity$3$($G__31749$jscomp$inline_1554$$, $x$jscomp$798$$, $y$jscomp$295$$) : $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.call(null, $G__31749$jscomp$inline_1554$$, $x$jscomp$798$$, $y$jscomp$295$$);
+  var $G__31796$jscomp$inline_1554$$ = this._peek_at();
+  $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$ = $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.$cljs$core$IFn$_invoke$arity$3$ ? $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.$cljs$core$IFn$_invoke$arity$3$($G__31796$jscomp$inline_1554$$, $x$jscomp$798$$, $y$jscomp$295$$) : $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$.call(null, $G__31796$jscomp$inline_1554$$, $x$jscomp$798$$, $y$jscomp$295$$);
   return $JSCompiler_temp_const$jscomp$326_a$jscomp$301$$.call(this, null, $JSCompiler_inline_result$jscomp$328_f__$1$jscomp$21$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$ISwap$_swap_BANG_$arity$5$ = function($a$jscomp$302$$, $f__$1$jscomp$22$$, $x$jscomp$799$$, $y$jscomp$296$$, $more$jscomp$41$$) {
@@ -3015,12 +3015,12 @@ $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWatchable$_remove_watch$arity$2$ =
   return !$this$$jscomp$291_was_empty$$ && $APP.$cljs$core$empty_QMARK_$$(this.$watches$) && this.$auto_run$ == null ? this.$reagent$ratom$IDisposable$dispose_BANG_$arity$1$(null) : null;
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IDeref$_deref$arity$1$ = function() {
-  var $non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$ = this.$caught$;
-  if ($non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$ != null) {
-    throw $non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$;
+  var $non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$ = this.$caught$;
+  if ($non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$ != null) {
+    throw $non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$;
   }
-  ($non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$ == null) && ($reagent$ratom$flush_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $reagent$ratom$flush_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $reagent$ratom$flush_BANG_$$.call(null));
-  $non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$ && this.$auto_run$ == null ? this.$dirty_QMARK_$ && ($non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$ = this.state, this.state = this.f.$cljs$core$IFn$_invoke$arity$0$ ? this.f.$cljs$core$IFn$_invoke$arity$0$() : this.f.call(null), this.$watches$ == null || $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$, this.state) || $reagent$ratom$notify_w$$(this, $non_reactive_31912_oldstate_31913_temp__5827__auto___31910$$, 
+  ($non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$ = $reagent$ratom$_STAR_ratom_context_STAR_$$ == null) && ($reagent$ratom$flush_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $reagent$ratom$flush_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $reagent$ratom$flush_BANG_$$.call(null));
+  $non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$ && this.$auto_run$ == null ? this.$dirty_QMARK_$ && ($non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$ = this.state, this.state = this.f.$cljs$core$IFn$_invoke$arity$0$ ? this.f.$cljs$core$IFn$_invoke$arity$0$() : this.f.call(null), this.$watches$ == null || $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$, this.state) || $reagent$ratom$notify_w$$(this, $non_reactive_31951_oldstate_31952_temp__5827__auto___31949$$, 
   this.state)) : ($reagent$ratom$notify_deref_watcher_BANG_$$(this), this.$dirty_QMARK_$ && this._run(!1));
   return this.state;
 };
@@ -3047,9 +3047,9 @@ $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($opts$jscomp$inline_169
         $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$ = $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$.replace(new RegExp(String($match$jscomp$inline_3253$$).replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, "\\$1").replace(/\x08/g, "\\x08"), "g"), " ");
       } else {
         if ($match$jscomp$inline_3253$$ instanceof RegExp) {
-          var $G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$ = $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.ignoreCase) ? "gi" : "g";
-          $G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$ = $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.multiline) ? [$G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$, "m"].join("") : $G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$;
-          $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$ = $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$.replace(new RegExp($match$jscomp$inline_3253$$.source, $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.unicode) ? [$G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$, "u"].join("") : $G__22069__$1$jscomp$inline_3359_G__22069__$2$jscomp$inline_3360$$), 
+          var $G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$ = $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.ignoreCase) ? "gi" : "g";
+          $G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$ = $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.multiline) ? [$G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$, "m"].join("") : $G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$;
+          $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$ = $JSCompiler_temp$jscomp$2982_className$jscomp$inline_1670_className__$1$jscomp$inline_1671_vec__31992$jscomp$inline_1667$$.replace(new RegExp($match$jscomp$inline_3253$$.source, $APP.$cljs$core$truth_$$($match$jscomp$inline_3253$$.unicode) ? [$G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$, "u"].join("") : $G__21991__$1$jscomp$inline_3359_G__21991__$2$jscomp$inline_3360$$), 
           " ");
         } else {
           throw ["Invalid match arg: ", $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($match$jscomp$inline_3253$$)].join("");
@@ -3165,16 +3165,16 @@ $threeagent$impl$virtual_scene$Node$$.prototype.terminal_QMARK_ = function() {
   return $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$(0, this.children.size);
 };
 $threeagent$impl$virtual_scene$Node$$.prototype.for_each_child = function($f$jscomp$474$$) {
-  for (var $c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$es6_iterator_seq$$(this.children.values())), $G__32291_chunk__32169_seq__32168__$1$$ = null, $G__32290_count__32170$$ = 0, $i__32171$$ = 0;;) {
-    if ($i__32171$$ < $G__32290_count__32170$$) {
-      var $G__32292_child$jscomp$15$$ = $G__32291_chunk__32169_seq__32168__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32171$$);
+  for (var $c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$seq$$($APP.$cljs$core$es6_iterator_seq$$(this.children.values())), $G__32291_chunk__32159_seq__32158__$1$$ = null, $G__32290_count__32160$$ = 0, $i__32161$$ = 0;;) {
+    if ($i__32161$$ < $G__32290_count__32160$$) {
+      var $G__32292_child$jscomp$15$$ = $G__32291_chunk__32159_seq__32158__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__32161$$);
       $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$ ? $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$($G__32292_child$jscomp$15$$) : $f$jscomp$474$$.call(null, $G__32292_child$jscomp$15$$);
-      $i__32171$$ += 1;
+      $i__32161$$ += 1;
     } else {
-      if ($c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$seq$$($c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$)) {
-        $G__32291_chunk__32169_seq__32168__$1$$ = $c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32291_chunk__32169_seq__32168__$1$$) ? ($c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$_chunked_first$$($G__32291_chunk__32169_seq__32168__$1$$), $G__32290_count__32170$$ = $APP.$cljs$core$_chunked_rest$$($G__32291_chunk__32169_seq__32168__$1$$), $G__32291_chunk__32169_seq__32168__$1$$ = $c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$, 
-        $G__32292_child$jscomp$15$$ = $APP.$cljs$core$count$$($c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$), $c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$ = $G__32290_count__32170$$, $G__32290_count__32170$$ = $G__32292_child$jscomp$15$$) : ($G__32292_child$jscomp$15$$ = $APP.$cljs$core$first$$($G__32291_chunk__32169_seq__32168__$1$$), $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$ ? $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$($G__32292_child$jscomp$15$$) : 
-        $f$jscomp$474$$.call(null, $G__32292_child$jscomp$15$$), $c__5548__auto__$jscomp$13_seq__32168_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$next$$($G__32291_chunk__32169_seq__32168__$1$$), $G__32291_chunk__32169_seq__32168__$1$$ = null, $G__32290_count__32170$$ = 0), $i__32171$$ = 0;
+      if ($c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$seq$$($c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$)) {
+        $G__32291_chunk__32159_seq__32158__$1$$ = $c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$, $APP.$cljs$core$chunked_seq_QMARK_$$($G__32291_chunk__32159_seq__32158__$1$$) ? ($c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$_chunked_first$$($G__32291_chunk__32159_seq__32158__$1$$), $G__32290_count__32160$$ = $APP.$cljs$core$_chunked_rest$$($G__32291_chunk__32159_seq__32158__$1$$), $G__32291_chunk__32159_seq__32158__$1$$ = $c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$, 
+        $G__32292_child$jscomp$15$$ = $APP.$cljs$core$count$$($c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$), $c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$ = $G__32290_count__32160$$, $G__32290_count__32160$$ = $G__32292_child$jscomp$15$$) : ($G__32292_child$jscomp$15$$ = $APP.$cljs$core$first$$($G__32291_chunk__32159_seq__32158__$1$$), $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$ ? $f$jscomp$474$$.$cljs$core$IFn$_invoke$arity$1$($G__32292_child$jscomp$15$$) : 
+        $f$jscomp$474$$.call(null, $G__32292_child$jscomp$15$$), $c__5548__auto__$jscomp$13_seq__32158_temp__5823__auto__$jscomp$74$$ = $APP.$cljs$core$next$$($G__32291_chunk__32159_seq__32158__$1$$), $G__32291_chunk__32159_seq__32158__$1$$ = null, $G__32290_count__32160$$ = 0), $i__32161$$ = 0;
       } else {
         return null;
       }
@@ -3396,28 +3396,28 @@ var $threeagent$impl$util$pi_times_2$$ = Math.PI * 2.0, $threeagent$impl$util$pi
 var $threeagent$impl$entities$material_cache$$ = function($f$jscomp$312$$) {
   var $mem$$ = $APP.$cljs$core$atom$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$);
   return function() {
-    function $G__28085$$($var_args$jscomp$306$$) {
-      var $G__28086__i_args$jscomp$113$$ = null;
+    function $G__26814$$($var_args$jscomp$306$$) {
+      var $G__26816__i_args$jscomp$113$$ = null;
       if (arguments.length > 0) {
-        $G__28086__i_args$jscomp$113$$ = 0;
-        for (var $G__28086__a$$ = Array(arguments.length - 0); $G__28086__i_args$jscomp$113$$ < $G__28086__a$$.length;) {
-          $G__28086__a$$[$G__28086__i_args$jscomp$113$$] = arguments[$G__28086__i_args$jscomp$113$$ + 0], ++$G__28086__i_args$jscomp$113$$;
+        $G__26816__i_args$jscomp$113$$ = 0;
+        for (var $G__26816__a$$ = Array(arguments.length - 0); $G__26816__i_args$jscomp$113$$ < $G__26816__a$$.length;) {
+          $G__26816__a$$[$G__26816__i_args$jscomp$113$$] = arguments[$G__26816__i_args$jscomp$113$$ + 0], ++$G__26816__i_args$jscomp$113$$;
         }
-        $G__28086__i_args$jscomp$113$$ = new $APP.$cljs$core$IndexedSeq$$($G__28086__a$$, 0, null);
+        $G__26816__i_args$jscomp$113$$ = new $APP.$cljs$core$IndexedSeq$$($G__26816__a$$, 0, null);
       }
-      return $G__28085__delegate$$.call(this, $G__28086__i_args$jscomp$113$$);
+      return $G__26814__delegate$$.call(this, $G__26816__i_args$jscomp$113$$);
     }
-    function $G__28085__delegate$$($args$jscomp$112$$) {
+    function $G__26814__delegate$$($args$jscomp$112$$) {
       var $ret$jscomp$53_v$jscomp$77$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($APP.$cljs$core$_deref$$($mem$$), $args$jscomp$112$$, $APP.$cljs$core$lookup_sentinel$$);
       return $ret$jscomp$53_v$jscomp$77$$ === $APP.$cljs$core$lookup_sentinel$$ ? ($ret$jscomp$53_v$jscomp$77$$ = $APP.$cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$02$$($f$jscomp$312$$, $args$jscomp$112$$), $APP.$cljs$core$swap_BANG_$$.$cljs$core$IFn$_invoke$arity$4$($mem$$, $APP.$cljs$core$assoc$$, $args$jscomp$112$$, $ret$jscomp$53_v$jscomp$77$$), $ret$jscomp$53_v$jscomp$77$$) : $ret$jscomp$53_v$jscomp$77$$;
     }
-    $G__28085$$.$cljs$lang$maxFixedArity$ = 0;
-    $G__28085$$.$cljs$lang$applyTo$ = function($arglist__28087_args$jscomp$114$$) {
-      $arglist__28087_args$jscomp$114$$ = $APP.$cljs$core$seq$$($arglist__28087_args$jscomp$114$$);
-      return $G__28085__delegate$$($arglist__28087_args$jscomp$114$$);
+    $G__26814$$.$cljs$lang$maxFixedArity$ = 0;
+    $G__26814$$.$cljs$lang$applyTo$ = function($arglist__26818_args$jscomp$114$$) {
+      $arglist__26818_args$jscomp$114$$ = $APP.$cljs$core$seq$$($arglist__26818_args$jscomp$114$$);
+      return $G__26814__delegate$$($arglist__26818_args$jscomp$114$$);
     };
-    $G__28085$$.$cljs$core$IFn$_invoke$arity$variadic$ = $G__28085__delegate$$;
-    return $G__28085$$;
+    $G__26814$$.$cljs$core$IFn$_invoke$arity$variadic$ = $G__26814__delegate$$;
+    return $G__26814$$;
   }();
 }(function($c$jscomp$220$$) {
   return new $module$node_modules$three$build$three_cjs$$.MeshPhongMaterial($APP.$cljs$core$clj__GT_js$$($c$jscomp$220$$));
@@ -3461,12 +3461,12 @@ $threeagent$impl$entities$LightEntity$$.prototype.$threeagent$entity$IUpdateable
   $obj$jscomp$180$$.receiveShadow = $cljs$cst$674$receive_shadow$$.$cljs$core$IFn$_invoke$arity$1$($cfg$jscomp$1$$);
   return $threeagent$impl$entities$apply_shadow_settings_BANG_$$($obj$jscomp$180$$, $cljs$cst$701$shadow$$.$cljs$core$IFn$_invoke$arity$1$($cfg$jscomp$1$$));
 };
-$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31782$$.prototype;
-$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31784$$, $meta31783__$1$$) {
-  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31782$$($meta31783__$1$$);
+$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31747$$.prototype;
+$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31749$$, $meta31748__$1$$) {
+  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31747$$($meta31748__$1$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IMeta$_meta$arity$1$ = function() {
-  return this.$meta31783$;
+  return this.$meta31748$;
 };
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IEntityType$create$arity$3$ = function() {
   return new $module$node_modules$three$build$three_cjs$$.Group();
@@ -3478,25 +3478,25 @@ $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$$ = $
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$update_BANG_$arity$4$ = function($_$jscomp$421$$, $___$1$jscomp$203$$, $obj$jscomp$182$$) {
   return $obj$jscomp$182$$;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31789$$.prototype.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31791$$, $meta31790__$1$$) {
-  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31789$$($meta31790__$1$$);
+$threeagent$impl$entities$t_threeagent$0impl$0entities31765$$.prototype.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31767$$, $meta31766__$1$$) {
+  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31765$$($meta31766__$1$$);
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31789$$.prototype.$cljs$core$IMeta$_meta$arity$1$ = function() {
-  return this.$meta31790$;
+$threeagent$impl$entities$t_threeagent$0impl$0entities31765$$.prototype.$cljs$core$IMeta$_meta$arity$1$ = function() {
+  return this.$meta31766$;
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31789$$.prototype.$threeagent$entity$IEntityType$create$arity$3$ = function($_$jscomp$422_map__31793__$1$$, $___$1$jscomp$204$$, $p__31792$$) {
-  $_$jscomp$422_map__31793__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31792$$);
-  return $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($_$jscomp$422_map__31793__$1$$, $cljs$cst$681$object$$);
+$threeagent$impl$entities$t_threeagent$0impl$0entities31765$$.prototype.$threeagent$entity$IEntityType$create$arity$3$ = function($_$jscomp$422_map__31771__$1$$, $___$1$jscomp$204$$, $p__31770$$) {
+  $_$jscomp$422_map__31771__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31770$$);
+  return $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($_$jscomp$422_map__31771__$1$$, $cljs$cst$681$object$$);
 };
-$threeagent$impl$entities$t_threeagent$0impl$0entities31789$$.prototype.$threeagent$entity$IEntityType$destroy_BANG_$arity$4$ = function() {
+$threeagent$impl$entities$t_threeagent$0impl$0entities31765$$.prototype.$threeagent$entity$IEntityType$destroy_BANG_$arity$4$ = function() {
   return null;
 };
-$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31795$$.prototype;
-$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31797$$, $meta31796__$1$$) {
-  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31795$$($meta31796__$1$$);
+$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31775$$.prototype;
+$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31777$$, $meta31776__$1$$) {
+  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31775$$($meta31776__$1$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IMeta$_meta$arity$1$ = function() {
-  return this.$meta31796$;
+  return this.$meta31776$;
 };
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IEntityType$create$arity$3$ = function($_$jscomp$424_cam$$, $___$1$jscomp$206$$, $cfg$jscomp$2$$) {
   $_$jscomp$424_cam$$ = new $module$node_modules$three$build$three_cjs$$.PerspectiveCamera(75.0, 1.0, 0.1, 2000.0);
@@ -3514,12 +3514,12 @@ $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$updat
   $o$jscomp$171$$.updateProjectionMatrix();
   return $o$jscomp$171$$;
 };
-$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31841$$.prototype;
-$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31843$$, $meta31842__$1$$) {
-  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31841$$($meta31842__$1$$);
+$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31823$$.prototype;
+$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31825$$, $meta31824__$1$$) {
+  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31823$$($meta31824__$1$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IMeta$_meta$arity$1$ = function() {
-  return this.$meta31842$;
+  return this.$meta31824$;
 };
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IEntityType$create$arity$3$ = function() {
   return new $module$node_modules$three$build$three_cjs$$.Object3D();
@@ -3531,12 +3531,12 @@ $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$$ = $
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$update_BANG_$arity$4$ = function($_$jscomp$429$$, $___$1$jscomp$211$$, $obj$jscomp$183$$) {
   return $obj$jscomp$183$$;
 };
-$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31884$$.prototype;
-$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31886$$, $meta31885__$1$$) {
-  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31884$$($meta31885__$1$$);
+$APP.$JSCompiler_prototypeAlias$$ = $threeagent$impl$entities$t_threeagent$0impl$0entities31832$$.prototype;
+$APP.$JSCompiler_prototypeAlias$$.$cljs$core$IWithMeta$_with_meta$arity$2$ = function($_31834$$, $meta31833__$1$$) {
+  return new $threeagent$impl$entities$t_threeagent$0impl$0entities31832$$($meta31833__$1$$);
 };
 $APP.$JSCompiler_prototypeAlias$$.$cljs$core$IMeta$_meta$arity$1$ = function() {
-  return this.$meta31885$;
+  return this.$meta31833$;
 };
 $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IEntityType$create$arity$3$ = function($_$jscomp$430_cam$jscomp$1$$, $___$1$jscomp$212$$, $cfg$jscomp$4$$) {
   $_$jscomp$430_cam$jscomp$1$$ = new $module$node_modules$three$build$three_cjs$$.OrthographicCamera(-1, 1, 1, -1, 0.1, 2000.0);
@@ -3555,164 +3555,164 @@ $APP.$JSCompiler_prototypeAlias$$.$threeagent$entity$IUpdateableEntityType$updat
   return $o$jscomp$172$$;
 };
 var $threeagent$impl$entities$builtin_entity_types$$ = $APP.$cljs$core$PersistentHashMap$fromArrays$$([$cljs$cst$709$sphere$$, $cljs$cst$710$point_light$$, $cljs$cst$711$directional_light$$, $cljs$cst$712$group$$, $cljs$cst$713$hemisphere_light$$, $cljs$cst$714$ring$$, $cljs$cst$715$instance$$, $cljs$cst$716$perspective_camera$$, $cljs$cst$717$plane$$, $cljs$cst$718$torus_knot$$, $cljs$cst$719$box$$, $cljs$cst$720$circle$$, $cljs$cst$721$octahedron$$, $cljs$cst$722$spot_light$$, $cljs$cst$723$rect_area_light$$, 
-$cljs$cst$724$torus$$, $cljs$cst$725$ambient_light$$, $cljs$cst$726$cylinder$$, $cljs$cst$727$shape$$, $cljs$cst$728$cone$$, $cljs$cst$729$icosahedron$$, $cljs$cst$681$object$$, $cljs$cst$730$tetrahedron$$, $cljs$cst$731$dodecahedron$$, $cljs$cst$732$orthographic_camera$$], [$threeagent$impl$entities$__GT_MeshEntity$$(function($p__31772_radius$jscomp$8$$) {
-  var $map__31773__$1_theta_length$$ = $APP.$cljs$core$__destructure_map$$($p__31772_radius$jscomp$8$$);
-  $p__31772_radius$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$733$radius$$);
-  var $width_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$734$width_segments$$), $height_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$735$height_segments$$), $phi_start$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$736$phi_start$$), $phi_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, 
-  $cljs$cst$737$phi_length$$), $theta_start$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$738$theta_start$$);
-  $map__31773__$1_theta_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31773__$1_theta_length$$, $cljs$cst$739$theta_length$$);
-  return new $module$node_modules$three$build$three_cjs$$.SphereGeometry($APP.$cljs$core$truth_$$($p__31772_radius$jscomp$8$$) ? $p__31772_radius$jscomp$8$$ : 1, $APP.$cljs$core$truth_$$($width_segments$$) ? $width_segments$$ : 8, $APP.$cljs$core$truth_$$($height_segments$$) ? $height_segments$$ : 6, $APP.$cljs$core$truth_$$($phi_start$$) ? $phi_start$$ : 0, $APP.$cljs$core$truth_$$($phi_length$$) ? $phi_length$$ : $threeagent$impl$util$pi_times_2$$, $APP.$cljs$core$truth_$$($theta_start$$) ? $theta_start$$ : 
-  0, $APP.$cljs$core$truth_$$($map__31773__$1_theta_length$$) ? $map__31773__$1_theta_length$$ : $threeagent$impl$util$pi$$);
-}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity_p__31776$$) {
-  var $decay_map__31777__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity_p__31776$$);
-  $intensity_p__31776$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31777__$1$$, $cljs$cst$740$intensity$$);
-  var $color$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31777__$1$$, $cljs$cst$741$color$$), $distance$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31777__$1$$, $cljs$cst$742$distance$$);
-  $decay_map__31777__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31777__$1$$, $cljs$cst$743$decay$$);
-  return new $module$node_modules$three$build$three_cjs$$.PointLight($APP.$cljs$core$truth_$$($color$jscomp$3$$) ? $color$jscomp$3$$ : 16777215, $APP.$cljs$core$truth_$$($intensity_p__31776$$) ? $intensity_p__31776$$ : 1.0, $APP.$cljs$core$truth_$$($distance$$) ? $distance$$ : 0, $APP.$cljs$core$truth_$$($decay_map__31777__$1$$) ? $decay_map__31777__$1$$ : 1.0);
+$cljs$cst$724$torus$$, $cljs$cst$725$ambient_light$$, $cljs$cst$726$cylinder$$, $cljs$cst$727$shape$$, $cljs$cst$728$cone$$, $cljs$cst$729$icosahedron$$, $cljs$cst$681$object$$, $cljs$cst$730$tetrahedron$$, $cljs$cst$731$dodecahedron$$, $cljs$cst$732$orthographic_camera$$], [$threeagent$impl$entities$__GT_MeshEntity$$(function($p__31739_radius$jscomp$8$$) {
+  var $map__31740__$1_theta_length$$ = $APP.$cljs$core$__destructure_map$$($p__31739_radius$jscomp$8$$);
+  $p__31739_radius$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$733$radius$$);
+  var $width_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$734$width_segments$$), $height_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$735$height_segments$$), $phi_start$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$736$phi_start$$), $phi_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, 
+  $cljs$cst$737$phi_length$$), $theta_start$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$738$theta_start$$);
+  $map__31740__$1_theta_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31740__$1_theta_length$$, $cljs$cst$739$theta_length$$);
+  return new $module$node_modules$three$build$three_cjs$$.SphereGeometry($APP.$cljs$core$truth_$$($p__31739_radius$jscomp$8$$) ? $p__31739_radius$jscomp$8$$ : 1, $APP.$cljs$core$truth_$$($width_segments$$) ? $width_segments$$ : 8, $APP.$cljs$core$truth_$$($height_segments$$) ? $height_segments$$ : 6, $APP.$cljs$core$truth_$$($phi_start$$) ? $phi_start$$ : 0, $APP.$cljs$core$truth_$$($phi_length$$) ? $phi_length$$ : $threeagent$impl$util$pi_times_2$$, $APP.$cljs$core$truth_$$($theta_start$$) ? $theta_start$$ : 
+  0, $APP.$cljs$core$truth_$$($map__31740__$1_theta_length$$) ? $map__31740__$1_theta_length$$ : $threeagent$impl$util$pi$$);
+}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity_p__31741$$) {
+  var $decay_map__31742__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity_p__31741$$);
+  $intensity_p__31741$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31742__$1$$, $cljs$cst$740$intensity$$);
+  var $color$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31742__$1$$, $cljs$cst$741$color$$), $distance$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31742__$1$$, $cljs$cst$742$distance$$);
+  $decay_map__31742__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($decay_map__31742__$1$$, $cljs$cst$743$decay$$);
+  return new $module$node_modules$three$build$three_cjs$$.PointLight($APP.$cljs$core$truth_$$($color$jscomp$3$$) ? $color$jscomp$3$$ : 16777215, $APP.$cljs$core$truth_$$($intensity_p__31741$$) ? $intensity_p__31741$$ : 1.0, $APP.$cljs$core$truth_$$($distance$$) ? $distance$$ : 0, $APP.$cljs$core$truth_$$($decay_map__31742__$1$$) ? $decay_map__31742__$1$$ : 1.0);
 }, function($o$jscomp$173$$, $cfg$jscomp$6$$) {
   $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$173$$, $cfg$jscomp$6$$);
   return $o$jscomp$173$$;
-}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$1_light$jscomp$2_p__31778$$) {
-  var $map__31779__$1_target$jscomp$108$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$1_light$jscomp$2_p__31778$$);
-  $intensity$jscomp$1_light$jscomp$2_p__31778$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_target$jscomp$108$$, $cljs$cst$740$intensity$$);
-  var $color$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_target$jscomp$108$$, $cljs$cst$741$color$$);
-  $map__31779__$1_target$jscomp$108$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31779__$1_target$jscomp$108$$, $APP.$cljs$cst$485$target$$);
-  $intensity$jscomp$1_light$jscomp$2_p__31778$$ = new $module$node_modules$three$build$three_cjs$$.DirectionalLight($APP.$cljs$core$truth_$$($color$jscomp$4$$) ? $color$jscomp$4$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$1_light$jscomp$2_p__31778$$) ? $intensity$jscomp$1_light$jscomp$2_p__31778$$ : 1.0);
-  $intensity$jscomp$1_light$jscomp$2_p__31778$$.originalTarget = $intensity$jscomp$1_light$jscomp$2_p__31778$$.target;
-  $APP.$cljs$core$truth_$$($map__31779__$1_target$jscomp$108$$) && ($intensity$jscomp$1_light$jscomp$2_p__31778$$.target = $map__31779__$1_target$jscomp$108$$);
-  return $intensity$jscomp$1_light$jscomp$2_p__31778$$;
-}, function($o$jscomp$174$$, $map__31781__$1_p__31780$$) {
-  $map__31781__$1_p__31780$$ = $APP.$cljs$core$__destructure_map$$($map__31781__$1_p__31780$$);
-  var $target$jscomp$109$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31781__$1_p__31780$$, $APP.$cljs$cst$485$target$$);
+}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$1_light$jscomp$2_p__31743$$) {
+  var $map__31744__$1_target$jscomp$108$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$1_light$jscomp$2_p__31743$$);
+  $intensity$jscomp$1_light$jscomp$2_p__31743$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31744__$1_target$jscomp$108$$, $cljs$cst$740$intensity$$);
+  var $color$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31744__$1_target$jscomp$108$$, $cljs$cst$741$color$$);
+  $map__31744__$1_target$jscomp$108$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31744__$1_target$jscomp$108$$, $APP.$cljs$cst$485$target$$);
+  $intensity$jscomp$1_light$jscomp$2_p__31743$$ = new $module$node_modules$three$build$three_cjs$$.DirectionalLight($APP.$cljs$core$truth_$$($color$jscomp$4$$) ? $color$jscomp$4$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$1_light$jscomp$2_p__31743$$) ? $intensity$jscomp$1_light$jscomp$2_p__31743$$ : 1.0);
+  $intensity$jscomp$1_light$jscomp$2_p__31743$$.originalTarget = $intensity$jscomp$1_light$jscomp$2_p__31743$$.target;
+  $APP.$cljs$core$truth_$$($map__31744__$1_target$jscomp$108$$) && ($intensity$jscomp$1_light$jscomp$2_p__31743$$.target = $map__31744__$1_target$jscomp$108$$);
+  return $intensity$jscomp$1_light$jscomp$2_p__31743$$;
+}, function($o$jscomp$174$$, $map__31746__$1_p__31745$$) {
+  $map__31746__$1_p__31745$$ = $APP.$cljs$core$__destructure_map$$($map__31746__$1_p__31745$$);
+  var $target$jscomp$109$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31746__$1_p__31745$$, $APP.$cljs$cst$485$target$$);
   $o$jscomp$174$$.target = $APP.$cljs$core$truth_$$($target$jscomp$109$$) ? $target$jscomp$109$$ : $o$jscomp$174$$.originalTarget;
-  $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$174$$, $APP.$cljs$core$dissoc$$.$cljs$core$IFn$_invoke$arity$2$($map__31781__$1_p__31780$$, $APP.$cljs$cst$485$target$$));
+  $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$174$$, $APP.$cljs$core$dissoc$$.$cljs$core$IFn$_invoke$arity$2$($map__31746__$1_p__31745$$, $APP.$cljs$cst$485$target$$));
   return $o$jscomp$174$$;
-}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31782$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_LightEntity$$(function($p__31785_sky_color$$) {
-  var $intensity$jscomp$2_map__31786__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31785_sky_color$$);
-  $p__31785_sky_color$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31786__$1$$, $cljs$cst$744$sky_color$$);
-  var $ground_color$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31786__$1$$, $cljs$cst$745$ground_color$$);
-  $intensity$jscomp$2_map__31786__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31786__$1$$, $cljs$cst$740$intensity$$);
-  return new $module$node_modules$three$build$three_cjs$$.HemisphereLight($APP.$cljs$core$truth_$$($p__31785_sky_color$$) ? $p__31785_sky_color$$ : 16777215, $APP.$cljs$core$truth_$$($ground_color$$) ? $ground_color$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$2_map__31786__$1$$) ? $intensity$jscomp$2_map__31786__$1$$ : 1);
+}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31747$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_LightEntity$$(function($p__31756_sky_color$$) {
+  var $intensity$jscomp$2_map__31757__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31756_sky_color$$);
+  $p__31756_sky_color$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31757__$1$$, $cljs$cst$744$sky_color$$);
+  var $ground_color$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31757__$1$$, $cljs$cst$745$ground_color$$);
+  $intensity$jscomp$2_map__31757__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($intensity$jscomp$2_map__31757__$1$$, $cljs$cst$740$intensity$$);
+  return new $module$node_modules$three$build$three_cjs$$.HemisphereLight($APP.$cljs$core$truth_$$($p__31756_sky_color$$) ? $p__31756_sky_color$$ : 16777215, $APP.$cljs$core$truth_$$($ground_color$$) ? $ground_color$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$2_map__31757__$1$$) ? $intensity$jscomp$2_map__31757__$1$$ : 1);
 }, function($o$jscomp$175$$, $cfg$jscomp$8$$) {
   $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$175$$, $clojure$set$rename_keys$$($cfg$jscomp$8$$));
   return $o$jscomp$175$$;
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($inner_radius_p__31787$$) {
-  var $map__31788__$1_theta_length$jscomp$1$$ = $APP.$cljs$core$__destructure_map$$($inner_radius_p__31787$$);
-  $inner_radius_p__31787$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, $cljs$cst$748$inner_radius$$);
-  var $outer_radius$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, $cljs$cst$749$outer_radius$$), $theta_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, $cljs$cst$750$theta_segments$$), $phi_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, $cljs$cst$751$phi_segments$$), $theta_start$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, 
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($inner_radius_p__31762$$) {
+  var $map__31763__$1_theta_length$jscomp$1$$ = $APP.$cljs$core$__destructure_map$$($inner_radius_p__31762$$);
+  $inner_radius_p__31762$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, $cljs$cst$748$inner_radius$$);
+  var $outer_radius$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, $cljs$cst$749$outer_radius$$), $theta_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, $cljs$cst$750$theta_segments$$), $phi_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, $cljs$cst$751$phi_segments$$), $theta_start$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, 
   $cljs$cst$738$theta_start$$);
-  $map__31788__$1_theta_length$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31788__$1_theta_length$jscomp$1$$, $cljs$cst$739$theta_length$$);
-  return new $module$node_modules$three$build$three_cjs$$.RingGeometry($APP.$cljs$core$truth_$$($inner_radius_p__31787$$) ? $inner_radius_p__31787$$ : 0.5, $APP.$cljs$core$truth_$$($outer_radius$$) ? $outer_radius$$ : 1.0, $APP.$cljs$core$truth_$$($theta_segments$$) ? $theta_segments$$ : 8, $APP.$cljs$core$truth_$$($phi_segments$$) ? $phi_segments$$ : 8, $APP.$cljs$core$truth_$$($theta_start$jscomp$1$$) ? $theta_start$jscomp$1$$ : 0, $APP.$cljs$core$truth_$$($map__31788__$1_theta_length$jscomp$1$$) ? 
-  $map__31788__$1_theta_length$jscomp$1$$ : $threeagent$impl$util$pi_times_2$$);
-}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31789$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), new $threeagent$impl$entities$t_threeagent$0impl$0entities31795$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31801_width$jscomp$36$$) {
-  var $height_segments$jscomp$1_map__31802__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31801_width$jscomp$36$$);
-  $p__31801_width$jscomp$36$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31802__$1$$, $APP.$cljs$cst$505$width$$);
-  var $height$jscomp$33$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31802__$1$$, $APP.$cljs$cst$506$height$$), $width_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31802__$1$$, $cljs$cst$734$width_segments$$);
-  $height_segments$jscomp$1_map__31802__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31802__$1$$, $cljs$cst$735$height_segments$$);
-  return new $module$node_modules$three$build$three_cjs$$.PlaneGeometry($APP.$cljs$core$truth_$$($p__31801_width$jscomp$36$$) ? $p__31801_width$jscomp$36$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$33$$) ? $height$jscomp$33$$ : 1, $APP.$cljs$core$truth_$$($width_segments$jscomp$1$$) ? $width_segments$jscomp$1$$ : 1, $APP.$cljs$core$truth_$$($height_segments$jscomp$1_map__31802__$1$$) ? $height_segments$jscomp$1_map__31802__$1$$ : 1);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31803_radius$jscomp$9$$) {
-  var $map__31804__$1_q$jscomp$37$$ = $APP.$cljs$core$__destructure_map$$($p__31803_radius$jscomp$9$$);
-  $p__31803_radius$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, $cljs$cst$733$radius$$);
-  var $tube$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, $cljs$cst$752$tube$$), $tubular_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, $cljs$cst$753$tubular_segments$$), $radial_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, $cljs$cst$754$radial_segments$$), $p$jscomp$84$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, 
+  $map__31763__$1_theta_length$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31763__$1_theta_length$jscomp$1$$, $cljs$cst$739$theta_length$$);
+  return new $module$node_modules$three$build$three_cjs$$.RingGeometry($APP.$cljs$core$truth_$$($inner_radius_p__31762$$) ? $inner_radius_p__31762$$ : 0.5, $APP.$cljs$core$truth_$$($outer_radius$$) ? $outer_radius$$ : 1.0, $APP.$cljs$core$truth_$$($theta_segments$$) ? $theta_segments$$ : 8, $APP.$cljs$core$truth_$$($phi_segments$$) ? $phi_segments$$ : 8, $APP.$cljs$core$truth_$$($theta_start$jscomp$1$$) ? $theta_start$jscomp$1$$ : 0, $APP.$cljs$core$truth_$$($map__31763__$1_theta_length$jscomp$1$$) ? 
+  $map__31763__$1_theta_length$jscomp$1$$ : $threeagent$impl$util$pi_times_2$$);
+}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31765$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), new $threeagent$impl$entities$t_threeagent$0impl$0entities31775$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31784_width$jscomp$36$$) {
+  var $height_segments$jscomp$1_map__31785__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31784_width$jscomp$36$$);
+  $p__31784_width$jscomp$36$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31785__$1$$, $APP.$cljs$cst$505$width$$);
+  var $height$jscomp$33$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31785__$1$$, $APP.$cljs$cst$506$height$$), $width_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31785__$1$$, $cljs$cst$734$width_segments$$);
+  $height_segments$jscomp$1_map__31785__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height_segments$jscomp$1_map__31785__$1$$, $cljs$cst$735$height_segments$$);
+  return new $module$node_modules$three$build$three_cjs$$.PlaneGeometry($APP.$cljs$core$truth_$$($p__31784_width$jscomp$36$$) ? $p__31784_width$jscomp$36$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$33$$) ? $height$jscomp$33$$ : 1, $APP.$cljs$core$truth_$$($width_segments$jscomp$1$$) ? $width_segments$jscomp$1$$ : 1, $APP.$cljs$core$truth_$$($height_segments$jscomp$1_map__31785__$1$$) ? $height_segments$jscomp$1_map__31785__$1$$ : 1);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31786_radius$jscomp$9$$) {
+  var $map__31787__$1_q$jscomp$37$$ = $APP.$cljs$core$__destructure_map$$($p__31786_radius$jscomp$9$$);
+  $p__31786_radius$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, $cljs$cst$733$radius$$);
+  var $tube$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, $cljs$cst$752$tube$$), $tubular_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, $cljs$cst$753$tubular_segments$$), $radial_segments$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, $cljs$cst$754$radial_segments$$), $p$jscomp$84$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, 
   $cljs$cst$755$p$$);
-  $map__31804__$1_q$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_q$jscomp$37$$, $cljs$cst$756$q$$);
-  return new $module$node_modules$three$build$three_cjs$$.TorusKnotGeometry($APP.$cljs$core$truth_$$($p__31803_radius$jscomp$9$$) ? $p__31803_radius$jscomp$9$$ : 1, $APP.$cljs$core$truth_$$($tube$$) ? $tube$$ : 0.4, $APP.$cljs$core$truth_$$($tubular_segments$$) ? $tubular_segments$$ : 64, $APP.$cljs$core$truth_$$($radial_segments$$) ? $radial_segments$$ : 8, $APP.$cljs$core$truth_$$($p$jscomp$84$$) ? $p$jscomp$84$$ : 2, $APP.$cljs$core$truth_$$($map__31804__$1_q$jscomp$37$$) ? $map__31804__$1_q$jscomp$37$$ : 
+  $map__31787__$1_q$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31787__$1_q$jscomp$37$$, $cljs$cst$756$q$$);
+  return new $module$node_modules$three$build$three_cjs$$.TorusKnotGeometry($APP.$cljs$core$truth_$$($p__31786_radius$jscomp$9$$) ? $p__31786_radius$jscomp$9$$ : 1, $APP.$cljs$core$truth_$$($tube$$) ? $tube$$ : 0.4, $APP.$cljs$core$truth_$$($tubular_segments$$) ? $tubular_segments$$ : 64, $APP.$cljs$core$truth_$$($radial_segments$$) ? $radial_segments$$ : 8, $APP.$cljs$core$truth_$$($p$jscomp$84$$) ? $p$jscomp$84$$ : 2, $APP.$cljs$core$truth_$$($map__31787__$1_q$jscomp$37$$) ? $map__31787__$1_q$jscomp$37$$ : 
   3);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31805_width$jscomp$37$$) {
-  var $depth_segments_map__31806__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31805_width$jscomp$37$$);
-  $p__31805_width$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, $APP.$cljs$cst$505$width$$);
-  var $height$jscomp$34$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, $APP.$cljs$cst$506$height$$), $depth$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, $cljs$cst$757$depth$$), $width_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, $cljs$cst$734$width_segments$$), $height_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, 
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31789_width$jscomp$37$$) {
+  var $depth_segments_map__31790__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31789_width$jscomp$37$$);
+  $p__31789_width$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, $APP.$cljs$cst$505$width$$);
+  var $height$jscomp$34$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, $APP.$cljs$cst$506$height$$), $depth$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, $cljs$cst$757$depth$$), $width_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, $cljs$cst$734$width_segments$$), $height_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, 
   $cljs$cst$735$height_segments$$);
-  $depth_segments_map__31806__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31806__$1$$, $cljs$cst$758$depth_segments$$);
-  return new $module$node_modules$three$build$three_cjs$$.BoxGeometry($APP.$cljs$core$truth_$$($p__31805_width$jscomp$37$$) ? $p__31805_width$jscomp$37$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$34$$) ? $height$jscomp$34$$ : 1, $APP.$cljs$core$truth_$$($depth$jscomp$14$$) ? $depth$jscomp$14$$ : 1, $APP.$cljs$core$truth_$$($width_segments$jscomp$2$$) ? $width_segments$jscomp$2$$ : 1, $APP.$cljs$core$truth_$$($height_segments$jscomp$2$$) ? $height_segments$jscomp$2$$ : 1, $APP.$cljs$core$truth_$$($depth_segments_map__31806__$1$$) ? 
-  $depth_segments_map__31806__$1$$ : 1);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31808_radius$jscomp$10$$) {
-  var $map__31811__$1_theta_length$jscomp$2$$ = $APP.$cljs$core$__destructure_map$$($p__31808_radius$jscomp$10$$);
-  $p__31808_radius$jscomp$10$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31811__$1_theta_length$jscomp$2$$, $cljs$cst$733$radius$$);
-  var $segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31811__$1_theta_length$jscomp$2$$, $cljs$cst$759$segments$$), $theta_start$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31811__$1_theta_length$jscomp$2$$, $cljs$cst$738$theta_start$$);
-  $map__31811__$1_theta_length$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31811__$1_theta_length$jscomp$2$$, $cljs$cst$739$theta_length$$);
-  return new $module$node_modules$three$build$three_cjs$$.CircleGeometry($APP.$cljs$core$truth_$$($p__31808_radius$jscomp$10$$) ? $p__31808_radius$jscomp$10$$ : 1, $APP.$cljs$core$truth_$$($segments$jscomp$3$$) ? $segments$jscomp$3$$ : 8, $APP.$cljs$core$truth_$$($theta_start$jscomp$2$$) ? $theta_start$jscomp$2$$ : 0, $APP.$cljs$core$truth_$$($map__31811__$1_theta_length$jscomp$2$$) ? $map__31811__$1_theta_length$jscomp$2$$ : $threeagent$impl$util$pi_times_2$$);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31813_radius$jscomp$11$$) {
-  var $detail$jscomp$6_map__31814__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31813_radius$jscomp$11$$);
-  $p__31813_radius$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$6_map__31814__$1$$, $cljs$cst$733$radius$$);
-  $detail$jscomp$6_map__31814__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$6_map__31814__$1$$, $APP.$cljs$cst$595$detail$$);
-  return new $module$node_modules$three$build$three_cjs$$.Octahedron($APP.$cljs$core$truth_$$($p__31813_radius$jscomp$11$$) ? $p__31813_radius$jscomp$11$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$6_map__31814__$1$$) ? $detail$jscomp$6_map__31814__$1$$ : 0);
-}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$3_light$jscomp$3_p__31817$$) {
-  var $map__31818__$1_target$jscomp$110$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$3_light$jscomp$3_p__31817$$);
-  $intensity$jscomp$3_light$jscomp$3_p__31817$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $cljs$cst$740$intensity$$);
-  var $color$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $cljs$cst$741$color$$), $distance$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $cljs$cst$742$distance$$), $angle$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $cljs$cst$760$angle$$), $penumbra$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, 
-  $cljs$cst$761$penumbra$$), $decay$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $cljs$cst$743$decay$$);
-  $map__31818__$1_target$jscomp$110$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_target$jscomp$110$$, $APP.$cljs$cst$485$target$$);
-  $intensity$jscomp$3_light$jscomp$3_p__31817$$ = new $module$node_modules$three$build$three_cjs$$.SpotLight($APP.$cljs$core$truth_$$($color$jscomp$5$$) ? $color$jscomp$5$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$3_light$jscomp$3_p__31817$$) ? $intensity$jscomp$3_light$jscomp$3_p__31817$$ : 1.0, $APP.$cljs$core$truth_$$($distance$jscomp$1$$) ? $distance$jscomp$1$$ : 0, $APP.$cljs$core$truth_$$($angle$jscomp$11$$) ? $angle$jscomp$11$$ : $threeagent$impl$util$pi_over_2$$, $APP.$cljs$core$truth_$$($penumbra$$) ? 
+  $depth_segments_map__31790__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($depth_segments_map__31790__$1$$, $cljs$cst$758$depth_segments$$);
+  return new $module$node_modules$three$build$three_cjs$$.BoxGeometry($APP.$cljs$core$truth_$$($p__31789_width$jscomp$37$$) ? $p__31789_width$jscomp$37$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$34$$) ? $height$jscomp$34$$ : 1, $APP.$cljs$core$truth_$$($depth$jscomp$14$$) ? $depth$jscomp$14$$ : 1, $APP.$cljs$core$truth_$$($width_segments$jscomp$2$$) ? $width_segments$jscomp$2$$ : 1, $APP.$cljs$core$truth_$$($height_segments$jscomp$2$$) ? $height_segments$jscomp$2$$ : 1, $APP.$cljs$core$truth_$$($depth_segments_map__31790__$1$$) ? 
+  $depth_segments_map__31790__$1$$ : 1);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31791_radius$jscomp$10$$) {
+  var $map__31793__$1_theta_length$jscomp$2$$ = $APP.$cljs$core$__destructure_map$$($p__31791_radius$jscomp$10$$);
+  $p__31791_radius$jscomp$10$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31793__$1_theta_length$jscomp$2$$, $cljs$cst$733$radius$$);
+  var $segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31793__$1_theta_length$jscomp$2$$, $cljs$cst$759$segments$$), $theta_start$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31793__$1_theta_length$jscomp$2$$, $cljs$cst$738$theta_start$$);
+  $map__31793__$1_theta_length$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31793__$1_theta_length$jscomp$2$$, $cljs$cst$739$theta_length$$);
+  return new $module$node_modules$three$build$three_cjs$$.CircleGeometry($APP.$cljs$core$truth_$$($p__31791_radius$jscomp$10$$) ? $p__31791_radius$jscomp$10$$ : 1, $APP.$cljs$core$truth_$$($segments$jscomp$3$$) ? $segments$jscomp$3$$ : 8, $APP.$cljs$core$truth_$$($theta_start$jscomp$2$$) ? $theta_start$jscomp$2$$ : 0, $APP.$cljs$core$truth_$$($map__31793__$1_theta_length$jscomp$2$$) ? $map__31793__$1_theta_length$jscomp$2$$ : $threeagent$impl$util$pi_times_2$$);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31799_radius$jscomp$11$$) {
+  var $detail$jscomp$6_map__31800__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31799_radius$jscomp$11$$);
+  $p__31799_radius$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$6_map__31800__$1$$, $cljs$cst$733$radius$$);
+  $detail$jscomp$6_map__31800__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$6_map__31800__$1$$, $APP.$cljs$cst$595$detail$$);
+  return new $module$node_modules$three$build$three_cjs$$.Octahedron($APP.$cljs$core$truth_$$($p__31799_radius$jscomp$11$$) ? $p__31799_radius$jscomp$11$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$6_map__31800__$1$$) ? $detail$jscomp$6_map__31800__$1$$ : 0);
+}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$3_light$jscomp$3_p__31801$$) {
+  var $map__31802__$1_target$jscomp$110$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$3_light$jscomp$3_p__31801$$);
+  $intensity$jscomp$3_light$jscomp$3_p__31801$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $cljs$cst$740$intensity$$);
+  var $color$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $cljs$cst$741$color$$), $distance$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $cljs$cst$742$distance$$), $angle$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $cljs$cst$760$angle$$), $penumbra$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, 
+  $cljs$cst$761$penumbra$$), $decay$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $cljs$cst$743$decay$$);
+  $map__31802__$1_target$jscomp$110$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31802__$1_target$jscomp$110$$, $APP.$cljs$cst$485$target$$);
+  $intensity$jscomp$3_light$jscomp$3_p__31801$$ = new $module$node_modules$three$build$three_cjs$$.SpotLight($APP.$cljs$core$truth_$$($color$jscomp$5$$) ? $color$jscomp$5$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$3_light$jscomp$3_p__31801$$) ? $intensity$jscomp$3_light$jscomp$3_p__31801$$ : 1.0, $APP.$cljs$core$truth_$$($distance$jscomp$1$$) ? $distance$jscomp$1$$ : 0, $APP.$cljs$core$truth_$$($angle$jscomp$11$$) ? $angle$jscomp$11$$ : $threeagent$impl$util$pi_over_2$$, $APP.$cljs$core$truth_$$($penumbra$$) ? 
   $penumbra$$ : 0, $APP.$cljs$core$truth_$$($decay$jscomp$1$$) ? $decay$jscomp$1$$ : 1.0);
-  $intensity$jscomp$3_light$jscomp$3_p__31817$$.originalTarget = $intensity$jscomp$3_light$jscomp$3_p__31817$$.target;
-  $APP.$cljs$core$truth_$$($map__31818__$1_target$jscomp$110$$) && ($intensity$jscomp$3_light$jscomp$3_p__31817$$.target = $map__31818__$1_target$jscomp$110$$);
-  return $intensity$jscomp$3_light$jscomp$3_p__31817$$;
-}, function($o$jscomp$176$$, $map__31820__$1_p__31819$$) {
-  $map__31820__$1_p__31819$$ = $APP.$cljs$core$__destructure_map$$($map__31820__$1_p__31819$$);
-  var $target$jscomp$111$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_p__31819$$, $APP.$cljs$cst$485$target$$);
+  $intensity$jscomp$3_light$jscomp$3_p__31801$$.originalTarget = $intensity$jscomp$3_light$jscomp$3_p__31801$$.target;
+  $APP.$cljs$core$truth_$$($map__31802__$1_target$jscomp$110$$) && ($intensity$jscomp$3_light$jscomp$3_p__31801$$.target = $map__31802__$1_target$jscomp$110$$);
+  return $intensity$jscomp$3_light$jscomp$3_p__31801$$;
+}, function($o$jscomp$176$$, $map__31804__$1_p__31803$$) {
+  $map__31804__$1_p__31803$$ = $APP.$cljs$core$__destructure_map$$($map__31804__$1_p__31803$$);
+  var $target$jscomp$111$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31804__$1_p__31803$$, $APP.$cljs$cst$485$target$$);
   $o$jscomp$176$$.target = $APP.$cljs$core$truth_$$($target$jscomp$111$$) ? $target$jscomp$111$$ : $o$jscomp$176$$.originalTarget;
-  $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$176$$, $APP.$cljs$core$dissoc$$.$cljs$core$IFn$_invoke$arity$2$($map__31820__$1_p__31819$$, $APP.$cljs$cst$485$target$$));
+  $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$176$$, $APP.$cljs$core$dissoc$$.$cljs$core$IFn$_invoke$arity$2$($map__31804__$1_p__31803$$, $APP.$cljs$cst$485$target$$));
   return $o$jscomp$176$$;
-}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$4_p__31821$$) {
-  var $height$jscomp$35_map__31822__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$4_p__31821$$);
-  $intensity$jscomp$4_p__31821$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31822__$1$$, $cljs$cst$740$intensity$$);
-  var $color$jscomp$6$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31822__$1$$, $cljs$cst$741$color$$), $width$jscomp$38$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31822__$1$$, $APP.$cljs$cst$505$width$$);
-  $height$jscomp$35_map__31822__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31822__$1$$, $APP.$cljs$cst$506$height$$);
-  return new $module$node_modules$three$build$three_cjs$$.RectAreaLight($APP.$cljs$core$truth_$$($color$jscomp$6$$) ? $color$jscomp$6$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$4_p__31821$$) ? $intensity$jscomp$4_p__31821$$ : 1.0, $APP.$cljs$core$truth_$$($width$jscomp$38$$) ? $width$jscomp$38$$ : 10, $APP.$cljs$core$truth_$$($height$jscomp$35_map__31822__$1$$) ? $height$jscomp$35_map__31822__$1$$ : 10);
+}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$4_p__31805$$) {
+  var $height$jscomp$35_map__31806__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$4_p__31805$$);
+  $intensity$jscomp$4_p__31805$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31806__$1$$, $cljs$cst$740$intensity$$);
+  var $color$jscomp$6$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31806__$1$$, $cljs$cst$741$color$$), $width$jscomp$38$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31806__$1$$, $APP.$cljs$cst$505$width$$);
+  $height$jscomp$35_map__31806__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($height$jscomp$35_map__31806__$1$$, $APP.$cljs$cst$506$height$$);
+  return new $module$node_modules$three$build$three_cjs$$.RectAreaLight($APP.$cljs$core$truth_$$($color$jscomp$6$$) ? $color$jscomp$6$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$4_p__31805$$) ? $intensity$jscomp$4_p__31805$$ : 1.0, $APP.$cljs$core$truth_$$($width$jscomp$38$$) ? $width$jscomp$38$$ : 10, $APP.$cljs$core$truth_$$($height$jscomp$35_map__31806__$1$$) ? $height$jscomp$35_map__31806__$1$$ : 10);
 }, function($o$jscomp$177$$, $cfg$jscomp$10$$) {
   $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$177$$, $cfg$jscomp$10$$);
   return $o$jscomp$177$$;
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31826_radius$jscomp$12$$) {
-  var $arc_map__31827__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31826_radius$jscomp$12$$);
-  $p__31826_radius$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31827__$1$$, $cljs$cst$733$radius$$);
-  var $tube$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31827__$1$$, $cljs$cst$752$tube$$), $radial_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31827__$1$$, $cljs$cst$754$radial_segments$$), $tubular_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31827__$1$$, $cljs$cst$753$tubular_segments$$);
-  $arc_map__31827__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31827__$1$$, $cljs$cst$762$arc$$);
-  return new $module$node_modules$three$build$three_cjs$$.TorusGeometry($APP.$cljs$core$truth_$$($p__31826_radius$jscomp$12$$) ? $p__31826_radius$jscomp$12$$ : 1, $APP.$cljs$core$truth_$$($tube$jscomp$1$$) ? $tube$jscomp$1$$ : 0.4, $APP.$cljs$core$truth_$$($radial_segments$jscomp$1$$) ? $radial_segments$jscomp$1$$ : 8, $APP.$cljs$core$truth_$$($tubular_segments$jscomp$1$$) ? $tubular_segments$jscomp$1$$ : 6, $APP.$cljs$core$truth_$$($arc_map__31827__$1$$) ? $arc_map__31827__$1$$ : $threeagent$impl$util$pi_times_2$$);
-}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$5_p__31831$$) {
-  var $color$jscomp$7_map__31832__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$5_p__31831$$);
-  $intensity$jscomp$5_p__31831$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($color$jscomp$7_map__31832__$1$$, $cljs$cst$740$intensity$$);
-  $color$jscomp$7_map__31832__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($color$jscomp$7_map__31832__$1$$, $cljs$cst$741$color$$);
-  return new $module$node_modules$three$build$three_cjs$$.AmbientLight($APP.$cljs$core$truth_$$($color$jscomp$7_map__31832__$1$$) ? $color$jscomp$7_map__31832__$1$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$5_p__31831$$) ? $intensity$jscomp$5_p__31831$$ : 1.0);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31807_radius$jscomp$12$$) {
+  var $arc_map__31808__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31807_radius$jscomp$12$$);
+  $p__31807_radius$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31808__$1$$, $cljs$cst$733$radius$$);
+  var $tube$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31808__$1$$, $cljs$cst$752$tube$$), $radial_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31808__$1$$, $cljs$cst$754$radial_segments$$), $tubular_segments$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31808__$1$$, $cljs$cst$753$tubular_segments$$);
+  $arc_map__31808__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($arc_map__31808__$1$$, $cljs$cst$762$arc$$);
+  return new $module$node_modules$three$build$three_cjs$$.TorusGeometry($APP.$cljs$core$truth_$$($p__31807_radius$jscomp$12$$) ? $p__31807_radius$jscomp$12$$ : 1, $APP.$cljs$core$truth_$$($tube$jscomp$1$$) ? $tube$jscomp$1$$ : 0.4, $APP.$cljs$core$truth_$$($radial_segments$jscomp$1$$) ? $radial_segments$jscomp$1$$ : 8, $APP.$cljs$core$truth_$$($tubular_segments$jscomp$1$$) ? $tubular_segments$jscomp$1$$ : 6, $APP.$cljs$core$truth_$$($arc_map__31808__$1$$) ? $arc_map__31808__$1$$ : $threeagent$impl$util$pi_times_2$$);
+}), $threeagent$impl$entities$__GT_LightEntity$$(function($intensity$jscomp$5_p__31809$$) {
+  var $color$jscomp$7_map__31810__$1$$ = $APP.$cljs$core$__destructure_map$$($intensity$jscomp$5_p__31809$$);
+  $intensity$jscomp$5_p__31809$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($color$jscomp$7_map__31810__$1$$, $cljs$cst$740$intensity$$);
+  $color$jscomp$7_map__31810__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($color$jscomp$7_map__31810__$1$$, $cljs$cst$741$color$$);
+  return new $module$node_modules$three$build$three_cjs$$.AmbientLight($APP.$cljs$core$truth_$$($color$jscomp$7_map__31810__$1$$) ? $color$jscomp$7_map__31810__$1$$ : 16777215, $APP.$cljs$core$truth_$$($intensity$jscomp$5_p__31809$$) ? $intensity$jscomp$5_p__31809$$ : 1.0);
 }, function($o$jscomp$178$$, $cfg$jscomp$11$$) {
   $threeagent$impl$entities$apply_props_clj_BANG_$$($o$jscomp$178$$, $cfg$jscomp$11$$);
   return $o$jscomp$178$$;
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31833_radius_top$$) {
-  var $map__31834__$1_theta_length$jscomp$3$$ = $APP.$cljs$core$__destructure_map$$($p__31833_radius_top$$);
-  $p__31833_radius_top$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$763$radius_top$$);
-  var $radius_bottom$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$764$radius_bottom$$), $height$jscomp$36$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $APP.$cljs$cst$506$height$$), $radial_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$754$radial_segments$$), $height_segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, 
-  $cljs$cst$735$height_segments$$), $open_ended_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$765$open_ended_QMARK_$$), $theta_start$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$738$theta_start$$);
-  $map__31834__$1_theta_length$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31834__$1_theta_length$jscomp$3$$, $cljs$cst$739$theta_length$$);
-  return new $module$node_modules$three$build$three_cjs$$.CylinderGeometry($APP.$cljs$core$truth_$$($p__31833_radius_top$$) ? $p__31833_radius_top$$ : 1, $APP.$cljs$core$truth_$$($radius_bottom$$) ? $radius_bottom$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$36$$) ? $height$jscomp$36$$ : 1, $APP.$cljs$core$truth_$$($radial_segments$jscomp$2$$) ? $radial_segments$jscomp$2$$ : 8, $APP.$cljs$core$truth_$$($height_segments$jscomp$3$$) ? $height_segments$jscomp$3$$ : 1, $open_ended_QMARK_$$, $APP.$cljs$core$truth_$$($theta_start$jscomp$3$$) ? 
-  $theta_start$jscomp$3$$ : 0, $APP.$cljs$core$truth_$$($map__31834__$1_theta_length$jscomp$3$$) ? $map__31834__$1_theta_length$jscomp$3$$ : $threeagent$impl$util$pi_times_2$$);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($map__31836__$1_p__31835_shape$$) {
-  $map__31836__$1_p__31835_shape$$ = $APP.$cljs$core$__destructure_map$$($map__31836__$1_p__31835_shape$$);
-  $map__31836__$1_p__31835_shape$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31836__$1_p__31835_shape$$, $cljs$cst$727$shape$$);
-  return new $module$node_modules$three$build$three_cjs$$.ShapeGeometry($map__31836__$1_p__31835_shape$$);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31837_radius$jscomp$13$$) {
-  var $map__31838__$1_theta_length$jscomp$4$$ = $APP.$cljs$core$__destructure_map$$($p__31837_radius$jscomp$13$$);
-  $p__31837_radius$jscomp$13$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$733$radius$$);
-  var $height$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $APP.$cljs$cst$506$height$$), $radial_segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$754$radial_segments$$), $height_segments$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$735$height_segments$$), $open_ended_QMARK_$jscomp$1$$ = 
-  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$765$open_ended_QMARK_$$), $theta_start$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$738$theta_start$$);
-  $map__31838__$1_theta_length$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31838__$1_theta_length$jscomp$4$$, $cljs$cst$739$theta_length$$);
-  return new $module$node_modules$three$build$three_cjs$$.ConeGeometry($APP.$cljs$core$truth_$$($p__31837_radius$jscomp$13$$) ? $p__31837_radius$jscomp$13$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$37$$) ? $height$jscomp$37$$ : 1, $APP.$cljs$core$truth_$$($radial_segments$jscomp$3$$) ? $radial_segments$jscomp$3$$ : 8, $APP.$cljs$core$truth_$$($height_segments$jscomp$4$$) ? $height_segments$jscomp$4$$ : 1, $open_ended_QMARK_$jscomp$1$$, $APP.$cljs$core$truth_$$($theta_start$jscomp$4$$) ? $theta_start$jscomp$4$$ : 
-  0, $APP.$cljs$core$truth_$$($map__31838__$1_theta_length$jscomp$4$$) ? $map__31838__$1_theta_length$jscomp$4$$ : $threeagent$impl$util$pi_times_2$$);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31839_radius$jscomp$14$$) {
-  var $detail$jscomp$7_map__31840__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31839_radius$jscomp$14$$);
-  $p__31839_radius$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$7_map__31840__$1$$, $cljs$cst$733$radius$$);
-  $detail$jscomp$7_map__31840__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$7_map__31840__$1$$, $APP.$cljs$cst$595$detail$$);
-  return new $module$node_modules$three$build$three_cjs$$.Icosahedron($APP.$cljs$core$truth_$$($p__31839_radius$jscomp$14$$) ? $p__31839_radius$jscomp$14$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$7_map__31840__$1$$) ? $detail$jscomp$7_map__31840__$1$$ : 0);
-}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31841$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31880_radius$jscomp$15$$) {
-  var $detail$jscomp$8_map__31881__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31880_radius$jscomp$15$$);
-  $p__31880_radius$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$8_map__31881__$1$$, $cljs$cst$733$radius$$);
-  $detail$jscomp$8_map__31881__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$8_map__31881__$1$$, $APP.$cljs$cst$595$detail$$);
-  return new $module$node_modules$three$build$three_cjs$$.TetrahedronGeometry($APP.$cljs$core$truth_$$($p__31880_radius$jscomp$15$$) ? $p__31880_radius$jscomp$15$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$8_map__31881__$1$$) ? $detail$jscomp$8_map__31881__$1$$ : 0);
-}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31882_radius$jscomp$16$$) {
-  var $detail$jscomp$9_map__31883__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31882_radius$jscomp$16$$);
-  $p__31882_radius$jscomp$16$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$9_map__31883__$1$$, $cljs$cst$733$radius$$);
-  $detail$jscomp$9_map__31883__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$9_map__31883__$1$$, $APP.$cljs$cst$595$detail$$);
-  return new $module$node_modules$three$build$three_cjs$$.DodecahedronGeometry($APP.$cljs$core$truth_$$($p__31882_radius$jscomp$16$$) ? $p__31882_radius$jscomp$16$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$9_map__31883__$1$$) ? $detail$jscomp$9_map__31883__$1$$ : 0);
-}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31884$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$)]);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31811_radius_top$$) {
+  var $map__31812__$1_theta_length$jscomp$3$$ = $APP.$cljs$core$__destructure_map$$($p__31811_radius_top$$);
+  $p__31811_radius_top$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$763$radius_top$$);
+  var $radius_bottom$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$764$radius_bottom$$), $height$jscomp$36$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $APP.$cljs$cst$506$height$$), $radial_segments$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$754$radial_segments$$), $height_segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, 
+  $cljs$cst$735$height_segments$$), $open_ended_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$765$open_ended_QMARK_$$), $theta_start$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$738$theta_start$$);
+  $map__31812__$1_theta_length$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31812__$1_theta_length$jscomp$3$$, $cljs$cst$739$theta_length$$);
+  return new $module$node_modules$three$build$three_cjs$$.CylinderGeometry($APP.$cljs$core$truth_$$($p__31811_radius_top$$) ? $p__31811_radius_top$$ : 1, $APP.$cljs$core$truth_$$($radius_bottom$$) ? $radius_bottom$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$36$$) ? $height$jscomp$36$$ : 1, $APP.$cljs$core$truth_$$($radial_segments$jscomp$2$$) ? $radial_segments$jscomp$2$$ : 8, $APP.$cljs$core$truth_$$($height_segments$jscomp$3$$) ? $height_segments$jscomp$3$$ : 1, $open_ended_QMARK_$$, $APP.$cljs$core$truth_$$($theta_start$jscomp$3$$) ? 
+  $theta_start$jscomp$3$$ : 0, $APP.$cljs$core$truth_$$($map__31812__$1_theta_length$jscomp$3$$) ? $map__31812__$1_theta_length$jscomp$3$$ : $threeagent$impl$util$pi_times_2$$);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($map__31818__$1_p__31816_shape$$) {
+  $map__31818__$1_p__31816_shape$$ = $APP.$cljs$core$__destructure_map$$($map__31818__$1_p__31816_shape$$);
+  $map__31818__$1_p__31816_shape$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31818__$1_p__31816_shape$$, $cljs$cst$727$shape$$);
+  return new $module$node_modules$three$build$three_cjs$$.ShapeGeometry($map__31818__$1_p__31816_shape$$);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31819_radius$jscomp$13$$) {
+  var $map__31820__$1_theta_length$jscomp$4$$ = $APP.$cljs$core$__destructure_map$$($p__31819_radius$jscomp$13$$);
+  $p__31819_radius$jscomp$13$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$733$radius$$);
+  var $height$jscomp$37$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $APP.$cljs$cst$506$height$$), $radial_segments$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$754$radial_segments$$), $height_segments$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$735$height_segments$$), $open_ended_QMARK_$jscomp$1$$ = 
+  $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$765$open_ended_QMARK_$$), $theta_start$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$738$theta_start$$);
+  $map__31820__$1_theta_length$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__31820__$1_theta_length$jscomp$4$$, $cljs$cst$739$theta_length$$);
+  return new $module$node_modules$three$build$three_cjs$$.ConeGeometry($APP.$cljs$core$truth_$$($p__31819_radius$jscomp$13$$) ? $p__31819_radius$jscomp$13$$ : 1, $APP.$cljs$core$truth_$$($height$jscomp$37$$) ? $height$jscomp$37$$ : 1, $APP.$cljs$core$truth_$$($radial_segments$jscomp$3$$) ? $radial_segments$jscomp$3$$ : 8, $APP.$cljs$core$truth_$$($height_segments$jscomp$4$$) ? $height_segments$jscomp$4$$ : 1, $open_ended_QMARK_$jscomp$1$$, $APP.$cljs$core$truth_$$($theta_start$jscomp$4$$) ? $theta_start$jscomp$4$$ : 
+  0, $APP.$cljs$core$truth_$$($map__31820__$1_theta_length$jscomp$4$$) ? $map__31820__$1_theta_length$jscomp$4$$ : $threeagent$impl$util$pi_times_2$$);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31821_radius$jscomp$14$$) {
+  var $detail$jscomp$7_map__31822__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31821_radius$jscomp$14$$);
+  $p__31821_radius$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$7_map__31822__$1$$, $cljs$cst$733$radius$$);
+  $detail$jscomp$7_map__31822__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$7_map__31822__$1$$, $APP.$cljs$cst$595$detail$$);
+  return new $module$node_modules$three$build$three_cjs$$.Icosahedron($APP.$cljs$core$truth_$$($p__31821_radius$jscomp$14$$) ? $p__31821_radius$jscomp$14$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$7_map__31822__$1$$) ? $detail$jscomp$7_map__31822__$1$$ : 0);
+}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31823$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31828_radius$jscomp$15$$) {
+  var $detail$jscomp$8_map__31829__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31828_radius$jscomp$15$$);
+  $p__31828_radius$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$8_map__31829__$1$$, $cljs$cst$733$radius$$);
+  $detail$jscomp$8_map__31829__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$8_map__31829__$1$$, $APP.$cljs$cst$595$detail$$);
+  return new $module$node_modules$three$build$three_cjs$$.TetrahedronGeometry($APP.$cljs$core$truth_$$($p__31828_radius$jscomp$15$$) ? $p__31828_radius$jscomp$15$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$8_map__31829__$1$$) ? $detail$jscomp$8_map__31829__$1$$ : 0);
+}), $threeagent$impl$entities$__GT_MeshEntity$$(function($p__31830_radius$jscomp$16$$) {
+  var $detail$jscomp$9_map__31831__$1$$ = $APP.$cljs$core$__destructure_map$$($p__31830_radius$jscomp$16$$);
+  $p__31830_radius$jscomp$16$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$9_map__31831__$1$$, $cljs$cst$733$radius$$);
+  $detail$jscomp$9_map__31831__$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($detail$jscomp$9_map__31831__$1$$, $APP.$cljs$cst$595$detail$$);
+  return new $module$node_modules$three$build$three_cjs$$.DodecahedronGeometry($APP.$cljs$core$truth_$$($p__31830_radius$jscomp$16$$) ? $p__31830_radius$jscomp$16$$ : 1, $APP.$cljs$core$truth_$$($detail$jscomp$9_map__31831__$1$$) ? $detail$jscomp$9_map__31831__$1$$ : 0);
+}), new $threeagent$impl$entities$t_threeagent$0impl$0entities31832$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$)]);
 var $threeagent$impl$scene$contexts$$ = [], $threeagent$impl$scene$create_entity$$ = function $threeagent$impl$scene$create_entity$$($var_args$jscomp$467$$) {
   switch(arguments.length) {
     case 3:
@@ -3731,24 +3731,24 @@ $threeagent$impl$scene$create_entity$$.$cljs$core$IFn$_invoke$arity$4$ = functio
   if ($APP.$cljs$core$truth_$$($G__32744_i__32680_32735_portal_QMARK_$$)) {
     $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$ = $G__32745_chunk__32678_32733_node$jscomp$191_seq__32677_32742__$1$$.$portalPath$;
     a: {
-      var $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__32746_count__32679_32734_parent$jscomp$51_post_added_fns_32731$$;
-      for (var $G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$ = $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$;;) {
-        if ($APP.$cljs$core$seq$$($G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$)) {
-          var $next$jscomp$inline_2523$$ = $APP.$cljs$core$first$$($G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$);
-          typeof $next$jscomp$inline_2523$$ === "string" ? ($G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.getObjectByName($next$jscomp$inline_2523$$), $G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$ = $APP.$cljs$core$rest$$($G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$)) : 
-          $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$691$_DOT__DOT_$$, $next$jscomp$inline_2523$$) ? ($G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.parent, $G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$ = 
-          $APP.$cljs$core$rest$$($G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$)) : ($G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.children[$next$jscomp$inline_2523$$], $G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$ = 
-          $APP.$cljs$core$rest$$($G__31715$jscomp$inline_2525_G__31717$jscomp$inline_2527_G__31719$jscomp$inline_2529_path$jscomp$inline_2522$$));
+      var $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__32746_count__32679_32734_parent$jscomp$51_post_added_fns_32731$$;
+      for (var $G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$ = $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$;;) {
+        if ($APP.$cljs$core$seq$$($G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$)) {
+          var $next$jscomp$inline_2523$$ = $APP.$cljs$core$first$$($G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$);
+          typeof $next$jscomp$inline_2523$$ === "string" ? ($G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.getObjectByName($next$jscomp$inline_2523$$), $G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$ = $APP.$cljs$core$rest$$($G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$)) : 
+          $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$691$_DOT__DOT_$$, $next$jscomp$inline_2523$$) ? ($G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.parent, $G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$ = 
+          $APP.$cljs$core$rest$$($G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$)) : ($G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$.children[$next$jscomp$inline_2523$$], $G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$ = 
+          $APP.$cljs$core$rest$$($G__31698$jscomp$inline_2525_G__31700$jscomp$inline_2527_G__31702$jscomp$inline_2529_path$jscomp$inline_2522$$));
         } else {
           break a;
         }
       }
-      $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = void 0;
+      $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$ = void 0;
     }
-    if (!$APP.$cljs$core$truth_$$($G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$)) {
+    if (!$APP.$cljs$core$truth_$$($G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$)) {
       throw console.error(["Invalid portal path '", $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$), "'"].join(""), $G__32746_count__32679_32734_parent$jscomp$51_post_added_fns_32731$$), Error(["Portal path '", $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$), "' is invalid."].join(""));
     }
-    $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$ = $G__31714$jscomp$inline_2524_G__31716$jscomp$inline_2526_G__31718$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$;
+    $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$ = $G__31697$jscomp$inline_2524_G__31699$jscomp$inline_2526_G__31701$jscomp$inline_2528_parent$jscomp$inline_1850_parent$jscomp$inline_2521$$;
   } else {
     $JSCompiler_temp$jscomp$375_map__32676__$1_obj$jscomp$186_path$jscomp$inline_1849$$ = $threeagent$impl$scene$create_entity_object$$($c__5548__auto___32743_cb_32748_ctx$jscomp$10_seq__32677_32732_temp__5823__auto___32741$$, $G__32745_chunk__32678_32733_node$jscomp$191_seq__32677_32742__$1$$);
   }

@@ -52,3 +52,12 @@ WebGLRenderer.prototype.setSize = function (width, height, updateStyle) {};
 // Intersection result
 var Intersection = {};
 Intersection.prototype.point;
+
+// Clock (used by threeagent)
+var Clock = function () {};
+Clock.prototype.getDelta = function () {};
+Clock.prototype.getElapsedTime = function () {};
+Clock.prototype.start = function () {};
+Clock.prototype.stop = function () {};
+Clock.prototype.elapsedTime;
+Clock.prototype.running;
