@@ -11,6 +11,7 @@
             [amp.lib.defnc :refer [defnc]]
             [amp.providers.main-provider :refer [MainProvider]]
             [amp.reducers.requires]
+            [amp.services.firebase :as firebase]
             [amp.services.router :refer [router]]
             [helix.core :refer [$]]))
 

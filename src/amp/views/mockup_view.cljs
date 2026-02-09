@@ -3,11 +3,16 @@
             [threeagent.core :as th]
             [threeagent.entity :as entity]
             [amp.reducers.requires]
+            [amp.services.firebase :refer [listen-to-path listen-to-edn set-edn]]
+            [amp.providers.main-provider :refer [use-main-state]]
 
             [helix.core :refer [$]]
             ["gsap" :refer [gsap]]
             ["three" :as THREE]
             ["three/addons/controls/OrbitControls.js" :refer [OrbitControls]]
+            ["three/addons/lines/Line2.js" :refer [Line2]]
+            ["three/addons/lines/LineMaterial.js" :refer [LineMaterial]]
+            ["three/addons/lines/LineGeometry.js" :refer [LineGeometry]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
@@ -17,48 +22,18 @@
 (defonce controls-atom (atom nil))
 (defonce context-atom (atom nil))
 (defonce resize-fn-atom (atom nil))
-(defonce show-dimensions-atom (th/atom true))
+(defonce container-atom (atom nil))
+(defonce show-dimensions-atom (th/atom false))
+(defonce wireframe-atom (th/atom false))
+(defonce parts-panel-atom (atom false))
+(defonce mockup-data-atom (atom nil))
+(defonce camera-state-atom (atom {:position nil :target nil}))
+
+
 
 ;; Scene elements atom - use threeagent's reactive atom for automatic re-renders
 (defonce scene-atom
-  (th/atom
-   [:object
-    {:position [0 0 -4]}
-    [:ambient-light {:intensity 0.5}]
-    [:directional-light {:position [5 5 5], :intensity 1}]
-    [:box {:position [0 1 0], :width 48, :height 2, :depth 48, :material {:color "red"}}]
-    [:box
-     {:position [-2.1999999999999993 3.5 -2.1999999999999993],
-      :width 43.6,
-      :height 3,
-      :depth 43.6,
-      :material {:color "blue"}}]
-    [:box
-     {:position [-6.600000000000001 7.5 -6.600000000000001],
-      :width 34.8,
-      :height 5,
-      :depth 34.8,
-      :material {:color "green"}}]
-    [:box
-     {:position [-13.200000000000003 14 -13.200000000000003],
-      :width 21.599999999999994,
-      :height 8,
-      :depth 21.599999999999994,
-      :material {:color "red"}}]
-    [:box
-     {:position [-22.000000000000004 24 -22.000000000000004],
-      :width 3.999999999999993,
-      :height 12,
-      :depth 3.999999999999993,
-      :material {:color "blue"}}]
-    [:text-sprite {:text "48\" (w) x 48\" (l) x 2\" (h)", :position [25.15 1 24], :scale [2.3 0.29]}]
-    [:text-sprite {:text "43\" (w) x 43\" (l) x 3\" (h)", :position [20.75 3.5 19.6], :scale [2.3 0.29]}]
-    [:text-sprite
-     {:text "34\" (w) x 34\" (l) x 5\" (h)", :position [11.949999999999998 7.5 10.799999999999997], :scale [2.3 0.29]}]
-    [:text-sprite
-     {:text "21\" (w) x 21\" (l) x 8\" (h)", :position [-1.2500000000000058 14 -2.4000000000000057], :scale [2.3 0.29]}]
-    [:text-sprite
-     {:text "3\" (w) x 3\" (l) x 12\" (h)", :position [-18.85000000000001 24 -20.000000000000007], :scale [2.3 0.29]}]]))
+  (th/atom []))
 
 ;; Call this function to render new elements!
 ;; Example: (render-elements [:object {:position [0 0 -4]} [:box {:dims [1 1 1] :material {:color "green"}}]])
@@ -103,51 +78,177 @@
   [visible?]
   (reset! show-dimensions-atom visible?))
 
+(defn toggle-wireframe!
+  "Toggle wireframe display mode."
+  []
+  (swap! wireframe-atom not))
+
+(defn set-wireframe!
+  "Set wireframe display mode."
+  [wireframe?]
+  (reset! wireframe-atom wireframe?))
+
+(defn toggle-parts-panel!
+  "Toggle parts panel visibility."
+  []
+  (swap! parts-panel-atom not))
+
+(defn extract-parts-list
+  "Extracts all parts from mockup data and groups by dimensions.
+   Returns a sorted list of {:dims [w h d] :qty n} maps."
+  [mockup-data]
+  (when-let [data (:data mockup-data)]
+    (let [all-parts (for [level data
+                          layer (:layers level)
+                          box layer
+                          :when (:dims box)]
+                      (:dims box))
+          grouped (frequencies all-parts)
+          parts-list (for [[dims qty] grouped]
+                       {:dims dims :qty qty})]
+      ;; Sort by dimensions (L x W x H)
+      (sort-by (fn [{:keys [dims]}]
+                 [(- (nth dims 2)) (- (nth dims 0)) (- (nth dims 1))])
+               parts-list))))
+
 (defn create-text-texture
-  "Creates a canvas texture with horizontal text."
-  [text]
+  "Creates a canvas texture with text for stamping on blocks."
+  [text font-size]
   (let [^js canvas (.createElement js/document "canvas")
         ^js ctx (.getContext canvas "2d")
-        font-size 48
-        canvas-width 640
-        canvas-height 64]
-    ;; Set canvas size for horizontal text
+        ;; Measure text to size canvas appropriately
+        _ (set! (.-font ctx) (str "bold " font-size "px Arial"))
+        metrics (.measureText ctx text)
+        text-width (.-width metrics)
+        padding 20
+        canvas-width (+ text-width (* padding 2))
+        canvas-height (+ font-size (* padding 2))]
+    ;; Set canvas size
     (set! (.-width canvas) canvas-width)
     (set! (.-height canvas) canvas-height)
-    ;; Draw background
-    (set! (.-fillStyle ctx) "rgba(0, 0, 0, 0.7)")
-    (.fillRect ctx 0 0 canvas-width canvas-height)
-    ;; Draw text horizontally, left-aligned
+    ;; Redraw after resize (canvas clears on resize)
     (set! (.-font ctx) (str "bold " font-size "px Arial"))
-    (set! (.-fillStyle ctx) "white")
-    (set! (.-textAlign ctx) "left")
+    ;; Transparent background
+    (set! (.-fillStyle ctx) "rgba(0, 0, 0, 0)")
+    (.fillRect ctx 0 0 canvas-width canvas-height)
+    ;; Draw text
+    (set! (.-fillStyle ctx) "rgba(0, 0, 0, 0.8)")
+    (set! (.-textAlign ctx) "center")
     (set! (.-textBaseline ctx) "middle")
-    (.fillText ctx text 10 (/ canvas-height 2))
+    (.fillText ctx text (/ canvas-width 2) (/ canvas-height 2))
     ;; Create texture
     (let [^js texture (THREE/CanvasTexture. canvas)]
       (set! (.-needsUpdate texture) true)
-      texture)))
+      {:texture texture
+       :width canvas-width
+       :height canvas-height})))
 
-;; Custom threeagent entity type for text sprites
-(deftype TextSpriteEntity []
-  entity/IEntityType
-  (create [_this _context config]
-    (let [{:keys [text scale position]} config
-          ^js texture (create-text-texture text)
-          ^js material (THREE/SpriteMaterial. #js {:map texture :transparent true})
-          ^js sprite (THREE/Sprite. material)
-          ^js sprite-scale (.-scale sprite)
-          ^js sprite-position (.-position sprite)]
-      (when scale
-        (.set sprite-scale (nth scale 0) (nth scale 1) 1))
-      (when position
-        (.set sprite-position (nth position 0) (nth position 1) (nth position 2)))
-      sprite))
-  (destroy! [_this _context _object _config]))
+;; Helper function for creating text labels as planar meshes (stamped on blocks)
+(defn create-text-label [config]
+  (let [{:keys [text position block-height block-width scale]} config
+        ;; Use block dimensions if provided, otherwise fallback for old :scale format
+        face-height (or block-height (when scale (* (first scale) 4)) 4)
+        face-width (or block-width face-height)  ; default to square if width not specified
+        ;; 5% padding on each side (so 90% of face is available)
+        padding-ratio 0.05
+        max-label-height (* face-height (- 1 (* 2 padding-ratio)))
+        max-label-width (* face-width (- 1 (* 2 padding-ratio)))
+        ;; Create texture with good resolution for measuring
+        base-font-size 100
+        {:keys [texture width height]} (create-text-texture text base-font-size)
+        ;; Texture aspect ratio (must preserve this to avoid skewing)
+        texture-aspect (/ width height)
+        ;; Calculate scale factor to fit within bounds while preserving aspect ratio
+        ;; Scale by height: plane-height = max-label-height, plane-width = max-label-height * aspect
+        scale-by-height (/ max-label-height height)
+        width-if-scale-by-height (* width scale-by-height)
+        ;; Scale by width: plane-width = max-label-width, plane-height = max-label-width / aspect
+        scale-by-width (/ max-label-width width)
+        height-if-scale-by-width (* height scale-by-width)
+        ;; Choose the scale that fits both constraints
+        scale-factor (if (<= width-if-scale-by-height max-label-width)
+                       scale-by-height
+                       scale-by-width)
+        ;; Final plane dimensions (proportional to texture)
+        plane-width (* width scale-factor)
+        plane-height (* height scale-factor)
+        ^js geometry (THREE/PlaneGeometry. plane-width plane-height)
+        ^js material (THREE/MeshBasicMaterial. #js {:map texture
+                                                    :transparent true
+                                                    :side THREE/DoubleSide
+                                                    :depthTest true
+                                                    :depthWrite false})
+        ^js mesh (THREE/Mesh. geometry material)
+        ^js mesh-position (.-position mesh)]
+    ;; Position the mesh
+    (when position
+      (.set mesh-position (nth position 0) (nth position 1) (nth position 2)))
+    ;; No rotation needed - plane faces forward (+Z direction) by default
+    mesh))
 
-;; Entity types map for registering with threeagent
-(def custom-entity-types
-  {:text-sprite (TextSpriteEntity.)})
+(defn create-edge-box
+  "Creates a box rendered as edge lines only (like a line drawing).
+   Uses Line2 for thick lines that work across all platforms.
+   All edges are rendered in a fixed dark grey color."
+  [config]
+  (let [{:keys [position width height depth]} config
+        hw (/ width 2)
+        hh (/ height 2)
+        hd (/ depth 2)
+        ;; Define the 12 edges of a box as line segments
+        ;; Each edge is defined by start and end points
+        edges [;; Bottom face edges
+               [(- hw) (- hh) (- hd)  hw (- hh) (- hd)]     ; back
+               [hw (- hh) (- hd)  hw (- hh) hd]             ; right
+               [hw (- hh) hd  (- hw) (- hh) hd]             ; front
+               [(- hw) (- hh) hd  (- hw) (- hh) (- hd)]     ; left
+               ;; Top face edges
+               [(- hw) hh (- hd)  hw hh (- hd)]             ; back
+               [hw hh (- hd)  hw hh hd]                     ; right
+               [hw hh hd  (- hw) hh hd]                     ; front
+               [(- hw) hh hd  (- hw) hh (- hd)]             ; left
+               ;; Vertical edges
+               [(- hw) (- hh) (- hd)  (- hw) hh (- hd)]     ; back-left
+               [hw (- hh) (- hd)  hw hh (- hd)]             ; back-right
+               [hw (- hh) hd  hw hh hd]                     ; front-right
+               [(- hw) (- hh) hd  (- hw) hh hd]]            ; front-left
+        ;; Create a group to hold all edge lines
+        ^js group (THREE/Group.)
+        ;; Use fixed dark grey color for wireframe mode
+        edge-color (THREE/Color. 0x444444)]
+    ;; Create each edge as a Line2
+    (doseq [edge edges]
+      (let [^js geometry (LineGeometry.)
+            _ (.setPositions geometry (clj->js edge))
+            ^js material (LineMaterial. #js {:color (.getHex edge-color)
+                                             :linewidth 3
+                                             :resolution (THREE/Vector2. js/window.innerWidth js/window.innerHeight)
+                                             :depthTest true
+                                             :depthWrite false
+                                             :polygonOffset true
+                                             :polygonOffsetFactor -1
+                                             :polygonOffsetUnits -1})
+            ^js line (Line2. geometry material)]
+        (.add group line)))
+    ;; Position the group
+    (when position
+      (let [^js group-pos (.-position group)]
+        (.set group-pos (nth position 0) (nth position 1) (nth position 2))))
+    group))
+
+;; Entity types map - use defonce so it persists across hot reloads
+;; Use var reference #' so create-text-label changes are picked up
+(defonce custom-entity-types
+  {:text-sprite
+   (reify entity/IEntityType
+     (create [_ _ config]
+       (#'create-text-label config))
+     (destroy! [_ _ _ _]))
+   :edge-box
+   (reify entity/IEntityType
+     (create [_ _ config]
+       (#'create-edge-box config))
+     (destroy! [_ _ _ _]))})
 
 (defn create-stack
   "Creates a vertical stack of box layers from element data.
@@ -156,9 +257,12 @@
    If no bounds specified, inherits from previous layer and positions
    the new layer sitting on top of the previous content.
    Options:
-     :show-dimensions? - if true, adds floating dimension labels (default: reads from show-dimensions-atom)"
+     :show-dimensions? - if true, adds floating dimension labels (default: reads from show-dimensions-atom)
+     :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)"
   ([elements] (create-stack elements {}))
-  ([elements {:keys [show-dimensions?] :or {show-dimensions? @show-dimensions-atom}}]
+  ([elements {:keys [show-dimensions? wireframe?]
+              :or {show-dimensions? @show-dimensions-atom
+                   wireframe? @wireframe-atom}}]
    (loop [levels elements
           y-offset 0
           prev-bounds nil
@@ -181,9 +285,6 @@
                                prev-offset)
              ;; Get the height of this level's content
              level-height (get-layer-height layers)
-             ;; Fixed label size (doesn't scale with box)
-             label-width 2.3
-             label-height 0.29
              level-items (for [layer layers
                                box layer
                                :let [{:keys [align dims color]} box
@@ -194,19 +295,27 @@
                                      z (+ base-z rel-z)
                                      ;; Bottom-align boxes within level
                                      box-y (+ y-offset (/ dh 2))
-                                     ;; Format dimension text: 3" (w) x 4" (l) x 12" (h)
-                                     dim-text (str (int dw) "\" (w) x " (int dd) "\" (l) x " (int dh) "\" (h)")
-                                     ;; Anchor at front-right vertical edge, label extends outward
-                                     label-x (+ x (/ dw 2) (* label-width 0.5))
-                                     label-z (+ z (/ dd 2))]]
-                           {:box [:box {:position [x box-y z]
-                                        :width dw
-                                        :height dh
-                                        :depth dd
-                                        :material {:color (or color "gray")}}]
+                                     ;; Format dimension text: 3"(W) x 12"(L) x 12"(H)
+                                     dim-text (str (int dw) "\"(W) x " (int dd) "\"(L) x " (int dh) "\"(H)")
+                                     ;; Position label on front face of box (positive Z side)
+                                     label-y box-y  ; center of box height
+                                     label-x x
+                                     label-z (+ z (/ dd 2) 0.1)]]  ; front face + offset to prevent z-fighting
+                           {:box (if wireframe?
+                                   [:edge-box {:position [x box-y z]
+                                               :width dw
+                                               :height dh
+                                               :depth dd
+                                               :color (or color "gray")}]
+                                   [:box {:position [x box-y z]
+                                          :width dw
+                                          :height dh
+                                          :depth dd
+                                          :material {:color (or color "gray")}}])
                             :label [:text-sprite {:text dim-text
-                                                  :position [label-x box-y label-z]
-                                                  :scale [label-width label-height]}]})
+                                                  :position [label-x label-y label-z]
+                                                  :block-height dh
+                                                  :block-width dw}]})
              level-boxes (map :box level-items)
              level-labels (map :label level-items)
              ;; For next iteration: if current layer had alignment, calculate where
@@ -269,10 +378,6 @@
 
 (comment
 
-
-
-
-
   (shift-upward [72 6 72] ["red" "blue" "green"] :tl 6)
 
   (render-elements (create-stack [{:bounds [20 5 20]
@@ -318,12 +423,83 @@
                                              {:color "grey"
                                               :align :br
                                               :dims  [4 4 6]}]]}
-                                  {:layers [[{:color "grey"
+                                  {:layers [[{:color "blue"
                                               :align :tl
                                               :dims [36 36 48]}]]}
+                                  {:layers [[{:color "red"
+                                              :align :tl
+                                              :dims [36 8 12]}]]}
+                                  {:layers [[{:color "green"
+                                              :align :tl
+                                              :dims [18 12 12]}]]}
+
                                   {:layers [[{:color "grey"
                                               :align :tl
-                                              :dims [36 36 48]}]]}
+                                              :dims [4 4 4]}]]}
+
+                                  ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                                  ]))
+
+  (render-elements (create-stack [{:bounds [36 36 60]
+                                   :layers [[{:color "red"
+                                              :align :tl
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :tr
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :bl
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :br
+                                              :dims  [4 4 6]}]]}
+                                  {:layers [[{:color "yellow"
+                                              :align :tl
+                                              :dims [36 36 60]}]]}
+                                  {:layers [[{:color "red"
+                                              :align :tl
+                                              :dims [36 6 28]}]]}
+                                  {:layers [[{:color "white"
+                                              :align :tl
+                                              :dims [12 12 28]}]]}
+
+                                  {:layers [[{:color "darkred"
+                                              :align :tl
+                                              :dims [7 7 7]}]]}
+
+                                  ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                                  ]))
+
+  ;; Squares all the way
+  (render-elements (create-stack [{:bounds [36 36 60]
+                                   :layers [[{:color "red"
+                                              :align :tl
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :tr
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :bl
+                                              :dims  [4 4 6]}
+                                             {:color "red"
+                                              :align :br
+                                              :dims  [4 4 6]}]]}
+                                  {:layers [[{:color "yellow"
+                                              :align :tl
+                                              :dims [36 36 60]}]]}
+                                  {:layers [[{:color "red"
+                                              :align :tl
+                                              :dims [36 6 28]}]]}
+                                  {:layers [[{:color "white"
+                                              :align :tl
+                                              :dims [12 12 28]}]]}
+
+                                  {:layers [[{:color "darkred"
+                                              :align :tl
+                                              :dims [12 12 14]}]]}
+                                  {:layers [[{:color "gold"
+                                              :align :tl
+                                              :dims [12 2 2]}]]}
 
                                   ;; 8" x 12" x 36" step (sits on the top plane of the base)
                                   ]))
@@ -385,13 +561,6 @@
    {:layers [[{:color "red", :align :tl, :dims [21 33 21]}]]}
    {:layers [[{:color "blue", :align :tl, :dims [12 42 12]}]]}]
 
-  ;;=> [{:bounds [48 6 48], :layers [[{:color "red", :dims [48 6 48]}]]}
-  ;;    {:layers [[{:color "blue", :align :tl, :dims [32 22 32]}]]}
-  ;;    {:layers [[{:color "green", :align :tl, :dims [16 38 16]}]]}
-  ;;    {:layers [[{:color "red", :align :tl, :dims [0 54 0]}]]}
-  ;;    {:layers [[{:color "blue", :align :tl, :dims [-16 70 -16]}]]}]
-
-
   (shift-upward [72 6 72] ["red" "blue" "green" "red" "blue" "green"] :tl 6)
 
   (render-elements (create-stack [{:bounds [48 6 48], :layers [[{:color "red", :dims [48 2 48]}]]}
@@ -433,10 +602,24 @@
 
 
 
+  ;;Keep from folding
+  )
 
+
+
+
+
+(comment
+
+  (set-camera-position! [60 80 50] {:target [0 20 0]})
+  (set-camera-position! 100 100 100
+                        {:target [0 30 0]})
+
+  (set-camera-position! 100 100 100)
 
   ;;Keep from folding
   )
+
 
 (defn setup-scene! [^js container]
   (let [ctx (th/render root container
@@ -458,7 +641,7 @@
                       (.updateProjectionMatrix camera)))]
 
     ;; Set background color to light blue
-    (.setClearColor renderer 0x87CEEB 1)
+    (.setClearColor renderer 0xFFFFFF 1)
 
     ;; Set pixel ratio for crisp rendering
     (.setPixelRatio renderer (.-devicePixelRatio js/window))
@@ -523,32 +706,320 @@
     (.dispose ctx)
     (reset! context-atom nil)))
 
+(defn set-camera-position!
+  "Set the camera position. Takes [x y z] coordinates.
+   Optionally set :target [x y z] to also update the orbit controls look-at point.
+   Only updates if values have changed from the last call."
+  ([[x y z]] (set-camera-position! [x y z] nil))
+  ([[x y z] {:keys [target]}]
+   (let [new-state {:position [x y z] :target target}
+         old-state @camera-state-atom]
+     (when (not= new-state old-state)
+       (reset! camera-state-atom new-state)
+       (when-let [ctx @context-atom]
+         (let [^js camera (:threejs-default-camera ctx)
+               ^js cam-pos (.-position camera)]
+           (.set cam-pos x y z)
+           (when-let [^js controls @controls-atom]
+             (when target
+               (let [^js ctrl-target (.-target controls)]
+                 (.set ctrl-target (nth target 0) (nth target 1) (nth target 2))))
+             (.update controls))))))))
+
+
+(defn re-render-scene!
+  "Re-renders the current scene with updated options (e.g., wireframe toggle)."
+  []
+  (when-let [data @mockup-data-atom]
+    (render-elements (create-stack (:data data)))))
+
+(defn display-firebase-data
+  [{:keys [name camera data] :as mockup-data}]
+  (reset! mockup-data-atom mockup-data)
+  (render-elements (create-stack data))
+  (set-camera-position! (:position camera) {:target (:target camera)}))
+
+;; Watch wireframe-atom to re-render when it changes
+(add-watch wireframe-atom :wireframe-watcher
+           (fn [_ _ old-val new-val]
+             (when (not= old-val new-val)
+               (re-render-scene!))))
+
+(comment
+
+  (listen-to-edn "mockup" display-firebase-data)
+  (set-edn "mockup" {:name "The Big Red"
+                     :camera {:position [210 210 210]
+                              :target [0 20 0]}
+                     :data [{:bounds [36 36 60]
+                             :layers [[{:color "grey"
+                                        :align :tl
+                                        :dims  [4 4 6]}
+                                       {:color "grey"
+                                        :align :tr
+                                        :dims  [4 4 6]}
+                                       {:color "grey"
+                                        :align :bl
+                                        :dims  [4 4 6]}
+                                       {:color "grey"
+                                        :align :br
+                                        :dims  [4 4 6]}]]}
+                            {:layers [[{:color "white"
+                                        :align :tl
+                                        :dims [36 36 60]}]]}
+                            {:layers [[{:color "grey"
+                                        :align :tl
+                                        :dims [36 6 28]}]]}
+                            {:layers [[{:color "white"
+                                        :align :tl
+                                        :dims [12 12 28]}]]}
+                            {:layers [[{:color "grey"
+                                        :align :tl
+                                        :dims [12 12 14]}]]}
+                            {:layers [[{:color "white"
+                                        :align :tl
+                                        :dims [12 2 2]}]]}
+
+                            ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                            ]})
+
+
+  (set-edn "mockup-001"
+           {:name "Mockup 001"
+            :camera {:position [210 210 210]
+                     :target [0 20 0]}
+            :data [{:bounds [36 36 60]
+                    :layers [[{:color "grey"
+                               :align :tl
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :tr
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :bl
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :br
+                               :dims  [4 4 6]}]]}
+                   {:layers [[{:color "white"
+                               :align :tl
+                               :dims [36 36 60]}]]}
+                   {:layers [[{:color "grey"
+                               :align :tl
+                               :dims [36 6 28]}]]}
+                   {:layers [[{:color "white"
+                               :align :tl
+                               :dims [12 12 28]}]]}
+                   {:layers [[{:color "grey"
+                               :align :tl
+                               :dims [12 12 14]}]]}
+                   #_{:layers [[{:color "white"
+                                 :align :tl
+                                 :dims [12 2 2]}]]}
+
+                   ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                   ]}
+           #_{:name "Mockup 001"
+              :camera {:position [210 210 210]
+                       :target [0 20 0]}
+              :data [{:bounds [36 36 60]
+                      :layers [[{:color "grey"
+                                 :align :tl
+                                 :dims  [4 4 6]}
+                                {:color "grey"
+                                 :align :tr
+                                 :dims  [4 4 6]}
+                                {:color "grey"
+                                 :align :bl
+                                 :dims  [4 4 6]}
+                                {:color "grey"
+                                 :align :br
+                                 :dims  [4 4 6]}]]}
+                     {:layers [[{:color "white"
+                                 :align :tl
+                                 :dims [36 36 60]}]]}
+                     {:layers [[{:color "grey"
+                                 :align :tl
+                                 :dims [36 6 28]}]]}
+                     {:layers [[{:color "white"
+                                 :align :tl
+                                 :dims [12 12 28]}]]}
+                     {:layers [[{:color "grey"
+                                 :align :tl
+                                 :dims [12 12 14]}]]}
+                     #_{:layers [[{:color "white"
+                                   :align :tl
+                                   :dims [12 2 2]}]]}
+
+                     ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                     ]})
+
+  (set-edn "mockup-002"
+           {:name "Mockup 002"
+            :camera {:position [210 210 210]
+                     :target [0 20 0]}
+            :data [{:bounds [36 36 48]
+                    :layers [[{:color "grey"
+                               :align :tl
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :tr
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :bl
+                               :dims  [4 4 6]}
+                              {:color "grey"
+                               :align :br
+                               :dims  [4 4 6]}]]}
+                   {:layers [[{:color "white"
+                               :align :tl
+                               :dims [36 36 48]}]]}
+                   {:layers [[{:color "grey"
+                               :align :tl
+                               :dims [36 6 12]}]]}
+                   {:layers [[{:color "white"
+                               :align :tl
+                               :dims [12 6 12]}]]}
+                   {:layers [[{:color "grey"
+                               :align :tl
+                               :dims [4 4 4]}]]}]})
+
+
+  (set-edn "big-red" {:name "The Big Red"
+                      :camera {:position [210 210 210]
+                               :target [0 20 0]}
+                      :data [{:bounds [144 36 72]
+                              :layers [[{:color "yellow"
+                                         :align :tl
+                                         :dims  [4 4 6]}
+                                        {:color "black"
+                                         :align :tr
+                                         :dims  [4 4 6]}
+                                        {:color "yellow"
+                                         :align :bl
+                                         :dims  [4 4 6]}
+                                        {:color "green"
+                                         :align :br
+                                         :dims  [4 4 6]}]]}
+                             {:layers [[{:color "red"
+                                         :align :tl
+                                         :dims [144 36 72]}]]}
+                             {:layers [[{:color "lightblue"
+                                         :align :tl
+                                         :dims [36 6 28]}]]}
+                             {:layers [[{:color "white"
+                                         :align :tl
+                                         :dims [12 12 28]}]]}
+                             {:layers [[{:color "darkred"
+                                         :align :tl
+                                         :dims [12 12 14]}]]}
+                             {:layers [[{:color "gold"
+                                         :align :tl
+                                         :dims [12 2 2]}]]}
+
+                             ;; 8" x 12" x 36" step (sits on the top plane of the base)
+                             ]})
+
+
+  ;;Keep from folding
+  )
+
+
 (defnc mockup-view
   [{:keys [active
            intro-complete-callback
            outro-complete-callback]
     :as params}]
 
-  (let [container-ref (hooks/use-ref nil)]
+  (let [[state _] (use-main-state)
+        piece-id (get-in state [:current-route :query-params :piece])
+        container-ref (hooks/use-ref nil)
+        [wireframe? set-wireframe-state!] (hooks/use-state false)
+        [panel-open? set-panel-open!] (hooks/use-state false)
+        [mockup-data set-mockup-data!] (hooks/use-state nil)]
+
+    ;; Sync wireframe state with atom for reactivity
+    (hooks/use-effect
+     []
+     (let [update-fn (fn [_ _ _ new-val] (set-wireframe-state! new-val))]
+       (add-watch wireframe-atom :ui-sync update-fn)
+       (set-wireframe-state! @wireframe-atom)
+       #(remove-watch wireframe-atom :ui-sync)))
+
+    ;; Sync parts panel state with atom
+    (hooks/use-effect
+     []
+     (let [update-fn (fn [_ _ _ new-val] (set-panel-open! new-val))]
+       (add-watch parts-panel-atom :panel-sync update-fn)
+       (set-panel-open! @parts-panel-atom)
+       #(remove-watch parts-panel-atom :panel-sync)))
+
+    ;; Sync mockup data for parts list
+    (hooks/use-effect
+     []
+     (let [update-fn (fn [_ _ _ new-val] (set-mockup-data! new-val))]
+       (add-watch mockup-data-atom :data-sync update-fn)
+       (set-mockup-data! @mockup-data-atom)
+       #(remove-watch mockup-data-atom :data-sync)))
+
     (hooks/use-layout-effect
      []
      (when-let [^js container @container-ref]
-       ;; If context already exists (hot reload), just re-render the scene graph
-       (if @context-atom
-         (th/render root container)
+       ;; Store container reference for hot reload
+       (reset! container-atom container)
+       ;; Setup scene if not already done
+       (when-not @context-atom
          (setup-scene! container)))
      ;; Don't cleanup on unmount during dev - let hot reload preserve state
      js/undefined)
 
-    (d/canvas {:class "w-screen h-screen fixed inset-0 z-50"
-               :style {:touch-action "none"}
-               :ref container-ref})))
+    (hooks/use-effect []
+                      (listen-to-edn piece-id display-firebase-data))
+
+    (d/div
+     {:class "relative w-screen h-screen"}
+     (d/canvas {:class "w-screen h-screen fixed inset-0 z-10"
+                :style {:touch-action "none"}
+                :ref container-ref})
+     ;; HUD
+     (d/div {:class "z-20 flex flex-col gap-2 absolute bg-white/20 px-4 py-2 border-slate-800 border-4 m-2"}
+            (d/p {:class "text-md font-fira-code"} (or piece-id "N/A"))
+            (d/p {:class "text-sm font-fira-code italic"} "v1.2")
+            (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                       :on-click toggle-wireframe!}
+                      (if wireframe? "Solid" "Lines"))
+            (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                       :on-click toggle-parts-panel!}
+                      "Parts List"))
+     ;; Parts panel (slide in from right)
+     (d/div {:class (str "z-30 fixed top-0 right-0 h-full bg-white border-l-4 border-slate-800 shadow-lg "
+                         "transition-transform duration-300 ease-in-out "
+                         (if panel-open? "translate-x-0" "translate-x-full"))
+             :style {:width "320px"}}
+            ;; Panel header
+            (d/div {:class "flex justify-between items-center px-4 py-3 border-b-2 border-slate-300"}
+                   (d/h2 {:class "text-lg font-bold font-fira-code"} "Parts List")
+                   (d/button {:class "text-2xl font-bold text-slate-600 hover:text-slate-800"
+                              :on-click toggle-parts-panel!}
+                             "×"))
+            ;; Panel content
+            (d/div {:class "p-4 overflow-y-auto" :style {:height "calc(100% - 60px)"}}
+                   (if-let [parts (extract-parts-list mockup-data)]
+                     (d/ol {:class "list-decimal list-inside space-y-2 font-fira-code text-sm"}
+                           (map-indexed
+                            (fn [idx {:keys [dims qty]}]
+                              (let [[w h d] dims]
+                                (d/li {:key idx :class "py-1 border-b border-slate-200"}
+                                      (d/span {:class "font-bold"} (str qty "x "))
+                                      (d/span {} (str d "\"(L) × " w "\"(W) × " h "\"(H)")))))
+                            parts))
+                     (d/p {:class "text-slate-500 italic"} "No parts data available")))))))
 
 ;; Shadow-cljs hot reload hooks
+;; Since custom-entity-types uses defonce, it persists across hot reloads
+;; Just let React re-render with the existing context
 (defn ^:dev/before-load stop []
-  (js/console.log "Stopping for hot reload...")
-  ;; Force cleanup to ensure entity-types are re-registered
-  (cleanup-scene!))
+  (js/console.log "Stopping for hot reload..."))
 
 (defn ^:dev/after-load start []
-  (js/console.log "Hot reload complete - will reinitialize scene"))
+  (js/console.log "Hot reload complete"))
