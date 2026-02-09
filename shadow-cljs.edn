@@ -21,6 +21,9 @@
                             :depends-on #{:main}}
 
          :budget-view {:entries [amp.views.budget-view]
+                       :depends-on #{:main}}
+
+         :mockup-view {:entries [amp.views.mockup-view]
                        :depends-on #{:main}}}
         :build-hooks [(git-hash/hook)]
         :devtools {:reload-strategy :full
@@ -45,12 +48,18 @@
                                 :depends-on #{:main}}
 
              :budget-view {:entries [amp.views.budget-view]
+                           :depends-on #{:main}}
+
+
+             :mockup-view {:entries [amp.views.mockup-view]
                            :depends-on #{:main}}}
             :build-hooks [(git-hash/hook)]
             :js-options {:output-feature-set :es-unsupported
                          :language-in :unsupported}
             :compiler-options {:output-feature-set :es8
-
+                               :infer-externs true
+                               :externs ["externs/three.ext.js"]
                                :optimizations :advanced
-                               :pretty-print false
+                               :pretty-print true
+                               :pseudo-names true
                                :closure-defines {amp.config/sanity-endpoint "https://sfsmp6cu.api.sanity.io/v2021-10-21/data/query/production?query="}}}}}

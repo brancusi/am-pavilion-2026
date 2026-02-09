@@ -14,7 +14,12 @@
 (def site-map [{:id ::budget
                 :path "budget"
                 :title "Budget"
-                :view (lazy-component amp.views.budget-view/budget-view)}])
+                :view (lazy-component amp.views.budget-view/budget-view)}
+
+               {:id ::mockups
+                :path "mockups"
+                :title "Mockups"
+                :view (lazy-component amp.views.mockup-view/mockup-view)}])
 
 (defn routes
   []

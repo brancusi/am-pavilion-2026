@@ -1,6 +1,8 @@
 {:paths
  ["src" "build"]
  :deps {lilactown/helix {:mvn/version "0.2.2"}
+        reagent/reagent {:mvn/version "2.0.1"}
+        doughamil/threeagent {:mvn/version "1.0.1"}
         applied-science/js-interop {:mvn/version "0.3.3"}
         nano-id/nano-id {:mvn/version "1.0.0"}
         metosin/reitit {:mvn/version "0.6.0"}
