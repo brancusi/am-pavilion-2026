@@ -634,9 +634,9 @@
         ^js canvas (:canvas ctx)
 
         resize-fn (fn []
-                    (let [width (.-clientWidth container)
-                          height (.-clientHeight container)]
-                      (.setSize renderer width height false)
+                    (let [width js/window.innerWidth
+                          height js/window.innerHeight]
+                      (.setSize renderer width height true)
                       (set! (.-aspect camera) (/ width height))
                       (.updateProjectionMatrix camera)))]
 
@@ -693,6 +693,20 @@
       (reset! controls-atom controls))
 
     (reset! context-atom ctx)
+
+    ;; Apply any pending camera position that arrived before scene was ready
+    (when-let [{:keys [position target]} @camera-state-atom]
+      (when position
+        (let [^js cam (:threejs-default-camera ctx)
+              ^js cam-pos (.-position cam)
+              [x y z] position]
+          (.set cam-pos x y z)
+          (when-let [^js controls @controls-atom]
+            (when target
+              (let [^js ctrl-target (.-target controls)]
+                (.set ctrl-target (nth target 0) (nth target 1) (nth target 2))))
+            (.update controls)))))
+
     ctx))
 
 (defn cleanup-scene! []
@@ -973,12 +987,13 @@
      ;; Don't cleanup on unmount during dev - let hot reload preserve state
      js/undefined)
 
+    ;; Setup firebase listener to the current piece id.
     (hooks/use-effect []
                       (listen-to-edn piece-id display-firebase-data))
 
     (d/div
      {:class "relative w-screen h-screen"}
-     (d/canvas {:class "w-screen h-screen fixed inset-0 z-10"
+     (d/canvas {:class "fixed inset-0 z-10"
                 :style {:touch-action "none"}
                 :ref container-ref})
      ;; HUD
