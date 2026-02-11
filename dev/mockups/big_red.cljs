@@ -7,7 +7,6 @@
   ;; Use this if you need to access fns in mockup-view
   amp.views.mockup-view/render-elements
 
-
   (set-edn "big-red-001" {:name "Big Red - 001"
                           :lighting [[:ambient-light {:intensity 0.7}]
                                      [:directional-light {:cast-shadow true
@@ -30,7 +29,6 @@
                                              :dims [6 6 12]}]
                                            [{:dims [144 36 72]
                                              :color "#ef3548"}]
-
                                            [{:dims [36 9 36]
                                              :align :tr
                                              :color "#0070df"}]
