@@ -1,21 +1,23 @@
 (ns mockups.water-heater
   (:require
-   [amp.views.mockup-view :refer [create-stack create-stack-v2 render-elements calculate-total-dimensions]]
    [amp.services.firebase :refer [listen-to-path listen-to-edn set-edn]]))
 
 (comment
 
-  (render-elements
-   (create-stack [{:bounds [100 10 100]
-                   :layers [[{:color "red"
-                              :align :tl
-                              :dims [49 10 50]
-                              :layers [[{:color "red"
-                                         :align :tl
-                                         :dims [10 20 10]}]]}
-                             {:color "red"
-                              :align :tr
-                              :dims [49 10 50]}]]}]))
+  ;; Use this if you need to access fns in mockup-view
+  amp.views.mockup-view/render-elements
+
+  (amp.views.mockup-view/render-elements
+   (amp.views.mockup-view/create-stack [{:bounds [100 10 100]
+                                         :layers [[{:color "red"
+                                                    :align :tl
+                                                    :dims [49 10 50]
+                                                    :layers [[{:color "red"
+                                                               :align :tl
+                                                               :dims [10 20 10]}]]}
+                                                   {:color "red"
+                                                    :align :tr
+                                                    :dims [49 10 50]}]]}]))
 
   (set-edn "mockup-004" {:name "Water Heater"
                          :camera {:position [250 250 250]
@@ -231,35 +233,6 @@
                                  :align :tr
                                  :dims [11.5 27 11.5]}]]}]}))
 
-  (create-stack [{:bounds [100 10 100]
-                  :layers [[{:color "white"
-                             :align :tl
-                             :dims [49 10 50]}]]}])
-
-  (render-elements
-   [:object
-    {:position [0 0 -4]}
-    [:ambient-light {:intensity 0.7}]
-    [:directional-light {:cast-shadow true, :position [80 120 60], :intensity 1.5}]
-    [:box {:position [0 -0.05 0], :receive-shadow true, :width 500, :height 0.1, :depth 500, :material {:color 15789286}}]
-    [:box {:position [-25.5 5 -25], :cast-shadow true, :width 49, :height 10, :depth 50, :material {:color "red"}}]
-    [:box {:position [-25.5 5 35], :cast-shadow true, :width 49, :height 10, :depth 50, :material {:color "red"}}]
-    [:object {:position [0 0 0]}
-     [:box {:width 10 :height 10 :depth 10}]]])
-
-
-
-  ;;=> [:object
-  ;;    {:position [0 0 -4]}
-  ;;    [:ambient-light {:intensity 0.7}]
-  ;;    [:directional-light {:cast-shadow true, :position [80 120 60], :intensity 1.5}]
-  ;;    [:box {:position [0 -0.05 0], :receive-shadow true, :width 500, :height 0.1, :depth 500, :material {:color 15789286}}]
-  ;;    [:box {:position [-25.5 5 -25], :cast-shadow true, :width 49, :height 10, :depth 50, :material {:color "white"}}]]
-  ;;=> [:object
-  ;;    {:position [0 0 -4]}
-  ;;    [:ambient-light {:intensity 0.7}]
-  ;;    [:directional-light {:cast-shadow true, :position [80 120 60], :intensity 1.5}]
-  ;;    [:box {:position [0 -0.05 0], :receive-shadow true, :width 500, :height 0.1, :depth 500, :material {:color 15789286}}]]
 
   ;;Keep from folding
   )

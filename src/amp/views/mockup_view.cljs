@@ -3,12 +3,12 @@
             [threeagent.core :as th]
             [threeagent.entity :as entity]
             [amp.reducers.requires]
-            [amp.components.icons :refer [CollapseIcon ExpandIcon]]
-            [amp.services.firebase :refer [listen-to-path listen-to-edn set-edn]]
+            [amp.components.icons :refer [CollapseIcon ExpandIcon DocumentIcon]]
+            [amp.services.firebase :refer [listen-to-edn]]
             [amp.providers.main-provider :refer [use-main-state]]
 
             [helix.core :refer [$]]
-            ["gsap" :refer [gsap]]
+
             ["three" :as THREE]
             ["three/addons/controls/OrbitControls.js" :refer [OrbitControls]]
             ["three/addons/lines/Line2.js" :refer [Line2]]
@@ -28,23 +28,36 @@
 (defonce wireframe-atom (th/atom false))
 (defonce ground-plane-atom (th/atom true))
 (defonce parts-panel-atom (atom false))
-(defonce mockup-data-atom (atom nil))
+(defonce mockup-data-atom (th/atom nil))
 (defonce camera-state-atom (atom {:position nil :target nil}))
 
+(declare create-stack)
 
+(declare build-box-tree)
 
-;; Scene elements atom - use threeagent's reactive atom for automatic re-renders
-(defonce scene-atom
-  (th/atom []))
+;; Dev/REPL override — when non-nil, root returns this directly
+(defonce scene-override-atom (th/atom nil))
 
-;; Call this function to render new elements!
+;; Call this function to render arbitrary elements from the REPL
 ;; Example: (render-elements [:object {:position [0 0 -4]} [:box {:dims [1 1 1] :material {:color "green"}}]])
 (defn render-elements [elements]
-  (reset! scene-atom elements))
+  (reset! scene-override-atom elements))
 
-;; Root component render function - reads from scene-atom
+;; Root component render function — fully derived from reactive atoms.
+;; Reading wireframe-atom, ground-plane-atom, and mockup-data-atom here
+;; means threeagent automatically re-renders when any of them change.
 (defn root []
-  @scene-atom)
+  (if-let [override @scene-override-atom]
+    override
+    (let [data @mockup-data-atom
+          wireframe? @wireframe-atom
+          show-ground? @ground-plane-atom]
+      (if data
+        (create-stack (:data data)
+                      {:wireframe? wireframe?
+                       :show-ground? show-ground?
+                       :lighting (:lighting data)})
+        [:object]))))
 
 (defn create-sky-gradient-texture
   "Creates a vertical gradient canvas texture simulating a warm sky/sun environment."
@@ -354,100 +367,16 @@
    (reify entity/IEntityType
      (create [_ _ config]
        (#'create-edge-box config))
-     (destroy! [_ _ _ _]))})
+     (destroy! [_ _ ^js obj _]
+       (when obj
+         (.traverse obj
+                    (fn [^js child]
+                      (when (.-geometry child)
+                        (.dispose (.-geometry child)))
+                      (when (.-material child)
+                        (.dispose (.-material child))))))))})
 
-(defn create-stack
-  "Creates a vertical stack of box layers from element data.
-   Each element has :bounds [w h d] and :layers (vector of box groups).
-   Boxes in all layers of an element share the same vertical level.
-   If no bounds specified, inherits from previous layer and positions
-   the new layer sitting on top of the previous content.
-   Options:
-     :show-dimensions? - if true, adds floating dimension labels (default: reads from show-dimensions-atom)
-     :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)
-     :show-ground? - if true, adds a ground plane (default: reads from ground-plane-atom)"
-  ([elements] (create-stack elements {}))
-  ([elements {:keys [show-dimensions? wireframe? show-ground?]
-              :or {show-dimensions? @show-dimensions-atom
-                   wireframe? @wireframe-atom
-                   show-ground? @ground-plane-atom}}]
-   (loop [levels elements
-          y-offset 0
-          prev-bounds nil
-          prev-offset [0 0]  ; [x z] offset for inherited positioning
-          boxes []
-          labels []]
-     (if (empty? levels)
-       (let [ground-plane (when show-ground?
-                            [[:box {:position [0 -0.05 0]
-                                    :receive-shadow true
-                                    :width 500
-                                    :height 0.1
-                                    :depth 500
-                                    :material {:color 0xf0ece6}}]])]
-         (into [:object {:position [0 0 -4]}
-                [:ambient-light {:intensity 0.7}]
-                [:directional-light {:cast-shadow true
-                                     :position [80 120 60]
-                                     :intensity 1.5}]]
-               (concat ground-plane
-                       (if show-dimensions?
-                         (concat boxes labels)
-                         boxes))))
-       (let [{:keys [bounds layers]} (first levels)
-             ;; Use explicit bounds or inherit from previous
-             effective-bounds (or bounds prev-bounds)
-             ;; Calculate the offset for this level based on inheritance
-             [base-x base-z] (if bounds
-                               [0 0]  ; Reset offset when explicit bounds
-                               prev-offset)
-             ;; Get the height of this level's content
-             level-height (get-layer-height layers)
-             level-items (for [layer layers
-                               box layer
-                               :let [{:keys [align dims color]} box
-                                     [dw dh dd] dims
-                                     [rel-x rel-z] (calculate-position align effective-bounds dims)
-                                     ;; Apply base offset + relative position
-                                     x (+ base-x rel-x)
-                                     z (+ base-z rel-z)
-                                     ;; Bottom-align boxes within level
-                                     box-y (+ y-offset (/ dh 2))
-                                     ;; Format dimension text: 3"(W) x 12"(L) x 12"(H)
-                                     dim-text (str (int dw) "\"(W) x " (int dd) "\"(L) x " (int dh) "\"(H)")
-                                     ;; Position label on front face of box (positive Z side)
-                                     label-y box-y  ; center of box height
-                                     label-x x
-                                     label-z (+ z (/ dd 2) 0.1)]]  ; front face + offset to prevent z-fighting
-                           {:box (if wireframe?
-                                   [:edge-box {:position [x box-y z]
-                                               :width dw
-                                               :height dh
-                                               :depth dd
-                                               :color (or color "gray")}]
-                                   [:box {:position [x box-y z]
-                                          :cast-shadow true
-                                          :width dw
-                                          :height dh
-                                          :depth dd
-                                          :material {:color (or color "gray")}}])})
-             level-boxes (map :box level-items)
-             level-labels (map :label level-items)
-             ;; For next iteration: if current layer had alignment, calculate where
-             ;; its content is positioned so child can sit on top correctly
-             first-box (-> layers first first)
-             first-dims (:dims first-box)
-             first-align (:align first-box)
-             [first-rel-x first-rel-z] (calculate-position first-align effective-bounds first-dims)
-             next-offset [(+ base-x first-rel-x) (+ base-z first-rel-z)]
-             ;; Next bounds = dimensions of the first box in this layer
-             next-bounds (or first-dims effective-bounds)]
-         (recur (rest levels)
-                (+ y-offset level-height)
-                next-bounds
-                next-offset
-                (into boxes level-boxes)
-                (into labels level-labels)))))))
+
 
 
 (declare total-level-height)
@@ -479,8 +408,6 @@
   (if (seq layer-group)
     (apply max (map total-box-height layer-group))
     0))
-
-(declare build-box-tree)
 
 (defn- build-layer-elements
   "Builds threeagent elements for a single layer group at a given y-offset.
@@ -569,32 +496,37 @@
                next-offset
                (into elements elems))))))
 
-(defn create-stack-v2
+(defn create-stack
   "Creates a vertical stack of box layers with support for nested layers.
    Each box can have :layers for sub-layers positioned relative to its top.
    Uses [:object] groups for nesting so child positions are relative to parent.
    Options:
      :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)
-     :show-ground? - if true, adds a ground plane (default: reads from ground-plane-atom)"
-  ([elements] (create-stack-v2 elements {}))
-  ([elements {:keys [wireframe? show-ground?]
+     :show-ground? - if true, adds a ground plane (default: reads from ground-plane-atom)
+     :lighting - vector of light elements, e.g. [[:ambient-light {:intensity 0.5}]].
+                 When nil, uses default ambient + directional lights."
+  ([elements] (create-stack elements {}))
+  ([elements {:keys [wireframe? show-ground? lighting]
               :or {wireframe? @wireframe-atom
                    show-ground? @ground-plane-atom}}]
-   (let [ground-plane (when show-ground?
-                        [[:box {:position [0 -0.05 0]
-                                :receive-shadow true
-                                :width 500
-                                :height 0.1
-                                :depth 500
-                                :material {:color 0xf0ece6}}]])
-         boxes (build-box-tree elements wireframe?)]
-     (into [:object {:position [0 0 -4]}
-            [:ambient-light {:intensity 0.7}]
-            [:directional-light {:cast-shadow true
-                                 :position [80 120 60]
-                                 :intensity 1.5}]]
-           (concat ground-plane boxes)))))
-
+   (let [boxes (build-box-tree elements wireframe?)
+         lights (or lighting
+                    [[:ambient-light {:intensity 0.7}]
+                     [:directional-light {:cast-shadow true
+                                          :position [80 120 60]
+                                          :intensity 1.5}]])]
+     (into (into [:object {:position [0 0 -4]}]
+                 (conj (vec lights)
+                       ;; Ground plane container — always present to keep child indices stable
+                       [:object {}
+                        (when show-ground?
+                          [:box {:position [0 -0.05 0]
+                                 :receive-shadow true
+                                 :width 500
+                                 :height 0.1
+                                 :depth 500
+                                 :material {:color 0xf0ece6}}])]))
+           boxes))))
 
 (defn setup-scene! [^js container]
   (let [ctx (th/render root container
@@ -721,30 +653,15 @@
                  (.set ctrl-target (nth target 0) (nth target 1) (nth target 2))))
              (.update controls))))))))
 
-
-(defn re-render-scene!
-  "Re-renders the current scene with updated options (e.g., wireframe toggle)."
-  []
-  (when-let [data @mockup-data-atom]
-    (render-elements (create-stack-v2 (:data data)))))
-
 (defn display-firebase-data
-  [{:keys [name camera data] :as mockup-data}]
+  [{:keys [camera] :as mockup-data}]
+  (reset! scene-override-atom nil) ;; Clear any REPL override
   (reset! mockup-data-atom mockup-data)
-  (render-elements (create-stack-v2 data))
   (set-camera-position! (:position camera) {:target (:target camera)}))
 
-;; Watch wireframe-atom to re-render when it changes
-(add-watch wireframe-atom :wireframe-watcher
-           (fn [_ _ old-val new-val]
-             (when (not= old-val new-val)
-               (re-render-scene!))))
-
-;; Watch ground-plane-atom to re-render when it changes
-(add-watch ground-plane-atom :ground-watcher
-           (fn [_ _ old-val new-val]
-             (when (not= old-val new-val)
-               (re-render-scene!))))
+;; No watchers needed — root derives the scene directly from the reactive
+;; atoms (wireframe-atom, ground-plane-atom, mockup-data-atom), so threeagent
+;; automatically re-renders when any of them change.
 
 (defnc hud-header
   [{:keys [title set-hud-open! hud-open?]}]
@@ -767,7 +684,8 @@
         [ground-plane? set-ground-plane-state!] (hooks/use-state false)
         [panel-open? set-panel-open!] (hooks/use-state false)
         [hud-open? set-hud-open!] (hooks/use-state true)
-        [mockup-data set-mockup-data!] (hooks/use-state nil)]
+        [mockup-data set-mockup-data!] (hooks/use-state nil)
+        [copied? set-copied!] (hooks/use-state false)]
 
     ;; Sync wireframe state with atom for reactivity
     (hooks/use-effect
@@ -841,6 +759,20 @@
                      (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
                                 :on-click toggle-parts-panel!}
                                "Parts List"))))
+     ;; Copy link button — fixed top-right
+     (d/button {:class (str "z-20 fixed top-0 right-0 m-2 p-2 rounded "
+                            "bg-white/40 border-2 border-slate-800 "
+                            "hover:bg-white/60 transition-colors")
+                :title "Copy link to clipboard"
+                :on-click (fn []
+                            (let [url (str "https://armenianpavilion2026.org/mockups?piece=" piece-id)]
+                              (-> (js/navigator.clipboard.writeText url)
+                                  (.then (fn []
+                                           (set-copied! true)
+                                           (js/setTimeout #(set-copied! false) 2000))))))}
+               (if copied?
+                 (d/span {:class "text-xs font-fira-code text-slate-800"} "Copied!")
+                 ($ DocumentIcon {:class "w-5 h-5 text-slate-800"})))
      ;; Parts panel (slide in from right)
      (d/div {:class (str "z-30 fixed top-0 right-0 h-full bg-white border-l-4 border-slate-800 shadow-lg "
                          "transition-transform duration-300 ease-in-out "

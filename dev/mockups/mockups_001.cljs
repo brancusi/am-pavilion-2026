@@ -1,8 +1,11 @@
-(ns mockups.mockups
+(ns mockups.mockups-001
   (:require
    [amp.services.firebase :refer [listen-to-path listen-to-edn set-edn]]))
 
 (comment
+
+  ;; Use this if you need to access fns in mockup-view
+  amp.views.mockup-view/render-elements
 
   #_(set-edn "mockup-003"
              {:name "Corner Pyramid"
@@ -52,8 +55,7 @@
                                :align :tl
                                :dims [2 12 2]}]]}]})
 
-  [:box {:bounds [10 10 10]
-         :layers}]
+
 
   (set-edn "mockup-004"
            {:name "Water Heater"
