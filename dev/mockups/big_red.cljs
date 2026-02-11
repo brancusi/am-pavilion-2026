@@ -11,7 +11,7 @@
   (set-edn "big-red-001" {:name "Big Red - 001"
                           :lighting [[:ambient-light {:intensity 0.7}]
                                      [:directional-light {:cast-shadow true
-                                                          :position [80 120 60]
+                                                          :position [-100 120 60]
                                                           :intensity 1.5}]]
                           :camera {:position [250 250 250]
                                    :target [10 60 0]}
