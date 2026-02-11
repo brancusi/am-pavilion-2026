@@ -865,9 +865,6 @@ select{
 .top-16{
   top: 4rem;
 }
-.right-2{
-  right: 0.5rem;
-}
 .isolate{
   isolation: isolate;
 }
@@ -1382,9 +1379,6 @@ select{
 }
 .overflow-hidden{
   overflow: hidden;
-}
-.overflow-x-auto{
-  overflow-x: auto;
 }
 .overflow-y-auto{
   overflow-y: auto;
@@ -2212,34 +2206,12 @@ select{
 
 @media (min-width: 640px){
 
-  .sm\:left-1\/2{
-    left: 50%;
-  }
-
-  .sm\:right-auto{
-    right: auto;
-  }
-
   .sm\:w-3\/4{
     width: 75%;
   }
 
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sm\:gap-4{
-    gap: 1rem;
-  }
-
-  .sm\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .sm\:py-3{
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
   }
 
   .sm\:text-4xl{
