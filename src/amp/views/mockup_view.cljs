@@ -24,12 +24,14 @@
 (defonce context-atom (atom nil))
 (defonce resize-fn-atom (atom nil))
 (defonce container-atom (atom nil))
+(defonce canvas-listeners-atom (atom nil))
 (defonce show-dimensions-atom (th/atom false))
 (defonce wireframe-atom (th/atom false))
 (defonce ground-plane-atom (th/atom true))
 (defonce parts-panel-atom (atom false))
 (defonce mockup-data-atom (th/atom nil))
 (defonce camera-state-atom (atom {:position nil :target nil}))
+(defonce selected-block-atom (th/atom nil))
 
 (declare create-stack)
 
@@ -51,12 +53,14 @@
     override
     (let [data @mockup-data-atom
           wireframe? @wireframe-atom
-          show-ground? @ground-plane-atom]
+          show-ground? @ground-plane-atom
+          selection @selected-block-atom]
       (if data
         (create-stack (:data data)
                       {:wireframe? wireframe?
                        :show-ground? show-ground?
-                       :lighting (:lighting data)})
+                       :lighting (:lighting data)
+                       :selection selection})
         [:object]))))
 
 (defn create-sky-gradient-texture
@@ -171,6 +175,11 @@
   "Set ground plane visibility."
   [visible?]
   (reset! ground-plane-atom visible?))
+
+(defn deselect-block!
+  "Clear block selection."
+  []
+  (reset! selected-block-atom nil))
 
 (declare total-level-height)
 
@@ -333,14 +342,15 @@
                [(- hw) (- hh) hd  (- hw) hh hd]]            ; front-left
         ;; Create a group to hold all edge lines
         ^js group (THREE/Group.)
-        ;; Use fixed dark grey color for wireframe mode
-        edge-color (THREE/Color. 0x444444)]
+        ;; Edge color: use :outline-color from config or default dark grey
+        edge-color (THREE/Color. (or (:outline-color config) 0x444444))
+        line-width (or (:line-width config) 3)]
     ;; Create each edge as a Line2
     (doseq [edge edges]
       (let [^js geometry (LineGeometry.)
             _ (.setPositions geometry (clj->js edge))
             ^js material (LineMaterial. #js {:color (.getHex edge-color)
-                                             :linewidth 3
+                                             :linewidth line-width
                                              :resolution (THREE/Vector2. js/window.innerWidth js/window.innerHeight)
                                              :depthTest true
                                              :depthWrite false
@@ -355,9 +365,27 @@
         (.set group-pos (nth position 0) (nth position 1) (nth position 2))))
     group))
 
-;; Entity types map - use defonce so it persists across hot reloads
-;; Use var reference #' so create-text-label changes are picked up
-(defonce custom-entity-types
+(defn create-selectable-box
+  "Creates a box mesh with userData for click-to-select identification."
+  [config]
+  (let [{:keys [position width height depth color cast-shadow block-info]} config
+        ^js geometry (THREE/BoxGeometry. width height depth)
+        ^js material (THREE/MeshStandardMaterial. #js {:color (or color "gray")})
+        ^js mesh (THREE/Mesh. geometry material)]
+    (set! (.-castShadow mesh) (boolean cast-shadow))
+    ;; Store block info on userData so raycasting can identify this block
+    (set! (.. mesh -userData -blockInfo)
+          #js {:dims (clj->js (:dims block-info))
+               :note (or (:note block-info) nil)
+               :color (or (:color block-info) "gray")})
+    (when position
+      (let [^js p (.-position mesh)]
+        (.set p (nth position 0) (nth position 1) (nth position 2))))
+    mesh))
+
+;; Entity types map — use def (not defonce) so new entity types register on hot reload.
+;; Use var reference #' so function changes are picked up.
+(def custom-entity-types
   {:text-sprite
    (reify entity/IEntityType
      (create [_ _ config]
@@ -374,7 +402,15 @@
                       (when (.-geometry child)
                         (.dispose (.-geometry child)))
                       (when (.-material child)
-                        (.dispose (.-material child))))))))})
+                        (.dispose (.-material child))))))))
+   :selectable-box
+   (reify entity/IEntityType
+     (create [_ _ config]
+       (#'create-selectable-box config))
+     (destroy! [_ _ ^js obj _]
+       (when obj
+         (when (.-geometry obj) (.dispose (.-geometry obj)))
+         (when (.-material obj) (.dispose (.-material obj))))))})
 
 
 
@@ -437,12 +473,15 @@
                                                  :height dh
                                                  :depth dd
                                                  :color (or color "gray")}]
-                                     [:box {:position [x box-y z]
-                                            :cast-shadow true
-                                            :width dw
-                                            :height dh
-                                            :depth dd
-                                            :material {:color (or color "gray")}}]))]
+                                     [:selectable-box {:position [x box-y z]
+                                                       :cast-shadow true
+                                                       :width dw
+                                                       :height dh
+                                                       :depth dd
+                                                       :color (or color "gray")
+                                                       :block-info {:dims dims
+                                                                    :note (:note box)
+                                                                    :color (or color "gray")}}]))]
                     (if (seq sub-layers)
                       (let [child-elems (build-box-tree
                                          [{:bounds child-bounds :layers sub-layers}]
@@ -506,7 +545,7 @@
      :lighting - vector of light elements, e.g. [[:ambient-light {:intensity 0.5}]].
                  When nil, uses default ambient + directional lights."
   ([elements] (create-stack elements {}))
-  ([elements {:keys [wireframe? show-ground? lighting]
+  ([elements {:keys [wireframe? show-ground? lighting selection]
               :or {wireframe? @wireframe-atom
                    show-ground? @ground-plane-atom}}]
    (let [boxes (build-box-tree elements wireframe?)
@@ -514,19 +553,29 @@
                     [[:ambient-light {:intensity 0.7}]
                      [:directional-light {:cast-shadow true
                                           :position [80 120 60]
-                                          :intensity 1.5}]])]
-     (into (into [:object {:position [0 0 -4]}]
-                 (conj (vec lights)
-                       ;; Ground plane container — always present to keep child indices stable
-                       [:object {}
-                        (when show-ground?
-                          [:box {:position [0 -0.05 0]
-                                 :receive-shadow true
-                                 :width 500
-                                 :height 0.1
-                                 :depth 500
-                                 :material {:color 0xf0ece6}}])]))
-           boxes))))
+                                          :intensity 1.5}]])
+         selection-outline
+         (when selection
+           (let [[wx wy wz] (:world-position selection)]
+             [:edge-box {:position [wx wy (+ wz 4)]
+                         :width  (* 1.02 (:width selection))
+                         :height (* 1.02 (:height selection))
+                         :depth  (* 1.02 (:depth selection))
+                         :outline-color 0x00bcd4
+                         :line-width 4}]))]
+     (cond-> (into (into [:object {:position [0 0 -4]}]
+                         (conj (vec lights)
+                               ;; Ground plane container — always present to keep child indices stable
+                               [:object {}
+                                (when show-ground?
+                                  [:box {:position [0 -0.05 0]
+                                         :receive-shadow true
+                                         :width 500
+                                         :height 0.1
+                                         :depth 500
+                                         :material {:color 0xf0ece6}}])]))
+                   boxes)
+       selection-outline (conj selection-outline)))))
 
 (defn setup-scene! [^js container]
   (let [ctx (th/render root container
@@ -588,20 +637,70 @@
       (.update controls)
 
       ;; Double-click to set pivot point
-      (.addEventListener canvas "dblclick"
-                         (fn [^js event]
-                           (let [^js rect (.getBoundingClientRect canvas)]
-                             (set! (.-x mouse) (- (* (/ (- (.-clientX event) (.-left rect)) (.-width rect)) 2) 1))
-                             (set! (.-y mouse) (- 1 (* (/ (- (.-clientY event) (.-top rect)) (.-height rect)) 2)))
-                             (.setFromCamera raycaster mouse camera)
-                             (let [^js scene (:threejs-scene ctx)
-                                   ^js intersects (.intersectObjects raycaster scene true)]
-                               (when (> (.-length intersects) 0)
-                                 (let [^js hit (aget intersects 0)
-                                       ^js point (.-point hit)
-                                       ^js target (.-target controls)]
-                                   (.copy target point)
-                                   (.update controls)))))))
+      (let [dblclick-fn
+            (fn [^js event]
+              (let [^js rect (.getBoundingClientRect canvas)]
+                (set! (.-x mouse) (- (* (/ (- (.-clientX event) (.-left rect)) (.-width rect)) 2) 1))
+                (set! (.-y mouse) (- 1 (* (/ (- (.-clientY event) (.-top rect)) (.-height rect)) 2)))
+                (.setFromCamera raycaster mouse camera)
+                (let [^js scene (:threejs-scene ctx)
+                      ^js intersects (.intersectObject raycaster scene true)]
+                  (when (> (.-length intersects) 0)
+                    (let [^js hit (aget intersects 0)
+                          ^js point (.-point hit)
+                          ^js target (.-target controls)]
+                      (.copy target point)
+                      (.update controls))))))
+
+            ;; Click-to-select (with drag tolerance so orbiting doesn't trigger selection)
+            click-start (atom nil)
+            pointerdown-fn
+            (fn [^js event]
+              (reset! click-start [(.-clientX event) (.-clientY event)]))
+            pointerup-fn
+            (fn [^js event]
+              (when-let [[sx sy] @click-start]
+                (reset! click-start nil)
+                (let [dx (- (.-clientX event) sx)
+                      dy (- (.-clientY event) sy)]
+                  (when (< (+ (* dx dx) (* dy dy)) 25) ;; 5px movement threshold
+                    (let [^js rect (.getBoundingClientRect canvas)]
+                      (set! (.-x mouse) (- (* (/ (- (.-clientX event) (.-left rect)) (.-width rect)) 2) 1))
+                      (set! (.-y mouse) (- 1 (* (/ (- (.-clientY event) (.-top rect)) (.-height rect)) 2)))
+                      (.setFromCamera raycaster mouse camera)
+                      (let [^js scene-obj (:threejs-scene ctx)
+                            ^js intersects (.intersectObject raycaster scene-obj true)]
+                        (if (> (.-length intersects) 0)
+                          (let [^js hit (aget intersects 0)
+                                ^js obj (.-object hit)
+                                block-info (.. obj -userData -blockInfo)]
+                            (if block-info
+                              ;; Selected a block — store info and world position
+                              (let [^js world-pos (THREE/Vector3.)]
+                                (.getWorldPosition obj world-pos)
+                                (reset! selected-block-atom
+                                        {:dims (js->clj (.-dims block-info))
+                                         :note (.-note block-info)
+                                         :color (.-color block-info)
+                                         :world-position [(.-x world-pos) (.-y world-pos) (.-z world-pos)]
+                                         :width (.. obj -geometry -parameters -width)
+                                         :height (.. obj -geometry -parameters -height)
+                                         :depth (.. obj -geometry -parameters -depth)}))
+                              ;; Clicked ground plane or non-selectable object
+                              (reset! selected-block-atom nil)))
+                          ;; Clicked empty space
+                          (reset! selected-block-atom nil))))))))]
+
+        (.addEventListener canvas "dblclick" dblclick-fn)
+        (.addEventListener canvas "pointerdown" pointerdown-fn)
+        (.addEventListener canvas "pointerup" pointerup-fn)
+
+        ;; Store listener refs for cleanup
+        (reset! canvas-listeners-atom
+                {:canvas canvas
+                 :dblclick dblclick-fn
+                 :pointerdown pointerdown-fn
+                 :pointerup pointerup-fn}))
 
       (reset! controls-atom controls))
 
@@ -629,6 +728,12 @@
   (when-let [resize-fn @resize-fn-atom]
     (.removeEventListener js/window "resize" resize-fn)
     (reset! resize-fn-atom nil))
+  ;; Remove canvas event listeners
+  (when-let [{:keys [^js canvas dblclick pointerdown pointerup]} @canvas-listeners-atom]
+    (.removeEventListener canvas "dblclick" dblclick)
+    (.removeEventListener canvas "pointerdown" pointerdown)
+    (.removeEventListener canvas "pointerup" pointerup)
+    (reset! canvas-listeners-atom nil))
   (when-let [^js ctx @context-atom]
     (.dispose ctx)
     (reset! context-atom nil)))
@@ -685,7 +790,8 @@
         [panel-open? set-panel-open!] (hooks/use-state false)
         [hud-open? set-hud-open!] (hooks/use-state true)
         [mockup-data set-mockup-data!] (hooks/use-state nil)
-        [copied? set-copied!] (hooks/use-state false)]
+        [copied? set-copied!] (hooks/use-state false)
+        [selected-block set-selected-block!] (hooks/use-state nil)]
 
     ;; Sync wireframe state with atom for reactivity
     (hooks/use-effect
@@ -718,6 +824,14 @@
        (add-watch mockup-data-atom :data-sync update-fn)
        (set-mockup-data! @mockup-data-atom)
        #(remove-watch mockup-data-atom :data-sync)))
+
+    ;; Sync selected block state
+    (hooks/use-effect
+     []
+     (let [update-fn (fn [_ _ _ new-val] (set-selected-block! new-val))]
+       (add-watch selected-block-atom :selection-sync update-fn)
+       (set-selected-block! @selected-block-atom)
+       #(remove-watch selected-block-atom :selection-sync)))
 
     (hooks/use-layout-effect
      []
@@ -796,16 +910,32 @@
                                       (d/span {} (str (fmt-dim d) "\"(L) × " (fmt-dim w) "\"(W) × " (fmt-dim h) "\"(H)")))))
                             parts))
                      (d/p {:class "text-slate-500 italic"} "No parts data available"))))
+     ;; Selected block info bar
+     (when selected-block
+       (d/div {:class "z-20 fixed bottom-8 left-1/2 bg-white/90 border-2 border-slate-800 px-4 py-2 rounded shadow-lg font-fira-code"
+               :style {:transform "translateX(-50%)"
+                       :max-width "calc(100vw - 1rem)"}}
+              (d/div {:class "flex items-center gap-3 whitespace-nowrap"}
+                     (d/div {:class "w-4 h-4 rounded-sm border border-slate-400 flex-shrink-0"
+                             :style {:background-color (:color selected-block)}})
+                     (d/span {:class "text-xs sm:text-sm font-bold"}
+                             (let [[w h d] (:dims selected-block)]
+                               (str (fmt-dim d) "\"(L) × " (fmt-dim w) "\"(W) × " (fmt-dim h) "\"(H)"))))
+              (when-let [note (:note selected-block)]
+                (d/span {:class "text-xs sm:text-sm text-slate-600 italic"}
+                        (str "Notes: " note)))))
      ;; Footer
      (d/footer {:class "z-20 fixed bottom-0 left-0 right-0 py-2 px-4"}
                (d/p {:class "text-xs font-fira-code text-slate-700"}
                     "© Armenian Pavilion Venice Biennale Arte 2026")))))
 
 ;; Shadow-cljs hot reload hooks
-;; Since custom-entity-types uses defonce, it persists across hot reloads
-;; Just let React re-render with the existing context
 (defn ^:dev/before-load stop []
-  (js/console.log "Stopping for hot reload..."))
+  (js/console.log "Stopping for hot reload...")
+  ;; Tear down scene so it gets rebuilt with updated entity types & click handler
+  (cleanup-scene!))
 
 (defn ^:dev/after-load start []
-  (js/console.log "Hot reload complete"))
+  (js/console.log "Hot reload — reinitializing scene...")
+  (when-let [^js container @container-atom]
+    (setup-scene! container)))

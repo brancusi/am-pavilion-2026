@@ -32,15 +32,12 @@
                                            [{:dims [36 9 36]
                                              :align :tr
                                              :color "#0070df"}]
-
                                            [{:dims [18 9 18]
                                              :align :tr
                                              :color "#f1afed"}]
-
                                            [{:dims [9 4.5 9]
                                              :align :tr
                                              :color "#0b080c"}]
-
                                            [{:dims [4.5 9 4.5]
                                              :align :tr
                                              :color "#ec9c3b"}]]}]})
