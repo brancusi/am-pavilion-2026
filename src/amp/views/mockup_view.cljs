@@ -3,6 +3,7 @@
             [threeagent.core :as th]
             [threeagent.entity :as entity]
             [amp.reducers.requires]
+            [amp.components.icons :refer [CollapseIcon ExpandIcon]]
             [amp.services.firebase :refer [listen-to-path listen-to-edn set-edn]]
             [amp.providers.main-provider :refer [use-main-state]]
 
@@ -25,6 +26,7 @@
 (defonce container-atom (atom nil))
 (defonce show-dimensions-atom (th/atom false))
 (defonce wireframe-atom (th/atom false))
+(defonce ground-plane-atom (th/atom true))
 (defonce parts-panel-atom (atom false))
 (defonce mockup-data-atom (atom nil))
 (defonce camera-state-atom (atom {:position nil :target nil}))
@@ -43,6 +45,60 @@
 ;; Root component render function - reads from scene-atom
 (defn root []
   @scene-atom)
+
+(defn create-sky-gradient-texture
+  "Creates a vertical gradient canvas texture simulating a warm sky/sun environment."
+  []
+  (let [^js canvas (.createElement js/document "canvas")
+        _ (set! (.-width canvas) 2)
+        _ (set! (.-height canvas) 512)
+        ^js ctx (.getContext canvas "2d")
+        ^js gradient (.createLinearGradient ctx 0 0 0 512)]
+    ;; Sky gradient: soft blue top → warm peach horizon → light cream bottom
+    (.addColorStop gradient 0.0 "#7EC8E3")
+    (.addColorStop gradient 0.3 "#B8DBE8")
+    (.addColorStop gradient 0.5 "#E8D5C4")
+    (.addColorStop gradient 0.7 "#F5EDE4")
+    (.addColorStop gradient 1.0 "#FAF6F0")
+    (set! (.-fillStyle ctx) gradient)
+    (.fillRect ctx 0 0 2 512)
+    (let [^js texture (THREE/CanvasTexture. canvas)]
+      (set! (.-needsUpdate texture) true)
+      texture)))
+
+(defn configure-shadow-camera!
+  "Traverses scene to find DirectionalLight and configure its shadow camera
+   for proper coverage. Marks each light so it's only configured once."
+  [^js scene]
+  (when scene
+    (.traverse scene
+               (fn [^js obj]
+                 (when (and (instance? THREE/DirectionalLight obj)
+                            (not (.-_shadowConfigured obj)))
+                   (let [^js shadow (.-shadow obj)
+                         ^js shadow-cam (.-camera shadow)
+                         size 200]
+                     (set! (.-left shadow-cam) (- size))
+                     (set! (.-right shadow-cam) size)
+                     (set! (.-top shadow-cam) size)
+                     (set! (.-bottom shadow-cam) (- size))
+                     (set! (.-near shadow-cam) 0.5)
+                     (set! (.-far shadow-cam) 500)
+                     (set! (.. shadow -mapSize -x) 2048)
+                     (set! (.. shadow -mapSize -y) 2048)
+                     (set! (.-bias shadow) -0.0001)
+                     ;; Dispose old shadow map so new mapSize takes effect
+                     (when-let [^js m (.-map shadow)]
+                       (.dispose m)
+                       (set! (.-map shadow) nil))
+                     (set! (.-_shadowConfigured obj) true)))))))
+
+(defn- fmt-dim
+  "Formats a dimension value: integer when whole, 1 decimal place otherwise."
+  [n]
+  (if (== n (js/Math.floor n))
+    (str (int n))
+    (.toFixed n 1)))
 
 (defn calculate-position
   "Calculates [x z] position for a box within bounds based on alignment.
@@ -93,16 +149,44 @@
   []
   (swap! parts-panel-atom not))
 
+(defn toggle-ground-plane!
+  "Toggle ground plane visibility."
+  []
+  (swap! ground-plane-atom not))
+
+(defn set-ground-plane!
+  "Set ground plane visibility."
+  [visible?]
+  (reset! ground-plane-atom visible?))
+
+(declare total-level-height)
+
+(defn- collect-all-dims
+  "Recursively collects all :dims vectors from the data tree,
+   including boxes nested via :layers on individual boxes."
+  [data]
+  (when (seq data)
+    (mapcat
+     (fn [level]
+       (mapcat
+        (fn [layer-group]
+          (mapcat
+           (fn [box]
+             (concat
+              (when (:dims box) [(:dims box)])
+              (when (seq (:layers box))
+                (collect-all-dims [{:layers (:layers box)}]))))
+           layer-group))
+        (:layers level)))
+     data)))
+
 (defn extract-parts-list
   "Extracts all parts from mockup data and groups by dimensions.
+   Recurses into nested :layers so every rendered box is counted.
    Returns a sorted list of {:dims [w h d] :qty n} maps."
   [mockup-data]
   (when-let [data (:data mockup-data)]
-    (let [all-parts (for [level data
-                          layer (:layers level)
-                          box layer
-                          :when (:dims box)]
-                      (:dims box))
+    (let [all-parts (collect-all-dims data)
           grouped (frequencies all-parts)
           parts-list (for [[dims qty] grouped]
                        {:dims dims :qty qty})]
@@ -110,6 +194,28 @@
       (sort-by (fn [{:keys [dims]}]
                  [(- (nth dims 2)) (- (nth dims 0)) (- (nth dims 1))])
                parts-list))))
+
+(defn calculate-total-dimensions
+  "Calculates the overall bounding box of the full stacked piece.
+   Width & Length are the max across ALL dims in the tree (including nested).
+   Height is computed recursively via total-level-height so stacked layers
+   are properly summed. Returns unrounded float values."
+  [mockup-data]
+  (when-let [data (:data mockup-data)]
+    (when (seq data)
+      (let [all-dims (collect-all-dims data)
+            total-w (when (seq all-dims)
+                      (apply max (map #(nth % 0) all-dims)))
+            total-d (when (seq all-dims)
+                      (apply max (map #(nth % 2) all-dims)))
+            total-h (reduce + 0.0
+                            (for [level data
+                                  :when (seq (:layers level))]
+                              (total-level-height (:layers level))))]
+        (when (and total-w total-d)
+          {:width (double total-w)
+           :height total-h
+           :length (double total-d)})))))
 
 (defn create-text-texture
   "Creates a canvas texture with text for stamping on blocks."
@@ -258,11 +364,13 @@
    the new layer sitting on top of the previous content.
    Options:
      :show-dimensions? - if true, adds floating dimension labels (default: reads from show-dimensions-atom)
-     :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)"
+     :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)
+     :show-ground? - if true, adds a ground plane (default: reads from ground-plane-atom)"
   ([elements] (create-stack elements {}))
-  ([elements {:keys [show-dimensions? wireframe?]
+  ([elements {:keys [show-dimensions? wireframe? show-ground?]
               :or {show-dimensions? @show-dimensions-atom
-                   wireframe? @wireframe-atom}}]
+                   wireframe? @wireframe-atom
+                   show-ground? @ground-plane-atom}}]
    (loop [levels elements
           y-offset 0
           prev-bounds nil
@@ -270,12 +378,22 @@
           boxes []
           labels []]
      (if (empty? levels)
-       (into [:object {:position [0 0 -4]}
-              [:ambient-light {:intensity 0.5}]
-              [:directional-light {:position [5 5 5] :intensity 1}]]
-             (if show-dimensions?
-               (concat boxes labels)
-               boxes))
+       (let [ground-plane (when show-ground?
+                            [[:box {:position [0 -0.05 0]
+                                    :receive-shadow true
+                                    :width 500
+                                    :height 0.1
+                                    :depth 500
+                                    :material {:color 0xf0ece6}}]])]
+         (into [:object {:position [0 0 -4]}
+                [:ambient-light {:intensity 0.7}]
+                [:directional-light {:cast-shadow true
+                                     :position [80 120 60]
+                                     :intensity 1.5}]]
+               (concat ground-plane
+                       (if show-dimensions?
+                         (concat boxes labels)
+                         boxes))))
        (let [{:keys [bounds layers]} (first levels)
              ;; Use explicit bounds or inherit from previous
              effective-bounds (or bounds prev-bounds)
@@ -308,14 +426,11 @@
                                                :depth dd
                                                :color (or color "gray")}]
                                    [:box {:position [x box-y z]
+                                          :cast-shadow true
                                           :width dw
                                           :height dh
                                           :depth dd
-                                          :material {:color (or color "gray")}}])
-                            :label [:text-sprite {:text dim-text
-                                                  :position [label-x label-y label-z]
-                                                  :block-height dh
-                                                  :block-width dw}]})
+                                          :material {:color (or color "gray")}}])})
              level-boxes (map :box level-items)
              level-labels (map :label level-items)
              ;; For next iteration: if current layer had alignment, calculate where
@@ -334,301 +449,166 @@
                 (into boxes level-boxes)
                 (into labels level-labels)))))))
 
-(defn shift-upward
-  [dims row-colors align step-change]
-  (reduce (fn [acc cur]
-            (let [color cur
-                  last-layer (-> acc last :layers ffirst)
-                  last-dims (:dims last-layer)
-                  next-dims [(- (nth last-dims 0)
-                                step-change)
-                             (+ (nth last-dims 1)
-                                step-change)
-                             (- (nth last-dims 2)
-                                step-change)]]
-              (conj acc {:layers [[{:color color
-                                    :align align
-                                    :dims next-dims}]]})))
-          [{:bounds dims
-            :layers [[{:color (first row-colors)
-                       :dims dims}]]}]
-          (rest row-colors)))
 
-(defn shift-upward-v2
-  [{:keys [base-dimensions
-           row-colors
-           alignment
-           transform-width
-           transform-length
-           transform-height]}]
-  (reduce (fn [acc cur]
-            (let [color cur
-                  last-layer (-> acc last :layers ffirst)
-                  last-dims (:dims last-layer)
-                  next-dims [(transform-width last-dims (count acc))
-                             (transform-height last-dims (count acc))
-                             (transform-length last-dims (count acc))]]
-              (conj acc {:layers [[{:color color
-                                    :align alignment
-                                    :dims next-dims}]]})))
-          [{:bounds base-dimensions
-            :layers [[{:color (first row-colors)
-                       :dims base-dimensions}]]}]
-          (rest row-colors)))
+(declare total-level-height)
 
-(comment
+(defn- total-box-height
+  "Returns the total height a box occupies, including any nested layers stacked on top.
+   Falls back to :bounds if :dims is not set."
+  [{:keys [dims bounds layers]}]
+  (let [[_dw dh _dd] (or dims bounds [0 0 0])]
+    (if (seq layers)
+      (+ dh (total-level-height layers))
+      dh)))
 
-  (shift-upward [72 6 72] ["red" "blue" "green"] :tl 6)
+(defn- total-level-height
+  "Returns the total stacked height of all layer groups in a level.
+   Layer groups stack vertically (summed), boxes within a group share the
+   same vertical space (max). Recurses into nested children."
+  [layers]
+  (reduce + (map (fn [lg]
+                   (if (seq lg)
+                     (apply max (map total-box-height lg))
+                     0))
+                 layers)))
 
-  (render-elements (create-stack [{:bounds [20 5 20]
-                                   :layers [[{:align :tl
-                                              :color "red"
-                                              :dims [5 5 5]}
-                                             {:align :tr
-                                              :color "yellow"
-                                              :dims [5 5 5]}
-                                             {:align :bl
-                                              :color "blue"
-                                              :dims [5 5 5]}
-                                             {:align :br
-                                              :color "green"
-                                              :dims [5 5 5]}]]}
-                                  {:bounds [20 5 20]
-                                   :layers [[{:dims [20 5 20]}]]}
-                                  {:bounds [20 5 20]
-                                   :layers [[{:align :tl
-                                              :color "red"
-                                              :dims [5 5 5]}
-                                             {:align :tr
-                                              :color "yellow"
-                                              :dims [5 5 5]}
-                                             {:align :bl
-                                              :color "blue"
-                                              :dims [5 5 5]}
-                                             {:align :br
-                                              :color "green"
-                                              :dims [5 5 5]}]]}]))
+(defn- layer-group-height
+  "Returns the max total height of a single layer group (vector of boxes),
+   including recursively nested children."
+  [layer-group]
+  (if (seq layer-group)
+    (apply max (map total-box-height layer-group))
+    0))
 
+(declare build-box-tree)
 
-  (render-elements (create-stack [{:bounds [36 36 48]
-                                   :layers [[{:color "grey"
-                                              :align :tl
-                                              :dims  [4 4 6]}
-                                             {:color "grey"
-                                              :align :tr
-                                              :dims  [4 4 6]}
-                                             {:color "grey"
-                                              :align :bl
-                                              :dims  [4 4 6]}
-                                             {:color "grey"
-                                              :align :br
-                                              :dims  [4 4 6]}]]}
-                                  {:layers [[{:color "blue"
-                                              :align :tl
-                                              :dims [36 36 48]}]]}
-                                  {:layers [[{:color "red"
-                                              :align :tl
-                                              :dims [36 8 12]}]]}
-                                  {:layers [[{:color "green"
-                                              :align :tl
-                                              :dims [18 12 12]}]]}
+(defn- build-layer-elements
+  "Builds threeagent elements for a single layer group at a given y-offset.
+   Returns a vector of elements.
+   When a box has no :dims, falls back to :bounds then to the parent effective-bounds.
+   Children use the box's :bounds (or :dims) as their effective-bounds."
+  [layer-group y-offset effective-bounds base-x base-z wireframe?]
+  (into []
+        (mapcat identity
+                (for [box layer-group
+                      :let [{:keys [align dims bounds color]} box
+                            sub-layers (:layers box)
+                            ;; Effective dims for this box: dims > bounds > parent effective-bounds
+                            effective-dims (or dims bounds effective-bounds)
+                            [dw dh dd] effective-dims
+                            [rel-x rel-z] (calculate-position align effective-bounds effective-dims)
+                            x (+ base-x rel-x)
+                            z (+ base-z rel-z)
+                            box-y (+ y-offset (/ dh 2))
+                            ;; Children use box's bounds if set, else box's dims, else parent bounds
+                            child-bounds (or bounds dims effective-bounds)]]
+                  (let [;; Only render a visible box if :dims is explicitly set
+                        box-elem (when dims
+                                   (if wireframe?
+                                     [:edge-box {:position [x box-y z]
+                                                 :width dw
+                                                 :height dh
+                                                 :depth dd
+                                                 :color (or color "gray")}]
+                                     [:box {:position [x box-y z]
+                                            :cast-shadow true
+                                            :width dw
+                                            :height dh
+                                            :depth dd
+                                            :material {:color (or color "gray")}}]))]
+                    (if (seq sub-layers)
+                      (let [child-elems (build-box-tree
+                                         [{:bounds child-bounds :layers sub-layers}]
+                                         wireframe?)]
+                        (cond-> []
+                          box-elem (conj box-elem)
+                          true (conj (into [:object {:position [x (+ y-offset dh) z]}]
+                                           child-elems))))
+                      (if box-elem
+                        [box-elem]
+                        [])))))))
 
-                                  {:layers [[{:color "grey"
-                                              :align :tl
-                                              :dims [4 4 4]}]]}
+(defn- build-box-tree
+  "Recursively builds threeagent elements from stacked levels.
+   Each level has :bounds and :layers. Layers within a level stack vertically —
+   each layer group sits on top of the previous one's tallest content (including children).
+   When a box has nested :layers, children are wrapped in an [:object] group
+   positioned at the top of the parent box, making child positions relative."
+  [levels wireframe?]
+  (loop [remaining levels
+         y-offset 0
+         prev-bounds nil
+         prev-offset [0 0]
+         elements []]
+    (if (empty? remaining)
+      elements
+      (let [{:keys [bounds layers]} (first remaining)
+            effective-bounds (or bounds prev-bounds)
+            [base-x base-z] (if bounds [0 0] prev-offset)
+            ;; Process each layer group sequentially, stacking vertically
+            {:keys [elems total-h]}
+            (reduce (fn [{:keys [elems layer-y]} layer-group]
+                      (let [layer-elems (build-layer-elements
+                                         layer-group layer-y effective-bounds
+                                         base-x base-z wireframe?)
+                            h (layer-group-height layer-group)]
+                        {:elems (into elems layer-elems)
+                         :layer-y (+ layer-y h)
+                         :total-h (+ layer-y h)}))
+                    {:elems [] :layer-y y-offset :total-h y-offset}
+                    layers)
+            first-box (-> layers first first)
+            first-dims (or (:dims first-box) (:bounds first-box))
+            first-align (:align first-box)
+            [first-rel-x first-rel-z] (calculate-position first-align effective-bounds (or first-dims effective-bounds))
+            next-offset [(+ base-x first-rel-x) (+ base-z first-rel-z)]
+            next-bounds (or first-dims effective-bounds)]
+        (recur (rest remaining)
+               total-h
+               next-bounds
+               next-offset
+               (into elements elems))))))
 
-                                  ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                                  ]))
-
-  (render-elements (create-stack [{:bounds [36 36 60]
-                                   :layers [[{:color "red"
-                                              :align :tl
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :tr
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :bl
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :br
-                                              :dims  [4 4 6]}]]}
-                                  {:layers [[{:color "yellow"
-                                              :align :tl
-                                              :dims [36 36 60]}]]}
-                                  {:layers [[{:color "red"
-                                              :align :tl
-                                              :dims [36 6 28]}]]}
-                                  {:layers [[{:color "white"
-                                              :align :tl
-                                              :dims [12 12 28]}]]}
-
-                                  {:layers [[{:color "darkred"
-                                              :align :tl
-                                              :dims [7 7 7]}]]}
-
-                                  ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                                  ]))
-
-  ;; Squares all the way
-  (render-elements (create-stack [{:bounds [36 36 60]
-                                   :layers [[{:color "red"
-                                              :align :tl
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :tr
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :bl
-                                              :dims  [4 4 6]}
-                                             {:color "red"
-                                              :align :br
-                                              :dims  [4 4 6]}]]}
-                                  {:layers [[{:color "yellow"
-                                              :align :tl
-                                              :dims [36 36 60]}]]}
-                                  {:layers [[{:color "red"
-                                              :align :tl
-                                              :dims [36 6 28]}]]}
-                                  {:layers [[{:color "white"
-                                              :align :tl
-                                              :dims [12 12 28]}]]}
-
-                                  {:layers [[{:color "darkred"
-                                              :align :tl
-                                              :dims [12 12 14]}]]}
-                                  {:layers [[{:color "gold"
-                                              :align :tl
-                                              :dims [12 2 2]}]]}
-
-                                  ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                                  ]))
-
-
-  (render-elements (create-stack [{:bounds [20 1 20]
-                                   :layers [[{:align :tl
-                                              :color "red"
-                                              :dims [5 1 5]}
-                                             {:align :tr
-                                              :color "yellow"
-                                              :dims [5 1 5]}
-                                             {:align :bl
-                                              :color "blue"
-                                              :dims [5 1 5]}
-                                             {:align :br
-                                              :color "green"
-                                              :dims [5 1 5]}]]}
-                                  {:bounds [20 2 20]
-                                   :layers [[{:color "red"
-                                              :dims [20 5 20]}]]}]))
-
-  (render-elements (create-stack [{:bounds [72 6 72]
-                                   :layers [[{:color "red"
-                                              :dims [72 6 72]}]]}
-                                  {:layers [[{:color "blue"
-                                              :align :tl
-                                              :dims [68 12 68]}]]}
-                                  {:layers [[{:color "green"
-                                              :align :tl
-                                              :dims [56 18 56]}]]}
-                                  {:layers [[{:color "red"
-                                              :align :tl
-                                              :dims [48 24 48]}]]}
-                                  {:layers [[{:color "orange"
-                                              :align :tl
-                                              :dims [24 24 24]}]]}
-                                  {:layers [[{:color "yellow"
-                                              :align :center
-                                              :dims [9 30 9]}]]}]))
-
-  (render-elements [:object {:position [0 0 -4]}
-                    [:ambient-light {:intensity 0.5}]
-                    [:directional-light {:position [5 5 5] :intensity 1}]
-                    [:box {:position [0 0 0]
-                           :width 3.0
-                           :height 1.0
-                           :depth 2.0
-                           :material {:color "red"}}]])
-
-  (render-elements (-> (shift-upward [48 6 48] ["red" "blue" "green" "red" "blue"] :tl 9)
-                       create-stack))
-
-
-  (shift-upward [48 6 48] ["red" "blue" "green" "red" "blue"] :tl 9)
-  [{:bounds [48 6 48], :layers [[{:color "red", :dims [48 6 48]}]]}
-   {:layers [[{:color "blue", :align :tl, :dims [39 15 39]}]]}
-   {:layers [[{:color "green", :align :tl, :dims [30 24 30]}]]}
-   {:layers [[{:color "red", :align :tl, :dims [21 33 21]}]]}
-   {:layers [[{:color "blue", :align :tl, :dims [12 42 12]}]]}]
-
-  (shift-upward [72 6 72] ["red" "blue" "green" "red" "blue" "green"] :tl 6)
-
-  (render-elements (create-stack [{:bounds [48 6 48], :layers [[{:color "red", :dims [48 2 48]}]]}
-                                  {:layers [[{:color "blue", :align :tl, :dims [39 6 39]}]]}
-                                  {:layers [[{:color "green", :align :tl, :dims [22 8 22]}]]}
-                                  {:layers [[{:color "red", :align :tl, :dims [8 12 8]}]]}
-                                  {:layers [[{:color "blue", :align :tl, :dims [3 12 3]}]]}]))
-
-
-  (render-elements (create-stack (shift-upward [48 2 48] ["red" "blue" "green" "red" "blue"] :tl 10)))
-
-
-  (let [squeeze 2]
-    (render-elements (create-stack (shift-upward-v2 {:base-dimensions [48 2 48]
-                                                     :row-colors ["red" "blue" "green" "red" "blue"]
-                                                     :alignment :tl
-                                                     :transform-width #(- (nth %1 0) (* squeeze %2 2.2))
-                                                     :transform-height #(+ (nth %1 1) (* %2 (- squeeze 1)))
-                                                     :transform-length #(- (nth %1 2) (* squeeze %2 2.2))}))))
-
-  (shift-upward-v2 {:base-dimensions [48 2 48]
-                    :row-colors ["red" "blue" "green" "red" "blue"]
-                    :alignment :tl
-                    :transform-width #(- (nth % 0) 2)
-                    :transform-height #(+ (nth % 1) 2)
-                    :transform-length #(- (nth % 2) 2)})
-
-
-
-  (let [squeeze 3]
-    (create-stack (shift-upward-v2 {:base-dimensions [48 2 48]
-                                    :row-colors ["red" "blue" "green" "red" "blue"]
-                                    :alignment :tl
-                                    :transform-width #(- (nth %1 0) (* squeeze %2 2.2))
-                                    :transform-height #(+ (nth %1 1) (* %2 (- squeeze 1)))
-                                    :transform-length #(- (nth %1 2) (* squeeze %2 2.2))})))
-
-
-
-
-
-  ;;Keep from folding
-  )
-
-
-
-
-
-(comment
-
-  (set-camera-position! [60 80 50] {:target [0 20 0]})
-  (set-camera-position! 100 100 100
-                        {:target [0 30 0]})
-
-  (set-camera-position! 100 100 100)
-
-  ;;Keep from folding
-  )
+(defn create-stack-v2
+  "Creates a vertical stack of box layers with support for nested layers.
+   Each box can have :layers for sub-layers positioned relative to its top.
+   Uses [:object] groups for nesting so child positions are relative to parent.
+   Options:
+     :wireframe? - if true, renders boxes in wireframe mode (default: reads from wireframe-atom)
+     :show-ground? - if true, adds a ground plane (default: reads from ground-plane-atom)"
+  ([elements] (create-stack-v2 elements {}))
+  ([elements {:keys [wireframe? show-ground?]
+              :or {wireframe? @wireframe-atom
+                   show-ground? @ground-plane-atom}}]
+   (let [ground-plane (when show-ground?
+                        [[:box {:position [0 -0.05 0]
+                                :receive-shadow true
+                                :width 500
+                                :height 0.1
+                                :depth 500
+                                :material {:color 0xf0ece6}}]])
+         boxes (build-box-tree elements wireframe?)]
+     (into [:object {:position [0 0 -4]}
+            [:ambient-light {:intensity 0.7}]
+            [:directional-light {:cast-shadow true
+                                 :position [80 120 60]
+                                 :intensity 1.5}]]
+           (concat ground-plane boxes)))))
 
 
 (defn setup-scene! [^js container]
   (let [ctx (th/render root container
                        {:antialias true
+                        :shadow-map {:enabled true
+                                     :type THREE/PCFSoftShadowMap}
                         :entity-types custom-entity-types
                         :on-before-render
                         (fn [_]
                           (when-let [^js controls @controls-atom]
-                            (.update controls)))})
+                            (.update controls))
+                          ;; Configure shadow camera on newly-created directional lights
+                          (when-let [ctx @context-atom]
+                            (configure-shadow-camera! (:threejs-scene ctx))))})
         ^js renderer (:threejs-renderer ctx)
         ^js camera (:threejs-default-camera ctx)
         ^js canvas (:canvas ctx)
@@ -640,8 +620,9 @@
                       (set! (.-aspect camera) (/ width height))
                       (.updateProjectionMatrix camera)))]
 
-    ;; Set background color to light blue
-    (.setClearColor renderer 0xFFFFFF 1)
+    ;; Set gradient sky background (warm sun environment)
+    (let [^js scene (:threejs-scene ctx)]
+      (set! (.-background scene) (create-sky-gradient-texture)))
 
     ;; Set pixel ratio for crisp rendering
     (.setPixelRatio renderer (.-devicePixelRatio js/window))
@@ -745,12 +726,12 @@
   "Re-renders the current scene with updated options (e.g., wireframe toggle)."
   []
   (when-let [data @mockup-data-atom]
-    (render-elements (create-stack (:data data)))))
+    (render-elements (create-stack-v2 (:data data)))))
 
 (defn display-firebase-data
   [{:keys [name camera data] :as mockup-data}]
   (reset! mockup-data-atom mockup-data)
-  (render-elements (create-stack data))
+  (render-elements (create-stack-v2 data))
   (set-camera-position! (:position camera) {:target (:target camera)}))
 
 ;; Watch wireframe-atom to re-render when it changes
@@ -759,185 +740,19 @@
              (when (not= old-val new-val)
                (re-render-scene!))))
 
-(comment
+;; Watch ground-plane-atom to re-render when it changes
+(add-watch ground-plane-atom :ground-watcher
+           (fn [_ _ old-val new-val]
+             (when (not= old-val new-val)
+               (re-render-scene!))))
 
-  (listen-to-edn "mockup" display-firebase-data)
-  (set-edn "mockup" {:name "The Big Red"
-                     :camera {:position [210 210 210]
-                              :target [0 20 0]}
-                     :data [{:bounds [36 36 60]
-                             :layers [[{:color "grey"
-                                        :align :tl
-                                        :dims  [4 4 6]}
-                                       {:color "grey"
-                                        :align :tr
-                                        :dims  [4 4 6]}
-                                       {:color "grey"
-                                        :align :bl
-                                        :dims  [4 4 6]}
-                                       {:color "grey"
-                                        :align :br
-                                        :dims  [4 4 6]}]]}
-                            {:layers [[{:color "white"
-                                        :align :tl
-                                        :dims [36 36 60]}]]}
-                            {:layers [[{:color "grey"
-                                        :align :tl
-                                        :dims [36 6 28]}]]}
-                            {:layers [[{:color "white"
-                                        :align :tl
-                                        :dims [12 12 28]}]]}
-                            {:layers [[{:color "grey"
-                                        :align :tl
-                                        :dims [12 12 14]}]]}
-                            {:layers [[{:color "white"
-                                        :align :tl
-                                        :dims [12 2 2]}]]}
-
-                            ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                            ]})
-
-
-  (set-edn "mockup-001"
-           {:name "Mockup 001"
-            :camera {:position [210 210 210]
-                     :target [0 20 0]}
-            :data [{:bounds [36 36 60]
-                    :layers [[{:color "grey"
-                               :align :tl
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :tr
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :bl
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :br
-                               :dims  [4 4 6]}]]}
-                   {:layers [[{:color "white"
-                               :align :tl
-                               :dims [36 36 60]}]]}
-                   {:layers [[{:color "grey"
-                               :align :tl
-                               :dims [36 6 28]}]]}
-                   {:layers [[{:color "white"
-                               :align :tl
-                               :dims [12 12 28]}]]}
-                   {:layers [[{:color "grey"
-                               :align :tl
-                               :dims [12 12 14]}]]}
-                   #_{:layers [[{:color "white"
-                                 :align :tl
-                                 :dims [12 2 2]}]]}
-
-                   ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                   ]}
-           #_{:name "Mockup 001"
-              :camera {:position [210 210 210]
-                       :target [0 20 0]}
-              :data [{:bounds [36 36 60]
-                      :layers [[{:color "grey"
-                                 :align :tl
-                                 :dims  [4 4 6]}
-                                {:color "grey"
-                                 :align :tr
-                                 :dims  [4 4 6]}
-                                {:color "grey"
-                                 :align :bl
-                                 :dims  [4 4 6]}
-                                {:color "grey"
-                                 :align :br
-                                 :dims  [4 4 6]}]]}
-                     {:layers [[{:color "white"
-                                 :align :tl
-                                 :dims [36 36 60]}]]}
-                     {:layers [[{:color "grey"
-                                 :align :tl
-                                 :dims [36 6 28]}]]}
-                     {:layers [[{:color "white"
-                                 :align :tl
-                                 :dims [12 12 28]}]]}
-                     {:layers [[{:color "grey"
-                                 :align :tl
-                                 :dims [12 12 14]}]]}
-                     #_{:layers [[{:color "white"
-                                   :align :tl
-                                   :dims [12 2 2]}]]}
-
-                     ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                     ]})
-
-  (set-edn "mockup-002"
-           {:name "Mockup 002"
-            :camera {:position [210 210 210]
-                     :target [0 20 0]}
-            :data [{:bounds [36 36 48]
-                    :layers [[{:color "grey"
-                               :align :tl
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :tr
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :bl
-                               :dims  [4 4 6]}
-                              {:color "grey"
-                               :align :br
-                               :dims  [4 4 6]}]]}
-                   {:layers [[{:color "white"
-                               :align :tl
-                               :dims [36 36 48]}]]}
-                   {:layers [[{:color "grey"
-                               :align :tl
-                               :dims [36 6 12]}]]}
-                   {:layers [[{:color "white"
-                               :align :tl
-                               :dims [12 6 12]}]]}
-                   {:layers [[{:color "grey"
-                               :align :tl
-                               :dims [4 4 4]}]]}]})
-
-
-  (set-edn "big-red" {:name "The Big Red"
-                      :camera {:position [210 210 210]
-                               :target [0 20 0]}
-                      :data [{:bounds [144 36 72]
-                              :layers [[{:color "yellow"
-                                         :align :tl
-                                         :dims  [4 4 6]}
-                                        {:color "black"
-                                         :align :tr
-                                         :dims  [4 4 6]}
-                                        {:color "yellow"
-                                         :align :bl
-                                         :dims  [4 4 6]}
-                                        {:color "green"
-                                         :align :br
-                                         :dims  [4 4 6]}]]}
-                             {:layers [[{:color "red"
-                                         :align :tl
-                                         :dims [144 36 72]}]]}
-                             {:layers [[{:color "lightblue"
-                                         :align :tl
-                                         :dims [36 6 28]}]]}
-                             {:layers [[{:color "white"
-                                         :align :tl
-                                         :dims [12 12 28]}]]}
-                             {:layers [[{:color "darkred"
-                                         :align :tl
-                                         :dims [12 12 14]}]]}
-                             {:layers [[{:color "gold"
-                                         :align :tl
-                                         :dims [12 2 2]}]]}
-
-                             ;; 8" x 12" x 36" step (sits on the top plane of the base)
-                             ]})
-
-
-  ;;Keep from folding
-  )
-
+(defnc hud-header
+  [{:keys [title set-hud-open! hud-open?]}]
+  (d/div {:class "flex items-center cursor-pointer select-none"
+          :on-click #(set-hud-open! (not hud-open?))}
+         ($ (if hud-open? CollapseIcon ExpandIcon)
+            {:class "w-5 h-5 text-slate-800 mr-4"})
+         (d/p {:class "text-md font-fira-code font-bold"} title)))
 
 (defnc mockup-view
   [{:keys [active
@@ -949,7 +764,9 @@
         piece-id (get-in state [:current-route :query-params :piece])
         container-ref (hooks/use-ref nil)
         [wireframe? set-wireframe-state!] (hooks/use-state false)
+        [ground-plane? set-ground-plane-state!] (hooks/use-state false)
         [panel-open? set-panel-open!] (hooks/use-state false)
+        [hud-open? set-hud-open!] (hooks/use-state true)
         [mockup-data set-mockup-data!] (hooks/use-state nil)]
 
     ;; Sync wireframe state with atom for reactivity
@@ -959,6 +776,14 @@
        (add-watch wireframe-atom :ui-sync update-fn)
        (set-wireframe-state! @wireframe-atom)
        #(remove-watch wireframe-atom :ui-sync)))
+
+    ;; Sync ground plane state with atom
+    (hooks/use-effect
+     []
+     (let [update-fn (fn [_ _ _ new-val] (set-ground-plane-state! new-val))]
+       (add-watch ground-plane-atom :ground-sync update-fn)
+       (set-ground-plane-state! @ground-plane-atom)
+       #(remove-watch ground-plane-atom :ground-sync)))
 
     ;; Sync parts panel state with atom
     (hooks/use-effect
@@ -997,20 +822,30 @@
                 :style {:touch-action "none"}
                 :ref container-ref})
      ;; HUD
-     (d/div {:class "z-20 flex flex-col gap-2 absolute bg-white/20 px-4 py-2 border-slate-800 border-4 m-2"}
-            (d/p {:class "text-md font-fira-code"} (or piece-id "N/A"))
-            (d/p {:class "text-sm font-fira-code italic"} "v1.2")
-            (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
-                       :on-click toggle-wireframe!}
-                      (if wireframe? "Solid" "Lines"))
-            (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
-                       :on-click toggle-parts-panel!}
-                      "Parts List"))
+     (d/div {:class "z-20 flex flex-col gap-2 absolute bg-white/40 px-4 py-2 border-slate-800 border-4 m-2"}
+            ($ hud-header {:set-hud-open! set-hud-open!
+                           :title (or (:name mockup-data) "Untitled")
+                           :hud-open? hud-open?})
+            (when hud-open?
+              (d/div {:class "flex flex-col gap-2"}
+                     (when-let [{:keys [width height length]} (calculate-total-dimensions mockup-data)]
+                       (d/p {:class "text-xs font-fira-code text-slate-700"}
+                            (str (fmt-dim length) "\"(L) × " (fmt-dim width) "\"(W) × " (fmt-dim height) "\"(H)")))
+                     #_(d/p {:class "text-xs font-fira-code text-slate-600"} (or piece-id "N/A"))
+                     (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                                :on-click toggle-wireframe!}
+                               (if wireframe? "Solid" "Lines"))
+                     (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                                :on-click toggle-ground-plane!}
+                               (if ground-plane? "Hide Ground" "Show Ground"))
+                     (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                                :on-click toggle-parts-panel!}
+                               "Parts List"))))
      ;; Parts panel (slide in from right)
      (d/div {:class (str "z-30 fixed top-0 right-0 h-full bg-white border-l-4 border-slate-800 shadow-lg "
                          "transition-transform duration-300 ease-in-out "
                          (if panel-open? "translate-x-0" "translate-x-full"))
-             :style {:width "320px"}}
+             :style {:width "360px"}}
             ;; Panel header
             (d/div {:class "flex justify-between items-center px-4 py-3 border-b-2 border-slate-300"}
                    (d/h2 {:class "text-lg font-bold font-fira-code"} "Parts List")
@@ -1026,9 +861,13 @@
                               (let [[w h d] dims]
                                 (d/li {:key idx :class "py-1 border-b border-slate-200"}
                                       (d/span {:class "font-bold"} (str qty "x "))
-                                      (d/span {} (str d "\"(L) × " w "\"(W) × " h "\"(H)")))))
+                                      (d/span {} (str (fmt-dim d) "\"(L) × " (fmt-dim w) "\"(W) × " (fmt-dim h) "\"(H)")))))
                             parts))
-                     (d/p {:class "text-slate-500 italic"} "No parts data available")))))))
+                     (d/p {:class "text-slate-500 italic"} "No parts data available"))))
+     ;; Footer
+     (d/footer {:class "z-20 fixed bottom-0 left-0 right-0 py-2 px-4"}
+               (d/p {:class "text-xs font-fira-code text-slate-700"}
+                    "© Armenian Pavilion Venice Biennale Arte 2026")))))
 
 ;; Shadow-cljs hot reload hooks
 ;; Since custom-entity-types uses defonce, it persists across hot reloads
