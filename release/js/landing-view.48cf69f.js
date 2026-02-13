@@ -3,8 +3,8 @@
 var $cljs$core$rand_int$$, $amp$components$fragments$about_me$about_event$$, $amp$components$sections$quote_section$quote_section$$, $amp$components$sections$video_section$video_section$$, $amp$components$ui$lower_panel_cta$lower_panel_cta$$, $amp$components$hero_header$hero_header$$, $amp$hooks$use_window_resize$use_window_size$$, $amp$components$navs$donation_nav$donation_nav$$, $amp$components$navs$logo_nav$logo_nav$$, $amp$components$hover_title$hover_title$$, $amp$components$ui$playable_text$playable_text$$, 
 $amp$components$nav_link$nav_link$$, $amp$components$playful_titles$hero_menu$$, $amp$components$playful_titles$playful_titles$$, $amp$components$elements$lazy_image_gallery$check_column_dimensions$$, $amp$components$elements$lazy_image_gallery$aspect_column$$, $amp$components$elements$lazy_image_gallery$find_closest_size$$, $amp$components$elements$lazy_image_gallery$build_masonary_grid_slots$$, $amp$components$elements$lazy_image_gallery$image_layer$$, $amp$components$elements$lazy_image_gallery$caption_layer$$, 
 $amp$components$elements$lazy_image_gallery$image_card$$, $amp$components$elements$lazy_image_gallery$lazy_image_gallery$$, $amp$components$sections$about_biennale$title$$, $amp$components$sections$about_biennale$copy_block$$, $amp$components$sections$about_biennale$about_biennale_section$$, $amp$components$writing_card$writing_card$$, $amp$components$sections$mobile_hero_section$mobile_hero_section$$, $amp$components$sections$non_profit$title$$, $amp$components$sections$non_profit$copy_block$$, 
-$amp$components$sections$non_profit$non_profit_section$$, $amp$components$sections$team_section$team_member_card$$, $amp$components$sections$team_section$team_members$$, $amp$components$sections$team_section$team_section$$, $amp$components$sections$work_overview$work_overview$$, $cljs$cst$464$images$$, $cljs$cst$457$on_mouse_over_handler$$, $cljs$cst$448$from$$, $cljs$cst$460$click$$, $cljs$cst$469$social$$, $cljs$cst$447$quote$$, $cljs$cst$456$on_click_handler$$, $cljs$cst$453$hover_title_ref$$, 
-$cljs$cst$451$cta_title$$, $cljs$cst$465$image_gallery_container_ref$$, $cljs$cst$454$text$$, $cljs$cst$461$target_ref$$, $cljs$cst$470$email$$, $cljs$cst$459$writing$$, $cljs$cst$449$to$$, $cljs$cst$467$stagger$$, $cljs$cst$471$flash_images_handler$$, $cljs$cst$455$is_playing_QMARK_$$, $cljs$cst$462$other$$, $cljs$cst$466$copy$$, $cljs$cst$458$on_mouse_out_handler$$;
+$amp$components$sections$non_profit$non_profit_section$$, $amp$components$sections$team_section$team_member_card$$, $amp$components$sections$team_section$team_members$$, $amp$components$sections$team_section$team_section$$, $amp$components$sections$work_overview$work_overview$$, $cljs$cst$464$images$$, $cljs$cst$448$from$$, $cljs$cst$456$on_click_handler$$, $cljs$cst$451$cta_title$$, $cljs$cst$465$image_gallery_container_ref$$, $cljs$cst$461$target_ref$$, $cljs$cst$459$writing$$, $cljs$cst$467$stagger$$, 
+$cljs$cst$471$flash_images_handler$$, $cljs$cst$462$other$$, $cljs$cst$458$on_mouse_out_handler$$, $cljs$cst$457$on_mouse_over_handler$$, $cljs$cst$460$click$$, $cljs$cst$469$social$$, $cljs$cst$447$quote$$, $cljs$cst$453$hover_title_ref$$, $cljs$cst$454$text$$, $cljs$cst$470$email$$, $cljs$cst$449$to$$, $cljs$cst$455$is_playing_QMARK_$$, $cljs$cst$466$copy$$;
 $cljs$core$rand_int$$ = function($n$jscomp$162$$) {
   return Math.floor(Math.random() * $n$jscomp$162$$);
 };
@@ -1185,26 +1185,26 @@ $APP.$amp$views$landing_view$landing_view$$ = function($G__62873_props__41909__a
   return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__62873_props__41909__auto__$jscomp$53$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__62873_props__41909__auto__$jscomp$53$$);
 };
 $cljs$cst$464$images$$ = new $APP.$cljs$core$Keyword$$(null, "images", "images", 1757475080);
-$cljs$cst$457$on_mouse_over_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-mouse-over-handler", "on-mouse-over-handler", -1708524524);
 $cljs$cst$448$from$$ = new $APP.$cljs$core$Keyword$$(null, "from", "from", 1815293044);
+$cljs$cst$456$on_click_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-click-handler", "on-click-handler", 746440723);
+$cljs$cst$451$cta_title$$ = new $APP.$cljs$core$Keyword$$(null, "cta-title", "cta-title", -565700885);
+$cljs$cst$465$image_gallery_container_ref$$ = new $APP.$cljs$core$Keyword$$(null, "image-gallery-container-ref", "image-gallery-container-ref", 984527810);
+$cljs$cst$461$target_ref$$ = new $APP.$cljs$core$Keyword$$(null, "target-ref", "target-ref", -164384803);
+$cljs$cst$459$writing$$ = new $APP.$cljs$core$Keyword$$(null, "writing", "writing", -1486865108);
+$cljs$cst$467$stagger$$ = new $APP.$cljs$core$Keyword$$(null, "stagger", "stagger", -689791930);
+$cljs$cst$471$flash_images_handler$$ = new $APP.$cljs$core$Keyword$$(null, "flash-images-handler", "flash-images-handler", -431066401);
+$cljs$cst$462$other$$ = new $APP.$cljs$core$Keyword$$(null, "other", "other", 995793544);
+$cljs$cst$458$on_mouse_out_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-mouse-out-handler", "on-mouse-out-handler", -2132576332);
+$cljs$cst$457$on_mouse_over_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-mouse-over-handler", "on-mouse-over-handler", -1708524524);
 $cljs$cst$460$click$$ = new $APP.$cljs$core$Keyword$$(null, "click", "click", 1912301393);
 $cljs$cst$469$social$$ = new $APP.$cljs$core$Keyword$$(null, "social", "social", -1560314971);
 $cljs$cst$447$quote$$ = new $APP.$cljs$core$Keyword$$(null, "quote", "quote", -262615245);
-$cljs$cst$456$on_click_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-click-handler", "on-click-handler", 746440723);
 $cljs$cst$453$hover_title_ref$$ = new $APP.$cljs$core$Keyword$$(null, "hover-title-ref", "hover-title-ref", -819024146);
-$cljs$cst$451$cta_title$$ = new $APP.$cljs$core$Keyword$$(null, "cta-title", "cta-title", -565700885);
-$cljs$cst$465$image_gallery_container_ref$$ = new $APP.$cljs$core$Keyword$$(null, "image-gallery-container-ref", "image-gallery-container-ref", 984527810);
 $cljs$cst$454$text$$ = new $APP.$cljs$core$Keyword$$(null, "text", "text", -1790561697);
-$cljs$cst$461$target_ref$$ = new $APP.$cljs$core$Keyword$$(null, "target-ref", "target-ref", -164384803);
 $cljs$cst$470$email$$ = new $APP.$cljs$core$Keyword$$(null, "email", "email", 1415816706);
-$cljs$cst$459$writing$$ = new $APP.$cljs$core$Keyword$$(null, "writing", "writing", -1486865108);
 $cljs$cst$449$to$$ = new $APP.$cljs$core$Keyword$$(null, "to", "to", 192099007);
-$cljs$cst$467$stagger$$ = new $APP.$cljs$core$Keyword$$(null, "stagger", "stagger", -689791930);
-$cljs$cst$471$flash_images_handler$$ = new $APP.$cljs$core$Keyword$$(null, "flash-images-handler", "flash-images-handler", -431066401);
 $cljs$cst$455$is_playing_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "is-playing?", "is-playing?", -274112098);
-$cljs$cst$462$other$$ = new $APP.$cljs$core$Keyword$$(null, "other", "other", 995793544);
 $cljs$cst$466$copy$$ = new $APP.$cljs$core$Keyword$$(null, "copy", "copy", -1077617309);
-$cljs$cst$458$on_mouse_out_handler$$ = new $APP.$cljs$core$Keyword$$(null, "on-mouse-out-handler", "on-mouse-out-handler", -2132576332);
 $APP.$JSCompiler_StaticMethods_beforeLoadModuleCode$$("landing-view");
 $APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$192$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$71$tag$$, $APP.$cljs$cst$193$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($amp$components$fragments$about_me$about_event$$, "", null, null) : (void 0).call(null, $amp$components$fragments$about_me$about_event$$, "", null, null)), 
 $APP.$helix$core$register_BANG_$$($amp$components$fragments$about_me$about_event$$, "amp.components.fragments.about-me/about-event"));

@@ -52,10 +52,10 @@ var $amp$components$icons$ChevronRightIcon$$, $amp$components$icons$InformationC
 $amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$, $amp$components$ui$overlays$caption_overlay$$, $amp$components$media$lazy_image_gallery$lazy_image_gallery$$, $amp$components$elements$budget$about$preview$$, $amp$components$elements$budget$about$details$$, $amp$components$elements$budget$about$about$$, $amp$components$elements$budget$committe$preview$$, $amp$components$elements$budget$committe$details$$, $amp$components$elements$budget$committe$committee_member_card$$, 
 $amp$components$elements$budget$committe$committee_gallery$$, $amp$components$elements$budget$committe$committee$$, $amp$components$elements$budget$budget_table$format_currency$$, $amp$components$elements$budget$budget_table$calculate_section_total_no_tax$$, $amp$components$elements$budget$budget_table$sub_total_all_sections$$, $amp$components$elements$budget$budget_table$total_section$$, $amp$components$elements$budget$budget_table$pad_two_digits$$, $amp$components$elements$budget$budget_table$detail_line_item$$, 
 $amp$components$elements$budget$budget_table$section_line_item$$, $amp$components$elements$budget$budget_table$budget_table$$, $amp$components$elements$budget$cost_breakdown$preview$$, $amp$components$elements$budget$cost_breakdown$details$$, $amp$components$elements$budget$cost_breakdown$footer$$, $amp$components$elements$budget$cost_breakdown$cost_breakdown$$, $amp$components$elements$budget$location_section$preview$$, $amp$components$elements$budget$location_section$full_details$$, $amp$components$elements$budget$location_section$location_section$$, 
-$amp$components$elements$budget$non_profit$non_profit$$, $amp$components$navs$back_up_nav$back_up_nav$$, $amp$components$sections$press_release$preview$$, $amp$components$sections$press_release$details$$, $amp$components$sections$press_release$footer$$, $amp$components$sections$press_release$press_release$$, $amp$components$sections$budget_section$section_link$$, $amp$components$sections$budget_section$header$$, $amp$components$sections$budget_section$budget_section$$, $cljs$cst$487$translate$$, 
-$cljs$cst$508$description$$, $cljs$cst$496$enabled_QMARK_$$, $cljs$cst$477$preview_text$$, $cljs$cst$475$section_hint$$, $cljs$cst$523$outro_complete_callback$$, $cljs$cst$500$amount$$, $cljs$cst$479$footer_text$$, $cljs$cst$497$delay$$, $cljs$cst$482$on_exit$$, $cljs$cst$492$parent_styles$$, $cljs$cst$481$root_margin$$, $cljs$cst$490$br$$, $cljs$cst$489$bl$$, $cljs$cst$483$derefed$$, $cljs$cst$516$the_studio$$, $cljs$cst$506$set_expanded_items$$, $cljs$cst$502$rate$$, $cljs$cst$517$marketing$$, 
-$cljs$cst$476$expand_button_label$$, $cljs$cst$513$la_prod$$, $cljs$cst$491$center$$, $cljs$cst$495$slides$$, $cljs$cst$478$full_text$$, $cljs$cst$519$documentation$$, $cljs$cst$504$cost_data$$, $cljs$cst$485$origin$$, $cljs$cst$474$eyebrow$$, $cljs$cst$507$expanded_items$$, $cljs$cst$515$opening$$, $cljs$cst$520$anchor$$, $cljs$cst$480$threshold$$, $cljs$cst$510$label$$, $cljs$cst$512$admin$$, $cljs$cst$503$tax$$, $cljs$cst$484$tl$$, $cljs$cst$522$intro_complete_callback$$, $cljs$cst$488$tr$$, $cljs$cst$521$active$$, 
-$cljs$cst$514$logistics$$, $cljs$cst$511$location$$, $cljs$cst$498$loop$$, $cljs$cst$501$details$$, $cljs$cst$499$subtitle$$, $cljs$cst$518$publication$$, $cljs$cst$486$pos$$, $cljs$cst$509$item$$;
+$amp$components$elements$budget$non_profit$non_profit$$, $amp$components$navs$back_up_nav$back_up_nav$$, $amp$components$sections$press_release$preview$$, $amp$components$sections$press_release$details$$, $amp$components$sections$press_release$footer$$, $amp$components$sections$press_release$press_release$$, $amp$components$sections$budget_section$section_link$$, $amp$components$sections$budget_section$header$$, $amp$components$sections$budget_section$budget_section$$, $cljs$cst$477$preview_text$$, 
+$cljs$cst$475$section_hint$$, $cljs$cst$523$outro_complete_callback$$, $cljs$cst$497$delay$$, $cljs$cst$482$on_exit$$, $cljs$cst$492$parent_styles$$, $cljs$cst$483$derefed$$, $cljs$cst$516$the_studio$$, $cljs$cst$476$expand_button_label$$, $cljs$cst$519$documentation$$, $cljs$cst$507$expanded_items$$, $cljs$cst$510$label$$, $cljs$cst$503$tax$$, $cljs$cst$522$intro_complete_callback$$, $cljs$cst$521$active$$, $cljs$cst$514$logistics$$, $cljs$cst$511$location$$, $cljs$cst$501$details$$, $cljs$cst$499$subtitle$$, 
+$cljs$cst$509$item$$, $cljs$cst$487$translate$$, $cljs$cst$508$description$$, $cljs$cst$496$enabled_QMARK_$$, $cljs$cst$500$amount$$, $cljs$cst$479$footer_text$$, $cljs$cst$481$root_margin$$, $cljs$cst$490$br$$, $cljs$cst$489$bl$$, $cljs$cst$506$set_expanded_items$$, $cljs$cst$502$rate$$, $cljs$cst$517$marketing$$, $cljs$cst$513$la_prod$$, $cljs$cst$491$center$$, $cljs$cst$495$slides$$, $cljs$cst$478$full_text$$, $cljs$cst$504$cost_data$$, $cljs$cst$485$origin$$, $cljs$cst$474$eyebrow$$, $cljs$cst$515$opening$$, 
+$cljs$cst$520$anchor$$, $cljs$cst$480$threshold$$, $cljs$cst$512$admin$$, $cljs$cst$484$tl$$, $cljs$cst$488$tr$$, $cljs$cst$498$loop$$, $cljs$cst$518$publication$$, $cljs$cst$486$pos$$;
 $amp$components$icons$ChevronRightIcon$$ = function($G__61984_JSCompiler_temp_const$jscomp$inline_3282_class$$jscomp$2_map__61982_map__61982__$1_props__41909__auto__$jscomp$5_vec__61979$$, $G__61988$jscomp$inline_3284_JSCompiler_inline_result$jscomp$inline_3283_maybe_ref__41910__auto__$jscomp$5$$) {
   $G__61984_JSCompiler_temp_const$jscomp$inline_3282_class$$jscomp$2_map__61982_map__61982__$1_props__41909__auto__$jscomp$5_vec__61979$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__61984_JSCompiler_temp_const$jscomp$inline_3282_class$$jscomp$2_map__61982_map__61982__$1_props__41909__auto__$jscomp$5_vec__61979$$), $G__61988$jscomp$inline_3284_JSCompiler_inline_result$jscomp$inline_3283_maybe_ref__41910__auto__$jscomp$5$$], 
   null);
@@ -2280,53 +2280,53 @@ $APP.$amp$views$budget_view$budget_view$$ = function($G__64810_64819_G__64813_ma
   }();
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__64810_64819_G__64813_map__64809_map__64809__$1_props__41909__auto__$jscomp$88_vec__64806$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__64810_64819_G__64813_map__64809_map__64809__$1_props__41909__auto__$jscomp$88_vec__64806$$);
 };
-$cljs$cst$487$translate$$ = new $APP.$cljs$core$Keyword$$(null, "translate", "translate", 1336199447);
-$cljs$cst$508$description$$ = new $APP.$cljs$core$Keyword$$(null, "description", "description", -1428560544);
-$cljs$cst$496$enabled_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "enabled?", "enabled?", -1376075057);
 $cljs$cst$477$preview_text$$ = new $APP.$cljs$core$Keyword$$(null, "preview-text", "preview-text", 695562530);
 $cljs$cst$475$section_hint$$ = new $APP.$cljs$core$Keyword$$(null, "section-hint", "section-hint", -565211480);
 $cljs$cst$523$outro_complete_callback$$ = new $APP.$cljs$core$Keyword$$(null, "outro-complete-callback", "outro-complete-callback", -1973874519);
-$cljs$cst$500$amount$$ = new $APP.$cljs$core$Keyword$$(null, "amount", "amount", 364489504);
-$cljs$cst$479$footer_text$$ = new $APP.$cljs$core$Keyword$$(null, "footer-text", "footer-text", 782346468);
 $cljs$cst$497$delay$$ = new $APP.$cljs$core$Keyword$$(null, "delay", "delay", -574225219);
 $cljs$cst$482$on_exit$$ = new $APP.$cljs$core$Keyword$$(null, "on-exit", "on-exit", 1821961613);
 $cljs$cst$492$parent_styles$$ = new $APP.$cljs$core$Keyword$$(null, "parent-styles", "parent-styles", 1435939711);
+$cljs$cst$483$derefed$$ = new $APP.$cljs$core$Keyword$$(null, "derefed", "derefed", 590684583);
+$cljs$cst$516$the_studio$$ = new $APP.$cljs$core$Keyword$$(null, "the-studio", "the-studio", 106848628);
+$cljs$cst$476$expand_button_label$$ = new $APP.$cljs$core$Keyword$$(null, "expand-button-label", "expand-button-label", -2041664671);
+$cljs$cst$519$documentation$$ = new $APP.$cljs$core$Keyword$$(null, "documentation", "documentation", 1889593999);
+$cljs$cst$507$expanded_items$$ = new $APP.$cljs$core$Keyword$$(null, "expanded-items", "expanded-items", 749320313);
+$cljs$cst$510$label$$ = new $APP.$cljs$core$Keyword$$(null, "label", "label", 1718410804);
+$cljs$cst$503$tax$$ = new $APP.$cljs$core$Keyword$$(null, "tax", "tax", -226525810);
+$cljs$cst$522$intro_complete_callback$$ = new $APP.$cljs$core$Keyword$$(null, "intro-complete-callback", "intro-complete-callback", 1121849196);
+$cljs$cst$521$active$$ = new $APP.$cljs$core$Keyword$$(null, "active", "active", 1895962068);
+$cljs$cst$514$logistics$$ = new $APP.$cljs$core$Keyword$$(null, "logistics", "logistics", 712670037);
+$cljs$cst$511$location$$ = new $APP.$cljs$core$Keyword$$(null, "location", "location", 1815599388);
+$cljs$cst$501$details$$ = new $APP.$cljs$core$Keyword$$(null, "details", "details", 1956795411);
+$cljs$cst$499$subtitle$$ = new $APP.$cljs$core$Keyword$$(null, "subtitle", "subtitle", -1614524363);
+$cljs$cst$509$item$$ = new $APP.$cljs$core$Keyword$$(null, "item", "item", 249373802);
+$cljs$cst$487$translate$$ = new $APP.$cljs$core$Keyword$$(null, "translate", "translate", 1336199447);
+$cljs$cst$508$description$$ = new $APP.$cljs$core$Keyword$$(null, "description", "description", -1428560544);
+$cljs$cst$496$enabled_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "enabled?", "enabled?", -1376075057);
+$cljs$cst$500$amount$$ = new $APP.$cljs$core$Keyword$$(null, "amount", "amount", 364489504);
+$cljs$cst$479$footer_text$$ = new $APP.$cljs$core$Keyword$$(null, "footer-text", "footer-text", 782346468);
 $cljs$cst$481$root_margin$$ = new $APP.$cljs$core$Keyword$$(null, "root-margin", "root-margin", -1598874814);
 $cljs$cst$490$br$$ = new $APP.$cljs$core$Keyword$$(null, "br", "br", 934104792);
 $cljs$cst$489$bl$$ = new $APP.$cljs$core$Keyword$$(null, "bl", "bl", 8157834);
-$cljs$cst$483$derefed$$ = new $APP.$cljs$core$Keyword$$(null, "derefed", "derefed", 590684583);
-$cljs$cst$516$the_studio$$ = new $APP.$cljs$core$Keyword$$(null, "the-studio", "the-studio", 106848628);
 $cljs$cst$506$set_expanded_items$$ = new $APP.$cljs$core$Keyword$$(null, "set-expanded-items", "set-expanded-items", -112840979);
 $cljs$cst$502$rate$$ = new $APP.$cljs$core$Keyword$$(null, "rate", "rate", -1428659698);
 $cljs$cst$517$marketing$$ = new $APP.$cljs$core$Keyword$$(null, "marketing", "marketing", 2054879774);
-$cljs$cst$476$expand_button_label$$ = new $APP.$cljs$core$Keyword$$(null, "expand-button-label", "expand-button-label", -2041664671);
 $cljs$cst$513$la_prod$$ = new $APP.$cljs$core$Keyword$$(null, "la-prod", "la-prod", 1444492244);
 $cljs$cst$491$center$$ = new $APP.$cljs$core$Keyword$$(null, "center", "center", -748944368);
 $cljs$cst$495$slides$$ = new $APP.$cljs$core$Keyword$$(null, "slides", "slides", -1933049910);
 $cljs$cst$478$full_text$$ = new $APP.$cljs$core$Keyword$$(null, "full-text", "full-text", 1432444182);
-$cljs$cst$519$documentation$$ = new $APP.$cljs$core$Keyword$$(null, "documentation", "documentation", 1889593999);
 $cljs$cst$504$cost_data$$ = new $APP.$cljs$core$Keyword$$(null, "cost-data", "cost-data", -1991336764);
 $cljs$cst$485$origin$$ = new $APP.$cljs$core$Keyword$$(null, "origin", "origin", 1037372088);
 $cljs$cst$474$eyebrow$$ = new $APP.$cljs$core$Keyword$$(null, "eyebrow", "eyebrow", 497521636);
-$cljs$cst$507$expanded_items$$ = new $APP.$cljs$core$Keyword$$(null, "expanded-items", "expanded-items", 749320313);
 $cljs$cst$515$opening$$ = new $APP.$cljs$core$Keyword$$(null, "opening", "opening", 450993708);
 $cljs$cst$520$anchor$$ = new $APP.$cljs$core$Keyword$$(null, "anchor", "anchor", 1549638489);
 $cljs$cst$480$threshold$$ = new $APP.$cljs$core$Keyword$$(null, "threshold", "threshold", 204221583);
-$cljs$cst$510$label$$ = new $APP.$cljs$core$Keyword$$(null, "label", "label", 1718410804);
 $cljs$cst$512$admin$$ = new $APP.$cljs$core$Keyword$$(null, "admin", "admin", -1239101627);
-$cljs$cst$503$tax$$ = new $APP.$cljs$core$Keyword$$(null, "tax", "tax", -226525810);
 $cljs$cst$484$tl$$ = new $APP.$cljs$core$Keyword$$(null, "tl", "tl", -35265210);
-$cljs$cst$522$intro_complete_callback$$ = new $APP.$cljs$core$Keyword$$(null, "intro-complete-callback", "intro-complete-callback", 1121849196);
 $cljs$cst$488$tr$$ = new $APP.$cljs$core$Keyword$$(null, "tr", "tr", -1424774646);
-$cljs$cst$521$active$$ = new $APP.$cljs$core$Keyword$$(null, "active", "active", 1895962068);
-$cljs$cst$514$logistics$$ = new $APP.$cljs$core$Keyword$$(null, "logistics", "logistics", 712670037);
-$cljs$cst$511$location$$ = new $APP.$cljs$core$Keyword$$(null, "location", "location", 1815599388);
 $cljs$cst$498$loop$$ = new $APP.$cljs$core$Keyword$$(null, "loop", "loop", -395552849);
-$cljs$cst$501$details$$ = new $APP.$cljs$core$Keyword$$(null, "details", "details", 1956795411);
-$cljs$cst$499$subtitle$$ = new $APP.$cljs$core$Keyword$$(null, "subtitle", "subtitle", -1614524363);
 $cljs$cst$518$publication$$ = new $APP.$cljs$core$Keyword$$(null, "publication", "publication", -1089697399);
 $cljs$cst$486$pos$$ = new $APP.$cljs$core$Keyword$$(null, "pos", "pos", -864607220);
-$cljs$cst$509$item$$ = new $APP.$cljs$core$Keyword$$(null, "item", "item", 249373802);
 $APP.$JSCompiler_StaticMethods_beforeLoadModuleCode$$("budget-view");
 $APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$192$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$71$tag$$, $APP.$cljs$cst$193$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($amp$components$elements$budget$section_block$section_block$$, "", null, null) : (void 0).call(null, $amp$components$elements$budget$section_block$section_block$$, 
 "", null, null)), $APP.$helix$core$register_BANG_$$($amp$components$elements$budget$section_block$section_block$$, "amp.components.elements.budget.section-block/section-block"));

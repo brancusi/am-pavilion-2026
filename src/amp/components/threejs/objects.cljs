@@ -36,16 +36,18 @@
                             (not (.-_shadowConfigured obj)))
                    (let [^js shadow (.-shadow obj)
                          ^js shadow-cam (.-camera shadow)
-                         size 200]
+                         size 120]
                      (set! (.-left shadow-cam) (- size))
                      (set! (.-right shadow-cam) size)
                      (set! (.-top shadow-cam) size)
                      (set! (.-bottom shadow-cam) (- size))
                      (set! (.-near shadow-cam) 0.5)
                      (set! (.-far shadow-cam) 500)
-                     (set! (.. shadow -mapSize -x) 2048)
-                     (set! (.. shadow -mapSize -y) 2048)
+                     (set! (.. shadow -mapSize -x) 4096)
+                     (set! (.. shadow -mapSize -y) 4096)
                      (set! (.-bias shadow) -0.0001)
+                     (set! (.-radius shadow) 2)
+                     (set! (.-blurSamples shadow) 16)
                      ;; Dispose old shadow map so new mapSize takes effect
                      (when-let [^js m (.-map shadow)]
                        (.dispose m)

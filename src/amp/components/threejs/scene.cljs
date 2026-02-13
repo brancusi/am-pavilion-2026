@@ -2,6 +2,7 @@
   (:require [threeagent.core :as th]
             ["three" :as THREE]
             ["three/addons/controls/OrbitControls.js" :refer [OrbitControls]]
+            ["three/addons/objects/Sky.js" :refer [Sky]]
             [amp.components.threejs.objects :as objects]))
 
 (defn setup-scene!
@@ -10,7 +11,8 @@
    atoms:  {:controls atom, :context atom, :resize-fn atom,
             :canvas-listeners atom, :selected-block atom, :camera-state atom}"
   [^js container {:keys [root-fn entity-types]} atoms]
-  (let [ctx (th/render root-fn container
+  (let [sky-state (atom nil) ;; holds {:uniforms _ :sun _} for animation
+        ctx (th/render root-fn container
                        {:antialias true
                         :shadow-map {:enabled true
                                      :type THREE/PCFSoftShadowMap}
@@ -21,7 +23,30 @@
                             (.update controls))
                           ;; Configure shadow camera on newly-created directional lights
                           (when-let [ctx @(:context atoms)]
-                            (objects/configure-shadow-camera! (:threejs-scene ctx))))})
+                            (objects/configure-shadow-camera! (:threejs-scene ctx)))
+                          ;; Animate sun: 360° rotation over 30 seconds
+                          (when-let [state @sky-state]
+                            (let [uniforms (:uniforms state)
+                                  ^js sun (:sun state)
+                                  start-time (:start-time state)
+                                  elapsed (/ (- (.now js/Date) start-time) 1000.0)
+                                  azimuth-deg (mod (* (/ elapsed 190.0) 360.0) 360.0)
+                                  phi (.degToRad THREE/MathUtils (- 90 30))
+                                  theta (.degToRad THREE/MathUtils azimuth-deg)]
+                              (.setFromSphericalCoords sun 1 phi theta)
+                              (.copy (.-value (aget uniforms "sunPosition")) sun)
+                              ;; Sync directional light position to match
+                              (when-let [ctx @(:context atoms)]
+                                (let [^js scene (:threejs-scene ctx)
+                                      light-dist 150]
+                                  (.traverse scene
+                                             (fn [^js obj]
+                                               (when (instance? THREE/DirectionalLight obj)
+                                                 (let [^js pos (.-position obj)]
+                                                   (.set pos
+                                                         (* (.-x sun) light-dist)
+                                                         (* (.-y sun) light-dist)
+                                                         (* (.-z sun) light-dist)))))))))))})
         ^js renderer (:threejs-renderer ctx)
         ^js camera (:threejs-default-camera ctx)
         ^js canvas (:canvas ctx)
@@ -33,12 +58,32 @@
                       (set! (.-aspect camera) (/ width height))
                       (.updateProjectionMatrix camera)))]
 
-    ;; Set gradient sky background (warm sun environment)
-    (let [^js scene (:threejs-scene ctx)]
-      (set! (.-background scene) (objects/create-sky-gradient-texture)))
+    ;; Set up procedural sky using the Preetham atmospheric model
+    (let [^js scene (:threejs-scene ctx)
+          ^js sky (Sky.)
+          ^js sun (THREE/Vector3.)
+          ^js uniforms (.. sky -material -uniforms)]
+      (.setScalar (.-scale sky) 450000)
+      (.add scene sky)
+      ;; Configure sky shader uniforms for a warm afternoon look
+      (set! (.-value (aget uniforms "turbidity")) 2)
+      (set! (.-value (aget uniforms "rayleigh")) 1)
+      (set! (.-value (aget uniforms "mieCoefficient")) 0.005)
+      (set! (.-value (aget uniforms "mieDirectionalG")) 0.8)
+      ;; Sun position: elevation 30°, azimuth 150° (warm afternoon)
+      (let [phi (.degToRad THREE/MathUtils (- 90 30))
+            theta (.degToRad THREE/MathUtils 150)]
+        (.setFromSphericalCoords sun 1 phi theta)
+        (.copy (.-value (aget uniforms "sunPosition")) sun))
+      ;; Store sky state for animation in on-before-render
+      (reset! sky-state {:uniforms uniforms :sun sun :start-time (.now js/Date)}))
 
-    ;; Set pixel ratio for crisp rendering
-    (.setPixelRatio renderer (.-devicePixelRatio js/window))
+    ;; Enable tone mapping for realistic HDR sky rendering
+    (set! (.-toneMapping renderer) THREE/ACESFilmicToneMapping)
+    (set! (.-toneMappingExposure renderer) 0.8)
+
+    ;; Set pixel ratio for crisp rendering (cap at 2 for performance)
+    (.setPixelRatio renderer (min (.-devicePixelRatio js/window) 2))
 
     ;; Set 50mm lens
     (set! (.-fov camera) 39)

@@ -1,6 +1,6 @@
 var shadow$provide = {};
 
-var shadow$modules = {"uris":{"main":[],"landing-view":["/js/landing-view.0105e6f.js"],"video-background":["/js/video-background.0105e6f.js"],"budget-view":["/js/budget-view.0105e6f.js"],"mockup-view":["/js/mockup-view.0105e6f.js"]},"infos":{"main":null,"landing-view":["main"],"video-background":["main"],"budget-view":["main"],"mockup-view":["main"]}};
+var shadow$modules = {"uris":{"main":[],"landing-view":["/js/landing-view.48cf69f.js"],"video-background":["/js/video-background.48cf69f.js"],"budget-view":["/js/budget-view.48cf69f.js"],"mockup-view":["/js/mockup-view.48cf69f.js"]},"infos":{"main":null,"landing-view":["main"],"video-background":["main"],"budget-view":["main"],"mockup-view":["main"]}};
 var $APP = {};
 (function(){
 shadow$provide[0]=function(ec,Xd,P){(function(na,$a){typeof P==="object"&&typeof Xd!=="undefined"?$a(P):typeof define==="function"&&define.amd?define(["exports"],$a):(na=na||self,$a(na.window=na.window||{}))})(this,function(na){function $a(xd,wd){xd.prototype=Object.create(wd.prototype);xd.prototype.constructor=xd;xd.__proto__=wd}function Mb(xd){if(xd===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return xd}var qb={autoSleep:120,force3D:"auto",nullTargetWarn:1,
@@ -6864,7 +6864,7 @@ $cljs_bean$from$cljs$core$_lastIndexOf$cljs$0core$0IFn$0_invoke$0arity$03$$ = fu
   if ($len$jscomp$63$$ === 0) {
     return -1;
   }
-  for ($idx$jscomp$50_start$jscomp$156$$ = $idx$jscomp$50_start$jscomp$156$$ > 0 ? $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($len$jscomp$63$$ - 1, $idx$jscomp$50_start$jscomp$156$$) : $idx$jscomp$50_start$jscomp$156$$ < 0 ? $len$jscomp$63$$ + $idx$jscomp$50_start$jscomp$156$$ : $idx$jscomp$50_start$jscomp$156$$;;) {
+  for ($idx$jscomp$50_start$jscomp$156$$ = $idx$jscomp$50_start$jscomp$156$$ > 0 ? $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($len$jscomp$63$$ - 1, $idx$jscomp$50_start$jscomp$156$$) : $idx$jscomp$50_start$jscomp$156$$ < 0 ? $len$jscomp$63$$ + $idx$jscomp$50_start$jscomp$156$$ : $idx$jscomp$50_start$jscomp$156$$;;) {
     if ($idx$jscomp$50_start$jscomp$156$$ >= 0) {
       if ($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($coll$jscomp$925$$, $idx$jscomp$50_start$jscomp$156$$), $x$jscomp$681$$)) {
         return $idx$jscomp$50_start$jscomp$156$$;
@@ -7216,7 +7216,7 @@ $amp$providers$main_provider$MainProvider$$ = function($G__48511_map__48509_map_
 };
 $cljs$tools$reader$impl$inspect$inspect_STAR__col$$ = function($l$jscomp$74_truncate$$, $col$jscomp$13_content$jscomp$12_elements$jscomp$1$$, $start$jscomp$172$$, $end$jscomp$40$$) {
   var $n$jscomp$190_suffix$jscomp$2$$ = $APP.$cljs$core$count$$($col$jscomp$13_content$jscomp$12_elements$jscomp$1$$);
-  $l$jscomp$74_truncate$$ = $APP.$cljs$core$truth_$$($l$jscomp$74_truncate$$) ? 0 : $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$(10, $n$jscomp$190_suffix$jscomp$2$$);
+  $l$jscomp$74_truncate$$ = $APP.$cljs$core$truth_$$($l$jscomp$74_truncate$$) ? 0 : $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$(10, $n$jscomp$190_suffix$jscomp$2$$);
   $col$jscomp$13_content$jscomp$12_elements$jscomp$1$$ = $APP.$cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$partial$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$tools$reader$impl$inspect$inspect_STAR_$$, !0), $cljs$core$take$$.$cljs$core$IFn$_invoke$arity$2$($l$jscomp$74_truncate$$, $col$jscomp$13_content$jscomp$12_elements$jscomp$1$$));
   $col$jscomp$13_content$jscomp$12_elements$jscomp$1$$ = $APP.$cljs$core$apply$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$str$$, $APP.$cljs$core$drop$cljs$0core$0IFn$0_invoke$0arity$02$$(1, $APP.$cljs$core$interleave$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$repeat$cljs$0core$0IFn$0_invoke$0arity$01$$(" "), $col$jscomp$13_content$jscomp$12_elements$jscomp$1$$)));
   $n$jscomp$190_suffix$jscomp$2$$ = $l$jscomp$74_truncate$$ < $n$jscomp$190_suffix$jscomp$2$$ ? "..." : null;
@@ -7704,7 +7704,7 @@ $reitit$trie$assoc_param$$ = function($match$jscomp$21$$, $k$jscomp$301$$, $v$js
   return $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($match$jscomp$21$$, $cljs$cst$210$params$$, $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$3$($params$jscomp$14$$, $k$jscomp$301$$, $v$jscomp$118$$));
 };
 $reitit$trie$common_prefix$$ = function($s1$jscomp$13$$, $s2$jscomp$10$$) {
-  for (var $max$jscomp$4$$ = $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$count$$($s1$jscomp$13$$), $APP.$cljs$core$count$$($s2$jscomp$10$$)), $i$jscomp$372$$ = 0;;) {
+  for (var $max$jscomp$4$$ = $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($APP.$cljs$core$count$$($s1$jscomp$13$$), $APP.$cljs$core$count$$($s2$jscomp$10$$)), $i$jscomp$372$$ = 0;;) {
     if ($i$jscomp$372$$ > $max$jscomp$4$$) {
       return $s1$jscomp$13$$.substring(0, $max$jscomp$4$$);
     }
@@ -9257,7 +9257,7 @@ $APP.$amp$components$navs$progress_menu$progress_menu$$ = function($G__51308_cal
   var $total_sections$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__51308_calculated_index_map__51302_map__51302__$1_props__41909__auto__$jscomp$17_vec__51299$$, $cljs$cst$408$total_sections$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   $G__51308_calculated_index_map__51302_map__51302__$1_props__41909__auto__$jscomp$17_vec__51299$$ = $amp$hooks$use_scroll_progress$use_scroll_progress$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($total_sections$jscomp$1$$);
-  var $current_active_index$$ = $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($total_sections$jscomp$1$$ - 1, $G__51308_calculated_index_map__51302_map__51302__$1_props__41909__auto__$jscomp$17_vec__51299$$);
+  var $current_active_index$$ = $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($total_sections$jscomp$1$$ - 1, $G__51308_calculated_index_map__51302_map__51302__$1_props__41909__auto__$jscomp$17_vec__51299$$);
   $G__51308_calculated_index_map__51302_map__51302__$1_props__41909__auto__$jscomp$17_vec__51299$$ = function() {
     return {className:"", children:function() {
       return function $amp$components$navs$progress_menu$progress_menu_render_$_iter__51313$$($s__51314$$) {
@@ -9506,7 +9506,7 @@ $amp$views$hero_image_view$normalize_dimensions$$ = function($dimensions$jscomp$
   $map__52152_target_side$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__52152__$1_other_side$$, $cljs$cst$431$target_side$$);
   $map__52152__$1_other_side$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__52152__$1_other_side$$, $cljs$cst$432$other_side$$);
   var $aspect_ratio_target_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($dimensions$jscomp$1_new_target_length$$, $map__52152_target_side$$), $other_length$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($dimensions$jscomp$1_new_target_length$$, $map__52152__$1_other_side$$);
-  ($aspect_ratio_target_length$$ % 10 + 10) % 10 > 0 && ($dimensions$jscomp$1_new_target_length$$ = (10 - ($aspect_ratio_target_length$$ % 10 + 10) % 10) / $aspect_ratio_target_length$$ * $aspect_ratio_target_length$$ + $aspect_ratio_target_length$$, $aspect_ratio_target_length$$ = $APP.$cljs$core$max$$.$cljs$core$IFn$_invoke$arity$2$($aspect_ratio_target_length$$, $other_length$$) / $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($aspect_ratio_target_length$$, $other_length$$), $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$variadic$($APP.$cljs$core$PersistentArrayMap$EMPTY$$, 
+  ($aspect_ratio_target_length$$ % 10 + 10) % 10 > 0 && ($dimensions$jscomp$1_new_target_length$$ = (10 - ($aspect_ratio_target_length$$ % 10 + 10) % 10) / $aspect_ratio_target_length$$ * $aspect_ratio_target_length$$ + $aspect_ratio_target_length$$, $aspect_ratio_target_length$$ = $APP.$cljs$core$max$$.$cljs$core$IFn$_invoke$arity$2$($aspect_ratio_target_length$$, $other_length$$) / $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($aspect_ratio_target_length$$, $other_length$$), $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$variadic$($APP.$cljs$core$PersistentArrayMap$EMPTY$$, 
   $map__52152_target_side$$, $dimensions$jscomp$1_new_target_length$$, $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$map__52152__$1_other_side$$, $APP.$cljs$math$round$$($dimensions$jscomp$1_new_target_length$$ * $aspect_ratio_target_length$$)])));
 };
 $APP.$amp$views$hero_image_view$hero_image_view$$ = function($G__52171_dimensions$jscomp$2_map__52168_map__52168__$1_props__41909__auto__$jscomp$21_vec__52165$$, $maybe_ref__41910__auto__$jscomp$21$$) {
@@ -9575,7 +9575,7 @@ $amp$utils$math$clamp_to_dimensions$$ = function($source_dimensions_source_heigh
   $source_dimensions_source_height$$ = $APP.$cljs$cst$416$height$$.$cljs$core$IFn$_invoke$arity$1$($source_dimensions_source_height$$);
   var $target_width$$ = $APP.$cljs$cst$415$width$$.$cljs$core$IFn$_invoke$arity$1$($clamp_dimensions_scale_ratio_target_height$$);
   $clamp_dimensions_scale_ratio_target_height$$ = $APP.$cljs$cst$416$height$$.$cljs$core$IFn$_invoke$arity$1$($clamp_dimensions_scale_ratio_target_height$$);
-  $clamp_dimensions_scale_ratio_target_height$$ = $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($target_width$$ / $source_width$$, $clamp_dimensions_scale_ratio_target_height$$ / $source_dimensions_source_height$$);
+  $clamp_dimensions_scale_ratio_target_height$$ = $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($target_width$$ / $source_width$$, $clamp_dimensions_scale_ratio_target_height$$ / $source_dimensions_source_height$$);
   return new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$APP.$cljs$cst$415$width$$, $APP.$cljs$math$round$$($source_width$$ * $clamp_dimensions_scale_ratio_target_height$$), $APP.$cljs$cst$416$height$$, $APP.$cljs$math$round$$($source_dimensions_source_height$$ * $clamp_dimensions_scale_ratio_target_height$$)], null);
 };
 $APP.$amp$utils$math$normalize_dimensions_v2$$ = function($container_dimensions_max_height__$1$$, $increment$jscomp$2_new_target_side$jscomp$inline_2578_p__52238_updated_dimensions$jscomp$2$$) {
@@ -9588,7 +9588,7 @@ $APP.$amp$utils$math$normalize_dimensions_v2$$ = function($container_dimensions_
   $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$ = $APP.$cljs$cst$416$height$$.$cljs$core$IFn$_invoke$arity$1$($clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$);
   $max_width_max_width__$1$$ = $APP.$cljs$core$truth_$$($max_width_max_width__$1$$) ? $max_width_max_width__$1$$ : $APP.$cljs$cst$415$width$$.$cljs$core$IFn$_invoke$arity$1$($container_dimensions_max_height__$1$$);
   $container_dimensions_max_height__$1$$ = $APP.$cljs$core$truth_$$($aspect_ratio$jscomp$2_map__52239__$1_max_height$$) ? $aspect_ratio$jscomp$2_map__52239__$1_max_height$$ : $APP.$cljs$cst$416$height$$.$cljs$core$IFn$_invoke$arity$1$($container_dimensions_max_height__$1$$);
-  $aspect_ratio$jscomp$2_map__52239__$1_max_height$$ = $APP.$cljs$core$max$$.$cljs$core$IFn$_invoke$arity$2$($side$jscomp$inline_2574_width$jscomp$31$$, $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$) / $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($side$jscomp$inline_2574_width$jscomp$31$$, $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$);
+  $aspect_ratio$jscomp$2_map__52239__$1_max_height$$ = $APP.$cljs$core$max$$.$cljs$core$IFn$_invoke$arity$2$($side$jscomp$inline_2574_width$jscomp$31$$, $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$) / $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($side$jscomp$inline_2574_width$jscomp$31$$, $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$);
   $side$jscomp$inline_2574_width$jscomp$31$$ = $fitting_aspect_ratio_target_side$jscomp$inline_2576$$ <= 1 ? $side$jscomp$inline_2574_width$jscomp$31$$ : $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$;
   $clamped_dimensions_height$jscomp$28_map__52274__$1$jscomp$inline_2575_other_side$jscomp$inline_2577$$ = $APP.$cljs$core$__destructure_map$$($fitting_aspect_ratio_target_side$jscomp$inline_2576$$ <= 1 ? new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$431$target_side$$, $APP.$cljs$cst$415$width$$, $cljs$cst$432$other_side$$, $APP.$cljs$cst$416$height$$], null) : new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$431$target_side$$, $APP.$cljs$cst$416$height$$, $cljs$cst$432$other_side$$, 
   $APP.$cljs$cst$415$width$$], null));
@@ -9672,7 +9672,7 @@ $APP.$amp$components$sections$contact_section$contact_section$$ = function($G__5
                   var $G__52693$$ = {className:"text-white font-fira-code font-light", children:"© 2026 AZ Studios Inc."};
                   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__52693$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__52693$$);
                 }(), function() {
-                  var $G__52698$$ = {className:"text-slate-900 font-fira-code font-light", children:"Version " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("0105e6f")};
+                  var $G__52698$$ = {className:"text-slate-900 font-fira-code font-light", children:"Version " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("48cf69f")};
                   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__52698$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__52698$$);
                 }()]};
               }();
@@ -12124,7 +12124,7 @@ $APP.$cljs$core$max$$.$cljs$lang$applyTo$ = function($G__46779_seq46777$$) {
   return this.$cljs$core$IFn$_invoke$arity$variadic$($G__46778$$, $G__46779_seq46777$$, $seq46777__$1_seq46777__$2$$);
 };
 $APP.$cljs$core$max$$.$cljs$lang$maxFixedArity$ = 2;
-var $cljs$core$min$$ = function $cljs$core$min$$($var_args$jscomp$141$$) {
+$APP.$cljs$core$min$$ = function $cljs$core$min$$($var_args$jscomp$141$$) {
   switch(arguments.length) {
     case 1:
       return $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$1$(arguments[0]);
@@ -12141,22 +12141,22 @@ var $cljs$core$min$$ = function $cljs$core$min$$($var_args$jscomp$141$$) {
       return $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$variadic$(arguments[0], arguments[1], 2 < $args_arr__5901__auto__$jscomp$23$$.length ? new $APP.$cljs$core$IndexedSeq$$($args_arr__5901__auto__$jscomp$23$$.slice(2), 0, null) : null);
   }
 };
-$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$1$ = function($x$jscomp$229$$) {
+$APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$1$ = function($x$jscomp$229$$) {
   return $x$jscomp$229$$;
 };
-$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$ = function($x$jscomp$230$$, $y$jscomp$113$$) {
+$APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$ = function($x$jscomp$230$$, $y$jscomp$113$$) {
   return $APP.$cljs$core$truth_$$(isNaN($x$jscomp$230$$)) ? $x$jscomp$230$$ : $APP.$cljs$core$truth_$$(isNaN($y$jscomp$113$$)) ? $y$jscomp$113$$ : $x$jscomp$230$$ < $y$jscomp$113$$ ? $x$jscomp$230$$ : $y$jscomp$113$$;
 };
-$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$variadic$ = function($x$jscomp$231$$, $y$jscomp$114$$, $more$jscomp$11$$) {
-  return $APP.$cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$($cljs$core$min$$, $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($x$jscomp$231$$, $y$jscomp$114$$), $more$jscomp$11$$);
+$APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$variadic$ = function($x$jscomp$231$$, $y$jscomp$114$$, $more$jscomp$11$$) {
+  return $APP.$cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$($APP.$cljs$core$min$$, $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($x$jscomp$231$$, $y$jscomp$114$$), $more$jscomp$11$$);
 };
-$cljs$core$min$$.$cljs$lang$applyTo$ = function($G__46784_seq46782$$) {
+$APP.$cljs$core$min$$.$cljs$lang$applyTo$ = function($G__46784_seq46782$$) {
   var $G__46783$$ = $APP.$cljs$core$first$$($G__46784_seq46782$$), $seq46782__$1_seq46782__$2$$ = $APP.$cljs$core$next$$($G__46784_seq46782$$);
   $G__46784_seq46782$$ = $APP.$cljs$core$first$$($seq46782__$1_seq46782__$2$$);
   $seq46782__$1_seq46782__$2$$ = $APP.$cljs$core$next$$($seq46782__$1_seq46782__$2$$);
   return this.$cljs$core$IFn$_invoke$arity$variadic$($G__46783$$, $G__46784_seq46782$$, $seq46782__$1_seq46782__$2$$);
 };
-$cljs$core$min$$.$cljs$lang$maxFixedArity$ = 2;
+$APP.$cljs$core$min$$.$cljs$lang$maxFixedArity$ = 2;
 $APP.$cljs$core$str_$$ = function $cljs$core$str_$$($x$jscomp$305$$, $var_args$jscomp$154$$) {
   if ($x$jscomp$305$$ == null) {
     return "";
@@ -17667,84 +17667,163 @@ $APP.$cljs$core$ExceptionInfo$$.prototype.toString = function() {
   return $cljs$core$pr_str_STAR_$$(this);
 };
 var $cljs$core$tapset$$ = null;
-var $cljs$cst$196$enter_route_BANG_$$, $cljs$cst$122$nil$$, $cljs$cst$432$other_side$$, $cljs$cst$355$stop$$, $cljs$cst$409$total_count$$, $cljs$cst$353$old$$, $cljs$cst$177$js$$, $cljs$cst$309$conflicts$$, $cljs$cst$175$uuid$$, $cljs$cst$418$on_intro_completed$$, $cljs$cst$12$status$$, $cljs$cst$313$style$$, $cljs$cst$213$wilds$$, $cljs$cst$431$target_side$$, $cljs$cst$352$controllers$$, $cljs$cst$195$current_section$$, $cljs$cst$27$message$$, $cljs$cst$190$uuid$$, $cljs$cst$329$coercion$$, $cljs$cst$388$additional_classes$$, 
-$cljs$cst$249$meta_merge$$, $cljs$cst$1$readably$$, $cljs$cst$254$coerce$$, $cljs$cst$256$required$$, $cljs$cst$441$max_height$$, $cljs$cst$276$reitit_DOT_trie_SLASH_trie_compiler$$, $cljs$cst$338$reitit_DOT_coercion_SLASH_skip$$, $cljs$cst$374$amp_DOT_services_DOT_router_SLASH_mockups$$, $cljs$cst$87$key__GT_prop$$, $cljs$cst$354$new$$, $cljs$cst$347$modules$$, $cljs$cst$14$pending$$, $cljs$cst$406$off$$, $cljs$cst$201$conflicting$$, $cljs$cst$124$strable$$, $cljs$cst$443$active_QMARK_$$, $cljs$cst$180$cljs_DOT_reader_SLASH_read_date$$, 
-$cljs$cst$323$body_params$$, $cljs$cst$250$update_paths$$, $cljs$cst$207$prepend$$, $cljs$cst$210$params$$, $cljs$cst$421$fp_y$$, $cljs$cst$424$fp_x$$, $cljs$cst$222$path$$, $cljs$cst$257$handler$$, $cljs$cst$404$on$$, $cljs$cst$417$error$$, $cljs$cst$375$home$$, $cljs$cst$327$fragment$$, $cljs$cst$320$query$$, $cljs$cst$402$off_from$$, $cljs$cst$202$name_conflicts$$, $cljs$cst$179$cljs_DOT_core_DOT_PersistentQueue_DOT_EMPTY$$, $cljs$cst$376$current_subsection$$, $cljs$cst$241$reitit_DOT_trie_SLASH_parameters$$, 
-$cljs$cst$86$prop__GT_key$$, $cljs$cst$22$parents$$, $cljs$cst$407$throttle_interval$$, $cljs$cst$223$reitit_DOT_trie_SLASH_following_parameters$$, $cljs$cst$307$reitit_DOT_core_SLASH_path_conflicting$$, $cljs$cst$208$value$$, $cljs$cst$242$reitit_DOT_trie_SLASH_multiple_terminators$$, $cljs$cst$312$in$$, $cljs$cst$13$ready$$, $cljs$cst$176$queue$$, $cljs$cst$243$terminators$$, $cljs$cst$218$syntax$$, $cljs$cst$419$transition$$, $cljs$cst$420$fit$$, $cljs$cst$4$print_length$$, $cljs$cst$371$use_fragment$$, 
-$cljs$cst$88$transform$$, $cljs$cst$413$horizontal$$, $cljs$cst$423$w$$, $cljs$cst$24$ancestors$$, $cljs$cst$245$path_params$$, $cljs$cst$351$reitit_DOT_frontend_DOT_controllers_SLASH_identity$$, $cljs$cst$334$muuntaja_SLASH_request$$, $cljs$cst$411$direction$$, $cljs$cst$221$reitit_DOT_trie_SLASH_unclosed_brackets$$, $cljs$cst$426$h$$, $cljs$cst$103$s$$, $cljs$cst$337$reitit_DOT_coercion_SLASH_serialize_failed_result$$, $cljs$cst$186$read_date$$, $cljs$cst$322$body$$, $cljs$cst$367$click_listen_key$$, 
-$cljs$cst$358$popstate_listener$$, $cljs$cst$400$on_from$$, $cljs$cst$360$last_fragment$$, $cljs$cst$10$fallback_impl$$, $cljs$cst$333$format$$, $cljs$cst$206$top_displace$$, $cljs$cst$324$form_params$$, $cljs$cst$20$keyword_fn$$, $cljs$cst$422$should_load_QMARK_$$, $cljs$cst$277$reitit_DOT_core_SLASH_router$$, $cljs$cst$311$validate$$, $cljs$cst$174$inst$$, $cljs$cst$220$bracket$$, $cljs$cst$181$private$$, $cljs$cst$200$path_conflicts$$, $cljs$cst$248$expand$$, $cljs$cst$308$lookup$$, $cljs$cst$366$listen_key$$, 
-$cljs$cst$247$routes$$, $cljs$cst$335$reitit_DOT_coercion_SLASH_extract_request_format$$, $cljs$cst$310$router$$, $cljs$cst$408$total_sections$$, $cljs$cst$194$navigate_BANG_$$, $cljs$cst$383$scroll_ref$$, $cljs$cst$336$reitit_DOT_coercion_SLASH_parameter_coercion$$, $cljs$cst$350$identity$$, $cljs$cst$219$colon$$, $cljs$cst$23$descendants$$, $cljs$cst$6$cljs_DOT_core_SLASH_not_found$$, $cljs$cst$224$parameters$$, $cljs$cst$199$reitit_DOT_exception_SLASH_cause$$, $cljs$cst$203$reitit_DOT_impl_SLASH_merge_data$$, 
-$cljs$cst$372$amp_DOT_services_DOT_router_SLASH_budget$$, $cljs$cst$97$default_state$$, $cljs$cst$178$cljs_DOT_core_SLASH_into$$, $cljs$cst$412$marker_styles$$, $cljs$cst$255$compile$$, $cljs$cst$259$result$$, $cljs$cst$326$headers$$, $cljs$cst$244$reitit_DOT_impl_SLASH_accumulator$$, $cljs$cst$214$catch_all$$, $cljs$cst$246$path_parts$$, $cljs$cst$205$replace$$, $cljs$cst$368$ignore_anchor_click_QMARK_$$, $cljs$cst$189$view$$, $cljs$cst$185$cljs_DOT_reader$$, $cljs$cst$204$displace$$, $cljs$cst$253$exception$$, 
-$cljs$cst$440$max_width$$, $cljs$cst$410$current_index$$, $cljs$cst$345$on_coercion_error$$, $cljs$cst$8$more_marker$$, $cljs$cst$357$on_navigate$$, $cljs$cst$9$alt_impl$$, $cljs$cst$314$keywordize_QMARK_$$, $cljs$cst$258$template$$, $cljs$cst$359$hashchange_listener$$;
+var $cljs$cst$196$enter_route_BANG_$$, $cljs$cst$122$nil$$, $cljs$cst$355$stop$$, $cljs$cst$177$js$$, $cljs$cst$309$conflicts$$, $cljs$cst$418$on_intro_completed$$, $cljs$cst$213$wilds$$, $cljs$cst$431$target_side$$, $cljs$cst$352$controllers$$, $cljs$cst$388$additional_classes$$, $cljs$cst$249$meta_merge$$, $cljs$cst$1$readably$$, $cljs$cst$254$coerce$$, $cljs$cst$276$reitit_DOT_trie_SLASH_trie_compiler$$, $cljs$cst$374$amp_DOT_services_DOT_router_SLASH_mockups$$, $cljs$cst$87$key__GT_prop$$, $cljs$cst$354$new$$, 
+$cljs$cst$14$pending$$, $cljs$cst$201$conflicting$$, $cljs$cst$124$strable$$, $cljs$cst$180$cljs_DOT_reader_SLASH_read_date$$, $cljs$cst$323$body_params$$, $cljs$cst$250$update_paths$$, $cljs$cst$421$fp_y$$, $cljs$cst$424$fp_x$$, $cljs$cst$417$error$$, $cljs$cst$320$query$$, $cljs$cst$202$name_conflicts$$, $cljs$cst$241$reitit_DOT_trie_SLASH_parameters$$, $cljs$cst$86$prop__GT_key$$, $cljs$cst$22$parents$$, $cljs$cst$223$reitit_DOT_trie_SLASH_following_parameters$$, $cljs$cst$307$reitit_DOT_core_SLASH_path_conflicting$$, 
+$cljs$cst$208$value$$, $cljs$cst$242$reitit_DOT_trie_SLASH_multiple_terminators$$, $cljs$cst$13$ready$$, $cljs$cst$243$terminators$$, $cljs$cst$218$syntax$$, $cljs$cst$419$transition$$, $cljs$cst$245$path_params$$, $cljs$cst$351$reitit_DOT_frontend_DOT_controllers_SLASH_identity$$, $cljs$cst$411$direction$$, $cljs$cst$221$reitit_DOT_trie_SLASH_unclosed_brackets$$, $cljs$cst$337$reitit_DOT_coercion_SLASH_serialize_failed_result$$, $cljs$cst$322$body$$, $cljs$cst$358$popstate_listener$$, $cljs$cst$360$last_fragment$$, 
+$cljs$cst$10$fallback_impl$$, $cljs$cst$206$top_displace$$, $cljs$cst$324$form_params$$, $cljs$cst$277$reitit_DOT_core_SLASH_router$$, $cljs$cst$174$inst$$, $cljs$cst$200$path_conflicts$$, $cljs$cst$248$expand$$, $cljs$cst$308$lookup$$, $cljs$cst$247$routes$$, $cljs$cst$310$router$$, $cljs$cst$194$navigate_BANG_$$, $cljs$cst$336$reitit_DOT_coercion_SLASH_parameter_coercion$$, $cljs$cst$350$identity$$, $cljs$cst$219$colon$$, $cljs$cst$23$descendants$$, $cljs$cst$6$cljs_DOT_core_SLASH_not_found$$, 
+$cljs$cst$224$parameters$$, $cljs$cst$259$result$$, $cljs$cst$326$headers$$, $cljs$cst$246$path_parts$$, $cljs$cst$189$view$$, $cljs$cst$410$current_index$$, $cljs$cst$345$on_coercion_error$$, $cljs$cst$9$alt_impl$$, $cljs$cst$314$keywordize_QMARK_$$, $cljs$cst$432$other_side$$, $cljs$cst$409$total_count$$, $cljs$cst$353$old$$, $cljs$cst$175$uuid$$, $cljs$cst$12$status$$, $cljs$cst$313$style$$, $cljs$cst$195$current_section$$, $cljs$cst$27$message$$, $cljs$cst$190$uuid$$, $cljs$cst$329$coercion$$, 
+$cljs$cst$256$required$$, $cljs$cst$441$max_height$$, $cljs$cst$338$reitit_DOT_coercion_SLASH_skip$$, $cljs$cst$347$modules$$, $cljs$cst$406$off$$, $cljs$cst$443$active_QMARK_$$, $cljs$cst$207$prepend$$, $cljs$cst$210$params$$, $cljs$cst$222$path$$, $cljs$cst$257$handler$$, $cljs$cst$404$on$$, $cljs$cst$375$home$$, $cljs$cst$327$fragment$$, $cljs$cst$402$off_from$$, $cljs$cst$179$cljs_DOT_core_DOT_PersistentQueue_DOT_EMPTY$$, $cljs$cst$376$current_subsection$$, $cljs$cst$407$throttle_interval$$, 
+$cljs$cst$312$in$$, $cljs$cst$176$queue$$, $cljs$cst$420$fit$$, $cljs$cst$4$print_length$$, $cljs$cst$371$use_fragment$$, $cljs$cst$88$transform$$, $cljs$cst$413$horizontal$$, $cljs$cst$423$w$$, $cljs$cst$24$ancestors$$, $cljs$cst$334$muuntaja_SLASH_request$$, $cljs$cst$426$h$$, $cljs$cst$103$s$$, $cljs$cst$186$read_date$$, $cljs$cst$367$click_listen_key$$, $cljs$cst$400$on_from$$, $cljs$cst$333$format$$, $cljs$cst$20$keyword_fn$$, $cljs$cst$422$should_load_QMARK_$$, $cljs$cst$311$validate$$, $cljs$cst$220$bracket$$, 
+$cljs$cst$181$private$$, $cljs$cst$366$listen_key$$, $cljs$cst$335$reitit_DOT_coercion_SLASH_extract_request_format$$, $cljs$cst$408$total_sections$$, $cljs$cst$383$scroll_ref$$, $cljs$cst$199$reitit_DOT_exception_SLASH_cause$$, $cljs$cst$203$reitit_DOT_impl_SLASH_merge_data$$, $cljs$cst$372$amp_DOT_services_DOT_router_SLASH_budget$$, $cljs$cst$97$default_state$$, $cljs$cst$178$cljs_DOT_core_SLASH_into$$, $cljs$cst$412$marker_styles$$, $cljs$cst$255$compile$$, $cljs$cst$244$reitit_DOT_impl_SLASH_accumulator$$, 
+$cljs$cst$214$catch_all$$, $cljs$cst$205$replace$$, $cljs$cst$368$ignore_anchor_click_QMARK_$$, $cljs$cst$185$cljs_DOT_reader$$, $cljs$cst$204$displace$$, $cljs$cst$253$exception$$, $cljs$cst$440$max_width$$, $cljs$cst$8$more_marker$$, $cljs$cst$357$on_navigate$$, $cljs$cst$258$template$$, $cljs$cst$359$hashchange_listener$$;
 $cljs$cst$196$enter_route_BANG_$$ = new $APP.$cljs$core$Keyword$$(null, "enter-route!", "enter-route!", 509643644);
 $cljs$cst$122$nil$$ = new $APP.$cljs$core$Keyword$$(null, "nil", "nil", 99600501);
-$cljs$cst$432$other_side$$ = new $APP.$cljs$core$Keyword$$(null, "other-side", "other-side", 1407404833);
 $cljs$cst$355$stop$$ = new $APP.$cljs$core$Keyword$$(null, "stop", "stop", -2140911342);
 $APP.$cljs$cst$251$left$$ = new $APP.$cljs$core$Keyword$$(null, "left", "left", -399115937);
-$cljs$cst$409$total_count$$ = new $APP.$cljs$core$Keyword$$(null, "total-count", "total-count", -1999441386);
 $APP.$cljs$cst$132$line$$ = new $APP.$cljs$core$Keyword$$(null, "line", "line", 212345235);
-$cljs$cst$353$old$$ = new $APP.$cljs$core$Keyword$$(null, "old", "old", -1825222690);
-$APP.$cljs$cst$123$string$$ = new $APP.$cljs$core$Keyword$$(null, "string", "string", -1989541586);
 $APP.$cljs$cst$129$reader_exception$$ = new $APP.$cljs$core$Keyword$$(null, "reader-exception", "reader-exception", -1938323098);
 $cljs$cst$177$js$$ = new $APP.$cljs$core$Symbol$$(null, "js", "js", -886355190, null);
 $cljs$cst$309$conflicts$$ = new $APP.$cljs$core$Keyword$$(null, "conflicts", "conflicts", -1219561816);
-$APP.$cljs$cst$393$ease$$ = new $APP.$cljs$core$Keyword$$(null, "ease", "ease", -1427802543);
-$cljs$cst$175$uuid$$ = new $APP.$cljs$core$Symbol$$(null, "uuid", "uuid", -504564192, null);
 $cljs$cst$418$on_intro_completed$$ = new $APP.$cljs$core$Keyword$$(null, "on-intro-completed", "on-intro-completed", -1984647747);
-$cljs$cst$12$status$$ = new $APP.$cljs$core$Keyword$$(null, "status", "status", -1997798413);
-$cljs$cst$313$style$$ = new $APP.$cljs$core$Keyword$$(null, "style", "style", -496642736);
 $APP.$cljs$cst$252$right$$ = new $APP.$cljs$core$Keyword$$(null, "right", "right", -452581833);
 $cljs$cst$213$wilds$$ = new $APP.$cljs$core$Keyword$$(null, "wilds", "wilds", 132271223);
 $cljs$cst$431$target_side$$ = new $APP.$cljs$core$Keyword$$(null, "target-side", "target-side", -1724713074);
 $cljs$cst$352$controllers$$ = new $APP.$cljs$core$Keyword$$(null, "controllers", "controllers", -1120410624);
-$cljs$cst$195$current_section$$ = new $APP.$cljs$core$Keyword$$(null, "current-section", "current-section", 1519906460);
-$APP.$cljs$cst$425$src$$ = new $APP.$cljs$core$Keyword$$(null, "src", "src", -1651076051);
-$cljs$cst$27$message$$ = new $APP.$cljs$core$Keyword$$(null, "message", "message", -406056002);
-$cljs$cst$190$uuid$$ = new $APP.$cljs$core$Keyword$$(null, "uuid", "uuid", -2145095719);
-$cljs$cst$329$coercion$$ = new $APP.$cljs$core$Keyword$$(null, "coercion", "coercion", 904067157);
 $cljs$cst$388$additional_classes$$ = new $APP.$cljs$core$Keyword$$(null, "additional-classes", "additional-classes", -144485141);
 $cljs$cst$249$meta_merge$$ = new $APP.$cljs$core$Keyword$$(null, "meta-merge", "meta-merge", 638856199);
 $cljs$cst$1$readably$$ = new $APP.$cljs$core$Keyword$$(null, "readably", "readably", 1129599760);
 $cljs$cst$254$coerce$$ = new $APP.$cljs$core$Keyword$$(null, "coerce", "coerce", 1917884504);
-$cljs$cst$256$required$$ = new $APP.$cljs$core$Keyword$$(null, "required", "required", 1807647006);
-$APP.$cljs$cst$415$width$$ = new $APP.$cljs$core$Keyword$$(null, "width", "width", -384071477);
-$cljs$cst$441$max_height$$ = new $APP.$cljs$core$Keyword$$(null, "max-height", "max-height", -612563804);
 $APP.$cljs$cst$28$data$$ = new $APP.$cljs$core$Keyword$$(null, "data", "data", -232669377);
-$APP.$cljs$cst$428$fn$$ = new $APP.$cljs$core$Keyword$$(null, "fn", "fn", -1175266204);
 $cljs$cst$276$reitit_DOT_trie_SLASH_trie_compiler$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "trie-compiler", "reitit.trie/trie-compiler", 2125029755);
-$APP.$cljs$cst$433$img_src$$ = new $APP.$cljs$core$Keyword$$(null, "img-src", "img-src", -108905265);
-$cljs$cst$338$reitit_DOT_coercion_SLASH_skip$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "skip", "reitit.coercion/skip", -2123160930);
 $cljs$cst$374$amp_DOT_services_DOT_router_SLASH_mockups$$ = new $APP.$cljs$core$Keyword$$("amp.services.router", "mockups", "amp.services.router/mockups", -1377236976);
 $cljs$cst$87$key__GT_prop$$ = new $APP.$cljs$core$Keyword$$(null, "key-\x3eprop", "key-\x3eprop", -1028452531);
 $APP.$cljs$cst$147$Inf$$ = new $APP.$cljs$core$Symbol$$(null, "Inf", "Inf", 647172781, null);
 $cljs$cst$354$new$$ = new $APP.$cljs$core$Keyword$$(null, "new", "new", -2085437848);
 $APP.$cljs$cst$386$class$$ = new $APP.$cljs$core$Keyword$$(null, "class", "class", -2030961996);
-$cljs$cst$347$modules$$ = new $APP.$cljs$core$Keyword$$(null, "modules", "modules", -248193976);
 $APP.$cljs$cst$468$role$$ = new $APP.$cljs$core$Keyword$$(null, "role", "role", -736691072);
 $cljs$cst$14$pending$$ = new $APP.$cljs$core$Keyword$$(null, "pending", "pending", -220036727);
-$cljs$cst$406$off$$ = new $APP.$cljs$core$Keyword$$(null, "off", "off", 606440789);
 $APP.$cljs$cst$96$default$$ = new $APP.$cljs$core$Keyword$$(null, "default", "default", -1987822328);
-$APP.$cljs$cst$92$children$$ = new $APP.$cljs$core$Keyword$$(null, "children", "children", -940561982);
 $cljs$cst$201$conflicting$$ = new $APP.$cljs$core$Keyword$$(null, "conflicting", "conflicting", 2003828416);
 $cljs$cst$124$strable$$ = new $APP.$cljs$core$Keyword$$(null, "strable", "strable", 1877668047);
 $APP.$cljs$cst$130$ex_kind$$ = new $APP.$cljs$core$Keyword$$(null, "ex-kind", "ex-kind", 1581199296);
-$cljs$cst$443$active_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "active?", "active?", 459499776);
 $APP.$cljs$cst$133$col$$ = new $APP.$cljs$core$Keyword$$(null, "col", "col", -1959363084);
 $cljs$cst$180$cljs_DOT_reader_SLASH_read_date$$ = new $APP.$cljs$core$Symbol$$("cljs.reader", "read-date", "cljs.reader/read-date", 1663417238, null);
-$APP.$cljs$cst$394$scroll_to_top$$ = new $APP.$cljs$core$Keyword$$(null, "scroll-to-top", "scroll-to-top", -1074685909);
 $cljs$cst$323$body_params$$ = new $APP.$cljs$core$Keyword$$(null, "body-params", "body-params", -369749490);
 $APP.$cljs$cst$434$opacity$$ = new $APP.$cljs$core$Keyword$$(null, "opacity", "opacity", 397153780);
 $cljs$cst$250$update_paths$$ = new $APP.$cljs$core$Keyword$$(null, "update-paths", "update-paths", -813404599);
 $APP.$cljs$cst$405$onComplete$$ = new $APP.$cljs$core$Keyword$$(null, "onComplete", "onComplete", -661010670);
-$APP.$cljs$cst$438$increment$$ = new $APP.$cljs$core$Keyword$$(null, "increment", "increment", -1558831484);
 $APP.$cljs$cst$445$is_visible_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "is-visible?", "is-visible?", 1902717363);
+$cljs$cst$421$fp_y$$ = new $APP.$cljs$core$Keyword$$(null, "fp-y", "fp-y", -1354081880);
+$cljs$cst$424$fp_x$$ = new $APP.$cljs$core$Keyword$$(null, "fp-x", "fp-x", -890440915);
+$APP.$cljs$cst$373$title$$ = new $APP.$cljs$core$Keyword$$(null, "title", "title", 636505583);
+$cljs$cst$417$error$$ = new $APP.$cljs$core$Keyword$$(null, "error", "error", -978969032);
+$APP.$cljs$cst$136$eof$$ = new $APP.$cljs$core$Keyword$$(null, "eof", "eof", -489063237);
+$cljs$cst$320$query$$ = new $APP.$cljs$core$Keyword$$(null, "query", "query", -1288509510);
+$APP.$cljs$cst$382$end$$ = new $APP.$cljs$core$Keyword$$(null, "end", "end", -268185958);
+$APP.$cljs$cst$446$force_on_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "force-on?", "force-on?", -971910051);
+$cljs$cst$202$name_conflicts$$ = new $APP.$cljs$core$Keyword$$(null, "name-conflicts", "name-conflicts", -2016386444);
+$cljs$cst$241$reitit_DOT_trie_SLASH_parameters$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "parameters", "reitit.trie/parameters", -1304786787);
+$APP.$cljs$cst$126$list$$ = new $APP.$cljs$core$Keyword$$(null, "list", "list", 765357683);
+$cljs$cst$86$prop__GT_key$$ = new $APP.$cljs$core$Keyword$$(null, "prop-\x3ekey", "prop-\x3ekey", -1297715246);
+$APP.$cljs$cst$401$on_to$$ = new $APP.$cljs$core$Keyword$$(null, "on-to", "on-to", -1421818398);
+$APP.$cljs$cst$392$autoKill$$ = new $APP.$cljs$core$Keyword$$(null, "autoKill", "autoKill", 2127110676);
+$cljs$cst$22$parents$$ = new $APP.$cljs$core$Keyword$$(null, "parents", "parents", -2027538891);
+$APP.$cljs$cst$450$playback_id$$ = new $APP.$cljs$core$Keyword$$(null, "playback-id", "playback-id", 23320876);
+$APP.$cljs$cst$93$ref$$ = new $APP.$cljs$core$Keyword$$(null, "ref", "ref", 1289896967);
+$cljs$cst$223$reitit_DOT_trie_SLASH_following_parameters$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "following-parameters", "reitit.trie/following-parameters", -1072685800);
+$cljs$cst$307$reitit_DOT_core_SLASH_path_conflicting$$ = new $APP.$cljs$core$Keyword$$("reitit.core", "path-conflicting", "reitit.core/path-conflicting", 617644429);
+$cljs$cst$208$value$$ = new $APP.$cljs$core$Keyword$$(null, "value", "value", 305978217);
+$APP.$cljs$cst$145$NaN$$ = new $APP.$cljs$core$Symbol$$(null, "NaN", "NaN", 666918153, null);
+$APP.$cljs$cst$444$gradient_class$$ = new $APP.$cljs$core$Keyword$$(null, "gradient-class", "gradient-class", 37945374);
+$cljs$cst$242$reitit_DOT_trie_SLASH_multiple_terminators$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "multiple-terminators", "reitit.trie/multiple-terminators", -116295163);
+$cljs$cst$13$ready$$ = new $APP.$cljs$core$Keyword$$(null, "ready", "ready", 1086465795);
+$cljs$cst$243$terminators$$ = new $APP.$cljs$core$Keyword$$(null, "terminators", "terminators", -1448255712);
+$APP.$cljs$cst$183$arglists$$ = new $APP.$cljs$core$Keyword$$(null, "arglists", "arglists", 1661989754);
+$cljs$cst$218$syntax$$ = new $APP.$cljs$core$Keyword$$(null, "syntax", "syntax", -1637761676);
+$APP.$cljs$cst$141$end_column$$ = new $APP.$cljs$core$Keyword$$(null, "end-column", "end-column", 1425389514);
+$cljs$cst$419$transition$$ = new $APP.$cljs$core$Keyword$$(null, "transition", "transition", 765692007);
+$cljs$cst$245$path_params$$ = new $APP.$cljs$core$Keyword$$(null, "path-params", "path-params", -48130597);
+$APP.$cljs$cst$325$header$$ = new $APP.$cljs$core$Keyword$$(null, "header", "header", 119441134);
+$cljs$cst$351$reitit_DOT_frontend_DOT_controllers_SLASH_identity$$ = new $APP.$cljs$core$Keyword$$("reitit.frontend.controllers", "identity", "reitit.frontend.controllers/identity", -806277693);
+$cljs$cst$411$direction$$ = new $APP.$cljs$core$Keyword$$(null, "direction", "direction", -633359395);
+$cljs$cst$221$reitit_DOT_trie_SLASH_unclosed_brackets$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "unclosed-brackets", "reitit.trie/unclosed-brackets", 1599327560);
+$APP.$cljs$cst$442$aspect_ratio$$ = new $APP.$cljs$core$Keyword$$(null, "aspect-ratio", "aspect-ratio", 1674013504);
+$cljs$cst$337$reitit_DOT_coercion_SLASH_serialize_failed_result$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "serialize-failed-result", "reitit.coercion/serialize-failed-result", 786287704);
+$cljs$cst$322$body$$ = new $APP.$cljs$core$Keyword$$(null, "body", "body", -2049205669);
+$cljs$cst$358$popstate_listener$$ = new $APP.$cljs$core$Keyword$$(null, "popstate-listener", "popstate-listener", 806944472);
+$cljs$cst$360$last_fragment$$ = new $APP.$cljs$core$Keyword$$(null, "last-fragment", "last-fragment", -919830173);
+$cljs$cst$10$fallback_impl$$ = new $APP.$cljs$core$Keyword$$(null, "fallback-impl", "fallback-impl", -1501286995);
+$APP.$cljs$cst$182$name$$ = new $APP.$cljs$core$Keyword$$(null, "name", "name", 1843675177);
+$APP.$cljs$cst$102$param_tags$$ = new $APP.$cljs$core$Keyword$$(null, "param-tags", "param-tags", 250134169);
+$APP.$cljs$cst$71$tag$$ = new $APP.$cljs$core$Keyword$$(null, "tag", "tag", -1290361223);
+$cljs$cst$206$top_displace$$ = new $APP.$cljs$core$Keyword$$(null, "top-displace", "top-displace", -2094589019);
+$APP.$cljs$cst$436$credit$$ = new $APP.$cljs$core$Keyword$$(null, "credit", "credit", 782856892);
+$APP.$cljs$cst$135$illegal_argument$$ = new $APP.$cljs$core$Keyword$$(null, "illegal-argument", "illegal-argument", -1845493170);
+$cljs$cst$324$form_params$$ = new $APP.$cljs$core$Keyword$$(null, "form-params", "form-params", 1884296467);
+$cljs$cst$277$reitit_DOT_core_SLASH_router$$ = new $APP.$cljs$core$Keyword$$("reitit.core", "router", "reitit.core/router", 1293076450);
+$APP.$cljs$cst$21$keywordize_keys$$ = new $APP.$cljs$core$Keyword$$(null, "keywordize-keys", "keywordize-keys", 1310784252);
+$cljs$cst$174$inst$$ = new $APP.$cljs$core$Symbol$$(null, "inst", "inst", -2008473268, null);
+$cljs$cst$200$path_conflicts$$ = new $APP.$cljs$core$Keyword$$(null, "path-conflicts", "path-conflicts", -1238675313);
+$cljs$cst$248$expand$$ = new $APP.$cljs$core$Keyword$$(null, "expand", "expand", 595248157);
+$cljs$cst$308$lookup$$ = new $APP.$cljs$core$Keyword$$(null, "lookup", "lookup", 1225356838);
+$APP.$cljs$cst$384$markers_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "markers?", "markers?", -2073688636);
+$APP.$cljs$cst$398$out$$ = new $APP.$cljs$core$Keyword$$(null, "out", "out", -910545517);
+$cljs$cst$247$routes$$ = new $APP.$cljs$core$Keyword$$(null, "routes", "routes", 457900162);
+$cljs$cst$310$router$$ = new $APP.$cljs$core$Keyword$$(null, "router", "router", 1091916230);
+$cljs$cst$194$navigate_BANG_$$ = new $APP.$cljs$core$Keyword$$(null, "navigate!", "navigate!", 79998348);
+$cljs$cst$336$reitit_DOT_coercion_SLASH_parameter_coercion$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "parameter-coercion", "reitit.coercion/parameter-coercion", -1825124100);
+$cljs$cst$350$identity$$ = new $APP.$cljs$core$Keyword$$(null, "identity", "identity", 1647396035);
+$cljs$cst$219$colon$$ = new $APP.$cljs$core$Keyword$$(null, "colon", "colon", -965200945);
+$cljs$cst$23$descendants$$ = new $APP.$cljs$core$Keyword$$(null, "descendants", "descendants", 1824886031);
+$cljs$cst$6$cljs_DOT_core_SLASH_not_found$$ = new $APP.$cljs$core$Keyword$$("cljs.core", "not-found", "cljs.core/not-found", -1572889185);
+$cljs$cst$224$parameters$$ = new $APP.$cljs$core$Keyword$$(null, "parameters", "parameters", -1229919748);
+$APP.$cljs$cst$11$val$$ = new $APP.$cljs$core$Keyword$$(null, "val", "val", 128701612);
+$APP.$cljs$cst$125$vector$$ = new $APP.$cljs$core$Keyword$$(null, "vector", "vector", 1902966158);
+$APP.$cljs$cst$505$detail$$ = new $APP.$cljs$core$Keyword$$(null, "detail", "detail", -1545345025);
+$cljs$cst$259$result$$ = new $APP.$cljs$core$Keyword$$(null, "result", "result", 1415092211);
+$cljs$cst$326$headers$$ = new $APP.$cljs$core$Keyword$$(null, "headers", "headers", -835030129);
+$APP.$cljs$cst$380$on_toggle$$ = new $APP.$cljs$core$Keyword$$(null, "on-toggle", "on-toggle", -695538774);
+$APP.$cljs$cst$416$height$$ = new $APP.$cljs$core$Keyword$$(null, "height", "height", 1025178622);
+$cljs$cst$246$path_parts$$ = new $APP.$cljs$core$Keyword$$(null, "path-parts", "path-parts", 945822894);
+$cljs$cst$189$view$$ = new $APP.$cljs$core$Keyword$$(null, "view", "view", 1247994814);
+$APP.$cljs$cst$463$idx$$ = new $APP.$cljs$core$Keyword$$(null, "idx", "idx", 1053688473);
+$APP.$cljs$cst$390$scrollTo$$ = new $APP.$cljs$core$Keyword$$(null, "scrollTo", "scrollTo", -658970728);
+$APP.$cljs$cst$134$reader_error$$ = new $APP.$cljs$core$Keyword$$(null, "reader-error", "reader-error", 1610253121);
+$APP.$cljs$cst$142$symbol$$ = new $APP.$cljs$core$Keyword$$(null, "symbol", "symbol", -1038572696);
+$cljs$cst$410$current_index$$ = new $APP.$cljs$core$Keyword$$(null, "current-index", "current-index", 821935409);
+$cljs$cst$345$on_coercion_error$$ = new $APP.$cljs$core$Keyword$$(null, "on-coercion-error", "on-coercion-error", -970787);
+$APP.$cljs$cst$90$key$$ = new $APP.$cljs$core$Keyword$$(null, "key", "key", -1516042587);
+$cljs$cst$9$alt_impl$$ = new $APP.$cljs$core$Keyword$$(null, "alt-impl", "alt-impl", 670969595);
+$cljs$cst$314$keywordize_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "keywordize?", "keywordize?", -234306912);
+$cljs$cst$432$other_side$$ = new $APP.$cljs$core$Keyword$$(null, "other-side", "other-side", 1407404833);
+$cljs$cst$409$total_count$$ = new $APP.$cljs$core$Keyword$$(null, "total-count", "total-count", -1999441386);
+$cljs$cst$353$old$$ = new $APP.$cljs$core$Keyword$$(null, "old", "old", -1825222690);
+$APP.$cljs$cst$123$string$$ = new $APP.$cljs$core$Keyword$$(null, "string", "string", -1989541586);
+$APP.$cljs$cst$393$ease$$ = new $APP.$cljs$core$Keyword$$(null, "ease", "ease", -1427802543);
+$cljs$cst$175$uuid$$ = new $APP.$cljs$core$Symbol$$(null, "uuid", "uuid", -504564192, null);
+$cljs$cst$12$status$$ = new $APP.$cljs$core$Keyword$$(null, "status", "status", -1997798413);
+$cljs$cst$313$style$$ = new $APP.$cljs$core$Keyword$$(null, "style", "style", -496642736);
+$cljs$cst$195$current_section$$ = new $APP.$cljs$core$Keyword$$(null, "current-section", "current-section", 1519906460);
+$APP.$cljs$cst$425$src$$ = new $APP.$cljs$core$Keyword$$(null, "src", "src", -1651076051);
+$cljs$cst$27$message$$ = new $APP.$cljs$core$Keyword$$(null, "message", "message", -406056002);
+$cljs$cst$190$uuid$$ = new $APP.$cljs$core$Keyword$$(null, "uuid", "uuid", -2145095719);
+$cljs$cst$329$coercion$$ = new $APP.$cljs$core$Keyword$$(null, "coercion", "coercion", 904067157);
+$cljs$cst$256$required$$ = new $APP.$cljs$core$Keyword$$(null, "required", "required", 1807647006);
+$APP.$cljs$cst$415$width$$ = new $APP.$cljs$core$Keyword$$(null, "width", "width", -384071477);
+$cljs$cst$441$max_height$$ = new $APP.$cljs$core$Keyword$$(null, "max-height", "max-height", -612563804);
+$APP.$cljs$cst$428$fn$$ = new $APP.$cljs$core$Keyword$$(null, "fn", "fn", -1175266204);
+$APP.$cljs$cst$433$img_src$$ = new $APP.$cljs$core$Keyword$$(null, "img-src", "img-src", -108905265);
+$cljs$cst$338$reitit_DOT_coercion_SLASH_skip$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "skip", "reitit.coercion/skip", -2123160930);
+$cljs$cst$347$modules$$ = new $APP.$cljs$core$Keyword$$(null, "modules", "modules", -248193976);
+$cljs$cst$406$off$$ = new $APP.$cljs$core$Keyword$$(null, "off", "off", 606440789);
+$APP.$cljs$cst$92$children$$ = new $APP.$cljs$core$Keyword$$(null, "children", "children", -940561982);
+$cljs$cst$443$active_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "active?", "active?", 459499776);
+$APP.$cljs$cst$394$scroll_to_top$$ = new $APP.$cljs$core$Keyword$$(null, "scroll-to-top", "scroll-to-top", -1074685909);
+$APP.$cljs$cst$438$increment$$ = new $APP.$cljs$core$Keyword$$(null, "increment", "increment", -1558831484);
 $cljs$cst$207$prepend$$ = new $APP.$cljs$core$Keyword$$(null, "prepend", "prepend", 342616040);
 $APP.$cljs$cst$127$map$$ = new $APP.$cljs$core$Keyword$$(null, "map", "map", 1371690461);
 $cljs$cst$210$params$$ = new $APP.$cljs$core$Keyword$$(null, "params", "params", 710516235);
-$cljs$cst$421$fp_y$$ = new $APP.$cljs$core$Keyword$$(null, "fp-y", "fp-y", -1354081880);
-$cljs$cst$424$fp_x$$ = new $APP.$cljs$core$Keyword$$(null, "fp-x", "fp-x", -890440915);
 $APP.$cljs$cst$193$clojure_DOT_core_SLASH_boolean$$ = new $APP.$cljs$core$Symbol$$("clojure.core", "boolean", "clojure.core/boolean", -1187218872, null);
-$APP.$cljs$cst$373$title$$ = new $APP.$cljs$core$Keyword$$(null, "title", "title", 636505583);
 $APP.$cljs$cst$184$doc$$ = new $APP.$cljs$core$Keyword$$(null, "doc", "doc", 1913296891);
 $APP.$cljs$cst$173$readers$$ = new $APP.$cljs$core$Keyword$$(null, "readers", "readers", -2118263030);
 $cljs$cst$222$path$$ = new $APP.$cljs$core$Keyword$$(null, "path", "path", -188191168);
@@ -17753,54 +17832,28 @@ $APP.$cljs$cst$192$goog_SLASH_DEBUG$$ = new $APP.$cljs$core$Symbol$$("goog", "DE
 $APP.$cljs$cst$139$column$$ = new $APP.$cljs$core$Keyword$$(null, "column", "column", 2078222095);
 $cljs$cst$404$on$$ = new $APP.$cljs$core$Keyword$$(null, "on", "on", 173873944);
 $APP.$cljs$cst$389$duration$$ = new $APP.$cljs$core$Keyword$$(null, "duration", "duration", 1444101068);
-$cljs$cst$417$error$$ = new $APP.$cljs$core$Keyword$$(null, "error", "error", -978969032);
-$APP.$cljs$cst$136$eof$$ = new $APP.$cljs$core$Keyword$$(null, "eof", "eof", -489063237);
 $cljs$cst$375$home$$ = new $APP.$cljs$core$Keyword$$(null, "home", "home", -74557309);
 $cljs$cst$327$fragment$$ = new $APP.$cljs$core$Keyword$$(null, "fragment", "fragment", 826775688);
 $APP.$cljs$cst$397$over$$ = new $APP.$cljs$core$Keyword$$(null, "over", "over", 192553051);
-$cljs$cst$320$query$$ = new $APP.$cljs$core$Keyword$$(null, "query", "query", -1288509510);
 $cljs$cst$402$off_from$$ = new $APP.$cljs$core$Keyword$$(null, "off-from", "off-from", -948648560);
 $APP.$cljs$cst$99$form$$ = new $APP.$cljs$core$Keyword$$(null, "form", "form", -1624062471);
-$APP.$cljs$cst$382$end$$ = new $APP.$cljs$core$Keyword$$(null, "end", "end", -268185958);
 $APP.$cljs$cst$146$_Inf$$ = new $APP.$cljs$core$Symbol$$(null, "-Inf", "-Inf", -2123243689, null);
 $APP.$cljs$cst$387$on_click$$ = new $APP.$cljs$core$Keyword$$(null, "on-click", "on-click", 1632826543);
-$APP.$cljs$cst$446$force_on_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "force-on?", "force-on?", -971910051);
 $APP.$cljs$cst$439$fitting_aspect_ratio$$ = new $APP.$cljs$core$Keyword$$(null, "fitting-aspect-ratio", "fitting-aspect-ratio", 204184448);
-$cljs$cst$202$name_conflicts$$ = new $APP.$cljs$core$Keyword$$(null, "name-conflicts", "name-conflicts", -2016386444);
 $cljs$cst$179$cljs_DOT_core_DOT_PersistentQueue_DOT_EMPTY$$ = new $APP.$cljs$core$Symbol$$(null, "cljs.core.PersistentQueue.EMPTY", "cljs.core.PersistentQueue.EMPTY", 399917828, null);
 $cljs$cst$376$current_subsection$$ = new $APP.$cljs$core$Keyword$$(null, "current-subsection", "current-subsection", -1657102747);
-$cljs$cst$241$reitit_DOT_trie_SLASH_parameters$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "parameters", "reitit.trie/parameters", -1304786787);
 $APP.$cljs$cst$61$ns$$ = new $APP.$cljs$core$Keyword$$(null, "ns", "ns", 441598760);
-$APP.$cljs$cst$126$list$$ = new $APP.$cljs$core$Keyword$$(null, "list", "list", 765357683);
-$cljs$cst$86$prop__GT_key$$ = new $APP.$cljs$core$Keyword$$(null, "prop-\x3ekey", "prop-\x3ekey", -1297715246);
 $APP.$cljs$cst$58$test$$ = new $APP.$cljs$core$Keyword$$(null, "test", "test", 577538877);
-$APP.$cljs$cst$401$on_to$$ = new $APP.$cljs$core$Keyword$$(null, "on-to", "on-to", -1421818398);
-$APP.$cljs$cst$392$autoKill$$ = new $APP.$cljs$core$Keyword$$(null, "autoKill", "autoKill", 2127110676);
-$cljs$cst$22$parents$$ = new $APP.$cljs$core$Keyword$$(null, "parents", "parents", -2027538891);
-$APP.$cljs$cst$450$playback_id$$ = new $APP.$cljs$core$Keyword$$(null, "playback-id", "playback-id", 23320876);
 $cljs$cst$407$throttle_interval$$ = new $APP.$cljs$core$Keyword$$(null, "throttle-interval", "throttle-interval", -1862963883);
-$APP.$cljs$cst$93$ref$$ = new $APP.$cljs$core$Keyword$$(null, "ref", "ref", 1289896967);
-$cljs$cst$223$reitit_DOT_trie_SLASH_following_parameters$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "following-parameters", "reitit.trie/following-parameters", -1072685800);
-$cljs$cst$307$reitit_DOT_core_SLASH_path_conflicting$$ = new $APP.$cljs$core$Keyword$$("reitit.core", "path-conflicting", "reitit.core/path-conflicting", 617644429);
 $APP.$cljs$cst$414$section_id$$ = new $APP.$cljs$core$Keyword$$(null, "section-id", "section-id", -1780104220);
 $APP.$cljs$cst$131$file$$ = new $APP.$cljs$core$Keyword$$(null, "file", "file", -1269645878);
-$cljs$cst$208$value$$ = new $APP.$cljs$core$Keyword$$(null, "value", "value", 305978217);
 $APP.$cljs$cst$144$keyword$$ = new $APP.$cljs$core$Keyword$$(null, "keyword", "keyword", 811389747);
-$APP.$cljs$cst$145$NaN$$ = new $APP.$cljs$core$Symbol$$(null, "NaN", "NaN", 666918153, null);
 $APP.$cljs$cst$188$current_route$$ = new $APP.$cljs$core$Keyword$$(null, "current-route", "current-route", 2067529448);
-$APP.$cljs$cst$444$gradient_class$$ = new $APP.$cljs$core$Keyword$$(null, "gradient-class", "gradient-class", 37945374);
-$cljs$cst$242$reitit_DOT_trie_SLASH_multiple_terminators$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "multiple-terminators", "reitit.trie/multiple-terminators", -116295163);
 $APP.$cljs$cst$403$off_to$$ = new $APP.$cljs$core$Keyword$$(null, "off-to", "off-to", -1936595556);
 $APP.$cljs$cst$191$id$$ = new $APP.$cljs$core$Keyword$$(null, "id", "id", -1388402092);
 $cljs$cst$312$in$$ = new $APP.$cljs$core$Keyword$$(null, "in", "in", -1531184865);
 $APP.$cljs$cst$128$set$$ = new $APP.$cljs$core$Keyword$$(null, "set", "set", 304602554);
-$cljs$cst$13$ready$$ = new $APP.$cljs$core$Keyword$$(null, "ready", "ready", 1086465795);
 $cljs$cst$176$queue$$ = new $APP.$cljs$core$Symbol$$(null, "queue", "queue", -1198599890, null);
-$cljs$cst$243$terminators$$ = new $APP.$cljs$core$Keyword$$(null, "terminators", "terminators", -1448255712);
-$APP.$cljs$cst$183$arglists$$ = new $APP.$cljs$core$Keyword$$(null, "arglists", "arglists", 1661989754);
-$cljs$cst$218$syntax$$ = new $APP.$cljs$core$Keyword$$(null, "syntax", "syntax", -1637761676);
-$APP.$cljs$cst$141$end_column$$ = new $APP.$cljs$core$Keyword$$(null, "end-column", "end-column", 1425389514);
-$cljs$cst$419$transition$$ = new $APP.$cljs$core$Keyword$$(null, "transition", "transition", 765692007);
 $cljs$cst$420$fit$$ = new $APP.$cljs$core$Keyword$$(null, "fit", "fit", 869444807);
 $APP.$cljs$cst$2$meta$$ = new $APP.$cljs$core$Keyword$$(null, "meta", "meta", 1499536964);
 $cljs$cst$4$print_length$$ = new $APP.$cljs$core$Keyword$$(null, "print-length", "print-length", 1931866356);
@@ -17814,105 +17867,52 @@ $APP.$cljs$cst$391$y$$ = new $APP.$cljs$core$Keyword$$(null, "y", "y", -17578597
 $APP.$cljs$cst$321$query_params$$ = new $APP.$cljs$core$Keyword$$(null, "query-params", "query-params", 900640534);
 $APP.$cljs$cst$435$caption$$ = new $APP.$cljs$core$Keyword$$(null, "caption", "caption", -855383902);
 $cljs$cst$24$ancestors$$ = new $APP.$cljs$core$Keyword$$(null, "ancestors", "ancestors", -776045424);
-$cljs$cst$245$path_params$$ = new $APP.$cljs$core$Keyword$$(null, "path-params", "path-params", -48130597);
-$APP.$cljs$cst$325$header$$ = new $APP.$cljs$core$Keyword$$(null, "header", "header", 119441134);
-$cljs$cst$351$reitit_DOT_frontend_DOT_controllers_SLASH_identity$$ = new $APP.$cljs$core$Keyword$$("reitit.frontend.controllers", "identity", "reitit.frontend.controllers/identity", -806277693);
 $cljs$cst$334$muuntaja_SLASH_request$$ = new $APP.$cljs$core$Keyword$$("muuntaja", "request", "muuntaja/request", -1616403792);
-$cljs$cst$411$direction$$ = new $APP.$cljs$core$Keyword$$(null, "direction", "direction", -633359395);
-$cljs$cst$221$reitit_DOT_trie_SLASH_unclosed_brackets$$ = new $APP.$cljs$core$Keyword$$("reitit.trie", "unclosed-brackets", "reitit.trie/unclosed-brackets", 1599327560);
-$APP.$cljs$cst$442$aspect_ratio$$ = new $APP.$cljs$core$Keyword$$(null, "aspect-ratio", "aspect-ratio", 1674013504);
 $cljs$cst$426$h$$ = new $APP.$cljs$core$Keyword$$(null, "h", "h", 1109658740);
 $cljs$cst$103$s$$ = new $APP.$cljs$core$Symbol$$(null, "s", "s", -948495851, null);
-$cljs$cst$337$reitit_DOT_coercion_SLASH_serialize_failed_result$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "serialize-failed-result", "reitit.coercion/serialize-failed-result", 786287704);
 $cljs$cst$186$read_date$$ = new $APP.$cljs$core$Symbol$$(null, "read-date", "read-date", 1874308181, null);
-$cljs$cst$322$body$$ = new $APP.$cljs$core$Keyword$$(null, "body", "body", -2049205669);
 $cljs$cst$367$click_listen_key$$ = new $APP.$cljs$core$Keyword$$(null, "click-listen-key", "click-listen-key", 642240955);
 $APP.$cljs$cst$95$hierarchy$$ = new $APP.$cljs$core$Keyword$$(null, "hierarchy", "hierarchy", -1053470341);
-$cljs$cst$358$popstate_listener$$ = new $APP.$cljs$core$Keyword$$(null, "popstate-listener", "popstate-listener", 806944472);
 $cljs$cst$400$on_from$$ = new $APP.$cljs$core$Keyword$$(null, "on-from", "on-from", 547360815);
-$cljs$cst$360$last_fragment$$ = new $APP.$cljs$core$Keyword$$(null, "last-fragment", "last-fragment", -919830173);
-$cljs$cst$10$fallback_impl$$ = new $APP.$cljs$core$Keyword$$(null, "fallback-impl", "fallback-impl", -1501286995);
-$APP.$cljs$cst$182$name$$ = new $APP.$cljs$core$Keyword$$(null, "name", "name", 1843675177);
-$APP.$cljs$cst$102$param_tags$$ = new $APP.$cljs$core$Keyword$$(null, "param-tags", "param-tags", 250134169);
 $cljs$cst$333$format$$ = new $APP.$cljs$core$Keyword$$(null, "format", "format", -1306924766);
-$APP.$cljs$cst$71$tag$$ = new $APP.$cljs$core$Keyword$$(null, "tag", "tag", -1290361223);
-$cljs$cst$206$top_displace$$ = new $APP.$cljs$core$Keyword$$(null, "top-displace", "top-displace", -2094589019);
-$APP.$cljs$cst$436$credit$$ = new $APP.$cljs$core$Keyword$$(null, "credit", "credit", 782856892);
-$APP.$cljs$cst$135$illegal_argument$$ = new $APP.$cljs$core$Keyword$$(null, "illegal-argument", "illegal-argument", -1845493170);
 $APP.$cljs$cst$494$rotation$$ = new $APP.$cljs$core$Keyword$$(null, "rotation", "rotation", -1728051644);
-$cljs$cst$324$form_params$$ = new $APP.$cljs$core$Keyword$$(null, "form-params", "form-params", 1884296467);
 $cljs$cst$20$keyword_fn$$ = new $APP.$cljs$core$Keyword$$(null, "keyword-fn", "keyword-fn", -64566675);
 $cljs$cst$422$should_load_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "should-load?", "should-load?", 1678347177);
-$cljs$cst$277$reitit_DOT_core_SLASH_router$$ = new $APP.$cljs$core$Keyword$$("reitit.core", "router", "reitit.core/router", 1293076450);
 $cljs$cst$311$validate$$ = new $APP.$cljs$core$Keyword$$(null, "validate", "validate", -201300827);
-$APP.$cljs$cst$21$keywordize_keys$$ = new $APP.$cljs$core$Keyword$$(null, "keywordize-keys", "keywordize-keys", 1310784252);
-$cljs$cst$174$inst$$ = new $APP.$cljs$core$Symbol$$(null, "inst", "inst", -2008473268, null);
 $cljs$cst$220$bracket$$ = new $APP.$cljs$core$Keyword$$(null, "bracket", "bracket", -600276523);
 $cljs$cst$181$private$$ = new $APP.$cljs$core$Keyword$$(null, "private", "private", -558947994);
-$cljs$cst$200$path_conflicts$$ = new $APP.$cljs$core$Keyword$$(null, "path-conflicts", "path-conflicts", -1238675313);
-$cljs$cst$248$expand$$ = new $APP.$cljs$core$Keyword$$(null, "expand", "expand", 595248157);
-$cljs$cst$308$lookup$$ = new $APP.$cljs$core$Keyword$$(null, "lookup", "lookup", 1225356838);
 $cljs$cst$366$listen_key$$ = new $APP.$cljs$core$Keyword$$(null, "listen-key", "listen-key", 51973686);
-$APP.$cljs$cst$384$markers_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "markers?", "markers?", -2073688636);
-$APP.$cljs$cst$398$out$$ = new $APP.$cljs$core$Keyword$$(null, "out", "out", -910545517);
-$cljs$cst$247$routes$$ = new $APP.$cljs$core$Keyword$$(null, "routes", "routes", 457900162);
 $cljs$cst$335$reitit_DOT_coercion_SLASH_extract_request_format$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "extract-request-format", "reitit.coercion/extract-request-format", -1687953607);
-$cljs$cst$310$router$$ = new $APP.$cljs$core$Keyword$$(null, "router", "router", 1091916230);
 $cljs$cst$408$total_sections$$ = new $APP.$cljs$core$Keyword$$(null, "total-sections", "total-sections", -1281238348);
-$cljs$cst$194$navigate_BANG_$$ = new $APP.$cljs$core$Keyword$$(null, "navigate!", "navigate!", 79998348);
 $cljs$cst$383$scroll_ref$$ = new $APP.$cljs$core$Keyword$$(null, "scroll-ref", "scroll-ref", -1108339867);
-$cljs$cst$336$reitit_DOT_coercion_SLASH_parameter_coercion$$ = new $APP.$cljs$core$Keyword$$("reitit.coercion", "parameter-coercion", "reitit.coercion/parameter-coercion", -1825124100);
-$cljs$cst$350$identity$$ = new $APP.$cljs$core$Keyword$$(null, "identity", "identity", 1647396035);
-$cljs$cst$219$colon$$ = new $APP.$cljs$core$Keyword$$(null, "colon", "colon", -965200945);
-$cljs$cst$23$descendants$$ = new $APP.$cljs$core$Keyword$$(null, "descendants", "descendants", 1824886031);
 $APP.$cljs$cst$356$start$$ = new $APP.$cljs$core$Keyword$$(null, "start", "start", -355208981);
-$cljs$cst$6$cljs_DOT_core_SLASH_not_found$$ = new $APP.$cljs$core$Keyword$$("cljs.core", "not-found", "cljs.core/not-found", -1572889185);
-$cljs$cst$224$parameters$$ = new $APP.$cljs$core$Keyword$$(null, "parameters", "parameters", -1229919748);
 $cljs$cst$199$reitit_DOT_exception_SLASH_cause$$ = new $APP.$cljs$core$Keyword$$("reitit.exception", "cause", "reitit.exception/cause", 2130128734);
 $cljs$cst$203$reitit_DOT_impl_SLASH_merge_data$$ = new $APP.$cljs$core$Keyword$$("reitit.impl", "merge-data", "reitit.impl/merge-data", -588218417);
 $cljs$cst$372$amp_DOT_services_DOT_router_SLASH_budget$$ = new $APP.$cljs$core$Keyword$$("amp.services.router", "budget", "amp.services.router/budget", -2077540760);
 $cljs$cst$97$default_state$$ = new $APP.$cljs$core$Keyword$$(null, "default-state", "default-state", 480255861);
-$APP.$cljs$cst$11$val$$ = new $APP.$cljs$core$Keyword$$(null, "val", "val", 128701612);
-$APP.$cljs$cst$125$vector$$ = new $APP.$cljs$core$Keyword$$(null, "vector", "vector", 1902966158);
 $APP.$cljs$cst$5$validator$$ = new $APP.$cljs$core$Keyword$$(null, "validator", "validator", -1966190681);
 $cljs$cst$178$cljs_DOT_core_SLASH_into$$ = new $APP.$cljs$core$Symbol$$("cljs.core", "into", "cljs.core/into", 1879938733, null);
-$APP.$cljs$cst$505$detail$$ = new $APP.$cljs$core$Keyword$$(null, "detail", "detail", -1545345025);
 $cljs$cst$412$marker_styles$$ = new $APP.$cljs$core$Keyword$$(null, "marker-styles", "marker-styles", -1828043984);
 $cljs$cst$255$compile$$ = new $APP.$cljs$core$Keyword$$(null, "compile", "compile", 608186429);
-$cljs$cst$259$result$$ = new $APP.$cljs$core$Keyword$$(null, "result", "result", 1415092211);
-$cljs$cst$326$headers$$ = new $APP.$cljs$core$Keyword$$(null, "headers", "headers", -835030129);
-$APP.$cljs$cst$380$on_toggle$$ = new $APP.$cljs$core$Keyword$$(null, "on-toggle", "on-toggle", -695538774);
-$APP.$cljs$cst$416$height$$ = new $APP.$cljs$core$Keyword$$(null, "height", "height", 1025178622);
 $APP.$cljs$cst$385$debug_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "debug?", "debug?", -1831756173);
 $cljs$cst$244$reitit_DOT_impl_SLASH_accumulator$$ = new $APP.$cljs$core$Keyword$$("reitit.impl", "accumulator", "reitit.impl/accumulator", 1345422212);
 $cljs$cst$214$catch_all$$ = new $APP.$cljs$core$Keyword$$(null, "catch-all", "catch-all", 1184112570);
 $APP.$cljs$cst$138$character$$ = new $APP.$cljs$core$Keyword$$(null, "character", "character", 380652989);
-$cljs$cst$246$path_parts$$ = new $APP.$cljs$core$Keyword$$(null, "path-parts", "path-parts", 945822894);
 $cljs$cst$205$replace$$ = new $APP.$cljs$core$Keyword$$(null, "replace", "replace", -786587770);
 $cljs$cst$368$ignore_anchor_click_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "ignore-anchor-click?", "ignore-anchor-click?", -186007337);
-$cljs$cst$189$view$$ = new $APP.$cljs$core$Keyword$$(null, "view", "view", 1247994814);
-$APP.$cljs$cst$463$idx$$ = new $APP.$cljs$core$Keyword$$(null, "idx", "idx", 1053688473);
 $cljs$cst$185$cljs_DOT_reader$$ = new $APP.$cljs$core$Symbol$$(null, "cljs.reader", "cljs.reader", 1327473948, null);
-$APP.$cljs$cst$390$scrollTo$$ = new $APP.$cljs$core$Keyword$$(null, "scrollTo", "scrollTo", -658970728);
 $cljs$cst$204$displace$$ = new $APP.$cljs$core$Keyword$$(null, "displace", "displace", -1153355602);
-$APP.$cljs$cst$134$reader_error$$ = new $APP.$cljs$core$Keyword$$(null, "reader-error", "reader-error", 1610253121);
 $APP.$cljs$cst$315$open_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "open?", "open?", 1238443125);
 $APP.$cljs$cst$170$namespaced_map$$ = new $APP.$cljs$core$Keyword$$(null, "namespaced-map", "namespaced-map", 1235665380);
 $cljs$cst$253$exception$$ = new $APP.$cljs$core$Keyword$$(null, "exception", "exception", -335277064);
-$APP.$cljs$cst$142$symbol$$ = new $APP.$cljs$core$Keyword$$(null, "symbol", "symbol", -1038572696);
 $cljs$cst$440$max_width$$ = new $APP.$cljs$core$Keyword$$(null, "max-width", "max-width", -1939924051);
-$cljs$cst$410$current_index$$ = new $APP.$cljs$core$Keyword$$(null, "current-index", "current-index", 821935409);
 $APP.$cljs$cst$399$is_on_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "is-on?", "is-on?", 2018749652);
-$cljs$cst$345$on_coercion_error$$ = new $APP.$cljs$core$Keyword$$(null, "on-coercion-error", "on-coercion-error", -970787);
 $cljs$cst$8$more_marker$$ = new $APP.$cljs$core$Keyword$$(null, "more-marker", "more-marker", -14717935);
 $cljs$cst$357$on_navigate$$ = new $APP.$cljs$core$Keyword$$(null, "on-navigate", "on-navigate", -297227908);
-$APP.$cljs$cst$90$key$$ = new $APP.$cljs$core$Keyword$$(null, "key", "key", -1516042587);
 $APP.$cljs$cst$396$initial$$ = new $APP.$cljs$core$Keyword$$(null, "initial", "initial", 1854648214);
 $APP.$cljs$cst$25$type$$ = new $APP.$cljs$core$Keyword$$(null, "type", "type", 1174270348);
-$cljs$cst$9$alt_impl$$ = new $APP.$cljs$core$Keyword$$(null, "alt-impl", "alt-impl", 670969595);
 $APP.$cljs$cst$140$end_line$$ = new $APP.$cljs$core$Keyword$$(null, "end-line", "end-line", 1837326455);
 $APP.$cljs$cst$493$position$$ = new $APP.$cljs$core$Keyword$$(null, "position", "position", -2011731912);
-$cljs$cst$314$keywordize_QMARK_$$ = new $APP.$cljs$core$Keyword$$(null, "keywordize?", "keywordize?", -234306912);
 $cljs$cst$258$template$$ = new $APP.$cljs$core$Keyword$$(null, "template", "template", -702405684);
 $cljs$cst$359$hashchange_listener$$ = new $APP.$cljs$core$Keyword$$(null, "hashchange-listener", "hashchange-listener", -1234988801);
 $APP.$cljs$cst$395$target$$ = new $APP.$cljs$core$Keyword$$(null, "target", "target", 253001721);
@@ -18782,7 +18782,7 @@ $APP.$cljs$tools$reader$impl$inspect$inspect_STAR_$$ = new $APP.$cljs$core$Multi
 $APP.$JSCompiler_StaticMethods_cljs$core$IMultiFn$_add_method$arity$3$$($APP.$cljs$tools$reader$impl$inspect$inspect_STAR_$$, $APP.$cljs$cst$123$string$$, function($n$jscomp$191_truncate$jscomp$1$$, $x$jscomp$721$$) {
   $n$jscomp$191_truncate$jscomp$1$$ = $APP.$cljs$core$truth_$$($n$jscomp$191_truncate$jscomp$1$$) ? 5 : 20;
   var $suffix$jscomp$3$$ = $x$jscomp$721$$.length > $n$jscomp$191_truncate$jscomp$1$$ ? '..."' : '"';
-  return "" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$('"') + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($x$jscomp$721$$.substring(0, $cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($n$jscomp$191_truncate$jscomp$1$$, $x$jscomp$721$$.length))) + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($suffix$jscomp$3$$);
+  return "" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$('"') + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($x$jscomp$721$$.substring(0, $APP.$cljs$core$min$$.$cljs$core$IFn$_invoke$arity$2$($n$jscomp$191_truncate$jscomp$1$$, $x$jscomp$721$$.length))) + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($suffix$jscomp$3$$);
 });
 $APP.$JSCompiler_StaticMethods_cljs$core$IMultiFn$_add_method$arity$3$$($APP.$cljs$tools$reader$impl$inspect$inspect_STAR_$$, $cljs$cst$124$strable$$, function($truncate$jscomp$2$$, $x$jscomp$722$$) {
   return "" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($x$jscomp$722$$);
