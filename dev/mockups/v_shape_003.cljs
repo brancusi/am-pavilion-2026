@@ -114,17 +114,17 @@
                                             :intensity 1.5}]]
             :scene-graph
             [(generate-stepped-wall
-              {:even {:dims [48 36 24] :color "grey"}
-               :odd  {:dims [48 36 18] :color "red"}}
+              {:even {:dims [63 24 24] :color "grey"}
+               :odd  {:dims [63 24 18] :color "red"}}
               {:gap  12
                :rows [10 9 9 8 8 7 7 6 6 5 5 4 4 3 3 2 2 1]})
              (generate-stepped-wall
-              {:transform [0 0 0]
+              {:transform [-14 0 0]
                :rotation  [0 90 0]
-               :even {:dims [48 36 24]
+               :even {:dims [63 24 24]
                       :color "grey"
                       :omit [0]}
-               :odd  {:dims [48 36 18] :color "red"}}
+               :odd  {:dims [63 24 18] :color "red"}}
               {:gap  12
                :rows [10 9 9 8 8 7 7 6 6 5 5 4 4 3 3 2 2 1]})]})
 

@@ -138,27 +138,26 @@
   [{:keys []}]
   (d/div {:class "p-4 italic text-lg text-slate-100"}
          (d/span {:class "block mt-6"}
-                 "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue—a standard and widely accepted model for many non-permanent participating nations.")
+                 "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue\u2014a standard and widely accepted model for many non-permanent participating nations. "
+                 "The selected site operates at a base rental cost of approximately ")
 
-         (d/div {:class "mt-6"}
-                (d/span {:class "text-slate-300"}
-                        "The selected site operates at a base rental cost of approximately ")
-
-                (d/span {:class "font-semibold text-white"} "$195,000")
-
-                (d/span {:class ""}
-                        ", representing a strategic and responsible choice when compared to venues in the Giardini or Arsenale, "
-                        "where base rents—when space is available at all—typically begin at ")
-
-                (d/span {:class "font-semibold text-white"} "$450,000")
+         (d/div {:class "mt-2"}
+                (d/span {:class "font-semibold text-white"} "$150,000")
 
                 (d/span {:class "text-slate-300"}
-                        ", excluding construction, staffing, and operational expenses. "))
+                        ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
+                        "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
+
+                (d/span {:class "font-semibold text-white"} "$450,000 or more")
+
+                (d/span {:class "text-slate-300"}
+                        " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
+                        "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."))
 
          ;; Fundraising committee
          (d/span {:class "block mt-6"}
                  "To support the scale and international significance of this undertaking, "
-                 "a dedicated fundraising committee has been formed to guide and advance the project’s philanthropic efforts. ")
+                 "a dedicated fundraising committee has been formed to guide and advance the project\u2019s philanthropic efforts. ")
 
          (d/div {:class "mt-6"}
                 (d/span {:class "mt-4 text-slate-200"}
@@ -166,10 +165,10 @@
 
                 (d/span {:class "font-medium text-white"}
                         "Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, "
-                        "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian.")
+                        "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian")
 
                 (d/span {:class "text-slate-300"}
-                        ", ensuring the Pavilion’s successful realization through coordinated leadership, stewardship, and long-term commitment. "))))
+                        ", ensuring the Pavilion\u2019s successful realization through coordinated leadership, stewardship, and long-term commitment."))))
 
 (defnc press-release
   [{:keys [id subtitle title]}]

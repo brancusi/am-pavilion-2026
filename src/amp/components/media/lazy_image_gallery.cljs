@@ -58,15 +58,16 @@
                         (embla-api.on "scroll" on-scroll-handler)))
 
 
-    (d/div {:class "relative h-full w-full"}
+    (d/div {:class "relative w-full"}
            (d/div {:ref embla-container-ref
-                   :class "embla h-full w-full"}
-                  (d/div {:class "embla__container h-full w-full flex"}
+                   :class "embla w-full overflow-hidden"}
+                  (d/div {:class "embla__container w-full flex items-center"}
                          (map-indexed (fn [idx {:keys [img-src credit caption aspect-ratio]}]
                                         (let [is-active? (and enabled? (= idx (dec current-index)))]
                                           (d/div {:key img-src
-                                                  :class "embla__slide h-full w-full min-h-screen relative"}
-                                                 (d/div {:class "absolute w-full h-full "}
+                                                  :class "embla__slide w-full flex-[0_0_100%] min-w-0 relative"
+                                                  :style {:aspect-ratio (str aspect-ratio)}}
+                                                 (d/div {:class "w-full h-full"}
                                                         ($ lazy-image-with-overlay
                                                            {:img-src img-src
                                                             :aspect-ratio aspect-ratio

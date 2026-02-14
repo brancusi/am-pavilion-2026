@@ -151,16 +151,21 @@
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
 
+
                                                   {:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
-                                                   :aspect-ratio 0.55
+                                                   :aspect-ratio 1.82
                                                    :caption "BIG RED AT ARSENALE"
+                                                   :credit "Render 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/artwork/1.jpeg"
+                                                   :aspect-ratio 0.75
+                                                   :caption "Leaning Red"
                                                    :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
-                                                   :aspect-ratio 0.55
+                                                   :aspect-ratio 1.82
                                                    :caption "BIG RED AT ARSENALE"
                                                    :credit "Render 2026"}
-
 
                                                   {:img-src "https://atd-722658831.imgix.net/blue_yellow/cu-2.jpg"
                                                    :aspect-ratio 0.75
@@ -168,17 +173,17 @@
                                                    :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/photos/blue_unit_with_hand.jpg"
-                                                   :aspect-ratio 1.5
+                                                   :aspect-ratio 1.50
                                                    :caption "BLUE BLOCK"
                                                    :credit "Los Angeles 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/big_red/low_side.jpg"
-                                                   :aspect-ratio 1.77
+                                                   :aspect-ratio 1.78
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
                                                   {:img-src "https://atd-722658831.imgix.net/big_red/master.jpg"
-                                                   :aspect-ratio 1.77
+                                                   :aspect-ratio 1.78
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
@@ -195,22 +200,4 @@
                                                   {:img-src "https://atd-722658831.imgix.net/big_red/flag.jpg"
                                                    :aspect-ratio 1.38
                                                    :caption "THE BIG RED"
-                                                   :credit "Render 2026"}]}))
-           (d/div {:class "space-y-4 mt-6"}
-                  #_($ captioned-image
-                       {:img-src "https://atd-722658831.imgix.net/simple_blocks/FileName_001Beauty_ViewLayer_099-3.tif"
-                        :caption "BLUE YELLOW BLUE YELLOW"
-                        :credit "© Zadik Zadikian 2026"})
-
-                  #_($ captioned-image
-                       {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
-                        :caption "RED BLUE BLACK"
-                        :credit "© Zadik Zadikian 2026"})
-
-                  #_($ captioned-image
-                       {:img-src "https://atd-722658831.imgix.net/red_config_4/top_down_0000.tif"
-                        :caption "RED BLUE BLACK"
-                        :credit "© Zadik Zadikian 2026"})
-
-                  #_($ captioned-image
-                       {:img-src "https://atd-722658831.imgix.net/artwork/blue_unit_with_hand.tif"})))))
+                                                   :credit "Render 2026"}]})))))

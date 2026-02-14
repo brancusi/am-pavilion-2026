@@ -187,15 +187,14 @@
                                      [visited? is-visible?] (use-intersection-observer outer-ctx)]
                                  (d/div {:class ""
                                          :ref outer-ctx}
-
                                         ($ lazy-image-gallery {:enabled? is-visible?
                                                                :slides [{:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
-                                                                         :aspect-ratio 0.55
+                                                                         :aspect-ratio 1.82
                                                                          :caption "BIG RED AT ARSENALE"
                                                                          :credit "Render 2026"}
 
                                                                         {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
-                                                                         :aspect-ratio 0.55
+                                                                         :aspect-ratio 1.82
                                                                          :caption "BIG RED AT ARSENALE"
                                                                          :credit "Render 2026"}]})))))))))
 

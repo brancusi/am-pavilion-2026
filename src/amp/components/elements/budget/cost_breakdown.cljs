@@ -101,6 +101,8 @@
       :amount 15000,
       :description
       "Early-stage site visits, venue scouting, and development travel necessary prior to final commitments."}]}
+
+
    {:id :la-prod,
     :title "3. LA Production",
     :description
@@ -131,6 +133,8 @@
      {:title "Assistants",
       :amount 21500,
       :description "2 studio assistants supporting daily production and quality control."}]}
+
+
    {:id :logistics,
     :title "4. Logistics",
     :description
