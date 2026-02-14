@@ -20,17 +20,15 @@
                                               " opacity-50"))})))))
 
 (defnc progress-menu-v2
-  [{:keys [total-count current-index direction marker-styles]}]
-  (let [marker-styles (or marker-styles "w-2 h-2 bg-white rounded-full my-2")
-        direction (or direction :horizontal)
-        parent-styles (case direction
-                        :vertical ""
-                        :horizontal "flex gap-x-2")]
-    (d/div {:class parent-styles}
-           (for-indexed [_ idx (range total-count)]
+  [{:keys [total-count current-index]}]
+  (d/div {:class "flex items-center gap-0.5"}
+         (for-indexed [_ idx (range total-count)]
+                      (let [active? (= idx (- current-index 1))]
                         (d/div {:key idx
-                                :class (str marker-styles
-                                            (when (= (+ idx 1) current-index)
-                                              " opacity-100")
-                                            (when (not= (+ idx 1) current-index)
-                                              " opacity-50"))})))))
+                                :style {:width (if active? "16px" "6px")
+                                        :height "3px"
+                                        :border-radius "2px"
+                                        :background (if active?
+                                                      "rgba(255,255,255,1)"
+                                                      "rgba(255,255,255,0.35)")
+                                        :transition "all 0.3s ease"}})))))

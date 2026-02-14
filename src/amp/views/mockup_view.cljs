@@ -7,7 +7,8 @@
    [amp.components.threejs.parts-panel :refer [parts-panel]]
    [amp.components.threejs.scene :as scene]
    [amp.components.threejs.selection-info-bar :refer [selection-info-bar]]
-   [amp.components.threejs.stack :as stack]
+   [amp.components.threejs.renderers.manual-formation :as mf]
+   [amp.components.threejs.renderers.simple-stack-formation :as ssf]
    [amp.hooks.use-atom-state :refer [use-atom-state]]
    [amp.lib.defnc :refer [defnc]]
    [amp.providers.main-provider :refer [use-main-state]]
@@ -50,6 +51,24 @@
 (defn render-elements [elements]
   (reset! scene-override-atom elements))
 
+;; ============ RENDERER REGISTRY ============
+;; Maps renderer keywords to hydration functions.
+;; Each fn takes (mockup-data opts) where mockup-data is the full Firebase map
+;; and opts is {:wireframe? :show-ground? :selection}.
+;; Each renderer extracts the keys it needs from mockup-data.
+;; New formation types register here.
+
+(def renderer-registry
+  (atom {:simple-stack-formation ssf/render
+         :manual-formation       mf/render}))
+
+(defn register-renderer!
+  "Register a hydration function under the given keyword.
+   The function should have the signature (fn [data opts] ...) and
+   return a threeagent scene tree."
+  [k renderer-fn]
+  (swap! renderer-registry assoc k renderer-fn))
+
 ;; Root component render function — fully derived from reactive atoms.
 ;; Reading wireframe-atom, ground-plane-atom, and mockup-data-atom here
 ;; means threeagent automatically re-renders when any of them change.
@@ -61,11 +80,15 @@
           show-ground? @ground-plane-atom
           selection @selected-block-atom]
       (if data
-        (stack/create-stack (:data data)
-                            {:wireframe? wireframe?
-                             :show-ground? show-ground?
-                             :lighting (:lighting data)
-                             :selection selection})
+        (let [renderer-key (keyword (or (:renderer data) :simple-stack-formation))
+              renderer-fn  (get @renderer-registry renderer-key)]
+          (if renderer-fn
+            (renderer-fn data
+                         {:wireframe? wireframe?
+                          :show-ground? show-ground?
+                          :selection selection})
+            (do (js/console.warn "Unknown renderer:" (pr-str renderer-key))
+                [:object])))
         [:object]))))
 
 (defn toggle!
@@ -159,5 +182,8 @@
 
 (defn ^:dev/after-load start []
   (js/console.log "Hot reload — reinitializing scene...")
+  ;; Reset renderer registry so updated render fns are picked up
+  (reset! renderer-registry {:simple-stack-formation ssf/render
+                             :manual-formation       mf/render})
   (when-let [^js container @container-atom]
     (setup-scene! container)))

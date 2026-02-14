@@ -6,9 +6,18 @@
             [amp.lib.defnc :refer [defnc]]))
 
 (defn preload-image
+  "Preloads an image and waits for full decode before calling on-success.
+   Uses .decode() which ensures the image is fully decoded and ready to
+   render without layout shift."
   [url on-success on-error]
   (let [image (js/Image.)]
-    (set! (.-onload image) on-success)
+    (set! (.-onload image)
+          (fn [_]
+            (if (.-decode image)
+              (-> (.decode image)
+                  (.then (fn [] (on-success nil)))
+                  (.catch (fn [_] (on-success nil)))) ;; decode fail is rare; show anyway
+              (on-success nil))))
     (set! (.-onerror image) on-error)
     (set! (.-src image) url)))
 
@@ -64,6 +73,7 @@
         sizes "100vw"
 
         ref (hooks/use-ref "lazy-image-ref")
+        overlay-ref (hooks/use-ref "overlay-ref")
 
         [loaded? set-loaded!] (hooks/use-state false)
 
@@ -91,7 +101,12 @@
      (when loaded?
        (gsap/to-ref ref (merge
                          transition
-                         {:onComplete on-intro-completed}))))
+                         {:onComplete on-intro-completed}))
+
+       (gsap/to-ref overlay-ref (merge
+                                 transition
+                                 {:delay 0.5
+                                  :onComplete on-intro-completed}))))
 
     (d/div {:class "relative flex items-center justify-center"
             #_#_:style {:min-height (str h "px")}}
@@ -103,16 +118,35 @@
                             :src img-src
                             :sizes sizes
                             :alt ""})
-                    (when children
-                      children))
+                    (d/div {:style {:opacity 0}
+                            :ref overlay-ref}
+                           (when children
+                             children)))
 
-             (d/div {:class "absolute w-12 h-12 flex items-center justify-center"}
-                    (d/div {:class "relative w-12 h-12"}
-                           ;; Outer ring with gradient
-                           (d/div {:class "absolute w-12 h-12 inset-0 rounded-full border-4 border-gray-200"})
-                           ;; Spinning arc
-                           (d/div {:class "absolute w-12 h-12 inset-0 rounded-full border-4 border-transparent border-t-gray-800 animate-spin"
-                                   :style {:animation-duration "0.8s"}})))))))
+             ;; Minimal loading indicator — three pulsing dots
+             (d/div {:style {:display "flex"
+                             :align-items "center"
+                             :justify-content "center"
+                             :padding "2rem 0"}}
+                    (d/div {:style {:display "flex" :gap "6px"}}
+                           (d/span {:style {:width "8px"
+                                            :height "8px"
+                                            :border-radius "50%"
+                                            :background "#9ca3af"
+                                            :animation "lazy-img-pulse 1s ease-in-out infinite"
+                                            :animation-delay "0ms"}})
+                           (d/span {:style {:width "8px"
+                                            :height "8px"
+                                            :border-radius "50%"
+                                            :background "#9ca3af"
+                                            :animation "lazy-img-pulse 1s ease-in-out infinite"
+                                            :animation-delay "200ms"}})
+                           (d/span {:style {:width "8px"
+                                            :height "8px"
+                                            :border-radius "50%"
+                                            :background "#9ca3af"
+                                            :animation "lazy-img-pulse 1s ease-in-out infinite"
+                                            :animation-delay "400ms"}})))))))
 
 
 

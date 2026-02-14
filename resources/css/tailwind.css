@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes lazy-img-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
 @font-face {
     font-family: 'FiraCode';
     src: url('../fonts/fira/FiraCode-VF.woff2') format('woff2'),

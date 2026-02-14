@@ -136,66 +136,7 @@
                                         ($ lazy-image-with-overlay
                                            {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
                                             :aspect-ratio 1.34
-                                            :active? true}))))
-
-
-                        #_#_#_($ captioned-image
-                                 {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"})
-                            ($ captioned-image
-                               {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"})
-                          ($ captioned-image
-                             {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"}))
-
-
-                 (d/div {:class "mt-12"}
-                        (d/div {:class "p-4"}
-                               (d/p {:class "pb-4 text-3xl font-helvetica font-bold uppercase"}
-                                    "#2 - GIARDINO 25 (CHURCH COURTYARD)")
-
-                               (d/div {:class "space-y-6"}
-                                      (d/p {}
-                                           (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
-                                           " is an adjacent open-air courtyard formed from the remains of a former church. "
-                                           "Only the original perimeter walls remain; the roof has long since collapsed—"
-                                           "leaving the space exposed to "
-                                           (d/span {:class ""} "light")
-                                           ", "
-                                           (d/span {:class ""} "weather")
-                                           ", and "
-                                           (d/span {:class ""} "time")
-                                           ".")
-
-                                      (d/p {}
-                                           "What survives is a richly textured architectural shell marked by age, erosion, and history. "
-                                           "The courtyard’s stone walls, uneven surfaces, and traces of former sacred use create an atmosphere of "
-                                           (d/span {:class "italic"} "quiet intensity")
-                                           " and material depth.")
-
-                                      (d/p {}
-                                           "In contrast to the controlled interior of Tesa 41, Giardino 25 functions as a "
-                                           (d/span {:class "font-semibold"} "threshold space")
-                                           "—neither fully inside nor fully outside—where the work enters into direct dialogue with "
-                                           (d/span {:class ""} "ruin")
-                                           ", "
-                                           (d/span {:class ""} "open sky")
-                                           ", and "
-                                           (d/span {:class ""} "changing light")
-                                           ".")
-
-                                      (d/p {:class "pt-2"}
-                                           (d/span {:class "font-semibold text-slate-100"} "Giardino 25")
-                                           " extends the Pavilion outward—allowing the project to breathe within an environment shaped as much by "
-                                           (d/span {:class "italic"} "absence")
-                                           " as by structure."))) (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
-                                                                         (let [is-desktop? (use-touch-enabled)
-                                                                               outer-ctx (hooks/use-ref "outer-ctx")
-                                                                               [visited? is-visible?] (use-intersection-observer outer-ctx)]
-                                                                           (d/div {:class ""
-                                                                                   :ref outer-ctx}
-                                                                                  ($ lazy-video {:playback-id "00r6626C33zSItHxx4iRh1oJPgP1tsH01qR00bNkN7i4go"
-                                                                                                 :should-play? is-visible?
-                                                                                                 :allow-audio? false})))))
-
+                                            :active? true})))))
 
 
 

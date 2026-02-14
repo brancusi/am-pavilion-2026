@@ -6,9 +6,12 @@
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [helix.hooks :as hooks]
    [amp.components.media.lazy-image-gallery :refer [lazy-image-gallery]]
+   [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]))
+
+(def lazy-video (lazy-component amp.components.elements.video-background/video-background))
 
 (defnc preview
   [{:keys []}]
@@ -113,6 +116,8 @@
 (defnc about
   [{:keys [id subtitle title]}]
   (let [outer-ctx (hooks/use-ref "outer-ctx")
+        video-ref (hooks/use-ref "video-ref")
+        [video-visited? video-is-visible?] (use-intersection-observer video-ref {:end "bottom"})
         [visited? is-visible?] (use-intersection-observer outer-ctx {:end "bottom"})]
     (d/div {:id id}
            ($ expandable-text-area-2 {:section-hint subtitle
@@ -120,17 +125,43 @@
                                       :expand-button-label "Read more"
                                       :preview-text preview
                                       :full-text details})
-           (d/div {:class "mt-6 max-h-screen"
-                   :ref outer-ctx}
+
+
+
+           (d/div {:class "w-full aspect-[16/9] my-8"
+                   :ref video-ref}
+                  ($ lazy-video {:playback-id "ay2rRkV3PxHTy92Gfi00SibKfEDjDLqGqxmiTzbrz3sQ"
+                                 :aspect-ratio 1.77
+                                 :should-play? video-is-visible?
+                                 :allow-audio? true}))
+           (d/div {:ref outer-ctx
+                   :class "my-4 relative"
+                   :style {:background-color "#1e283a"
+                           :background-image "repeating-linear-gradient(45deg, #1f1f1f 0px, #1f1f1f 10px, #181818 10px, #181818 20px)"}}
+
+
                   ($ lazy-image-gallery {:enabled? is-visible?
                                          :slides [{:img-src "https://atd-722658831.imgix.net/blue_yellow/top_view.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
+
                                                   {:img-src "https://atd-722658831.imgix.net/blue_yellow/side-2.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+                                                   :aspect-ratio 0.55
+                                                   :caption "BIG RED AT ARSENALE"
+                                                   :credit "Render 2026"}
+
+                                                  {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+                                                   :aspect-ratio 0.55
+                                                   :caption "BIG RED AT ARSENALE"
+                                                   :credit "Render 2026"}
+
+
                                                   {:img-src "https://atd-722658831.imgix.net/blue_yellow/cu-2.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
@@ -140,12 +171,6 @@
                                                    :aspect-ratio 1.5
                                                    :caption "BLUE BLOCK"
                                                    :credit "Los Angeles 2026"}
-
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/outpost.jpg"
-                                                   :aspect-ratio 0.558
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}
-
 
                                                   {:img-src "https://atd-722658831.imgix.net/big_red/low_side.jpg"
                                                    :aspect-ratio 1.77

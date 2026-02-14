@@ -13,15 +13,15 @@
     "Secures and operates the Venice exhibition venue: exclusive rental, public-facing staffing, required approvals, insurance coverage, minor architectural adjustments, lighting, and statutory taxes—ensuring the Pavilion is compliant, safe, and fully exhibition-ready during peak Biennale demand.",
     :details
     [{:title "Base rent",
-      :amount 195000,
+      :amount 154700,
       :description
       "Base rental fee for Tesa 41, Giardino 25, and the Outpost for the full Biennale period. This reflects Biennale-season demand, limited availability of compliant venues, and excludes all staffing, permits, utilities, and operational services."}
      {:title "Security staff",
-      :amount 30000,
+      :amount 59805,
       :description
       "Licensed security personnel required during public hours and special events, with increased staffing during opening week and peak visitor periods mandated by venue and municipal regulations."}
      {:title "Mediator staff",
-      :amount 30000,
+      :amount 29902,
       :description
       "Trained gallery mediators providing visitor guidance, crowd flow management, and artwork oversight throughout the exhibition’s daily operations."}
      {:title "Cleaning",
@@ -114,12 +114,6 @@
       :description "High-quality pigments integrated into plaster at casting, ensuring color saturation and longevity."}
      {:title "Plaster", :amount 12500, :description "Primary casting material for all sculptural units."}
      {:title "Acrylic", :amount 2500, :description "Binders and surface materials used in finishing and protection."}
-     {:title "Gold leaf",
-      :amount 28000,
-      :description "Genuine 24-karat gold leaf for select units, sourced for consistency and archival quality. 20 packs of 500 leaf gold."}
-     {:title "Gold sizing",
-      :amount 3000,
-      :description "Adhesives and preparation materials required for professional gilding."}
      {:title "Equipment",
       :amount 18500,
       :description "3D printer, casting tables, studio tools, and studio equipment required for production."}
@@ -132,7 +126,7 @@
      {:title "Utilities/ins.",
       :amount 7500,
       :description "Utilities and insurance coverage for the LA production facility."}
-     {:title "Gilder", :amount 7500, :description "1 part-time gilding professional for gilding several units."}
+
      {:title "Casters", :amount 40000, :description "2 full-time casting professionals for casting and finishing of initial units."}
      {:title "Assistants",
       :amount 21500,

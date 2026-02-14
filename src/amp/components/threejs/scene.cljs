@@ -85,8 +85,10 @@
     ;; Set pixel ratio for crisp rendering (cap at 2 for performance)
     (.setPixelRatio renderer (min (.-devicePixelRatio js/window) 2))
 
-    ;; Set 50mm lens
+    ;; Set 50mm lens + extend frustum to avoid clipping
     (set! (.-fov camera) 39)
+    (set! (.-near camera) 0.1)
+    (set! (.-far camera) 4000)
     (.updateProjectionMatrix camera)
 
     ;; Set initial camera position (zoomed out to see the object)

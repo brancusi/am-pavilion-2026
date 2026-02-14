@@ -74,7 +74,7 @@
 
              ($ about {:id "section-2"
                        :subtitle "overview"
-                       :title "about"})
+                       :title "Armenian Pavilion - The Studio"})
 
              ($ cost-breakdown {:id "section-3"
                                 :subtitle "financials"
