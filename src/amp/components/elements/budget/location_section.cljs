@@ -4,6 +4,7 @@
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.components.media.lazy-image-with-overlay :refer [lazy-image-with-overlay]]
+   [amp.components.media.lazy-image-gallery :refer [lazy-image-gallery]]
    [amp.components.ui.overlays :refer [caption-overlay]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
@@ -24,7 +25,7 @@
               (d/span {:class "font-semibold"} "an interior studio")
               ", "
               (d/span {:class "font-semibold"} "an open-air church courtyard")
-              ", and " (d/span {:class "font-semibold"} "a canal-side outpost")
+              ", and " (d/span {:class "font-semibold"} "a landmark crossing near the Arsenale")
               ". "
               "Together, these spaces form a single spatial constellation: "
               (d/span {:class ""} "a place of work")
@@ -48,7 +49,7 @@
                       (d/span {:class "font-semibold"} "an interior studio")
                       ", "
                       (d/span {:class "font-semibold"} "an open-air church courtyard")
-                      ", and " (d/span {:class "font-semibold"} "a canal-side outpost")
+                      ", and " (d/span {:class "font-semibold"} "a landmark crossing near the Arsenale")
                       ". "
                       "Together, these spaces form a single spatial constellation: "
                       (d/span {:class ""} "a place of work")
@@ -141,41 +142,44 @@
 
 
                  ;; --------------------------
-                 ;; #3 — OUTPOST
+                 ;; #2 — PIRAEUS LION
                  ;; --------------------------
                  (d/div {:class "mt-12"}
                         (d/div {:class "p-4"}
                                (d/p {:class "pb-4 text-3xl font-helvetica font-bold uppercase"}
-                                    "#3 — OUTPOST (CANAL WALKWAY)")
+                                    "#3 — PIRAEUS LION – CROSSING TO THE ARSENALE")
 
                                (d/div {:class "space-y-6"}
                                       (d/p {}
-                                           "The "
-                                           (d/span {:class "font-semibold text-slate-100"} "Outpost")
-                                           " occupies a brick- and stone-laid walkway that projects into the main canal of the Arsenale. "
-                                           "Positioned directly in front of "
-                                           (d/span {:class "font-medium"} "Tesa 41")
-                                           " and "
-                                           (d/span {:class "font-medium"} "Giardino 25")
-                                           ", this narrow but critical site serves as the Pavilion’s most "
-                                           (d/span {:class "font-semibold"} "publicly visible point of contact")
-                                           ".")
-
-                                      (d/p {}
-                                           "The Outpost can be seen from a major pedestrian route leading into the central Arsenale exhibition grounds. "
-                                           "Visitors cross a well-known, heavily trafficked bridge and encounter this site "
-                                           (d/span {:class "italic"} "before")
-                                           " reaching the main Biennale axis.")
-
-                                      (d/p {}
-                                           "As a result, the Outpost functions as a "
-                                           (d/span {:class "font-semibold"} "signal")
-                                           " and a "
+                                           "The outdoor artwork will be installed at the historic crossing grounds near the "
+                                           (d/span {:class "font-semibold text-slate-100"} "Piraeus Lion")
+                                           ", one of the most recognized landmarks marking the approach to the Arsenale. "
+                                           "Positioned at a critical pedestrian junction along the main route into the Biennale’s Arsenale area, this site receives "
+                                           (d/span {:class "font-semibold"} "exceptionally high foot traffic")
+                                           " throughout the six-month exhibition period. "
+                                           "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
+                                           "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
                                            (d/span {:class "font-semibold"} "threshold")
-                                           "—an early, unavoidable presence that announces the Pavilion to thousands of passersby, including those who may never enter the interior spaces.")
+                                           " and a "
+                                           (d/span {:class "font-semibold"} "directional marker")
+                                           "—an early encounter that orients audiences toward the Pavilion.")
 
-                                      (d/p {:class "pt-2"}
-                                           "This location extends the Pavilion into the daily flow of the Biennale—establishing a continuous visual and conceptual presence along the canal.")))
+                                      (d/p {}
+                                           "The placement ensures "
+                                           (d/span {:class "font-semibold"} "extraordinary visibility")
+                                           " within a dense flow of international visitors, curators, press, and collectors. "
+                                           "The artwork, together with its identifying totem, will operate as a "
+                                           (d/span {:class "font-medium"} "visual anchor")
+                                           " in an open, expansive setting framed by historic brick walls, canal frontage, and the continuous movement of people.")
+
+                                      (d/p {}
+                                           "As a freestanding, architecturally scaled form, it will command attention without obstructing circulation, functioning simultaneously as "
+                                           (d/span {:class "font-semibold"} "sculpture")
+                                           ", "
+                                           (d/span {:class "font-semibold"} "signal")
+                                           ", and "
+                                           (d/span {:class "font-semibold"} "prelude")
+                                           ". Its presence at this symbolic gateway amplifies the Pavilion’s reach beyond its interior space, extending Armenia’s participation into one of the most traversed and photographed corridors of the Biennale.")))
 
                         (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
                                (let [is-desktop? (use-touch-enabled)
@@ -183,19 +187,17 @@
                                      [visited? is-visible?] (use-intersection-observer outer-ctx)]
                                  (d/div {:class ""
                                          :ref outer-ctx}
-                                        (d/div {:class "w-full aspect-[16/9]"}
-                                               ($ lazy-video {:playback-id "A602Gnm6A7gpYTl2w4ZnC9xDEnOQQJWbS3dNxhE1O1FE"
-                                                              :should-play? is-visible?
-                                                              :allow-audio? false}))
-                                        (d/div {:class "w-full aspect-[0.525]"}
-                                               ($ lazy-image-with-overlay
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/outpost.jpg"
-                                                   :aspect-ratio 0.55
-                                                   :active? is-visible?}))
-                                        #_($ captioned-image
-                                             {:img-src "https://atd-722658831.imgix.net/red_blue_black_w_person/red_blue_black_w_person.tif"
-                                              :caption "RED BLUE BLACK"
-                                              :credit "© Zadik Zadikian 2026"})))))))))
+
+                                        ($ lazy-image-gallery {:enabled? is-visible?
+                                                               :slides [{:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+                                                                         :aspect-ratio 0.55
+                                                                         :caption "BIG RED AT ARSENALE"
+                                                                         :credit "Render 2026"}
+
+                                                                        {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+                                                                         :aspect-ratio 0.55
+                                                                         :caption "BIG RED AT ARSENALE"
+                                                                         :credit "Render 2026"}]})))))))))
 
 (defnc location-section
   [{:keys [id subtitle title]}]
