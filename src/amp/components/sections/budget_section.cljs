@@ -6,6 +6,7 @@
    [amp.components.elements.budget.location-section :refer [location-section]]
    [amp.components.elements.budget.cash-flow :refer [cash-flow]]
    [amp.components.elements.budget.non-profit :refer [non-profit]]
+   [amp.components.elements.budget.sponsors :refer [sponsors-section]]
    [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.navs.back-up-nav :refer [back-up-nav]]
    [amp.components.section :refer [section]]
@@ -52,11 +53,14 @@
                           {:title "5. Committee"
                            :anchor "section-5"})
                        ($ section-link
-                          {:title "6. Location Details"
+                          {:title "6. Patrons & Sponsors"
                            :anchor "section-6"})
                        ($ section-link
-                          {:title "7. Donation Info"
-                           :anchor "section-7"})))))
+                          {:title "7. Location Details"
+                           :anchor "section-7"})
+                       ($ section-link
+                          {:title "8. Donation Info"
+                           :anchor "section-8"})))))
 
 (defnc budget-section
   []
@@ -92,11 +96,15 @@
                            :subtitle "team"
                            :title "committee"})
 
-             ($ location-section {:id "section-6"
+             ($ sponsors-section {:id "section-6"
+                                  :subtitle "acknowledgements"
+                                  :title "patrons & sponsors"})
+
+             ($ location-section {:id "section-7"
                                   :subtitle "venue"
                                   :title "location information"})
 
-             ($ non-profit {:id "section-7"
+             ($ non-profit {:id "section-8"
                             :subtitle "non-profit"
                             :title "donation information"})
 

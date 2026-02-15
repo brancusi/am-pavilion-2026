@@ -6,7 +6,7 @@
     "postcss:dev": "cross-env TAILWIND_MODE=watch postcss resources/css/tailwind.css -o ./public/css/main.css --verbose -w",
     "data:dev": "cp -rf ./resources/data ./public/ && chokidar \"resources/data/**/*\" -c \"cp -rf ./resources/data ./public/\"",
     "fonts:dev": "cp -rf ./resources/fonts ./public/",
-    "images:dev": "cp -rf ./resources/images ./public/",
+    "images:dev": "cp -rf ./resources/images ./public/ && chokidar \"resources/images/**/*\" -c \"cp -rf ./resources/images ./public/\"",
     "data:build": "cp -rf ./resources/data ./public/",
     "fonts:build": "cp -rf ./resources/fonts ./public/",
     "images:build": "cp -rf ./resources/images ./public/",

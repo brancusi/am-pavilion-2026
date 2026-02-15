@@ -505,7 +505,7 @@
 
 (defn status-classes [status]
   (case status
-    :paid    {:dot "bg-emerald-400/20" :text "text-emerald-400" :label "PAID"}
+    :paid    {:dot "bg-emerald-300/20" :text "text-emerald-300" :label "PAID"}
     :pending {:dot "bg-slate-500/15"   :text "text-slate-500"   :label "DUE"}
     {:dot "bg-slate-500/15" :text "text-slate-500" :label "—"}))
 
@@ -633,7 +633,7 @@
   (let [{:keys [label total paid pending n-items n-crit all-paid has-now]} rollup
         ref   (hooks/use-ref nil)
         color (cond
-                all-paid            "#34d399"   ;; emerald-400
+                all-paid            "#6ee7b7"   ;; emerald-300
                 (pos? n-crit)       "#f9a8d4"   ;; pink-300
                 :else               "#a5b4fc")]  ;; indigo-300
 
@@ -674,7 +674,7 @@
                    (d/span {:class "font-mono text-[10px] text-slate-600"}
                            (str n-items " items"))
                    (when has-now
-                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-emerald-400/15 text-emerald-400"}
+                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-emerald-300/15 text-emerald-300"}
                              "NOW"))
                    (when (pos? n-crit)
                      (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-pink-500/15 text-pink-300"}
@@ -686,7 +686,7 @@
                             :style {:color color}}
                            (format-currency total))
                    (when (pos? paid)
-                     (d/span {:class "font-mono text-[11px] text-emerald-400/60"}
+                     (d/span {:class "font-mono text-[11px] text-emerald-300/60"}
                              (str (format-currency paid) " paid")))
                    (when (pos? pending)
                      (d/span {:class "font-mono text-[11px] text-slate-500"}
@@ -694,7 +694,7 @@
 
             ;; progress bar
             (d/div {:class "mt-1.5 h-px w-full bg-slate-800 relative"}
-                   (d/div {:class "absolute left-0 top-0 h-px bg-emerald-400/50"
+                   (d/div {:class "absolute left-0 top-0 h-px bg-emerald-300/50"
                            :style {:width (str (if (pos? total)
                                                  (Math/round (* 100 (/ paid total)))
                                                  0) "%")}}))))))
@@ -761,9 +761,9 @@
 
            ;; funding bar
            (d/div {:class "mt-4 flex gap-4 flex-wrap"}
-                  (d/div {:class "border-l-2 border-emerald-400/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-emerald-400"} (format-currency funds-raised))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-emerald-400/50"} "funds raised"))
+                  (d/div {:class "border-l-2 border-emerald-300/40 pl-3"}
+                         (d/p {:class "font-mono text-lg font-bold text-emerald-300"} (format-currency funds-raised))
+                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-emerald-300/50"} "funds raised"))
                   (d/div {:class "border-l-2 border-amber-300/40 pl-3"}
                          (d/p {:class "font-mono text-lg font-bold text-amber-300"} (format-currency debt-raised))
                          (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-amber-300/50"} "debt raised"))
@@ -773,8 +773,8 @@
 
            ;; second row: paid / pending / critical / next
            (d/div {:class "mt-3 flex gap-4 flex-wrap"}
-                  (d/div {:class "border-l-2 border-emerald-400/20 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-emerald-400/70"} (format-currency paid-sum))
+                  (d/div {:class "border-l-2 border-emerald-300/20 pl-3"}
+                         (d/p {:class "font-mono text-base font-bold text-emerald-300/70"} (format-currency paid-sum))
                          (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-slate-600"} "paid"))
                   (d/div {:class "border-l-2 border-slate-600 pl-3"}
                          (d/p {:class "font-mono text-base font-bold text-slate-400"} (format-currency pending-sum))
