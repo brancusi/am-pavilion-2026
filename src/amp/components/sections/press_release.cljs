@@ -114,7 +114,7 @@
 
          ;; About Zadik Zadikian
          (d/div {:class "mb-6 mt-8"}
-                (d/p {:class "text-lg font-semibold mb-2"} "About Zadik Zadikian")
+                (d/p {:class "text-lg font-mono font-semibold uppercase tracking-wider mb-2"} "About Zadik Zadikian")
                 (d/p {}
                      "Zadik Zadikian (b. 1948, Erevan, Soviet Armenia) has spent over five decades creating works that challenge both the materials and ideologies of contemporary art. A daring escape from the Soviet Union in his youth marked the beginning of an extraordinary journey, from his training under "
                      (d/span {:class "font-semibold"} "Benjamino Bufano")
@@ -124,7 +124,7 @@
 
          ;; General information
          (d/div {:class "mb-6"}
-                (d/p {:class "text-lg font-semibold mb-2"} "General information")
+                (d/p {:class "text-lg font-mono font-semibold uppercase tracking-wider mb-2"} "General information")
                 (d/p {:class "mb-1"}
                      (d/span {:class "font-semibold"} "Venue: ")
                      (d/a {:href "https://maps.app.goo.gl/aaFLEeWQZmVQNi7d9?g_st=ic"

@@ -1,6 +1,8 @@
 (ns amp.components.elements.budget.cash-flow
   (:require
    ["gsap" :refer [gsap]]
+   [amp.components.elements.budget.budget-table :refer [sub-total-all-sections]]
+   [amp.components.elements.budget.cost-breakdown :refer [cost-data]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -8,7 +10,6 @@
 
 (def cashflow-data {:debt-raised 150000
                     :funds-raised 125000
-                    :target-total 1600000
 
                     :cash-flow-model
                     [;; ============================================================
@@ -723,15 +724,12 @@
                           (filter #(= :paid (keyword (:status %))))
                           (map :amount)
                           (reduce + 0))
-        pending-sum  (->> entries
-                          (filter #(= :pending (keyword (:status %))))
-                          (map :amount)
-                          (reduce + 0))
+        pending-sum  (- target-total paid-sum)
         critical-sum (->> entries
                           (filter #(= :critical (keyword (:priority %))))
                           (map :amount)
                           (reduce + 0))
-        gap          (- target-total funds-raised debt-raised)
+        gap          (- target-total funds-raised)
         next-entry   (->> entries
                           (filter #(= :pending (keyword (:status %))))
                           (sort-by (comp date->ms parse-date :due))
@@ -769,9 +767,9 @@
                   (d/div {:class "border-l-2 border-amber-300/40 pl-3"}
                          (d/p {:class "font-mono text-lg font-bold text-amber-300"} (format-currency debt-raised))
                          (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-amber-300/50"} "debt raised"))
-                  (d/div {:class "border-l-2 border-pink-400/40 pl-3"}
+                  (d/div {:class "border-l-2 border-pink-300/40 pl-3"}
                          (d/p {:class "font-mono text-lg font-bold text-pink-300"} (format-currency gap))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-pink-400/50"} "remaining gap")))
+                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-pink-300/50"} "remaining gap")))
 
            ;; second row: paid / pending / critical / next
            (d/div {:class "mt-3 flex gap-4 flex-wrap"}
@@ -824,7 +822,9 @@
               (d/div {:class "h-5 w-5 animate-spin border-2 border-slate-700 border-t-pink-400"}))
 
        :else
-       (let [{:keys [cash-flow-model target-total funds-raised debt-raised]} entries
+       (let [{:keys [cash-flow-model funds-raised debt-raised]} entries
+             budget-sub-total (sub-total-all-sections cost-data)
+             target-total (Math/round (+ budget-sub-total (* budget-sub-total 0.1)))
              entries-kw (map #(-> %
                                   (update :priority keyword)
                                   (update :status keyword))

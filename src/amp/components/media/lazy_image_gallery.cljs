@@ -17,7 +17,7 @@
 
 (defnc lazy-image-gallery
   [{:keys [slides enabled?]}]
-  (let [lazy-image-parent-styles "font-fira-code
+  (let [lazy-image-parent-styles "font-mono
                                bg-white/70
                                px-2
                                text-slate-700"
@@ -100,6 +100,6 @@
                                 (d/div {:class ""}
                                        ($ progress-menu-v2 {:total-count total-slides
                                                             :current-index current-index
-                                                            :marker-styles "w-3 h-3 bg-pink-400 rounded-full my-2 border-blue-800 border-2"}))))))))
+                                                            :marker-styles "w-3 h-3 bg-pink-300 rounded-full my-2 border-slate-700 border-2"}))))))))
 
 

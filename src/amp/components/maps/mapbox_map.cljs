@@ -154,11 +154,11 @@
                      " :latitude  " (fmt (:latitude view-state) 6) "\n"
                      " :zoom      " (fmt (:zoom view-state) 1) "}")]
     (d/div {:class "absolute bottom-2 left-2 z-20 bg-black/80 text-white font-mono text-xs
-                    rounded-lg p-2 flex items-center gap-2 select-none backdrop-blur-sm"}
+                    p-2 flex items-center gap-2 select-none"}
            (d/span {} (str (fmt (:latitude view-state) 6)
                            ", " (fmt (:longitude view-state) 6)
                            " z" (fmt (:zoom view-state) 1)))
-           (d/button {:class "px-2 py-0.5 rounded bg-white/20 hover:bg-white/30 transition-colors
+           (d/button {:class "px-2 py-0.5 bg-white/20 hover:bg-white/30 transition-colors
                              cursor-pointer text-[10px] uppercase tracking-wider"
                       :on-click (fn [_]
                                   (-> (js/navigator.clipboard.writeText clj-str)

@@ -87,7 +87,7 @@
 (defnc committee-member-card
   [{:keys [name role img-src credit]
     :as opts}]
-  (let [overlay-styles "font-fira-code
+  (let [overlay-styles "font-mono
                        bg-white/70
                        px-1
                        text-slate-500

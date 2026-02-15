@@ -17,23 +17,24 @@
 
 (def lazy-video (lazy-component amp.components.elements.video-background/video-background))
 
+
 (defnc preview
   [{:keys []}]
   (d/div {:class "p-4 mb-12"}
          (d/p {:class ""}
               "The Armenia Pavilion 2026 unfolds across "
-              (d/span {:class "font-semibold"} "two sites")
+              (d/span {:class "font-semibold text-pink-300"} "two sites")
               " within the historic Arsenale of Venice—"
-              (d/span {:class "font-semibold"} "an interior studio")
+              (d/span {:class "font-semibold text-pink-300"} "an interior studio")
               ", and "
-              (d/span {:class "font-semibold"} "a landmark crossing to the Arsenale")
+              (d/span {:class "font-semibold text-pink-300"} "a landmark crossing to the Arsenale")
               ". "
               "Together, these sites form a single spatial constellation: "
-              (d/span {:class ""} "a place of work")
+              (d/span {:class "text-slate-100"} "a place of work")
               ", "
-              (d/span {:class ""} "a place of weather and ruin")
+              (d/span {:class "text-slate-100"} "a place of weather and ruin")
               ", and "
-              (d/span {:class ""} "a public-facing threshold")
+              (d/span {:class "text-slate-100"} "a public-facing threshold")
               "—each distinct, yet inseparable.")))
 
 
@@ -49,18 +50,18 @@
             (d/div {:class "p-4 mb-12"}
                    (d/p {:class ""}
                         "The Armenia Pavilion 2026 unfolds across "
-                        (d/span {:class "font-semibold"} "two sites")
+                        (d/span {:class "font-semibold text-pink-300"} "two sites")
                         " within the historic Arsenale of Venice—"
-                        (d/span {:class "font-semibold"} "an interior studio")
+                        (d/span {:class "font-semibold text-pink-300"} "an interior studio")
                         ", and "
-                        (d/span {:class "font-semibold"} "a landmark crossing to the Arsenale")
+                        (d/span {:class "font-semibold text-pink-300"} "a landmark crossing to the Arsenale")
                         ". "
                         "Together, these sites form a single spatial constellation: "
-                        (d/span {:class ""} "a place of work")
+                        (d/span {:class "text-slate-100"} "a place of work")
                         ", "
-                        (d/span {:class ""} "a place of weather and ruin")
+                        (d/span {:class "text-slate-100"} "a place of weather and ruin")
                         ", and "
-                        (d/span {:class ""} "a public-facing threshold")
+                        (d/span {:class "text-slate-100"} "a public-facing threshold")
                         "—each distinct, yet inseparable."))
 
             (d/div {:class "my-8"}
@@ -137,7 +138,7 @@
                                   :paint {:text-color "#be136e"
                                           :text-halo-color "#ffffff"
                                           :text-halo-width 5}}}]})
-                   (d/p {:class "mt-4 px-4 text-sm font-fira-code italic"}
+                   (d/p {:class "mt-4 px-4 text-sm font-mono italic"}
                         "* Walking path from the crossing to the pavilion. ~8 minutes"))
 
             (d/div {:class "text-xl "}
@@ -147,16 +148,16 @@
                    ;; #1 — TESA 41
                    ;; --------------------------
                    (d/div {:class "p-4"}
-                          (d/p {:class "text-3xl pb-4 font-bold uppercase"}
+                          (d/p {:class "text-xl pb-4 font-mono font-bold uppercase tracking-wider"}
                                "TESA 41 (THE STUDIO)")
 
                           (d/div {:class "space-y-6"}
                                  (d/p {}
-                                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                                      (d/span {:class "font-semibold text-pink-300"} "Tesa 41")
                                       " is the primary studio and interior exhibition space for the Armenia Pavilion 2026—"
-                                      (d/span {:class "font-semibold"} "5,000 square feet")
+                                      (d/span {:class "font-semibold text-pink-300"} "5,000 square feet")
                                       " ("
-                                      (d/span {:class "font-semibold"} "~464 square meters")
+                                      (d/span {:class "font-semibold text-pink-300"} "~464 square meters")
                                       ") of expansive industrial volume that functions as the "
                                       (d/span {:class "italic"} "operational and conceptual heart")
                                       " of the project.")
@@ -172,7 +173,7 @@
 
                                  (d/p {}
                                       "Here, the Pavilion operates as a "
-                                      (d/span {:class "font-semibold"} "working studio")
+                                      (d/span {:class "font-semibold text-pink-300"} "working studio")
                                       " rather than a static exhibition: a place of continuous "
                                       (d/span {:class "font-medium"} "making")
                                       ", "
@@ -188,7 +189,7 @@
                                       ", accommodating both monumental arrangements and intimate moments of material attention.")
 
                                  (d/p {:class "pt-2"}
-                                      (d/span {:class "font-semibold text-slate-100"} "Tesa 41")
+                                      (d/span {:class "font-semibold text-pink-300"} "Tesa 41")
                                       " anchors the Pavilion physically and philosophically—establishing "
                                       (d/span {:class "italic"} "the studio as the artwork itself")
                                       ".")))
@@ -210,23 +211,18 @@
                                                          :aspect-ratio 1.77
                                                          :should-play? is-visible?
                                                          :allow-audio? false}))
-                                   (d/div {:class "w-full aspect-[1.34]"}
-                                          ($ lazy-image-with-overlay
-                                             {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
-                                              :aspect-ratio 1.34
-                                              :active? true}))
 
-                                   (d/div {:class "w-full aspect-[1.34]"}
-                                          ($ lazy-image-with-overlay
-                                             {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
-                                              :aspect-ratio 1.34
-                                              :active? true}))
 
-                                   (d/div {:class "w-full aspect-[1.34]"}
-                                          ($ lazy-image-with-overlay
-                                             {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
-                                              :aspect-ratio 1.34
-                                              :active? true})))))
+                                   ($ lazy-image-gallery {:enabled? is-visible?
+                                                          :slides [{:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+                                                                    :aspect-ratio 1.34
+                                                                    :active? true}
+                                                                   {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
+                                                                    :aspect-ratio 1.34
+                                                                    :active? true}
+                                                                   {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
+                                                                    :aspect-ratio 1.34
+                                                                    :active? true}]}))))
 
 
 
@@ -244,18 +240,18 @@
                                              (d/span {:class "font-semibold text-slate-100"} "Piraeus Lion")
                                              ", one of the most recognized landmarks marking the approach to the Arsenale. "
                                              "Positioned at a critical pedestrian junction along the main route into the Biennale’s Arsenale area, this site receives "
-                                             (d/span {:class "font-semibold"} "exceptionally high foot traffic")
+                                             (d/span {:class "font-semibold text-pink-300"} "exceptionally high foot traffic")
                                              " throughout the six-month exhibition period. "
                                              "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
                                              "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
-                                             (d/span {:class "font-semibold"} "threshold")
+                                             (d/span {:class "font-semibold text-pink-300"} "threshold")
                                              " and a "
-                                             (d/span {:class "font-semibold"} "directional marker")
+                                             (d/span {:class "font-semibold text-pink-300"} "directional marker")
                                              "—an early encounter that orients audiences toward the Pavilion.")
 
                                         (d/p {}
                                              "The placement ensures "
-                                             (d/span {:class "font-semibold"} "extraordinary visibility")
+                                             (d/span {:class "font-semibold text-pink-300"} "extraordinary visibility")
                                              " within a dense flow of international visitors, curators, press, and collectors. "
                                              "The artwork, together with its identifying totem, will operate as a "
                                              (d/span {:class "font-medium"} "visual anchor")
@@ -265,9 +261,9 @@
                                              "As a freestanding, architecturally scaled form, it will command attention without obstructing circulation, functioning simultaneously as "
                                              (d/span {:class "font-semibold"} "sculpture")
                                              ", "
-                                             (d/span {:class "font-semibold"} "signal")
+                                             (d/span {:class "font-semibold text-pink-300"} "signal")
                                              ", and "
-                                             (d/span {:class "font-semibold"} "prelude")
+                                             (d/span {:class "font-semibold text-pink-300"} "prelude")
                                              ". Its presence at this symbolic gateway amplifies the Pavilion’s reach beyond its interior space, extending Armenia’s participation into one of the most traversed and photographed corridors of the Biennale.")))
 
                           (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
