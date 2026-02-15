@@ -235,7 +235,7 @@
                    ;; --------------------------
                    (d/div {:class "mt-12"}
                           (d/div {:class "p-4"}
-                                 (d/p {:class "pb-4 text-3xl font-helvetica font-bold uppercase"}
+                                 (d/p {:class "pb-4 text-xl font-mono font-bold uppercase tracking-wider"}
                                       "CROSSING TO THE ARSENALE — PIRAEUS LION")
 
                                  (d/div {:class "space-y-6"}

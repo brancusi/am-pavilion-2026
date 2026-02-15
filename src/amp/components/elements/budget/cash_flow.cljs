@@ -794,7 +794,7 @@
 ;; Main component
 ;; ---------------------------------------------------------------------------
 
-(defnc cash-flow []
+(defnc cash-flow [{:keys [id]}]
   (let [entries cashflow-data
         [error set-error!]       (hooks/use-state nil)
         [expanded? set-expanded!] (hooks/use-state false)
@@ -811,7 +811,8 @@
                     #js {:scaleY 1 :duration 0.8 :delay 0.05 :ease "power3.out"})))))
 
     (d/div
-     {:ref container-ref
+     {:id id
+      :ref container-ref
       :class "min-h-screen bg-black px-4 pb-8 pt-6 text-white antialiased selection:bg-pink-500/30"}
 
      (cond

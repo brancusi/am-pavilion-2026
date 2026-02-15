@@ -10,11 +10,11 @@
          (d/div {:class "px-4 pt-12 text-slate-100"}
                 (d/div {:class "mb-6 flex items-center gap-3"}
                        (d/div {:class "h-px w-10 bg-pink-500/70"})
-                       (d/p {:class "text-sm tracking-[0.25em] uppercase text-slate-400"}
+                       (d/p {:class "font-mono text-[10px] font-bold tracking-[0.25em] uppercase text-slate-500"}
                             (str idx ". " eyebrow)))
                 (d/h2
                  {:class "
-               
+               font-mono
                font-bold
                uppercase
                leading-none

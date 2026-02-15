@@ -290,17 +290,6 @@
 
         data))
 
-(comment
-
-  (convert-amount cost-data 1.18)
-
-  ;;Keep from folding
-  )
-
-
-
-
-
 (defnc preview
   [{:keys []}]
   (d/div {:class "text-xl text-slate-100 p-4"}
@@ -310,11 +299,11 @@
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 
          (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold text-white"} "$1.6M USD")
+         (d/span {:class "font-bold font-mono text-white"} "$1.6M USD")
          (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
-         (d/span {:class "font-semibold text-pink-400"} "production, installation, operations, communications,")
+         (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
          (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-400"} "documentation")
+         (d/span {:class "font-semibold text-pink-300"} "documentation")
          (d/span {:class "text-slate-300"} ". ")))
 
 (defnc details
@@ -326,11 +315,11 @@
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 
          (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold text-white"} "$1.6M USD")
+         (d/span {:class "font-bold font-mono text-white"} "$1.6M USD")
          (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
-         (d/span {:class "font-semibold text-pink-400"} "production, installation, operations, communications,")
+         (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
          (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-400"} "documentation")
+         (d/span {:class "font-semibold text-pink-300"} "documentation")
          (d/span {:class "text-slate-300"} ". ")
 
          ;; Venue logic (non-permanent pavilion + cost comparison)
@@ -339,11 +328,11 @@
                  "as is customary for many smaller and non-permanent participating nations. ")
          (d/span {:class "text-slate-300"}
                  "The selected site is located outside the Biennale’s primary zones, enabling a significantly lower base rent—approximately ")
-         (d/span {:class "font-bold text-white"} "$195,000")
+         (d/span {:class "font-bold font-mono text-white"} "$195,000")
          (d/span {:class "text-slate-300"} "—while remaining fully accredited and visible within the official Biennale structure. ")
          (d/span {:class "text-slate-300"}
                  "By contrast, venues within the Giardini or Arsenale—when available—typically begin at ")
-         (d/span {:class "font-bold text-white"} "$450,000")
+         (d/span {:class "font-bold font-mono text-white"} "$450,000")
          (d/span {:class "text-slate-300"}
                  " in base rent, before construction, staffing, utilities, logistics, and operating overhead. ")
 
@@ -351,7 +340,7 @@
          (d/div {:class "mt-6"}
                 (d/span {:class "mt-6"}
                         "Crucially, the nature of ")
-                (d/span {:class "font-semibold text-pink-400"} "THE STUDIO")
+                (d/span {:class "font-semibold text-pink-300"} "THE STUDIO")
                 (d/span {:class "text-slate-300"}
                         " makes this venue choice not only strategic but essential. ")
                 (d/span {:class "text-slate-300"}
@@ -371,9 +360,9 @@
          (d/span {:class "text-slate-300"} " altogether. ")
          (d/span {:class "text-slate-300"}
                  "This decision reduces fabrication, crating, international shipping, and risk-related costs, while aligning more precisely with the broader conceptual goals: ")
-         (d/span {:class "font-semibold text-pink-400"} "process over spectacle, presence over monumentality,")
+         (d/span {:class "font-semibold text-pink-300"} "process over spectacle, presence over monumentality,")
          (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-400"} "sustained making over static display")
+         (d/span {:class "font-semibold text-pink-300"} "sustained making over static display")
          (d/span {:class "text-slate-300"} ". ")
 
          ;; Efficiency + rigor (mutually reinforcing)
@@ -402,7 +391,7 @@
          (d/span {:class "block mt-6"}
                  "Significant investment secures venue readiness and regulatory compliance, supports curatorial and administrative leadership, funds museum-scale fabrication and specialized craft, and addresses Venice-specific transport, storage, installation, and reverse logistics. ")
          (d/span {:class "block mt-6"}
-                 (d/span {:class "font-semibold text-pink-400"} "THE STUDIO")
+                 (d/span {:class "font-semibold text-pink-300"} "THE STUDIO")
                  (d/span {:class "text-slate-300"}
                          " is budgeted as an ongoing on-site operation, ensuring continuous execution, maintenance, and evolution of the work across the exhibition period—distinguishing the Pavilion from static presentations. "))
 
@@ -410,7 +399,7 @@
          (d/span {:class "block mt-6"}
                  "Public visibility and long-term legacy are strengthened through opening week programs, marketing and public relations, publication, and comprehensive film and photographic documentation—ensuring that the Pavilion’s impact extends into international media, scholarship, and institutional archives. ")
 
-         (d/span {:class "block italic mt-6 font-normal text-lg text-slate-100"}
+         (d/span {:class "block italic mt-6 font-normal text-lg font-mono text-slate-100"}
                  "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies—ensuring stability, accountability, and the successful delivery of Armenia’s national presentation on the world stage.")))
 
 (defnc footer

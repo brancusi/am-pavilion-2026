@@ -1,6 +1,7 @@
 (ns amp.components.sections.press-release
   (:require
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
+   [amp.components.elements.written-by :refer [written-by]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]))
@@ -8,6 +9,7 @@
 (defnc preview
   [{:keys []}]
   (d/div {:class "px-4"}
+         ($ written-by {:author "Alejandro Jassan" :class "mb-4"})
          (d/p {:class " text-xl"}
               (d/span {:class "italic"} "Venice, Italy — ")
               "The Republic of Armenia presents "
@@ -23,6 +25,8 @@
 (defnc details
   [{:keys []}]
   (d/div {:class "px-4"}
+         ;; Author credit
+         ($ written-by {:author "Alejandro Jassan" :class "mb-6"})
          ;; Header block
          (d/div {:class "mb-8 text-sm"}
                 (d/p {:class "text-xl font-semibold mb-1"}
@@ -132,7 +136,7 @@
                      "9 May \u2013 22 November 2026")
                 (d/p {}
                      (d/span {:class "font-semibold"} "Press preview: ")
-                     "6\u20138 May 2026"))))
+                     "6–8 May 2026"))))
 
 (defnc footer
   [{:keys []}]

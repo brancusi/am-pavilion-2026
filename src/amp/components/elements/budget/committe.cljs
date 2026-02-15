@@ -52,7 +52,7 @@
          (d/p {}
               (d/span {:class "text-slate-300"}
                       "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class "font-semibold text-pink-400"} "fundraising committee")
+              (d/span {:class "font-semibold text-pink-300"} "fundraising committee")
               (d/span {:class "text-slate-300"}
                       " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))))
 
@@ -62,7 +62,7 @@
          (d/p {}
               (d/span {:class "text-slate-300"}
                       "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class "font-semibold text-pink-400"} "fundraising committee")
+              (d/span {:class "font-semibold text-pink-300"} "fundraising committee")
               (d/span {:class "text-slate-300"}
                       " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))
 
@@ -111,7 +111,7 @@
   [{:keys []}]
   (d/div {:class "p-4 w-full"}
          (d/div (d/div {:class "pl-4 "}
-                       (d/h3 {:class "text-lg font-semibold text-slate-100"} "Committee Members"))
+                       (d/h3 {:class "font-mono text-sm uppercase tracking-wider font-bold text-slate-400"} "Committee Members"))
                 (d/div {:class "mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"}
                        (map (fn [{:keys [name role img-src credit]}]
                               (d/div {:key name}

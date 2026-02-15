@@ -2,7 +2,7 @@
   (:require
    [amp.components.elements.captioned-image :refer [captioned-image]]
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
-
+   [amp.components.elements.written-by :refer [written-by]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [helix.hooks :as hooks]
    [amp.components.media.lazy-image-gallery :refer [lazy-image-gallery]]
@@ -16,9 +16,10 @@
 (defnc preview
   [{:keys []}]
   (d/div {:class "space-y-4 px-4"}
+         ($ written-by {:author "Carlo McCormick" :class "mb-2"})
          (d/p {:class "text-xl"}
               "Over the entire six-month duration of the Biennale, the "
-              (d/span {:class "font-bold text-pink-400"} "Armenia Pavilion")
+              (d/span {:class "font-bold text-pink-300"} "Armenia Pavilion")
               " will operate as "
               (d/span {:class "italic"} "The Studio")
               ", a functioning atelier where the artist "
@@ -36,10 +37,11 @@
   [{:keys []}]
   (d/div
    (d/div {:class "px-4 space-y-4"}
+          ($ written-by {:author "Carlo McCormick" :class "mb-2"})
 
           (d/p {:class "text-xl text-slate-100"}
                "Over the entire six-month duration of the Biennale, the "
-               (d/span {:class "font-bold text-pink-400"} "Armenia Pavilion")
+               (d/span {:class "font-bold text-pink-300"} "Armenia Pavilion")
                " will operate as "
                (d/span {:class "italic"} "The Studio")
                ", a functioning atelier where the artist "
