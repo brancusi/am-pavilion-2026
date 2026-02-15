@@ -38,6 +38,6 @@
                     w-1/5
                     lg:w-32"
             :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
-           (d/img {:src "images/graphics/biennale_logo.png"}))))
+           (d/img {:src "images/graphics/61_biennale_logo.png"}))))
 
 

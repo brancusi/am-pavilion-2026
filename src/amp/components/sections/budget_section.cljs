@@ -4,6 +4,7 @@
    [amp.components.elements.budget.committe :refer [committee]]
    [amp.components.elements.budget.cost-breakdown :refer [cost-breakdown]]
    [amp.components.elements.budget.location-section :refer [location-section]]
+   [amp.components.elements.budget.cash-flow :refer [cash-flow]]
    [amp.components.elements.budget.non-profit :refer [non-profit]]
    [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.navs.back-up-nav :refer [back-up-nav]]
@@ -26,7 +27,7 @@
   []
   (d/div {:class ""}
          (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4"}
-                (d/img {:src "images/graphics/biennale_logo.png"}))
+                (d/img {:src "images/graphics/61_biennale_logo.png"}))
 
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
@@ -45,14 +46,17 @@
                           {:title "3. Budget"
                            :anchor "section-3"})
                        ($ section-link
-                          {:title "4. Committee"
+                          {:title "4. Cashflow"
                            :anchor "section-4"})
                        ($ section-link
-                          {:title "5. Location Details"
+                          {:title "5. Committee"
                            :anchor "section-5"})
                        ($ section-link
-                          {:title "6. Donation Info"
-                           :anchor "section-6"})))))
+                          {:title "6. Location Details"
+                           :anchor "section-6"})
+                       ($ section-link
+                          {:title "7. Donation Info"
+                           :anchor "section-7"})))))
 
 (defnc budget-section
   []
@@ -80,15 +84,19 @@
                                 :subtitle "financials"
                                 :title "budget"})
 
-             ($ committee {:id "section-4"
+             ($ cash-flow {:id "section-4"
+                           :subtitle "financials"
+                           :title "cashflow"})
+
+             ($ committee {:id "section-5"
                            :subtitle "team"
                            :title "committee"})
 
-             ($ location-section {:id "section-5"
+             ($ location-section {:id "section-6"
                                   :subtitle "venue"
                                   :title "location information"})
 
-             ($ non-profit {:id "section-6"
+             ($ non-profit {:id "section-7"
                             :subtitle "non-profit"
                             :title "donation information"})
 
