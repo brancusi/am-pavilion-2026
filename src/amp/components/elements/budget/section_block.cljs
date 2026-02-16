@@ -6,7 +6,7 @@
 
 (defnc section-block
   [{:keys [idx eyebrow title children]}]
-  (d/div {:id (str "section-" idx)}
+  (d/div {}
          (d/div {:class "px-4 pt-12 text-slate-100"}
                 (d/div {:class "mb-6 flex items-center gap-3"}
                        (d/div {:class "h-px w-10 bg-pink-500/70"})

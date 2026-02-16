@@ -1,411 +1,456 @@
 (ns amp.components.elements.budget.cash-flow
   (:require
    ["gsap" :refer [gsap]]
-   [amp.components.elements.budget.budget-table :refer [sub-total-all-sections]]
+   [amp.components.elements.budget.budget-table :refer [sub-total-all-sections contingency-amount]]
    [amp.components.elements.budget.cost-breakdown :refer [cost-data]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
-(def cashflow-data {:debt-raised 150000
-                    :funds-raised 125000
-
-                    :cash-flow-model
-                    [;; ============================================================
-                     ;; PHASE 0 — PRE-PRODUCTION (Oct 2025 – Jan 2026)
-                     ;; Target: ~75k (already spent)
-                     ;; ============================================================
-                     {:id :preprod-oct
-                      :title "Pre-Production — Admin, Travel, Scouting (Oct)"
-                      :due "2025-10-15"
-                      :amount 20000
-                      :priority :normal
-                      :status :paid}
-
-                     {:id :preprod-nov
-                      :title "Pre-Production — LA Fabrication Setup (Nov)"
-                      :due "2025-11-15"
-                      :amount 18000
-                      :priority :normal
-                      :status :paid}
-
-                     {:id :preprod-dec
-                      :title "Pre-Production — Materials + Dev Travel (Dec)"
-                      :due "2025-12-15"
-                      :amount 22000
-                      :priority :normal
-                      :status :paid}
-
-                     {:id :preprod-jan
-                      :title "Pre-Production — Engineering + Early Casting (Jan)"
-                      :due "2026-01-15"
-                      :amount 15000
-                      :priority :normal
-                      :status :paid}
-
-
-                     ;; ============================================================
-                     ;; FEBRUARY 2026 — VENUE LOCK + PRODUCTION ACCELERATION
-                     ;; ============================================================
-
-                     {:id :venue-tranche-1
-                      :title "Venue Rent — Tranche 1 (Tesa 41)"
-                      :due "2026-02-01"
-                      :amount 96000
-                      :priority :critical
-                      :status :paid}
-
-                     {:id :press-and-website
-                      :title "Press Release + Press Kit + Website Finalization"
-                      :due "2026-02-15"
-                      :amount 20000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :admin-feb
-                      :title "Admin + Legal + Accounting + Travel (Feb)"
-                      :due "2026-02-15"
-                      :amount 45000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :la-production-feb
-                      :title "LA Production — Materials + Labor (Phase 1)"
-                      :due "2026-02-20"
-                      :amount 50000
-                      :priority :critical
-                      :status :pending}
-
-                     {:id :venue-tranche-2
-                      :title "Venue Rent — Tranche 2 (Tesa 41)"
-                      :due "2026-02-20"
-                      :amount 151000
-                      :priority :critical
-                      :status :pending}
-
-                     {:id :la-studio-feb
-                      :title "LA Studio — Rent + Utilities/Insurance (Feb)"
-                      :due "2026-02-28"
-                      :amount 12000
-                      :priority :high
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; MARCH 2026 — FINAL VENUE LOCK + SHIPPING LOCK
-                     ;; ============================================================
-
-                     {:id :la-production-mar
-                      :title "LA Production — Materials + Labor (Phase 2)"
-                      :due "2026-03-20"
-                      :amount 50000
-                      :priority :critical
-                      :status :pending}
-
-                     {:id :venue-tranche-3
-                      :title "Venue Rent — Tranche 3 (Tesa 41)"
-                      :due "2026-03-20"
-                      :amount 97000
-                      :priority :critical
-                      :status :pending}
-
-                     {:id :buildouts-lighting-permits
-                      :title "Venue Compliance — Build-outs + Lighting + Permits + Fire Certification"
-                      :due "2026-03-20"
-                      :amount 45000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :crates-and-packing
-                      :title "Crating + Packing Crew (LA)"
-                      :due "2026-03-25"
-                      :amount 27500
-                      :priority :high
-                      :status :pending}
-
-                     {:id :shipping-la-venice
-                      :title "International Freight — LA → Venice (Peak Season)"
-                      :due "2026-03-31"
-                      :amount 35000
-                      :priority :critical
-                      :status :pending}
-
-                     {:id :transit-insurance
-                      :title "Fine Art Transit Insurance (International + Local Moves)"
-                      :due "2026-03-31"
-                      :amount 12500
-                      :priority :high
-                      :status :pending}
-
-                     {:id :housing-venice-deposit
-                      :title "Venice Housing — Deposit + First Month (Team)"
-                      :due "2026-03-31"
-                      :amount 55000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :marketing-preopen
-                      :title "Marketing/PR — Pre-Opening Push (Phase 1)"
-                      :due "2026-03-31"
-                      :amount 25000
-                      :priority :high
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; APRIL 2026 — ARRIVAL + INSTALLATION WINDOW
-                     ;; ============================================================
-
-                     {:id :port-barge-local-transport
-                      :title "Venice Arrival — Port Handling + Barge + Local Transport + Forklift"
-                      :due "2026-04-05"
-                      :amount 15000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :installation-crew
-                      :title "Installation Crew + Handling (Venice)"
-                      :due "2026-04-10"
-                      :amount 20000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :studio-month-1
-                      :title "THE STUDIO — On-Site Operations (Month 1)"
-                      :due "2026-04-15"
-                      :amount 70000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :security-mediators-month-1
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 1)"
-                      :due "2026-04-30"
-                      :amount 18000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :documentation-install
-                      :title "Documentation — Installation Film + Photo (Phase 1)"
-                      :due "2026-04-30"
-                      :amount 25000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; MAY 2026 — OPENING + PEAK VISIBILITY
-                     ;; ============================================================
-
-                     {:id :opening-week
-                      :title "Opening Week + Public Programs (Hospitality, Staff, A/V, Protocol)"
-                      :due "2026-05-01"
-                      :amount 60000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :studio-month-2
-                      :title "THE STUDIO — On-Site Operations (Month 2)"
-                      :due "2026-05-31"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-2
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 2)"
-                      :due "2026-05-31"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-1
-                      :title "Marketing/PR — Ongoing Campaign (Month 1)"
-                      :due "2026-05-31"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :documentation-opening
-                      :title "Documentation — Opening Week Film + Photo + Sound (Phase 2)"
-                      :due "2026-05-31"
-                      :amount 25000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; JUNE 2026 — STABILIZATION (Ongoing Operations)
-                     ;; ============================================================
-
-                     {:id :studio-month-3
-                      :title "THE STUDIO — On-Site Operations (Month 3)"
-                      :due "2026-06-30"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-3
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 3)"
-                      :due "2026-06-30"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-2
-                      :title "Marketing/PR — Ongoing Campaign (Month 2)"
-                      :due "2026-06-30"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :catalog-edit-design
-                      :title "Catalogue — Editing + Design + Layout (Lock)"
-                      :due "2026-06-30"
-                      :amount 25000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; JULY 2026 — CATALOG RELEASE
-                     ;; ============================================================
-
-                     {:id :catalog-print
-                      :title "Pavilion Catalogue — Printing + Delivery"
-                      :due "2026-07-01"
-                      :amount 45000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :studio-month-4
-                      :title "THE STUDIO — On-Site Operations (Month 4)"
-                      :due "2026-07-31"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-4
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 4)"
-                      :due "2026-07-31"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-3
-                      :title "Marketing/PR — Ongoing Campaign (Month 3)"
-                      :due "2026-07-31"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; AUGUST 2026 — Ongoing Operations
-                     ;; ============================================================
-
-                     {:id :studio-month-5
-                      :title "THE STUDIO — On-Site Operations (Month 5)"
-                      :due "2026-08-31"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-5
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 5)"
-                      :due "2026-08-31"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-4
-                      :title "Marketing/PR — Ongoing Campaign (Month 4)"
-                      :due "2026-08-31"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; SEPTEMBER 2026 — Ongoing Operations
-                     ;; ============================================================
-
-                     {:id :studio-month-6
-                      :title "THE STUDIO — On-Site Operations (Month 6)"
-                      :due "2026-09-30"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-6
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 6)"
-                      :due "2026-09-30"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-5
-                      :title "Marketing/PR — Ongoing Campaign (Month 5)"
-                      :due "2026-09-30"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; OCTOBER 2026 — Ongoing Operations (Final Push)
-                     ;; ============================================================
-
-                     {:id :studio-month-7
-                      :title "THE STUDIO — On-Site Operations (Month 7)"
-                      :due "2026-10-31"
-                      :amount 65000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :security-mediators-month-7
-                      :title "Venue Operations — Security + Mediators + Cleaning + Utilities (Month 7)"
-                      :due "2026-10-31"
-                      :amount 18000
-                      :priority :normal
-                      :status :pending}
-
-                     {:id :marketing-ongoing-6
-                      :title "Marketing/PR — Ongoing Campaign (Month 6)"
-                      :due "2026-10-31"
-                      :amount 20000
-                      :priority :normal
-                      :status :pending}
-
-
-                     ;; ============================================================
-                     ;; NOVEMBER 2026 — DEINSTALL + RETURN LOGISTICS
-                     ;; ============================================================
-
-                     {:id :deinstall-crew
-                      :title "Deinstallation Crew + Handling (Venice)"
-                      :due "2026-11-15"
-                      :amount 12500
-                      :priority :high
-                      :status :pending}
-
-                     {:id :return-transport-local
-                      :title "Return Logistics — Local Transport (Barge/Port/Truck)"
-                      :due "2026-11-20"
-                      :amount 12000
-                      :priority :high
-                      :status :pending}
-
-                     {:id :shipping-venice-la
-                      :title "International Freight — Venice → LA (Return)"
-                      :due "2026-11-25"
-                      :amount 35000
-                      :priority :high
-                      :status :pending}
-
-                     ;; ============================================================
-                     ;; CONTINGENCY / RESERVE (keeps model aligned to 1.6M)
-                     ;; ============================================================
-                     ]})
+(def cashflow-data
+  {:debt-raised 0
+   :funds-raised 175000
+
+   :cash-flow-model
+   [;; ============================================================
+    ;; JULY 2025
+    ;; ============================================================
+    {:id :admin-jul-25
+     :title "Admin — Core Team (Jul)"
+     :due "2025-07-15"
+     :amount 10000
+     :priority :normal
+     :status :paid}
+
+    {:id :contingency-jul-25
+     :title "Contingency (Jul)"
+     :due "2025-07-20"
+     :amount 500
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; AUGUST 2025
+    ;; ============================================================
+    {:id :admin-aug-25
+     :title "Admin — Core Team (Aug)"
+     :due "2025-08-15"
+     :amount 10000
+     :priority :normal
+     :status :paid}
+
+    {:id :contingency-aug-25
+     :title "Contingency (Aug)"
+     :due "2025-08-20"
+     :amount 500
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; SEPTEMBER 2025
+    ;; ============================================================
+    {:id :venice-sep-25
+     :title "Venice — Lodging & Per Diem (Sep)"
+     :due "2025-09-05"
+     :amount 13000
+     :priority :normal
+     :status :paid}
+
+    {:id :admin-sep-25
+     :title "Admin — Core Team + Travel (Sep)"
+     :due "2025-09-15"
+     :amount 20000
+     :priority :high
+     :status :paid}
+
+    {:id :contingency-sep-25
+     :title "Contingency (Sep)"
+     :due "2025-09-20"
+     :amount 650
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; OCTOBER 2025
+    ;; ============================================================
+    {:id :venice-oct-25
+     :title "Venice — Lodging & Per Diem (Oct)"
+     :due "2025-10-05"
+     :amount 13000
+     :priority :normal
+     :status :paid}
+
+    {:id :admin-oct-25
+     :title "Admin — Core Team + Travel (Oct)"
+     :due "2025-10-15"
+     :amount 20000
+     :priority :high
+     :status :paid}
+
+    {:id :contingency-oct-25
+     :title "Contingency (Oct)"
+     :due "2025-10-20"
+     :amount 650
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; NOVEMBER 2025
+    ;; ============================================================
+    {:id :la-nov-25
+     :title "LA Production — Phase 1 Startup (Nov)"
+     :due "2025-11-10"
+     :amount 31325
+     :priority :high
+     :status :paid}
+
+    {:id :admin-nov-25
+     :title "Admin — Core Team (Nov)"
+     :due "2025-11-15"
+     :amount 10000
+     :priority :normal
+     :status :paid}
+
+    {:id :contingency-nov-25
+     :title "Contingency (Nov)"
+     :due "2025-11-20"
+     :amount 1566
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; DECEMBER 2025
+    ;; ============================================================
+    {:id :la-dec-25
+     :title "LA Production — Phase 1 Continued (Dec)"
+     :due "2025-12-10"
+     :amount 31325
+     :priority :high
+     :status :paid}
+
+    {:id :admin-dec-25
+     :title "Admin — Core Team (Dec)"
+     :due "2025-12-15"
+     :amount 10000
+     :priority :normal
+     :status :paid}
+
+    {:id :contingency-dec-25
+     :title "Contingency (Dec)"
+     :due "2025-12-20"
+     :amount 1566
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; JANUARY 2026
+    ;; ============================================================
+    {:id :venice-jan-26
+     :title "Venice — Venue Tranche 1 (10%)"
+     :due "2026-01-05"
+     :amount 30650
+     :priority :critical
+     :status :paid}
+
+    {:id :la-jan-26
+     :title "LA Production — Phase 2 (Jan)"
+     :due "2026-01-10"
+     :amount 30325
+     :priority :high
+     :status :paid}
+
+    {:id :admin-jan-26
+     :title "Admin — Core Team (Jan)"
+     :due "2026-01-15"
+     :amount 10000
+     :priority :normal
+     :status :paid}
+
+    {:id :contingency-jan-26
+     :title "Contingency (Jan)"
+     :due "2026-01-20"
+     :amount 3049
+     :priority :normal
+     :status :paid}
+
+    ;; ============================================================
+    ;; FEBRUARY 2026
+    ;; ============================================================
+    {:id :venice-feb-26
+     :title "Venice — Venue Tranche 2 + 3 (60%)"
+     :due "2026-02-05"
+     :amount 183900
+     :priority :critical
+     :status :pending}
+
+    {:id :la-feb-26
+     :title "LA Production — Phase 3 (Feb)"
+     :due "2026-02-10"
+     :amount 74825
+     :priority :critical
+     :status :pending}
+
+    {:id :admin-feb-26
+     :title "Admin — Core Team + Misc (Feb)"
+     :due "2026-02-15"
+     :amount 10500
+     :priority :high
+     :status :pending}
+
+    {:id :contingency-feb-26
+     :title "Contingency (Feb)"
+     :due "2026-02-20"
+     :amount 12936
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; MARCH 2026
+    ;; ============================================================
+    {:id :venice-mar-26
+     :title "Venice — Venue Tranche 4 + Logistics (Outbound) + Setup"
+     :due "2026-03-05"
+     :amount 172200
+     :priority :critical
+     :status :pending}
+
+    {:id :la-mar-26
+     :title "LA Production — Final Phase + Crating (Mar)"
+     :due "2026-03-10"
+     :amount 97325
+     :priority :critical
+     :status :pending}
+
+    {:id :admin-mar-26
+     :title "Admin — Core Team + Misc (Mar)"
+     :due "2026-03-15"
+     :amount 10500
+     :priority :high
+     :status :pending}
+
+    {:id :contingency-mar-26
+     :title "Contingency (Mar)"
+     :due "2026-03-20"
+     :amount 13476
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; APRIL 2026
+    ;; ============================================================
+    {:id :venice-apr-26
+     :title "Venice — Opening Month + Studio Launch + Operations"
+     :due "2026-04-05"
+     :amount 110267
+     :priority :critical
+     :status :pending}
+
+    {:id :admin-apr-26
+     :title "Admin — Core Team + Travel + Lodging (Apr)"
+     :due "2026-04-15"
+     :amount 33000
+     :priority :high
+     :status :pending}
+
+    {:id :contingency-apr-26
+     :title "Contingency (Apr)"
+     :due "2026-04-20"
+     :amount 5513
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; MAY 2026
+    ;; ============================================================
+    {:id :venice-may-26
+     :title "Venice — Studio + Operations (May)"
+     :due "2026-05-05"
+     :amount 53717
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-may-26
+     :title "Admin — Core Team + Misc (May)"
+     :due "2026-05-15"
+     :amount 10500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-may-26
+     :title "Contingency (May)"
+     :due "2026-05-20"
+     :amount 2686
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; JUNE 2026
+    ;; ============================================================
+    {:id :venice-jun-26
+     :title "Venice — Studio + Operations + Catalogue (Jun)"
+     :due "2026-06-05"
+     :amount 94467
+     :priority :high
+     :status :pending}
+
+    {:id :admin-jun-26
+     :title "Admin — Core Team + Travel + Misc (Jun)"
+     :due "2026-06-15"
+     :amount 12500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-jun-26
+     :title "Contingency (Jun)"
+     :due "2026-06-20"
+     :amount 4723
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; JULY 2026
+    ;; ============================================================
+    {:id :venice-jul-26
+     :title "Venice — Studio + Operations (Jul)"
+     :due "2026-07-05"
+     :amount 53717
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-jul-26
+     :title "Admin — Core Team + Misc (Jul)"
+     :due "2026-07-15"
+     :amount 10500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-jul-26
+     :title "Contingency (Jul)"
+     :due "2026-07-20"
+     :amount 2686
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; AUGUST 2026
+    ;; ============================================================
+    {:id :venice-aug-26
+     :title "Venice — Studio + Operations (Aug)"
+     :due "2026-08-05"
+     :amount 53717
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-aug-26
+     :title "Admin — Core Team + Misc (Aug)"
+     :due "2026-08-15"
+     :amount 10500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-aug-26
+     :title "Contingency (Aug)"
+     :due "2026-08-20"
+     :amount 2686
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; SEPTEMBER 2026
+    ;; ============================================================
+    {:id :venice-sep-26
+     :title "Venice — Studio + Operations (Sep)"
+     :due "2026-09-05"
+     :amount 53717
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-sep-26
+     :title "Admin — Core Team + Travel + Misc (Sep)"
+     :due "2026-09-15"
+     :amount 12500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-sep-26
+     :title "Contingency (Sep)"
+     :due "2026-09-20"
+     :amount 2686
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; OCTOBER 2026
+    ;; ============================================================
+    {:id :venice-oct-26
+     :title "Venice — Studio + Operations (Oct)"
+     :due "2026-10-05"
+     :amount 42217
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-oct-26
+     :title "Admin — Core Team + Misc (Oct)"
+     :due "2026-10-15"
+     :amount 10500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-oct-26
+     :title "Contingency (Oct)"
+     :due "2026-10-20"
+     :amount 2111
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; NOVEMBER 2026
+    ;; ============================================================
+    {:id :venice-nov-26
+     :title "Venice — Studio + Operations (Nov)"
+     :due "2026-11-05"
+     :amount 42217
+     :priority :normal
+     :status :pending}
+
+    {:id :admin-nov-26
+     :title "Admin — Core Team + Misc (Nov)"
+     :due "2026-11-15"
+     :amount 10500
+     :priority :normal
+     :status :pending}
+
+    {:id :contingency-nov-26
+     :title "Contingency (Nov)"
+     :due "2026-11-20"
+     :amount 2111
+     :priority :normal
+     :status :pending}
+
+    ;; ============================================================
+    ;; DECEMBER 2026
+    ;; ============================================================
+    {:id :venice-dec-26
+     :title "Venice — Close-out + Logistics (Return)"
+     :due "2026-12-05"
+     :amount 134517
+     :priority :high
+     :status :pending}
+
+    {:id :admin-dec-26
+     :title "Admin — Core Team + Travel + Misc (Dec)"
+     :due "2026-12-15"
+     :amount 20500
+     :priority :high
+     :status :pending}
+
+    {:id :contingency-dec-26
+     :title "Contingency (Dec)"
+     :due "2026-12-20"
+     :amount 6726
+     :priority :normal
+     :status :pending}]})
 
 ;; ---------------------------------------------------------------------------
 ;; Helpers
@@ -752,7 +797,7 @@
            (d/div {:class "flex items-center gap-2 mb-3"}
                   (d/div {:class "h-px w-6 bg-pink-500/70"})
                   (d/span {:class "font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500"}
-                          "Cash Flow"))
+                          "4. Cash Flow"))
 
            ;; target total
            (d/p {:class "font-mono text-3xl font-extrabold tracking-tight text-slate-100"}
@@ -824,7 +869,7 @@
        :else
        (let [{:keys [cash-flow-model funds-raised debt-raised]} entries
              budget-sub-total (sub-total-all-sections cost-data)
-             target-total (Math/round (+ budget-sub-total (* budget-sub-total 0.1)))
+             target-total (+ budget-sub-total contingency-amount)
              entries-kw (map #(-> %
                                   (update :priority keyword)
                                   (update :status keyword))

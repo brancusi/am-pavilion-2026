@@ -8,7 +8,8 @@
    [helix.hooks :as hooks]))
 
 (defnc expandable-text-area
-  [{:keys [section-hint
+  [{:keys [idx
+           section-hint
            title
            expand-button-label
            preview-text
@@ -16,7 +17,7 @@
            footer-text]}]
   (let [[expanded? set-expanded] (hooks/use-state false)]
     ($ section-block
-       {:idx 1
+       {:idx (or idx 1)
         :eyebrow section-hint
         :title title}
        (d/div {:class "mt-6"}
@@ -34,7 +35,8 @@
          footer-text))))
 
 (defnc expandable-text-area-2
-  [{:keys [section-hint
+  [{:keys [idx
+           section-hint
            title
            expand-button-label
            preview-text
@@ -42,7 +44,7 @@
            footer-text]}]
   (let [[expanded? set-expanded] (hooks/use-state false)]
     ($ section-block
-       {:idx 1
+       {:idx (or idx 1)
         :eyebrow section-hint
         :title title}
        (d/div {:class "mt-6"}

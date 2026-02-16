@@ -177,7 +177,8 @@
 (defnc press-release
   [{:keys [id subtitle title]}]
   (d/div {:id id}
-         ($ expandable-text-area-2 {:section-hint subtitle
+         ($ expandable-text-area-2 {:idx 1
+                                    :section-hint subtitle
                                     :title title
                                     :expand-button-label "Read full release"
                                     :preview-text preview

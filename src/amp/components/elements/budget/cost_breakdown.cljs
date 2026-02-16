@@ -7,278 +7,303 @@
    [helix.dom :as d]))
 
 (def cost-data
-  [{:id :location,
-    :title "1. Location Cost",
+  [{:id :venue
+    :title "Venue & Operations"
     :description
-    "Secures and operates the Venice exhibition venue: exclusive rental, public-facing staffing, required approvals, insurance coverage, minor architectural adjustments, lighting, and statutory taxes—ensuring the Pavilion is compliant, safe, and fully exhibition-ready during peak Biennale demand.",
+    "Secures and operates the Venice exhibition venue for the full Biennale period: rental, staffing, regulatory compliance, construction, lighting, taxes, and on-site overhead including team lodging and living expenses—ensuring the Pavilion is compliant, safe, and fully operational."
     :details
-    [{:title "Base rent",
-      :amount 154700,
-      :description
-      "Base rental fee for Tesa 41, Giardino 25, and the Outpost for the full Biennale period. This reflects Biennale-season demand, limited availability of compliant venues, and excludes all staffing, permits, utilities, and operational services."}
-     {:title "Security staff",
-      :amount 59805,
-      :description
-      "Licensed security personnel required during public hours and special events, with increased staffing during opening week and peak visitor periods mandated by venue and municipal regulations."}
-     {:title "Mediator staff",
-      :amount 29902,
-      :description
-      "Trained gallery mediators providing visitor guidance, crowd flow management, and artwork oversight throughout the exhibition’s daily operations."}
-     {:title "Cleaning",
-      :amount 8500,
-      :description
-      "Weekly professional cleaning and periodic deep cleans required for a high-traffic international exhibition, with elevated frequency during opening week."}
-     {:title "Utilities",
-      :amount 6000,
-      :description
-      "Electricity, water, and climate control costs for continuous public operation during the Biennale season."}
-     {:title "Permits",
-      :amount 12000,
-      :description
-      "Municipal and Biennale permits required for exhibition use, public access, and operational compliance in Venice."}
-     {:title "Fire cert",
-      :amount 4250,
-      :description
-      "Mandatory fire-safety certification, inspections, and documentation required by Venetian authorities."}
-     {:title "Liability ins.",
-      :amount 3000,
-      :description
-      "Public liability insurance covering visitors, staff, and third parties for the duration of the exhibition."}
-     {:title "Build-outs",
-      :amount 15000,
-      :description
-      "Minor architectural adjustments and protective build-outs necessary to adapt the venue to exhibition and safety standards."}
-     {:title "Lighting",
-      :amount 9500,
-      :description
-      "Supplemental exhibition lighting equipment and installation tailored to the work and existing architectural conditions."}
-     {:title "Signage tax",
-      :amount 2000,
-      :description "Municipal tax associated with exterior and wayfinding signage during the Biennale."}],
-    :tax {:rate 0.22, :label "VAT 22%"}}
-   {:id :admin,
-    :title "2. Admin",
+    [{:group "Base" :title "Base Rent" :amount 145600
+      :description "Exclusive use of venue April–December 2026 for the full Biennale period."}
+     {:group "Base" :title "Base Staff" :amount 50000
+      :description "Exhibition staff during the opening period, including security and front-of-house personnel."}
+     {:group "Base" :title "Curatorial Mediator" :amount 25000
+      :description "Trained curatorial mediator providing visitor guidance, interpretation, and artwork oversight."}
+     {:group "Base" :title "Cleaning" :amount 7000
+      :description "Weekly professional cleaning and periodic deep cleans for a high-traffic international exhibition."}
+     {:group "Permitting" :title "Permits & Signage" :amount 10000
+      :description "SCIA permits, exhibition signage approvals, and municipal permits for operational compliance in Venice."}
+     {:group "Permitting" :title "Fire Safety Cert." :amount 3500
+      :description "Mandatory fire-safety certification, inspections, and documentation required by Venetian authorities."}
+     {:group "Permitting" :title "Liability Ins." :amount 2500
+      :description "Public liability insurance covering visitors, staff, and third parties for the full exhibition period."}
+     {:group "Construction" :title "Partitions & Walls" :amount 9500
+      :description "Windows, door alterations, partitions, and minor structural adjustments to adapt the venue."}
+     {:group "Construction" :title "Lighting" :amount 7500
+      :description "Overhead ceiling-mounted, freestanding, and supplemental exhibition lighting equipment and installation."}
+     {:group "Taxes" :title "Signage Taxes" :amount 1500
+      :description "Municipal banner and signage tax for exterior and wayfinding signage during the Biennale."}
+     {:group "Taxes" :title "VAT 22%" :amount 55000
+      :description "Italian value-added tax on applicable venue services."}
+     {:group "Overhead" :title "Team Lodging" :amount 95000
+      :description "Accommodation for the Venice studio team. $125/night per head, 2 months pre-production + 10 months operations."}
+     {:group "Overhead" :title "Per Diem" :amount 66000
+      :description "Daily living expenses for the Venice-based team. $100/day per head during active operating months."}
+     {:group "Overhead" :title "Project Insurance" :amount 50000
+      :description "Project insurance coverage for the Venice operations period. 10 months at $5,000/month."}]}
+   {:id :admin
+    :title "Administration"
     :description
-    "Leadership and project management supporting curatorial direction, artist oversight, coordination, compliance, and travel—ensuring continuity across pre-production, opening, and the full Biennale cycle.",
+    "Core leadership, project management, and operational overhead supporting curatorial direction, artist oversight, coordination, compliance, travel, and lodging—ensuring continuity across the full Biennale cycle."
     :details
-    [{:title "Admin LA",
-      :amount 12500,
-      :description
-      "Los Angeles–based administrative support for production, contracting, scheduling, and financial coordination."}
-     {:title "Admin Venice",
-      :amount 25000,
-      :description
-      "On-the-ground administrative coordination in Venice during installation, opening, and peak Biennale periods."}
-     {:title "Curatorial/Artist",
-      :amount 15000,
-      :description
-      "Curatorial and artist"}
-     {:title "Engineer",
-      :amount 6500,
-      :description "Structural and technical consultation related to installation safety and load considerations."}
-     {:title "Legal",
-      :amount 7500,
-      :description "Contract review, compliance, and legal oversight related to international exhibition operations."}
-
-     {:title "Accounting",
-      :amount 7500,
-      :description "Professional accounting services ensuring transparent financial reporting and compliance."}
-     {:title "Bookkeeping", :amount 2950, :description "Ongoing transaction tracking and financial record maintenance."}
-     {:title "HR/Payroll",
-      :amount 3000,
-      :description "Payroll processing and HR compliance for international and local staff."}
-     {:title "Software/tools",
-      :amount 1500,
-      :description "Specialized software subscriptions and tools required for project management and coordination."}
-     {:title "Flights/local",
-      :amount 17500,
-      :description
-      "International and regional travel for core team during installation, opening week, and critical milestones."}
-     {:title "Lodging/per diem",
-      :amount 32000,
-      :description "Accommodation and daily expenses during high-demand Biennale periods when rates are elevated."}
-     {:title "Dev & scouting",
-      :amount 15000,
-      :description
-      "Early-stage site visits, venue scouting, and development travel necessary prior to final commitments."}]}
-
-
-   {:id :la-prod,
-    :title "3. LA Production",
+    [{:group "Staff" :title "Curators" :amount 90000
+      :description "Curatorial leadership. 18 months at $5,000/month."}
+     {:group "Staff" :title "Artist" :amount 45000
+      :description "Artist fees. 18 months at $2,500/month."}
+     {:group "Staff" :title "Project Coordinator" :amount 45000
+      :description "Project coordination. 18 months at $2,500/month."}
+     {:group "Travel & Overhead" :title "Team Travel" :amount 49000
+      :description "International and regional travel for core team during scouting, installation, opening week, and milestones."}
+     {:group "Travel & Overhead" :title "Team Lodging" :amount 7500
+      :description "Accommodation for core team during opening week and critical on-site periods in Venice."}
+     {:group "Travel & Overhead" :title "Misc" :amount 5500
+      :description "Miscellaneous administrative expenses, software, tools, and incidentals. 11 months at $500/month."}]}
+   {:id :la-prod
+    :title "LA Production"
     :description
-    "Initial Los Angeles production: materials, casting infrastructure, gilding, studio overhead, and skilled labor—ensuring museum-grade fabrication prior to shipment.",
+    "Los Angeles–based production: skilled labor, casting, mold-making, materials, studio overhead, and supplies—ensuring museum-grade fabrication and crating prior to shipment to Venice."
     :details
-    [{:title "Foam core",
-      :amount 15000,
-      :description "Lightweight internal cores used to achieve structural integrity while minimizing shipping weight."}
-     {:title "Pigments",
-      :amount 17500,
-      :description "High-quality pigments integrated into plaster at casting, ensuring color saturation and longevity."}
-     {:title "Plaster", :amount 12500, :description "Primary casting material for all sculptural units."}
-     {:title "Acrylic", :amount 2500, :description "Binders and surface materials used in finishing and protection."}
-     {:title "Equipment",
-      :amount 18500,
-      :description "3D printer, casting tables, studio tools, and studio equipment required for production."}
-     {:title "Mold & Fab", :amount 6500, :description "Custom molds and fabrication aids for repeatable precision. CNC mother units."}
-     {:title "Expendables", :amount 2950, :description "Consumable supplies used during casting and finishing."}
-     {:title "Glass", :amount 2500, :description "Flat glass surfaces used to achieve smooth casting planes."}
-     {:title "Studio rent (LA)",
-      :amount 17500,
-      :description "LA studio rent for fabrication LA portion of fabrication prior to shipment. 4 months."}
-     {:title "Utilities/ins.",
-      :amount 7500,
-      :description "Utilities and insurance coverage for the LA production facility."}
-
-     {:title "Casters", :amount 40000, :description "2 full-time casting professionals for casting and finishing of initial units."}
-     {:title "Assistants",
-      :amount 21500,
-      :description "2 studio assistants supporting daily production and quality control."}]}
-
-
-   {:id :logistics,
-    :title "4. Logistics",
+    [{:group "Labor" :title "Lead Caster" :amount 37625
+      :description "Lead caster. 5 months at $7,525/month."}
+     {:group "Labor" :title "Caster" :amount 22500
+      :description "Casting professional. 5 months at $4,500/month."}
+     {:group "Labor" :title "General Assistant" :amount 21500
+      :description "General production assistant. 5 months at $4,300/month."}
+     {:group "Labor" :title "Mold Maker" :amount 15000
+      :description "Specialist mold maker. 2 months at $7,500/month."}
+     {:group "Labor" :title "Foam Sprayer" :amount 9000
+      :description "Contract foam sprayer for structural cores. 2 months at $4,500/month."}
+     {:group "Labor" :title "Casting Asst. ×3" :amount 9000
+      :description "3 casting assistants. 2 months at $1,500/month each."}
+     {:group "Labor" :title "Packers ×4" :amount 14000
+      :description "4 packers for crating and shipping prep. 1 month at $3,500 each."}
+     {:group "Labor" :title "Crate Makers ×2" :amount 10000
+      :description "2 crate makers for custom shipping crates. 1 month at $5,000 each."}
+     {:group "Overhead" :title "Studio Rental" :amount 22500
+      :description "LA studio rent for fabrication. 5 months at $4,500/month."}
+     {:group "Overhead" :title "Foam Space Rental" :amount 5500
+      :description "Additional foam production space rental. 2 months at $2,750/month."}
+     {:group "Overhead" :title "Utilities" :amount 3000
+      :description "Utilities for the LA production facility. 2 months at $1,500/month."}
+     {:group "Materials" :title "Pigment" :amount 11500
+      :description "High-quality pigments integrated into plaster at casting."}
+     {:group "Materials" :title "Honeycomb" :amount 1500
+      :description "Structural honeycomb material for lightweight internal reinforcement."}
+     {:group "Materials" :title "Polymers" :amount 1500
+      :description "Binders and polymer materials used in finishing and protection."}
+     {:group "Materials" :title "Foam Material" :amount 21000
+      :description "Lightweight foam cores for structural integrity while minimizing shipping weight."}
+     {:group "Materials" :title "Plaster" :amount 4500
+      :description "Primary casting material for all sculptural units."}
+     {:group "Materials" :title "Supplies" :amount 10500
+      :description "Consumable supplies used during casting and finishing."}
+     {:group "Materials" :title "Mold Supplies" :amount 17500
+      :description "Custom mold materials, CNC mother units, and fabrication aids."}
+     {:group "Materials" :title "Crate Materials" :amount 15000
+      :description "Materials for constructing custom shipping crates."}
+     {:group "Materials" :title "Packing Supplies" :amount 5000
+      :description "Packing materials for securing artwork during international transit."}
+     {:group "Materials" :title "Misc" :amount 7500
+      :description "Miscellaneous production expenses. 5 months at $1,500/month."}]}
+   {:id :the-studio
+    :title "The Studio"
     :description
-    "International and local transport under Biennale conditions: crating, freight, port handling, lagoon transport, installation labor, storage, and reverse logistics.",
+    "On-site operation of THE STUDIO in Venice: staffing, installation and de-installation crews, local materials, and daily production—supporting continuous fabrication and reconfiguration throughout the Biennale."
     :details
-    [{:title "Crates", :amount 15000, :description "15 - 20 pre-fab collapsible crates designed for international fine-art transport."}
-     {:title "Supplies", :amount 11800, :description "Packing materials, peanuts, void fill, required to protect works during shipment."}
-     {:title "Packers", :amount 7500, :description "5 professional art handlers for packing at origin. 5 days of packing."}
-     {:title "Ship LA–Venice",
-      :amount 35000,
-      :description "International freight from Los Angeles to Venice during peak shipping season."}
-     {:title "Ship Venice–LA", :amount 35000, :description "Return shipment following deinstallation."}
-     {:title "Insurance",
-      :amount 12500,
-      :description "Fine-art transit insurance covering international and local movement."}
-     {:title "Installers", :amount 8500, :description "Skilled installation labor in Venice."}
-     {:title "Uninstallers", :amount 12500, :description "Deinstallation labor at exhibition close."}
-     {:title "Port handling", :amount 3000, :description "Port fees and handling charges upon arrival."}
-     {:title "Barge (inbound)", :amount 3500, :description "Lagoon barge transport from port to Venice."}
-     {:title "Truck (inbound)", :amount 1500, :description "Short-distance trucking where canal access is limited."}
-     {:title "Barge (to site)", :amount 3500, :description "Final barge transport to exhibition site."}
-     {:title "Forklift", :amount 1500, :description "Mechanical handling for heavy crates."}
-     {:title "Handling crew", :amount 1000, :description "Additional labor for on-site maneuvering."}
-     {:title "Short storage", :amount 1500, :description "Temporary holding during installation scheduling."}
-     {:title "Crate storage", :amount 2500, :description "Secure storage of empty crates during exhibition."}
-     {:title "Waste removal", :amount 1000, :description "Removal of packing debris under Venetian regulations."}
-     {:title "Barge (return)", :amount 3500, :description "Lagoon transport for return shipment."}
-     {:title "Truck (return)", :amount 1500, :description "Return trucking as required."}
-     {:title "Port (return)", :amount 3000, :description "Port handling fees for outbound shipment."}]}
-   {:id :opening,
-    :title "5. Opening Week",
+    [{:group "Staff" :title "Studio Asst. #1" :amount 54000
+      :description "Full-time studio assistant. 9 months at $6,000/month."}
+     {:group "Staff" :title "Studio Asst. #2" :amount 46500
+      :description "Studio assistant. 6 months at $6,000 + 3 months at $3,500."}
+     {:group "Staff" :title "Studio Asst. #3" :amount 23500
+      :description "Studio assistant. 1 month at $6,000 + 5 months at $3,500."}
+     {:group "Staff" :title "Studio Asst. #4" :amount 23500
+      :description "Studio assistant. 1 month at $6,000 + 5 months at $3,500."}
+     {:group "Staff" :title "Studio Asst. #5" :amount 6000
+      :description "Temporary studio assistant. 1 month at $6,000."}
+     {:group "Staff" :title "Studio Asst. #6" :amount 6000
+      :description "Temporary studio assistant. 1 month at $6,000."}
+     {:group "Install / Uninstall" :title "Installers ×4" :amount 32000
+      :description "4 installers for install and uninstall. 2 engagements at $4,000 each."}
+     {:group "Install / Uninstall" :title "Crate Makers ×2" :amount 11000
+      :description "2 crate makers for Venice de-install crating. 1 engagement at $5,500 each."}
+     {:group "Materials" :title "Foam Material" :amount 11500
+      :description "Venice-sourced foam materials for ongoing on-site fabrication."}
+     {:group "Materials" :title "Pigment" :amount 6750
+      :description "Pigments for on-site casting and finishing work."}
+     {:group "Materials" :title "Plaster" :amount 4750
+      :description "Plaster for on-site sculptural production."}
+     {:group "Materials" :title "Supplies" :amount 4750
+      :description "Consumable supplies for ongoing studio activity."}
+     {:group "Materials" :title "Crate Materials" :amount 7500
+      :description "Materials for crating artwork for return shipment."}
+     {:group "Materials" :title "Packing Supplies" :amount 2500
+      :description "Packing materials for securing artwork at close-out."}
+     {:group "Materials" :title "Misc Materials" :amount 4250
+      :description "Miscellaneous materials and expendables for studio operations."}]}
+   {:id :logistics
+    :title "Logistics & Transport"
     :description
-    "Opening reception and first public visibility of the Pavilion: hospitality, staffing, security, rentals, technical support, press and VIP coordination—executed during the Biennale’s most compressed and expensive period.",
+    "International and local transport under Biennale conditions: freight, insurance, port handling, lagoon barge transport, forklift operations, storage, and reverse logistics for return shipment."
     :details
-    [{:title "Catering food",
-      :amount 8500,
-      :description "Food service for opening events, 150-200 headcount, scaled for international attendance and peak Biennale demand."}
-     {:title "Catering drinks", :amount 2500, :description "Beverage service for receptions and VIP previews. 150-200 headcount."}
-     {:title "Catering staff",
-      :amount 3000,
-      :description "Professional service staff required for licensed event catering. Cost for catering staff is increased during Biennale opening week."}
-     {:title "Event coord.",
-      :amount 3500,
-      :description "On-site event coordination managing vendors, schedules, and protocol."}
-     {:title "Security", :amount 1500, :description "Supplemental security during high-density opening events."}
-     {:title "Rentals", :amount 3000, :description "Furniture, tables, and other event equipment rentals."}
-     {:title "A/V & tech", :amount 2000, :description "Temporary audio-visual support for speeches and presentations."}
-     {:title "Invitations", :amount 1500, :description "Design and printing of formal invitations for VIP and press."}
-     {:title "VIP/press staff",
-      :amount 3000,
-      :description "Dedicated personnel supporting accredited guests and journalists during the first several weeks."}
-     {:title "VIP hospitality",
-      :amount 3500,
-      :description "Hospitality expenses aligned with diplomatic and institutional expectations."}
-     {:title "VIP liaison", :amount 2500, :description "Protocol-aware liaison coordinating VIP schedules and access."}
-     {:title "Press packets", :amount 1000, :description "Printed materials distributed to press during previews."}
-     {:title "Press A/V", :amount 1000, :description "Playback and display equipment for press briefings."}
-     {:title "Interpreter", :amount 1500, :description "Professional interpretation for multilingual audiences."}
-     {:title "Water taxis",
-      :amount 3500,
-      :description "Water taxi transport during peak congestion when rates are elevated."}
-     {:title "Public talks",
-      :amount 3000,
-      :description "Honoraria and costs associated with scheduled public discussions."}
-     {:title "Talk staff", :amount 1500, :description "Support staff for audience management during talks."}]}
-   {:id :the-studio,
-    :title "6. THE STUDIO",
+    [{:group "International Freight" :title "Ship LA → Venice" :amount 30000
+      :description "International freight from Los Angeles to Venice for all crated artwork and materials."}
+     {:group "International Freight" :title "Ship Venice → LA" :amount 30000
+      :description "Return international freight from Venice to Los Angeles after close-out."}
+     {:group "International Freight" :title "Transit Insurance" :amount 12000
+      :description "Insurance coverage for artwork during international transit."}
+     {:group "Install / Uninstall" :title "Installers (Venice)" :amount 7200
+      :description "Local Venice installation crew. 4 installers for on-site install."}
+     {:group "Install / Uninstall" :title "Uninstallers (Venice)" :amount 9000
+      :description "Local Venice de-installation crew. 5 uninstallers for close-out."}
+     {:group "Local Transport" :title "Port Handling" :amount 2500
+      :description "Offloading crates at Venice port; includes terminal fees and labor."}
+     {:group "Local Transport" :title "Barge (Port → Stor.)" :amount 3000
+      :description "Lagoon barge transport for crates from port to storage facility."}
+     {:group "Local Transport" :title "Trucking (Stor. → Venue)" :amount 1200
+      :description "Truck transport from storage depot to Biennale venue access point."}
+     {:group "Local Transport" :title "Barge (Stor. → Venue)" :amount 3000
+      :description "Barge shipping for crates/materials to venue area via Venice canals."}
+     {:group "Local Transport" :title "Forklift & Operator" :amount 1300
+      :description "Forklift + licensed operator for unloading/loading at venue. 2 days at $650/day."}
+     {:group "Local Transport" :title "Handling Crew" :amount 500
+      :description "Movers for crate handling, navigation of canals and venue access."}
+     {:group "Storage" :title "Short-Term Storage" :amount 1200
+      :description "Storage of crates between arrival and installation. 60 crates for 20 days."}
+     {:group "Storage" :title "Empty Crate Storage" :amount 2000
+      :description "Storage of empty crates during the Biennale exhibition run. 200 days."}
+     {:group "Storage" :title "Waste Removal" :amount 1000
+      :description "Removal of packing material, foam waste, and install debris."}
+     {:group "Reverse Logistics" :title "Reverse Barge" :amount 3000
+      :description "Return transport of crates/materials after uninstall."}
+     {:group "Reverse Logistics" :title "Reverse Trucking" :amount 1200
+      :description "Transport of crates back to port for outbound shipping."}
+     {:group "Reverse Logistics" :title "Reverse Port Handling" :amount 2500
+      :description "Terminal fees + labor for reloading outbound container."}]}
+   {:id :opening
+    :title "Opening Week"
     :description
-    "Seven-month operation of THE STUDIO on-site: staffing, materials, equipment, lodging, and daily maintenance—supporting continuous making throughout the Biennale.",
+    "Opening reception and first public visibility of the Pavilion: hospitality, staffing, technical support, press and VIP coordination—executed during the Biennale's most compressed period."
     :details
-    [{:title "Full-time asst.",
-      :amount 85000,
-      :description "3 full-time core studio staff maintaining daily fabrication and reconfiguration. 7 months."}
-     {:title "Part-time asst.",
-      :amount 45000,
-      :description "3 part-time supplemental labor scaled to visitor volume and programming peaks. 7 months."}
-     {:title "Temp staff", :amount 18500, :description "Short-term staffing during opening week and special events."}
-     {:title "Gilders", :amount 15000, :description "Specialist gilder engaged on an as-needed basis on site."}
-     {:title "Local materials",
-      :amount 9500,
-      :description "Venice-sourced materials to avoid repeated international shipping."}
-     {:title "Expendables", :amount 2500, :description "Consumables required for ongoing studio activity."}
-     {:title "Local equip.",
-      :amount 9500,
-      :description "Rental or purchase of equipment impractical to ship internationally."}
-     {:title "Lodging/per diem",
-      :amount 55000,
-      :description "Accommodation and expenses over seven months. Zadik, Aram. Roughly 3750 per person per month."}
-     {:title "Rubbish", :amount 3500, :description "Regular waste removal under municipal regulations."}]}
-   {:id :marketing,
-    :title "7. Marketing",
+    [{:group "Hospitality" :title "Catering — Food" :amount 5250
+      :description "Passed hors d'oeuvres for opening night reception. 75 guests at $70/guest."}
+     {:group "Hospitality" :title "Catering — Beverages" :amount 1500
+      :description "Prosecco, wine, and non-alcoholic drinks. 100 guests at $15/guest."}
+     {:group "Hospitality" :title "Catering Staff" :amount 1500
+      :description "3–6 servers + 1 event captain for opening night."}
+     {:group "Hospitality" :title "Rentals" :amount 1500
+      :description "Tables, linens, glassware; Venice incurs transport surcharges due to canals."}
+     {:group "Event Ops" :title "Event Coordinator" :amount 1500
+      :description "Scheduling, setup, guest flow, liaising with pavilion staff and caterer."}
+     {:group "Event Ops" :title "Security" :amount 800
+      :description "Safe capacity management at openings per Biennale requirements."}
+     {:group "Event Ops" :title "Audio, Light & Tech" :amount 1000
+      :description "Small speaker system, microphone, ambient lighting reinforcement."}
+     {:group "Event Ops" :title "Event Photography" :amount 500
+      :description "Opening night event photography coverage."}
+     {:group "Event Ops" :title "Invitations" :amount 500
+      :description "Printing or premium digital distribution of invitations."}
+     {:group "VIP Programs" :title "VIP Press Preview" :amount 1500
+      :description "Staff + scheduling for VIP/press walkthroughs during opening week."}
+     {:group "VIP Programs" :title "VIP Water Taxi" :amount 1500
+      :description "Transport allowance for VIPs/officials. 8 rides at $120/ride."}]}
+   {:id :marketing
+    :title "Marketing & PR"
     :description
-    "Visibility and communications: branding, website, PR, advertising, and outdoor placements—positioning the Pavilion within the global Biennale discourse.",
+    "Visibility and communications: identity design, PR, advertising, social media, and press activity—positioning the Pavilion within the global Biennale discourse."
     :details
-    [{:title "Visual Identity", :amount 15000, :description "Design of a cohesive visual system across all platforms."}
-     {:title "Press kit",
-      :amount 8500,
-      :description "Production of comprehensive press materials for international media."}
-     {:title "Website", :amount 7500, :description "Design, development, and hosting of the Pavilion website. The website will be a key aspect of the project."}
-     {:title "OOH design", :amount 4500, :description "Design for outdoor advertising formats."}
-     {:title "Copywriting", :amount 1500, :description "Editorial copy supporting marketing and donor outreach."}
-     {:title "PR writing", :amount 4500, :description "Press releases and feature pitching."}
-     {:title "Totem OOH", :amount 10000, :description "High-visibility outdoor placements during Biennale peak."}
-     {:title "Poster print", :amount 7500, :description "Printing of large-format posters."}
-     {:title "City posters", :amount 3500, :description "Smaller-scale poster distribution across Venice."}
-     {:title "Social ad spend", :amount 6500, :description "Targeted social media promotion."}
-     {:title "Campaign mgmt", :amount 15000, :description "Ongoing campaign coordination and optimization."}
-     {:title "Digital ads", :amount 8500, :description "Online advertising placements."}
-     {:title "Print ads", :amount 12500, :description "Print placements in international art publications."}
-     {:title "PR pre-open", :amount 12500, :description "Intensive PR outreach leading into opening week."}
-     {:title "PR ongoing", :amount 12500, :description "Sustained PR activity throughout the Biennale run."}
-     {:title "Social clips", :amount 7500, :description "Short-form video deliverables for social platforms."}]}
-   {:id :publication,
-    :title "8. Publication",
+    [{:group "Design" :title "Visual Identity" :amount 2500
+      :description "Design of pavilion identity, key visual and main poster."}
+     {:group "Design" :title "Essentials Package" :amount 1500
+      :description "Press kit, invitations, social templates, digital ads."}
+     {:group "Design" :title "Website & Hosting" :amount 7500
+      :description "Design and hosting of the pavilion website."}
+     {:group "Design" :title "OOH Design" :amount 1500
+      :description "Design for totems and out-of-home placements."}
+     {:group "Design" :title "Exhibition Graphics" :amount 1500
+      :description "Entrance graphics, wall texts, wayfinding signage."}
+     {:group "Writing" :title "Social Copywriting" :amount 1500
+      :description "Ongoing caption writing, messaging, narrative scripting."}
+     {:group "Writing" :title "PR Writing" :amount 1500
+      :description "Speeches, press releases, media statements."}
+     {:group "Advertising" :title "Totem Placement" :amount 8500
+      :description "Rental + printing + installation for Biennale duration."}
+     {:group "Advertising" :title "Vaporetto Wraps" :amount 12500
+      :description "Rental + production for 2–3 vaporetto lines over Biennale duration."}
+     {:group "Advertising" :title "Poster Printing" :amount 5000
+      :description "250 posters at $20 each for venue and city placements."}
+     {:group "Advertising" :title "Outdoor Posters" :amount 3000
+      :description "Secondary placements across Venice — 50 posters at $60 each."}
+     {:group "Advertising" :title "Social Media Ads" :amount 2500
+      :description "Instagram, Facebook, and TikTok ads for 7 months."}
+     {:group "Advertising" :title "Social Campaign Mgmt" :amount 2500
+      :description "Strategy, posting, optimization, reporting."}
+     {:group "Advertising" :title "Digital Pub Ads" :amount 2500
+      :description "Ads on e-flux, ArtNews, Hyperallergic, Frieze."}
+     {:group "Advertising" :title "Print Pub Ads" :amount 5000
+      :description "Artforum, Art Newspaper, and similar print publications."}
+     {:group "PR" :title "PR — Pre-Opening" :amount 1500
+      :description "Press relations, writing, pitching, coordination."}
+     {:group "PR" :title "PR — Ongoing" :amount 1500
+      :description "Sustained PR, press tracking, releases, interviews over 7 months."}
+     {:group "PR" :title "Marketing Mgmt Fee" :amount 2500
+      :description "Overall coordination of marketing and media buys."}]}
+   {:id :publication
+    :title "Publications"
     :description
-    "Catalogue and printed materials: commissioned texts, design, editing, and printing—ensuring long-term scholarly presence.",
+    "Catalogue and printed materials: commissioned texts, design, editing, printing, totes, and stationery—ensuring long-term scholarly and institutional presence."
     :details
-    [{:title "Curatorial essay", :amount 2500, :description "Primary curatorial text anchoring the publication."}
-     {:title "Commissioned essays", :amount 7500, :description "Texts by invited writers and scholars."}
-
-     {:title "Wall texts", :amount 1500, :description "Exhibition texts adapted for print."}
-     {:title "Catalog design", :amount 14500, :description "Graphic design and layout of the catalogue."}
-     {:title "Edit & layout", :amount 5000, :description "Professional editing and final layout preparation."}
-     {:title "Catalog print", :amount 25000, :description "Printing of a limited-run, museum-quality catalogue. 250 Copies."}
-     {:title "Tote design", :amount 3500, :description "Design of branded tote bags."}
-     {:title "Tote print", :amount 2500, :description "Production of tote bags."}
-     {:title "Stationery design", :amount 3500, :description "Design of printed stationery materials for handouts and press."}
-     {:title "Stationery print", :amount 2500, :description "Printing of stationery materials for handouts and press."}]}
-   {:id :documentation,
-    :title "9. Documentation",
+    [{:group "Writing" :title "Curatorial Essay" :amount 2500
+      :description "Primary curatorial essay for catalogue and website."}
+     {:group "Writing" :title "Catalogue Essays" :amount 4000
+      :description "Commissioned essays by 4 invited writers and scholars at $1,000 each."}
+     {:group "Catalogue" :title "Design" :amount 7500
+      :description "Design of exhibition catalogue (120 pages, soft cover)."}
+     {:group "Catalogue" :title "Editing & Layout" :amount 2500
+      :description "Editing and layout of copy, images, and inserts."}
+     {:group "Catalogue" :title "Printing" :amount 12000
+      :description "High-quality color printing, 120 pages. 150 copies at $80 each."}
+     {:group "Catalogue" :title "Proofs & Shipping" :amount 1000
+      :description "Proofs, shipping, and miscellaneous printing costs."}
+     {:group "Tote" :title "Design" :amount 2500
+      :description "Design of exhibition totes."}
+     {:group "Tote" :title "Printing" :amount 4500
+      :description "High-quality silkscreen run. 300 totes at $15 each."}
+     {:group "Tote" :title "Proofs & Shipping" :amount 1000
+      :description "Proofs, shipping, and miscellaneous costs for totes."}
+     {:group "Stationery" :title "Design" :amount 1500
+      :description "Cards, postcards, flyers design."}
+     {:group "Stationery" :title "Printing" :amount 1500
+      :description "300 pieces at $5 each."}
+     {:group "Stationery" :title "Proofs & Shipping" :amount 250
+      :description "Proofs, shipping, and miscellaneous stationery costs."}]}
+   {:id :documentation
+    :title "Documentation"
     :description
-    "Permanent visual record: film, sound, photography, editing, and social deliverables—supporting press, scholarship, and legacy.",
+    "Comprehensive visual documentation: cinema-quality film production, photography, sound recording, editing, social media deliverables, and archiving—supporting press visibility, scholarship, and institutional legacy."
     :details
-    [{:title "Film equip rentals", :amount 12500, :description "Rental of cinema-grade cameras, lenses, and lighting."}
-     {:title "Film crew",
-      :amount 18500,
-      :description "Professional crew covering installation, opening, and walkthroughs."}
-     {:title "Sound crew", :amount 4500, :description "Location sound recording for film documentation."}
-     {:title "Install photos", :amount 2500, :description "High-resolution photography during installation."}
-     {:title "Final photos", :amount 3500, :description "Completed exhibition photography."}
-     {:title "Event photos", :amount 1500, :description "Coverage of opening and public events."}
-     {:title "Edit (assembly)", :amount 13500, :description "Initial film assembly and rough cut."}
-     {:title "Edit (final)", :amount 5000, :description "Final edit and color correction."}
-     {:title "Sound mix", :amount 3500, :description "Final audio mixing and mastering."}]}])
+    [{:group "Production" :title "Camera & Lighting" :amount 10000
+      :description "Rental package for cinema cameras, lenses, lighting, audio kits."}
+     {:group "Production" :title "DPs ×2" :amount 20400
+      :description "Lead cinematographers for install, opening, and walkthroughs. 2 DPs × 12 days × $850/day."}
+     {:group "Production" :title "Assistant / Gaffer" :amount 4500
+      :description "Lighting and camera support during shoots. 10 days at $450/day."}
+     {:group "Production" :title "Sound Recording" :amount 2800
+      :description "Location audio capture, ambient sound, dialogue. 8 days at $350/day."}
+     {:group "Production" :title "Photo — Install" :amount 1750
+      :description "High-resolution documentation during installation. 5 days at $350/day."}
+     {:group "Production" :title "Photo — Exhibition" :amount 1800
+      :description "Final artwork + pavilion architecture photography. 3 days at $600/day."}
+     {:group "Production" :title "Photo — Opening" :amount 1400
+      :description "Coverage for VIP events, public programs, press preview. 2 days at $700/day."}
+     {:group "Post" :title "Film Assembly" :amount 3000
+      :description "Initial cut of installation and exhibition film. 6 days at $500/day."}
+     {:group "Post" :title "Final Cut & Color" :amount 2400
+      :description "Professional colorist and finishing for final delivery. 4 days at $600/day."}
+     {:group "Post" :title "Sound Edit & Mix" :amount 1600
+      :description "Cleanup, music integration, final audio polish. 4 days at $400/day."}
+     {:group "Post" :title "Social Deliverables" :amount 6000
+      :description "Short-form clips optimized for IG/FB/TikTok. 5 days at $1,200/day."}
+     {:group "Post" :title "Backup & Archive" :amount 750
+      :description "Redundancy, hard drives, digital archiving of all materials."}]}])
 
 
 (defn convert-amount
@@ -299,7 +324,7 @@
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 
          (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold font-mono text-white"} "$1.6M USD")
+         (d/span {:class "font-bold font-mono text-white"} "$1,6M USD")
          (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
          (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
          (d/span {:class "text-slate-300"} " and ")
@@ -315,7 +340,7 @@
          (d/span {:class "text-slate-300"} "With a total budget of approximately ")
 
          (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold font-mono text-white"} "$1.6M USD")
+         (d/span {:class "font-bold font-mono text-white"} "$1,6M USD")
          (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
          (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
          (d/span {:class "text-slate-300"} " and ")
@@ -328,7 +353,7 @@
                  "as is customary for many smaller and non-permanent participating nations. ")
          (d/span {:class "text-slate-300"}
                  "The selected site is located outside the Biennale’s primary zones, enabling a significantly lower base rent—approximately ")
-         (d/span {:class "font-bold font-mono text-white"} "$195,000")
+         (d/span {:class "font-bold font-mono text-white"} "$145,600")
          (d/span {:class "text-slate-300"} "—while remaining fully accredited and visible within the official Biennale structure. ")
          (d/span {:class "text-slate-300"}
                  "By contrast, venues within the Giardini or Arsenale—when available—typically begin at ")
@@ -411,7 +436,8 @@
 (defnc cost-breakdown
   [{:keys [id subtitle title]}]
   (d/div {:id id}
-         ($ expandable-text-area-2 {:section-hint subtitle
+         ($ expandable-text-area-2 {:idx 3
+                                    :section-hint subtitle
                                     :title title
                                     :expand-button-label "Read more"
                                     :preview-text preview

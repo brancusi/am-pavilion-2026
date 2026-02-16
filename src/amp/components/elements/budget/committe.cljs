@@ -126,7 +126,8 @@
   [{:keys [id subtitle title]}]
   (d/section {:id id
               :class "space-y-4"}
-             ($ expandable-text-area-2 {:section-hint subtitle
+             ($ expandable-text-area-2 {:idx 5
+                                        :section-hint subtitle
                                         :title title
                                         :expand-button-label "Read more"
                                         :preview-text preview

@@ -7,6 +7,7 @@
    [amp.components.elements.budget.cash-flow :refer [cash-flow]]
    [amp.components.elements.budget.non-profit :refer [non-profit]]
    [amp.components.elements.budget.sponsors :refer [sponsors-section]]
+   [amp.components.elements.budget.why-support :refer [why-support]]
    [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.navs.back-up-nav :refer [back-up-nav]]
    [amp.components.section :refer [section]]
@@ -60,7 +61,10 @@
                            :anchor "section-7"})
                        ($ section-link
                           {:title "8. Donation Info"
-                           :anchor "section-8"})))))
+                           :anchor "section-8"})
+                       ($ section-link
+                          {:title "9. Why Support"
+                           :anchor "section-9"})))))
 
 (defnc budget-section
   []
@@ -107,5 +111,9 @@
              ($ non-profit {:id "section-8"
                             :subtitle "non-profit"
                             :title "donation information"})
+
+             ($ why-support {:id "section-9"
+                             :subtitle "why it matters"
+                             :title "why support"})
 
              ($ contact-section)))))

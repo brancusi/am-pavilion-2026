@@ -11,7 +11,7 @@
   [{:keys [id subtitle title]}]
   (d/div {:id id}
          ($ section-block
-            {:idx 5
+            {:idx 8
              :eyebrow subtitle
              :title title}
             (d/div

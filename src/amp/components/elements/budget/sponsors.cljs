@@ -114,7 +114,7 @@
                      (sort-by (fn [[tier _]] (:order (get tier-meta tier)))))]
     (d/div {:id id}
            ($ section-block
-              {:idx 8
+              {:idx 6
                :eyebrow subtitle
                :title title}
 

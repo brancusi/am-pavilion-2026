@@ -286,7 +286,8 @@
 (defnc location-section
   [{:keys [id subtitle title]}]
   (d/div {:id id}
-         ($ expandable-text-area-2 {:section-hint subtitle
+         ($ expandable-text-area-2 {:idx 7
+                                    :section-hint subtitle
                                     :title title
                                     :expand-button-label "Expand details"
                                     :preview-text preview

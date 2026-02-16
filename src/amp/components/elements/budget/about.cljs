@@ -122,7 +122,8 @@
         [video-visited? video-is-visible?] (use-intersection-observer video-ref {:end "bottom"})
         [visited? is-visible?] (use-intersection-observer outer-ctx {:end "bottom"})]
     (d/div {:id id}
-           ($ expandable-text-area-2 {:section-hint subtitle
+           ($ expandable-text-area-2 {:idx 2
+                                      :section-hint subtitle
                                       :title title
                                       :expand-button-label "Read more"
                                       :preview-text preview

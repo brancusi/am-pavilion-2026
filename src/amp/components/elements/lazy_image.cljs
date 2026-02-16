@@ -75,30 +75,39 @@
         ref (hooks/use-ref "lazy-image-ref")
         overlay-ref (hooks/use-ref "overlay-ref")
 
-        [loaded? set-loaded!] (hooks/use-state false)
+        ;; Two-phase loading:
+        ;; 1. preloaded? — image bytes are cached (triggers DOM render of <img>)
+        ;; 2. painted?   — the actual <img> element has fired onLoad (safe to show overlays)
+        [preloaded? set-preloaded!] (hooks/use-state false)
+        [painted? set-painted!] (hooks/use-state false)
 
         on-success-handler (hooks/use-callback
                             :once
                             (fn [_]
-                              (set-loaded! true)))
+                              (set-preloaded! true)))
 
         on-error-handler (hooks/use-callback
                           :once
                           (fn [_]
-                            (set-loaded! true)))]
+                            (set-preloaded! true)))
+
+        on-img-load (hooks/use-callback
+                     :once
+                     (fn [_]
+                       (set-painted! true)))]
 
     (hooks/use-effect
-     [img-src w h should-load? loaded?]
+     [img-src w h should-load? preloaded?]
 
      (when (and should-load?
-                (not loaded?))
+                (not preloaded?))
        (preload-image img-src
                       on-success-handler
                       on-error-handler)))
 
     (hooks/use-layout-effect
-     [loaded?]
-     (when loaded?
+     [painted?]
+     (when painted?
        (gsap/to-ref ref (merge
                          transition
                          {:onComplete on-intro-completed}))
@@ -111,17 +120,19 @@
     (d/div {:class "relative flex items-center justify-center"
             #_#_:style {:min-height (str h "px")}}
 
-           (if loaded?
+           (if preloaded?
              (d/div {:style {:opacity 0}
                      :ref ref}
                     (d/img {:srcSet img-src-set
                             :src img-src
                             :sizes sizes
-                            :alt ""})
-                    (d/div {:style {:opacity 0}
-                            :ref overlay-ref}
-                           (when children
-                             children)))
+                            :alt ""
+                            :onLoad on-img-load})
+                    (when painted?
+                      (d/div {:style {:opacity 0}
+                              :ref overlay-ref}
+                             (when children
+                               children))))
 
              ;; Minimal loading indicator — three pulsing dots
              (d/div {:style {:display "flex"
