@@ -3,6 +3,7 @@
    [amp.lib.defnc :refer [defnc]]
    [amp.hooks.use-hover-animations :refer [use-hover-animations]]
    [amp.hooks.use-container-size :refer [use-container-size]]
+   [amp.styles :as s]
    [amp.utils.gsap :as gsap :refer [to-ref to-element]]
    [amp.utils.debug :refer [spy]]
    [helix.dom :as d]
@@ -156,15 +157,11 @@
           :ref target-ref}
          (d/div {:class "h-full
                          w-full
-                         bg-slate-900/50
+                         bg-slate-900/50 dark:bg-slate-900/60
                          p-2"}
-                (d/p {:class "text-white 
-                              font-fira-code
-                              text-xs"}
+                (d/p {:class (s/cx "font-fira-code text-xs" s/text-inverse)}
                      caption)
-                (d/p {:class "text-white 
-                              font-fira-code
-                              text-xs"}
+                (d/p {:class (s/cx "font-fira-code text-xs" s/text-inverse)}
                      credit))))
 
 (defnc image-card [{:keys [width height img-src caption credit other key idx]}]
@@ -186,7 +183,7 @@
             :style {:width width
                     :height height}
             :class "relative
-                    bg-white/10
+                    bg-slate-200/50 dark:bg-white/10
                     overflow-hidden"}
 
            ($ image-layer {:img-src img-src})
@@ -213,10 +210,7 @@
 
     (d/section {:ref outer-ctx
                 :class "overflow-hidden h-full"}
-               (d/div {:class "columns-3
-                               gap-0
-                               h-full"
-                       :style {:background-image "repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.1) 4px, rgba(255,255,255,0.1) 5px)"}}
+               (d/div {:class "columns-3 gap-0 h-full pinstripe"}
                       (map-indexed (fn [idx dimensions]
                                      (let [{:keys [src caption credit]} (rand-nth images)
                                            aspect-ratio (-> dimensions meta :aspect-ratio)

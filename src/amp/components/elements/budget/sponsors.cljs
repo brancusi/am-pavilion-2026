@@ -39,20 +39,20 @@
 
 (def tier-meta
   {:founding-patron {:label "Founding Patrons"
-                     :accent "text-pink-300"
+                     :accent "text-pink-700 dark:text-pink-300"
                      :border "border-pink-500/30"
                      :order 0}
    :patron          {:label "Patrons"
-                     :accent "text-amber-300"
-                     :border "border-amber-300/30"
+                     :accent "text-amber-700 dark:text-amber-300"
+                     :border "border-amber-500/30 dark:border-amber-300/30"
                      :order 1}
    :benefactor      {:label "Benefactors"
-                     :accent "text-indigo-300"
-                     :border "border-indigo-300/30"
+                     :accent "text-indigo-700 dark:text-indigo-300"
+                     :border "border-indigo-500/30 dark:border-indigo-300/30"
                      :order 2}
    :supporter       {:label "Supporters"
-                     :accent "text-slate-300"
-                     :border "border-slate-600"
+                     :accent "text-slate-700 dark:text-slate-300"
+                     :border "border-slate-400 dark:border-slate-600"
                      :order 3}})
 
 ;; ---------------------------------------------------------------------------
@@ -65,7 +65,9 @@
          (d/img {:src logo
                  :alt name
                  :style {:height "4rem" :width "auto"}
-                 :class "opacity-50 group-hover:opacity-90 transition-all duration-500 brightness-0 invert drop-shadow-[0_0_12px_rgba(249,168,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(249,168,212,0.15)]"})))
+                 :class "opacity-50 group-hover:opacity-90 transition-all duration-500
+                         dark:brightness-0 dark:invert
+                         drop-shadow-[0_0_12px_rgba(249,168,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(249,168,212,0.15)]"})))
 
 (defnc name-item
   [{:keys [name accent]}]
@@ -81,10 +83,10 @@
            ;; tier heading
            (d/div {:class "mb-4 flex items-center gap-3"}
                   (d/div {:class (str "h-px w-8 " (case tier
-                                                    :founding-patron "bg-pink-500/70"
-                                                    :patron "bg-amber-300/50"
-                                                    :benefactor "bg-indigo-300/50"
-                                                    "bg-slate-600"))})
+                                                    :founding-patron "bg-pink-600/70 dark:bg-pink-500/70"
+                                                    :patron "bg-amber-500/50 dark:bg-amber-300/50"
+                                                    :benefactor "bg-indigo-500/50 dark:bg-indigo-300/50"
+                                                    "bg-slate-400 dark:bg-slate-600"))})
                   (d/p {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- s/tracking-label accent)}
                        label))
 

@@ -49,15 +49,15 @@
 
 ;; --- Text colors ----------------------------------------------------------
 (def text-primary    "text-slate-900  dark:text-slate-100")
-(def text-secondary  "text-slate-600  dark:text-slate-300")
-(def text-muted      "text-slate-500  dark:text-slate-400")
-(def text-faint      "text-slate-400  dark:text-slate-500")
-(def text-ghost      "text-slate-300  dark:text-slate-600")
+(def text-secondary  "text-slate-700  dark:text-slate-300")
+(def text-muted      "text-slate-600  dark:text-slate-400")
+(def text-faint      "text-slate-500  dark:text-slate-500")
+(def text-ghost      "text-slate-400  dark:text-slate-600")
 (def text-inverse    "text-slate-950  dark:text-white")
 
 ;; --- Accent palette – semantic roles --------------------------------------
-(def text-accent     "text-pink-600   dark:text-pink-300")
-(def text-accent-50  "text-pink-600/50 dark:text-pink-300/50")
+(def text-accent     "text-pink-700   dark:text-pink-300")
+(def text-accent-50  "text-pink-700/50 dark:text-pink-300/50")
 (def text-value      "text-indigo-600 dark:text-indigo-300")
 (def text-positive   "text-emerald-600 dark:text-emerald-300")
 (def text-positive-50 "text-emerald-600/50 dark:text-emerald-300/50")
@@ -218,18 +218,18 @@
 ;; Interactive elements -----------------------------------------------------
 (def link-subtle
   "Underlined link with soft decoration."
-  "underline underline-offset-2 decoration-slate-400/30 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all")
+  "underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all")
 
 (def btn-text
   "Text-style button / toggle."
   (cx font-ui weight-bold uppercase- tracking-label text-xs
-      text-faint "hover:text-pink-300 transition-colors"))
+      text-faint "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
 
 ;; Navigation ---------------------------------------------------------------
 (def nav-link
   "Section navigation links."
   (cx font-ui text-sm uppercase- tracking-wider
-      "hover:text-pink-300 transition-colors"))
+      "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
 
 ;; ---------------------------------------------------------------------------
 ;; Layout helpers — responsive containers

@@ -18,9 +18,9 @@
 (defnc lazy-image-gallery
   [{:keys [slides enabled?]}]
   (let [lazy-image-parent-styles "font-mono
-                               bg-white/70
+                               bg-white/70 dark:bg-slate-900/70
                                px-2
-                               text-slate-700"
+                               text-slate-700 dark:text-slate-200"
 
         auto-play-opts (clj->js {:delay 7000})
 
@@ -88,11 +88,11 @@
                          (d/div {:class "flex justify-between h-full w-full items-center "}
                                 (d/div {:on-click previous-slide
                                         :class "w-12 flex items-center "}
-                                       (d/div {:class "w-10 h-10 transition-transform rotate-180 text-red-500"}
+                                       (d/div {:class "w-10 h-10 transition-transform rotate-180 text-pink-600 dark:text-red-500"}
                                               ($ ChevronRightIcon)))
                                 (d/div {:on-click next-slide
                                         :class "w-12 flex justify-end items-center "}
-                                       (d/div {:class "w-10 h-10 transition-transform text-red-500"}
+                                       (d/div {:class "w-10 h-10 transition-transform text-pink-600 dark:text-red-500"}
                                               ($ ChevronRightIcon)))))
 
                   (d/div {:class "absolute w-full bottom-4"}
@@ -100,6 +100,6 @@
                                 (d/div {:class ""}
                                        ($ progress-menu-v2 {:total-count total-slides
                                                             :current-index current-index
-                                                            :marker-styles "w-3 h-3 bg-pink-300 rounded-full my-2 border-slate-700 border-2"}))))))))
+                                                            :marker-styles "w-3 h-3 bg-pink-400 dark:bg-pink-300 rounded-full my-2 border-slate-400 dark:border-slate-700 border-2"}))))))))
 
 

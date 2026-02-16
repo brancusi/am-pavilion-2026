@@ -139,9 +139,7 @@
                                  :should-play? video-is-visible?
                                  :allow-audio? true}))
            (d/div {:ref outer-ctx
-                   :class "my-4 relative"
-                   :style {:background-color "#1e283a"
-                           :background-image "repeating-linear-gradient(45deg, #1f1f1f 0px, #1f1f1f 10px, #181818 10px, #181818 20px)"}}
+                   :class "my-4 relative pinstripe-bold"}
 
 
                   ($ lazy-image-gallery {:enabled? is-visible?

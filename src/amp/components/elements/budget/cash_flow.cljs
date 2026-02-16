@@ -4,6 +4,7 @@
    [amp.components.elements.budget.budget-table :refer [sub-total-all-sections contingency-amount]]
    [amp.components.elements.budget.cost-breakdown :refer [cost-data]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
@@ -493,10 +494,55 @@
 
 (defn priority-tag-text [p]
   (case p
-    :critical "text-pink-300"
-    :high     "text-amber-300"
-    :normal   "text-indigo-300"
-    "text-indigo-300"))
+    :critical "text-pink-600 dark:text-pink-300"
+    :high     "text-amber-600 dark:text-amber-300"
+    :normal   "text-indigo-600 dark:text-indigo-300"
+    "text-indigo-600 dark:text-indigo-300"))
+
+(defn priority-dot-classes
+  "Tailwind classes for the timeline circle marker."
+  [p paid?]
+  (let [border (case p
+                 :critical "border-pink-600 dark:border-pink-300"
+                 :high     "border-amber-500 dark:border-amber-300"
+                 :normal   "border-indigo-500 dark:border-indigo-300"
+                 "border-indigo-500 dark:border-indigo-300")
+        fill   (if paid?
+                 "bg-transparent"
+                 (case p
+                   :critical "bg-pink-600 dark:bg-pink-300"
+                   :high     "bg-amber-500 dark:bg-amber-300"
+                   :normal   "bg-indigo-500 dark:bg-indigo-300"
+                   "bg-indigo-500 dark:bg-indigo-300"))]
+    (str border " " fill)))
+
+(defn priority-amount-class
+  "Text color class for the monetary amount."
+  [p paid?]
+  (if paid?
+    s/text-muted
+    (case p
+      :critical "text-pink-600 dark:text-pink-300"
+      :high     "text-amber-500 dark:text-amber-300"
+      :normal   "text-indigo-600 dark:text-indigo-300"
+      "text-indigo-600 dark:text-indigo-300")))
+
+(defn summary-color-classes
+  "Dot + text color classes for month-summary-row."
+  [all-paid n-crit]
+  (cond
+    all-paid
+    {:border "border-emerald-500 dark:border-emerald-300"
+     :fill   "bg-transparent"
+     :text   "text-emerald-600 dark:text-emerald-300"}
+    (pos? n-crit)
+    {:border "border-pink-600 dark:border-pink-300"
+     :fill   "bg-pink-600 dark:bg-pink-300"
+     :text   "text-pink-600 dark:text-pink-300"}
+    :else
+    {:border "border-indigo-500 dark:border-indigo-300"
+     :fill   "bg-indigo-500 dark:bg-indigo-300"
+     :text   "text-indigo-600 dark:text-indigo-300"}))
 
 (defn priority-label [p]
   (case p
@@ -550,16 +596,15 @@
 
 (defn status-classes [status]
   (case status
-    :paid    {:dot "bg-emerald-300/20" :text "text-emerald-300" :label "PAID"}
-    :pending {:dot "bg-slate-500/15"   :text "text-slate-500"   :label "DUE"}
-    {:dot "bg-slate-500/15" :text "text-slate-500" :label "—"}))
+    :paid    {:dot "bg-emerald-400/20 dark:bg-emerald-300/20" :text "text-emerald-600 dark:text-emerald-300" :label "PAID"}
+    :pending {:dot "bg-slate-400/15 dark:bg-slate-500/15"     :text "text-slate-500"                       :label "DUE"}
+    {:dot "bg-slate-400/15 dark:bg-slate-500/15" :text "text-slate-500" :label "\u2014"}))
 
 (defnc timeline-node
   "A single cash-flow row on the timeline."
   [{:keys [entry idx]}]
   (let [{:keys [title due amount priority status]} entry
         node-ref  (hooks/use-ref nil)
-        color     (priority-color (keyword priority))
         paid?     (= (keyword status) :paid)
         st        (status-classes (keyword status))]
 
@@ -582,15 +627,14 @@
      (d/div {:class "relative flex flex-col items-center"
              :style {:width "28px" :minWidth "28px"}}
             ;; circle
-            (d/div {:class "mt-4 h-2.5 w-2.5 rounded-full border-2 flex-shrink-0"
-                    :style {:borderColor color
-                            :background (if paid? "transparent" color)}})
+            (d/div {:class (str "mt-4 h-2.5 w-2.5 rounded-full border-2 flex-shrink-0 "
+                                (priority-dot-classes (keyword priority) paid?))})
             ;; dashed line continuing down
-            (d/div {:class "flex-1 border-l border-dashed border-slate-700"}))
+            (d/div {:class "flex-1 border-l border-dashed border-slate-300 dark:border-slate-700"}))
 
      ;; dashed horizontal connector
      (d/div {:class "flex items-start pt-[18px]"}
-            (d/div {:class "w-4 border-t border-dashed border-slate-600"
+            (d/div {:class "w-4 border-t border-dashed border-slate-300 dark:border-slate-600"
                     :style {:marginTop "1px"}}))
 
      ;; content
@@ -598,7 +642,7 @@
 
             ;; top line: date + priority + status
             (d/div {:class "flex items-center gap-2 mb-1"}
-                   (d/span {:class "font-mono text-[11px] text-slate-500"}
+                   (d/span {:class (s/cx s/font-ui "text-[11px]" s/text-muted)}
                            (format-date due))
                    (d/span {:class (str "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono "
                                         (priority-tag-bg (keyword priority)) " "
@@ -611,12 +655,12 @@
 
             ;; title
             (d/p {:class (str "text-sm leading-snug "
-                              (if paid? "text-slate-500 line-through" "text-slate-200"))}
+                              (if paid? (str s/text-muted " line-through") s/text-secondary))}
                  title)
 
             ;; amount
-            (d/p {:class "mt-0.5 font-mono text-base font-semibold tracking-tight"
-                  :style {:color (if paid? "#64748b" color)}}
+            (d/p {:class (str "mt-0.5 font-mono text-base font-semibold tracking-tight "
+                              (priority-amount-class (keyword priority) paid?))}
                  (format-currency amount))))))
 
 
@@ -665,7 +709,7 @@
             :class "flex items-center gap-3 pt-8 pb-2 opacity-0"}
            ;; pink accent line — matches site section-block
            (d/div {:class "h-px w-8 bg-pink-500/70"})
-           (d/span {:class "font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500"}
+           (d/span {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- "tracking-[0.25em]" s/text-muted)}
                    label))))
 
 
@@ -677,10 +721,7 @@
   [{:keys [rollup idx]}]
   (let [{:keys [label total paid pending n-items n-crit all-paid has-now]} rollup
         ref   (hooks/use-ref nil)
-        color (cond
-                all-paid            "#6ee7b7"   ;; emerald-300
-                (pos? n-crit)       "#f9a8d4"   ;; pink-300
-                :else               "#a5b4fc")]  ;; indigo-300
+        cls   (summary-color-classes all-paid n-crit)]
 
     (hooks/use-effect
      :once
@@ -699,14 +740,13 @@
      ;; left gutter — circle + dashed spine
      (d/div {:class "relative flex flex-col items-center"
              :style {:width "28px" :minWidth "28px"}}
-            (d/div {:class "mt-4 h-2.5 w-2.5 rounded-full border-2 flex-shrink-0"
-                    :style {:borderColor color
-                            :background (if all-paid "transparent" color)}})
-            (d/div {:class "flex-1 border-l border-dashed border-slate-700"}))
+            (d/div {:class (str "mt-4 h-2.5 w-2.5 rounded-full border-2 flex-shrink-0 "
+                                (:border cls) " " (:fill cls))})
+            (d/div {:class "flex-1 border-l border-dashed border-slate-300 dark:border-slate-700"}))
 
      ;; dashed connector
      (d/div {:class "flex items-start pt-[18px]"}
-            (d/div {:class "w-4 border-t border-dashed border-slate-600"
+            (d/div {:class "w-4 border-t border-dashed border-slate-300 dark:border-slate-600"
                     :style {:marginTop "1px"}}))
 
      ;; content
@@ -714,32 +754,31 @@
 
             ;; row 1: month label + item count + now badge
             (d/div {:class "flex items-center gap-2 mb-1"}
-                   (d/span {:class "font-mono text-xs font-bold uppercase tracking-wider text-slate-300"}
+                   (d/span {:class (s/cx s/font-ui "text-xs" s/weight-bold s/uppercase- "tracking-wider" s/text-primary)}
                            label)
-                   (d/span {:class "font-mono text-[10px] text-slate-600"}
+                   (d/span {:class (s/cx s/font-ui "text-[10px]" s/text-muted)}
                            (str n-items " items"))
                    (when has-now
-                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-emerald-300/15 text-emerald-300"}
+                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-emerald-500/15 text-emerald-600 dark:bg-emerald-300/15 dark:text-emerald-300"}
                              "NOW"))
                    (when (pos? n-crit)
-                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-pink-500/15 text-pink-300"}
+                     (d/span {:class "px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono bg-pink-500/15 text-pink-600 dark:text-pink-300"}
                              (str n-crit " crit"))))
 
             ;; row 2: total + paid/pending breakdown
             (d/div {:class "flex items-baseline gap-3"}
-                   (d/span {:class "font-mono text-lg font-bold tracking-tight"
-                            :style {:color color}}
+                   (d/span {:class (str "font-mono text-lg font-bold tracking-tight " (:text cls))}
                            (format-currency total))
                    (when (pos? paid)
-                     (d/span {:class "font-mono text-[11px] text-emerald-300/60"}
+                     (d/span {:class "font-mono text-[11px] text-emerald-600/60 dark:text-emerald-300/60"}
                              (str (format-currency paid) " paid")))
                    (when (pos? pending)
-                     (d/span {:class "font-mono text-[11px] text-slate-500"}
+                     (d/span {:class (s/cx s/font-ui "text-[11px]" s/text-muted)}
                              (str (format-currency pending) " due"))))
 
             ;; progress bar
-            (d/div {:class "mt-1.5 h-px w-full bg-slate-800 relative"}
-                   (d/div {:class "absolute left-0 top-0 h-px bg-emerald-300/50"
+            (d/div {:class "mt-1.5 h-px w-full bg-slate-200 dark:bg-slate-800 relative"}
+                   (d/div {:class "absolute left-0 top-0 h-px bg-emerald-500/50 dark:bg-emerald-300/50"
                            :style {:width (str (if (pos? total)
                                                  (Math/round (* 100 (/ paid total)))
                                                  0) "%")}}))))))
@@ -752,11 +791,11 @@
 (defnc view-toggle
   [{:keys [expanded? on-toggle]}]
   (d/button
-   {:class "mb-4 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 transition-colors hover:text-pink-300"
+   {:class (s/cx "mb-4 flex items-center gap-2" s/font-ui "text-[10px]" s/weight-bold s/uppercase- "tracking-[0.25em]" s/text-muted "transition-colors hover:text-pink-600 dark:hover:text-pink-300")
     :on-click on-toggle}
    (d/div {:class "h-px w-4 bg-pink-500/50"})
    (if expanded? "Summary" "Expand")
-   (d/span {:class "text-slate-700"} (if expanded? "▲" "▼"))))
+   (d/span {:class s/text-ghost} (if expanded? "▲" "▼"))))
 
 
 ;; ---------------------------------------------------------------------------
@@ -791,46 +830,46 @@
                      :ease "power2.out"})))
 
     (d/div {:ref ref
-            :class "mb-4 border-b border-slate-800 pb-5 opacity-0"}
+            :class (s/cx "mb-4 pb-5 opacity-0" "border-b" s/border-subtle)}
 
            ;; eyebrow
            (d/div {:class "flex items-center gap-2 mb-3"}
                   (d/div {:class "h-px w-6 bg-pink-500/70"})
-                  (d/span {:class "font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500"}
+                  (d/span {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- "tracking-[0.25em]" s/text-muted)}
                           "4. Cash Flow"))
 
            ;; target total
-           (d/p {:class "font-mono text-3xl font-extrabold tracking-tight text-slate-100"}
+           (d/p {:class (s/cx s/font-ui "text-3xl" s/weight-extrabold "tracking-tight" s/text-primary)}
                 (format-currency target-total))
-           (d/p {:class "font-mono text-[11px] text-slate-600 mt-0.5"} "target total")
+           (d/p {:class (s/cx s/font-ui "text-[11px] mt-0.5" s/text-muted)} "target total")
 
            ;; funding bar
            (d/div {:class "mt-4 flex gap-4 flex-wrap"}
-                  (d/div {:class "border-l-2 border-emerald-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-emerald-300"} (format-currency funds-raised))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-emerald-300/50"} "funds raised"))
-                  (d/div {:class "border-l-2 border-amber-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-amber-300"} (format-currency debt-raised))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-amber-300/50"} "debt raised"))
-                  (d/div {:class "border-l-2 border-pink-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-pink-300"} (format-currency gap))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-pink-300/50"} "remaining gap")))
+                  (d/div {:class "border-l-2 border-emerald-500/40 dark:border-emerald-300/40 pl-3"}
+                         (d/p {:class "font-mono text-lg font-bold text-emerald-600 dark:text-emerald-300"} (format-currency funds-raised))
+                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-emerald-600/50 dark:text-emerald-300/50"} "funds raised"))
+                  (d/div {:class "border-l-2 border-amber-500/40 dark:border-amber-300/40 pl-3"}
+                         (d/p {:class "font-mono text-lg font-bold text-amber-600 dark:text-amber-300"} (format-currency debt-raised))
+                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-amber-600/50 dark:text-amber-300/50"} "debt raised"))
+                  (d/div {:class "border-l-2 border-pink-500/40 dark:border-pink-300/40 pl-3"}
+                         (d/p {:class "font-mono text-lg font-bold text-pink-600 dark:text-pink-300"} (format-currency gap))
+                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-pink-600/50 dark:text-pink-300/50"} "remaining gap")))
 
            ;; second row: paid / pending / critical / next
            (d/div {:class "mt-3 flex gap-4 flex-wrap"}
-                  (d/div {:class "border-l-2 border-emerald-300/20 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-emerald-300/70"} (format-currency paid-sum))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-slate-600"} "paid"))
-                  (d/div {:class "border-l-2 border-slate-600 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-slate-400"} (format-currency pending-sum))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-slate-600"} "pending"))
+                  (d/div {:class "border-l-2 border-emerald-500/20 dark:border-emerald-300/20 pl-3"}
+                         (d/p {:class "font-mono text-base font-bold text-emerald-600/70 dark:text-emerald-300/70"} (format-currency paid-sum))
+                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "paid"))
+                  (d/div {:class (str "border-l-2 pl-3 " s/border-subtle)}
+                         (d/p {:class (s/cx s/font-ui "text-base" s/weight-bold s/text-muted)} (format-currency pending-sum))
+                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "pending"))
                   (d/div {:class "border-l-2 border-pink-500/30 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-pink-300/70"} (format-currency critical-sum))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-slate-600"} "critical"))
+                         (d/p {:class "font-mono text-base font-bold text-pink-600/70 dark:text-pink-300/70"} (format-currency critical-sum))
+                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "critical"))
                   (when next-entry
-                    (d/div {:class "border-l-2 border-indigo-400/30 pl-3"}
-                           (d/p {:class "font-mono text-base font-bold text-indigo-300"} (format-date (:due next-entry)))
-                           (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-slate-600"} "next due")))))))
+                    (d/div {:class "border-l-2 border-indigo-500/30 dark:border-indigo-400/30 pl-3"}
+                           (d/p {:class "font-mono text-base font-bold text-indigo-600 dark:text-indigo-300"} (format-date (:due next-entry)))
+                           (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "next due")))))))
 
 
 ;; ---------------------------------------------------------------------------
@@ -856,7 +895,7 @@
     (d/div
      {:id id
       :ref container-ref
-      :class "min-h-screen bg-black px-4 pb-8 pt-6 text-white antialiased selection:bg-pink-500/30"}
+      :class (s/cx "min-h-screen px-4 pb-8 pt-6 antialiased selection:bg-pink-500/30" s/text-primary s/bg-surface)}
 
      (cond
        error
@@ -919,7 +958,7 @@
           (d/div {:class "relative"}
 
                  ;; vertical dashed spine
-                 (d/div {:class "cf-spine absolute left-[13px] top-0 h-full origin-top border-l border-dashed border-slate-800"})
+                 (d/div {:class (str "cf-spine absolute left-[13px] top-0 h-full origin-top border-l border-dashed " s/border-subtle)})
 
                  (if expanded?
                    ;; ── EXPANDED: full timeline ──

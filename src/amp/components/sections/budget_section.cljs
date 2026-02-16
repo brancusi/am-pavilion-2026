@@ -13,6 +13,7 @@
    [amp.components.section :refer [section]]
    [amp.components.sections.contact-section :refer [contact-section]]
    [amp.components.sections.press-release :refer [press-release]]
+   [amp.components.ui.theme-toggle :refer [theme-toggle]]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -28,9 +29,14 @@
 
 (defnc header
   []
-  (d/div {:class ""}
+  (d/div {:class "relative"}
+         ;; Theme toggle — pinned top-right
+         (d/div {:class "absolute top-4 right-4 z-10"}
+                ($ theme-toggle))
+
          (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4"}
-                (d/img {:src "images/graphics/61_biennale_logo.png"}))
+                (d/img {:src "images/graphics/61_biennale_logo_line.svg"
+                        :class "invert dark:invert-0"}))
 
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
@@ -74,10 +80,9 @@
       :section-id "budget-section"}
      ($ back-up-nav)
      (d/div
-      {:class "w-full h-full
-               text-white
-               grey-grad
-               flex items-center justify-center flex-col"}
+      {:class (str "w-full h-full "
+                   s/text-primary
+                   " grey-grad flex items-center justify-center flex-col")}
       (d/div {:class "flex flex-col w-full lg:w-8/12"}
              ($ header)
 

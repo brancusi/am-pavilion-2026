@@ -112,7 +112,55 @@
 }
 
 .grey-grad {
+    background: linear-gradient(246.25deg, #f8fafc -88.21%, #f1f5f9 174.55%);
+}
+
+:is(.dark) .grey-grad {
     background: linear-gradient(246.25deg, #222222 -88.21%, #0F0F0F 174.55%);
+}
+
+/* Fine pinstripe — light: subtle slate lines, dark: faint white lines */
+.pinstripe {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        rgba(148, 163, 184, 0.12) 4px,
+        rgba(148, 163, 184, 0.12) 5px
+    );
+}
+
+:is(.dark) .pinstripe {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        rgba(255, 255, 255, 0.06) 4px,
+        rgba(255, 255, 255, 0.06) 5px
+    );
+}
+
+/* Bold pinstripe — light: slate bands, dark: charcoal bands */
+.pinstripe-bold {
+    background-color: #f1f5f9;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #e2e8f0 0px,
+        #e2e8f0 10px,
+        #f1f5f9 10px,
+        #f1f5f9 20px
+    );
+}
+
+:is(.dark) .pinstripe-bold {
+    background-color: #181818;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #1f1f1f 0px,
+        #1f1f1f 10px,
+        #181818 10px,
+        #181818 20px
+    );
 }
 
 .purple-grad {
