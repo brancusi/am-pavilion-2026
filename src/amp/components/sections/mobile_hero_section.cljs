@@ -3,53 +3,64 @@
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.components.fragments.about-me :refer [about-event]]
-   [amp.providers.main-provider :refer [use-main-state]]
-   [amp.components.writing-card :refer [writing-card]]
-   [amp.components.ui.main-button :refer [main-button]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
 (def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
+
 (defnc mobile-hero-section
   []
-  (let [[state dispatch!] (use-main-state)
-        outer-ctx (hooks/use-ref "outer-ctx")
-        [visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})]
+  (let [outer-ctx (hooks/use-ref "outer-ctx")
+        [_visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})
+        block-bg "bg-black/70 px-3 py-1.5 inline decoration-clone"
+        block-bg-light "bg-black/50 px-3 py-1 inline decoration-clone"]
 
-    (d/div {:id "video"
-            :ref outer-ctx
-            :class "relative
-                    h-full
-                    w-full
-                    
-                    overflow-hidden"}
+    (d/div
+     {:id "video"
+      :ref outer-ctx
+      :class "relative h-full w-full overflow-hidden"}
 
-           (d/div {:class "w-screen h-screen 
-                           flex
-                           flex-col
-                           relative 
-                           flex items-center justify-items-center justify-center"}
+     (d/div
+      {:class "w-screen h-screen relative flex flex-col items-start justify-center"}
 
-                  (d/div {:class "absolute
-                                  h-screen
-                                  w-screen"}
-                         (d/p is-active?)
-                         ($ lazy-video-background {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
-                                                   :should-play? is-active?}))
+      ;; ── Video background ──
+      (d/div {:class "absolute inset-0"}
+             ($ lazy-video-background {:allow-audio? false
+                                       :playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
+                                       :should-play? is-active?}))
 
-                  (d/div {:class "absolute deep-yellow opacity-70 w-3/4 p-4"}
-                         (d/div {:class "font-futura"}
-                                (d/p {:class "text-5xl font-bold"}
-                                     "venice biennale 2026 Armenia Pavilion")
-                                (d/p {:class "text-4xl mt-4 italic"}
-                                     "Be a Patron of "
-                                     (d/span {:class "font-bold uppercase"}
-                                             "The Studio"))))
-                  (d/div {:class "absolute bottom-0 pb-4"}
-                         ($ main-button
-                            {:title "Donate Now"
-                             :additional-classes "text-2xl"
-                             :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))))
+      ;; ── Content overlay ──
+      (d/div
+       {:class "relative z-10 flex flex-col items-start justify-center px-8 text-left gap-6"}
+
+       ;; Biennale logo — red version
+       (d/img {:src "images/graphics/61_biennale_logo_red.svg"
+               :class "w-36"})
+
+       ;; Show title — blocky background
+       (d/h1
+        {:class "font-mono font-extrabold uppercase tracking-wider leading-tight text-6xl text-white"}
+        (d/span
+         {:class block-bg
+          :style {:boxDecorationBreak "clone"
+                  :WebkitBoxDecorationBreak "clone"}}
+         "The Studio"))
+
+       ;; Subtitle — same blocky treatment, lighter
+       (d/p
+        {:class "font-mono text-xs uppercase tracking-[0.2em] max-w-[18rem] leading-loose text-white/90"}
+        (d/span
+         {:class block-bg-light
+          :style {:boxDecorationBreak "clone"
+                  :WebkitBoxDecorationBreak "clone"}}
+         "Armenia Pavilion \u00B7 61st International Art Exhibition La Biennale di Venezia")))
+
+      ;; Learn more — anchored to bottom of viewport container
+      (d/a
+       {:href "#about"
+        :class "absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-1 text-white/80 hover:text-white transition-colors font-mono text-xs uppercase tracking-[0.2em]"}
+       "Learn More"
+       (d/span {:class "text-lg animate-bounce"} "\u2193"))))))

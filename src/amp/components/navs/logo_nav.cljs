@@ -2,6 +2,7 @@
   (:require [amp.hooks.use-hover-animations :refer [use-hover-animations]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
             [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
+            [amp.components.ui.main-button :refer [main-button]]
             [amp.utils.window :as win-utils]
             [amp.lib.defnc :refer [defnc]]
             [helix.core :refer [$]]
@@ -28,17 +29,24 @@
       :is-on? is-active?})
 
     (d/div {:ref comp-ref
-            :class "fixed 
-                    cursor-pointer
+            :class "fixed
                     opacity-90
                     z-30
-                    text-xl
                     ml-4
                     mt-4
-                    w-1/5
-                    lg:w-32"
-            :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
-           (d/img {:src "images/graphics/61_biennale_logo_line.svg"
-                   :class "invert dark:invert-0"}))))
+                    flex flex-col items-start gap-3"}
+
+           (d/div {:class "w-1/5 lg:w-32"}
+                  (d/div {:class "cursor-pointer"
+                          :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
+                         (d/img {:src "images/graphics/61_biennale_logo_line.svg"
+                                 :class "invert dark:invert-0"}))
+
+                  (d/div {:class "mt-4"}
+                         ($ main-button
+                            {:title "Donate Now"
+                             :additional-classes "w-full justify-center"
+                             :size :sm
+                             :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))))
 
 

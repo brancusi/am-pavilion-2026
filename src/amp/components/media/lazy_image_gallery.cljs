@@ -72,6 +72,7 @@
                                                            {:img-src img-src
                                                             :aspect-ratio aspect-ratio
                                                             :active? is-active?}
+
                                                            (d/div {:class ""}
                                                                   ($ caption-overlay {:position :tl
                                                                                       :rotation 90

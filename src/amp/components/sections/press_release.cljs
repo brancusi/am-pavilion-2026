@@ -191,12 +191,12 @@
                         ", ensuring the Pavilion\u2019s successful realization through coordinated leadership, stewardship, and long-term commitment."))))
 
 (defnc press-release
-  [{:keys [id subtitle title]}]
+  [{:keys [id idx subtitle title show-budget-footer?]}]
   (d/div {:id id}
-         ($ expandable-text-area-2 {:idx 1
+         ($ expandable-text-area-2 {:idx idx
                                     :section-hint subtitle
                                     :title title
                                     :expand-button-label "Read full release"
                                     :preview-text preview
                                     :full-text details
-                                    :footer-text footer})))
+                                    :footer-text (when show-budget-footer? footer)})))

@@ -117,16 +117,18 @@
                                  {:delay 0.5
                                   :onComplete on-intro-completed}))))
 
-    (d/div {:class "relative flex items-center justify-center"
+    (d/div {:class "relative flex items-center justify-center w-full max-w-full overflow-hidden"
             #_#_:style {:min-height (str h "px")}}
 
            (if preloaded?
              (d/div {:style {:opacity 0}
-                     :ref ref}
+                     :ref ref
+                     :class "w-full"}
                     (d/img {:srcSet img-src-set
                             :src img-src
                             :sizes sizes
                             :alt ""
+                            :class "w-full h-auto block"
                             :onLoad on-img-load})
                     (when painted?
                       (d/div {:style {:opacity 0}
@@ -135,10 +137,7 @@
                                children))))
 
              ;; Minimal loading indicator — three pulsing dots
-             (d/div {:style {:display "flex"
-                             :align-items "center"
-                             :justify-content "center"
-                             :padding "2rem 0"}}
+             (d/div {:class "absolute inset-0 flex items-center justify-center"}
                     (d/div {:style {:display "flex" :gap "6px"}}
                            (d/span {:style {:width "8px"
                                             :height "8px"

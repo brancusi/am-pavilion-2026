@@ -1,6 +1,5 @@
 (ns amp.components.sections.budget-section
   (:require
-   [amp.components.elements.budget.about :refer [about]]
    [amp.components.elements.budget.committe :refer [committee]]
    [amp.components.elements.budget.cost-breakdown :refer [cost-breakdown]]
    [amp.components.elements.budget.location-section :refer [location-section]]
@@ -11,6 +10,7 @@
    [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.navs.back-up-nav :refer [back-up-nav]]
    [amp.components.section :refer [section]]
+   [amp.components.sections.about-studio :refer [about-studio]]
    [amp.components.sections.budget-footer :refer [budget-footer]]
    [amp.components.sections.press-release :refer [press-release]]
    [amp.components.ui.theme-toggle :refer [theme-toggle]]
@@ -41,7 +41,7 @@
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
                        :class (s/cx "notranslate mb-6" s/heading-page)}
-                      "Armenia Pavilion, Biennale Arte 2026, 61st International Art Exhibition"))
+                      "Armenia Pavilion, 61st International Art Exhibition La Biennale di Venezia"))
 
          (d/div {:class "w-full px-4 mt-16"}
                 (d/div {:class (s/cx s/text-inverse "space-y-3 flex flex-col justify-start items-start")}
@@ -83,16 +83,19 @@
       {:class (str "w-full h-full "
                    s/text-primary
                    " grey-grad flex items-center justify-center flex-col")}
-      (d/div {:class "flex flex-col w-full lg:w-8/12"}
+      (d/div {:class (str "flex flex-col " s/content-column)}
              ($ header)
 
              ($ press-release {:id "section-1"
+                               :idx 1
                                :subtitle "press"
-                               :title "press release"})
+                               :title "press release"
+                               :show-budget-footer? true})
 
-             ($ about {:id "section-2"
-                       :subtitle "overview"
-                       :title "Armenian Pavilion - The Studio"})
+             ($ about-studio {:id "section-2"
+                              :idx 2
+                              :subtitle "overview"
+                              :title "Armenian Pavilion - The Studio"})
 
              ($ cost-breakdown {:id "section-3"
                                 :subtitle "financials"

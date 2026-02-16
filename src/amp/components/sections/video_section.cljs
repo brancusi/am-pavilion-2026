@@ -11,7 +11,8 @@
 (def lazy-video-background (lazy-component amp.components.elements.video-background/video-background))
 
 (defnc video-section
-  [{:keys [playback-id]}]
+  [{:keys [playback-id allow-audio?]
+    :or  {allow-audio? true}}]
   (let [[state dispatch!] (use-main-state)
         outer-ctx (hooks/use-ref "outer-ctx")
         [visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})]
@@ -30,4 +31,5 @@
                            flex items-center justify-items-center justify-center"}
 
                   ($ lazy-video-background {:playback-id playback-id
+                                            :allow-audio? allow-audio?
                                             :should-play? is-active?})))))

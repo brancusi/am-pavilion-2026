@@ -1,24 +1,30 @@
 (ns amp.views.landing-view
   (:require
-   [amp.components.hero-header :refer [hero-header]]
+   [amp.components.sections.teaser-section :refer [teaser-section]]
    [amp.components.navs.donation-nav :refer [donation-nav]]
    [amp.components.navs.logo-nav :refer [logo-nav]]
    [amp.components.navs.progress-menu :refer [progress-menu]]
    [amp.components.playful-titles :refer [playful-titles]]
    [amp.components.section :refer [section]]
    [amp.components.sections.about-biennale :refer [about-biennale-section]]
+   [amp.components.sections.about-studio :refer [about-studio]]
    [amp.components.sections.contact-section :refer [contact-section]]
+   [amp.components.sections.curators-section :refer [curators-section]]
    [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
+   [amp.components.sections.site-footer :refer [site-footer]]
 
    [amp.components.sections.non-profit :refer [non-profit-section]]
+   [amp.components.sections.press-release :refer [press-release]]
    [amp.components.sections.team-section :refer [team-section]]
    [amp.components.sections.video-section :refer [video-section]]
    [amp.components.sections.work-overview :refer [work-overview]]
    [amp.components.ui.main-button :refer [main-button]]
+   [amp.components.ui.theme-toggle :refer [theme-toggle]]
    [amp.config]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
    [amp.reducers.requires]
+   [amp.styles :as s]
    [amp.views.hero-image-view :refer [hero-image-view]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -30,14 +36,15 @@
         is-desktop? (use-touch-enabled)]
 
     ($ :div {:ref container-ref
-             :class ""}
+             :class (str "overflow-x-hidden grey-grad " s/text-primary)}
        #_(d/p amp.config/git-hash)
+       (d/div {:class "fixed top-2 right-2 sm:top-4 sm:right-4 z-50"}
+              ($ theme-toggle))
        (when is-desktop?
          ($ logo-nav))
-       ($ donation-nav)
 
-       (d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
-              ($ progress-menu {:total-sections 3}))
+       #_(d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
+                ($ progress-menu {:total-sections 3}))
 
        (if is-desktop?
          ($ section
@@ -58,24 +65,31 @@
              :section-id "mobile-hero"}
             ($ mobile-hero-section)))
 
-       (when is-desktop?
-         ($ section
-            {:key "hero"
-             :section-id "hero"}
-            ($ hero-header)))
+       ($ section
+          {:key "teaser"
+           :section-id "teaser"}
+          ($ teaser-section))
 
-       ($ hero-image-view
-          {:img-src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif"}
+       #_($ hero-image-view
+            {:img-src "https://atd-722658831.imgix.net/stacks/FileName_205932_001DenoisedBeauty_ViewLayer_012.tif"}
 
-          (d/div (d/span {} "Rendering - ")
-                 (d/span {:class "italic font-bold"} "THE ORANGE ONE")
-                 (d/span {} " - © Zadik Zadikian 2026")))
+            (d/div (d/span {} "Rendering - ")
+                   (d/span {:class "italic font-bold"} "THE ORANGE ONE")
+                   (d/span {} " - © Zadik Zadikian 2026")))
 
-       ($ work-overview)
-       ($ team-section)
-       ($ about-biennale-section)
-       ($ non-profit-section)
-       ($ contact-section)
+       (d/div {:class s/content-column-container}
+
+              (d/div {:class (str "flex flex-col " s/content-column)}
+                     ($ press-release {:id "press-release"
+                                       :title "Press Release"})
+                     ($ about-studio {:id "about-studio"
+                                      :title "The Studio"})
+                     ($ curators-section {:id "curators"
+                                          :title "Curators"})))       ($ site-footer)       #_($ work-overview)
+       #_($ team-section)
+       #_($ about-biennale-section)
+       #_($ non-profit-section)
+       #_($ contact-section)
 
 
 

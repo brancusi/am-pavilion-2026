@@ -53,10 +53,20 @@
                           (fn []
                             (or (read-preference) :system)))
 
+        ;; Track the effective theme so we can style based on it
+        ;; rather than relying on dark: CSS which can lag
+        effective (resolve-theme mode)
+        dark? (= effective :dark)
+
         select! (fn [m]
                   (set-mode! m)
                   (apply-theme! m)
                   (write-preference m))
+
+        ;; Apply theme on mount for ALL modes
+        _ (hooks/use-effect
+           :once
+           (apply-theme! mode))
 
         ;; Listen to OS theme changes when in :system mode
         _ (hooks/use-effect
@@ -68,15 +78,27 @@
                (apply-theme! :system)
                (fn [] (.removeEventListener mql "change" handler)))))
 
-        idx (mode-index mode)]
+        idx (mode-index mode)
+
+        ;; Colors driven by React state, not CSS dark: prefix
+        track-bg (if dark?
+                   "bg-slate-800/80"
+                   "bg-slate-200/80")
+        thumb-bg (case mode
+                   :system (if dark? "bg-slate-600/50" "bg-slate-400/30")
+                   :light  "bg-amber-400/30"
+                   :dark   "bg-indigo-500/30")
+        inactive-text (if dark?
+                        "text-slate-500 hover:text-slate-400"
+                        "text-slate-400 hover:text-slate-500")]
 
     ;; Outer track
     (d/div
      {:class (s/cx
               "relative inline-flex items-center
                h-7 rounded-sm
-               bg-slate-200/80 dark:bg-slate-800/80
                transition-colors duration-200"
+              track-bg
               class)
       :style {:width "5.25rem"}}
 
@@ -84,10 +106,7 @@
      (d/div
       {:class (str "absolute top-0.5 h-6 rounded-sm
                     transition-all duration-200 ease-in-out "
-                   (case mode
-                     :system "bg-slate-400/30 dark:bg-slate-600/50"
-                     :light  "bg-amber-400/30"
-                     :dark   "bg-indigo-500/30"))
+                   thumb-bg)
        :style {:width "1.5rem"
                :left  (str (+ 0.125 (* idx 1.625)) "rem")}})
 
@@ -102,9 +121,9 @@
                 transition-colors duration-150
                 focus:outline-none"
                (if (= mode :system)
-                 "text-slate-700 dark:text-slate-200"
-                 "text-slate-400 dark:text-slate-600 hover:text-slate-500 dark:hover:text-slate-400"))}
-      "\u25D0")
+                 (if dark? "text-slate-200" "text-slate-700")
+                 inactive-text))}
+      "◐")
 
      (d/button
       {:on-click #(select! :light)
@@ -117,8 +136,8 @@
                 focus:outline-none"
                (if (= mode :light)
                  "text-amber-600"
-                 "text-slate-400 dark:text-slate-600 hover:text-slate-500 dark:hover:text-slate-400"))}
-      "\u2600\uFE0E")
+                 inactive-text))}
+      "☀︎")
 
      (d/button
       {:on-click #(select! :dark)
@@ -131,5 +150,5 @@
                 focus:outline-none"
                (if (= mode :dark)
                  "text-indigo-300"
-                 "text-slate-400 dark:text-slate-600 hover:text-slate-500 dark:hover:text-slate-400"))}
-      "\u263E"))))
+                 inactive-text))}
+      "☾"))))

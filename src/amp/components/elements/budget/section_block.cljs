@@ -9,10 +9,11 @@
   [{:keys [idx eyebrow title children]}]
   (d/div {}
          (d/div {:class (s/cx "px-4 pt-12" s/text-primary)}
-                (d/div {:class "mb-6 flex items-center gap-3"}
-                       (d/div {:class (s/cx "w-10" s/divider-accent)})
-                       (d/p {:class s/eyebrow}
-                            (str idx ". " eyebrow)))
+                (when (and idx eyebrow)
+                  (d/div {:class "mb-6 flex items-center gap-3"}
+                         (d/div {:class (s/cx "w-10" s/divider-accent)})
+                         (d/p {:class s/eyebrow}
+                              (str idx ". " eyebrow))))
                 (d/h2 {:class s/heading-display}
                       title))
          (d/div {:class (s/cx s/text-xl s/text-primary)}

@@ -235,6 +235,14 @@
 ;; Layout helpers — responsive containers
 ;; ---------------------------------------------------------------------------
 
+(def content-column
+  "Centered column that caps width on large screens (matches budget layout)."
+  "w-full lg:w-8/12 min-w-0")
+
+(def content-column-container
+  "Flex wrapper that centers the content-column."
+  "w-full max-w-full overflow-x-hidden flex justify-center")
+
 (def container-prose
   "Readable width + horizontal padding."
   "px-4 max-w-prose")
@@ -256,5 +264,5 @@
   (cx "flex flex-col gap-4 border-l-2 pl-5" border-subtle))
 
 (def info-row
-  "Single row in the info-grid."
-  "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline")
+  "Single row in the info-grid. Grid on sm+ so values align flush-left."
+  "flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline")

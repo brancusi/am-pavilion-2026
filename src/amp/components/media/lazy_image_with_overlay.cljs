@@ -18,7 +18,7 @@
         dimensions (use-container-size image-container)
         normalized-dimensions (normalize-dimensions-v2 dimensions {:increment 10
                                                                    :fitting-aspect-ratio aspect-ratio})]
-    (d/div {:class "relative w-full h-full flex justify-center items-center "
+    (d/div {:class "relative w-full h-full flex justify-center items-center"
             :ref image-container
             :style {#_#_:min-width (str (:width dimensions) "px")
                     #_#_:min-height (str (/ (:width dimensions) aspect-ratio) "px")}}

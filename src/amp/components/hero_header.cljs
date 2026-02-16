@@ -29,7 +29,8 @@
                            flex items-center
                            justify-items-center justify-center"}
                   (d/div {:class "z-10 absolute w-full h-full"}
-                         ($ video-section {:playback-id "Izp5007Abkc00t4Ubns7pAiqq2zG7JIp01tvAoaVOny7O00"}))
+                         ($ video-section {:allow-audio? false
+                                           :playback-id "Izp5007Abkc00t4Ubns7pAiqq2zG7JIp01tvAoaVOny7O00"}))
                   (d/div {:class "z-20 absolute w-full h-full"}
                          (d/div {:class "w-full h-full absolute pink-grad opacity-30"})
                          (d/div {:class "flex 
