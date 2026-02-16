@@ -2,6 +2,7 @@
   (:require
    [amp.components.elements.budget.section-block :refer [section-block]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
@@ -68,7 +69,7 @@
 
 (defnc name-item
   [{:keys [name accent]}]
-  (d/span {:class (str "font-mono text-sm tracking-wide " accent)} name))
+  (d/span {:class (s/cx s/font-ui s/text-sm s/tracking-wide accent)} name))
 
 (defnc tier-section
   [{:keys [tier members]}]
@@ -84,7 +85,7 @@
                                                     :patron "bg-amber-300/50"
                                                     :benefactor "bg-indigo-300/50"
                                                     "bg-slate-600"))})
-                  (d/p {:class (str "font-mono text-[10px] font-bold uppercase tracking-[0.25em] " accent)}
+                  (d/p {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- s/tracking-label accent)}
                        label))
 
            ;; logos
@@ -120,7 +121,7 @@
 
               (d/div {:class "p-4 mt-6 space-y-2"}
 
-                     (d/p {:class "text-slate-300 mb-8"}
+                     (d/p {:class (s/cx s/text-secondary "mb-8")}
                           "The Armenia Pavilion 2026 is made possible through the generosity of foundations, families, and individuals committed to sustaining Armenia's presence on the international stage.")
 
                      ;; tier sections

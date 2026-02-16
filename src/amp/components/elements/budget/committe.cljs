@@ -5,6 +5,7 @@
    [amp.lib.defnc :refer [defnc]]
    [amp.components.media.lazy-image-with-overlay :refer [lazy-image-with-overlay]]
    [amp.components.ui.overlays :refer [caption-overlay]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
@@ -50,50 +51,45 @@
   [{:keys []}]
   (d/div {:class "space-y-3 p-4"}
          (d/p {}
-              (d/span {:class "text-slate-300"}
+              (d/span {:class s/text-secondary}
                       "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class "font-semibold text-pink-300"} "fundraising committee")
-              (d/span {:class "text-slate-300"}
+              (d/span {:class s/em-strong} "fundraising committee")
+              (d/span {:class s/text-secondary}
                       " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))))
 
 (defnc details
   [{:keys []}]
-  (d/div {:class "text-xl text-slate-100 p-4 space-y-3"}
+  (d/div {:class (s/cx s/body-lg "p-4 space-y-3")}
          (d/p {}
-              (d/span {:class "text-slate-300"}
+              (d/span {:class s/text-secondary}
                       "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class "font-semibold text-pink-300"} "fundraising committee")
-              (d/span {:class "text-slate-300"}
+              (d/span {:class s/em-strong} "fundraising committee")
+              (d/span {:class s/text-secondary}
                       " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))
 
-         (d/p {:class "text-slate-300"}
+         (d/p {:class s/text-secondary}
               "The committee works in close coordination with Pavilion leadership to expand networks, cultivate institutional and private support, and sustain momentum across the full duration of the Biennale.")
 
          (d/div {:class "space-y-2"}
-                (d/p {:class "text-slate-300"} "The committee is led by:")
-                (d/ul {:class "ml-6 list-['-'] marker:text-slate-400 text-slate-100"}
-                      (d/li {:class "px-4 italic text-slate-300"} "Archbishop Hovnan Derderian")
-                      (d/li {:class "px-4 italic text-slate-300"} "Tony Shafrazi")
-                      (d/li {:class "px-4 italic text-slate-300"} "Tina Chakarian")
-                      (d/li {:class "px-4 italic text-slate-300"} "Rafi Ourfalian")
-                      (d/li {:class "px-4 italic text-slate-300"} "Khachik Khudikyan")
-                      (d/li {:class "px-4 italic text-slate-300"} "Andranik Torosyan")
-                      (d/li {:class "px-4 italic text-slate-300"} "Aram Alajajian")
-                      (d/li {:class "px-4 italic text-slate-300"} "Vik Hovsepian")))
+                (d/p {:class s/text-secondary} "The committee is led by:")
+                (d/ul {:class (s/cx s/text-primary "ml-6 list-['-'] marker:text-slate-400 dark:marker:text-slate-500")}
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Archbishop Hovnan Derderian")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Tony Shafrazi")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Tina Chakarian")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Rafi Ourfalian")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Khachik Khudikyan")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Andranik Torosyan")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Aram Alajajian")
+                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Vik Hovsepian")))
 
-         (d/p {:class "text-slate-300"}
+         (d/p {:class s/text-secondary}
               "The committee plays an active role in introducing prospective supporters, facilitating conversations, and strengthening long-term relationships that extend beyond opening week—ensuring the Pavilion is resourced, accountable, and delivered at the highest standard.")))
 
 (defnc committee-member-card
   [{:keys [name role img-src credit]
     :as opts}]
-  (let [overlay-styles "font-mono
-                       bg-white/70
-                       px-1
-                       text-slate-500
-                        
-                        "]
-    (d/div {:class "w-[150px] aspect-[0.7] relative ml-2 "}
+  (let [overlay-styles (s/cx s/font-ui "bg-white/70 px-1 text-slate-500")]
+    (d/div {:class "w-[150px] aspect-[0.7] relative ml-2"}
            ($ lazy-image-with-overlay {:img-src img-src
                                        :fit "crop"
                                        :aspect-ratio 0.7
@@ -102,16 +98,16 @@
                      ($ caption-overlay {:position :tl
                                          :rotation 90
                                          :parent-styles overlay-styles}
-                        (d/span {:class "italic text-xs"} name))
+                        (d/span {:class (s/cx s/em-italic "text-xs")} name))
                      ($ caption-overlay {:position :bl
                                          :parent-styles overlay-styles}
-                        (d/span {:class "italic text-xs"} role)))))))
+                        (d/span {:class (s/cx s/em-italic "text-xs")} role)))))))
 
 (defnc committee-gallery
   [{:keys []}]
   (d/div {:class "p-4 w-full"}
-         (d/div (d/div {:class "pl-4 "}
-                       (d/h3 {:class "font-mono text-sm uppercase tracking-wider font-bold text-slate-400"} "Committee Members"))
+         (d/div (d/div {:class "pl-4"}
+                       (d/h3 {:class s/label-muted} "Committee Members"))
                 (d/div {:class "mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"}
                        (map (fn [{:keys [name role img-src credit]}]
                               (d/div {:key name}

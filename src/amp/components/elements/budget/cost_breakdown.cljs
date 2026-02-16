@@ -3,6 +3,7 @@
    [amp.components.elements.budget.budget-table :refer [budget-table]]
    [amp.components.elements.expandable-text-area :refer [expandable-text-area-2]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
@@ -317,115 +318,115 @@
 
 (defnc preview
   [{:keys []}]
-  (d/div {:class "text-xl text-slate-100 p-4"}
+  (d/div {:class (s/cx s/body-lg "p-4")}
          (d/span {}
                  "The Armenia Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
                  "structured to meet the standards of the most rigorous national presentations. ")
-         (d/span {:class "text-slate-300"} "With a total budget of approximately ")
+         (d/span {:class s/text-secondary} "With a total budget of approximately ")
 
-         (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold font-mono text-white"} "$1,6M USD")
-         (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
-         (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
-         (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-300"} "documentation")
-         (d/span {:class "text-slate-300"} ". ")))
+         (d/span {:class s/text-secondary} " (")
+         (d/span {:class s/value-currency} "$1,6M USD")
+         (d/span {:class s/text-secondary} "), the financial framework covers the full scope of ")
+         (d/span {:class s/em-strong} "production, installation, operations, communications,")
+         (d/span {:class s/text-secondary} " and ")
+         (d/span {:class s/em-strong} "documentation")
+         (d/span {:class s/text-secondary} ". ")))
 
 (defnc details
   [{:keys []}]
-  (d/div {:class "text-xl text-slate-100 p-4"}
+  (d/div {:class (s/cx s/body-lg "p-4")}
          (d/span {}
                  "The Armenia Pavilion at the 61st Venice Biennale is a major international cultural undertaking—"
                  "structured to meet the standards of the most rigorous national presentations. ")
-         (d/span {:class "text-slate-300"} "With a total budget of approximately ")
+         (d/span {:class s/text-secondary} "With a total budget of approximately ")
 
-         (d/span {:class "text-slate-300"} " (")
-         (d/span {:class "font-bold font-mono text-white"} "$1,6M USD")
-         (d/span {:class "text-slate-300"} "), the financial framework covers the full scope of ")
-         (d/span {:class "font-semibold text-pink-300"} "production, installation, operations, communications,")
-         (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-300"} "documentation")
-         (d/span {:class "text-slate-300"} ". ")
+         (d/span {:class s/text-secondary} " (")
+         (d/span {:class s/value-currency} "$1,6M USD")
+         (d/span {:class s/text-secondary} "), the financial framework covers the full scope of ")
+         (d/span {:class s/em-strong} "production, installation, operations, communications,")
+         (d/span {:class s/text-secondary} " and ")
+         (d/span {:class s/em-strong} "documentation")
+         (d/span {:class s/text-secondary} ". ")
 
          ;; Venue logic (non-permanent pavilion + cost comparison)
          (d/span {:class "block my-6"}
                  "As Armenia does not maintain a permanent national pavilion in Venice, a venue must be secured through rental—"
                  "as is customary for many smaller and non-permanent participating nations. ")
-         (d/span {:class "text-slate-300"}
-                 "The selected site is located outside the Biennale’s primary zones, enabling a significantly lower base rent—approximately ")
-         (d/span {:class "font-bold font-mono text-white"} "$145,600")
-         (d/span {:class "text-slate-300"} "—while remaining fully accredited and visible within the official Biennale structure. ")
-         (d/span {:class "text-slate-300"}
+         (d/span {:class s/text-secondary}
+                 "The selected site is located outside the Biennale's primary zones, enabling a significantly lower base rent—approximately ")
+         (d/span {:class s/value-currency} "$145,600")
+         (d/span {:class s/text-secondary} "—while remaining fully accredited and visible within the official Biennale structure. ")
+         (d/span {:class s/text-secondary}
                  "By contrast, venues within the Giardini or Arsenale—when available—typically begin at ")
-         (d/span {:class "font-bold font-mono text-white"} "$450,000")
-         (d/span {:class "text-slate-300"}
+         (d/span {:class s/value-currency} "$450,000")
+         (d/span {:class s/text-secondary}
                  " in base rent, before construction, staffing, utilities, logistics, and operating overhead. ")
 
          ;; Why this venue is essential to THE STUDIO
          (d/div {:class "mt-6"}
                 (d/span {:class "mt-6"}
                         "Crucially, the nature of ")
-                (d/span {:class "font-semibold text-pink-300"} "THE STUDIO")
-                (d/span {:class "text-slate-300"}
+                (d/span {:class s/em-strong} "THE STUDIO")
+                (d/span {:class s/text-secondary}
                         " makes this venue choice not only strategic but essential. ")
-                (d/span {:class "text-slate-300"}
+                (d/span {:class s/text-secondary}
                         "The work is conceived to be produced, refined, and evolved ")
-                (d/span {:class "font-semibold italic text-slate-100"} "on site")
-                (d/span {:class "text-slate-300"}
+                (d/span {:class (s/cx s/weight-semibold s/em-italic s/text-primary)} "on site")
+                (d/span {:class s/text-secondary}
                         ", allowing the Pavilion to function simultaneously as exhibition space and working studio. ")
-                (d/span {:class "text-slate-300"}
+                (d/span {:class s/text-secondary}
                         "This approach meets extremely tight production and installation deadlines while maintaining full artistic and technical control—"
                         "conditions that would be far more difficult, costly, or even impossible under a traditional off-site fabrication and transport model. "))
 
          ;; Not a grand object (process over spectacle)
          (d/span {:class "block my-6"}
                  "Rather than directing the majority of resources toward a single, fixed monumental installation, the artist and team have deliberately taken another route. ")
-         (d/span {:class "text-slate-300"} "By producing the work on site, the Pavilion avoids the need for a pre-fabricated ")
-         (d/span {:class "font-semibold italic text-slate-100"} "“grand object”")
-         (d/span {:class "text-slate-300"} " altogether. ")
-         (d/span {:class "text-slate-300"}
+         (d/span {:class s/text-secondary} "By producing the work on site, the Pavilion avoids the need for a pre-fabricated ")
+         (d/span {:class (s/cx s/weight-semibold s/em-italic s/text-primary)} "\u201cgrand object\u201d")
+         (d/span {:class s/text-secondary} " altogether. ")
+         (d/span {:class s/text-secondary}
                  "This decision reduces fabrication, crating, international shipping, and risk-related costs, while aligning more precisely with the broader conceptual goals: ")
-         (d/span {:class "font-semibold text-pink-300"} "process over spectacle, presence over monumentality,")
-         (d/span {:class "text-slate-300"} " and ")
-         (d/span {:class "font-semibold text-pink-300"} "sustained making over static display")
-         (d/span {:class "text-slate-300"} ". ")
+         (d/span {:class s/em-strong} "process over spectacle, presence over monumentality,")
+         (d/span {:class s/text-secondary} " and ")
+         (d/span {:class s/em-strong} "sustained making over static display")
+         (d/span {:class s/text-secondary} ". ")
 
          ;; Efficiency + rigor (mutually reinforcing)
          (d/div {:class "my-6"} (d/span {:class ""}
                                         "In this sense, cost efficiency and artistic rigor are not in opposition but mutually reinforcing. ")
-                (d/span {:class "text-slate-300"}
-                        "The Pavilion’s structure distributes resources across time, labor, materials, and public engagement—rather than concentrating them into a single object whose expense would be driven largely by transport and scale rather than meaning. "))
+                (d/span {:class s/text-secondary}
+                        "The Pavilion's structure distributes resources across time, labor, materials, and public engagement—rather than concentrating them into a single object whose expense would be driven largely by transport and scale rather than meaning. "))
 
          ;; Venice realities (why still expensive)
          (d/div {:class "block my-6"}
                 (d/span {:class ""}
                         "Despite these efficiencies, the overall cost of operating in Venice during the Biennale remains high. ")
-                (d/span {:class "text-slate-300"}
-                        "Venice’s unique geography, limited infrastructure, and extraordinary demand elevate costs across all categories—logistics, storage, labor, accommodations, and technical services. ")
-                (d/span {:class "text-slate-300"}
-                        "These conditions are shared by all national pavilions and reflect the Biennale’s position as the most visible international platform in contemporary art. "))
+                (d/span {:class s/text-secondary}
+                        "Venice's unique geography, limited infrastructure, and extraordinary demand elevate costs across all categories—logistics, storage, labor, accommodations, and technical services. ")
+                (d/span {:class s/text-secondary}
+                        "These conditions are shared by all national pavilions and reflect the Biennale's position as the most visible international platform in contemporary art. "))
 
          ;; Seven-month commitment (keep from template, but integrated)
          (d/span {:class "mt-6"}
                  "Unlike projects that culminate at opening, this Pavilion is conceived as a")
-         (d/span {:class "font-semibold italic text-slate-100"} " seven-month operational commitment")
-         (d/span {:class "text-slate-300"}
+         (d/span {:class (s/cx s/weight-semibold s/em-italic s/text-primary)} " seven-month operational commitment")
+         (d/span {:class s/text-secondary}
                  ": a living environment that functions simultaneously as exhibition space, working studio, public forum, and diplomatic platform—requiring sustained staffing, materials, logistics, and institutional oversight throughout the duration of the Biennale. ")
 
          ;; What the investment covers
          (d/span {:class "block mt-6"}
                  "Significant investment secures venue readiness and regulatory compliance, supports curatorial and administrative leadership, funds museum-scale fabrication and specialized craft, and addresses Venice-specific transport, storage, installation, and reverse logistics. ")
          (d/span {:class "block mt-6"}
-                 (d/span {:class "font-semibold text-pink-300"} "THE STUDIO")
-                 (d/span {:class "text-slate-300"}
+                 (d/span {:class s/em-strong} "THE STUDIO")
+                 (d/span {:class s/text-secondary}
                          " is budgeted as an ongoing on-site operation, ensuring continuous execution, maintenance, and evolution of the work across the exhibition period—distinguishing the Pavilion from static presentations. "))
 
          ;; Visibility + legacy
          (d/span {:class "block mt-6"}
-                 "Public visibility and long-term legacy are strengthened through opening week programs, marketing and public relations, publication, and comprehensive film and photographic documentation—ensuring that the Pavilion’s impact extends into international media, scholarship, and institutional archives. ")
+                 "Public visibility and long-term legacy are strengthened through opening week programs, marketing and public relations, publication, and comprehensive film and photographic documentation—ensuring that the Pavilion's impact extends into international media, scholarship, and institutional archives. ")
 
-         (d/span {:class "block italic mt-6 font-normal text-lg font-mono text-slate-100"}
-                 "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies—ensuring stability, accountability, and the successful delivery of Armenia’s national presentation on the world stage.")))
+         (d/span {:class (s/cx s/body-closing "block mt-6")}
+                 "A responsible contingency is included to accommodate the realities of an extended international project operating across jurisdictions, timelines, and currencies—ensuring stability, accountability, and the successful delivery of Armenia's national presentation on the world stage.")))
 
 (defnc footer
   [{:keys []}]

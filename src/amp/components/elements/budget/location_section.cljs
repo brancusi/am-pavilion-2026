@@ -9,6 +9,7 @@
    [amp.components.ui.overlays :refer [caption-overlay]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.styles :as s]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -23,19 +24,19 @@
   (d/div {:class "p-4 mb-12"}
          (d/p {:class ""}
               "The Armenia Pavilion 2026 unfolds across "
-              (d/span {:class "font-semibold text-pink-300"} "two sites")
-              " within the historic Arsenale of Venice—"
-              (d/span {:class "font-semibold text-pink-300"} "an interior studio")
+              (d/span {:class s/em-strong} "two sites")
+              " within the historic Arsenale of Venice\u2014"
+              (d/span {:class s/em-strong} "an interior studio")
               ", and "
-              (d/span {:class "font-semibold text-pink-300"} "a landmark crossing to the Arsenale")
+              (d/span {:class s/em-strong} "a landmark crossing to the Arsenale")
               ". "
               "Together, these sites form a single spatial constellation: "
-              (d/span {:class "text-slate-100"} "a place of work")
+              (d/span {:class s/text-primary} "a place of work")
               ", "
-              (d/span {:class "text-slate-100"} "a place of weather and ruin")
+              (d/span {:class s/text-primary} "a place of weather and ruin")
               ", and "
-              (d/span {:class "text-slate-100"} "a public-facing threshold")
-              "—each distinct, yet inseparable.")))
+              (d/span {:class s/text-primary} "a public-facing threshold")
+              "\u2014each distinct, yet inseparable.")))
 
 
 (defnc full-details
@@ -46,22 +47,22 @@
 
 
 
-     (d/div {:class "text-slate-100  text-xl"}
+     (d/div {:class s/body-lg}
             (d/div {:class "p-4 mb-12"}
                    (d/p {:class ""}
                         "The Armenia Pavilion 2026 unfolds across "
-                        (d/span {:class "font-semibold text-pink-300"} "two sites")
+                        (d/span {:class s/em-strong} "two sites")
                         " within the historic Arsenale of Venice—"
-                        (d/span {:class "font-semibold text-pink-300"} "an interior studio")
+                        (d/span {:class s/em-strong} "an interior studio")
                         ", and "
-                        (d/span {:class "font-semibold text-pink-300"} "a landmark crossing to the Arsenale")
+                        (d/span {:class s/em-strong} "a landmark crossing to the Arsenale")
                         ". "
                         "Together, these sites form a single spatial constellation: "
-                        (d/span {:class "text-slate-100"} "a place of work")
+                        (d/span {:class s/text-primary} "a place of work")
                         ", "
-                        (d/span {:class "text-slate-100"} "a place of weather and ruin")
+                        (d/span {:class s/text-primary} "a place of weather and ruin")
                         ", and "
-                        (d/span {:class "text-slate-100"} "a public-facing threshold")
+                        (d/span {:class s/text-primary} "a public-facing threshold")
                         "—each distinct, yet inseparable."))
 
             (d/div {:class "my-8"}
@@ -138,60 +139,60 @@
                                   :paint {:text-color "#be136e"
                                           :text-halo-color "#ffffff"
                                           :text-halo-width 5}}}]})
-                   (d/p {:class "mt-4 px-4 text-sm font-mono italic"}
+                   (d/p {:class (s/cx s/font-ui s/text-sm s/em-italic "mt-4 px-4")}
                         "* Walking path from the crossing to the pavilion. ~8 minutes"))
 
-            (d/div {:class "text-xl "}
+            (d/div {:class s/text-xl}
 
 
                    ;; --------------------------
                    ;; #1 — TESA 41
                    ;; --------------------------
                    (d/div {:class "p-4"}
-                          (d/p {:class "text-xl pb-4 font-mono font-bold uppercase tracking-wider"}
+                          (d/p {:class (s/cx s/heading-section "pb-4")}
                                "TESA 41 (THE STUDIO)")
 
                           (d/div {:class "space-y-6"}
                                  (d/p {}
-                                      (d/span {:class "font-semibold text-pink-300"} "Tesa 41")
+                                      (d/span {:class s/em-strong} "Tesa 41")
                                       " is the primary studio and interior exhibition space for the Armenia Pavilion 2026—"
-                                      (d/span {:class "font-semibold text-pink-300"} "5,000 square feet")
+                                      (d/span {:class s/em-strong} "5,000 square feet")
                                       " ("
-                                      (d/span {:class "font-semibold text-pink-300"} "~464 square meters")
+                                      (d/span {:class s/em-strong} "~464 square meters")
                                       ") of expansive industrial volume that functions as the "
-                                      (d/span {:class "italic"} "operational and conceptual heart")
+                                      (d/span {:class s/em-italic} "operational and conceptual heart")
                                       " of the project.")
 
                                  (d/p {}
                                       "Defined by scale, clarity, and architectural restraint, it is built for sustained "
-                                      (d/span {:class "font-medium"} "fabrication")
+                                      (d/span {:class s/weight-medium} "fabrication")
                                       ", "
-                                      (d/span {:class "font-medium"} "assembly")
+                                      (d/span {:class s/weight-medium} "assembly")
                                       ", and "
-                                      (d/span {:class "font-medium"} "reconfiguration")
+                                      (d/span {:class s/weight-medium} "reconfiguration")
                                       " across the full duration of the Biennale.")
 
                                  (d/p {}
                                       "Here, the Pavilion operates as a "
-                                      (d/span {:class "font-semibold text-pink-300"} "working studio")
+                                      (d/span {:class s/em-strong} "working studio")
                                       " rather than a static exhibition: a place of continuous "
-                                      (d/span {:class "font-medium"} "making")
+                                      (d/span {:class s/weight-medium} "making")
                                       ", "
-                                      (d/span {:class "font-medium"} "stacking")
+                                      (d/span {:class s/weight-medium} "stacking")
                                       ", "
-                                      (d/span {:class "font-medium"} "dismantling")
+                                      (d/span {:class s/weight-medium} "dismantling")
                                       ", and "
-                                      (d/span {:class "font-medium"} "rebuilding")
+                                      (d/span {:class s/weight-medium} "rebuilding")
                                       ". The interior volume allows the work to expand "
-                                      (d/span {:class "font-medium"} "horizontally")
+                                      (d/span {:class s/weight-medium} "horizontally")
                                       " and "
-                                      (d/span {:class "font-medium"} "vertically")
+                                      (d/span {:class s/weight-medium} "vertically")
                                       ", accommodating both monumental arrangements and intimate moments of material attention.")
 
                                  (d/p {:class "pt-2"}
-                                      (d/span {:class "font-semibold text-pink-300"} "Tesa 41")
+                                      (d/span {:class s/em-strong} "Tesa 41")
                                       " anchors the Pavilion physically and philosophically—establishing "
-                                      (d/span {:class "italic"} "the studio as the artwork itself")
+                                      (d/span {:class s/em-italic} "the studio as the artwork itself")
                                       ".")))
 
                    (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
@@ -231,40 +232,40 @@
                    ;; --------------------------
                    (d/div {:class "mt-12"}
                           (d/div {:class "p-4"}
-                                 (d/p {:class "pb-4 text-xl font-mono font-bold uppercase tracking-wider"}
-                                      "CROSSING TO THE ARSENALE — PIRAEUS LION")
+                                 (d/p {:class (s/cx s/heading-section "pb-4")}
+                                      "CROSSING TO THE ARSENALE \u2014 PIRAEUS LION")
 
                                  (d/div {:class "space-y-6"}
                                         (d/p {}
                                              "The outdoor artwork will be installed at the historic crossing grounds near the "
-                                             (d/span {:class "font-semibold text-slate-100"} "Piraeus Lion")
+                                             (d/span {:class s/em-bold} "Piraeus Lion")
                                              ", one of the most recognized landmarks marking the approach to the Arsenale. "
-                                             "Positioned at a critical pedestrian junction along the main route into the Biennale’s Arsenale area, this site receives "
-                                             (d/span {:class "font-semibold text-pink-300"} "exceptionally high foot traffic")
+                                             "Positioned at a critical pedestrian junction along the main route into the Biennale's Arsenale area, this site receives "
+                                             (d/span {:class s/em-strong} "exceptionally high foot traffic")
                                              " throughout the six-month exhibition period. "
                                              "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
                                              "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
-                                             (d/span {:class "font-semibold text-pink-300"} "threshold")
+                                             (d/span {:class s/em-strong} "threshold")
                                              " and a "
-                                             (d/span {:class "font-semibold text-pink-300"} "directional marker")
-                                             "—an early encounter that orients audiences toward the Pavilion.")
+                                             (d/span {:class s/em-strong} "directional marker")
+                                             "\u2014an early encounter that orients audiences toward the Pavilion.")
 
                                         (d/p {}
                                              "The placement ensures "
-                                             (d/span {:class "font-semibold text-pink-300"} "extraordinary visibility")
+                                             (d/span {:class s/em-strong} "extraordinary visibility")
                                              " within a dense flow of international visitors, curators, press, and collectors. "
                                              "The artwork, together with its identifying totem, will operate as a "
-                                             (d/span {:class "font-medium"} "visual anchor")
+                                             (d/span {:class s/weight-medium} "visual anchor")
                                              " in an open, expansive setting framed by historic brick walls, canal frontage, and the continuous movement of people.")
 
                                         (d/p {}
                                              "As a freestanding, architecturally scaled form, it will command attention without obstructing circulation, functioning simultaneously as "
-                                             (d/span {:class "font-semibold"} "sculpture")
+                                             (d/span {:class s/weight-semibold} "sculpture")
                                              ", "
-                                             (d/span {:class "font-semibold text-pink-300"} "signal")
+                                             (d/span {:class s/em-strong} "signal")
                                              ", and "
-                                             (d/span {:class "font-semibold text-pink-300"} "prelude")
-                                             ". Its presence at this symbolic gateway amplifies the Pavilion’s reach beyond its interior space, extending Armenia’s participation into one of the most traversed and photographed corridors of the Biennale.")))
+                                             (d/span {:class s/em-strong} "prelude")
+                                             ". Its presence at this symbolic gateway amplifies the Pavilion's reach beyond its interior space, extending Armenia's participation into one of the most traversed and photographed corridors of the Biennale.")))
 
                           (d/div {:class "w-full h-full flex flex-col gap-4 mt-12"}
                                  (let [is-desktop? (use-touch-enabled)
@@ -282,6 +283,7 @@
                                                                            :aspect-ratio 1.82
                                                                            :caption "BIG RED AT ARSENALE"
                                                                            :credit "Render 2026"}]}))))))))))
+
 
 (defnc location-section
   [{:keys [id subtitle title]}]

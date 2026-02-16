@@ -15,6 +15,7 @@
    [amp.components.sections.press-release :refer [press-release]]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
@@ -22,7 +23,7 @@
   [{:keys [title anchor]}]
   (let [scroll-to-id (use-scroll-to-id)]
     (d/button {:on-click #(scroll-to-id anchor)
-               :class "font-mono text-sm uppercase tracking-wider hover:text-pink-300 transition-colors"}
+               :class s/nav-link}
               title " " ($ ChevronRightIcon {:class "w-4 h-4 inline-block ml-1"}))))
 
 (defnc header
@@ -33,11 +34,11 @@
 
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
-                       :class "notranslate font-mono font-bold text-4xl lg:text-6xl text-white mb-6 uppercase"}
+                       :class (s/cx "notranslate mb-6" s/heading-page)}
                       "Armenia Pavilion, Biennale Arte 2026, 61st International Art Exhibition"))
 
          (d/div {:class "w-full px-4 mt-16"}
-                (d/div {:class "text-white space-y-3 flex flex-col justify-start items-start"}
+                (d/div {:class (s/cx s/text-inverse "space-y-3 flex flex-col justify-start items-start")}
                        ($ section-link
                           {:title "1. Press Release"
                            :anchor "section-1"})
