@@ -11,7 +11,7 @@
    [amp.components.icons :refer [ChevronRightIcon]]
    [amp.components.navs.back-up-nav :refer [back-up-nav]]
    [amp.components.section :refer [section]]
-   [amp.components.sections.contact-section :refer [contact-section]]
+   [amp.components.sections.budget-footer :refer [budget-footer]]
    [amp.components.sections.press-release :refer [press-release]]
    [amp.components.ui.theme-toggle :refer [theme-toggle]]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
@@ -122,4 +122,4 @@
                              :subtitle "why it matters"
                              :title "why support"})
 
-             ($ contact-section)))))
+             ($ budget-footer)))))
