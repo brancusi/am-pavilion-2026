@@ -6,53 +6,69 @@
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
+(defnc header-block
+  []
+  (let [label-class "opacity-40 uppercase tracking-[0.15em] text-[0.6rem] font-mono whitespace-nowrap select-none"]
+    (d/div {:class "mb-10 text-sm"}
+           ;; Title
+           (d/p {:class "text-xl font-semibold leading-snug mb-1"}
+                "Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian")
+
+           ;; Exhibition title
+           (d/p {:class "mt-6 mb-6"}
+                (d/span {:class "text-lg font-semibold italic"}
+                        "Zadik Zadikian: The Studio"))
+
+           ;; Structured info — stacked on mobile, side-by-side on sm+
+           (d/div {:class "flex flex-col gap-4 border-l-2 border-white/15 pl-5"}
+
+                  ;; Participation
+                  (d/div {:class "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline"}
+                         (d/span {:class label-class} "Participation")
+                         (d/span {} "National Participation of the Republic of Armenia"))
+
+                  ;; Curated by
+                  (d/div {:class "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline"}
+                         (d/span {:class label-class} "Curated by")
+                         (d/span {}
+                                 (d/span {:class "font-semibold"} "Tony Shafrazi")
+                                 " & "
+                                 (d/span {:class "font-semibold"} "Tina Chakarian")))
+
+                  ;; Commissioner
+                  (d/div {:class "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline"}
+                         (d/span {:class label-class} "Commissioner")
+                         (d/span {:class "font-semibold"} "Svetlana Sahakyan"))
+
+                  ;; Press contact
+                  (d/div {:class "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline"}
+                         (d/span {:class label-class} "Press contact")
+                         (d/a {:href "mailto:pressoffice@armenianpavilion2026.org"
+                               :class "underline underline-offset-2 decoration-white/30 hover:decoration-white/80 transition-all"}
+                              "pressoffice@armenianpavilion2026.org"))
+
+                  ;; Website
+                  (d/div {:class "flex flex-col sm:flex-row sm:gap-8 sm:items-baseline"}
+                         (d/span {:class label-class} "Web")
+                         (d/a {:href "https://armenianpavilion2026.org"
+                               :class "underline underline-offset-2 decoration-white/30 hover:decoration-white/80 transition-all"
+                               :target "_blank"}
+                              "armenianpavilion2026.org"))))))
+
 (defnc preview
   [{:keys []}]
   (d/div {:class "px-4"}
-         ($ written-by {:author "Alejandro Jassan" :class "mb-4"})
-         (d/p {:class " text-xl"}
-              (d/span {:class "italic"} "Venice, Italy — ")
-              "The Republic of Armenia presents "
-              (d/span {:class "font-semibold italic"} "The Studio")
-              ", a solo project by artist "
-              (d/span {:class "font-semibold"} "Zadik Zadikian")
-              ", for the Pavilion of the Republic of Armenia at the 61st International Art Exhibition \u2013 La Biennale di Venezia. The project is co-curated by legendary art dealer "
-              (d/span {:class "font-semibold"} "Tony Shafrazi")
-              " alongside Boston-based curator and cultural strategist "
-              (d/span {:class "font-semibold"} "Tina Chakarian")
-              "...")))
+         ($ written-by {:author "Alejandro Jassan" :class "mb-6"})
+
+         ;; Header block
+         ($ header-block)))
 
 (defnc details
   [{:keys []}]
   (d/div {:class "px-4"}
-         ;; Author credit
          ($ written-by {:author "Alejandro Jassan" :class "mb-6"})
-         ;; Header block
-         (d/div {:class "mb-8 text-sm"}
-                (d/p {:class "text-xl font-semibold mb-1"}
-                     "Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian")
-                (d/p {:class "mt-8"}
-                     (d/span {:class "font-semibold italic"} "Zadik Zadikian: The Studio"))
-                (d/p {:class ""} "National Participation of the Republic of Armenia")
-                (d/p {:class ""}
-                     "Curated by "
-                     (d/span {:class "font-semibold"} "Tony Shafrazi")
-                     " and "
-                     (d/span {:class "font-semibold"} "Tina Chakarian"))
-                (d/p {:class ""}
-                     "Commissioner: "
-                     (d/span {:class "font-semibold"} "Svetlana Sahakyan"))
-                (d/p {:class ""}
-                     "Email: "
-                     (d/a {:href "mailto:pressoffice@armenianpavilion2026.org"
-                           :class "underline"}
-                          "pressoffice@armenianpavilion2026.org"))
-                (d/p {}
-                     "Website: "
-                     (d/a {:href "https://armenianpavilion2026.org"
-                           :class "underline"
-                           :target "_blank"}
-                          "armenianpavilion2026.org")))
+
+         ($ header-block)
 
          ;; Paragraph 1
          (d/p {:class "text-xl mb-6"}
