@@ -19,7 +19,7 @@
                  :class "
                   hero-nav-links
                   cursor-pointer
-                  font-fira-code
+                  font-mono
                   font-medium
                   text-6xl"
                  :on-mouse-over (fn []

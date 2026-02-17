@@ -30,7 +30,7 @@
                     bg-black/10
                     lg:p-12 p-4
                     lg:text-6xl text-3xl
-                    font-futura
+                    font-display
                     font-bold
                     text-slate-800"}
 
@@ -40,7 +40,7 @@
 
 (defnc copy-block
   [{:keys [title copy]}]
-  (d/div {:class "flex flex-col mb-12 font-futura"}
+  (d/div {:class "flex flex-col mb-12 font-display"}
          (d/p {:class "font-bold text-4xl text-slate-800 lowercase"} title)
          (d/p {:class "text-slate-800"} copy)))
 
@@ -61,7 +61,7 @@
                           light-red-grad
                           items-center
                           justify-center
-                          font-futura
+                          font-display
                           relative"}
 
                (d/div {:class "flex 
@@ -78,7 +78,7 @@
                                     ($ copy-block {:title ""
                                                    :copy "Funds go to keep THE STUDIO alive for six months in Venice.  Your support ensures the artist’s residency, covers materials and fabrication, pays our production crew, builds and ships the pavilion, and funds public programs and the exhibition catalogue.  Gifts are handled by Fallen Angels, a registered 501(c)(3) non‑profit; donations to a 501(c)(3) are tax‑deductible"})
 
-                                    (d/div {:class "flex flex-col mb-12 font-futura"}
+                                    (d/div {:class "flex flex-col mb-12 font-display"}
                                            (d/p {:class "font-bold text-4xl text-slate-800 lowercase"} "What Your Donation Funds")
                                            (d/ul {:class "list-disc list-outside ml-5 text-slate-800"}
                                                  (d/li {} "Artist & team residency in Venice")

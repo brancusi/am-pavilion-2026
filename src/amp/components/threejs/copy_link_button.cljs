@@ -34,5 +34,5 @@
                                           (set-copied! true)
                                           (js/setTimeout #(set-copied! false) 2000))))))}
               (if copied?
-                (d/span {:class "text-xs font-fira-code text-slate-800"} "Copied!")
+                (d/span {:class "text-xs font-mono text-slate-800"} "Copied!")
                 ($ DocumentIcon {:class "w-5 h-5 text-slate-800"})))))

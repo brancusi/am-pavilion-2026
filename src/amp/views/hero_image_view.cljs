@@ -54,7 +54,7 @@
                     (d/div {:class ""}
                            (d/div {:class "absolute
                                        bottom-0
-                                       font-fira-code
+                                       font-mono
                                        bg-white/60
                                        text-sm
                                        p-1

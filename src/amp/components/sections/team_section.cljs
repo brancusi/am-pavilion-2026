@@ -178,7 +178,7 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
   (let [{:keys [name role copy social email]} data]
     (d/div {:class "flex flex-col
                     mb-16
-                    font-futura text-gray-800"}
+                    font-display text-gray-800"}
            (d/div {:class "relative inline-block
                            z-30
                            w-fit
@@ -243,7 +243,7 @@ Reflecting on exile, Zadikian writes: “When I escaped, I lost everything—my 
                                flex
                                overflow-hidden"}
                       (d/div {:class "absolute left-0 top-0
-                                      font-futura font-bold text-8xl
+                                      font-display font-bold text-8xl
                                       light-blue-font-color
                                       opacity-30"}
                              (d/p {:class "overflow-hidden"

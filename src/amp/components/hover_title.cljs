@@ -16,7 +16,7 @@
                  :height "100%"
                  :width "100%"}
                 (d/text {:class "flash-text
-                                 font-fira-code
+                                 font-mono
                                  font-bold"
                          :text-anchor "start"
                          :alignment-baseline "middle"

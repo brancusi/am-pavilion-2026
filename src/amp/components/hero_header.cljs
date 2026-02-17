@@ -45,7 +45,7 @@
                                  {:class "
                                           
                                                                       font-medium
-                                                                      font-fira-code
+                                                                      font-mono
                                                                       flex
                                                                       items-center
                                                                       justify-center"}

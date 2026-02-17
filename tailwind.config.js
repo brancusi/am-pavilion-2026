@@ -13,14 +13,27 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        futura: ["futura-100", "sans-serif"],
-        helvetica: ["helvetica-neue", "sans-serif"],
+        // Display — Neue Haas Grotesk Display (Typekit). Headings, titles, nav, prose body.
+        display: [
+          "neue-haas-grotesk-display",
+          "neue-haas-grotesk-text",
+          "sans-serif",
+        ],
+        // Legacy alias — kept so old `font-futura` refs still resolve
+        futura: [
+          "neue-haas-grotesk-display",
+          "neue-haas-grotesk-text",
+          "sans-serif",
+        ],
 
-        // For Book (400)
-        "futura-book": ["futura-100-book", "sans-serif"],
-
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        // Data — FiraCode (local variable font). Labels, numbers, code, eyebrows.
         "fira-code": ["FiraCode", "monospace"],
+
+        // Override Tailwind's default mono to use FiraCode everywhere
+        mono: ["FiraCode", "monospace"],
+
+        // Keep Inter as sans fallback (unused in design system, but safe default)
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
     },
     screens,

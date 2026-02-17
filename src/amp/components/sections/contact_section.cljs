@@ -11,7 +11,7 @@
 (defnc contact-section [{:keys []}]
   (let [scroll-to-id (use-scroll-to-id)]
     (d/footer
-     {:class "relative w-full font-mono mt-12"}
+     {:class "relative w-full font-display mt-12"}
 
      ;; ── Divider ──
      (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"})

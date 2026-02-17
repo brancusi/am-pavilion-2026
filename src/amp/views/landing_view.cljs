@@ -9,7 +9,9 @@
    [amp.components.sections.about-biennale :refer [about-biennale-section]]
    [amp.components.sections.about-studio :refer [about-studio]]
    [amp.components.sections.contact-section :refer [contact-section]]
+   [amp.components.sections.artist-section :refer [artist-section]]
    [amp.components.sections.curators-section :refer [curators-section]]
+   [amp.components.sections.in-minor-keys :refer [in-minor-keys]]
    [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
    [amp.components.sections.site-footer :refer [site-footer]]
 
@@ -38,32 +40,15 @@
     ($ :div {:ref container-ref
              :class (str "overflow-x-hidden grey-grad " s/text-primary)}
        #_(d/p amp.config/git-hash)
-       (d/div {:class "fixed top-2 right-2 sm:top-4 sm:right-4 z-50"}
+       (d/div {:class "fixed top-8 right-8 z-50"}
               ($ theme-toggle))
        (when is-desktop?
          ($ logo-nav))
 
-       #_(d/div {:class "fixed z-20 justify-center items-center top-1/2 -translate-y-1/2 left-2"}
-                ($ progress-menu {:total-sections 3}))
-
-       (if is-desktop?
-         ($ section
-            {:key "video"
-             :section-id "video"}
-            (d/div {:class "w-screen h-screen relative"}
-                   (d/div {:class "absolute w-full h-full"}
-                          ($ video-section {:playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"}))
-                   (d/div {:class "absolute w-full h-full pointer-events-none"}
-                          ($ playful-titles))
-                   (d/div {:class "absolute bottom-[40px] left-1/2 -translate-x-1/2"}
-                          ($ main-button
-                             {:title "Donate Now"
-                              :additional-classes "text-2xl"
-                              :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))
-         ($ section
-            {:key "mobile-hero"
-             :section-id "mobile-hero"}
-            ($ mobile-hero-section)))
+       ($ section
+          {:key "hero"
+           :section-id "hero"}
+          ($ mobile-hero-section))
 
        ($ section
           {:key "teaser"
@@ -84,6 +69,10 @@
                                        :title "Press Release"})
                      ($ about-studio {:id "about-studio"
                                       :title "The Studio"})
+                     ($ in-minor-keys {:id "in-minor-keys"
+                                       :title "In Minor Keys"})
+                     ($ artist-section {:id "artist"
+                                        :title "The Artist"})
                      ($ curators-section {:id "curators"
                                           :title "Curators"})))       ($ site-footer)       #_($ work-overview)
        #_($ team-section)

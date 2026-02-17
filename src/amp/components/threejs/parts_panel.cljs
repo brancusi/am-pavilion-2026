@@ -17,14 +17,14 @@
           :style {:width "360px"}}
          ;; Panel header
          (d/div {:class "flex justify-between items-center px-4 py-3 border-b-2 border-slate-300"}
-                (d/h2 {:class "text-lg font-bold font-fira-code"} "Parts List")
+                (d/h2 {:class "text-lg font-bold font-mono"} "Parts List")
                 (d/button {:class "text-2xl font-bold text-slate-600 hover:text-slate-800"
                            :on-click on-close}
                           "×"))
          ;; Panel content
          (d/div {:class "p-4 overflow-y-auto" :style {:height "calc(100% - 60px)"}}
                 (if-let [parts (geometry/extract-parts-list mockup-data)]
-                  (d/ol {:class "list-decimal list-inside space-y-2 font-fira-code text-sm"}
+                  (d/ol {:class "list-decimal list-inside space-y-2 font-mono text-sm"}
                         (map-indexed
                          (fn [idx {:keys [dims qty]}]
                            (let [[w h d] dims]

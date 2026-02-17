@@ -33,7 +33,7 @@
 
   (d/div {:class "absolute 
                   bg-white/30
-                  font-fira-code
+                  font-mono
                   pointer-events-auto"}
          (map (fn [[id writing]]
                 (d/div {:key id

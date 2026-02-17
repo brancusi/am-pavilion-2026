@@ -159,9 +159,9 @@
                          w-full
                          bg-slate-900/50 dark:bg-slate-900/60
                          p-2"}
-                (d/p {:class (s/cx "font-fira-code text-xs" s/text-inverse)}
+                (d/p {:class (s/cx "font-mono text-xs" s/text-inverse)}
                      caption)
-                (d/p {:class (s/cx "font-fira-code text-xs" s/text-inverse)}
+                (d/p {:class (s/cx "font-mono text-xs" s/text-inverse)}
                      credit))))
 
 (defnc image-card [{:keys [width height img-src caption credit other key idx]}]

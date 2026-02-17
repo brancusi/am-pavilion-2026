@@ -30,7 +30,7 @@
                         "-translate-y-full opacity-0"))}
          (d/div
           (d/p
-           {:class "text-md lg:text-md font-fira-code"}
+           {:class "text-md lg:text-md font-mono"}
            "THE STUDIO will open from May 9 to November 22, 2026"))
          (d/div {:class "flex justify-end"}
                 ($ main-button {:title cta-title
@@ -39,6 +39,6 @@
                 #_(d/button {:class "text-2xl
                                    bg-red-600
                                    p-4
-                                   whitespace-nowrap"
-                             :style {:font-family "'Fira Code', monospace"}}
+                                   whitespace-nowrap
+                                   font-mono"}
                             cta-title))))

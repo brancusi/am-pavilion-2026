@@ -83,8 +83,12 @@
 ;; These are *atoms*: combine them freely to build any text style.
 
 ;; --- Font families --------------------------------------------------------
-(def font-ui    "font-mono")
-(def font-prose "font-sans")
+;; Two-font system: Futura PT (display) + FiraCode (data/mono)
+(def font-display "font-display")              ;; Futura PT — headings, titles, nav, prose
+(def font-data    "font-mono")                  ;; FiraCode  — labels, numbers, eyebrows, code
+;; Legacy aliases (prefer font-display / font-data in new code)
+(def font-ui      font-data)
+(def font-prose   font-display)
 
 ;; --- Weights --------------------------------------------------------------
 (def weight-normal    "font-normal")
@@ -128,28 +132,28 @@
 ;; Headings -----------------------------------------------------------------
 (def heading-display
   "The big section title (BUDGET, LOCATION, etc.)."
-  (cx font-ui weight-bold uppercase- "leading-none"
+  (cx font-display weight-semibold uppercase- "leading-none"
       "text-4xl sm:text-5xl md:text-7xl"
       text-primary))
 
 (def heading-page
   "Page-level H1."
-  (cx font-ui weight-bold uppercase- text-inverse
+  (cx font-display weight-semibold uppercase- text-inverse
       "text-3xl sm:text-4xl lg:text-6xl"))
 
 (def heading-section
   "Sub-section headings (TESA 41, WIRE TRANSFER, etc.)."
-  (cx font-ui weight-bold uppercase- tracking-wider text-xl text-primary))
+  (cx font-display weight-medium uppercase- tracking-wider text-xl text-primary))
 
 (def heading-sm
   "Small heading used inside cards / tables."
-  (cx font-ui weight-bold uppercase- tracking-wide text-sm
+  (cx font-display weight-medium uppercase- tracking-wide text-sm
       "sm:text-base" text-secondary))
 
 ;; Eyebrows / labels --------------------------------------------------------
 (def eyebrow
   "Tiny uppercase caption above headings (\"3. financials\")."
-  (cx font-ui weight-bold uppercase- tracking-label text-xs text-faint))
+  (cx font-ui weight-semibold uppercase- tracking-label text-xs text-faint))
 
 (def label
   "Info-grid label, aside text, date stamps."
@@ -158,37 +162,37 @@
 
 (def label-sm
   "Even smaller meta-labels (sublabels, badges)."
-  (cx font-ui uppercase- tracking-wider text-2xs weight-bold))
+  (cx font-ui uppercase- tracking-wider text-2xs weight-semibold))
 
 (def label-muted
   "Quieter version of the eyebrow for secondary use."
-  (cx font-ui uppercase- tracking-wider text-xs weight-bold text-muted))
+  (cx font-ui uppercase- tracking-wider text-xs weight-semibold text-muted))
 
 ;; Body / prose -------------------------------------------------------------
 (def body-lg
-  "Primary body text (press release, about, why-support)."
-  (cx text-xl text-secondary))
+  "Lead paragraph (press release, about, why-support)."
+  (cx font-display text-lg weight-bold text-secondary))
 
 (def body-base
   "Standard reading text."
-  (cx text-base text-secondary))
+  (cx font-display text-lg weight-medium text-secondary))
 
 (def body-sm
   "Smaller detail text (descriptions, footnotes)."
-  (cx text-sm text-muted))
+  (cx font-display text-sm text-muted))
 
 (def body-closing
   "Closing italic aphorism."
-  (cx font-ui italic- weight-normal text-lg text-primary))
+  (cx font-display italic- weight-normal text-lg text-primary))
 
 ;; Emphasis -----------------------------------------------------------------
 (def em-strong
-  "Bold + accent for highlighted names/terms in prose."
-  (cx weight-semibold text-accent))
+  "Brightness emphasis for names/terms in prose — no color, just weight + white."
+  (cx weight-medium text-inverse))
 
 (def em-bold
-  "Bold emphasis in primary color."
-  (cx weight-semibold text-primary))
+  "Medium-weight emphasis in primary color."
+  (cx weight-medium text-primary))
 
 (def em-italic
   "Italic emphasis."
@@ -197,11 +201,11 @@
 ;; Values / numbers ---------------------------------------------------------
 (def value-hero
   "Big hero number (target total)."
-  (cx font-ui weight-extrabold "tracking-tight" text-3xl text-primary))
+  (cx font-ui weight-bold "tracking-tight" text-3xl text-primary))
 
 (def value-lg
   "Large numeric values (grand totals)."
-  (cx font-ui weight-bold text-lg text-accent))
+  (cx font-ui weight-semibold text-lg text-accent))
 
 (def value-base
   "Standard numeric values."
@@ -222,13 +226,13 @@
 
 (def btn-text
   "Text-style button / toggle."
-  (cx font-ui weight-bold uppercase- tracking-label text-xs
+  (cx font-ui weight-semibold uppercase- tracking-label text-xs
       text-faint "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
 
 ;; Navigation ---------------------------------------------------------------
 (def nav-link
   "Section navigation links."
-  (cx font-ui text-sm uppercase- tracking-wider
+  (cx font-display text-sm uppercase- tracking-wider
       "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
 
 ;; ---------------------------------------------------------------------------

@@ -16,15 +16,17 @@
   (let [outer-ctx (hooks/use-ref "outer-ctx")
         [_visited? is-active?] (use-scroll-trigger outer-ctx {:end "bottom"})
         block-bg "bg-black/70 px-3 py-1.5 inline decoration-clone"
-        block-bg-light "bg-black/50 px-3 py-1 inline decoration-clone"]
+        block-bg-light "bg-black/50 px-3 py-1 inline decoration-clone"
+        clone-style {:boxDecorationBreak "clone"
+                     :WebkitBoxDecorationBreak "clone"}]
 
     (d/div
      {:id "video"
       :ref outer-ctx
-      :class "relative h-full w-full overflow-hidden"}
+      :class "relative w-full overflow-hidden"}
 
      (d/div
-      {:class "w-screen h-screen relative flex flex-col items-start justify-center"}
+      {:class "w-screen h-screen relative flex flex-col"}
 
       ;; ── Video background ──
       (d/div {:class "absolute inset-0"}
@@ -32,35 +34,41 @@
                                        :playback-id "fuKbU028e02haCGC2i94J15M00lnafQ94p01YgKQ4JPPwfo"
                                        :should-play? is-active?}))
 
-      ;; ── Content overlay ──
+      ;; ── Biennale logo — top right ──
+      (d/div {:class "absolute top-20 right-8 z-10"}
+             (d/div {:class "cursor-pointer w-24 sm:w-28 lg:w-32"
+                     :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
+                    (d/img {:src "images/graphics/61_biennale_logo_red.svg"
+                            :class "opacity-90"})))
+
+      ;; ── Center content ──
       (d/div
-       {:class "relative z-10 flex flex-col items-start justify-center px-8 text-left gap-6"}
+       {:class "relative z-10 flex-1 flex flex-col items-center justify-center px-8"}
 
-       ;; Biennale logo — red version
-       (d/img {:src "images/graphics/61_biennale_logo_red.svg"
-               :class "w-36"})
+       ;; The Studio logo — hero centerpiece, amber tint via CSS mask
+       (d/div {:class "w-4/5 sm:w-2/3 max-w-2xl aspect-square mb-10 bg-amber-300 opacity-90"
+               :style {:WebkitMaskImage "url(images/graphics/the_studio_logo.svg)"
+                       :maskImage "url(images/graphics/the_studio_logo.svg)"
+                       :WebkitMaskSize "contain"
+                       :maskSize "contain"
+                       :WebkitMaskRepeat "no-repeat"
+                       :maskRepeat "no-repeat"
+                       :WebkitMaskPosition "center"
+                       :maskPosition "center"}})
 
-       ;; Show title — blocky background
-       (d/h1
-        {:class "font-mono font-extrabold uppercase tracking-wider leading-tight text-6xl text-white"}
-        (d/span
-         {:class block-bg
-          :style {:boxDecorationBreak "clone"
-                  :WebkitBoxDecorationBreak "clone"}}
-         "The Studio"))
-
-       ;; Subtitle — same blocky treatment, lighter
+       ;; Subtitle — pavilion info
        (d/p
-        {:class "font-mono text-xs uppercase tracking-[0.2em] max-w-[18rem] leading-loose text-white/90"}
+        {:class "font-display text-xs sm:text-sm uppercase tracking-[0.2em] max-w-md text-center leading-loose text-white/90"}
         (d/span
          {:class block-bg-light
-          :style {:boxDecorationBreak "clone"
-                  :WebkitBoxDecorationBreak "clone"}}
+          :style clone-style}
          "Armenia Pavilion \u00B7 61st International Art Exhibition La Biennale di Venezia")))
 
-      ;; Learn more — anchored to bottom of viewport container
+      ;; Learn more — anchored to bottom
       (d/a
-       {:href "#about"
-        :class "absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-1 text-white/80 hover:text-white transition-colors font-mono text-xs uppercase tracking-[0.2em]"}
+       {:href "#press-release"
+        :class "absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-1
+                text-white/80 hover:text-white transition-colors
+                font-display text-xs uppercase tracking-[0.2em]"}
        "Learn More"
        (d/span {:class "text-lg animate-bounce"} "\u2193"))))))

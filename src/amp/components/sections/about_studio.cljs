@@ -16,9 +16,9 @@
 
 (defnc preview
   [{:keys []}]
-  (d/div {:class "space-y-4 px-4"}
-         ($ written-by {:author "Carlo McCormick" :class "mb-2"})
-         (d/p {:class s/body-lg}
+  (d/div {:class "px-4"}
+         ($ written-by {:author "Carlo McCormick" :class "mb-6"})
+         (d/p {:class (s/cx s/body-lg "mb-6")}
               "Over the entire six-month duration of the Biennale, the "
               (d/span {:class s/em-strong} "Armenia Pavilion")
               " will operate as "
@@ -37,10 +37,10 @@
 (defnc details
   [{:keys []}]
   (d/div
-   (d/div {:class "px-4 space-y-4"}
-          ($ written-by {:author "Carlo McCormick" :class "mb-2"})
+   (d/div {:class "px-4"}
+          ($ written-by {:author "Carlo McCormick" :class "mb-6"})
 
-          (d/p {:class s/body-lg}
+          (d/p {:class (s/cx s/body-lg "mb-6")}
                "Over the entire six-month duration of the Biennale, the "
                (d/span {:class s/em-strong} "Armenia Pavilion")
                " will operate as "
@@ -57,7 +57,7 @@
                "Zadikian actualizes the studio as a workshop of the handmade, the contemplative, and the constantly developing sculpture.")
 
           (d/p
-           {:class s/text-secondary}
+           {:class (s/cx s/body-base "mb-6")}
            "Centered on the most basic unit—the "
            (d/span {:class s/em-strong} "block, or brick")
            "—which has been continuously used for building for over eleven millennia, "
@@ -70,7 +70,7 @@
            ".")
 
           (d/p
-           {:class s/text-secondary}
+           {:class (s/cx s/body-base "mb-6")}
            "Here, the studio encourages experimentation: variances within the basic units that generate unexpected amalgamations—"
            "multiple distinct forms resolving into a unified whole. "
            "Minimal and maximal, the one and the many, the this and the that—"
@@ -79,7 +79,7 @@
            ".")
 
           (d/p
-           {:class s/text-secondary}
+           {:class (s/cx s/body-base "mb-6")}
            (d/span {:class s/em-italic} "The Studio")
            ", for Zadikian, is "
            (d/span {:class s/em-strong} "workroom, factory, and laboratory")
@@ -93,7 +93,7 @@
            ".")
 
           (d/p
-           {:class s/text-secondary}
+           {:class (s/cx s/body-base "mb-6")}
            "Meaning does not arrive solely through explanation, but through the object's coming-into-being as witnessed over time. "
            "The unit does not arrive as image, symbol, or representation. "
            "It exists as a tangible fact—built through internal necessities of "
@@ -104,7 +104,7 @@
            " qualities.")
 
           (d/p
-           {:class s/text-secondary}
+           {:class (s/cx s/body-base "mb-6")}
            "This is why the studio itself matters—why it is foregrounded, front and center. "
            "The act of making is not staged, but neither is it hidden. "
            "The object's formation is not only shown as finished; it is witnessed in its making. "

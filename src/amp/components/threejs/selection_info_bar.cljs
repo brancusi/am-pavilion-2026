@@ -11,7 +11,7 @@
      :selection - map with :dims [w h d], :color string, :note string (or nil)"
   [{:keys [selection]}]
   (when selection
-    (d/div {:class "z-20 fixed bottom-8 left-1/2 bg-white/90 border-2 border-slate-800 px-4 py-2 rounded shadow-lg font-fira-code"
+    (d/div {:class "z-20 fixed bottom-8 left-1/2 bg-white/90 border-2 border-slate-800 px-4 py-2 rounded shadow-lg font-mono"
             :style {:transform "translateX(-50%)"
                     :max-width "calc(100vw - 1rem)"}}
            (d/div {:class "flex items-center gap-3 whitespace-nowrap"}

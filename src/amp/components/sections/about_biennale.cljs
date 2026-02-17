@@ -41,7 +41,7 @@
                   bg-black/10
                   lg:p-12 p-4
                   lg:text-6xl text-3xl
-                  font-futura
+                  font-display
                   font-bold
                   text-slate-800"}
 
@@ -55,7 +55,7 @@
 
          (d/div {:class "flex
                          flex-col
-                         font-futura
+                         font-display
                          font-bold
                          lg:text-right
                          italic
@@ -69,7 +69,7 @@
 
 (defnc copy-block
   [{:keys [title copy]}]
-  (d/div {:class "flex flex-col mb-12 font-futura"}
+  (d/div {:class "flex flex-col mb-12 font-display"}
          (d/p {:class "font-bold text-4xl text-slate-800 lowercase"} title)
          (d/p {:class "text-slate-800"} copy)))
 
@@ -90,7 +90,7 @@
                         light-red-grad
                         items-center
                         justify-center
-                        font-futura
+                        font-display
                         relative"}
 
                (d/div {:class "flex 

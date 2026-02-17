@@ -11,7 +11,7 @@
 (defnc site-footer [{:keys []}]
   (let [scroll-to-id (use-scroll-to-id)]
     (d/footer
-     {:class "relative w-full font-mono mt-12"}
+     {:class "relative w-full font-display mt-12"}
 
      ;; ── Divider ──
      (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"})
@@ -31,7 +31,7 @@
 
             ;; Primary CTA
             (d/div {:class "text-center mb-16"}
-                   (d/h2 {:class (s/cx "text-2xl lg:text-3xl font-bold uppercase tracking-wider mb-3" s/text-primary)}
+                   (d/h2 {:class (s/cx "text-2xl lg:text-3xl font-semibold uppercase tracking-wider mb-3" s/text-primary)}
                          "Support the Pavilion")
                    (d/p {:class (s/cx "text-sm lg:text-base max-w-xl mx-auto mb-8" s/text-muted)}
                         "Your contribution directly supports Armenia\u2019s national presentation at the 61st Venice Biennale.")
@@ -45,7 +45,7 @@
 
                    ;; Contact
                    (d/div {:class "space-y-3"}
-                          (d/h3 {:class (s/cx "text-[10px] font-semibold uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
+                          (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
                                 "Get in Touch")
                           (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
                                 :class (s/cx "block transition-colors" s/text-secondary "hover:text-slate-900 dark:hover:text-white")}
@@ -56,7 +56,7 @@
 
                    ;; Organization
                    (d/div {:class "space-y-3"}
-                          (d/h3 {:class (s/cx "text-[10px] font-semibold uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
+                          (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
                                 "501(c)(3) Non-Profit")
                           (d/p {:class s/text-secondary} "Fallen Angels Inc.")
                           (d/p {:class s/text-muted} "EIN: 92-2395513")
@@ -64,7 +64,7 @@
 
                    ;; Quick links — landing page sections
                    (d/div {:class "space-y-3"}
-                          (d/h3 {:class (s/cx "text-[10px] font-semibold uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
+                          (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4" s/text-accent-50)}
                                 "Quick Links")
                           (d/button {:class (s/cx "block transition-colors text-left" s/text-secondary "hover:text-slate-900 dark:hover:text-white")
                                      :on-click #(scroll-to-id "video")}

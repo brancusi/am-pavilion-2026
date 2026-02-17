@@ -40,14 +40,14 @@
 
       ;; Title
       (d/h2
-       {:class "font-mono font-extrabold uppercase tracking-wider
+       {:class "font-display font-bold uppercase tracking-wider
                 leading-relaxed text-4xl sm:text-5xl lg:text-6xl text-white mb-6"}
        (d/span {:class block-bg :style clone-style}
                "The Studio"))
 
       ;; Subtitle / tagline
       (d/p
-       {:class "font-mono text-sm sm:text-base uppercase tracking-[0.15em]
+       {:class "font-display text-sm sm:text-base uppercase tracking-[0.15em]
                 leading-loose text-white/90 mb-8 max-w-xl"}
        (d/span {:class block-bg-light :style clone-style}
                "A living studio at the heart of the Venice Biennale"))
@@ -55,7 +55,7 @@
       ;; Description
       (d/div
        {:class "space-y-3 mb-10 max-w-lg"}
-       (d/p {:class "font-mono text-xs sm:text-sm leading-relaxed text-white/80"}
+       (d/p {:class "font-display text-xs sm:text-sm leading-relaxed text-white/80"}
             (d/span {:class block-bg-info :style clone-style}
                     "Over six months, sculptor Zadik Zadikian and his team will occupy the Arsenale Militare\u2014casting, assembling, and building in real time. Nothing is fixed. Nothing is final. The work is the making itself.")))
 
@@ -66,23 +66,23 @@
        ;; Dates
        (d/div
         {:class "space-y-1"}
-        (d/p {:class "font-mono font-semibold text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
+        (d/p {:class "font-display font-medium text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
              "Opening")
-        (d/p {:class "font-mono text-xs sm:text-sm text-white/90"}
+        (d/p {:class "font-display text-xs sm:text-sm text-white/90"}
              (d/span {:class block-bg-info :style clone-style}
                      "9 May \u2013 22 November 2026"))
-        (d/p {:class "font-mono font-medium text-[9px] text-amber-200/40 mt-1"}
+        (d/p {:class "font-display font-medium text-[9px] text-amber-200/40 mt-1"}
              "Preview: 6, 7, 8 May"))
 
        ;; Venue
        (d/div
         {:class "space-y-1"}
-        (d/p {:class "font-mono font-semibold text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
+        (d/p {:class "font-display font-medium text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
              "Venue")
         (d/a {:href "https://maps.app.goo.gl/QvYkqwN1Bv7L9VDn7"
               :target "_blank"
               :rel "noopener noreferrer"
-              :class "font-mono text-xs sm:text-sm text-white/90 hover:text-white
+              :class "font-display text-xs sm:text-sm text-white/90 hover:text-white
                       underline underline-offset-4 decoration-white/30 hover:decoration-white/60
                       transition-colors block whitespace-nowrap"}
              (d/span {:class block-bg-info :style clone-style}
@@ -91,8 +91,8 @@
        ;; Pavilion
        (d/div
         {:class "space-y-1"}
-        (d/p {:class "font-mono font-semibold text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
+        (d/p {:class "font-display font-medium text-[10px] uppercase tracking-[0.2em] text-amber-300/70"}
              "Pavilion")
-        (d/p {:class "font-mono text-xs sm:text-sm text-white/90"}
+        (d/p {:class "font-display text-xs sm:text-sm text-white/90"}
              (d/span {:class block-bg-info :style clone-style}
                      "Republic of Armenia"))))))))

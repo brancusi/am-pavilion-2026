@@ -12,12 +12,12 @@
   (let [label-class s/label]
     (d/div {:class "mb-10 text-sm"}
            ;; Title
-           (d/p {:class (s/cx "text-xl font-semibold leading-snug mb-1" s/text-primary)}
+           (d/p {:class (s/cx "text-xl font-medium leading-snug mb-1" s/text-primary)}
                 "Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian")
 
            ;; Exhibition title
            (d/p {:class "mt-6 mb-6"}
-                (d/span {:class (s/cx "text-lg font-semibold italic" s/text-primary)}
+                (d/span {:class (s/cx "text-lg font-medium italic" s/text-primary)}
                         "Zadik Zadikian: The Studio"))
 
            ;; Structured info — stacked on mobile, side-by-side on sm+
@@ -85,11 +85,11 @@
               ", who has played a central role in advancing Armenia\u2019s presence at La Biennale di Venezia since 2015 as Commissioner and Development Director of the Armenian Pavilion. On view from May 9 through November 22, 2026, the Pavilion reimagines the exhibition space as a living studio\u2014an active site of production, transformation, and renewal that unfolds over the full duration of La Biennale di Venezia.")
 
          ;; Paragraph 2 — Shafrazi + Zadikian history
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "This presentation marks the continuation of Shafrazi and Zadikian\u2019s decades-long collaboration, which began in the late 1970s with Zadikian\u2019s first solo exhibition in Tehran at Shafrazi\u2019s then-new eponymous gallery, just weeks before the fall of Iran\u2019s ruling shah and on the cusp of the profound political and social transformations that would follow. At that time, a young Zadikian observed laborers carefully stacking clay bricks to dry in the open air at a facility nearly 200 miles from Tehran. \u201CI was completely taken by the way they were making sculptures without knowing what they were doing,\u201D he recalls. Ever since, the brick has become a central material and conceptual anchor in his work, continuing to inform Zadikian\u2019s sustained engagement with repetition, labor, and the transformation of basic forms into complex structures.")
 
          ;; Paragraph 3 — Studio in Venice
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "In Venice, Zadikian will operate a fully functioning studio, in which objects—principally plaster bricks of varying scales and pigments—are formed, cast, and assembled by the artist and his studio assistants over the course of the exhibition. Each composite form is built by stacking multiple individual bricks of different sizes that remain separate and movable, allowing the arrangement to change and develop over time. This emphasis on repetition and physical presence places the project in dialogue with early modernist and post-Minimalist sculpture, recalling the work of "
               (d/span {:class s/em-bold} "Richard Serra")
               ", "
@@ -99,7 +99,7 @@
               ", and reflecting a shared inquiry by both Zadikian and Shafrazi into form and the experience of space.")
 
          ;; Paragraph 4 — Concept / factory / McCormack quote
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "Aptly titled "
               (d/span {:class s/em-italic} "The Studio")
               ", the installation invites visitors to witness and engage directly with Zadikian’s process and materials, allowing the work to unfold in real time. By making production visible, the project challenges the often ritualized and private conventions of the artist’s studio, reframing it instead as a site of openness, exchange, and collective labor. In this way, "
@@ -111,16 +111,16 @@
               ", for Zadikian, is workroom, factory, and laboratory at once\u2014a locus of constant production, invention, and reinvention, a place of infinite possibility where art is not simply what is made; it is the study of its creation, and what we make of it.\u201D")
 
          ;; Paragraph 5 — Chakarian
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "Furthermore, Chakarian\u2019s longstanding engagement with Armenia\u2019s cultural infrastructure\u2014both within the Republic and across its global diaspora\u2014inflects the Pavilion with a broader commitment to visibility, continuity, and international dialogue. Since 2015, as Commissioner and Development Director of the Armenian Pavilion at La Biennale di Venezia, she has played a central role in shaping Armenia\u2019s sustained presence on this global stage, overseeing curatorial development, institutional partnerships, and strategic fundraising efforts. Her work bridges generations of artists working in Yerevan and abroad, positioning Armenian contemporary art within an expansive transnational discourse while honoring its distinct historical and cultural narratives.")
 
          ;; Paragraph 6 — Arsenale / production / McCormack quote
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               (d/span {:class s/em-italic} "The Studio")
               " will be located within the Arsenale Militare, a vast complex of shipyards and armories that for over 900 years served as the heart of Venetian naval power. Over the course of La Biennale di Venezia, hundreds of plaster bricks will be cast, stacked, disassembled, and reassembled within the Pavilion, allowing the installation to evolve continuously through ongoing production. Here, process is neither theatricalized nor concealed. As McCormack states, \u201Cthe act of making is not staged, but neither is it hidden.\u201D")
 
          ;; Paragraph 7 — Brooklyn Museum
-         (d/p {:class (s/cx s/text-secondary "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "The Venice presentation follows Zadikian\u2019s recent inclusion in a major group exhibition at the "
               (d/span {:class s/em-bold} "Brooklyn Museum")
               ", "
@@ -132,7 +132,7 @@
          ;; About Zadik Zadikian
          (d/div {:class "mb-6 mt-8"}
                 (d/p {:class s/heading-section} "About Zadik Zadikian")
-                (d/p {:class (s/cx s/text-secondary "mt-2")}
+                (d/p {:class (s/cx s/body-base "mt-2")}
                      "Zadik Zadikian (b. 1948, Erevan, Soviet Armenia) has spent over five decades creating works that challenge both the materials and ideologies of contemporary art. A daring escape from the Soviet Union in his youth marked the beginning of an extraordinary journey, from his training under "
                      (d/span {:class s/em-bold} "Benjamino Bufano")
                      " to his longstanding friendship with "
@@ -142,16 +142,16 @@
          ;; General information
          (d/div {:class "mb-6"}
                 (d/p {:class (s/cx s/heading-section "mb-2")} "General information")
-                (d/p {:class (s/cx s/text-secondary "mb-1")}
+                (d/p {:class (s/cx s/body-base "mb-1")}
                      (d/span {:class s/em-bold} "Venue: ")
                      (d/a {:href "https://maps.app.goo.gl/aaFLEeWQZmVQNi7d9?g_st=ic"
                            :target "_blank"
                            :class (s/cx s/link-subtle s/text-secondary)}
                           "Case Nuove 2738/C, Castello, Venezia, Tesa 41, Arsenale Militare"))
-                (d/p {:class (s/cx s/text-secondary "mb-1")}
+                (d/p {:class (s/cx s/body-base "mb-1")}
                      (d/span {:class s/em-bold} "Dates: ")
                      "9 May \u2013 22 November 2026")
-                (d/p {:class s/text-secondary}
+                (d/p {:class s/body-base}
                      (d/span {:class s/em-bold} "Press preview: ")
                      "6–8 May 2026"))))
 

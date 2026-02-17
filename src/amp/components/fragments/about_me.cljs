@@ -43,6 +43,5 @@
                   (d/div {:class "flex justify-end"}
                          (d/button {:class "text-2xl
                                           bg-red-600 p-4
-                                          whitespace-nowrap"
-                                    :style {:font-family "'Fira Code', monospace"}}
+                                          whitespace-nowrap font-mono"}
                                    "Learn More →")))))

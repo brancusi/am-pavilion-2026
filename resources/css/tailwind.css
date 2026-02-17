@@ -85,7 +85,8 @@
 
 .massive-title {
     font-size: 24em;
-    font-family: "FiraCode-SemiBold";
+    font-family: "FiraCode";
+    font-weight: 600;
     color: #EAEAEA;
     opacity: 0;
     

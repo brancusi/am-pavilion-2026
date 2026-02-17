@@ -33,7 +33,7 @@
      (d/li
       {:key id
        :class "py-2
-              font-fira-code
+              font-mono
               cursor-pointer 
               text-white
               

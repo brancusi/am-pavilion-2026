@@ -36,7 +36,7 @@
        (d/p {:class "mt-12
                         mb-16
                         font-bold
-                        font-futura
+                        font-display
                         text-5xl"}
             "THE STUDIO")
 

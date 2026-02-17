@@ -13,7 +13,7 @@
           :on-click on-toggle}
          ($ (if hud-open? CollapseIcon ExpandIcon)
             {:class "w-5 h-5 text-slate-800 mr-4"})
-         (d/p {:class "text-md font-fira-code font-bold"} title)))
+         (d/p {:class "text-md font-mono font-bold"} title)))
 
 (defnc mockup-hud
   "Top-left HUD panel with title, dimensions, and control buttons.
@@ -36,14 +36,14 @@
          (when hud-open?
            (d/div {:class "flex flex-col gap-2"}
                   (when-let [{:keys [width height length]} (geometry/calculate-total-dimensions mockup-data)]
-                    (d/p {:class "text-xs font-fira-code text-slate-700"}
+                    (d/p {:class "text-xs font-mono text-slate-700"}
                          (str (geometry/fmt-dim length) "\"(L) × " (geometry/fmt-dim width) "\"(W) × " (geometry/fmt-dim height) "\"(H)")))
-                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-mono rounded hover:bg-slate-700 transition-colors"
                              :on-click on-toggle-wireframe}
                             (if wireframe? "Solid" "Lines"))
-                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-mono rounded hover:bg-slate-700 transition-colors"
                              :on-click on-toggle-ground}
                             (if ground-plane? "Hide Ground" "Show Ground"))
-                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-fira-code rounded hover:bg-slate-700 transition-colors"
+                  (d/button {:class "px-3 py-1 bg-slate-800 text-white text-sm font-mono rounded hover:bg-slate-700 transition-colors"
                              :on-click on-toggle-parts-panel}
                             "Parts List")))))

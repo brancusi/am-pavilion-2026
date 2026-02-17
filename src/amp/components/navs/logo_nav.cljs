@@ -32,11 +32,11 @@
             :class "fixed
                     opacity-90
                     z-30
-                    ml-4
-                    mt-4
-                    flex flex-col items-start gap-3"}
+                    right-8
+                    top-20
+                    flex flex-col items-end gap-3"}
 
-           (d/div {:class "w-1/5 lg:w-32"}
+           (d/div {:class "w-28 lg:w-32"}
                   (d/div {:class "cursor-pointer"
                           :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
                          (d/img {:src "images/graphics/61_biennale_logo_line.svg"
@@ -47,6 +47,7 @@
                             {:title "Donate Now"
                              :additional-classes "w-full justify-center"
                              :size :sm
+                             :bg-opacity 0.8
                              :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))))
 
 

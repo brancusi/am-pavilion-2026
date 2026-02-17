@@ -7,35 +7,61 @@ Covers the design system: typography, color palette, component patterns, spacing
 
 ## Philosophy
 
-Flat, mono-spaced, pastel-on-dark. The aesthetic is **coding/nerdy** — no frosted glass, no rounded corners, no gradients. Information density over decoration. Data-forward, quietly confident.
+Modern, minimalist, tech/art. The aesthetic is **mathematical structure meets fine art** — geometric precision, clean grids, pattern and repetition. Two typefaces only: one Swiss grotesk (Neue Haas Grotesk Display) for display/prose, one monospaced (FiraCode) for data/labels. Weight is kept **light to medium** — the typeface does the work, not the boldness. Prose emphasis is through **brightness, not color** — white against slate-300 body text. Color accents (pink) are reserved for interactive elements only (buttons, hover states, CTAs). Information density over decoration. Data-forward, quietly confident.
 
 ---
 
 ## Typography
 
-### Font Stack
+### Two-Font System
 
-Everything uses `font-mono`. No `font-helvetica`, no `font-sans` in the budget/data sections.
+The site uses exactly two typefaces with clear, non-overlapping roles:
+
+| Token / Class  | Typeface                  | Source        | Role                                                      |
+| -------------- | ------------------------- | ------------- | --------------------------------------------------------- |
+| `font-display` | Neue Haas Grotesk Display | Adobe Typekit | Headings, titles, names, navigation, prose body text      |
+| `font-mono`    | FiraCode Variable         | Local woff2   | Labels, eyebrows, numbers, dates, financial figures, code |
+
+**Style tokens** (in `amp.styles`):
+
+- `s/font-display` → `"font-display"` → Neue Haas Grotesk Display
+- `s/font-data` → `"font-mono"` → FiraCode
+- `s/font-ui` → alias for `s/font-data` (legacy, prefer `font-data`)
+
+**Rules:**
+
+- Headings and titles: **always** `font-display`
+- Prose body text: **always** `font-display`
+- Numbers, financial figures, dates: **always** `font-mono`
+- Labels, eyebrows, badges, tags: **always** `font-mono`
+- Navigation links: `font-display`
+- Never use `font-sans`, `font-helvetica`, `font-futura-book` — these are dead config
 
 ### Scale
 
-| Role              | Classes                                                                      |
-| ----------------- | ---------------------------------------------------------------------------- |
-| **Page title**    | `font-mono font-bold uppercase text-4xl lg:text-6xl`                         |
-| **Section title** | `font-mono font-bold uppercase leading-none text-5xl md:text-7xl`            |
-| **Eyebrow**       | `font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500` |
-| **Body**          | `text-xl text-slate-100` (primary) / `text-slate-300` (secondary)            |
-| **Small label**   | `font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500`           |
-| **Small data**    | `font-mono text-[11px]` with contextual color                                |
-| **Financial fig** | `font-mono text-base font-semibold tracking-tight` with pastel color         |
-| **Tag / badge**   | `px-1.5 py-px text-[9px] font-bold uppercase tracking-widest font-mono`      |
+| Role              | Style Token         | Resolves To                                                                          |
+| ----------------- | ------------------- | ------------------------------------------------------------------------------------ |
+| **Page title**    | `s/heading-page`    | `font-display font-semibold uppercase text-3xl sm:text-4xl lg:text-6xl`              |
+| **Section title** | `s/heading-display` | `font-display font-semibold uppercase leading-none text-4xl sm:text-5xl md:text-7xl` |
+| **Section head**  | `s/heading-section` | `font-display font-medium uppercase tracking-wider text-xl`                          |
+| **Small heading** | `s/heading-sm`      | `font-display font-medium uppercase tracking-wide text-sm sm:text-base`              |
+| **Eyebrow**       | `s/eyebrow`         | `font-mono font-semibold uppercase tracking-[0.15em] text-[10px]`                    |
+| **Label**         | `s/label`           | `font-mono uppercase tracking-[0.15em] text-[0.6rem]`                                |
+| **Lead body**     | `s/body-lg`         | `font-display text-lg`                                                               |
+| **Body base**     | `s/body-base`       | `font-display text-base`                                                             |
+| **Body small**    | `s/body-sm`         | `font-display text-sm`                                                               |
+| **Financial fig** | `s/value-base`      | `font-mono font-semibold text-base`                                                  |
+| **Tag / badge**   | `s/label-sm`        | `font-mono font-semibold uppercase tracking-wider text-[9px]`                        |
 
 ### Key Rules
 
-- All numbers and financial figures: **always** `font-mono`
-- Headings in data sections: `uppercase tracking-wide` or `tracking-wider`
-- Prose body text keeps default font but highlighted terms use `font-semibold text-pink-300`
-- Dollar amounts in prose: `font-bold font-mono text-white`
+- All numbers and financial figures: **always** `font-mono` (`s/font-data`)
+- Headings: **always** `font-display` via style tokens (`s/heading-*`)
+- Prose body text: `font-display` via `s/body-*` tokens
+- Highlighted terms in prose: **brightness only** — `font-medium text-white` (via `s/em-strong`). No colored accents in prose.
+- Dollar amounts in prose: `font-mono font-medium text-white` (via `s/value-currency`)
+- Inline in components: prefer `s/font-display` or `s/font-data` over raw class strings
+- Weight ceiling: `font-bold` (700) for hero titles only. All other headings: `font-semibold` (600) or `font-medium` (500). No `font-extrabold`.
 
 ---
 
@@ -54,14 +80,15 @@ Everything uses `font-mono`. No `font-helvetica`, no `font-sans` in the budget/d
 
 ### Pastel Accent Colors
 
-These are the **core** accent colors. Use consistently across all data components:
+These are the **core** accent colors. Pink is **interactive-only** (buttons, hover states, CTAs, dividers) — never for inline prose emphasis.
 
-| Color           | Tailwind           | Hex       | Meaning                        |
-| --------------- | ------------------ | --------- | ------------------------------ |
-| **Pink-300**    | `text-pink-300`    | `#f9a8d4` | Critical / primary highlight   |
-| **Amber-300**   | `text-amber-300`   | `#fcd34d` | High priority / secondary data |
-| **Indigo-300**  | `text-indigo-300`  | `#a5b4fc` | Normal / financial figures     |
-| **Emerald-400** | `text-emerald-400` | `#34d399` | Paid / success / "now"         |
+| Color           | Tailwind           | Hex       | Meaning                                 |
+| --------------- | ------------------ | --------- | --------------------------------------- |
+| **Pink-300**    | `text-pink-300`    | `#f9a8d4` | Interactive: buttons, hover, CTA        |
+| **Amber-300**   | `text-amber-300`   | `#fcd34d` | High priority / secondary data          |
+| **Indigo-300**  | `text-indigo-300`  | `#a5b4fc` | Normal / financial figures              |
+| **Emerald-400** | `text-emerald-400` | `#34d399` | Paid / success / "now"                  |
+| **White**       | `text-white`       | `#ffffff` | Prose emphasis (names, terms via em-\*) |
 
 ### Text Hierarchy
 
@@ -213,20 +240,29 @@ Elements start with `opacity-0` in CSS and are revealed by GSAP.
 
 ## Anti-Patterns (Do NOT Use)
 
-| Avoid                 | Use Instead                                |
-| --------------------- | ------------------------------------------ |
-| `font-helvetica`      | `font-mono`                                |
-| `font-sans`           | `font-mono` (in data/budget sections)      |
-| `bg-blue-*`           | `bg-slate-900` / `bg-slate-950`            |
-| `border-blue-*`       | `border-pink-500/*` or `border-slate-*`    |
-| `text-blue-*`         | Pastel palette (pink/amber/indigo/emerald) |
-| `text-pink-400`       | `text-pink-300` (softer pastel)            |
-| `rounded-*`           | No border radius                           |
-| `backdrop-blur-*`     | Flat solid backgrounds                     |
-| `bg-gradient-*`       | Flat colors only                           |
-| `italic` for headings | `uppercase tracking-wide`                  |
-| Large `border-l-8`    | `border-l-2`                               |
-| `text-2xl` for totals | `text-lg` or `text-base` with `font-bold`  |
+| Avoid                              | Use Instead                                       |
+| ---------------------------------- | ------------------------------------------------- |
+| `font-helvetica`                   | `font-display` (NHG) or `font-mono` (Fira)        |
+| `font-sans`                        | `font-display` for prose, `font-mono` for data    |
+| `font-futura-book`                 | `font-display`                                    |
+| Raw `"font-mono"` in components    | `s/font-data` token from `amp.styles`             |
+| Raw `"font-futura"` in components  | `s/font-display` token from `amp.styles`          |
+| Inline `:style {:font-family ...}` | Tailwind class via token                          |
+| `font-extrabold` on headings       | `font-bold` max (hero only), else `font-semibold` |
+| `font-bold` on section heads       | `font-medium` (`s/heading-section`)               |
+| `font-semibold` + pink on names    | `font-medium` + `text-white` (`s/em-strong`)      |
+| Pink/color in prose emphasis       | Brightness only: `s/em-strong` = white            |
+| `text-xl` for all body text        | `text-lg` for lead, `text-base` for running prose |
+| `bg-blue-*`                        | `bg-slate-900` / `bg-slate-950`                   |
+| `border-blue-*`                    | `border-pink-500/*` or `border-slate-*`           |
+| `text-blue-*`                      | Pastel palette (pink/amber/indigo/emerald)        |
+| `text-pink-400`                    | `text-pink-300` (softer pastel)                   |
+| `rounded-*`                        | No border radius                                  |
+| `backdrop-blur-*`                  | Flat solid backgrounds                            |
+| `bg-gradient-*`                    | Flat colors only                                  |
+| `italic` for headings              | `uppercase tracking-wide`                         |
+| Large `border-l-8`                 | `border-l-2`                                      |
+| `text-2xl` for totals              | `text-lg` or `text-base` with `font-semibold`     |
 
 ---
 
