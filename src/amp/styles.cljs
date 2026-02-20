@@ -138,7 +138,7 @@
 
 (def heading-page
   "Page-level H1."
-  (cx font-display weight-semibold uppercase- text-inverse
+  (cx font-display weight-semibold text-inverse
       "text-3xl sm:text-4xl lg:text-6xl"))
 
 (def heading-section
@@ -153,7 +153,16 @@
 ;; Eyebrows / labels --------------------------------------------------------
 (def eyebrow
   "Tiny uppercase caption above headings (\"3. financials\")."
-  (cx font-ui weight-semibold uppercase- tracking-label text-xs text-faint))
+  (cx font-ui weight-semibold uppercase- tracking-label text-2xl text-muted))
+
+(def eyebrow-midlight
+  "Tiny uppercase caption above headings (\"3. financials\")."
+  (cx font-ui weight-semibold uppercase- tracking-label text-2xl " text-red-300"))
+
+
+(def eyebrow-highlight
+  "Tiny uppercase caption above headings (\"3. financials\")."
+  (cx font-ui weight-semibold uppercase- tracking-label text-2xl " text-red-500"))
 
 (def label
   "Info-grid label, aside text, date stamps."
@@ -232,7 +241,7 @@
 ;; Navigation ---------------------------------------------------------------
 (def nav-link
   "Section navigation links."
-  (cx font-display text-sm uppercase- tracking-wider
+  (cx font-display text-xl uppercase- tracking-wider
       "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
 
 ;; ---------------------------------------------------------------------------

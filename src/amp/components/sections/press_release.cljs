@@ -157,38 +157,40 @@
 
 (defnc footer
   [{:keys []}]
-  (d/div {:class (s/cx "p-4 italic text-lg" s/text-muted)}
+  (d/div {:class (s/cx "p-4 italic text-lg text-red-300")}
          (d/span {:class "mt-6"}
                  "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue\u2014a standard and widely accepted model for many non-permanent participating nations. "
                  "The selected site operates at a base rental cost of approximately ")
 
          (d/span {:class s/value-currency} "$145,600")
 
-         (d/span {:class s/text-muted}
+         (d/span {:class "text-red-300"}
                  ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
                  "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
 
          (d/span {:class s/value-currency} "$450,000 or more")
 
-         (d/span {:class s/text-muted}
+         (d/span {:class "text-red-300"}
                  " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
                  "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources.")
 
          ;; Fundraising committee
-         (d/span {:class (s/cx "block mt-6" s/text-muted)}
-                 "To support the scale and international significance of this undertaking, "
-                 "a dedicated fundraising committee has been formed to guide and advance the project\u2019s philanthropic efforts. ")
+         (d/span {:class (s/cx "block mt-6" "text-red-500 text-2xl")}
+                 "To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed.")
+         #_(d/span {:class (s/cx "block mt-6" "text-red-300")}
+                   "To support the scale and international significance of this undertaking, "
+                   "a dedicated fundraising committee has been formed to guide and advance the project\u2019s philanthropic efforts. ")
 
          (d/div {:class "mt-6"}
-                (d/span {:class s/text-muted}
-                        "The committee is led by ")
+                (d/span {:class (s/cx s/weight-medium s/text-primary)}
+                        "At present we are starting with a small committee including members ")
 
                 (d/span {:class (s/cx s/weight-medium s/text-primary)}
                         "Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, "
-                        "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian")
+                        "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian, ")
 
-                (d/span {:class s/text-muted}
-                        ", ensuring the Pavilion\u2019s successful realization through coordinated leadership, stewardship, and long-term commitment."))))
+                (d/span {:class (s/cx s/weight-bold s/text-danger)}
+                        " hopefully encouraging others more able to realize our goal."))))
 
 (defnc press-release
   [{:keys [id idx subtitle title show-budget-footer?]}]

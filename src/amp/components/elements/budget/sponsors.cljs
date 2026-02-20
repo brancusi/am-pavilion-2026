@@ -17,7 +17,7 @@
 (def sponsors
   [{:name "Tony Shafrazi"
     :tier :founding-patron
-    :logo "images/graphics/tony_shafrazi_logo.svg"
+    :logo "images/graphics/tony_shafrazi_logo_lighter.svg"
     :type :institution}
 
    {:name "Armenian Fund USA"
@@ -65,8 +65,8 @@
          (d/img {:src logo
                  :alt name
                  :style {:height "4rem" :width "auto"}
-                 :class "opacity-50 group-hover:opacity-90 transition-all duration-500
-                         dark:brightness-0 dark:invert
+                 :class " transition-all duration-500
+                         
                          drop-shadow-[0_0_12px_rgba(249,168,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(249,168,212,0.15)]"})))
 
 (defnc name-item
@@ -78,16 +78,16 @@
   (let [{:keys [label accent border]} (get tier-meta tier)
         with-logos  (filter :logo members)
         without-logos (remove :logo members)]
-    (d/div {:class "mb-10"}
+    (d/div {:class "mb-12"}
 
            ;; tier heading
-           (d/div {:class "mb-4 flex items-center gap-3"}
-                  (d/div {:class (str "h-px w-8 " (case tier
-                                                    :founding-patron "bg-pink-600/70 dark:bg-pink-500/70"
-                                                    :patron "bg-amber-500/50 dark:bg-amber-300/50"
-                                                    :benefactor "bg-indigo-500/50 dark:bg-indigo-300/50"
-                                                    "bg-slate-400 dark:bg-slate-600"))})
-                  (d/p {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- s/tracking-label accent)}
+           (d/div {:class "flex items-center gap-3 mb"}
+                  #_(d/div {:class (str "h-px w-4 " (case tier
+                                                      :founding-patron "bg-pink-600/70 dark:bg-pink-500/70"
+                                                      :patron "bg-amber-500/50 dark:bg-amber-300/50"
+                                                      :benefactor "bg-indigo-500/50 dark:bg-indigo-300/50"
+                                                      "bg-slate-400 dark:bg-slate-600"))})
+                  (d/p {:class (s/cx s/font-ui s/text-xl s/weight-bold s/uppercase- s/tracking-label accent)}
                        label))
 
            ;; logos
@@ -123,8 +123,15 @@
 
               (d/div {:class "p-4 mt-6 space-y-2"}
 
-                     (d/p {:class (s/cx s/text-secondary "mb-8")}
-                          "The Armenia Pavilion 2026 is made possible through the generosity of foundations, families, and individuals committed to sustaining Armenia's presence on the international stage.")
+                     (d/div {:class "mb-12"}
+                            (d/span {:class (s/cx s/text-secondary "mb-8")}
+                                    "At present the Armenia Pavilion 2026 ")
+
+                            (d/span {:class (s/cx s/text-danger)}
+                                    "is only made possible")
+
+                            (d/span {:class (s/cx s/text-secondary "mb-8")} " through the generosity of foundations, families, and individuals committed to helping sustaining Armenia's cultural presence on the international stage."))
+
 
                      ;; tier sections
                      (map (fn [[tier members]]

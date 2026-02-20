@@ -32,7 +32,7 @@
     :credit "Courtesy of the Committee"}
    {:name "Khachik Khudikyan"
     :role "Logistics Advisor"
-    :img-src "https://atd-722658831.imgix.net/committee/chris_car_2.jpg"
+    :img-src "https://atd-722658831.imgix.net/committee/chris.png"
     :credit "Courtesy of the Committee"}
    {:name "Andranik Torosyan"
     :role "Financial Advisor"
@@ -52,38 +52,36 @@
   (d/div {:class "space-y-3 p-4"}
          (d/p {}
               (d/span {:class s/text-secondary}
-                      "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class s/em-strong} "fundraising committee")
+                      "To realize an undertaking of this scale and international significance, an ")
+              (d/span {:class s/em-strong} "urgent fundraising program")
               (d/span {:class s/text-secondary}
-                      " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))))
+                      " is greatly needed."))))
 
 (defnc details
   [{:keys []}]
-  (d/div {:class (s/cx s/body-lg "p-4 space-y-3")}
-         (d/p {}
-              (d/span {:class s/text-secondary}
-                      "To support the scale of this undertaking, a dedicated ")
-              (d/span {:class s/em-strong} "fundraising committee")
-              (d/span {:class s/text-secondary}
-                      " has been formed to guide outreach, steward donor relationships, and advance the fundraising strategy required to deliver an ambitious international project in Venice."))
+  (d/div {:class (s/cx "p-4" s/body-lg)}
+         (d/p {:class (s/cx "italic text-lg text-red-300")}
+              "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue\u2014a standard and widely accepted model for many non-permanent participating nations. "
+              "The selected site operates at a base rental cost of approximately "
+              (d/span {:class s/value-currency} "$145,600")
+              (d/span {:class "text-red-300"}
+                      ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
+                      "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
+              (d/span {:class s/value-currency} "$450,000 or more")
+              (d/span {:class "text-red-300"}
+                      " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
+                      "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."))
 
-         (d/p {:class s/text-secondary}
-              "The committee works in close coordination with Pavilion leadership to expand networks, cultivate institutional and private support, and sustain momentum across the full duration of the Biennale.")
+         (d/p {:class (s/cx "mt-6 text-red-500 text-2xl")}
+              "To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed.")
 
-         (d/div {:class "space-y-2"}
-                (d/p {:class s/text-secondary} "The committee is led by:")
-                (d/ul {:class (s/cx s/text-primary "ml-6 list-['-'] marker:text-slate-400 dark:marker:text-slate-500")}
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Archbishop Hovnan Derderian")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Tony Shafrazi")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Tina Chakarian")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Rafi Ourfalian")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Khachik Khudikyan")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Andranik Torosyan")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Aram Alajajian")
-                      (d/li {:class (s/cx s/em-italic s/text-secondary "px-4")} "Vik Hovsepian")))
-
-         (d/p {:class s/text-secondary}
-              "The committee plays an active role in introducing prospective supporters, facilitating conversations, and strengthening long-term relationships that extend beyond opening week—ensuring the Pavilion is resourced, accountable, and delivered at the highest standard.")))
+         (d/div {:class "mt-6"}
+                (d/span {:class (s/cx s/weight-medium s/text-primary)}
+                        "At present we are starting with a small committee including members "
+                        "Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, "
+                        "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian, ")
+                (d/span {:class (s/cx s/weight-bold s/text-danger)}
+                        "hopefully encouraging others more able to realize our goal."))))
 
 (defnc committee-member-card
   [{:keys [name role img-src credit]

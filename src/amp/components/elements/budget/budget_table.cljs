@@ -147,7 +147,8 @@
                                  (if (prev item-id)
                                    (disj prev item-id)
                                    (conj prev item-id)))))}
-                 (d/h3 {:class (s/cx s/heading-sm "flex-1 min-w-0")}
+                 (d/h3 {:class (s/cx s/font-display s/weight-semibold s/uppercase- s/tracking-wide s/text-secondary
+                                     "text-base sm:text-lg flex-1 min-w-0")}
                        (str (inc idx) ". " (:title item)))
                  (d/div {:class "flex items-baseline justify-end shrink-0 ml-2"}
                         (d/span {:class (s/cx s/weight-semibold s/text-value s/text-sm "sm:text-base")}
@@ -171,9 +172,9 @@
                                 (case (:type ri)
                                   :header
                                   (d/div {:key (:key ri)
-                                          :class (s/cx "px-8 py-1.5 border-b border-slate-700/40"
+                                          :class (s/cx "px-8 py-2 border-b border-slate-700/40"
                                                        s/bg-surface s/text-accent-50
-                                                       s/text-xs s/weight-semibold s/uppercase- s/tracking-label)}
+                                                       "text-sm sm:text-base" s/weight-semibold s/uppercase- s/tracking-label)}
                                          (d/span {} (:label ri)))
                                   :detail
                                   ($ detail-line-item

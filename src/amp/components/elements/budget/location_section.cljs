@@ -18,25 +18,23 @@
 
 (def lazy-video (lazy-component amp.components.elements.video-background/video-background))
 
+(defnc preview-text []
+  (d/p {:class ""}
+       "The Armenia Pavilion 2026 will be located across "
+       (d/span {:class s/em-strong} "two sites,")
+       " within the historic Arsenale of Venice. "
+       (d/span {:class s/em-strong} " 1. A wonderful interior grand studio")
+       (d/span {:class s/em-strong} " , as well 2. An important exterior public crossing to the Arsenale")
+       ". "
+       "Together these two sites will form a single spatial constellation. "
+       (d/span {:class s/text-primary} "A place for study, a place for work, to create, share and exhibit")
+       (d/span {:class s/text-primary} " at a public-crossing threshold")
+       "—each distinctly neccesary and helpful, both in concluding the final design as well as the making, viewing, and observing of the artworks presented."))
 
 (defnc preview
   [{:keys []}]
   (d/div {:class "p-4 mb-12"}
-         (d/p {:class ""}
-              "The Armenia Pavilion 2026 unfolds across "
-              (d/span {:class s/em-strong} "two sites")
-              " within the historic Arsenale of Venice\u2014"
-              (d/span {:class s/em-strong} "an interior studio")
-              ", and "
-              (d/span {:class s/em-strong} "a landmark crossing to the Arsenale")
-              ". "
-              "Together, these sites form a single spatial constellation: "
-              (d/span {:class s/text-primary} "a place of work")
-              ", "
-              (d/span {:class s/text-primary} "a place of weather and ruin")
-              ", and "
-              (d/span {:class s/text-primary} "a public-facing threshold")
-              "\u2014each distinct, yet inseparable.")))
+         ($ preview-text)))
 
 
 (defnc full-details
@@ -45,25 +43,9 @@
     (d/div
      {:class "space-y-8"}
 
-
-
      (d/div {:class s/body-lg}
             (d/div {:class "p-4 mb-12"}
-                   (d/p {:class ""}
-                        "The Armenia Pavilion 2026 unfolds across "
-                        (d/span {:class s/em-strong} "two sites")
-                        " within the historic Arsenale of Venice—"
-                        (d/span {:class s/em-strong} "an interior studio")
-                        ", and "
-                        (d/span {:class s/em-strong} "a landmark crossing to the Arsenale")
-                        ". "
-                        "Together, these sites form a single spatial constellation: "
-                        (d/span {:class s/text-primary} "a place of work")
-                        ", "
-                        (d/span {:class s/text-primary} "a place of weather and ruin")
-                        ", and "
-                        (d/span {:class s/text-primary} "a public-facing threshold")
-                        "—each distinct, yet inseparable."))
+                   ($ preview-text))
 
             (d/div {:class "my-8"}
                    ($ mapbox-map

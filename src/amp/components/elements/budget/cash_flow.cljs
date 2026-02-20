@@ -480,14 +480,14 @@
   "Pastel palette matching the site."
   [p]
   (case p
-    :critical "#f9a8d4"   ;; pink-300
+    :critical "#b00020"   ;; pink-300
     :high     "#fcd34d"   ;; amber-300
     :normal   "#a5b4fc"   ;; indigo-300
     "#a5b4fc"))
 
 (defn priority-tag-bg [p]
   (case p
-    :critical "bg-pink-500/15"
+    :critical "bg-red-500/15"
     :high     "bg-amber-400/15"
     :normal   "bg-indigo-400/15"
     "bg-indigo-400/15"))
@@ -596,7 +596,7 @@
 
 (defn status-classes [status]
   (case status
-    :paid    {:dot "bg-emerald-400/20 dark:bg-emerald-300/20" :text "text-emerald-600 dark:text-emerald-300" :label "PAID"}
+    :paid    {:dot "bg-emerald-400/20 dark:bg-emerald-300/20" :text "text-emerald-600 dark:text-emerald-300" :label "COST, PAID"}
     :pending {:dot "bg-slate-400/15 dark:bg-slate-500/15"     :text "text-slate-500"                       :label "DUE"}
     {:dot "bg-slate-400/15 dark:bg-slate-500/15" :text "text-slate-500" :label "\u2014"}))
 
@@ -771,7 +771,7 @@
                            (format-currency total))
                    (when (pos? paid)
                      (d/span {:class "font-mono text-[11px] text-emerald-600/60 dark:text-emerald-300/60"}
-                             (str (format-currency paid) " paid")))
+                             (str (format-currency paid) " COST, PAID")))
                    (when (pos? pending)
                      (d/span {:class (s/cx s/font-ui "text-[11px]" s/text-muted)}
                              (str (format-currency pending) " due"))))
@@ -814,10 +814,9 @@
                           (map :amount)
                           (reduce + 0))
         gap          (- target-total funds-raised)
-        next-entry   (->> entries
-                          (filter #(= :pending (keyword (:status %))))
-                          (sort-by (comp date->ms parse-date :due))
-                          first)
+        next-due     (let [d (js/Date.)]
+                       (.setDate d (+ (.getDate d) 7))
+                       d)
         ref          (hooks/use-ref nil)]
 
     (hooks/use-effect
@@ -833,10 +832,12 @@
             :class (s/cx "mb-4 pb-5 opacity-0" "border-b" s/border-subtle)}
 
            ;; eyebrow
-           (d/div {:class "flex items-center gap-2 mb-3"}
-                  (d/div {:class "h-px w-6 bg-pink-500/70"})
-                  (d/span {:class (s/cx s/font-ui "text-[10px]" s/weight-bold s/uppercase- "tracking-[0.25em]" s/text-muted)}
-                          "4. Cash Flow"))
+           (d/div {:class "mb-6 flex items-center gap-3"}
+                  (d/div {:class (s/cx "w-10" s/divider-accent)})
+                  (d/p {:class s/eyebrow-highlight}
+                       "4. ")
+                  (d/p {:class s/eyebrow-midlight}
+                       "Cash Flow"))
 
            ;; target total
            (d/p {:class (s/cx s/font-ui "text-3xl" s/weight-extrabold "tracking-tight" s/text-primary)}
@@ -844,32 +845,31 @@
            (d/p {:class (s/cx s/font-ui "text-[11px] mt-0.5" s/text-muted)} "target total")
 
            ;; funding bar
-           (d/div {:class "mt-4 flex gap-4 flex-wrap"}
-                  (d/div {:class "border-l-2 border-emerald-500/40 dark:border-emerald-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-emerald-600 dark:text-emerald-300"} (format-currency funds-raised))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-emerald-600/50 dark:text-emerald-300/50"} "funds raised"))
-                  (d/div {:class "border-l-2 border-amber-500/40 dark:border-amber-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-amber-600 dark:text-amber-300"} (format-currency debt-raised))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-amber-600/50 dark:text-amber-300/50"} "debt raised"))
-                  (d/div {:class "border-l-2 border-pink-500/40 dark:border-pink-300/40 pl-3"}
-                         (d/p {:class "font-mono text-lg font-bold text-pink-600 dark:text-pink-300"} (format-currency gap))
-                         (d/p {:class "font-mono text-[9px] uppercase tracking-widest text-pink-600/50 dark:text-pink-300/50"} "remaining gap")))
+           (d/div {:class "mt-4 grid grid-cols-2 gap-4"}
+                  (d/div {:class "border-l-2 border-emerald-500/90 dark:border-emerald-300/90 pl-3"}
+                         (d/p {:class "font-mono text-lg uppercase tracking-widest text-emerald-600/50 dark:text-emerald-300/50 mb-1"} "Funds Raised")
+                         (d/p {:class "font-mono text-lg font-bold text-emerald-600 dark:text-emerald-300"} (format-currency funds-raised)))
+
+                  (d/div {:class "border-l-2 border-pink-500/90 dark:border-pink-300/90 pl-3"}
+                         (d/p {:class "font-mono text-lg uppercase tracking-widest text-pink-600/50 dark:text-pink-300/50 mb-1"} "Remaining")
+                         (d/p {:class "font-mono text-lg font-bold text-pink-600 dark:text-pink-300"} (format-currency gap))))
 
            ;; second row: paid / pending / critical / next
-           (d/div {:class "mt-3 flex gap-4 flex-wrap"}
+           (d/div {:class "mt-3 grid grid-cols-2 gap-4"}
                   (d/div {:class "border-l-2 border-emerald-500/20 dark:border-emerald-300/20 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-emerald-600/70 dark:text-emerald-300/70"} (format-currency paid-sum))
-                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "paid"))
+                         (d/p {:class (s/cx s/font-ui "text-lg" s/uppercase- "tracking-widest" s/text-muted "mb-1")} "COST, PAID")
+                         (d/p {:class "font-mono text-lg font-bold text-emerald-600 dark:text-emerald-300"} (format-currency paid-sum)))
                   (d/div {:class (str "border-l-2 pl-3 " s/border-subtle)}
-                         (d/p {:class (s/cx s/font-ui "text-base" s/weight-bold s/text-muted)} (format-currency pending-sum))
-                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "pending"))
+                         (d/p {:class (s/cx s/font-ui "text-lg" s/uppercase- "tracking-widest" s/text-muted "mb-1")} "Pending")
+                         (d/p {:class (s/cx s/font-ui "text-lg" s/weight-bold " text-pink-600 dark:text-pink-300")} (format-currency pending-sum)))
                   (d/div {:class "border-l-2 border-pink-500/30 pl-3"}
-                         (d/p {:class "font-mono text-base font-bold text-pink-600/70 dark:text-pink-300/70"} (format-currency critical-sum))
-                         (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "critical"))
-                  (when next-entry
-                    (d/div {:class "border-l-2 border-indigo-500/30 dark:border-indigo-400/30 pl-3"}
-                           (d/p {:class "font-mono text-base font-bold text-indigo-600 dark:text-indigo-300"} (format-date (:due next-entry)))
-                           (d/p {:class (s/cx s/font-ui "text-[9px]" s/uppercase- "tracking-widest" s/text-muted)} "next due")))))))
+                         (d/p {:class (s/cx s/font-ui "text-lg" s/uppercase- "tracking-widest" s/text-muted "mb-1")} "Critical")
+                         (d/p {:class "font-mono text-lg font-bold text-pink-600 dark:text-pink-300"} (format-currency critical-sum)))
+                  (d/div {:class "border-l-2 border-indigo-500/30 dark:border-indigo-400/30 pl-3"}
+                         (d/p {:class (s/cx s/font-ui "text-lg" s/uppercase- "tracking-widest" s/text-muted "mb-1")} "Next Due")
+                         (d/p {:class "font-mono text-base font-bold text-indigo-600 dark:text-indigo-300"}
+                              (str (.toLocaleString next-due "en-US" #js {:month "short"})
+                                   " " (.getDate next-due))))))))
 
 
 ;; ---------------------------------------------------------------------------

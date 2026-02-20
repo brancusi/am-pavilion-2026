@@ -40,10 +40,10 @@
 
          (d/div {:class "px-4 mt-12 lg:mt-16 max-w-4xl"}
                 (d/h1 {:translate "no"
-                       :class (s/cx "notranslate mb-6" s/heading-page)}
-                      "Armenia Pavilion, 61st International Art Exhibition La Biennale di Venezia"))
+                       :class (s/cx "notranslate" s/heading-page)}
+                      "ARMENIA PAVILION, 61st INTERNATIONAL ART EXHIBITION LA BIENNALE DI VENEZIA"))
 
-         (d/div {:class "w-full px-4 mt-16"}
+         (d/div {:class "w-full px-4 mt-8"}
                 (d/div {:class (s/cx s/text-inverse "space-y-3 flex flex-col justify-start items-start")}
                        ($ section-link
                           {:title "1. Press Release"

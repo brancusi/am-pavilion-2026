@@ -12,8 +12,10 @@
                 (when (and idx eyebrow)
                   (d/div {:class "mb-6 flex items-center gap-3"}
                          (d/div {:class (s/cx "w-10" s/divider-accent)})
-                         (d/p {:class s/eyebrow}
-                              (str idx ". " eyebrow))))
+                         (d/p {:class s/eyebrow-highlight}
+                              (str idx ". "))
+                         (d/p {:class s/eyebrow-midlight}
+                              eyebrow)))
                 (d/h2 {:class s/heading-display}
                       title))
          (d/div {:class (s/cx s/text-xl s/text-primary)}
