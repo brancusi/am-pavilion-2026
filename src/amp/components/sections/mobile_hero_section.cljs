@@ -26,7 +26,7 @@
       :class "relative w-full overflow-hidden"}
 
      (d/div
-      {:class "w-screen h-screen relative flex flex-col"}
+      {:class "w-full h-screen relative flex flex-col"}
 
       ;; ── Video background ──
       (d/div {:class "absolute inset-0"}

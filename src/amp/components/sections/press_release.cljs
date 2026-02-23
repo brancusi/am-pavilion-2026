@@ -45,7 +45,7 @@
                   (d/div {:class s/info-row}
                          (d/span {:class label-class} "Press contact")
                          (d/a {:href "mailto:pressoffice@armenianpavilion2026.org"
-                               :class (s/cx s/link-subtle s/text-secondary)}
+                               :class (s/cx s/link-subtle s/text-secondary "break-all")}
                               "pressoffice@armenianpavilion2026.org"))
 
                   ;; Website

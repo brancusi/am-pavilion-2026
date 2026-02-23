@@ -9,5 +9,5 @@
    {:id section-id
     :class (str "snap-start
                  min-h-screen 
-                 w-screen")}
+                 w-full")}
    children))

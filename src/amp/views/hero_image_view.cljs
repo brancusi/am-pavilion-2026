@@ -44,6 +44,7 @@
                           :h 350
                           ;;  Simply force the width on this and allow the height to just flow
                           #_#_:h (:height normalized-dimensions)
+                          :object-fit "none"
                           :transition {:duration 0.25
                                        :opacity 1}
                           :should-load? true})

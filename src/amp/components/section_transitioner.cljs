@@ -52,7 +52,7 @@
                           (let [stack-size (count view-stack)
                                 is-active? (= idx (- stack-size 1))]
                             (d/div {:key uuid
-                                    :class "absolute"}
+                                    :class "absolute w-full overflow-x-hidden"}
                                    ($ view {:active is-active?
                                             :intro-complete-callback (partial handle-layer-intro-completed uuid)
                                             :outro-complete-callback (partial handle-layer-outro-completed uuid)}))))))))
