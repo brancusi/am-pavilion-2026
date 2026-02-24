@@ -7,18 +7,15 @@
             ["react-dom/client" :as rdom]
             [amp.hooks.use-media-query :refer [use-touch-enabled]]
 
-            [amp.components.section-transitioner :refer [section-transitioner]]
+            [amp.ui.section-transitioner :refer [section-transitioner]]
             [amp.lib.defnc :refer [defnc]]
-            [amp.providers.main-provider :refer [MainProvider]]
-            [amp.reducers.requires]
-            [amp.services.firebase :as firebase]
+            [amp.state.provider :refer [MainProvider]]
             [amp.services.router :refer [router]]
             [helix.core :refer [$]]))
 
 (defnc app []
   (let [is-desktop? (use-touch-enabled)]
-    ($ MainProvider {:default-state {:current-section "hero"
-                                     :current-subsection "start"}}
+    ($ MainProvider {:default-state {}}
        ($ router
           ($ section-transitioner)))))
 
