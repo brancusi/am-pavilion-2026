@@ -260,13 +260,13 @@
   "Readable width + horizontal padding."
   "px-4 max-w-prose")
 
-(def section-spacing
-  "Standard vertical rhythm between sections."
-  "mb-6")
+(def section-pt
+  "Standard top padding entering a content section."
+  "pt-12 sm:pt-14")
 
-(def section-spacing-lg
-  "Larger vertical rhythm."
-  "mb-8 mt-8")
+(def section-pb
+  "Standard bottom padding leaving a content section."
+  "pb-10 sm:pb-12")
 
 ;; ---------------------------------------------------------------------------
 ;; Info-grid (press release header, general info, etc.)

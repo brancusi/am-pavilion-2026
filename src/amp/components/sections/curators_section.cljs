@@ -65,7 +65,7 @@
     (d/section
      {:id id
       :ref ref
-      :class "py-16 sm:py-20"}
+      :class (s/cx s/section-pt s/section-pb)}
 
      ;; Section heading — blocky teaser style
      (when title

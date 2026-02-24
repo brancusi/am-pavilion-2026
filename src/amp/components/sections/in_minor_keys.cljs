@@ -173,7 +173,7 @@
            ;; ── THE STUDIO connection ──────────────────────────────────
            (d/div {:class "mt-12 mb-6 border-t border-white/10 pt-10"}
                   (d/h3 {:class (s/cx s/heading-section "mb-6")}
-                        "The Studio \u2014 In the Minor Keys")
+                        "The Studio \u2014 In Minor Keys")
 
                   (d/p {:class (s/cx s/body-base "mb-6")}
                        "Zadik Zadikian\u2019s "

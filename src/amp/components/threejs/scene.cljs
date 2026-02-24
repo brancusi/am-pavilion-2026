@@ -5,13 +5,130 @@
             ["three/addons/objects/Sky.js" :refer [Sky]]
             [amp.components.threejs.objects :as objects]))
 
+;; ---------------------------------------------------------------------------
+;; Sky presets — shared config for dark / light mode
+;; ---------------------------------------------------------------------------
+
+(def ^:private sky-presets
+  {:light {:turbidity          0.5
+           :rayleigh           2
+           :mie-coefficient    0.003
+           :mie-directional-g  0.7
+           :elevation          45
+           :azimuth            150
+           :exposure           1.0}
+   :dark  {:turbidity          10
+           :rayleigh           0.3
+           :mie-coefficient    0.005
+           :mie-directional-g  0.8
+           :elevation          3
+           :azimuth            180
+           :exposure           0.35}})
+
+;; ---------------------------------------------------------------------------
+;; Shared sky / sun / renderer helpers
+;; ---------------------------------------------------------------------------
+
+(defn dark-mode?
+  "Returns true when <html> currently has the 'dark' class."
+  []
+  (.contains (.-classList js/document.documentElement) "dark"))
+
+(defn setup-sky!
+  "Creates a Preetham procedural Sky, adds it to `scene`, and returns a
+   sky-state map suitable for `animate-sun!`.
+   `mode` is :dark or :light (defaults based on CSS dark class)."
+  [^js scene & {:keys [mode]}]
+  (let [mode    (or mode (if (dark-mode?) :dark :light))
+        preset  (get sky-presets mode (:light sky-presets))
+        ^js sky (Sky.)
+        ^js sun (THREE/Vector3.)
+        ^js uniforms (.. sky -material -uniforms)]
+    (.setScalar (.-scale sky) 450000)
+    (.add scene sky)
+    ;; Configure shader uniforms
+    (set! (.-value (aget uniforms "turbidity"))         (:turbidity preset))
+    (set! (.-value (aget uniforms "rayleigh"))           (:rayleigh preset))
+    (set! (.-value (aget uniforms "mieCoefficient"))     (:mie-coefficient preset))
+    (set! (.-value (aget uniforms "mieDirectionalG"))    (:mie-directional-g preset))
+    ;; Initial sun position
+    (let [phi   (.degToRad THREE/MathUtils (- 90 (:elevation preset)))
+          theta (.degToRad THREE/MathUtils (:azimuth preset))]
+      (.setFromSphericalCoords sun 1 phi theta)
+      (.copy (.-value (aget uniforms "sunPosition")) sun))
+    {:uniforms   uniforms
+     :sun        sun
+     :sky        sky
+     :start-time (.now js/Date)
+     :elevation  (:elevation preset)
+     :exposure   (:exposure preset)
+     :mode       mode}))
+
+(defn update-sky!
+  "Re-applies a sky preset to an existing sky-state. Mutates the uniforms
+   and returns an updated sky-state map. Use when the theme changes at runtime."
+  [sky-state ^js renderer mode]
+  (when sky-state
+    (let [preset (get sky-presets mode (:light sky-presets))
+          uniforms (:uniforms sky-state)]
+      (set! (.-value (aget uniforms "turbidity"))         (:turbidity preset))
+      (set! (.-value (aget uniforms "rayleigh"))           (:rayleigh preset))
+      (set! (.-value (aget uniforms "mieCoefficient"))     (:mie-coefficient preset))
+      (set! (.-value (aget uniforms "mieDirectionalG"))    (:mie-directional-g preset))
+      (set! (.-toneMappingExposure renderer) (:exposure preset))
+      (assoc sky-state
+             :elevation (:elevation preset)
+             :exposure  (:exposure preset)
+             :mode      mode))))
+
+(defn animate-sun!
+  "Advances the sun position based on elapsed time and syncs directional
+   lights in `scene` to match. Call once per frame."
+  [sky-state ^js scene]
+  (when sky-state
+    (let [uniforms  (:uniforms sky-state)
+          ^js sun   (:sun sky-state)
+          elapsed   (/ (- (.now js/Date) (:start-time sky-state)) 1000.0)
+          azimuth-deg (mod (* (/ elapsed 190.0) 360.0) 360.0)
+          elevation (:elevation sky-state)
+          phi       (.degToRad THREE/MathUtils (- 90 elevation))
+          theta     (.degToRad THREE/MathUtils azimuth-deg)]
+      (.setFromSphericalCoords sun 1 phi theta)
+      (.copy (.-value (aget uniforms "sunPosition")) sun)
+      ;; Sync directional lights
+      (let [light-dist 150]
+        (.traverse scene
+                   (fn [^js obj]
+                     (when (instance? THREE/DirectionalLight obj)
+                       (let [^js pos (.-position obj)]
+                         (.set pos
+                               (* (.-x sun) light-dist)
+                               (* (.-y sun) light-dist)
+                               (* (.-z sun) light-dist))))))))))
+
+(defn setup-renderer-defaults!
+  "Configures tone mapping, pixel ratio, camera frustum on a renderer+camera.
+   Applies the exposure from `sky-state` if provided."
+  [^js renderer ^js camera sky-state]
+  (.setPixelRatio renderer (min (.-devicePixelRatio js/window) 2))
+  (set! (.-toneMapping renderer) THREE/ACESFilmicToneMapping)
+  (set! (.-toneMappingExposure renderer) (or (:exposure sky-state) 0.8))
+  (set! (.-fov camera) 39)
+  (set! (.-near camera) 0.1)
+  (set! (.-far camera) 4000)
+  (.updateProjectionMatrix camera))
+
+;; ---------------------------------------------------------------------------
+;; Full mockup-viewer scene setup (used by the dedicated 3D page)
+;; ---------------------------------------------------------------------------
+
 (defn setup-scene!
   "Sets up the 3D scene with Three.js rendering, controls, and event handlers.
    config: {:root-fn fn, :entity-types map}
    atoms:  {:controls atom, :context atom, :resize-fn atom,
             :canvas-listeners atom, :selected-block atom, :camera-state atom}"
   [^js container {:keys [root-fn entity-types]} atoms]
-  (let [sky-state (atom nil) ;; holds {:uniforms _ :sun _} for animation
+  (let [sky-state (atom nil) ;; holds sky-state map for animation
         ctx (th/render root-fn container
                        {:antialias true
                         :shadow-map {:enabled true
@@ -24,29 +141,9 @@
                           ;; Configure shadow camera on newly-created directional lights
                           (when-let [ctx @(:context atoms)]
                             (objects/configure-shadow-camera! (:threejs-scene ctx)))
-                          ;; Animate sun: 360° rotation over 30 seconds
-                          (when-let [state @sky-state]
-                            (let [uniforms (:uniforms state)
-                                  ^js sun (:sun state)
-                                  start-time (:start-time state)
-                                  elapsed (/ (- (.now js/Date) start-time) 1000.0)
-                                  azimuth-deg (mod (* (/ elapsed 190.0) 360.0) 360.0)
-                                  phi (.degToRad THREE/MathUtils (- 90 30))
-                                  theta (.degToRad THREE/MathUtils azimuth-deg)]
-                              (.setFromSphericalCoords sun 1 phi theta)
-                              (.copy (.-value (aget uniforms "sunPosition")) sun)
-                              ;; Sync directional light position to match
-                              (when-let [ctx @(:context atoms)]
-                                (let [^js scene (:threejs-scene ctx)
-                                      light-dist 150]
-                                  (.traverse scene
-                                             (fn [^js obj]
-                                               (when (instance? THREE/DirectionalLight obj)
-                                                 (let [^js pos (.-position obj)]
-                                                   (.set pos
-                                                         (* (.-x sun) light-dist)
-                                                         (* (.-y sun) light-dist)
-                                                         (* (.-z sun) light-dist)))))))))))})
+                          ;; Animate sun via shared helper
+                          (when-let [ctx @(:context atoms)]
+                            (animate-sun! @sky-state (:threejs-scene ctx))))})
         ^js renderer (:threejs-renderer ctx)
         ^js camera (:threejs-default-camera ctx)
         ^js canvas (:canvas ctx)
@@ -58,38 +155,11 @@
                       (set! (.-aspect camera) (/ width height))
                       (.updateProjectionMatrix camera)))]
 
-    ;; Set up procedural sky using the Preetham atmospheric model
+    ;; Set up sky + renderer via shared helpers
     (let [^js scene (:threejs-scene ctx)
-          ^js sky (Sky.)
-          ^js sun (THREE/Vector3.)
-          ^js uniforms (.. sky -material -uniforms)]
-      (.setScalar (.-scale sky) 450000)
-      (.add scene sky)
-      ;; Configure sky shader uniforms for a warm afternoon look
-      (set! (.-value (aget uniforms "turbidity")) 2)
-      (set! (.-value (aget uniforms "rayleigh")) 1)
-      (set! (.-value (aget uniforms "mieCoefficient")) 0.005)
-      (set! (.-value (aget uniforms "mieDirectionalG")) 0.8)
-      ;; Sun position: elevation 30°, azimuth 150° (warm afternoon)
-      (let [phi (.degToRad THREE/MathUtils (- 90 30))
-            theta (.degToRad THREE/MathUtils 150)]
-        (.setFromSphericalCoords sun 1 phi theta)
-        (.copy (.-value (aget uniforms "sunPosition")) sun))
-      ;; Store sky state for animation in on-before-render
-      (reset! sky-state {:uniforms uniforms :sun sun :start-time (.now js/Date)}))
-
-    ;; Enable tone mapping for realistic HDR sky rendering
-    (set! (.-toneMapping renderer) THREE/ACESFilmicToneMapping)
-    (set! (.-toneMappingExposure renderer) 0.8)
-
-    ;; Set pixel ratio for crisp rendering (cap at 2 for performance)
-    (.setPixelRatio renderer (min (.-devicePixelRatio js/window) 2))
-
-    ;; Set 50mm lens + extend frustum to avoid clipping
-    (set! (.-fov camera) 39)
-    (set! (.-near camera) 0.1)
-    (set! (.-far camera) 4000)
-    (.updateProjectionMatrix camera)
+          state (setup-sky! scene)]
+      (reset! sky-state state))
+    (setup-renderer-defaults! renderer camera @sky-state)
 
     ;; Set initial camera position (zoomed out to see the object)
     (let [^js cam-pos (.-position camera)]
@@ -216,8 +286,13 @@
     (.removeEventListener canvas "pointerdown" pointerdown)
     (.removeEventListener canvas "pointerup" pointerup)
     (reset! (:canvas-listeners atoms) nil))
-  (when-let [^js ctx @(:context atoms)]
-    (.dispose ctx)
+  (when-let [ctx @(:context atoms)]
+    ;; th/render returns a plain map — no .dispose method.
+    ;; Stop the animation loop and dispose the WebGL renderer directly.
+    (let [^js renderer (:threejs-renderer ctx)]
+      (when renderer
+        (.setAnimationLoop renderer nil)
+        (.dispose renderer)))
     (reset! (:context atoms) nil)))
 
 (defn set-camera-position!

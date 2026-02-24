@@ -18,7 +18,7 @@
     (d/section
      {:id id
       :ref ref
-      :class "py-16 sm:py-20"}
+      :class (s/cx s/section-pt s/section-pb)}
 
      ;; Section heading — blocky teaser style
      (when title
@@ -69,5 +69,5 @@
              (d/p {:class (s/cx s/body-base "mb-6")}
                   "Zadikian\u2019s work, particularly his exploration of gilded forms, has established him as one of the leading sculptors in the realm of contemporary alchemy. His pieces, often crafted from gold leaf, suggest a transcendence of time and place, pushing boundaries while creating worlds that seem to belong to another realm entirely.")
 
-             (d/p {:class (s/cx s/body-base "mb-6")}
+             (d/p {:class (s/cx s/body-base)}
                   "Centered on the most basic unit\u2014the block, or brick\u2014which has been continuously used for building for over eleven millennia, Zadikian\u2019s simplified plaster casts are elemental and foundational: a humble aesthetics where form, beauty, and meaning emerge through the assembly and fluid recombination of humanity\u2019s most common architectural building element."))))))

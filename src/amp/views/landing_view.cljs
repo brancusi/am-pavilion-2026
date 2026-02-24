@@ -12,6 +12,7 @@
    [amp.components.sections.artist-section :refer [artist-section]]
    [amp.components.sections.curators-section :refer [curators-section]]
    [amp.components.sections.in-minor-keys :refer [in-minor-keys]]
+   [amp.components.sections.location-section :refer [location-section]]
    [amp.components.sections.mobile-hero-section :refer [mobile-hero-section]]
    [amp.components.sections.site-footer :refer [site-footer]]
 
@@ -69,6 +70,9 @@
                                        :title "Press Release"})
                      ($ about-studio {:id "about-studio"
                                       :title "The Studio"})
+
+                     ($ location-section {:id "venue"
+                                          :title "The Venue"})
                      ($ in-minor-keys {:id "in-minor-keys"
                                        :title "In Minor Keys"})
                      ($ artist-section {:id "artist"

@@ -1,3 +1,8 @@
+---
+name: styles
+description: Visual styling reference for the Armenian Pavilion 2026 site — design tokens, typography, color palette, component patterns, spacing conventions, and anti-patterns.
+---
+
 # Style Guide — Armenian Pavilion 2026
 
 Reference for visual styling across the Armenian Pavilion website.

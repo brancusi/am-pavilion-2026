@@ -134,6 +134,7 @@
                                   [:ground-plane {:position [0 0 0]
                                                   :width 500
                                                   :depth 500
+                                                  :height 12
                                                   :square-size 12}])]))
                    boxes)
        selection-outline (conj selection-outline)))))

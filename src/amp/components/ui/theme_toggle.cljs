@@ -104,11 +104,13 @@
 
      ;; Sliding thumb
      (d/div
-      {:class (str "absolute top-0.5 h-6 rounded-sm
+      {:class (str "absolute rounded-sm
                     transition-all duration-200 ease-in-out "
                    thumb-bg)
-       :style {:width "1.5rem"
-               :left  (str (+ 0.125 (* idx 1.625)) "rem")}})
+       :style {:width  "calc(1.75rem - 2px)"
+               :height "calc(1.75rem - 2px)"
+               :top    "1px"
+               :left   (str "calc(" idx " * 1.75rem + 1px)")}})
 
      ;; Three icon buttons
      (d/button

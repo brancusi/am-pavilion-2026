@@ -150,3 +150,30 @@
         {:strokeLinecap "round"
          :strokeLinejoin "round"
          :d "m11.99 7.5 3.75-3.75m0 0 3.75 3.75m-3.75-3.75v16.499H4.49"})))
+
+(defnc XMarkIcon
+  [{:keys [class]}]
+  ($ "svg"
+     {:xmlns "http://www.w3.org/2000/svg"
+      :fill "none"
+      :viewBox "0 0 24 24"
+      :strokeWidth 1.5
+      :stroke "currentColor"
+      :class class}
+     ($ "path"
+        {:strokeLinecap "round"
+         :strokeLinejoin "round"
+         :d "M6 18 18 6M6 6l12 12"})))
+
+(defnc CubeIcon [{:keys [class]}]
+  ($ "svg"
+     {:xmlns "http://www.w3.org/2000/svg"
+      :fill "none"
+      :viewBox "0 0 24 24"
+      :strokeWidth 1.5
+      :stroke "currentColor"
+      :class class}
+     ($ "path"
+        {:strokeLinecap "round"
+         :strokeLinejoin "round"
+         :d "m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"})))

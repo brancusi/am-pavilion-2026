@@ -1,3 +1,8 @@
+---
+name: threejs-dsl
+description: Reference for building 3D scenes in the Armenian Pavilion mockup viewer — threeagent DSL, Three.js fundamentals, custom entity types, renderer system, and Firebase data format.
+---
+
 # ThreeJS DSL — Skills Reference
 
 Reference for building 3D scenes in the Armenian Pavilion mockup viewer.

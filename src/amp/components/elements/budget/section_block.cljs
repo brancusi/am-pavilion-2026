@@ -7,8 +7,8 @@
 
 (defnc section-block
   [{:keys [idx eyebrow title children]}]
-  (d/div {}
-         (d/div {:class (s/cx "px-4 pt-12" s/text-primary)}
+  (d/div {:class (s/cx s/section-pt s/section-pb)}
+         (d/div {:class (s/cx "px-4" s/text-primary)}
                 (when (and idx eyebrow)
                   (d/div {:class "mb-6 flex items-center gap-3"}
                          (d/div {:class (s/cx "w-10" s/divider-accent)})
