@@ -43,7 +43,7 @@
 
              ;; Name
              (d/p {:class "font-display font-bold uppercase tracking-wider
-                           text-2xl sm:text-3xl text-white dark:text-white mb-1 leading-relaxed"}
+                           text-2xl sm:text-3xl text-white dark:text-white mb-2 leading-relaxed"}
                   (d/span {:class tag-bg :style tag-style} "Zadik Zadikian"))
 
              ;; Role
