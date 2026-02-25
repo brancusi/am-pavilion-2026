@@ -1,6 +1,6 @@
 var shadow$provide = {};
 
-var shadow$modules = {"uris":{"venue-view":["/js/venue-view.c46bc58.js"],"blog-view":["/js/blog-view.c46bc58.js"],"mockup-view":["/js/mockup-view.c46bc58.js"],"artist-view":["/js/artist-view.c46bc58.js"],"video-background":["/js/video-background.c46bc58.js"],"budget-view":["/js/budget-view.c46bc58.js"],"landing-view":["/js/landing-view.c46bc58.js"],"main":[],"press-view":["/js/press-view.c46bc58.js"]},"infos":{"venue-view":["main"],"blog-view":["main"],"mockup-view":["main"],"artist-view":["main"],"video-background":["main"],"budget-view":["main"],"landing-view":["main"],"main":null,"press-view":["main"]}};
+var shadow$modules = {"uris":{"venue-view":["/js/venue-view.6311292.js"],"blog-view":["/js/blog-view.6311292.js"],"mockup-view":["/js/mockup-view.6311292.js"],"artist-view":["/js/artist-view.6311292.js"],"video-background":["/js/video-background.6311292.js"],"budget-view":["/js/budget-view.6311292.js"],"landing-view":["/js/landing-view.6311292.js"],"main":[],"press-view":["/js/press-view.6311292.js"]},"infos":{"venue-view":["main"],"blog-view":["main"],"mockup-view":["main"],"artist-view":["main"],"video-background":["main"],"budget-view":["main"],"landing-view":["main"],"main":null,"press-view":["main"]}};
 var $APP = {};
 (function(){
 shadow$provide[0]=function(ec,Xd,P){(function(na,$a){typeof P==="object"&&typeof Xd!=="undefined"?$a(P):typeof define==="function"&&define.amd?define(["exports"],$a):(na=na||self,$a(na.window=na.window||{}))})(this,function(na){function $a(xd,wd){xd.prototype=Object.create(wd.prototype);xd.prototype.constructor=xd;xd.__proto__=wd}function Mb(xd){if(xd===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return xd}var qb={autoSleep:120,force3D:"auto",nullTargetWarn:1,
@@ -4892,7 +4892,7 @@ $reitit$core$expand$$, $reitit$core$match_by_path$$, $reitit$core$Match$$, $reit
 $reitit$coercion$_request_coercer$$, $reitit$coercion$ParameterCoercion$$, $reitit$coercion$__GT_ParameterCoercion$$, $reitit$coercion$extract_request_format_default$$, $reitit$coercion$request_coercer$$, $reitit$coercion$coerce_request$$, $reitit$coercion$request_coercers$cljs$0core$0IFn$0_invoke$0arity$03$$, $reitit$coercion$_compile_parameters$$, $reitit$coercion$compile_request_coercers$$, $reitit$coercion$coerce_BANG_$$, $reitit$frontend$query_params$$, $reitit$frontend$match_by_path$cljs$0core$0IFn$0_invoke$0arity$03$$, 
 $shadow$lazy$load$cljs$0core$0IFn$0_invoke$0arity$01$$, $reitit$frontend$controllers$pad_same_length$$, $reitit$frontend$controllers$get_identity$$, $reitit$frontend$controllers$apply_controller$$, $reitit$frontend$controllers$apply_controllers$$, $reitit$frontend$history$_init$$, $reitit$frontend$history$_stop$$, $reitit$frontend$history$_on_navigate$$, $reitit$frontend$history$_get_path$$, $reitit$frontend$history$FragmentHistory$$, $reitit$frontend$history$ignore_anchor_click_QMARK_$$, $reitit$frontend$history$Html5History$$, 
 $reitit$frontend$history$start_BANG_$cljs$0core$0IFn$0_invoke$0arity$03$$, $reitit$frontend$history$stop_BANG_$$, $reitit$frontend$easy$start_BANG_$$, $amp$services$router$log_fn$cljs$0core$0IFn$0_invoke$0arity$0variadic$$, $amp$services$router$routes$$, $amp$services$router$router$$, $cljs$tools$reader$impl$inspect$inspect_STAR__col$$, $cljs$reader$parse_int$$, $cljs$reader$check$$, $cljs$reader$parse_and_validate_timestamp$$, $cljs$reader$read_date$$, $cljs$tagged_literals$valid_js_literal_key_QMARK_$$, 
-$cljs$tagged_literals$JSValue$$, $amp$ui$icons$ArrowTurnRightUp$$, $amp$ui$icons$XMarkIcon$$, $amp$ui$icons$CubeIcon$$, $amp$ui$theme_toggle$resolve_theme$$, $amp$ui$theme_toggle$apply_theme_BANG_$$, $amp$ui$theme_toggle$mode_index$$, $amp$ui$theme_toggle$theme_toggle$$, $amp$nav$menu$hamburger_icon$$, $amp$nav$menu$menu_link$$, $amp$nav$menu$menu$$, $amp$utils$gsap$to_ref$$, $amp$hooks$use_scroll_to$use_scroll_to_top$cljs$0core$0IFn$0_invoke$0arity$0variadic$$, $amp$ui$footer$quick_links_landing$$, 
+$cljs$tagged_literals$JSValue$$, $amp$ui$icons$ArrowTurnRightUp$$, $amp$ui$icons$XMarkIcon$$, $amp$ui$icons$CubeIcon$$, $amp$ui$theme_toggle$resolve_theme$$, $amp$ui$theme_toggle$apply_theme_BANG_$$, $amp$ui$theme_toggle$mode_index$$, $amp$ui$theme_toggle$theme_toggle$$, $amp$nav$menu$hamburger_icon$$, $amp$nav$menu$cutout_logo$$, $amp$nav$menu$menu_link$$, $amp$nav$menu$menu$$, $amp$utils$gsap$to_ref$$, $amp$hooks$use_scroll_to$use_scroll_to_top$cljs$0core$0IFn$0_invoke$0arity$0variadic$$, $amp$ui$footer$quick_links_landing$$, 
 $amp$ui$footer$quick_links_site$$, $amp$ui$footer$site_footer$$, $amp$ui$section_transitioner$page_layer$$, $amp$ui$section_transitioner$section_transitioner$$, $amp$core$app$$, $amp$ui$map$geojson_layer$$, $amp$ui$map$clamp_min$$, $amp$ui$map$ant_path$$, $amp$ui$map$dev_info_widget$$, $threeagent$entity$create$$, $threeagent$entity$destroy_BANG_$$, $threeagent$entity$IUpdateableEntityType$$, $threeagent$entity$update_BANG_$$, $amp$pages$mockup$objects$create_edge_box$$, $amp$pages$mockup$objects$create_selectable_box$$, 
 $amp$pages$mockup$objects$create_ground_plane$$, $amp$pages$mockup$objects$t_amp$0pages$0mockup$0objects58617$$, $amp$pages$mockup$objects$t_amp$0pages$0mockup$0objects58627$$, $amp$pages$mockup$objects$t_amp$0pages$0mockup$0objects58641$$, $reagent$impl$batching$fake_raf$$, $reagent$impl$batching$compare_mount_order$$, $reagent$impl$batching$react_flush$$, $reagent$impl$batching$run_queue$$, $reagent$impl$batching$ratom_flush$$, $reagent$impl$batching$run_funs$$, $reagent$impl$batching$enqueue$$, 
 $reagent$impl$batching$RenderQueue$$, $reagent$ratom$deref_capture$$, $reagent$ratom$notify_deref_watcher_BANG_$$, $reagent$ratom$add_w$$, $reagent$ratom$remove_w$$, $reagent$ratom$notify_w$$, $reagent$ratom$pr_atom$$, $reagent$ratom$RAtom$$, $reagent$ratom$dispose_BANG_$$, $reagent$ratom$handle_reaction_change$$, $reagent$ratom$Reaction$$, $reagent$ratom$flush_BANG_$$, $reagent$ratom$make_reaction$$, $reagent$ratom$run_in_reaction$$, $reagent$impl$template$HiccupTag$$, $goog$structs$Node$$, $threeagent$impl$virtual_scene$RenderQueueEntry$$, 
@@ -12948,42 +12948,42 @@ $amp$ui$theme_toggle$mode_index$$ = function($mode$jscomp$15$$) {
       return 0;
   }
 };
-$amp$ui$theme_toggle$theme_toggle$$ = function($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, $maybe_ref__41576__auto__$jscomp$1$$) {
+$amp$ui$theme_toggle$theme_toggle$$ = function($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, $maybe_ref__41576__auto__$jscomp$1$$) {
   function $select_BANG_$$($m$jscomp$112$$) {
     $set_mode_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_mode_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($m$jscomp$112$$) : $set_mode_BANG_$$.call(null, $m$jscomp$112$$);
     $amp$ui$theme_toggle$apply_theme_BANG_$$($m$jscomp$112$$);
     try {
       var $JSCompiler_inline_result$jscomp$2263$$ = localStorage.setItem("amp-theme", $APP.$cljs$core$name$$($m$jscomp$112$$));
-    } catch ($e150594$jscomp$inline_2683$$) {
+    } catch ($e181894$jscomp$inline_2683$$) {
       $JSCompiler_inline_result$jscomp$2263$$ = null;
     }
     return $JSCompiler_inline_result$jscomp$2263$$;
   }
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$), $maybe_ref__41576__auto__$jscomp$1$$], null);
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, 0, null);
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = $APP.$cljs$core$__destructure_map$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$);
-  var $class$$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, $APP.$cljs$cst$67$class$$);
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$), $maybe_ref__41576__auto__$jscomp$1$$], null);
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, 0, null);
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = $APP.$cljs$core$__destructure_map$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$);
+  var $class$$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, $APP.$cljs$cst$67$class$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = $APP.$helix$hooks$use_state$$(function() {
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = $APP.$helix$hooks$use_state$$(function() {
     try {
       var $temp__5827__auto__$jscomp$inline_2679$$ = localStorage.getItem("amp-theme");
       var $or__5142__auto__$jscomp$106$$ = $temp__5827__auto__$jscomp$inline_2679$$ == null ? null : $APP.$cljs$core$keyword$$.$cljs$core$IFn$_invoke$arity$1$($temp__5827__auto__$jscomp$inline_2679$$);
-    } catch ($e150593$jscomp$inline_2680$$) {
+    } catch ($e181892$jscomp$inline_2680$$) {
       $or__5142__auto__$jscomp$106$$ = null;
     }
     return $APP.$cljs$core$truth_$$($or__5142__auto__$jscomp$106$$) ? $or__5142__auto__$jscomp$106$$ : $cljs$cst$387$dark$$;
   });
-  var $mode$jscomp$16$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, 0, null), $set_mode_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, 1, null);
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = $amp$ui$theme_toggle$resolve_theme$$($mode$jscomp$16$$);
-  var $dark_QMARK_$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$, $cljs$cst$387$dark$$);
+  var $mode$jscomp$16$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, 0, null), $set_mode_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, 1, null);
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = $amp$ui$theme_toggle$resolve_theme$$($mode$jscomp$16$$);
+  var $dark_QMARK_$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$, $cljs$cst$387$dark$$);
   (function() {
-    var $G__150611$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+    var $G__181932$$ = $APP.$helix$hooks$wrap_fx$$(function() {
       return $amp$ui$theme_toggle$apply_theme_BANG_$$($mode$jscomp$16$$);
-    }), $G__150612$$ = [];
-    return $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__150611$$, $G__150612$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__150611$$, $G__150612$$);
+    }), $G__181933$$ = [];
+    return $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__181932$$, $G__181933$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__181932$$, $G__181933$$);
   })();
   (function() {
-    var $G__150613$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+    var $G__181934$$ = $APP.$helix$hooks$wrap_fx$$(function() {
       if ($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($mode$jscomp$16$$, $cljs$cst$386$system$$)) {
         var $mql$$ = window.matchMedia("(prefers-color-scheme: dark)"), $handler$jscomp$14$$ = function() {
           return $amp$ui$theme_toggle$apply_theme_BANG_$$($cljs$cst$386$system$$);
@@ -12995,12 +12995,12 @@ $amp$ui$theme_toggle$theme_toggle$$ = function($G__150619_effective$jscomp$1_map
         };
       }
       return null;
-    }), $G__150614$$ = [$mode$jscomp$16$$];
-    return $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__150613$$, $G__150614$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__150613$$, $G__150614$$);
+    }), $G__181935$$ = [$mode$jscomp$16$$];
+    return $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__181934$$, $G__181935$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__181934$$, $G__181935$$);
   })();
   var $idx$jscomp$55$$ = $amp$ui$theme_toggle$mode_index$$($mode$jscomp$16$$), $track_bg$$ = $dark_QMARK_$$ ? "bg-slate-800/80" : "bg-slate-200/80", $thumb_bg$$ = function() {
-    var $G__150617__$1$$ = $mode$jscomp$16$$ instanceof $APP.$cljs$core$Keyword$$ ? $mode$jscomp$16$$.$fqn$ : null;
-    switch($G__150617__$1$$) {
+    var $G__181937__$1$$ = $mode$jscomp$16$$ instanceof $APP.$cljs$core$Keyword$$ ? $mode$jscomp$16$$.$fqn$ : null;
+    switch($G__181937__$1$$) {
       case "system":
         return $dark_QMARK_$$ ? "bg-slate-600/50" : "bg-slate-400/30";
       case "light":
@@ -13008,212 +13008,231 @@ $amp$ui$theme_toggle$theme_toggle$$ = function($G__150619_effective$jscomp$1_map
       case "dark":
         return "bg-indigo-500/30";
       default:
-        throw Error("No matching clause: " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__150617__$1$$));
+        throw Error("No matching clause: " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__181937__$1$$));
     }
   }(), $inactive_text$$ = $dark_QMARK_$$ ? "text-slate-500 hover:text-slate-400" : "text-slate-400 hover:text-slate-500";
-  $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$ = function() {
+  $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["relative inline-flex items-center\n               h-7 rounded-sm\n               transition-colors duration-200", $track_bg$$, $class$$jscomp$11$$]))), style:{width:$APP.$helix$impl$props$__GT_js$$("5.25rem")}, children:[function() {
-      var $G__150625$$ = {className:$APP.$helix$impl$props$normalize_class$$("absolute rounded-sm\n                    transition-all duration-200 ease-in-out " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($thumb_bg$$)), style:{width:$APP.$helix$impl$props$__GT_js$$("calc(1.75rem - 2px)"), height:$APP.$helix$impl$props$__GT_js$$("calc(1.75rem - 2px)"), top:$APP.$helix$impl$props$__GT_js$$("1px"), left:$APP.$helix$impl$props$__GT_js$$("calc(" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($idx$jscomp$55$$) + 
+      var $G__181956$$ = {className:$APP.$helix$impl$props$normalize_class$$("absolute rounded-sm\n                    transition-all duration-200 ease-in-out " + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($thumb_bg$$)), style:{width:$APP.$helix$impl$props$__GT_js$$("calc(1.75rem - 2px)"), height:$APP.$helix$impl$props$__GT_js$$("calc(1.75rem - 2px)"), top:$APP.$helix$impl$props$__GT_js$$("1px"), left:$APP.$helix$impl$props$__GT_js$$("calc(" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($idx$jscomp$55$$) + 
       " * 1.75rem + 1px)")}};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150625$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150625$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__181956$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__181956$$);
     }(), function() {
-      var $G__150635$$ = function() {
+      var $G__181963$$ = function() {
         return {onClick:function() {
           return $select_BANG_$$($cljs$cst$386$system$$);
         }, "aria-label":"System theme", title:"System", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["relative z-10 flex items-center justify-center\n                w-7 h-7 text-xs cursor-pointer\n                transition-colors duration-150\n                focus:outline-none", $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($mode$jscomp$16$$, $cljs$cst$386$system$$) ? 
         $dark_QMARK_$$ ? "text-slate-200" : "text-slate-700" : $inactive_text$$]))), children:"◐"};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__150635$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150635$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__181963$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__181963$$);
     }(), function() {
-      var $G__150639$$ = function() {
+      var $G__181967$$ = function() {
         return {onClick:function() {
           return $select_BANG_$$($cljs$cst$388$light$$);
         }, "aria-label":"Light theme", title:"Light", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["relative z-10 flex items-center justify-center\n                w-7 h-7 text-xs cursor-pointer\n                transition-colors duration-150\n                focus:outline-none", $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($mode$jscomp$16$$, $cljs$cst$388$light$$) ? 
         "text-amber-600" : $inactive_text$$]))), children:"☀︎"};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__150639$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150639$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__181967$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__181967$$);
     }(), function() {
-      var $G__150643$$ = function() {
+      var $G__181972$$ = function() {
         return {onClick:function() {
           return $select_BANG_$$($cljs$cst$387$dark$$);
         }, "aria-label":"Dark theme", title:"Dark", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["relative z-10 flex items-center justify-center\n                w-7 h-7 text-xs cursor-pointer\n                transition-colors duration-150\n                focus:outline-none", $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($mode$jscomp$16$$, $cljs$cst$387$dark$$) ? 
         "text-indigo-300" : $inactive_text$$]))), children:"☾"};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__150643$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150643$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__181972$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__181972$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150619_effective$jscomp$1_map__150607_map__150607__$1_props__41575__auto__$jscomp$1_vec__150604_vec__150608$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__181944_effective$jscomp$1_map__181913_map__181913__$1_props__41575__auto__$jscomp$1_vec__181910_vec__181917$$);
 };
-$amp$nav$menu$hamburger_icon$$ = function($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$, $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$) {
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$), $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$], 
+$amp$nav$menu$hamburger_icon$$ = function($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$, $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$) {
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$), $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$], 
   null);
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$, 0, null);
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = $APP.$cljs$core$__destructure_map$$($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$);
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$, $APP.$cljs$cst$67$class$$);
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$, 0, null);
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = $APP.$cljs$core$__destructure_map$$($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$);
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$, $APP.$cljs$cst$67$class$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = $APP.$helix$impl$props$normalize_class$$($APP.$cljs$core$truth_$$($G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$) ? $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ : "w-6 h-6");
-  $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$ = {strokeLinecap:"round", strokeLinejoin:"round", d:"M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"};
-  $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("path", $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$) : $APP.$helix$core$jsx$$.call(null, "path", $G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$);
-  $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$ = {xmlns:"http://www.w3.org/2000/svg", fill:"none", viewBox:"0 0 24 24", strokeWidth:"1.5", stroke:"currentColor", className:$G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$, children:$G__150845$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("svg", $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$) : $APP.$helix$core$jsx$$.call(null, "svg", $G__150833_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__150827_map__150827__$1_props__41575__auto__$jscomp$2_vec__150824$$);
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = $APP.$helix$impl$props$normalize_class$$($APP.$cljs$core$truth_$$($G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$) ? $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ : "w-6 h-6");
+  $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$ = {strokeLinecap:"round", strokeLinejoin:"round", d:"M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"};
+  $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("path", $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$) : $APP.$helix$core$jsx$$.call(null, "path", $G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$);
+  $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$ = {xmlns:"http://www.w3.org/2000/svg", fill:"none", viewBox:"0 0 24 24", strokeWidth:"1.5", stroke:"currentColor", className:$G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$, children:$G__194295$jscomp$inline_3541_JSCompiler_inline_result$jscomp$inline_3540_maybe_ref__41576__auto__$jscomp$2$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("svg", $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$) : $APP.$helix$core$jsx$$.call(null, "svg", $G__194291_JSCompiler_temp_const$jscomp$inline_3539_class$$jscomp$12_map__194289_map__194289__$1_props__41575__auto__$jscomp$2_vec__194286$$);
 };
-$amp$nav$menu$menu_link$$ = function($G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$, $maybe_ref__41576__auto__$jscomp$3_title$jscomp$12$$) {
-  $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$), $maybe_ref__41576__auto__$jscomp$3_title$jscomp$12$$], null);
-  $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$, 0, null);
-  var $map__150878__$1_on_click$$ = $APP.$cljs$core$__destructure_map$$($G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$);
-  $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150878__$1_on_click$$, $cljs$cst$133$path$$);
-  $maybe_ref__41576__auto__$jscomp$3_title$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150878__$1_on_click$$, $APP.$cljs$cst$287$title$$);
-  var $active_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150878__$1_on_click$$, $APP.$cljs$cst$389$active_QMARK_$$);
-  $map__150878__$1_on_click$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150878__$1_on_click$$, $cljs$cst$390$on_click$$);
+$amp$nav$menu$cutout_logo$$ = function($G__194305_props__41575__auto__$jscomp$3_vec__194301$$, $maybe_ref__41576__auto__$jscomp$3$$) {
+  $G__194305_props__41575__auto__$jscomp$3_vec__194301$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194305_props__41575__auto__$jscomp$3_vec__194301$$), $maybe_ref__41576__auto__$jscomp$3$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__194305_props__41575__auto__$jscomp$3_vec__194301$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$ = {href:$G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$, onClick:$map__150878__$1_on_click$$, className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-display", "block py-3 md:py-0 text-sm uppercase tracking-wider", "transition-colors duration-200", $APP.$cljs$core$truth_$$($active_QMARK_$$) ? 
-  "text-pink-700   dark:text-pink-300" : "" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("text-slate-700  dark:text-slate-300") + " hover:text-pink-600 dark:hover:text-pink-300"]))), children:$maybe_ref__41576__auto__$jscomp$3_title$jscomp$12$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150890_map__150878_path$jscomp$77_props__41575__auto__$jscomp$3_vec__150875$$);
+  $G__194305_props__41575__auto__$jscomp$3_vec__194301$$ = {href:"/", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$("fixed top-0 left-0 z-50;h-14 px-4 md:px-8 flex items-center;bg-white dark:bg-black;text-black dark:text-white;font-display;text-sm font-semibold uppercase tracking-widest;mix-blend-multiply dark:mix-blend-screen;hover:opacity-80 transition-opacity duration-200".split(";")))), 
+  children:"Armenian Pavilion"};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__194305_props__41575__auto__$jscomp$3_vec__194301$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__194305_props__41575__auto__$jscomp$3_vec__194301$$);
 };
-$amp$nav$menu$menu$$ = function($G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$, $maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$) {
-  $G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$), $maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$], null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$, 0, null);
+$amp$nav$menu$menu_link$$ = function($G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$, $maybe_ref__41576__auto__$jscomp$4_title$jscomp$12$$) {
+  $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$), $maybe_ref__41576__auto__$jscomp$4_title$jscomp$12$$], null);
+  $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$, 0, null);
+  var $map__194314__$1_on_click$$ = $APP.$cljs$core$__destructure_map$$($G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$);
+  $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194314__$1_on_click$$, $cljs$cst$133$path$$);
+  $maybe_ref__41576__auto__$jscomp$4_title$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194314__$1_on_click$$, $APP.$cljs$cst$287$title$$);
+  var $active_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194314__$1_on_click$$, $APP.$cljs$cst$389$active_QMARK_$$);
+  $map__194314__$1_on_click$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194314__$1_on_click$$, $cljs$cst$390$on_click$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$ = $APP.$amp$state$provider$use_main_state$$();
-  $G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$, 0, null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$, 1, null);
-  $maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$ = $APP.$helix$hooks$use_state$$(!1);
-  var $open_QMARK_$jscomp$3$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$, 0, null), $set_open_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$4_vec__150914_vec__150917$$, 1, null);
-  $APP.$cljs$cst$165$name$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$28$data$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$)));
-  var $current_path$jscomp$1$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$)), $toggle_BANG_$$ = function() {
-    function $G__150920$$() {
-      var $G__150922$$ = $APP.$cljs$core$not$$($open_QMARK_$jscomp$3$$);
-      return $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__150922$$) : $set_open_BANG_$$.call(null, $G__150922$$);
+  $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$ = {href:$G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$, onClick:$map__194314__$1_on_click$$, className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-display", "block py-5 md:py-0 text-2xl md:text-sm font-medium md:font-normal uppercase tracking-wider", "transition-colors duration-200", 
+  $APP.$cljs$core$truth_$$($active_QMARK_$$) ? "text-pink-700   dark:text-pink-300" : "" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("text-slate-700  dark:text-slate-300") + " hover:text-pink-600 dark:hover:text-pink-300"]))), children:$maybe_ref__41576__auto__$jscomp$4_title$jscomp$12$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__194316_map__194314_path$jscomp$77_props__41575__auto__$jscomp$4_vec__194311$$);
+};
+$amp$nav$menu$menu$$ = function($G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$, $maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$) {
+  $G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$), $maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$, 0, null);
+  $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
+  $maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$ = $APP.$amp$state$provider$use_main_state$$();
+  $G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$, 0, null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$, 1, null);
+  $maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$ = $APP.$helix$hooks$use_state$$(!1);
+  var $open_QMARK_$jscomp$3$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$, 0, null), $set_open_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($maybe_ref__41576__auto__$jscomp$5_vec__194325_vec__194328$$, 1, null);
+  $APP.$cljs$cst$165$name$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$28$data$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$)));
+  var $current_path$jscomp$1$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$)), $toggle_BANG_$$ = function() {
+    function $G__194331$$() {
+      var $G__194333$$ = $APP.$cljs$core$not$$($open_QMARK_$jscomp$3$$);
+      return $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__194333$$) : $set_open_BANG_$$.call(null, $G__194333$$);
     }
-    var $G__150921$$ = [$open_QMARK_$jscomp$3$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__150920$$, $G__150921$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__150920$$, $G__150921$$);
+    var $G__194332$$ = [$open_QMARK_$jscomp$3$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__194331$$, $G__194332$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__194331$$, $G__194332$$);
   }(), $close_BANG_$$ = function() {
-    function $G__150923$$() {
+    function $G__194334$$() {
       return $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_open_BANG_$$.$cljs$core$IFn$_invoke$arity$1$(!1) : $set_open_BANG_$$.call(null, !1);
     }
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$($G__150923$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__150923$$);
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$($G__194334$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__194334$$);
   }();
-  $G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$ = function() {
-    return {className:"fixed top-0 left-0 right-0 z-40", children:[function() {
-      var $G__150929$$ = function() {
-        return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["flex items-center justify-between", "px-4 md:px-8 h-14", "bg-white dark:bg-slate-950"]))), children:[function() {
-          var $G__150933$$ = {href:"/", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-display", "text-sm font-semibold uppercase tracking-widest", "text-slate-900  dark:text-slate-100", "hover:text-pink-600 dark:hover:text-pink-300", "transition-colors duration-200"]))), children:"Armenian Pavilion"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__150933$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150933$$);
-        }(), function() {
-          var $G__150937$$ = function() {
-            return {className:"hidden md:flex items-center gap-8", children:[function() {
-              return function $amp$nav$menu$menu_render_$_iter__150940$$($s__150941$$) {
-                return new $APP.$cljs$core$LazySeq$$(null, function() {
-                  for (;;) {
-                    var $s__150941__$2_temp__5823__auto__$jscomp$66$$ = $APP.$cljs$core$seq$$($s__150941$$);
-                    if ($s__150941__$2_temp__5823__auto__$jscomp$66$$) {
-                      if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__150941__$2_temp__5823__auto__$jscomp$66$$)) {
-                        var $c__5626__auto__$jscomp$11$$ = $APP.$cljs$core$_chunked_first$$($s__150941__$2_temp__5823__auto__$jscomp$66$$), $size__5627__auto__$jscomp$11$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$11$$), $b__150943$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$11$$);
-                        return function() {
-                          for (var $i__150942$$ = 0;;) {
-                            if ($i__150942$$ < $size__5627__auto__$jscomp$11$$) {
-                              var $G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$11$$, $i__150942$$), $JSCompiler_temp_const$jscomp$2952$$ = $b__150943$$, $G__150946$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), 
-                              $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
-                              $G__150946$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$ = $APP.$helix$impl$props$merge_obj$$({path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), "active?":$G__150946$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$}, 
-                              $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$));
-                              $G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
-                              $G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__150946$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$, $G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__150946$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$, 
-                              $G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
-                              $JSCompiler_temp_const$jscomp$2952$$.add($G__150947$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
-                              $i__150942$$ += 1;
-                            } else {
-                              return !0;
+  $G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$ = {children:[function() {
+    var $G__194338$$ = {};
+    return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$menu$cutout_logo$$, $G__194338$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$cutout_logo$$, $G__194338$$);
+  }(), function() {
+    var $G__194340$$ = function() {
+      return {className:"fixed top-0 left-0 right-0 z-40", children:[function() {
+        var $G__194344$$ = function() {
+          return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["flex items-center justify-between", "px-4 md:px-8 h-14", "bg-white/75 dark:bg-slate-950/75 backdrop-blur-xl", "border-b border-slate-200/30 dark:border-white/10"]))), children:[function() {
+            var $G__194348$$ = {className:"w-[170px] shrink-0"};
+            return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194348$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194348$$);
+          }(), function() {
+            var $G__194352$$ = function() {
+              return {className:"hidden md:flex items-center gap-8", children:[function() {
+                return function $amp$nav$menu$menu_render_$_iter__194355$$($s__194356$$) {
+                  return new $APP.$cljs$core$LazySeq$$(null, function() {
+                    for (;;) {
+                      var $s__194356__$2_temp__5823__auto__$jscomp$66$$ = $APP.$cljs$core$seq$$($s__194356$$);
+                      if ($s__194356__$2_temp__5823__auto__$jscomp$66$$) {
+                        if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__194356__$2_temp__5823__auto__$jscomp$66$$)) {
+                          var $c__5626__auto__$jscomp$11$$ = $APP.$cljs$core$_chunked_first$$($s__194356__$2_temp__5823__auto__$jscomp$66$$), $size__5627__auto__$jscomp$11$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$11$$), $b__194358$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$11$$);
+                          return function() {
+                            for (var $i__194357$$ = 0;;) {
+                              if ($i__194357$$ < $size__5627__auto__$jscomp$11$$) {
+                                var $G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$11$$, $i__194357$$), $JSCompiler_temp_const$jscomp$2952$$ = $b__194358$$, $G__194360$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), 
+                                $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
+                                $G__194360$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$ = $APP.$helix$impl$props$merge_obj$$({path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$), "active?":$G__194360$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$}, 
+                                $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$));
+                                $G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
+                                $G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__194360$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$, $G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__194360$jscomp$inline_3155_active_QMARK_$jscomp$inline_3154$$, 
+                                $G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
+                                $JSCompiler_temp_const$jscomp$2952$$.add($G__194361$jscomp$inline_3156_JSCompiler_inline_result$jscomp$2953_item$jscomp$34$$);
+                                $i__194357$$ += 1;
+                              } else {
+                                return !0;
+                              }
                             }
-                          }
-                        }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150943$$), $amp$nav$menu$menu_render_$_iter__150940$$($APP.$cljs$core$_chunked_rest$$($s__150941__$2_temp__5823__auto__$jscomp$66$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150943$$), null);
-                      }
-                      var $item$jscomp$33$$ = $APP.$cljs$core$first$$($s__150941__$2_temp__5823__auto__$jscomp$66$$);
-                      return $APP.$cljs$core$cons$$(function() {
-                        var $G__150951_active_QMARK_$jscomp$2$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
-                        $G__150951_active_QMARK_$jscomp$2$$ = $APP.$helix$impl$props$merge_obj$$({path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), "active?":$G__150951_active_QMARK_$jscomp$2$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$));
-                        var $G__150952$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$);
-                        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__150951_active_QMARK_$jscomp$2$$, $G__150952$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__150951_active_QMARK_$jscomp$2$$, $G__150952$$);
-                      }(), $amp$nav$menu$menu_render_$_iter__150940$$($APP.$cljs$core$rest$$($s__150941__$2_temp__5823__auto__$jscomp$66$$)));
-                    }
-                    return null;
-                  }
-                }, null, null);
-              }($amp$nav$menu$nav_items$$);
-            }(), function() {
-              var $G__150957_JSCompiler_temp_const$jscomp$inline_3158$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["pl-6 ml-2 border-l", "border-slate-200 dark:border-white/15", "flex items-center"])));
-              var $G__150961$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$ = {};
-              $G__150961$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$theme_toggle$theme_toggle$$, $G__150961$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$theme_toggle$theme_toggle$$, $G__150961$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$);
-              $G__150957_JSCompiler_temp_const$jscomp$inline_3158$$ = {className:$G__150957_JSCompiler_temp_const$jscomp$inline_3158$$, children:$G__150961$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150957_JSCompiler_temp_const$jscomp$inline_3158$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150957_JSCompiler_temp_const$jscomp$inline_3158$$);
-            }()]};
-          }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150937$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150937$$);
-        }(), function() {
-          var $G__150963$$ = function() {
-            return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["md:hidden p-2", "text-slate-900  dark:text-slate-100", "hover:text-pink-600 dark:hover:text-pink-300", "transition-colors duration-200"]))), onClick:$toggle_BANG_$$, "aria-label":$APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? "Close menu" : "Open menu", children:$APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? 
-            function() {
-              var $G__150967$$ = {"class":"w-6 h-6"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$XMarkIcon$$, $G__150967$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$XMarkIcon$$, $G__150967$$);
-            }() : function() {
-              var $G__150971$$ = {"class":"w-6 h-6"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$menu$hamburger_icon$$, $G__150971$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$hamburger_icon$$, $G__150971$$);
-            }()};
-          }();
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__150963$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150963$$);
-        }()]};
-      }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150929$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150929$$);
-    }(), $APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? function() {
-      var $G__150975$$ = function() {
-        return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["md:hidden", "bg-white dark:bg-slate-950", "px-6 pb-6 pt-2", "border-t", "border-slate-200 dark:border-white/15"]))), children:[function() {
-          return function $amp$nav$menu$menu_render_$_iter__150978$$($s__150979$$) {
-            return new $APP.$cljs$core$LazySeq$$(null, function() {
-              for (;;) {
-                var $s__150979__$2_temp__5823__auto__$jscomp$67$$ = $APP.$cljs$core$seq$$($s__150979$$);
-                if ($s__150979__$2_temp__5823__auto__$jscomp$67$$) {
-                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__150979__$2_temp__5823__auto__$jscomp$67$$)) {
-                    var $c__5626__auto__$jscomp$12$$ = $APP.$cljs$core$_chunked_first$$($s__150979__$2_temp__5823__auto__$jscomp$67$$), $size__5627__auto__$jscomp$12$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$12$$), $b__150981$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$12$$);
-                    return function() {
-                      for (var $i__150980$$ = 0;;) {
-                        if ($i__150980$$ < $size__5627__auto__$jscomp$12$$) {
-                          var $G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$12$$, $i__150980$$), $JSCompiler_temp_const$jscomp$2954$$ = $b__150981$$, $G__150983$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? 
-                          $current_path$jscomp$1$$ : "/");
-                          $G__150983$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$ = {path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), "active?":$G__150983$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, "on-click":$close_BANG_$$};
-                          $G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
-                          $G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__150983$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, $G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__150983$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, 
-                          $G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
-                          $JSCompiler_temp_const$jscomp$2954$$.add($G__150984$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
-                          $i__150980$$ += 1;
-                        } else {
-                          return !0;
+                          }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194358$$), $amp$nav$menu$menu_render_$_iter__194355$$($APP.$cljs$core$_chunked_rest$$($s__194356__$2_temp__5823__auto__$jscomp$66$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194358$$), null);
                         }
+                        var $item$jscomp$33$$ = $APP.$cljs$core$first$$($s__194356__$2_temp__5823__auto__$jscomp$66$$);
+                        return $APP.$cljs$core$cons$$(function() {
+                          var $G__194365_active_QMARK_$jscomp$2$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
+                          $G__194365_active_QMARK_$jscomp$2$$ = $APP.$helix$impl$props$merge_obj$$({path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$), "active?":$G__194365_active_QMARK_$jscomp$2$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$PersistentArrayMap$EMPTY$$));
+                          var $G__194366$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$33$$);
+                          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__194365_active_QMARK_$jscomp$2$$, $G__194366$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__194365_active_QMARK_$jscomp$2$$, $G__194366$$);
+                        }(), $amp$nav$menu$menu_render_$_iter__194355$$($APP.$cljs$core$rest$$($s__194356__$2_temp__5823__auto__$jscomp$66$$)));
                       }
-                    }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150981$$), $amp$nav$menu$menu_render_$_iter__150978$$($APP.$cljs$core$_chunked_rest$$($s__150979__$2_temp__5823__auto__$jscomp$67$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150981$$), null);
-                  }
-                  var $item$jscomp$35$$ = $APP.$cljs$core$first$$($s__150979__$2_temp__5823__auto__$jscomp$67$$);
-                  return $APP.$cljs$core$cons$$(function() {
-                    var $G__150988_active_QMARK_$jscomp$4$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
-                    $G__150988_active_QMARK_$jscomp$4$$ = {path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), "active?":$G__150988_active_QMARK_$jscomp$4$$, "on-click":$close_BANG_$$};
-                    var $G__150989$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$);
-                    return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__150988_active_QMARK_$jscomp$4$$, $G__150989$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__150988_active_QMARK_$jscomp$4$$, $G__150989$$);
-                  }(), $amp$nav$menu$menu_render_$_iter__150978$$($APP.$cljs$core$rest$$($s__150979__$2_temp__5823__auto__$jscomp$67$$)));
-                }
-                return null;
-              }
-            }, null, null);
-          }($amp$nav$menu$nav_items$$);
-        }(), function() {
-          var $G__150993_JSCompiler_temp_const$jscomp$inline_3166$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["mt-4 pt-4 border-t", "border-slate-200 dark:border-white/15"])));
-          var $G__150997$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$ = {};
-          $G__150997$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$theme_toggle$theme_toggle$$, $G__150997$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$theme_toggle$theme_toggle$$, $G__150997$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$);
-          $G__150993_JSCompiler_temp_const$jscomp$inline_3166$$ = {className:$G__150993_JSCompiler_temp_const$jscomp$inline_3166$$, children:$G__150997$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150993_JSCompiler_temp_const$jscomp$inline_3166$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150993_JSCompiler_temp_const$jscomp$inline_3166$$);
-        }()]};
-      }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150975$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150975$$);
-    }() : null]};
-  }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("nav", $G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$) : $APP.$helix$core$jsxs$$.call(null, "nav", $G__150925_props__41575__auto__$jscomp$4_state$jscomp$13_vec__150911$$);
+                      return null;
+                    }
+                  }, null, null);
+                }($amp$nav$menu$nav_items$$);
+              }(), function() {
+                var $G__194370_JSCompiler_temp_const$jscomp$inline_3158$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["pl-6 ml-2 border-l", "border-slate-200 dark:border-white/15", "flex items-center"])));
+                var $G__194374$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$ = {};
+                $G__194374$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$theme_toggle$theme_toggle$$, $G__194374$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$theme_toggle$theme_toggle$$, $G__194374$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$);
+                $G__194370_JSCompiler_temp_const$jscomp$inline_3158$$ = {className:$G__194370_JSCompiler_temp_const$jscomp$inline_3158$$, children:$G__194374$jscomp$inline_3160_JSCompiler_inline_result$jscomp$inline_3159$$};
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194370_JSCompiler_temp_const$jscomp$inline_3158$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194370_JSCompiler_temp_const$jscomp$inline_3158$$);
+              }()]};
+            }();
+            return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194352$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__194352$$);
+          }(), function() {
+            var $G__194376$$ = function() {
+              return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["md:hidden p-2", "text-slate-900  dark:text-slate-100", "hover:text-pink-600 dark:hover:text-pink-300", "transition-colors duration-200"]))), onClick:$toggle_BANG_$$, "aria-label":$APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? "Close menu" : "Open menu", children:$APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? 
+              function() {
+                var $G__194380$$ = {"class":"w-6 h-6"};
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$XMarkIcon$$, $G__194380$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$XMarkIcon$$, $G__194380$$);
+              }() : function() {
+                var $G__194384$$ = {"class":"w-6 h-6"};
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$menu$hamburger_icon$$, $G__194384$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$hamburger_icon$$, $G__194384$$);
+              }()};
+            }();
+            return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__194376$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__194376$$);
+          }()]};
+        }();
+        return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194344$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__194344$$);
+      }(), function() {
+        var $G__194388$$ = function() {
+          return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["md:hidden overflow-hidden", "transition-all duration-300 ease-in-out", $APP.$cljs$core$truth_$$($open_QMARK_$jscomp$3$$) ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"]))), children:function() {
+            var $G__194392$$ = function() {
+              return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["bg-white/75 dark:bg-slate-950/75 backdrop-blur-xl", "px-6 pb-6 pt-2", "border-t border-white/10"]))), children:[function() {
+                return function $amp$nav$menu$menu_render_$_iter__194395$$($s__194396$$) {
+                  return new $APP.$cljs$core$LazySeq$$(null, function() {
+                    for (;;) {
+                      var $s__194396__$2_temp__5823__auto__$jscomp$67$$ = $APP.$cljs$core$seq$$($s__194396$$);
+                      if ($s__194396__$2_temp__5823__auto__$jscomp$67$$) {
+                        if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__194396__$2_temp__5823__auto__$jscomp$67$$)) {
+                          var $c__5626__auto__$jscomp$12$$ = $APP.$cljs$core$_chunked_first$$($s__194396__$2_temp__5823__auto__$jscomp$67$$), $size__5627__auto__$jscomp$12$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$12$$), $b__194398$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$12$$);
+                          return function() {
+                            for (var $i__194397$$ = 0;;) {
+                              if ($i__194397$$ < $size__5627__auto__$jscomp$12$$) {
+                                var $G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$12$$, $i__194397$$), $JSCompiler_temp_const$jscomp$2954$$ = $b__194398$$, $G__194400$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), 
+                                $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
+                                $G__194400$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$ = {path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$), "active?":$G__194400$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, "on-click":$close_BANG_$$};
+                                $G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
+                                $G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__194400$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, $G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__194400$jscomp$inline_3163_active_QMARK_$jscomp$inline_3162$$, 
+                                $G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
+                                $JSCompiler_temp_const$jscomp$2954$$.add($G__194401$jscomp$inline_3164_JSCompiler_inline_result$jscomp$2955_item$jscomp$36$$);
+                                $i__194397$$ += 1;
+                              } else {
+                                return !0;
+                              }
+                            }
+                          }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194398$$), $amp$nav$menu$menu_render_$_iter__194395$$($APP.$cljs$core$_chunked_rest$$($s__194396__$2_temp__5823__auto__$jscomp$67$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194398$$), null);
+                        }
+                        var $item$jscomp$35$$ = $APP.$cljs$core$first$$($s__194396__$2_temp__5823__auto__$jscomp$67$$);
+                        return $APP.$cljs$core$cons$$(function() {
+                          var $G__194405_active_QMARK_$jscomp$4$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), $APP.$cljs$core$truth_$$($current_path$jscomp$1$$) ? $current_path$jscomp$1$$ : "/");
+                          $G__194405_active_QMARK_$jscomp$4$$ = {path:$cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), title:$APP.$cljs$cst$287$title$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$), "active?":$G__194405_active_QMARK_$jscomp$4$$, "on-click":$close_BANG_$$};
+                          var $G__194406$$ = $cljs$cst$133$path$$.$cljs$core$IFn$_invoke$arity$1$($item$jscomp$35$$);
+                          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$nav$menu$menu_link$$, $G__194405_active_QMARK_$jscomp$4$$, $G__194406$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu_link$$, $G__194405_active_QMARK_$jscomp$4$$, $G__194406$$);
+                        }(), $amp$nav$menu$menu_render_$_iter__194395$$($APP.$cljs$core$rest$$($s__194396__$2_temp__5823__auto__$jscomp$67$$)));
+                      }
+                      return null;
+                    }
+                  }, null, null);
+                }($amp$nav$menu$nav_items$$);
+              }(), function() {
+                var $G__194410_JSCompiler_temp_const$jscomp$inline_3166$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["mt-4 pt-4 border-t", "border-slate-200 dark:border-white/15"])));
+                var $G__194414$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$ = {};
+                $G__194414$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$theme_toggle$theme_toggle$$, $G__194414$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$theme_toggle$theme_toggle$$, $G__194414$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$);
+                $G__194410_JSCompiler_temp_const$jscomp$inline_3166$$ = {className:$G__194410_JSCompiler_temp_const$jscomp$inline_3166$$, children:$G__194414$jscomp$inline_3168_JSCompiler_inline_result$jscomp$inline_3167$$};
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194410_JSCompiler_temp_const$jscomp$inline_3166$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194410_JSCompiler_temp_const$jscomp$inline_3166$$);
+              }()]};
+            }();
+            return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194392$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__194392$$);
+          }()};
+        }();
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194388$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194388$$);
+      }()]};
+    }();
+    return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("nav", $G__194340$$) : $APP.$helix$core$jsxs$$.call(null, "nav", $G__194340$$);
+  }()]};
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($helix$core$Fragment$$, $G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$) : $APP.$helix$core$jsxs$$.call(null, $helix$core$Fragment$$, $G__194336_props__41575__auto__$jscomp$5_state$jscomp$13_vec__194322$$);
 };
 $APP.$amp$ui$button$main_button$$ = function($G__51883_map__51861_map__51861__$1_props__41636__auto___vec__51858$$, $color$jscomp$3_maybe_ref__41637__auto__$$) {
   $G__51883_map__51861_map__51861__$1_props__41636__auto___vec__51858$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__51883_map__51861_map__51861__$1_props__41636__auto___vec__51858$$), $color$jscomp$3_maybe_ref__41637__auto__$$], null);
@@ -13311,55 +13330,55 @@ $amp$hooks$use_scroll_to$use_scroll_to_top$cljs$0core$0IFn$0_invoke$0arity$0vari
   var $G__50962$$ = [];
   return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__50961_map__50960__$1$$, $G__50962$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__50961_map__50960__$1$$, $G__50962$$);
 };
-$amp$ui$footer$quick_links_landing$$ = function($G__150682_props__41575__auto__$jscomp$5$$, $maybe_ref__41576__auto__$jscomp$5$$) {
-  var $vec__150677$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150682_props__41575__auto__$jscomp$5$$), $maybe_ref__41576__auto__$jscomp$5$$], null), $_props$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__150677$$, 0, null);
+$amp$ui$footer$quick_links_landing$$ = function($G__181921_props__41575__auto__$jscomp$6$$, $maybe_ref__41576__auto__$jscomp$6$$) {
+  var $vec__181914$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__181921_props__41575__auto__$jscomp$6$$), $maybe_ref__41576__auto__$jscomp$6$$], null), $_props$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__181914$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $scroll_to_id$$ = $APP.$amp$hooks$use_scroll_to$use_scroll_to_id$$();
-  $G__150682_props__41575__auto__$jscomp$5$$ = function() {
+  $G__181921_props__41575__auto__$jscomp$6$$ = function() {
     return {className:"space-y-3", children:[function() {
-      var $G__150686$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Quick Links"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__150686$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__150686$$);
+      var $G__181925$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Quick Links"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__181925$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__181925$$);
     }(), function() {
-      return function $amp$ui$footer$quick_links_landing_render_$_iter__150691$$($s__150692$$) {
+      return function $amp$ui$footer$quick_links_landing_render_$_iter__181928$$($s__181929$$) {
         return new $APP.$cljs$core$LazySeq$$(null, function() {
           for (;;) {
-            var $temp__5823__auto__$jscomp$69$$ = $APP.$cljs$core$seq$$($s__150692$$);
+            var $temp__5823__auto__$jscomp$69$$ = $APP.$cljs$core$seq$$($s__181929$$);
             if ($temp__5823__auto__$jscomp$69$$) {
-              var $s__150692__$2$$ = $temp__5823__auto__$jscomp$69$$;
-              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__150692__$2$$)) {
-                var $c__5626__auto__$jscomp$13$$ = $APP.$cljs$core$_chunked_first$$($s__150692__$2$$), $size__5627__auto__$jscomp$13$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$13$$), $b__150694$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$13$$);
+              var $s__181929__$2$$ = $temp__5823__auto__$jscomp$69$$;
+              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__181929__$2$$)) {
+                var $c__5626__auto__$jscomp$13$$ = $APP.$cljs$core$_chunked_first$$($s__181929__$2$$), $size__5627__auto__$jscomp$13$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$13$$), $b__181931$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$13$$);
                 return function() {
-                  for (var $i__150693$$ = 0;;) {
-                    if ($i__150693$$ < $size__5627__auto__$jscomp$13$$) {
-                      var $map__150699$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$13$$, $i__150693$$), $map__150699__$1$$ = $APP.$cljs$core$__destructure_map$$($map__150699$$), $label$jscomp$10$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150699__$1$$, $APP.$cljs$cst$408$label$$), $id$jscomp$66$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150699__$1$$, $APP.$cljs$cst$285$id$$);
-                      $cljs$core$chunk_append$$($b__150694$$, function() {
-                        var $G__150701$$ = function() {
-                          return {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), onClick:function($i__150693$jscomp$1$$, $G__150700$jscomp$1$$, $map__150699$jscomp$1$$, $map__150699__$1$jscomp$1$$, $label$jscomp$11$$, $id$jscomp$67$$, $c__5626__auto__$jscomp$14$$, $size__5627__auto__$jscomp$14$$, $b__150694$jscomp$1$$, $s__150692__$2$jscomp$1$$, $temp__5823__auto__$jscomp$70$$, $G__150681$jscomp$1$$, $scroll_to_id$jscomp$1$$) {
+                  for (var $i__181930$$ = 0;;) {
+                    if ($i__181930$$ < $size__5627__auto__$jscomp$13$$) {
+                      var $map__181936$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$13$$, $i__181930$$), $map__181936__$1$$ = $APP.$cljs$core$__destructure_map$$($map__181936$$), $label$jscomp$10$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__181936__$1$$, $APP.$cljs$cst$408$label$$), $id$jscomp$66$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__181936__$1$$, $APP.$cljs$cst$285$id$$);
+                      $cljs$core$chunk_append$$($b__181931$$, function() {
+                        var $G__181939$$ = function() {
+                          return {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), onClick:function($i__181930$jscomp$1$$, $G__181938$jscomp$1$$, $map__181936$jscomp$1$$, $map__181936__$1$jscomp$1$$, $label$jscomp$11$$, $id$jscomp$67$$, $c__5626__auto__$jscomp$14$$, $size__5627__auto__$jscomp$14$$, $b__181931$jscomp$1$$, $s__181929__$2$jscomp$1$$, $temp__5823__auto__$jscomp$70$$, $G__181920$jscomp$1$$, $scroll_to_id$jscomp$1$$) {
                             return function() {
                               return $scroll_to_id$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$ ? $scroll_to_id$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$($id$jscomp$67$$) : $scroll_to_id$jscomp$1$$.call(null, $id$jscomp$67$$);
                             };
-                          }($i__150693$$, "button", $map__150699$$, $map__150699__$1$$, $label$jscomp$10$$, $id$jscomp$66$$, $c__5626__auto__$jscomp$13$$, $size__5627__auto__$jscomp$13$$, $b__150694$$, $s__150692__$2$$, $temp__5823__auto__$jscomp$69$$, "div", $scroll_to_id$$, $vec__150677$$, $_props$jscomp$1$$), children:$label$jscomp$10$$};
-                        }(), $G__150702$$ = $id$jscomp$66$$;
-                        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__150701$$, $G__150702$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150701$$, $G__150702$$);
+                          }($i__181930$$, "button", $map__181936$$, $map__181936__$1$$, $label$jscomp$10$$, $id$jscomp$66$$, $c__5626__auto__$jscomp$13$$, $size__5627__auto__$jscomp$13$$, $b__181931$$, $s__181929__$2$$, $temp__5823__auto__$jscomp$69$$, "div", $scroll_to_id$$, $vec__181914$$, $_props$jscomp$2$$), children:$label$jscomp$10$$};
+                        }(), $G__181940$$ = $id$jscomp$66$$;
+                        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__181939$$, $G__181940$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__181939$$, $G__181940$$);
                       }());
-                      $i__150693$$ += 1;
+                      $i__181930$$ += 1;
                     } else {
                       return !0;
                     }
                   }
-                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150694$$), $amp$ui$footer$quick_links_landing_render_$_iter__150691$$($APP.$cljs$core$_chunked_rest$$($s__150692__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150694$$), null);
+                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__181931$$), $amp$ui$footer$quick_links_landing_render_$_iter__181928$$($APP.$cljs$core$_chunked_rest$$($s__181929__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__181931$$), null);
               }
-              var $map__150705$$ = $APP.$cljs$core$first$$($s__150692__$2$$), $map__150705__$1$$ = $APP.$cljs$core$__destructure_map$$($map__150705$$), $label$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150705__$1$$, $APP.$cljs$cst$408$label$$), $id$jscomp$65$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150705__$1$$, $APP.$cljs$cst$285$id$$);
+              var $map__181947$$ = $APP.$cljs$core$first$$($s__181929__$2$$), $map__181947__$1$$ = $APP.$cljs$core$__destructure_map$$($map__181947$$), $label$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__181947__$1$$, $APP.$cljs$cst$408$label$$), $id$jscomp$65$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__181947__$1$$, $APP.$cljs$cst$285$id$$);
               return $APP.$cljs$core$cons$$(function() {
-                var $G__150707$$ = function() {
-                  return {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), onClick:function($G__150706$jscomp$1$$, $map__150705$jscomp$1$$, $map__150705__$1$jscomp$1$$, $label$jscomp$12$$, $id$jscomp$68$$, $s__150692__$2$jscomp$2$$, $temp__5823__auto__$jscomp$71$$, $G__150681$jscomp$2$$, $scroll_to_id$jscomp$2$$) {
+                var $G__181951$$ = function() {
+                  return {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), onClick:function($G__181950$jscomp$1$$, $map__181947$jscomp$1$$, $map__181947__$1$jscomp$1$$, $label$jscomp$12$$, $id$jscomp$68$$, $s__181929__$2$jscomp$2$$, $temp__5823__auto__$jscomp$71$$, $G__181920$jscomp$2$$, $scroll_to_id$jscomp$2$$) {
                     return function() {
                       return $scroll_to_id$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$ ? $scroll_to_id$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$($id$jscomp$68$$) : $scroll_to_id$jscomp$2$$.call(null, $id$jscomp$68$$);
                     };
-                  }("button", $map__150705$$, $map__150705__$1$$, $label$jscomp$9$$, $id$jscomp$65$$, $s__150692__$2$$, $temp__5823__auto__$jscomp$69$$, "div", $scroll_to_id$$, $vec__150677$$, $_props$jscomp$1$$), children:$label$jscomp$9$$};
-                }(), $G__150708$$ = $id$jscomp$65$$;
-                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__150707$$, $G__150708$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__150707$$, $G__150708$$);
-              }(), $amp$ui$footer$quick_links_landing_render_$_iter__150691$$($APP.$cljs$core$rest$$($s__150692__$2$$)));
+                  }("button", $map__181947$$, $map__181947__$1$$, $label$jscomp$9$$, $id$jscomp$65$$, $s__181929__$2$$, $temp__5823__auto__$jscomp$69$$, "div", $scroll_to_id$$, $vec__181914$$, $_props$jscomp$2$$), children:$label$jscomp$9$$};
+                }(), $G__181952$$ = $id$jscomp$65$$;
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__181951$$, $G__181952$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__181951$$, $G__181952$$);
+              }(), $amp$ui$footer$quick_links_landing_render_$_iter__181928$$($APP.$cljs$core$rest$$($s__181929__$2$$)));
             }
             return null;
           }
@@ -13367,48 +13386,48 @@ $amp$ui$footer$quick_links_landing$$ = function($G__150682_props__41575__auto__$
       }($amp$ui$footer$landing_links$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150682_props__41575__auto__$jscomp$5$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150682_props__41575__auto__$jscomp$5$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__181921_props__41575__auto__$jscomp$6$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__181921_props__41575__auto__$jscomp$6$$);
 };
-$amp$ui$footer$quick_links_site$$ = function($G__150718_props__41575__auto__$jscomp$6_vec__150714$$, $maybe_ref__41576__auto__$jscomp$6$$) {
-  $G__150718_props__41575__auto__$jscomp$6_vec__150714$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150718_props__41575__auto__$jscomp$6_vec__150714$$), $maybe_ref__41576__auto__$jscomp$6$$], null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150718_props__41575__auto__$jscomp$6_vec__150714$$, 0, null);
+$amp$ui$footer$quick_links_site$$ = function($G__181983_props__41575__auto__$jscomp$7_vec__181979$$, $maybe_ref__41576__auto__$jscomp$7$$) {
+  $G__181983_props__41575__auto__$jscomp$7_vec__181979$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__181983_props__41575__auto__$jscomp$7_vec__181979$$), $maybe_ref__41576__auto__$jscomp$7$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__181983_props__41575__auto__$jscomp$7_vec__181979$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__150718_props__41575__auto__$jscomp$6_vec__150714$$ = function() {
+  $G__181983_props__41575__auto__$jscomp$7_vec__181979$$ = function() {
     return {className:"space-y-3", children:[function() {
-      var $G__150722$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Quick Links"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__150722$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__150722$$);
+      var $G__181987$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Quick Links"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__181987$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__181987$$);
     }(), function() {
-      return function $amp$ui$footer$quick_links_site_render_$_iter__150725$$($s__150726$$) {
+      return function $amp$ui$footer$quick_links_site_render_$_iter__181990$$($s__181991$$) {
         return new $APP.$cljs$core$LazySeq$$(null, function() {
           for (;;) {
-            var $s__150726__$2_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($s__150726$$);
-            if ($s__150726__$2_temp__5823__auto__$jscomp$72$$) {
-              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__150726__$2_temp__5823__auto__$jscomp$72$$)) {
-                var $c__5626__auto__$jscomp$15$$ = $APP.$cljs$core$_chunked_first$$($s__150726__$2_temp__5823__auto__$jscomp$72$$), $size__5627__auto__$jscomp$15$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$15$$), $b__150728$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$15$$);
+            var $s__181991__$2_temp__5823__auto__$jscomp$72$$ = $APP.$cljs$core$seq$$($s__181991$$);
+            if ($s__181991__$2_temp__5823__auto__$jscomp$72$$) {
+              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__181991__$2_temp__5823__auto__$jscomp$72$$)) {
+                var $c__5626__auto__$jscomp$15$$ = $APP.$cljs$core$_chunked_first$$($s__181991__$2_temp__5823__auto__$jscomp$72$$), $size__5627__auto__$jscomp$15$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$15$$), $b__181993$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$15$$);
                 return function() {
-                  for (var $i__150727$$ = 0;;) {
-                    if ($i__150727$$ < $size__5627__auto__$jscomp$15$$) {
-                      var $JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$15$$, $i__150727$$);
-                      $JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$ = $APP.$cljs$core$__destructure_map$$($JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$);
-                      var $G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$, $APP.$cljs$cst$408$label$$), $G__150732$jscomp$inline_3173_href$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$, $cljs$cst$409$href$$);
-                      $JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$ = $b__150728$$;
-                      $G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = {href:$G__150732$jscomp$inline_3173_href$jscomp$2$$, className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), children:$G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$};
-                      $G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("a", $G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$, $G__150732$jscomp$inline_3173_href$jscomp$2$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$, $G__150732$jscomp$inline_3173_href$jscomp$2$$);
-                      $JSCompiler_temp_const$jscomp$2960_map__150729_map__150729__$1$$.add($G__150731$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$);
-                      $i__150727$$ += 1;
+                  for (var $i__181992$$ = 0;;) {
+                    if ($i__181992$$ < $size__5627__auto__$jscomp$15$$) {
+                      var $JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$15$$, $i__181992$$);
+                      $JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$ = $APP.$cljs$core$__destructure_map$$($JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$);
+                      var $G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$, $APP.$cljs$cst$408$label$$), $G__182002$jscomp$inline_3173_href$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$, $cljs$cst$409$href$$);
+                      $JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$ = $b__181993$$;
+                      $G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = {href:$G__182002$jscomp$inline_3173_href$jscomp$2$$, className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), children:$G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$};
+                      $G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("a", $G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$, $G__182002$jscomp$inline_3173_href$jscomp$2$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$, $G__182002$jscomp$inline_3173_href$jscomp$2$$);
+                      $JSCompiler_temp_const$jscomp$2960_map__181999_map__181999__$1$$.add($G__182001$jscomp$inline_3172_JSCompiler_inline_result$jscomp$2961_label$jscomp$14$$);
+                      $i__181992$$ += 1;
                     } else {
                       return !0;
                     }
                   }
-                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150728$$), $amp$ui$footer$quick_links_site_render_$_iter__150725$$($APP.$cljs$core$_chunked_rest$$($s__150726__$2_temp__5823__auto__$jscomp$72$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__150728$$), null);
+                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__181993$$), $amp$ui$footer$quick_links_site_render_$_iter__181990$$($APP.$cljs$core$_chunked_rest$$($s__181991__$2_temp__5823__auto__$jscomp$72$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__181993$$), null);
               }
-              var $map__150735_map__150735__$1$$ = $APP.$cljs$core$first$$($s__150726__$2_temp__5823__auto__$jscomp$72$$);
-              $map__150735_map__150735__$1$$ = $APP.$cljs$core$__destructure_map$$($map__150735_map__150735__$1$$);
-              var $label$jscomp$13$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150735_map__150735__$1$$, $APP.$cljs$cst$408$label$$), $href$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__150735_map__150735__$1$$, $cljs$cst$409$href$$);
+              var $map__182005_map__182005__$1$$ = $APP.$cljs$core$first$$($s__181991__$2_temp__5823__auto__$jscomp$72$$);
+              $map__182005_map__182005__$1$$ = $APP.$cljs$core$__destructure_map$$($map__182005_map__182005__$1$$);
+              var $label$jscomp$13$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__182005_map__182005__$1$$, $APP.$cljs$cst$408$label$$), $href$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__182005_map__182005__$1$$, $cljs$cst$409$href$$);
               return $APP.$cljs$core$cons$$(function() {
-                var $G__150737$$ = {href:$href$jscomp$1$$, className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), children:$label$jscomp$13$$}, $G__150738$$ = $href$jscomp$1$$;
-                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("a", $G__150737$$, $G__150738$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150737$$, $G__150738$$);
-              }(), $amp$ui$footer$quick_links_site_render_$_iter__150725$$($APP.$cljs$core$rest$$($s__150726__$2_temp__5823__auto__$jscomp$72$$)));
+                var $G__182008$$ = {href:$href$jscomp$1$$, className:$APP.$helix$impl$props$normalize_class$$($amp$ui$footer$link_class$$), children:$label$jscomp$13$$}, $G__182009$$ = $href$jscomp$1$$;
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("a", $G__182008$$, $G__182009$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182008$$, $G__182009$$);
+              }(), $amp$ui$footer$quick_links_site_render_$_iter__181990$$($APP.$cljs$core$rest$$($s__181991__$2_temp__5823__auto__$jscomp$72$$)));
             }
             return null;
           }
@@ -13416,177 +13435,177 @@ $amp$ui$footer$quick_links_site$$ = function($G__150718_props__41575__auto__$jsc
       }($amp$ui$footer$site_links$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150718_props__41575__auto__$jscomp$6_vec__150714$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150718_props__41575__auto__$jscomp$6_vec__150714$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__181983_props__41575__auto__$jscomp$7_vec__181979$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__181983_props__41575__auto__$jscomp$7_vec__181979$$);
 };
-$amp$ui$footer$site_footer$$ = function($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$, $maybe_ref__41576__auto__$jscomp$7_state$jscomp$14$$) {
-  $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$), $maybe_ref__41576__auto__$jscomp$7_state$jscomp$14$$], null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$, 0, null);
+$amp$ui$footer$site_footer$$ = function($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$, $maybe_ref__41576__auto__$jscomp$8_state$jscomp$14$$) {
+  $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$), $maybe_ref__41576__auto__$jscomp$8_state$jscomp$14$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$ = $APP.$amp$state$provider$use_main_state$$();
-  $maybe_ref__41576__auto__$jscomp$7_state$jscomp$14$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$, 0, null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$, 1, null);
-  $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$ = $APP.$cljs$cst$165$name$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$28$data$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($maybe_ref__41576__auto__$jscomp$7_state$jscomp$14$$)));
-  var $on_landing_QMARK_$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$, $cljs$cst$295$home$$);
-  $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$ = function() {
+  $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$ = $APP.$amp$state$provider$use_main_state$$();
+  $maybe_ref__41576__auto__$jscomp$8_state$jscomp$14$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$, 0, null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$, 1, null);
+  $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$ = $APP.$cljs$cst$165$name$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$28$data$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($maybe_ref__41576__auto__$jscomp$8_state$jscomp$14$$)));
+  var $on_landing_QMARK_$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$, $cljs$cst$295$home$$);
+  $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["relative w-full font-display", "bg-zinc-100 dark:bg-zinc-800"]))), children:[function() {
-      var $G__150755$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150755$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150755$$);
+      var $G__182039$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182039$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182039$$);
     }(), function() {
-      var $G__150759_JSCompiler_temp_const$jscomp$inline_4004$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full max-w-full overflow-x-hidden flex justify-center", "py-16 lg:py-24 px-4"])));
-      var $G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full lg:w-8/12 min-w-0", "text-center"])));
-      var $G__150767$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl lg:text-2xl italic font-light leading-relaxed", "text-slate-600  dark:text-slate-400"]))), children:"“The way you do anything is the way you do everything.”"};
-      $G__150767$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__150767$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__150767$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$);
-      $G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = {className:$G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$, children:$G__150767$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$};
-      $G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("blockquote", $G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$) : $APP.$helix$core$jsx$$.call(null, "blockquote", $G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$);
-      $G__150759_JSCompiler_temp_const$jscomp$inline_4004$$ = {className:$G__150759_JSCompiler_temp_const$jscomp$inline_4004$$, children:$G__150763$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150759_JSCompiler_temp_const$jscomp$inline_4004$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150759_JSCompiler_temp_const$jscomp$inline_4004$$);
+      var $G__182043_JSCompiler_temp_const$jscomp$inline_4004$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full max-w-full overflow-x-hidden flex justify-center", "py-16 lg:py-24 px-4"])));
+      var $G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full lg:w-8/12 min-w-0", "text-center"])));
+      var $G__182053$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl lg:text-2xl italic font-light leading-relaxed", "text-slate-600  dark:text-slate-400"]))), children:"“The way you do anything is the way you do everything.”"};
+      $G__182053$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182053$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182053$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$);
+      $G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = {className:$G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$, children:$G__182053$jscomp$inline_4009_JSCompiler_inline_result$jscomp$inline_4008$$};
+      $G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("blockquote", $G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$) : $APP.$helix$core$jsx$$.call(null, "blockquote", $G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$);
+      $G__182043_JSCompiler_temp_const$jscomp$inline_4004$$ = {className:$G__182043_JSCompiler_temp_const$jscomp$inline_4004$$, children:$G__182047$jscomp$inline_4006_JSCompiler_inline_result$jscomp$inline_4005_JSCompiler_temp_const$jscomp$inline_4007$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182043_JSCompiler_temp_const$jscomp$inline_4004$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182043_JSCompiler_temp_const$jscomp$inline_4004$$);
     }(), function() {
-      var $G__150771$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150771$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150771$$);
+      var $G__182060$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182060$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182060$$);
     }(), function() {
-      var $G__150775$$ = function() {
+      var $G__182065$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full max-w-full overflow-x-hidden flex justify-center", "py-16 lg:py-20 px-4"]))), children:function() {
-          var $G__150779$$ = function() {
+          var $G__182069$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full lg:w-8/12 min-w-0"]))), children:[function() {
-              var $G__150783$$ = function() {
+              var $G__182077$$ = function() {
                 return {className:"text-center mb-16", children:[function() {
-                  var $G__150787$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-2xl lg:text-3xl font-semibold uppercase tracking-wider mb-3", "text-slate-900  dark:text-slate-100"]))), children:"Support the Pavilion"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__150787$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__150787$$);
+                  var $G__182081$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-2xl lg:text-3xl font-semibold uppercase tracking-wider mb-3", "text-slate-900  dark:text-slate-100"]))), children:"Support the Pavilion"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__182081$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__182081$$);
                 }(), function() {
-                  var $G__150791$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-sm lg:text-base max-w-xl mx-auto mb-8", "text-slate-600  dark:text-slate-400"]))), children:"Your contribution directly supports Armenia’s national presentation at the 61st Venice Biennale."};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__150791$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__150791$$);
+                  var $G__182089$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-sm lg:text-base max-w-xl mx-auto mb-8", "text-slate-600  dark:text-slate-400"]))), children:"Your contribution directly supports Armenia’s national presentation at the 61st Venice Biennale."};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182089$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182089$$);
                 }(), function() {
-                  var $G__150795$$ = function() {
+                  var $G__182094$$ = function() {
                     return {className:"flex justify-center", children:function() {
-                      var $G__150799$$ = function() {
+                      var $G__182103$$ = function() {
                         return {title:"Donate Now", "on-click":function() {
                           return window.open("https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00", "_blank");
                         }};
                       }();
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__150799$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__150799$$);
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__182103$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__182103$$);
                     }()};
                   }();
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150795$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150795$$);
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182094$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182094$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150783$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150783$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182077$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182077$$);
             }(), function() {
-              var $G__150803$$ = function() {
+              var $G__182108$$ = function() {
                 return {className:"grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 text-sm", children:[function() {
-                  var $G__150807$$ = function() {
+                  var $G__182112$$ = function() {
                     return {className:"space-y-3", children:[function() {
-                      var $G__150811$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Get in Touch"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__150811$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__150811$$);
+                      var $G__182116$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"Get in Touch"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__182116$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__182116$$);
                     }(), function() {
-                      var $G__150816$$ = {href:"mailto:hello@armenianpavilion2026.org?subject\x3dLet's%20connect", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block transition-colors", "text-slate-700  dark:text-slate-300", "hover:text-pink-600 dark:hover:text-pink-300"]))), children:"hello@armenianpavilion2026.org"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__150816$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150816$$);
+                      var $G__182120$$ = {href:"mailto:hello@armenianpavilion2026.org?subject\x3dLet's%20connect", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block transition-colors", "text-slate-700  dark:text-slate-300", "hover:text-pink-600 dark:hover:text-pink-300"]))), children:"hello@armenianpavilion2026.org"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__182120$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182120$$);
                     }(), function() {
-                      var $G__150821$$ = {href:"tel:+13234041152", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block transition-colors", "text-slate-700  dark:text-slate-300", "hover:text-pink-600 dark:hover:text-pink-300"]))), children:"+1 323-404-1152"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__150821$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__150821$$);
+                      var $G__182127$$ = {href:"tel:+13234041152", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block transition-colors", "text-slate-700  dark:text-slate-300", "hover:text-pink-600 dark:hover:text-pink-300"]))), children:"+1 323-404-1152"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__182127$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182127$$);
                     }()]};
                   }();
-                  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150807$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150807$$);
+                  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182112$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182112$$);
                 }(), function() {
-                  var $G__150829$$ = function() {
+                  var $G__182132$$ = function() {
                     return {className:"space-y-3", children:[function() {
-                      var $G__150835$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"501(c)(3) Non-Profit"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__150835$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__150835$$);
+                      var $G__182137$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] font-medium uppercase tracking-[0.2em] mb-4", "text-pink-700/50 dark:text-pink-300/50"]))), children:"501(c)(3) Non-Profit"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h3", $G__182137$$) : $APP.$helix$core$jsx$$.call(null, "h3", $G__182137$$);
                     }(), function() {
-                      var $G__150841$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"Fallen Angels Inc."};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__150841$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__150841$$);
+                      var $G__182144$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"Fallen Angels Inc."};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182144$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182144$$);
                     }(), function() {
-                      var $G__150849$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-600  dark:text-slate-400"), children:"EIN: 92-2395513"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__150849$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__150849$$);
+                      var $G__182150$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-600  dark:text-slate-400"), children:"EIN: 92-2395513"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182150$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182150$$);
                     }(), function() {
-                      var $G__150853$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-600  dark:text-slate-400"), children:"Los Angeles, CA"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__150853$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__150853$$);
+                      var $G__182154$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-600  dark:text-slate-400"), children:"Los Angeles, CA"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182154$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182154$$);
                     }()]};
                   }();
-                  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150829$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150829$$);
+                  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182132$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182132$$);
                 }(), $on_landing_QMARK_$$ ? function() {
-                  var $G__150858$$ = {};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$quick_links_landing$$, $G__150858$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$quick_links_landing$$, $G__150858$$);
+                  var $G__182163$$ = {};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$quick_links_landing$$, $G__182163$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$quick_links_landing$$, $G__182163$$);
                 }() : function() {
-                  var $G__150860$$ = {};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$quick_links_site$$, $G__150860$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$quick_links_site$$, $G__150860$$);
+                  var $G__182166$$ = {};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$quick_links_site$$, $G__182166$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$quick_links_site$$, $G__182166$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150803$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150803$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182108$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182108$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150779$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150779$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182069$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182069$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150775$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150775$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182065$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182065$$);
     }(), function() {
-      var $G__150863$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150863$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150863$$);
+      var $G__182169$$ = {className:"w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182169$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182169$$);
     }(), function() {
-      var $G__150867$$ = function() {
+      var $G__182173$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full max-w-full overflow-x-hidden flex justify-center", "py-6 px-4"]))), children:function() {
-          var $G__150872$$ = function() {
+          var $G__182177$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-full lg:w-8/12 min-w-0", "flex flex-col sm:flex-row justify-between items-center gap-3"]))), children:[function() {
-              var $G__150880$$ = function() {
+              var $G__182182$$ = function() {
                 return {className:"flex items-center gap-4", children:[function() {
-                  var $G__150884$$ = {src:"images/graphics/61_biennale_logo_line.svg", className:"h-6 opacity-40 invert dark:invert-0"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("img", $G__150884$$) : $APP.$helix$core$jsx$$.call(null, "img", $G__150884$$);
+                  var $G__182186$$ = {src:"images/graphics/61_biennale_logo_line.svg", className:"h-6 opacity-40 invert dark:invert-0"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("img", $G__182186$$) : $APP.$helix$core$jsx$$.call(null, "img", $G__182186$$);
                 }(), function() {
-                  var $G__150888$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] uppercase tracking-[0.15em] whitespace-nowrap", "text-slate-600  dark:text-slate-400"]))), children:"Armenia Pavilion · 61st Venice Biennale"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__150888$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__150888$$);
+                  var $G__182191$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px] uppercase tracking-[0.15em] whitespace-nowrap", "text-slate-600  dark:text-slate-400"]))), children:"Armenia Pavilion · 61st Venice Biennale"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182191$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182191$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150880$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150880$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182182$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182182$$);
             }(), function() {
-              var $G__150896$$ = function() {
+              var $G__182196$$ = function() {
                 return {className:"flex items-center gap-4", children:[function() {
-                  var $G__150901$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px]", "text-slate-600  dark:text-slate-400"]))), children:"© 2026 AZ Studios Inc."};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__150901$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__150901$$);
+                  var $G__182200$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px]", "text-slate-600  dark:text-slate-400"]))), children:"© 2026 AZ Studios Inc."};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182200$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182200$$);
                 }(), function() {
-                  var $G__150905$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px]", "text-slate-400  dark:text-slate-600"]))), children:"v" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("c46bc58")};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__150905$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__150905$$);
+                  var $G__182205$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-[10px]", "text-slate-400  dark:text-slate-600"]))), children:"v" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("6311292")};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182205$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182205$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150896$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150896$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182196$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182196$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150872$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__150872$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182177$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182177$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__150867$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__150867$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182173$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182173$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("footer", $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$) : $APP.$helix$core$jsxs$$.call(null, "footer", $G__150751_props__41575__auto__$jscomp$7_route_name_vec__150744_vec__150747$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("footer", $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$) : $APP.$helix$core$jsxs$$.call(null, "footer", $G__182035_props__41575__auto__$jscomp$8_route_name_vec__182024_vec__182027$$);
 };
-$amp$ui$section_transitioner$page_layer$$ = function($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, $G__151008_151063_maybe_ref__41576__auto__$jscomp$8$$) {
-  $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$), $G__151008_151063_maybe_ref__41576__auto__$jscomp$8$$], null);
-  $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, 0, null);
-  $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$ = $APP.$cljs$core$__destructure_map$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$);
-  var $view$jscomp$7$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, $cljs$cst$288$view$$), $active_QMARK_$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, $APP.$cljs$cst$389$active_QMARK_$$), $on_remove$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, 
+$amp$ui$section_transitioner$page_layer$$ = function($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, $G__194425_194480_maybe_ref__41576__auto__$jscomp$9$$) {
+  $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$), $G__194425_194480_maybe_ref__41576__auto__$jscomp$9$$], null);
+  $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, 0, null);
+  $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$ = $APP.$cljs$core$__destructure_map$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$);
+  var $view$jscomp$7$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, $cljs$cst$288$view$$), $active_QMARK_$jscomp$5$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, $APP.$cljs$cst$389$active_QMARK_$$), $on_remove$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, 
   $cljs$cst$410$on_remove$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $wrapper_ref$$ = $APP.$helix$hooks$use_ref$$(null);
-  $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     $active_QMARK_$jscomp$5$$ === !1 && $APP.$module$node_modules$gsap$dist$gsap$$.gsap.to($wrapper_ref$$.current, {opacity:0, duration:0.4, ease:"power2.inOut", onComplete:$on_remove$$});
   });
-  $G__151008_151063_maybe_ref__41576__auto__$jscomp$8$$ = [$active_QMARK_$jscomp$5$$];
-  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, $G__151008_151063_maybe_ref__41576__auto__$jscomp$8$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$, $G__151008_151063_maybe_ref__41576__auto__$jscomp$8$$);
-  $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$ = function() {
+  $G__194425_194480_maybe_ref__41576__auto__$jscomp$9$$ = [$active_QMARK_$jscomp$5$$];
+  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, $G__194425_194480_maybe_ref__41576__auto__$jscomp$9$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$, $G__194425_194480_maybe_ref__41576__auto__$jscomp$9$$);
+  $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$ = function() {
     var $JSCompiler_temp_const$jscomp$2268$$ = $APP.$helix$impl$props$normalize_class$$($APP.$cljs$core$truth_$$($active_QMARK_$jscomp$5$$) ? "w-full overflow-x-hidden" : "absolute inset-0 w-full overflow-x-hidden");
-    var $G__151014$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$ = {};
-    $G__151014$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($view$jscomp$7$$, $G__151014$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$) : $APP.$helix$core$jsx$$.call(null, $view$jscomp$7$$, $G__151014$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$);
-    return {ref:$wrapper_ref$$, className:$JSCompiler_temp_const$jscomp$2268$$, children:$G__151014$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$};
+    var $G__194431$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$ = {};
+    $G__194431$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($view$jscomp$7$$, $G__194431$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$) : $APP.$helix$core$jsx$$.call(null, $view$jscomp$7$$, $G__194431$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$);
+    return {ref:$wrapper_ref$$, className:$JSCompiler_temp_const$jscomp$2268$$, children:$G__194431$jscomp$inline_2692_JSCompiler_inline_result$jscomp$2269$$};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151007_151062_G__151010_map__151006_map__151006__$1_props__41575__auto__$jscomp$8_vec__151003$$);
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194424_194479_G__194427_map__194423_map__194423__$1_props__41575__auto__$jscomp$9_vec__194420$$);
 };
-$amp$ui$section_transitioner$section_transitioner$$ = function($G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$, $G__151029_151065_maybe_ref__41576__auto__$jscomp$9$$) {
-  var $vec__151019$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$), $G__151029_151065_maybe_ref__41576__auto__$jscomp$9$$], null);
+$amp$ui$section_transitioner$section_transitioner$$ = function($G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$, $G__194446_194482_maybe_ref__41576__auto__$jscomp$10$$) {
+  var $vec__194436$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$), $G__194446_194482_maybe_ref__41576__auto__$jscomp$10$$], null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  var $vec__151022$$ = $APP.$amp$state$provider$use_main_state$$(), $state$jscomp$15$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__151022$$, 0, null), $_$jscomp$352$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__151022$$, 1, null), $vec__151025$$ = $APP.$helix$hooks$use_state$$($APP.$cljs$core$PersistentVector$EMPTY$$), $view_stack$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__151025$$, 0, null), $set_view_stack_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__151025$$, 
+  var $vec__194439$$ = $APP.$amp$state$provider$use_main_state$$(), $state$jscomp$15$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__194439$$, 0, null), $_$jscomp$352$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__194439$$, 1, null), $vec__194442$$ = $APP.$helix$hooks$use_state$$($APP.$cljs$core$PersistentVector$EMPTY$$), $view_stack$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__194442$$, 0, null), $set_view_stack_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__194442$$, 
   1, null), $current_state_view_data$$ = $APP.$cljs$cst$28$data$$.$cljs$core$IFn$_invoke$arity$1$($APP.$cljs$cst$104$current_route$$.$cljs$core$IFn$_invoke$arity$1$($state$jscomp$15$$)), $state_view$$ = $cljs$cst$288$view$$.$cljs$core$IFn$_invoke$arity$1$($current_state_view_data$$), $state_view_id$$ = $APP.$cljs$cst$165$name$$.$cljs$core$IFn$_invoke$arity$1$($current_state_view_data$$), $hide_footer_QMARK_$jscomp$1$$ = $cljs$cst$294$hide_footer_QMARK_$$.$cljs$core$IFn$_invoke$arity$1$($current_state_view_data$$), 
   $has_state_view_QMARK_$$ = $state_view_id$$ instanceof $APP.$cljs$core$Keyword$$;
-  $G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     if ($has_state_view_QMARK_$$ && $APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($state_view_id$$, $APP.$cljs$cst$285$id$$.$cljs$core$IFn$_invoke$arity$1$($cljs$core$last$$($view_stack$$)))) {
-      var $G__151030$$ = function($JSCompiler_temp$jscomp$2964_prev$jscomp$8$$) {
+      var $G__194447$$ = function($JSCompiler_temp$jscomp$2964_prev$jscomp$8$$) {
         if (!$APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($state_view_id$$, $APP.$cljs$cst$285$id$$.$cljs$core$IFn$_invoke$arity$1$($cljs$core$last$$($JSCompiler_temp$jscomp$2964_prev$jscomp$8$$)))) {
           var $JSCompiler_temp_const$jscomp$2965$$ = $APP.$cljs$core$conj$$.$cljs$core$IFn$_invoke$arity$2$;
           a: {
@@ -13613,81 +13632,81 @@ $amp$ui$section_transitioner$section_transitioner$$ = function($G__151028_151064
         }
         return $JSCompiler_temp$jscomp$2964_prev$jscomp$8$$;
       };
-      return $set_view_stack_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__151030$$) : $set_view_stack_BANG_$$.call(null, $G__151030$$);
+      return $set_view_stack_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__194447$$) : $set_view_stack_BANG_$$.call(null, $G__194447$$);
     }
     return null;
   });
-  $G__151029_151065_maybe_ref__41576__auto__$jscomp$9$$ = [$state_view$$, $state_view_id$$];
-  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$, $G__151029_151065_maybe_ref__41576__auto__$jscomp$9$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$, $G__151029_151065_maybe_ref__41576__auto__$jscomp$9$$);
-  $G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$ = function() {
+  $G__194446_194482_maybe_ref__41576__auto__$jscomp$10$$ = [$state_view$$, $state_view_id$$];
+  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$, $G__194446_194482_maybe_ref__41576__auto__$jscomp$10$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$, $G__194446_194482_maybe_ref__41576__auto__$jscomp$10$$);
+  $G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$ = function() {
     return {children:[function() {
-      var $G__151036$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$menu$menu$$, $G__151036$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu$$, $G__151036$$);
+      var $G__194453$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$menu$menu$$, $G__194453$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$menu$menu$$, $G__194453$$);
     }(), function() {
-      var $G__151038$$ = function() {
+      var $G__194455$$ = function() {
         return {className:"relative", children:$has_state_view_QMARK_$$ ? function() {
-          return function $amp$ui$section_transitioner$section_transitioner_render_$_iter__151041$$($s__151042$$) {
+          return function $amp$ui$section_transitioner$section_transitioner_render_$_iter__194458$$($s__194459$$) {
             return new $APP.$cljs$core$LazySeq$$(null, function() {
               for (;;) {
-                var $temp__5823__auto__$jscomp$73$$ = $APP.$cljs$core$seq$$($s__151042$$);
+                var $temp__5823__auto__$jscomp$73$$ = $APP.$cljs$core$seq$$($s__194459$$);
                 if ($temp__5823__auto__$jscomp$73$$) {
-                  var $s__151042__$2$$ = $temp__5823__auto__$jscomp$73$$;
-                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__151042__$2$$)) {
-                    var $c__5626__auto__$jscomp$16$$ = $APP.$cljs$core$_chunked_first$$($s__151042__$2$$), $size__5627__auto__$jscomp$16$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$16$$), $b__151044$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$16$$);
+                  var $s__194459__$2$$ = $temp__5823__auto__$jscomp$73$$;
+                  if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__194459__$2$$)) {
+                    var $c__5626__auto__$jscomp$16$$ = $APP.$cljs$core$_chunked_first$$($s__194459__$2$$), $size__5627__auto__$jscomp$16$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$16$$), $b__194461$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$16$$);
                     return function() {
-                      for (var $i__151043$$ = 0;;) {
-                        if ($i__151043$$ < $size__5627__auto__$jscomp$16$$) {
-                          var $i__42680__auto__$jscomp$1$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$16$$, $i__151043$$);
-                          $cljs$core$chunk_append$$($b__151044$$, function() {
-                            var $G__151047_map__151045$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($view_stack$$, $i__42680__auto__$jscomp$1$$), $map__151045__$1$$ = $APP.$cljs$core$__destructure_map$$($G__151047_map__151045$$), $view$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151045__$1$$, $cljs$cst$288$view$$), $uuid$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151045__$1$$, $cljs$cst$411$uuid$$), $idx$jscomp$56$$ = 
+                      for (var $i__194460$$ = 0;;) {
+                        if ($i__194460$$ < $size__5627__auto__$jscomp$16$$) {
+                          var $i__42680__auto__$jscomp$1$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$16$$, $i__194460$$);
+                          $cljs$core$chunk_append$$($b__194461$$, function() {
+                            var $G__194464_map__194462$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($view_stack$$, $i__42680__auto__$jscomp$1$$), $map__194462__$1$$ = $APP.$cljs$core$__destructure_map$$($G__194464_map__194462$$), $view$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194462__$1$$, $cljs$cst$288$view$$), $uuid$jscomp$3$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194462__$1$$, $cljs$cst$411$uuid$$), $idx$jscomp$56$$ = 
                             $i__42680__auto__$jscomp$1$$, $stack_size$$ = $APP.$cljs$core$count$$($view_stack$$), $is_active_QMARK_$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($idx$jscomp$56$$, $stack_size$$ - 1);
-                            $G__151047_map__151045$$ = $APP.$helix$impl$props$merge_obj$$({view:$view$jscomp$8$$, "active?":$is_active_QMARK_$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$410$on_remove$$, function($i__151043$jscomp$1$$, $G__151046$jscomp$1$$, $stack_size$jscomp$1$$, $is_active_QMARK_$jscomp$1$$, $map__151045$jscomp$1$$, $map__151045__$1$jscomp$1$$, $view$jscomp$9$$, $uuid$jscomp$4$$, $idx$jscomp$57$$, 
-                            $i__42680__auto__$jscomp$2$$, $c__5626__auto__$jscomp$17$$, $size__5627__auto__$jscomp$17$$, $b__151044$jscomp$1$$, $s__151042__$2$jscomp$1$$, $temp__5823__auto__$jscomp$74$$, $G__151037$jscomp$1$$, $G__151031$jscomp$1$$, $vec__151022$jscomp$1$$, $state$jscomp$16$$, $_$jscomp$353$$, $vec__151025$jscomp$1$$, $view_stack$jscomp$1$$, $set_view_stack_BANG_$jscomp$1$$, $current_state_view_data$jscomp$1$$, $state_view$jscomp$1$$, $state_view_id$jscomp$1$$, $hide_footer_QMARK_$jscomp$2$$, 
-                            $has_state_view_QMARK_$jscomp$1$$, $vec__151019$jscomp$1$$) {
+                            $G__194464_map__194462$$ = $APP.$helix$impl$props$merge_obj$$({view:$view$jscomp$8$$, "active?":$is_active_QMARK_$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$410$on_remove$$, function($i__194460$jscomp$1$$, $G__194463$jscomp$1$$, $stack_size$jscomp$1$$, $is_active_QMARK_$jscomp$1$$, $map__194462$jscomp$1$$, $map__194462__$1$jscomp$1$$, $view$jscomp$9$$, $uuid$jscomp$4$$, $idx$jscomp$57$$, 
+                            $i__42680__auto__$jscomp$2$$, $c__5626__auto__$jscomp$17$$, $size__5627__auto__$jscomp$17$$, $b__194461$jscomp$1$$, $s__194459__$2$jscomp$1$$, $temp__5823__auto__$jscomp$74$$, $G__194454$jscomp$1$$, $G__194448$jscomp$1$$, $vec__194439$jscomp$1$$, $state$jscomp$16$$, $_$jscomp$353$$, $vec__194442$jscomp$1$$, $view_stack$jscomp$1$$, $set_view_stack_BANG_$jscomp$1$$, $current_state_view_data$jscomp$1$$, $state_view$jscomp$1$$, $state_view_id$jscomp$1$$, $hide_footer_QMARK_$jscomp$2$$, 
+                            $has_state_view_QMARK_$jscomp$1$$, $vec__194436$jscomp$1$$) {
                               return function() {
-                                var $G__151051$$ = function($i__151043$jscomp$2$$, $G__151046$jscomp$2$$, $stack_size$jscomp$2$$, $is_active_QMARK_$jscomp$2$$, $map__151045$jscomp$2$$, $map__151045__$1$jscomp$2$$, $view$jscomp$10$$, $uuid$jscomp$5$$, $idx$jscomp$58$$, $i__42680__auto__$jscomp$3$$, $c__5626__auto__$jscomp$18$$, $size__5627__auto__$jscomp$18$$, $b__151044$jscomp$2$$, $s__151042__$2$jscomp$2$$, $temp__5823__auto__$jscomp$75$$, $G__151037$jscomp$2$$, $G__151031$jscomp$2$$, $vec__151022$jscomp$2$$, 
-                                $state$jscomp$17$$, $_$jscomp$354$$, $vec__151025$jscomp$2$$, $view_stack$jscomp$2$$, $set_view_stack_BANG_$jscomp$2$$, $current_state_view_data$jscomp$2$$, $state_view$jscomp$2$$, $state_view_id$jscomp$2$$, $hide_footer_QMARK_$jscomp$3$$, $has_state_view_QMARK_$jscomp$2$$, $vec__151019$jscomp$2$$) {
+                                var $G__194468$$ = function($i__194460$jscomp$2$$, $G__194463$jscomp$2$$, $stack_size$jscomp$2$$, $is_active_QMARK_$jscomp$2$$, $map__194462$jscomp$2$$, $map__194462__$1$jscomp$2$$, $view$jscomp$10$$, $uuid$jscomp$5$$, $idx$jscomp$58$$, $i__42680__auto__$jscomp$3$$, $c__5626__auto__$jscomp$18$$, $size__5627__auto__$jscomp$18$$, $b__194461$jscomp$2$$, $s__194459__$2$jscomp$2$$, $temp__5823__auto__$jscomp$75$$, $G__194454$jscomp$2$$, $G__194448$jscomp$2$$, $vec__194439$jscomp$2$$, 
+                                $state$jscomp$17$$, $_$jscomp$354$$, $vec__194442$jscomp$2$$, $view_stack$jscomp$2$$, $set_view_stack_BANG_$jscomp$2$$, $current_state_view_data$jscomp$2$$, $state_view$jscomp$2$$, $state_view_id$jscomp$2$$, $hide_footer_QMARK_$jscomp$3$$, $has_state_view_QMARK_$jscomp$2$$, $vec__194436$jscomp$2$$) {
                                   return function($prev$jscomp$9$$) {
-                                    return $cljs$core$filterv$$(function($i__151043$jscomp$3$$, $G__151046$jscomp$3$$, $stack_size$jscomp$3$$, $is_active_QMARK_$jscomp$3$$, $map__151045$jscomp$3$$, $map__151045__$1$jscomp$3$$, $view$jscomp$11$$, $uuid$jscomp$6$$) {
-                                      return function($p1__151016_SHARP_$$) {
-                                        return $APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$cst$411$uuid$$.$cljs$core$IFn$_invoke$arity$1$($p1__151016_SHARP_$$), $uuid$jscomp$6$$);
+                                    return $cljs$core$filterv$$(function($i__194460$jscomp$3$$, $G__194463$jscomp$3$$, $stack_size$jscomp$3$$, $is_active_QMARK_$jscomp$3$$, $map__194462$jscomp$3$$, $map__194462__$1$jscomp$3$$, $view$jscomp$11$$, $uuid$jscomp$6$$) {
+                                      return function($p1__194433_SHARP_$$) {
+                                        return $APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$cst$411$uuid$$.$cljs$core$IFn$_invoke$arity$1$($p1__194433_SHARP_$$), $uuid$jscomp$6$$);
                                       };
-                                    }($i__151043$jscomp$2$$, $G__151046$jscomp$2$$, $stack_size$jscomp$2$$, $is_active_QMARK_$jscomp$2$$, $map__151045$jscomp$2$$, $map__151045__$1$jscomp$2$$, $view$jscomp$10$$, $uuid$jscomp$5$$, $idx$jscomp$58$$, $i__42680__auto__$jscomp$3$$, $c__5626__auto__$jscomp$18$$, $size__5627__auto__$jscomp$18$$, $b__151044$jscomp$2$$, $s__151042__$2$jscomp$2$$, $temp__5823__auto__$jscomp$75$$, $G__151037$jscomp$2$$, $G__151031$jscomp$2$$, $vec__151022$jscomp$2$$, $state$jscomp$17$$, 
-                                    $_$jscomp$354$$, $vec__151025$jscomp$2$$, $view_stack$jscomp$2$$, $set_view_stack_BANG_$jscomp$2$$, $current_state_view_data$jscomp$2$$, $state_view$jscomp$2$$, $state_view_id$jscomp$2$$, $hide_footer_QMARK_$jscomp$3$$, $has_state_view_QMARK_$jscomp$2$$, $vec__151019$jscomp$2$$), $prev$jscomp$9$$);
+                                    }($i__194460$jscomp$2$$, $G__194463$jscomp$2$$, $stack_size$jscomp$2$$, $is_active_QMARK_$jscomp$2$$, $map__194462$jscomp$2$$, $map__194462__$1$jscomp$2$$, $view$jscomp$10$$, $uuid$jscomp$5$$, $idx$jscomp$58$$, $i__42680__auto__$jscomp$3$$, $c__5626__auto__$jscomp$18$$, $size__5627__auto__$jscomp$18$$, $b__194461$jscomp$2$$, $s__194459__$2$jscomp$2$$, $temp__5823__auto__$jscomp$75$$, $G__194454$jscomp$2$$, $G__194448$jscomp$2$$, $vec__194439$jscomp$2$$, $state$jscomp$17$$, 
+                                    $_$jscomp$354$$, $vec__194442$jscomp$2$$, $view_stack$jscomp$2$$, $set_view_stack_BANG_$jscomp$2$$, $current_state_view_data$jscomp$2$$, $state_view$jscomp$2$$, $state_view_id$jscomp$2$$, $hide_footer_QMARK_$jscomp$3$$, $has_state_view_QMARK_$jscomp$2$$, $vec__194436$jscomp$2$$), $prev$jscomp$9$$);
                                   };
-                                }($i__151043$jscomp$1$$, $G__151046$jscomp$1$$, $stack_size$jscomp$1$$, $is_active_QMARK_$jscomp$1$$, $map__151045$jscomp$1$$, $map__151045__$1$jscomp$1$$, $view$jscomp$9$$, $uuid$jscomp$4$$, $idx$jscomp$57$$, $i__42680__auto__$jscomp$2$$, $c__5626__auto__$jscomp$17$$, $size__5627__auto__$jscomp$17$$, $b__151044$jscomp$1$$, $s__151042__$2$jscomp$1$$, $temp__5823__auto__$jscomp$74$$, $G__151037$jscomp$1$$, $G__151031$jscomp$1$$, $vec__151022$jscomp$1$$, $state$jscomp$16$$, 
-                                $_$jscomp$353$$, $vec__151025$jscomp$1$$, $view_stack$jscomp$1$$, $set_view_stack_BANG_$jscomp$1$$, $current_state_view_data$jscomp$1$$, $state_view$jscomp$1$$, $state_view_id$jscomp$1$$, $hide_footer_QMARK_$jscomp$2$$, $has_state_view_QMARK_$jscomp$1$$, $vec__151019$jscomp$1$$);
-                                return $set_view_stack_BANG_$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$($G__151051$$) : $set_view_stack_BANG_$jscomp$1$$.call(null, $G__151051$$);
+                                }($i__194460$jscomp$1$$, $G__194463$jscomp$1$$, $stack_size$jscomp$1$$, $is_active_QMARK_$jscomp$1$$, $map__194462$jscomp$1$$, $map__194462__$1$jscomp$1$$, $view$jscomp$9$$, $uuid$jscomp$4$$, $idx$jscomp$57$$, $i__42680__auto__$jscomp$2$$, $c__5626__auto__$jscomp$17$$, $size__5627__auto__$jscomp$17$$, $b__194461$jscomp$1$$, $s__194459__$2$jscomp$1$$, $temp__5823__auto__$jscomp$74$$, $G__194454$jscomp$1$$, $G__194448$jscomp$1$$, $vec__194439$jscomp$1$$, $state$jscomp$16$$, 
+                                $_$jscomp$353$$, $vec__194442$jscomp$1$$, $view_stack$jscomp$1$$, $set_view_stack_BANG_$jscomp$1$$, $current_state_view_data$jscomp$1$$, $state_view$jscomp$1$$, $state_view_id$jscomp$1$$, $hide_footer_QMARK_$jscomp$2$$, $has_state_view_QMARK_$jscomp$1$$, $vec__194436$jscomp$1$$);
+                                return $set_view_stack_BANG_$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$($G__194468$$) : $set_view_stack_BANG_$jscomp$1$$.call(null, $G__194468$$);
                               };
-                            }($i__151043$$, $amp$ui$section_transitioner$page_layer$$, $stack_size$$, $is_active_QMARK_$$, $G__151047_map__151045$$, $map__151045__$1$$, $view$jscomp$8$$, $uuid$jscomp$3$$, $idx$jscomp$56$$, $i__42680__auto__$jscomp$1$$, $c__5626__auto__$jscomp$16$$, $size__5627__auto__$jscomp$16$$, $b__151044$$, $s__151042__$2$$, $temp__5823__auto__$jscomp$73$$, "div", "div", $vec__151022$$, $state$jscomp$15$$, $_$jscomp$352$$, $vec__151025$$, $view_stack$$, $set_view_stack_BANG_$$, 
-                            $current_state_view_data$$, $state_view$$, $state_view_id$$, $hide_footer_QMARK_$jscomp$1$$, $has_state_view_QMARK_$$, $vec__151019$$)], null)));
-                            return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$ui$section_transitioner$page_layer$$, $G__151047_map__151045$$, $uuid$jscomp$3$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$page_layer$$, $G__151047_map__151045$$, $uuid$jscomp$3$$);
+                            }($i__194460$$, $amp$ui$section_transitioner$page_layer$$, $stack_size$$, $is_active_QMARK_$$, $G__194464_map__194462$$, $map__194462__$1$$, $view$jscomp$8$$, $uuid$jscomp$3$$, $idx$jscomp$56$$, $i__42680__auto__$jscomp$1$$, $c__5626__auto__$jscomp$16$$, $size__5627__auto__$jscomp$16$$, $b__194461$$, $s__194459__$2$$, $temp__5823__auto__$jscomp$73$$, "div", "div", $vec__194439$$, $state$jscomp$15$$, $_$jscomp$352$$, $vec__194442$$, $view_stack$$, $set_view_stack_BANG_$$, 
+                            $current_state_view_data$$, $state_view$$, $state_view_id$$, $hide_footer_QMARK_$jscomp$1$$, $has_state_view_QMARK_$$, $vec__194436$$)], null)));
+                            return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$ui$section_transitioner$page_layer$$, $G__194464_map__194462$$, $uuid$jscomp$3$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$page_layer$$, $G__194464_map__194462$$, $uuid$jscomp$3$$);
                           }());
-                          $i__151043$$ += 1;
+                          $i__194460$$ += 1;
                         } else {
                           return !0;
                         }
                       }
-                    }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__151044$$), $amp$ui$section_transitioner$section_transitioner_render_$_iter__151041$$($APP.$cljs$core$_chunked_rest$$($s__151042__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__151044$$), null);
+                    }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194461$$), $amp$ui$section_transitioner$section_transitioner_render_$_iter__194458$$($APP.$cljs$core$_chunked_rest$$($s__194459__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__194461$$), null);
                   }
-                  var $i__42680__auto__$$ = $APP.$cljs$core$first$$($s__151042__$2$$);
+                  var $i__42680__auto__$$ = $APP.$cljs$core$first$$($s__194459__$2$$);
                   return $APP.$cljs$core$cons$$(function() {
-                    var $G__151054_map__151052$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($view_stack$$, $i__42680__auto__$$), $map__151052__$1$$ = $APP.$cljs$core$__destructure_map$$($G__151054_map__151052$$), $view$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151052__$1$$, $cljs$cst$288$view$$), $uuid$jscomp$7$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151052__$1$$, $cljs$cst$411$uuid$$), $idx$jscomp$60$$ = $i__42680__auto__$$, 
+                    var $G__194471_map__194469$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($view_stack$$, $i__42680__auto__$$), $map__194469__$1$$ = $APP.$cljs$core$__destructure_map$$($G__194471_map__194469$$), $view$jscomp$12$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194469__$1$$, $cljs$cst$288$view$$), $uuid$jscomp$7$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__194469__$1$$, $cljs$cst$411$uuid$$), $idx$jscomp$60$$ = $i__42680__auto__$$, 
                     $stack_size$jscomp$4$$ = $APP.$cljs$core$count$$($view_stack$$), $is_active_QMARK_$jscomp$4$$ = $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($idx$jscomp$60$$, $stack_size$jscomp$4$$ - 1);
-                    $G__151054_map__151052$$ = $APP.$helix$impl$props$merge_obj$$({view:$view$jscomp$12$$, "active?":$is_active_QMARK_$jscomp$4$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$410$on_remove$$, function($G__151053$jscomp$1$$, $stack_size$jscomp$5$$, $is_active_QMARK_$jscomp$5$$, $map__151052$jscomp$1$$, $map__151052__$1$jscomp$1$$, $view$jscomp$13$$, $uuid$jscomp$8$$, $idx$jscomp$61$$, $i__42680__auto__$jscomp$5$$, 
-                    $s__151042__$2$jscomp$4$$, $temp__5823__auto__$jscomp$77$$, $G__151037$jscomp$4$$, $G__151031$jscomp$4$$, $vec__151022$jscomp$4$$, $state$jscomp$19$$, $_$jscomp$356$$, $vec__151025$jscomp$4$$, $view_stack$jscomp$4$$, $set_view_stack_BANG_$jscomp$4$$) {
+                    $G__194471_map__194469$$ = $APP.$helix$impl$props$merge_obj$$({view:$view$jscomp$12$$, "active?":$is_active_QMARK_$jscomp$4$$}, $APP.$helix$impl$props$_props$cljs$0core$0IFn$0_invoke$0arity$01$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$410$on_remove$$, function($G__194470$jscomp$1$$, $stack_size$jscomp$5$$, $is_active_QMARK_$jscomp$5$$, $map__194469$jscomp$1$$, $map__194469__$1$jscomp$1$$, $view$jscomp$13$$, $uuid$jscomp$8$$, $idx$jscomp$61$$, $i__42680__auto__$jscomp$5$$, 
+                    $s__194459__$2$jscomp$4$$, $temp__5823__auto__$jscomp$77$$, $G__194454$jscomp$4$$, $G__194448$jscomp$4$$, $vec__194439$jscomp$4$$, $state$jscomp$19$$, $_$jscomp$356$$, $vec__194442$jscomp$4$$, $view_stack$jscomp$4$$, $set_view_stack_BANG_$jscomp$4$$) {
                       return function() {
-                        function $G__151058$$($prev$jscomp$10$$) {
-                          return $cljs$core$filterv$$(function($p1__151016_SHARP_$jscomp$1$$) {
-                            return $APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$cst$411$uuid$$.$cljs$core$IFn$_invoke$arity$1$($p1__151016_SHARP_$jscomp$1$$), $uuid$jscomp$8$$);
+                        function $G__194475$$($prev$jscomp$10$$) {
+                          return $cljs$core$filterv$$(function($p1__194433_SHARP_$jscomp$1$$) {
+                            return $APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$cst$411$uuid$$.$cljs$core$IFn$_invoke$arity$1$($p1__194433_SHARP_$jscomp$1$$), $uuid$jscomp$8$$);
                           }, $prev$jscomp$10$$);
                         }
-                        return $set_view_stack_BANG_$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$($G__151058$$) : $set_view_stack_BANG_$jscomp$4$$.call(null, $G__151058$$);
+                        return $set_view_stack_BANG_$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_view_stack_BANG_$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$($G__194475$$) : $set_view_stack_BANG_$jscomp$4$$.call(null, $G__194475$$);
                       };
-                    }($amp$ui$section_transitioner$page_layer$$, $stack_size$jscomp$4$$, $is_active_QMARK_$jscomp$4$$, $G__151054_map__151052$$, $map__151052__$1$$, $view$jscomp$12$$, $uuid$jscomp$7$$, $idx$jscomp$60$$, $i__42680__auto__$$, $s__151042__$2$$, $temp__5823__auto__$jscomp$73$$, "div", "div", $vec__151022$$, $state$jscomp$15$$, $_$jscomp$352$$, $vec__151025$$, $view_stack$$, $set_view_stack_BANG_$$, $current_state_view_data$$, $state_view$$, $state_view_id$$, $hide_footer_QMARK_$jscomp$1$$, 
-                    $has_state_view_QMARK_$$, $vec__151019$$)], null)));
-                    return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$ui$section_transitioner$page_layer$$, $G__151054_map__151052$$, $uuid$jscomp$7$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$page_layer$$, $G__151054_map__151052$$, $uuid$jscomp$7$$);
-                  }(), $amp$ui$section_transitioner$section_transitioner_render_$_iter__151041$$($APP.$cljs$core$rest$$($s__151042__$2$$)));
+                    }($amp$ui$section_transitioner$page_layer$$, $stack_size$jscomp$4$$, $is_active_QMARK_$jscomp$4$$, $G__194471_map__194469$$, $map__194469__$1$$, $view$jscomp$12$$, $uuid$jscomp$7$$, $idx$jscomp$60$$, $i__42680__auto__$$, $s__194459__$2$$, $temp__5823__auto__$jscomp$73$$, "div", "div", $vec__194439$$, $state$jscomp$15$$, $_$jscomp$352$$, $vec__194442$$, $view_stack$$, $set_view_stack_BANG_$$, $current_state_view_data$$, $state_view$$, $state_view_id$$, $hide_footer_QMARK_$jscomp$1$$, 
+                    $has_state_view_QMARK_$$, $vec__194436$$)], null)));
+                    return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($amp$ui$section_transitioner$page_layer$$, $G__194471_map__194469$$, $uuid$jscomp$7$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$page_layer$$, $G__194471_map__194469$$, $uuid$jscomp$7$$);
+                  }(), $amp$ui$section_transitioner$section_transitioner_render_$_iter__194458$$($APP.$cljs$core$rest$$($s__194459__$2$$)));
                 }
                 return null;
               }
@@ -13695,24 +13714,24 @@ $amp$ui$section_transitioner$section_transitioner$$ = function($G__151028_151064
           }($cljs$core$range$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$cljs$core$count$$($view_stack$$)));
         }() : null};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151038$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151038$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194455$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__194455$$);
     }(), $has_state_view_QMARK_$$ && $APP.$cljs$core$not$$($hide_footer_QMARK_$jscomp$1$$) ? function() {
-      var $G__151060$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$site_footer$$, $G__151060$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$site_footer$$, $G__151060$$);
+      var $G__194477$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$footer$site_footer$$, $G__194477$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$footer$site_footer$$, $G__194477$$);
     }() : null]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151028_151064_G__151032_props__41575__auto__$jscomp$9$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__194445_194481_G__194449_props__41575__auto__$jscomp$10$$);
 };
-$amp$core$app$$ = function($G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$) {
-  $APP.$helix$core$extract_cljs_props$$($G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$);
+$amp$core$app$$ = function($G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$) {
+  $APP.$helix$core$extract_cljs_props$$($G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   $APP.$amp$hooks$use_media_query$use_touch_enabled$$();
-  $G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$ = $APP.$cljs$core$PersistentArrayMap$EMPTY$$;
-  var $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = {};
-  $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = {children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$section_transitioner$section_transitioner$$, $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$section_transitioner$$, $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$)};
-  $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$services$router$router$$, $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$) : $APP.$helix$core$jsx$$.call(null, $amp$services$router$router$$, $G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$);
-  $G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$ = {"default-state":$G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$, children:$G__151181$jscomp$inline_3559_G__151183$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$state$provider$MainProvider$$, $G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$) : $APP.$helix$core$jsx$$.call(null, $amp$state$provider$MainProvider$$, $G__151177_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$10$$);
+  $G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$ = $APP.$cljs$core$PersistentArrayMap$EMPTY$$;
+  var $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = {};
+  $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = {children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$section_transitioner$section_transitioner$$, $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$section_transitioner$section_transitioner$$, $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$)};
+  $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$services$router$router$$, $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$) : $APP.$helix$core$jsx$$.call(null, $amp$services$router$router$$, $G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$);
+  $G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$ = {"default-state":$G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$, children:$G__194494$jscomp$inline_3559_G__194496$jscomp$inline_3558_JSCompiler_inline_result$jscomp$inline_3557$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$state$provider$MainProvider$$, $G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$) : $APP.$helix$core$jsx$$.call(null, $amp$state$provider$MainProvider$$, $G__194490_JSCompiler_temp_const$jscomp$inline_3556_props__41575__auto__$jscomp$11$$);
 };
 $amp$ui$map$geojson_layer$$ = function($G__58646_map__58640_map__58640__$1_props__41636__auto__$jscomp$1_vec__58637$$, $G__58647_maybe_ref__41637__auto__$jscomp$1$$) {
   $G__58646_map__58640_map__58640__$1_props__41636__auto__$jscomp$1_vec__58637$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__58646_map__58640_map__58640__$1_props__41636__auto__$jscomp$1_vec__58637$$), $G__58647_maybe_ref__41637__auto__$jscomp$1$$], null);
@@ -15481,13 +15500,13 @@ $amp$ui$threejs_slide$setup_mini_scene_BANG_$$ = function($container$jscomp$1$$,
   $wrapper$jscomp$6$$.style.height = "100%";
   $wrapper$jscomp$6$$.style.position = "relative";
   $container$jscomp$1$$.appendChild($wrapper$jscomp$6$$);
-  var $data_atom$$ = $APP.$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$($canvas$jscomp$7_scene_data$$) : $APP.$reagent$ratom$atom$$.call(null, $canvas$jscomp$7_scene_data$$), $ctx$jscomp$17_map__151264__$1_target$jscomp$112$$ = $APP.$threeagent$core$render$cljs$0core$0IFn$0_invoke$0arity$03$$(function() {
+  var $data_atom$$ = $APP.$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$reagent$ratom$atom$$.$cljs$core$IFn$_invoke$arity$1$($canvas$jscomp$7_scene_data$$) : $APP.$reagent$ratom$atom$$.call(null, $canvas$jscomp$7_scene_data$$), $ctx$jscomp$17_map__182906__$1_target$jscomp$112$$ = $APP.$threeagent$core$render$cljs$0core$0IFn$0_invoke$0arity$03$$(function() {
     var $data$jscomp$140$$ = $APP.$cljs$core$_deref$$($data_atom$$);
     return $APP.$cljs$core$truth_$$($data$jscomp$140$$) ? $APP.$amp$pages$mockup$renderers$simple_stack_formation$render$$.$cljs$core$IFn$_invoke$arity$2$($data$jscomp$140$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 3, [$APP.$cljs$cst$692$wireframe_QMARK_$$, !1, $APP.$cljs$cst$693$show_ground_QMARK_$$, !0, $APP.$cljs$cst$694$selection$$, null], null)) : new $APP.$cljs$core$PersistentVector$$(null, 1, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$cljs$cst$547$object$$], null);
-  }, $wrapper$jscomp$6$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 3, [$APP.$cljs$cst$675$antialias$$, !0, $APP.$cljs$cst$660$shadow_map$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$APP.$cljs$cst$657$enabled$$, !0, $APP.$cljs$cst$25$type$$, $APP.$module$node_modules$three$build$three_cjs$$.PCFSoftShadowMap], null), $APP.$cljs$cst$661$entity_types$$, $APP.$amp$pages$mockup$objects$custom_entity_types$$], null)), $renderer$jscomp$9$$ = $APP.$cljs$cst$648$threejs_renderer$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$), 
-  $camera$jscomp$8$$ = $APP.$cljs$cst$650$threejs_default_camera$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$);
-  $canvas$jscomp$7_scene_data$$ = $APP.$cljs$cst$651$canvas$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$);
-  var $scene$jscomp$19$$ = $APP.$cljs$cst$649$threejs_scene$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$);
+  }, $wrapper$jscomp$6$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 3, [$APP.$cljs$cst$675$antialias$$, !0, $APP.$cljs$cst$660$shadow_map$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$APP.$cljs$cst$657$enabled$$, !0, $APP.$cljs$cst$25$type$$, $APP.$module$node_modules$three$build$three_cjs$$.PCFSoftShadowMap], null), $APP.$cljs$cst$661$entity_types$$, $APP.$amp$pages$mockup$objects$custom_entity_types$$], null)), $renderer$jscomp$9$$ = $APP.$cljs$cst$648$threejs_renderer$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$), 
+  $camera$jscomp$8$$ = $APP.$cljs$cst$650$threejs_default_camera$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$);
+  $canvas$jscomp$7_scene_data$$ = $APP.$cljs$cst$651$canvas$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$);
+  var $scene$jscomp$19$$ = $APP.$cljs$cst$649$threejs_scene$$.$cljs$core$IFn$_invoke$arity$1$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$);
   $canvas$jscomp$7_scene_data$$.style.width = "100%";
   $canvas$jscomp$7_scene_data$$.style.height = "100%";
   $canvas$jscomp$7_scene_data$$.style.display = "block";
@@ -15495,9 +15514,9 @@ $amp$ui$threejs_slide$setup_mini_scene_BANG_$$ = function($container$jscomp$1$$,
   $canvas$jscomp$7_scene_data$$.style.inset = "0";
   var $sky_state_atom$$ = $APP.$cljs$core$atom$cljs$0core$0IFn$0_invoke$0arity$01$$($APP.$amp$pages$mockup$scene$setup_sky_BANG_$$($scene$jscomp$19$$));
   $APP.$amp$pages$mockup$scene$setup_renderer_defaults_BANG_$$($renderer$jscomp$9$$, $camera$jscomp$8$$, $APP.$cljs$core$_deref$$($sky_state_atom$$));
-  $ctx$jscomp$17_map__151264__$1_target$jscomp$112$$ = $APP.$cljs$core$__destructure_map$$($camera_opts_position$jscomp$11$$);
-  $camera_opts_position$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$, $APP.$cljs$cst$447$position$$, new $APP.$cljs$core$PersistentVector$$(null, 3, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [250, 250, 250], null));
-  $ctx$jscomp$17_map__151264__$1_target$jscomp$112$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$, $APP.$cljs$cst$609$target$$, new $APP.$cljs$core$PersistentVector$$(null, 3, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [10, 60, 0], null));
+  $ctx$jscomp$17_map__182906__$1_target$jscomp$112$$ = $APP.$cljs$core$__destructure_map$$($camera_opts_position$jscomp$11$$);
+  $camera_opts_position$jscomp$11$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$, $APP.$cljs$cst$447$position$$, new $APP.$cljs$core$PersistentVector$$(null, 3, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [250, 250, 250], null));
+  $ctx$jscomp$17_map__182906__$1_target$jscomp$112$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$, $APP.$cljs$cst$609$target$$, new $APP.$cljs$core$PersistentVector$$(null, 3, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [10, 60, 0], null));
   $camera$jscomp$8$$.position.set($APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($camera_opts_position$jscomp$11$$, 0), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($camera_opts_position$jscomp$11$$, 1), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($camera_opts_position$jscomp$11$$, 2));
   $resize_BANG_$$();
   var $controls$jscomp$1$$ = new $APP.$module$node_modules$three$examples$jsm$controls$OrbitControls$$.OrbitControls($camera$jscomp$8$$, $canvas$jscomp$7_scene_data$$);
@@ -15507,27 +15526,27 @@ $amp$ui$threejs_slide$setup_mini_scene_BANG_$$ = function($container$jscomp$1$$,
   $controls$jscomp$1$$.screenSpacePanning = !0;
   $controls$jscomp$1$$.autoRotate = !0;
   $controls$jscomp$1$$.autoRotateSpeed = 1.0;
-  $controls$jscomp$1$$.target.set($APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$, 0), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$, 1), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__151264__$1_target$jscomp$112$$, 2));
+  $controls$jscomp$1$$.target.set($APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$, 0), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$, 1), $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$02$$($ctx$jscomp$17_map__182906__$1_target$jscomp$112$$, 2));
   $controls$jscomp$1$$.update();
   var $raf_id$$ = $APP.$cljs$core$atom$cljs$0core$0IFn$0_invoke$0arity$01$$(null), $shadow_configured_QMARK_$$ = $APP.$cljs$core$atom$cljs$0core$0IFn$0_invoke$0arity$01$$(!1);
   (function $amp$ui$threejs_slide$setup_mini_scene_BANG__$_animate$$() {
     $APP.$cljs$core$reset_BANG_$$($raf_id$$, requestAnimationFrame($amp$ui$threejs_slide$setup_mini_scene_BANG__$_animate$$));
     $controls$jscomp$1$$.update();
     $APP.$cljs$core$truth_$$($APP.$cljs$core$_deref$$($shadow_configured_QMARK_$$)) || ($APP.$amp$pages$mockup$objects$configure_shadow_camera_BANG_$$($scene$jscomp$19$$), $APP.$cljs$core$reset_BANG_$$($shadow_configured_QMARK_$$, !0));
-    var $JSCompiler_inline_result$jscomp$382_current_mode_151492$$ = $APP.$cljs$core$truth_$$(document.documentElement.classList.contains("dark")) ? $cljs$cst$387$dark$$ : $cljs$cst$388$light$$, $sky_151493$$ = $APP.$cljs$core$_deref$$($sky_state_atom$$);
-    if ($APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_inline_result$jscomp$382_current_mode_151492$$, $cljs$cst$669$mode$$.$cljs$core$IFn$_invoke$arity$1$($sky_151493$$))) {
-      if ($APP.$cljs$core$truth_$$($sky_151493$$)) {
-        var $preset$jscomp$inline_2004$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($amp$pages$mockup$scene$sky_presets$$, $JSCompiler_inline_result$jscomp$382_current_mode_151492$$, $cljs$cst$388$light$$.$cljs$core$IFn$_invoke$arity$1$($amp$pages$mockup$scene$sky_presets$$)), $uniforms$jscomp$inline_2005$$ = $cljs$cst$670$uniforms$$.$cljs$core$IFn$_invoke$arity$1$($sky_151493$$);
+    var $JSCompiler_inline_result$jscomp$382_current_mode_183387$$ = $APP.$cljs$core$truth_$$(document.documentElement.classList.contains("dark")) ? $cljs$cst$387$dark$$ : $cljs$cst$388$light$$, $sky_183388$$ = $APP.$cljs$core$_deref$$($sky_state_atom$$);
+    if ($APP.$cljs$core$not_EQ_$cljs$0core$0IFn$0_invoke$0arity$02$$($JSCompiler_inline_result$jscomp$382_current_mode_183387$$, $cljs$cst$669$mode$$.$cljs$core$IFn$_invoke$arity$1$($sky_183388$$))) {
+      if ($APP.$cljs$core$truth_$$($sky_183388$$)) {
+        var $preset$jscomp$inline_2004$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($amp$pages$mockup$scene$sky_presets$$, $JSCompiler_inline_result$jscomp$382_current_mode_183387$$, $cljs$cst$388$light$$.$cljs$core$IFn$_invoke$arity$1$($amp$pages$mockup$scene$sky_presets$$)), $uniforms$jscomp$inline_2005$$ = $cljs$cst$670$uniforms$$.$cljs$core$IFn$_invoke$arity$1$($sky_183388$$);
         $uniforms$jscomp$inline_2005$$.turbidity.value = $cljs$cst$662$turbidity$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$);
         $uniforms$jscomp$inline_2005$$.rayleigh.value = $cljs$cst$663$rayleigh$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$);
         $uniforms$jscomp$inline_2005$$.mieCoefficient.value = $cljs$cst$664$mie_coefficient$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$);
         $uniforms$jscomp$inline_2005$$.mieDirectionalG.value = $cljs$cst$665$mie_directional_g$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$);
         $renderer$jscomp$9$$.toneMappingExposure = $cljs$cst$668$exposure$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$);
-        $JSCompiler_inline_result$jscomp$382_current_mode_151492$$ = $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$variadic$($sky_151493$$, $cljs$cst$666$elevation$$, $cljs$cst$666$elevation$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$), $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$668$exposure$$, $cljs$cst$668$exposure$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$), $cljs$cst$669$mode$$, $JSCompiler_inline_result$jscomp$382_current_mode_151492$$]));
+        $JSCompiler_inline_result$jscomp$382_current_mode_183387$$ = $APP.$cljs$core$assoc$$.$cljs$core$IFn$_invoke$arity$variadic$($sky_183388$$, $cljs$cst$666$elevation$$, $cljs$cst$666$elevation$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$), $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$668$exposure$$, $cljs$cst$668$exposure$$.$cljs$core$IFn$_invoke$arity$1$($preset$jscomp$inline_2004$$), $cljs$cst$669$mode$$, $JSCompiler_inline_result$jscomp$382_current_mode_183387$$]));
       } else {
-        $JSCompiler_inline_result$jscomp$382_current_mode_151492$$ = null;
+        $JSCompiler_inline_result$jscomp$382_current_mode_183387$$ = null;
       }
-      $APP.$cljs$core$reset_BANG_$$($sky_state_atom$$, $JSCompiler_inline_result$jscomp$382_current_mode_151492$$);
+      $APP.$cljs$core$reset_BANG_$$($sky_state_atom$$, $JSCompiler_inline_result$jscomp$382_current_mode_183387$$);
     }
     return $APP.$amp$pages$mockup$scene$animate_sun_BANG_$$($APP.$cljs$core$_deref$$($sky_state_atom$$), $scene$jscomp$19$$);
   })();
@@ -15536,8 +15555,8 @@ $amp$ui$threejs_slide$setup_mini_scene_BANG_$$ = function($container$jscomp$1$$,
   });
   $observer$$.observe($container$jscomp$1$$);
   return function() {
-    var $temp__5823__auto___151498$$ = $APP.$cljs$core$_deref$$($raf_id$$);
-    $APP.$cljs$core$truth_$$($temp__5823__auto___151498$$) && cancelAnimationFrame($temp__5823__auto___151498$$);
+    var $temp__5823__auto___183393$$ = $APP.$cljs$core$_deref$$($raf_id$$);
+    $APP.$cljs$core$truth_$$($temp__5823__auto___183393$$) && cancelAnimationFrame($temp__5823__auto___183393$$);
     $observer$$.disconnect();
     $controls$jscomp$1$$.dispose();
     $renderer$jscomp$9$$.setAnimationLoop(null);
@@ -15545,136 +15564,136 @@ $amp$ui$threejs_slide$setup_mini_scene_BANG_$$ = function($container$jscomp$1$$,
     return $APP.$cljs$core$truth_$$($wrapper$jscomp$6$$.parentNode) ? $container$jscomp$1$$.removeChild($wrapper$jscomp$6$$) : null;
   };
 };
-$amp$ui$threejs_slide$threejs_slide$$ = function($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$) {
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$), $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$], null);
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 0, null);
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = $APP.$cljs$core$__destructure_map$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$);
-  var $scene_data$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $cljs$cst$705$scene_data$$), $camera$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $APP.$cljs$cst$562$camera$$), $caption$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 
-  $APP.$cljs$cst$706$caption$$), $credit$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $APP.$cljs$cst$707$credit$$), $active_QMARK_$jscomp$6$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $APP.$cljs$cst$389$active_QMARK_$$), 
-  $on_lock$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $cljs$cst$708$on_lock$$), $on_unlock$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $cljs$cst$709$on_unlock$$), $lazy_image_parent_styles$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 
+$amp$ui$threejs_slide$threejs_slide$$ = function($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$) {
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$), $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$], null);
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 0, null);
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = $APP.$cljs$core$__destructure_map$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$);
+  var $scene_data$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $cljs$cst$705$scene_data$$), $camera$jscomp$9$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $APP.$cljs$cst$562$camera$$), $caption$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 
+  $APP.$cljs$cst$706$caption$$), $credit$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $APP.$cljs$cst$707$credit$$), $active_QMARK_$jscomp$6$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $APP.$cljs$cst$389$active_QMARK_$$), 
+  $on_lock$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $cljs$cst$708$on_lock$$), $on_unlock$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $cljs$cst$709$on_unlock$$), $lazy_image_parent_styles$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 
   $cljs$cst$710$lazy_image_parent_styles$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $container_ref$$ = $APP.$helix$hooks$use_ref$$(null), $teardown_ref$$ = $APP.$helix$hooks$use_ref$$(null);
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = $APP.$helix$hooks$use_state$$(!0);
-  var $interactive_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 0, null), $set_interactive_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 1, null), $mount_scene_BANG_$$ = function() {
-    function $G__151332$$() {
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = $APP.$helix$hooks$use_state$$(!0);
+  var $interactive_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 0, null), $set_interactive_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 1, null), $mount_scene_BANG_$$ = function() {
+    function $G__183156$$() {
       var $td$jscomp$2_temp__5823__auto__$jscomp$104$$ = $APP.$cljs$core$_deref$$($container_ref$$);
       if ($APP.$cljs$core$truth_$$($td$jscomp$2_temp__5823__auto__$jscomp$104$$)) {
-        var $temp__5823__auto___151514__$1$$ = $APP.$cljs$core$_deref$$($teardown_ref$$);
-        $APP.$cljs$core$truth_$$($temp__5823__auto___151514__$1$$) && ($temp__5823__auto___151514__$1$$.$cljs$core$IFn$_invoke$arity$0$ ? $temp__5823__auto___151514__$1$$.$cljs$core$IFn$_invoke$arity$0$() : $temp__5823__auto___151514__$1$$.call(null), $APP.$cljs$core$reset_BANG_$$($teardown_ref$$, null));
+        var $temp__5823__auto___183403__$1$$ = $APP.$cljs$core$_deref$$($teardown_ref$$);
+        $APP.$cljs$core$truth_$$($temp__5823__auto___183403__$1$$) && ($temp__5823__auto___183403__$1$$.$cljs$core$IFn$_invoke$arity$0$ ? $temp__5823__auto___183403__$1$$.$cljs$core$IFn$_invoke$arity$0$() : $temp__5823__auto___183403__$1$$.call(null), $APP.$cljs$core$reset_BANG_$$($teardown_ref$$, null));
         $td$jscomp$2_temp__5823__auto__$jscomp$104$$ = $amp$ui$threejs_slide$setup_mini_scene_BANG_$$($td$jscomp$2_temp__5823__auto__$jscomp$104$$, $scene_data$jscomp$1$$, $camera$jscomp$9$$);
         return $APP.$cljs$core$reset_BANG_$$($teardown_ref$$, $td$jscomp$2_temp__5823__auto__$jscomp$104$$);
       }
       return null;
     }
-    var $G__151333$$ = [$scene_data$jscomp$1$$, $camera$jscomp$9$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151332$$, $G__151333$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151332$$, $G__151333$$);
+    var $G__183157$$ = [$scene_data$jscomp$1$$, $camera$jscomp$9$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183156$$, $G__183157$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183156$$, $G__183157$$);
   }(), $unmount_scene_BANG_$$ = function() {
-    function $G__151334$$() {
+    function $G__183160$$() {
       var $temp__5823__auto__$jscomp$105$$ = $APP.$cljs$core$_deref$$($teardown_ref$$);
       return $APP.$cljs$core$truth_$$($temp__5823__auto__$jscomp$105$$) ? ($temp__5823__auto__$jscomp$105$$.$cljs$core$IFn$_invoke$arity$0$ ? $temp__5823__auto__$jscomp$105$$.$cljs$core$IFn$_invoke$arity$0$() : $temp__5823__auto__$jscomp$105$$.call(null), $APP.$cljs$core$reset_BANG_$$($teardown_ref$$, null)) : null;
     }
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$($G__151334$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151334$$);
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$1$($G__183160$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183160$$);
   }(), $activate_BANG_$$ = function() {
-    function $G__151335$$() {
+    function $G__183161$$() {
       $set_interactive_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_interactive_BANG_$$.$cljs$core$IFn$_invoke$arity$1$(!0) : $set_interactive_BANG_$$.call(null, !0);
       return $APP.$cljs$core$truth_$$($on_lock$$) ? $on_lock$$.$cljs$core$IFn$_invoke$arity$0$ ? $on_lock$$.$cljs$core$IFn$_invoke$arity$0$() : $on_lock$$.call(null) : null;
     }
-    var $G__151336$$ = [$on_lock$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151335$$, $G__151336$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151335$$, $G__151336$$);
+    var $G__183162$$ = [$on_lock$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183161$$, $G__183162$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183161$$, $G__183162$$);
   }(), $deactivate_BANG_$$ = function() {
-    function $G__151337$$() {
+    function $G__183163$$() {
       $set_interactive_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_interactive_BANG_$$.$cljs$core$IFn$_invoke$arity$1$(!1) : $set_interactive_BANG_$$.call(null, !1);
       return $APP.$cljs$core$truth_$$($on_unlock$$) ? $on_unlock$$.$cljs$core$IFn$_invoke$arity$0$ ? $on_unlock$$.$cljs$core$IFn$_invoke$arity$0$() : $on_unlock$$.call(null) : null;
     }
-    var $G__151338$$ = [$on_unlock$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151337$$, $G__151338$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151337$$, $G__151338$$);
+    var $G__183164$$ = [$on_unlock$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183163$$, $G__183164$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183163$$, $G__183164$$);
   }();
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     $APP.$cljs$core$truth_$$($interactive_QMARK_$jscomp$1$$) ? $mount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $mount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $mount_scene_BANG_$$.call(null) : $unmount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $unmount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $unmount_scene_BANG_$$.call(null);
     return function() {
       return $unmount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $unmount_scene_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $unmount_scene_BANG_$$.call(null);
     };
   });
-  $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$ = [$interactive_QMARK_$jscomp$1$$];
-  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 
-  $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$);
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$ = [$interactive_QMARK_$jscomp$1$$];
+  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 
+  $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$);
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     var $and__5140__auto__$jscomp$inline_2826$$ = $APP.$cljs$core$not$$($active_QMARK_$jscomp$6$$);
     $APP.$cljs$core$truth_$$($and__5140__auto__$jscomp$inline_2826$$ ? $interactive_QMARK_$jscomp$1$$ : $and__5140__auto__$jscomp$inline_2826$$) && ($deactivate_BANG_$$.$cljs$core$IFn$_invoke$arity$0$ ? $deactivate_BANG_$$.$cljs$core$IFn$_invoke$arity$0$() : $deactivate_BANG_$$.call(null));
   });
-  $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$ = [$active_QMARK_$jscomp$6$$];
-  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$, 
-  $G__151340_151527_G__151342_151529_maybe_ref__41576__auto__$jscomp$11$$);
-  $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$ = function() {
+  $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$ = [$active_QMARK_$jscomp$6$$];
+  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$, 
+  $G__183166_183414_G__183168_183416_maybe_ref__41576__auto__$jscomp$12$$);
+  $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$ = function() {
     return {className:"relative w-full h-full select-none", children:[function() {
-      var $G__151348$$ = {ref:$container_ref$$, className:"w-full h-full", style:{touchAction:$APP.$helix$impl$props$__GT_js$$("none")}};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151348$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151348$$);
+      var $G__183195$$ = {ref:$container_ref$$, className:"w-full h-full", style:{touchAction:$APP.$helix$impl$props$__GT_js$$("none")}};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183195$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183195$$);
     }(), $APP.$cljs$core$truth_$$($interactive_QMARK_$jscomp$1$$) ? null : function() {
-      var $G__151354$$ = function() {
+      var $G__183213$$ = function() {
         return {className:"absolute inset-0 z-20 flex flex-col\n                                items-center justify-center overflow-hidden\n                                bg-black/50 cursor-pointer", onClick:$activate_BANG_$$, children:function() {
-          var $G__151358$$ = function() {
+          var $G__183221$$ = function() {
             return {className:"flex flex-col items-center gap-3 sm:gap-4 px-16 sm:px-20", children:[function() {
-              var $G__151362_G__151366$jscomp$inline_3615$$ = {"class":"w-6 h-6 sm:w-8 sm:h-8 text-pink-300"};
-              $G__151362_G__151366$jscomp$inline_3615$$ = {className:"w-12 h-12 sm:w-16 sm:h-16\n                                           border border-pink-300/50\n                                           flex items-center justify-center", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$CubeIcon$$, $G__151362_G__151366$jscomp$inline_3615$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$CubeIcon$$, $G__151362_G__151366$jscomp$inline_3615$$)};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151362_G__151366$jscomp$inline_3615$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151362_G__151366$jscomp$inline_3615$$);
+              var $G__183227_G__183233$jscomp$inline_3615$$ = {"class":"w-6 h-6 sm:w-8 sm:h-8 text-pink-300"};
+              $G__183227_G__183233$jscomp$inline_3615$$ = {className:"w-12 h-12 sm:w-16 sm:h-16\n                                           border border-pink-300/50\n                                           flex items-center justify-center", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$CubeIcon$$, $G__183227_G__183233$jscomp$inline_3615$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$CubeIcon$$, $G__183227_G__183233$jscomp$inline_3615$$)};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183227_G__183233$jscomp$inline_3615$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183227_G__183233$jscomp$inline_3615$$);
             }(), function() {
-              var $G__151370$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$eyebrow$$, "text-pink-300"]))), children:"Interactive 3D"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151370$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151370$$);
+              var $G__183241$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$eyebrow$$, "text-pink-300"]))), children:"Interactive 3D"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183241$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__183241$$);
             }(), function() {
-              var $G__151374$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-400"]))), children:"Tap to explore"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151374$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151374$$);
+              var $G__183253$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-400"]))), children:"Tap to explore"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183253$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__183253$$);
             }(), $APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($caption$$) ? $caption$$ : $credit$$) ? function() {
-              var $G__151378$$ = function() {
+              var $G__183261$$ = function() {
                 return {className:"mt-1 hidden sm:flex flex-col items-center gap-0.5", children:[$APP.$cljs$core$truth_$$($caption$$) ? function() {
-                  var $G__151382$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-300 text-center"]))), children:$caption$$};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151382$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151382$$);
+                  var $G__183265$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-300 text-center"]))), children:$caption$$};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183265$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__183265$$);
                 }() : null, $APP.$cljs$core$truth_$$($credit$$) ? function() {
-                  var $G__151386$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-500 text-center"]))), children:$credit$$};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151386$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151386$$);
+                  var $G__183270$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$label$$, "text-slate-500 text-center"]))), children:$credit$$};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183270$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__183270$$);
                 }() : null]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151378$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151378$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183261$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183261$$);
             }() : null]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151358$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151358$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183221$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183221$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151354$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151354$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183213$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183213$$);
     }(), $APP.$cljs$core$truth_$$($interactive_QMARK_$jscomp$1$$) ? function() {
-      var $G__151390$$ = function() {
+      var $G__183274$$ = function() {
         return {children:[function() {
-          var $G__151394$$ = function() {
+          var $G__183278$$ = function() {
             return {className:"absolute top-3 right-3 z-30", children:function() {
-              var $G__151398$$ = function() {
+              var $G__183282$$ = function() {
                 return {"on-click":$deactivate_BANG_$$, size:$APP.$cljs$cst$711$sm$$, color:$cljs$cst$396$slate$$, "additional-classes":"cursor-pointer", children:[function() {
-                  var $G__151402$$ = {"class":"w-3.5 h-3.5"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$XMarkIcon$$, $G__151402$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$XMarkIcon$$, $G__151402$$);
+                  var $G__183286$$ = {"class":"w-3.5 h-3.5"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$XMarkIcon$$, $G__183286$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$XMarkIcon$$, $G__183286$$);
                 }(), function() {
-                  var $G__151406$$ = {children:"Exit Interaction"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__151406$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__151406$$);
+                  var $G__183290$$ = {children:"Exit Interaction"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183290$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183290$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__151398$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$button$main_button$$, $G__151398$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__183282$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$button$main_button$$, $G__183282$$);
             }()};
           }();
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151394$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151394$$);
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183278$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183278$$);
         }(), $APP.$cljs$core$truth_$$($caption$$) ? function() {
-          var $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = {className:"italic text-xs", children:$caption$$};
-          $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$);
-          $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = {position:$APP.$cljs$cst$696$tl$$, rotation:90, "parent-styles":$lazy_image_parent_styles$$, children:$G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__151410_G__151414$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$);
+          var $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = {className:"italic text-xs", children:$caption$$};
+          $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$);
+          $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$ = {position:$APP.$cljs$cst$696$tl$$, rotation:90, "parent-styles":$lazy_image_parent_styles$$, children:$G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__183296_G__183300$jscomp$inline_3618_JSCompiler_inline_result$jscomp$inline_3617$$);
         }() : null, $APP.$cljs$core$truth_$$($credit$$) ? function() {
-          var $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = {className:"italic text-xs", children:$credit$$};
-          $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$);
-          $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = {position:$APP.$cljs$cst$701$bl$$, "parent-styles":$lazy_image_parent_styles$$, children:$G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__151419_G__151423$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$);
+          var $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = {className:"italic text-xs", children:$credit$$};
+          $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$);
+          $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$ = {position:$APP.$cljs$cst$701$bl$$, "parent-styles":$lazy_image_parent_styles$$, children:$G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__183304_G__183308$jscomp$inline_3621_JSCompiler_inline_result$jscomp$inline_3620$$);
         }() : null]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151390$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151390$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183274$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183274$$);
     }() : null]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151339_151526_G__151341_151528_G__151344_map__151328_map__151328__$1_props__41575__auto__$jscomp$11_vec__151325_vec__151329$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183165_183413_G__183167_183415_G__183175_map__183139_map__183139__$1_props__41575__auto__$jscomp$12_vec__183136_vec__183149$$);
 };
 $amp$ui$image$snap_to_bucket$$ = function($n$jscomp$220$$) {
   if ($n$jscomp$220$$ > 0) {
@@ -15877,54 +15896,54 @@ $APP.$amp$ui$image_overlay$lazy_image_with_overlay$$ = function($G__52547_G__525
   $G__52547_G__52551$jscomp$inline_3624_JSCompiler_inline_result$jscomp$inline_3623_img_src$jscomp$1_map__52537_props__41636__auto__$jscomp$7_vec__52534$$ = {className:"relative w-full h-full overflow-hidden", ref:$fit$jscomp$1_image_container$$, children:$G__52547_G__52551$jscomp$inline_3624_JSCompiler_inline_result$jscomp$inline_3623_img_src$jscomp$1_map__52537_props__41636__auto__$jscomp$7_vec__52534$$};
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__52547_G__52551$jscomp$inline_3624_JSCompiler_inline_result$jscomp$inline_3623_img_src$jscomp$1_map__52537_props__41636__auto__$jscomp$7_vec__52534$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__52547_G__52551$jscomp$inline_3624_JSCompiler_inline_result$jscomp$inline_3623_img_src$jscomp$1_map__52537_props__41636__auto__$jscomp$7_vec__52534$$);
 };
-$amp$ui$image_gallery$dot_indicators$$ = function($G__151556_props__41575__auto__$jscomp$12$$, $maybe_ref__41576__auto__$jscomp$12$$) {
-  var $vec__151551$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151556_props__41575__auto__$jscomp$12$$), $maybe_ref__41576__auto__$jscomp$12$$], null), $map__151554$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__151551$$, 0, null), $map__151554__$1$$ = $APP.$cljs$core$__destructure_map$$($map__151554$$), $total$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151554__$1$$, 
-  $APP.$cljs$cst$726$total$$), $current$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151554__$1$$, $cljs$cst$727$current$$), $on_click$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__151554__$1$$, $cljs$cst$390$on_click$$);
+$amp$ui$image_gallery$dot_indicators$$ = function($G__183433_props__41575__auto__$jscomp$13$$, $maybe_ref__41576__auto__$jscomp$13$$) {
+  var $vec__183428$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183433_props__41575__auto__$jscomp$13$$), $maybe_ref__41576__auto__$jscomp$13$$], null), $map__183431$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($vec__183428$$, 0, null), $map__183431__$1$$ = $APP.$cljs$core$__destructure_map$$($map__183431$$), $total$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183431__$1$$, 
+  $APP.$cljs$cst$726$total$$), $current$jscomp$4$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183431__$1$$, $cljs$cst$727$current$$), $on_click$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183431__$1$$, $cljs$cst$390$on_click$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__151556_props__41575__auto__$jscomp$12$$ = function() {
+  $G__183433_props__41575__auto__$jscomp$13$$ = function() {
     return {className:"flex items-center gap-1", children:function() {
-      return function $amp$ui$image_gallery$dot_indicators_render_$_iter__151559$$($s__151560$$) {
+      return function $amp$ui$image_gallery$dot_indicators_render_$_iter__183436$$($s__183437$$) {
         return new $APP.$cljs$core$LazySeq$$(null, function() {
           for (;;) {
-            var $temp__5823__auto__$jscomp$107$$ = $APP.$cljs$core$seq$$($s__151560$$);
+            var $temp__5823__auto__$jscomp$107$$ = $APP.$cljs$core$seq$$($s__183437$$);
             if ($temp__5823__auto__$jscomp$107$$) {
-              var $s__151560__$2$$ = $temp__5823__auto__$jscomp$107$$;
-              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__151560__$2$$)) {
-                var $c__5626__auto__$jscomp$27$$ = $APP.$cljs$core$_chunked_first$$($s__151560__$2$$), $size__5627__auto__$jscomp$27$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$27$$), $b__151562$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$27$$);
+              var $s__183437__$2$$ = $temp__5823__auto__$jscomp$107$$;
+              if ($APP.$cljs$core$chunked_seq_QMARK_$$($s__183437__$2$$)) {
+                var $c__5626__auto__$jscomp$27$$ = $APP.$cljs$core$_chunked_first$$($s__183437__$2$$), $size__5627__auto__$jscomp$27$$ = $APP.$cljs$core$count$$($c__5626__auto__$jscomp$27$$), $b__183439$$ = $APP.$cljs$core$chunk_buffer$$($size__5627__auto__$jscomp$27$$);
                 return function() {
-                  for (var $i__151561$$ = 0;;) {
-                    if ($i__151561$$ < $size__5627__auto__$jscomp$27$$) {
-                      var $i$jscomp$408$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$27$$, $i__151561$$);
-                      $cljs$core$chunk_append$$($b__151562$$, function() {
-                        var $G__151564$$ = function() {
-                          return {onClick:function($i__151561$jscomp$1$$, $G__151563$jscomp$1$$, $i$jscomp$409$$, $c__5626__auto__$jscomp$28$$, $size__5627__auto__$jscomp$28$$, $b__151562$jscomp$1$$, $s__151560__$2$jscomp$1$$, $temp__5823__auto__$jscomp$108$$, $G__151555$jscomp$1$$, $vec__151551$jscomp$1$$, $map__151554$jscomp$1$$, $map__151554__$1$jscomp$1$$, $total$jscomp$2$$, $current$jscomp$5$$, $on_click$jscomp$3$$) {
+                  for (var $i__183438$$ = 0;;) {
+                    if ($i__183438$$ < $size__5627__auto__$jscomp$27$$) {
+                      var $i$jscomp$408$$ = $APP.$cljs$core$_nth$$($c__5626__auto__$jscomp$27$$, $i__183438$$);
+                      $cljs$core$chunk_append$$($b__183439$$, function() {
+                        var $G__183441$$ = function() {
+                          return {onClick:function($i__183438$jscomp$1$$, $G__183440$jscomp$1$$, $i$jscomp$409$$, $c__5626__auto__$jscomp$28$$, $size__5627__auto__$jscomp$28$$, $b__183439$jscomp$1$$, $s__183437__$2$jscomp$1$$, $temp__5823__auto__$jscomp$108$$, $G__183432$jscomp$1$$, $vec__183428$jscomp$1$$, $map__183431$jscomp$1$$, $map__183431__$1$jscomp$1$$, $total$jscomp$2$$, $current$jscomp$5$$, $on_click$jscomp$3$$) {
                             return function() {
                               return $APP.$cljs$core$truth_$$($on_click$jscomp$3$$) ? $on_click$jscomp$3$$.$cljs$core$IFn$_invoke$arity$1$ ? $on_click$jscomp$3$$.$cljs$core$IFn$_invoke$arity$1$($i$jscomp$409$$) : $on_click$jscomp$3$$.call(null, $i$jscomp$409$$) : null;
                             };
-                          }($i__151561$$, "button", $i$jscomp$408$$, $c__5626__auto__$jscomp$27$$, $size__5627__auto__$jscomp$27$$, $b__151562$$, $s__151560__$2$$, $temp__5823__auto__$jscomp$107$$, "div", $vec__151551$$, $map__151554$$, $map__151554__$1$$, $total$jscomp$1$$, $current$jscomp$4$$, $on_click$jscomp$2$$), className:"cursor-pointer", style:{width:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$408$$, $current$jscomp$4$$) ? "16px" : "6px"), 
+                          }($i__183438$$, "button", $i$jscomp$408$$, $c__5626__auto__$jscomp$27$$, $size__5627__auto__$jscomp$27$$, $b__183439$$, $s__183437__$2$$, $temp__5823__auto__$jscomp$107$$, "div", $vec__183428$$, $map__183431$$, $map__183431__$1$$, $total$jscomp$1$$, $current$jscomp$4$$, $on_click$jscomp$2$$), className:"cursor-pointer", style:{width:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$408$$, $current$jscomp$4$$) ? "16px" : "6px"), 
                           height:$APP.$helix$impl$props$__GT_js$$("3px"), borderRadius:$APP.$helix$impl$props$__GT_js$$("2px"), background:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$408$$, $current$jscomp$4$$) ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.35)"), transition:$APP.$helix$impl$props$__GT_js$$("all 0.3s ease")}};
-                        }(), $G__151565$$ = $i$jscomp$408$$;
-                        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__151564$$, $G__151565$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__151564$$, $G__151565$$);
+                        }(), $G__183442$$ = $i$jscomp$408$$;
+                        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__183441$$, $G__183442$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__183441$$, $G__183442$$);
                       }());
-                      $i__151561$$ += 1;
+                      $i__183438$$ += 1;
                     } else {
                       return !0;
                     }
                   }
-                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__151562$$), $amp$ui$image_gallery$dot_indicators_render_$_iter__151559$$($APP.$cljs$core$_chunked_rest$$($s__151560__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__151562$$), null);
+                }() ? $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__183439$$), $amp$ui$image_gallery$dot_indicators_render_$_iter__183436$$($APP.$cljs$core$_chunked_rest$$($s__183437__$2$$))) : $APP.$cljs$core$chunk_cons$$($APP.$cljs$core$chunk$$($b__183439$$), null);
               }
-              var $i$jscomp$407$$ = $APP.$cljs$core$first$$($s__151560__$2$$);
+              var $i$jscomp$407$$ = $APP.$cljs$core$first$$($s__183437__$2$$);
               return $APP.$cljs$core$cons$$(function() {
-                var $G__151576$$ = function() {
-                  return {onClick:function($G__151575$jscomp$1$$, $i$jscomp$410$$, $s__151560__$2$jscomp$2$$, $temp__5823__auto__$jscomp$109$$, $G__151555$jscomp$2$$, $vec__151551$jscomp$2$$, $map__151554$jscomp$2$$, $map__151554__$1$jscomp$2$$, $total$jscomp$3$$, $current$jscomp$6$$, $on_click$jscomp$4$$) {
+                var $G__183448$$ = function() {
+                  return {onClick:function($G__183447$jscomp$1$$, $i$jscomp$410$$, $s__183437__$2$jscomp$2$$, $temp__5823__auto__$jscomp$109$$, $G__183432$jscomp$2$$, $vec__183428$jscomp$2$$, $map__183431$jscomp$2$$, $map__183431__$1$jscomp$2$$, $total$jscomp$3$$, $current$jscomp$6$$, $on_click$jscomp$4$$) {
                     return function() {
                       return $APP.$cljs$core$truth_$$($on_click$jscomp$4$$) ? $on_click$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$ ? $on_click$jscomp$4$$.$cljs$core$IFn$_invoke$arity$1$($i$jscomp$410$$) : $on_click$jscomp$4$$.call(null, $i$jscomp$410$$) : null;
                     };
-                  }("button", $i$jscomp$407$$, $s__151560__$2$$, $temp__5823__auto__$jscomp$107$$, "div", $vec__151551$$, $map__151554$$, $map__151554__$1$$, $total$jscomp$1$$, $current$jscomp$4$$, $on_click$jscomp$2$$), className:"cursor-pointer", style:{width:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$407$$, $current$jscomp$4$$) ? "16px" : "6px"), height:$APP.$helix$impl$props$__GT_js$$("3px"), borderRadius:$APP.$helix$impl$props$__GT_js$$("2px"), 
+                  }("button", $i$jscomp$407$$, $s__183437__$2$$, $temp__5823__auto__$jscomp$107$$, "div", $vec__183428$$, $map__183431$$, $map__183431__$1$$, $total$jscomp$1$$, $current$jscomp$4$$, $on_click$jscomp$2$$), className:"cursor-pointer", style:{width:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$407$$, $current$jscomp$4$$) ? "16px" : "6px"), height:$APP.$helix$impl$props$__GT_js$$("3px"), borderRadius:$APP.$helix$impl$props$__GT_js$$("2px"), 
                   background:$APP.$helix$impl$props$__GT_js$$($APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($i$jscomp$407$$, $current$jscomp$4$$) ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.35)"), transition:$APP.$helix$impl$props$__GT_js$$("all 0.3s ease")}};
-                }(), $G__151577$$ = $i$jscomp$407$$;
-                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__151576$$, $G__151577$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__151576$$, $G__151577$$);
-              }(), $amp$ui$image_gallery$dot_indicators_render_$_iter__151559$$($APP.$cljs$core$rest$$($s__151560__$2$$)));
+                }(), $G__183449$$ = $i$jscomp$407$$;
+                return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("button", $G__183448$$, $G__183449$$) : $APP.$helix$core$jsx$$.call(null, "button", $G__183448$$, $G__183449$$);
+              }(), $amp$ui$image_gallery$dot_indicators_render_$_iter__183436$$($APP.$cljs$core$rest$$($s__183437__$2$$)));
             }
             return null;
           }
@@ -15932,186 +15951,186 @@ $amp$ui$image_gallery$dot_indicators$$ = function($G__151556_props__41575__auto_
       }($cljs$core$range$cljs$0core$0IFn$0_invoke$0arity$03$$($total$jscomp$1$$));
     }()};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151556_props__41575__auto__$jscomp$12$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151556_props__41575__auto__$jscomp$12$$);
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183433_props__41575__auto__$jscomp$13$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183433_props__41575__auto__$jscomp$13$$);
 };
-$amp$ui$image_gallery$image_slide$$ = function($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, $maybe_ref__41576__auto__$jscomp$13$$) {
-  $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$), $maybe_ref__41576__auto__$jscomp$13$$], null);
-  $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, 0, null);
-  $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$ = $APP.$cljs$core$__destructure_map$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$);
-  var $img_src$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, $APP.$cljs$cst$724$img_src$$), $caption$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, $APP.$cljs$cst$706$caption$$), $credit$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, 
-  $APP.$cljs$cst$707$credit$$), $active_QMARK_$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, $APP.$cljs$cst$389$active_QMARK_$$), $lazy_image_parent_styles$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$, $cljs$cst$710$lazy_image_parent_styles$$);
+$amp$ui$image_gallery$image_slide$$ = function($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, $maybe_ref__41576__auto__$jscomp$14$$) {
+  $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$), $maybe_ref__41576__auto__$jscomp$14$$], null);
+  $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, 0, null);
+  $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$ = $APP.$cljs$core$__destructure_map$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$);
+  var $img_src$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, $APP.$cljs$cst$724$img_src$$), $caption$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, $APP.$cljs$cst$706$caption$$), $credit$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, 
+  $APP.$cljs$cst$707$credit$$), $active_QMARK_$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, $APP.$cljs$cst$389$active_QMARK_$$), $lazy_image_parent_styles$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$, $cljs$cst$710$lazy_image_parent_styles$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$ = function() {
+  $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$ = function() {
     return {className:"w-full h-full", children:function() {
-      var $G__151675$$ = function() {
+      var $G__183466$$ = function() {
         return {"img-src":$img_src$jscomp$2$$, "active?":$active_QMARK_$jscomp$8$$, children:function() {
-          var $G__151681$$ = function() {
+          var $G__183470$$ = function() {
             return {children:[$APP.$cljs$core$truth_$$($caption$jscomp$1$$) ? function() {
-              var $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = {className:"italic text-xs", children:$caption$jscomp$1$$};
-              $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$);
-              $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = {position:$APP.$cljs$cst$696$tl$$, rotation:90, "parent-styles":$lazy_image_parent_styles$jscomp$1$$, children:$G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__151686_G__151694$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$);
+              var $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = {className:"italic text-xs", children:$caption$jscomp$1$$};
+              $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$);
+              $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$ = {position:$APP.$cljs$cst$696$tl$$, rotation:90, "parent-styles":$lazy_image_parent_styles$jscomp$1$$, children:$G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__183474_G__183478$jscomp$inline_3627_JSCompiler_inline_result$jscomp$inline_3626$$);
             }() : null, $APP.$cljs$core$truth_$$($credit$jscomp$1$$) ? function() {
-              var $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = {className:"italic text-xs", children:$credit$jscomp$1$$};
-              $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$);
-              $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = {position:$APP.$cljs$cst$701$bl$$, "parent-styles":$lazy_image_parent_styles$jscomp$1$$, children:$G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__151702_G__151706$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$);
+              var $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = {className:"italic text-xs", children:$credit$jscomp$1$$};
+              $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$);
+              $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$ = {position:$APP.$cljs$cst$701$bl$$, "parent-styles":$lazy_image_parent_styles$jscomp$1$$, children:$G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$overlays$caption_overlay$$, $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$overlays$caption_overlay$$, $G__183482_G__183486$jscomp$inline_3630_JSCompiler_inline_result$jscomp$inline_3629$$);
             }() : null]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151681$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151681$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183470$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183470$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$image_overlay$lazy_image_with_overlay$$, $G__151675$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$image_overlay$lazy_image_with_overlay$$, $G__151675$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$image_overlay$lazy_image_with_overlay$$, $G__183466$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$image_overlay$lazy_image_with_overlay$$, $G__183466$$);
     }()};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151665_map__151656_map__151656__$1_props__41575__auto__$jscomp$13_vec__151652$$);
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183462_map__183460_map__183460__$1_props__41575__auto__$jscomp$14_vec__183457$$);
 };
-$APP.$amp$ui$image_gallery$lazy_image_gallery$$ = function($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$) {
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$), $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$], 
+$APP.$amp$ui$image_gallery$lazy_image_gallery$$ = function($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$) {
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$), $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$], 
   null);
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 0, null);
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$cljs$core$__destructure_map$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$);
-  var $slides$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, $cljs$cst$728$slides$$), $enabled_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 0, null);
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$cljs$core$__destructure_map$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$);
+  var $slides$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, $cljs$cst$728$slides$$), $enabled_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
   $cljs$cst$729$enabled_QMARK_$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$723$delay$$, 7000], null));
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $module$node_modules$embla_carousel_react$cjs$embla_carousel_react_cjs$$($APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$730$loop$$, !0], null)), $APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentVector$$(null, 1, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$module$node_modules$embla_carousel_autoplay$cjs$embla_carousel_autoplay_cjs$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$)], 
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$723$delay$$, 7000], null));
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $module$node_modules$embla_carousel_react$cjs$embla_carousel_react_cjs$$($APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$730$loop$$, !0], null)), $APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentVector$$(null, 1, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$module$node_modules$embla_carousel_autoplay$cjs$embla_carousel_autoplay_cjs$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$)], 
   null)));
-  var $embla_container_ref$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 0, null), $embla_api$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
+  var $embla_container_ref$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 0, null), $embla_api$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
   1, null), $autoplay$$ = function() {
-    function $G__151884$$() {
+    function $G__183505$$() {
       return $APP.$cljs$core$truth_$$($embla_api$$) ? $embla_api$$.plugins().autoplay : null;
     }
-    var $G__151885$$ = [$embla_api$$];
-    return $helix$hooks$raw_use_memo$$.$cljs$core$IFn$_invoke$arity$2$ ? $helix$hooks$raw_use_memo$$.$cljs$core$IFn$_invoke$arity$2$($G__151884$$, $G__151885$$) : $helix$hooks$raw_use_memo$$.call(null, $G__151884$$, $G__151885$$);
+    var $G__183506$$ = [$embla_api$$];
+    return $helix$hooks$raw_use_memo$$.$cljs$core$IFn$_invoke$arity$2$ ? $helix$hooks$raw_use_memo$$.$cljs$core$IFn$_invoke$arity$2$($G__183505$$, $G__183506$$) : $helix$hooks$raw_use_memo$$.call(null, $G__183505$$, $G__183506$$);
   }();
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$helix$hooks$use_state$$(0);
-  var $current_index$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 0, null), $set_current_index_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$helix$hooks$use_state$$(0);
+  var $current_index$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 0, null), $set_current_index_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
   1, null), $total_slides$$ = $APP.$cljs$core$count$$($slides$$);
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$helix$hooks$use_state$$(!1);
-  var $locked_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 0, null), $set_locked_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$helix$hooks$use_state$$(!1);
+  var $locked_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 0, null), $set_locked_BANG_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
   1, null), $next_slide$$ = function() {
-    function $G__151898$$() {
+    function $G__183507$$() {
       return $APP.$cljs$core$truth_$$($embla_api$$) ? $embla_api$$.scrollNext() : null;
     }
-    var $G__151899$$ = [$embla_api$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151898$$, $G__151899$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151898$$, $G__151899$$);
+    var $G__183508$$ = [$embla_api$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183507$$, $G__183508$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183507$$, $G__183508$$);
   }(), $previous_slide$$ = function() {
-    function $G__151904$$() {
+    function $G__183509$$() {
       return $APP.$cljs$core$truth_$$($embla_api$$) ? $embla_api$$.scrollPrev() : null;
     }
-    var $G__151905$$ = [$embla_api$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151904$$, $G__151905$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151904$$, $G__151905$$);
+    var $G__183510$$ = [$embla_api$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183509$$, $G__183510$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183509$$, $G__183510$$);
   }(), $go_to_slide$$ = function() {
-    function $G__151906$$($idx$jscomp$62$$) {
+    function $G__183511$$($idx$jscomp$62$$) {
       return $APP.$cljs$core$truth_$$($embla_api$$) ? $embla_api$$.scrollTo($idx$jscomp$62$$) : null;
     }
-    var $G__151908$$ = [$embla_api$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151906$$, $G__151908$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151906$$, $G__151908$$);
+    var $G__183512$$ = [$embla_api$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183511$$, $G__183512$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183511$$, $G__183512$$);
   }(), $on_select$$ = function() {
-    function $G__151909$$() {
+    function $G__183513$$() {
       if ($APP.$cljs$core$truth_$$($embla_api$$)) {
-        var $G__151911$$ = $embla_api$$.selectedScrollSnap();
-        return $set_current_index_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_current_index_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__151911$$) : $set_current_index_BANG_$$.call(null, $G__151911$$);
+        var $G__183515$$ = $embla_api$$.selectedScrollSnap();
+        return $set_current_index_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_current_index_BANG_$$.$cljs$core$IFn$_invoke$arity$1$($G__183515$$) : $set_current_index_BANG_$$.call(null, $G__183515$$);
       }
       return null;
     }
-    var $G__151910$$ = [$embla_api$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151909$$, $G__151910$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151909$$, $G__151910$$);
+    var $G__183514$$ = [$embla_api$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183513$$, $G__183514$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183513$$, $G__183514$$);
   }(), $lock_carousel_BANG_$$ = function() {
-    function $G__151913$$() {
+    function $G__183516$$() {
       $set_locked_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_locked_BANG_$$.$cljs$core$IFn$_invoke$arity$1$(!0) : $set_locked_BANG_$$.call(null, !0);
       $APP.$cljs$core$truth_$$($embla_api$$) && $embla_api$$.reInit($APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$731$watchDrag$$, !1], null)));
       return $APP.$cljs$core$truth_$$($autoplay$$) ? $autoplay$$.stop() : null;
     }
-    var $G__151914$$ = [$embla_api$$, $autoplay$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151913$$, $G__151914$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151913$$, $G__151914$$);
+    var $G__183517$$ = [$embla_api$$, $autoplay$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183516$$, $G__183517$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183516$$, $G__183517$$);
   }(), $unlock_carousel_BANG_$$ = function() {
-    function $G__151920$$() {
+    function $G__183518$$() {
       $set_locked_BANG_$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_locked_BANG_$$.$cljs$core$IFn$_invoke$arity$1$(!1) : $set_locked_BANG_$$.call(null, !1);
       $APP.$cljs$core$truth_$$($embla_api$$) && $embla_api$$.reInit($APP.$cljs$core$clj__GT_js$$(new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$731$watchDrag$$, !0], null)));
       return $APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($autoplay$$) ? $enabled_QMARK_$$ : $autoplay$$) ? $autoplay$$.play() : null;
     }
-    var $G__151921$$ = [$embla_api$$, $autoplay$$, $enabled_QMARK_$$];
-    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__151920$$, $G__151921$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__151920$$, $G__151921$$);
+    var $G__183519$$ = [$embla_api$$, $autoplay$$, $enabled_QMARK_$$];
+    return $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_callback$$.$cljs$core$IFn$_invoke$arity$2$($G__183518$$, $G__183519$$) : $APP.$helix$hooks$raw_use_callback$$.call(null, $G__183518$$, $G__183519$$);
   }();
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     return $APP.$cljs$core$truth_$$($autoplay$$) ? $APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($enabled_QMARK_$$) ? $APP.$cljs$core$not$$($locked_QMARK_$$) : $enabled_QMARK_$$) ? $autoplay$$.play() : $autoplay$$.stop() : null;
   });
-  $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$ = [$autoplay$$, $enabled_QMARK_$$, $locked_QMARK_$$];
-  $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$) : $APP.$helix$hooks$raw_use_layout_effect$$.call(null, $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
-  $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$);
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = $APP.$helix$hooks$wrap_fx$$(function() {
+  $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$ = [$autoplay$$, $enabled_QMARK_$$, $locked_QMARK_$$];
+  $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_layout_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$) : $APP.$helix$hooks$raw_use_layout_effect$$.call(null, $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
+  $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$);
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = $APP.$helix$hooks$wrap_fx$$(function() {
     return $APP.$cljs$core$truth_$$($embla_api$$) ? ($embla_api$$.on("select", $on_select$$), $on_select$$.$cljs$core$IFn$_invoke$arity$0$ ? $on_select$$.$cljs$core$IFn$_invoke$arity$0$() : $on_select$$.call(null), function() {
       return $embla_api$$.off("select", $on_select$$);
     }) : null;
   });
-  $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$ = [$embla_api$$, $on_select$$];
-  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$, 
-  $G__151931_152122_G__151935_152124_maybe_ref__41576__auto__$jscomp$14$$);
-  $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$ = function() {
+  $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$ = [$embla_api$$, $on_select$$];
+  $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$, 
+  $G__183521_183623_G__183523_183625_maybe_ref__41576__auto__$jscomp$15$$);
+  $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$ = function() {
     return {className:"relative w-full max-w-full max-h-screen overflow-hidden select-none", children:[function() {
-      var $G__151941$$ = function() {
+      var $G__183529$$ = function() {
         return {ref:$embla_container_ref$$, className:"w-full max-w-full overflow-hidden max-h-screen", children:function() {
-          var $G__151945$$ = function() {
+          var $G__183533$$ = function() {
             return {className:"flex items-center max-h-screen", children:$APP.$cljs$core$map_indexed$cljs$0core$0IFn$0_invoke$0arity$02$$(function($idx$jscomp$63$$, $slide$$) {
               var $is_active_QMARK_$jscomp$6$$ = $APP.$cljs$core$truth_$$($enabled_QMARK_$$) ? $APP.$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($idx$jscomp$63$$, $current_index$$) : $enabled_QMARK_$$, $slide_type$$ = function() {
                 var $or__5142__auto__$jscomp$257$$ = $APP.$cljs$cst$25$type$$.$cljs$core$IFn$_invoke$arity$1$($slide$$);
                 return $APP.$cljs$core$truth_$$($or__5142__auto__$jscomp$257$$) ? $or__5142__auto__$jscomp$257$$ : $cljs$cst$732$image$$;
-              }(), $G__151949$$ = function() {
+              }(), $G__183537$$ = function() {
                 return {className:"flex-[0_0_100%] min-w-0 relative max-h-screen overflow-hidden", style:function() {
                   var $JSCompiler_temp_const$jscomp$2291$$ = $APP.$cljs$core$str$$, $JSCompiler_temp_const$jscomp$2290$$ = $JSCompiler_temp_const$jscomp$2291$$.$cljs$core$IFn$_invoke$arity$1$, $or__5142__auto__$jscomp$inline_2828$$ = $APP.$cljs$cst$733$aspect_ratio$$.$cljs$core$IFn$_invoke$arity$1$($slide$$);
                   return {aspectRatio:$APP.$helix$impl$props$__GT_js$$("" + $JSCompiler_temp_const$jscomp$2290$$.call($JSCompiler_temp_const$jscomp$2291$$, $APP.$cljs$core$truth_$$($or__5142__auto__$jscomp$inline_2828$$) ? $or__5142__auto__$jscomp$inline_2828$$ : "16/9"))};
                 }(), children:function() {
                   switch($slide_type$$ instanceof $APP.$cljs$core$Keyword$$ ? $slide_type$$.$fqn$ : null) {
                     case "threejs":
-                      var $G__151957_G__151962$$ = {"scene-data":$cljs$cst$705$scene_data$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), camera:$APP.$cljs$cst$562$camera$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), caption:$APP.$cljs$cst$706$caption$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), credit:$APP.$cljs$cst$707$credit$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), "active?":$is_active_QMARK_$jscomp$6$$, "on-lock":$lock_carousel_BANG_$$, "on-unlock":$unlock_carousel_BANG_$$, "lazy-image-parent-styles":"font-mono\n                                  bg-white/70 dark:bg-slate-900/70\n                                  px-2\n                                  text-slate-700 dark:text-slate-200"};
-                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$threejs_slide$threejs_slide$$, $G__151957_G__151962$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$threejs_slide$threejs_slide$$, $G__151957_G__151962$$);
+                      var $G__183545_G__183549$$ = {"scene-data":$cljs$cst$705$scene_data$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), camera:$APP.$cljs$cst$562$camera$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), caption:$APP.$cljs$cst$706$caption$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), credit:$APP.$cljs$cst$707$credit$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), "active?":$is_active_QMARK_$jscomp$6$$, "on-lock":$lock_carousel_BANG_$$, "on-unlock":$unlock_carousel_BANG_$$, "lazy-image-parent-styles":"font-mono\n                                  bg-white/70 dark:bg-slate-900/70\n                                  px-2\n                                  text-slate-700 dark:text-slate-200"};
+                      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$threejs_slide$threejs_slide$$, $G__183545_G__183549$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$threejs_slide$threejs_slide$$, $G__183545_G__183549$$);
                     default:
-                      return $G__151957_G__151962$$ = {"img-src":$APP.$cljs$cst$724$img_src$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), caption:$APP.$cljs$cst$706$caption$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), credit:$APP.$cljs$cst$707$credit$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), "active?":$is_active_QMARK_$jscomp$6$$, "lazy-image-parent-styles":"font-mono\n                                  bg-white/70 dark:bg-slate-900/70\n                                  px-2\n                                  text-slate-700 dark:text-slate-200"}, 
-                      $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$image_gallery$image_slide$$, $G__151957_G__151962$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$image_gallery$image_slide$$, $G__151957_G__151962$$);
+                      return $G__183545_G__183549$$ = {"img-src":$APP.$cljs$cst$724$img_src$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), caption:$APP.$cljs$cst$706$caption$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), credit:$APP.$cljs$cst$707$credit$$.$cljs$core$IFn$_invoke$arity$1$($slide$$), "active?":$is_active_QMARK_$jscomp$6$$, "lazy-image-parent-styles":"font-mono\n                                  bg-white/70 dark:bg-slate-900/70\n                                  px-2\n                                  text-slate-700 dark:text-slate-200"}, 
+                      $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$image_gallery$image_slide$$, $G__183545_G__183549$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$image_gallery$image_slide$$, $G__183545_G__183549$$);
                   }
                 }()};
               }();
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("div", $G__151949$$, $idx$jscomp$63$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151949$$, $idx$jscomp$63$$);
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$("div", $G__183537$$, $idx$jscomp$63$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183537$$, $idx$jscomp$63$$);
             }, $slides$$)};
           }();
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151945$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151945$$);
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183533$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183533$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151941$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151941$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183529$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183529$$);
     }(), $APP.$cljs$core$truth_$$($locked_QMARK_$$) ? null : function() {
-      var $G__151966$$ = function() {
+      var $G__183553$$ = function() {
         return {className:"absolute w-full top-1/2 transform -translate-y-1/2 pointer-events-none", children:function() {
-          var $G__151970$$ = function() {
+          var $G__183557$$ = function() {
             return {className:"flex justify-between h-full w-full items-center", children:[function() {
-              var $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {};
-              $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {className:"w-10 h-10 transition-transform rotate-180 text-pink-300", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, 
-              $APP.$amp$ui$icons$ChevronRightIcon$$, $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$)};
-              $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$);
-              $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {onClick:$previous_slide$$, className:"w-12 flex items-center pointer-events-auto cursor-pointer", children:$G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151974_G__151978$jscomp$inline_3950_G__151985$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$);
+              var $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {};
+              $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {className:"w-10 h-10 transition-transform rotate-180 text-pink-300", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, 
+              $APP.$amp$ui$icons$ChevronRightIcon$$, $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$)};
+              $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$);
+              $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$ = {onClick:$previous_slide$$, className:"w-12 flex items-center pointer-events-auto cursor-pointer", children:$G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183561_G__183565$jscomp$inline_3950_G__183569$jscomp$inline_3951_JSCompiler_inline_result$jscomp$inline_3949$$);
             }(), function() {
-              var $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {};
-              $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {className:"w-10 h-10 transition-transform text-pink-300", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, 
-              $APP.$amp$ui$icons$ChevronRightIcon$$, $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$)};
-              $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$);
-              $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {onClick:$next_slide$$, className:"w-12 flex justify-end items-center pointer-events-auto cursor-pointer", children:$G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151987_G__151991$jscomp$inline_3954_G__151999$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$);
+              var $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {};
+              $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {className:"w-10 h-10 transition-transform text-pink-300", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, 
+              $APP.$amp$ui$icons$ChevronRightIcon$$, $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$)};
+              $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$);
+              $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$ = {onClick:$next_slide$$, className:"w-12 flex justify-end items-center pointer-events-auto cursor-pointer", children:$G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183571_G__183575$jscomp$inline_3954_G__183579$jscomp$inline_3955_JSCompiler_inline_result$jscomp$inline_3953$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151970$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151970$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183557$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183557$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151966$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151966$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183553$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183553$$);
     }(), function() {
-      var $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$ = {total:$total_slides$$, current:$current_index$$, "on-click":$go_to_slide$$};
-      $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$ = {className:"flex items-center justify-center w-full", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$image_gallery$dot_indicators$$, $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$image_gallery$dot_indicators$$, $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$)};
-      $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$ = {className:"absolute w-full bottom-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$)};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__152009_G__152015$jscomp$inline_4012_G__152021$jscomp$inline_4013$$);
+      var $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$ = {total:$total_slides$$, current:$current_index$$, "on-click":$go_to_slide$$};
+      $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$ = {className:"flex items-center justify-center w-full", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$image_gallery$dot_indicators$$, $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$image_gallery$dot_indicators$$, $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$)};
+      $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$ = {className:"absolute w-full bottom-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$)};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183581_G__183585$jscomp$inline_4012_G__183589$jscomp$inline_4013$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151930_152121_G__151934_152123_G__151937_auto_play_opts_map__151850_map__151850__$1_props__41575__auto__$jscomp$14_vec__151847_vec__151863_vec__151866_vec__151869$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183520_183622_G__183522_183624_G__183525_auto_play_opts_map__183495_map__183495__$1_props__41575__auto__$jscomp$15_vec__183492_vec__183496_vec__183499_vec__183502$$);
 };
 $APP.$amp$hooks$use_hover_animations$use_hover_animations$cljs$0core$0IFn$0_invoke$0arity$0variadic$$ = function($ref$jscomp$12$$) {
   var $G__51105_51115_G__51108_map__51097__$1$$ = $APP.$cljs$core$__destructure_map$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$cljs$cst$69$over$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$725$opacity$$, 1], null), $cljs$cst$735$out$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$cljs$cst$725$opacity$$, 0.7], null)])), $G__51106_51116_G__51109_target$jscomp$113$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__51105_51115_G__51108_map__51097__$1$$, 
@@ -16252,68 +16271,68 @@ $amp$nav$back_up$back_up_nav$$ = function($G__52952_is_active_QMARK_$jscomp$8_pr
   }();
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__52952_is_active_QMARK_$jscomp$8_props__41652__auto__$jscomp$14_vec__52943$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__52952_is_active_QMARK_$jscomp$8_props__41652__auto__$jscomp$14_vec__52943$$);
 };
-$APP.$amp$ui$page_shell$page_shell$$ = function($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$, $maybe_ref__41576__auto__$jscomp$15$$) {
-  $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$), $maybe_ref__41576__auto__$jscomp$15$$], null);
-  $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$, 0, null);
-  $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$ = $APP.$cljs$core$__destructure_map$$($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$);
-  var $show_back_up_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$, $cljs$cst$752$show_back_up_QMARK_$$, !0), $children$jscomp$25$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$, $cljs$cst$101$children$$);
+$APP.$amp$ui$page_shell$page_shell$$ = function($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$, $maybe_ref__41576__auto__$jscomp$16$$) {
+  $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$), $maybe_ref__41576__auto__$jscomp$16$$], null);
+  $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$, 0, null);
+  $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$ = $APP.$cljs$core$__destructure_map$$($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$);
+  var $show_back_up_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$, $cljs$cst$752$show_back_up_QMARK_$$, !0), $children$jscomp$25$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$, $cljs$cst$101$children$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$ = function() {
+  $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$page_shell$$, "flex items-center justify-center flex-col"]))), children:[$APP.$cljs$core$truth_$$($show_back_up_QMARK_$$) ? function() {
-      var $G__151165$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$back_up$back_up_nav$$, $G__151165$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$back_up$back_up_nav$$, $G__151165$$);
+      var $G__182596$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$nav$back_up$back_up_nav$$, $G__182596$$) : $APP.$helix$core$jsx$$.call(null, $amp$nav$back_up$back_up_nav$$, $G__182596$$);
     }() : null, function() {
-      var $G__151167$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["flex flex-col", "w-full lg:w-8/12 min-w-0"]))), children:$children$jscomp$25$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151167$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151167$$);
+      var $G__182598$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["flex flex-col", "w-full lg:w-8/12 min-w-0"]))), children:$children$jscomp$25$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182598$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182598$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151161_map__151159_map__151159__$1_props__41575__auto__$jscomp$15_vec__151156$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182592_map__182590_map__182590__$1_props__41575__auto__$jscomp$16_vec__182587$$);
 };
-$APP.$amp$ui$section_header$section_eyebrow$$ = function($G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$, $maybe_ref__41576__auto__$jscomp$16$$) {
-  $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$), $maybe_ref__41576__auto__$jscomp$16$$], null);
-  $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$, 0, null);
-  $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$ = $APP.$cljs$core$__destructure_map$$($G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$);
-  var $text$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$, $APP.$cljs$cst$392$text$$);
+$APP.$amp$ui$section_header$section_eyebrow$$ = function($G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$, $maybe_ref__41576__auto__$jscomp$17$$) {
+  $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$), $maybe_ref__41576__auto__$jscomp$17$$], null);
+  $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$, 0, null);
+  $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$ = $APP.$cljs$core$__destructure_map$$($G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$);
+  var $text$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$, $APP.$cljs$cst$392$text$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$ = function() {
+  $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$ = function() {
     return {className:"mb-6 flex flex-col gap-2 items-start", children:[function() {
-      var $G__156837$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["h-px bg-pink-500/70", "w-8"])))};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156837$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156837$$);
+      var $G__182402$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["h-px bg-pink-500/70", "w-8"])))};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182402$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182402$$);
     }(), function() {
-      var $G__156841$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$label_muted$$]))), children:$text$jscomp$15$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__156841$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__156841$$);
+      var $G__182406$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$label_muted$$]))), children:$text$jscomp$15$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182406$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182406$$);
     }(), function() {
-      var $G__156845$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["h-px bg-pink-500/70", "w-8"])))};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156845$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156845$$);
+      var $G__182410$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["h-px bg-pink-500/70", "w-8"])))};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182410$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182410$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156833_map__156831_map__156831__$1_props__41575__auto__$jscomp$16_vec__156828$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182398_map__182396_map__182396__$1_props__41575__auto__$jscomp$17_vec__182393$$);
 };
-$APP.$amp$ui$section_header$section_header$$ = function($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$, $maybe_ref__41576__auto__$jscomp$17$$) {
-  $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$), $maybe_ref__41576__auto__$jscomp$17$$], null);
-  $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$, 0, null);
-  $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$ = $APP.$cljs$core$__destructure_map$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$);
-  var $eyebrow$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$, $cljs$cst$753$eyebrow$$), $title$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$, $APP.$cljs$cst$287$title$$), $children$jscomp$26$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$, 
+$APP.$amp$ui$section_header$section_header$$ = function($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$, $maybe_ref__41576__auto__$jscomp$18$$) {
+  $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$), $maybe_ref__41576__auto__$jscomp$18$$], null);
+  $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$, 0, null);
+  $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$ = $APP.$cljs$core$__destructure_map$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$);
+  var $eyebrow$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$, $cljs$cst$753$eyebrow$$), $title$jscomp$14$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$, $APP.$cljs$cst$287$title$$), $children$jscomp$26$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$, 
   $cljs$cst$101$children$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$ = function() {
+  $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["pt-12 sm:pt-14", "pb-10 sm:pb-12"]))), children:[function() {
-      var $G__156860$$ = function() {
+      var $G__182425$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["px-4", "text-slate-900  dark:text-slate-100"]))), children:[$APP.$cljs$core$truth_$$($eyebrow$$) ? function() {
-          var $G__156864$$ = {text:$eyebrow$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$section_header$section_eyebrow$$, $G__156864$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$section_header$section_eyebrow$$, $G__156864$$);
+          var $G__182429$$ = {text:$eyebrow$$};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$section_header$section_eyebrow$$, $G__182429$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$section_header$section_eyebrow$$, $G__182429$$);
         }() : null, function() {
-          var $G__156868$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$section_header$section_display$$), children:$title$jscomp$14$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__156868$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__156868$$);
+          var $G__182433$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$ui$section_header$section_display$$), children:$title$jscomp$14$$};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__182433$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__182433$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156860$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156860$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182425$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182425$$);
     }(), function() {
-      var $G__156872$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl", "text-slate-900  dark:text-slate-100"]))), children:$children$jscomp$26$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156872$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156872$$);
+      var $G__182437$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl", "text-slate-900  dark:text-slate-100"]))), children:$children$jscomp$26$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182437$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182437$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156856_map__156854_map__156854__$1_props__41575__auto__$jscomp$17_vec__156851$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182421_map__182419_map__182419__$1_props__41575__auto__$jscomp$18_vec__182416$$);
 };
 $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$ = function($ref$jscomp$14$$, $is_visible_QMARK__map__53273__$1_p__53272$$) {
   $is_visible_QMARK__map__53273__$1_p__53272$$ = $APP.$cljs$core$__destructure_map$$($is_visible_QMARK__map__53273__$1_p__53272$$);
@@ -16383,174 +16402,174 @@ $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0
   $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$hooks$raw_use_effect$$.$cljs$core$IFn$_invoke$arity$2$($G__53280_53303_vec__53274_vec__53277$$, $G__53281_53304$$) : $APP.$helix$hooks$raw_use_effect$$.call(null, $G__53280_53303_vec__53274_vec__53277$$, $G__53281_53304$$);
   return new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$visited_QMARK_$jscomp$2$$, $is_visible_QMARK__map__53273__$1_p__53272$$], null);
 };
-$APP.$amp$pages$budget$section_block$section_block$$ = function($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, $maybe_ref__41576__auto__$jscomp$18$$) {
-  $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$), $maybe_ref__41576__auto__$jscomp$18$$], null);
-  $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, 0, null);
-  $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$ = $APP.$cljs$core$__destructure_map$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$);
-  var $idx$jscomp$64$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, $APP.$cljs$cst$758$idx$$), $eyebrow$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, $cljs$cst$753$eyebrow$$), $title$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, 
-  $APP.$cljs$cst$287$title$$), $children$jscomp$27$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$, $cljs$cst$101$children$$);
+$APP.$amp$pages$budget$section_block$section_block$$ = function($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, $maybe_ref__41576__auto__$jscomp$19$$) {
+  $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$), $maybe_ref__41576__auto__$jscomp$19$$], null);
+  $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, 0, null);
+  $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$ = $APP.$cljs$core$__destructure_map$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$);
+  var $idx$jscomp$64$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, $APP.$cljs$cst$758$idx$$), $eyebrow$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, $cljs$cst$753$eyebrow$$), $title$jscomp$15$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, 
+  $APP.$cljs$cst$287$title$$), $children$jscomp$27$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$, $cljs$cst$101$children$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$ = function() {
+  $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["pt-12 sm:pt-14", "pb-10 sm:pb-12"]))), children:[function() {
-      var $G__151126$$ = function() {
+      var $G__182452$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["px-4", "text-slate-900  dark:text-slate-100"]))), children:[$APP.$cljs$core$truth_$$($APP.$cljs$core$truth_$$($idx$jscomp$64$$) ? $eyebrow$jscomp$1$$ : $idx$jscomp$64$$) ? function() {
-          var $G__151130$$ = function() {
+          var $G__182456$$ = function() {
             return {className:"mb-6 flex items-center gap-3", children:[function() {
-              var $G__151134$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-10", "h-px bg-pink-500/70"])))};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151134$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151134$$);
+              var $G__182460$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["w-10", "h-px bg-pink-500/70"])))};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182460$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182460$$);
             }(), function() {
-              var $G__151138$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$eyebrow_highlight$$), children:"" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($idx$jscomp$64$$) + ". "};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151138$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151138$$);
+              var $G__182464$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$eyebrow_highlight$$), children:"" + $APP.$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($idx$jscomp$64$$) + ". "};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182464$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182464$$);
             }(), function() {
-              var $G__151142$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$eyebrow_midlight$$), children:$eyebrow$jscomp$1$$};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__151142$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__151142$$);
+              var $G__182468$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$eyebrow_midlight$$), children:$eyebrow$jscomp$1$$};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182468$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182468$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151130$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151130$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182456$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182456$$);
         }() : null, function() {
-          var $G__151146$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$heading_display$$), children:$title$jscomp$15$$};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__151146$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__151146$$);
+          var $G__182472$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$heading_display$$), children:$title$jscomp$15$$};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h2", $G__182472$$) : $APP.$helix$core$jsx$$.call(null, "h2", $G__182472$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151126$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151126$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182452$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182452$$);
     }(), function() {
-      var $G__151150$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl", "text-slate-900  dark:text-slate-100"]))), children:$children$jscomp$27$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151150$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__151150$$);
+      var $G__182476$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl", "text-slate-900  dark:text-slate-100"]))), children:$children$jscomp$27$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182476$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182476$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__151122_map__151120_map__151120__$1_props__41575__auto__$jscomp$18_vec__151117$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182448_map__182445_map__182445__$1_props__41575__auto__$jscomp$19_vec__182442$$);
 };
-$amp$ui$expandable_text$expandable_text_area$$ = function($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $maybe_ref__41576__auto__$jscomp$19$$) {
-  $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$), $maybe_ref__41576__auto__$jscomp$19$$], null);
-  $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, 0, null);
-  $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$ = $APP.$cljs$core$__destructure_map$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$);
-  var $idx$jscomp$65$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $APP.$cljs$cst$758$idx$$), $section_hint$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $cljs$cst$759$section_hint$$), $title$jscomp$16$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, 
-  $APP.$cljs$cst$287$title$$), $expand_button_label$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $cljs$cst$760$expand_button_label$$), $preview_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $cljs$cst$761$preview_text$$), $full_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, 
-  $cljs$cst$762$full_text$$), $footer_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, $cljs$cst$763$footer_text$$);
+$amp$ui$expandable_text$expandable_text_area$$ = function($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $maybe_ref__41576__auto__$jscomp$20$$) {
+  $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$), $maybe_ref__41576__auto__$jscomp$20$$], null);
+  $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, 0, null);
+  $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$ = $APP.$cljs$core$__destructure_map$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$);
+  var $idx$jscomp$65$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $APP.$cljs$cst$758$idx$$), $section_hint$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $cljs$cst$759$section_hint$$), $title$jscomp$16$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, 
+  $APP.$cljs$cst$287$title$$), $expand_button_label$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $cljs$cst$760$expand_button_label$$), $preview_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $cljs$cst$761$preview_text$$), $full_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, 
+  $cljs$cst$762$full_text$$), $footer_text$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, $cljs$cst$763$footer_text$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$ = $APP.$helix$hooks$use_state$$(!1);
-  var $expanded_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, 0, null), $set_expanded$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$, 1, null);
-  $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$ = function() {
+  $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$ = $APP.$helix$hooks$use_state$$(!1);
+  var $expanded_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, 0, null), $set_expanded$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$, 1, null);
+  $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$ = function() {
     return {idx:$APP.$cljs$core$truth_$$($idx$jscomp$65$$) ? $idx$jscomp$65$$ : 1, eyebrow:$section_hint$$, title:$title$jscomp$16$$, children:[function() {
-      var $G__156890$$ = function() {
+      var $G__182494$$ = function() {
         return {className:"mt-6", children:$APP.$cljs$core$truth_$$($expanded_QMARK_$$) ? $full_text$$ : function() {
-          var $G__156894$$ = function() {
+          var $G__182498$$ = function() {
             return {children:[$preview_text$$, function() {
-              var $G__156898$$ = function() {
+              var $G__182502$$ = function() {
                 return {className:"flex justify-center mt-6 px-4", children:function() {
-                  var $G__156902$$ = function() {
+                  var $G__182506$$ = function() {
                     return {"on-click":function() {
-                      var $G__156905$$ = $APP.$cljs$core$not$$($expanded_QMARK_$$);
-                      return $set_expanded$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$$.$cljs$core$IFn$_invoke$arity$1$($G__156905$$) : $set_expanded$$.call(null, $G__156905$$);
+                      var $G__182509$$ = $APP.$cljs$core$not$$($expanded_QMARK_$$);
+                      return $set_expanded$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$$.$cljs$core$IFn$_invoke$arity$1$($G__182509$$) : $set_expanded$$.call(null, $G__182509$$);
                     }, "class":"px-8 py-3", title:$expand_button_label$$};
                   }();
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__156902$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__156902$$);
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__182506$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__182506$$);
                 }()};
               }();
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156898$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156898$$);
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182502$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182502$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156894$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156894$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182498$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182498$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156890$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156890$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182494$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182494$$);
     }(), $APP.$cljs$core$truth_$$($footer_text$$) ? $footer_text$$ : null]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$budget$section_block$section_block$$, $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$pages$budget$section_block$section_block$$, $G__156886_map__156881_map__156881__$1_props__41575__auto__$jscomp$19_vec__156878_vec__156882$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$budget$section_block$section_block$$, $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$pages$budget$section_block$section_block$$, $G__182490_map__182485_map__182485__$1_props__41575__auto__$jscomp$20_vec__182482_vec__182486$$);
 };
-$APP.$amp$ui$expandable_text$expandable_text_area_2$$ = function($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $maybe_ref__41576__auto__$jscomp$20$$) {
-  $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$), $maybe_ref__41576__auto__$jscomp$20$$], null);
-  $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, 0, null);
-  $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$ = $APP.$cljs$core$__destructure_map$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$);
-  var $idx$jscomp$66$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $APP.$cljs$cst$758$idx$$), $section_hint$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $cljs$cst$759$section_hint$$), $title$jscomp$17$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, 
-  $APP.$cljs$cst$287$title$$), $expand_button_label$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $cljs$cst$760$expand_button_label$$), $preview_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $cljs$cst$761$preview_text$$), $full_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, 
-  $cljs$cst$762$full_text$$), $footer_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, $cljs$cst$763$footer_text$$);
+$APP.$amp$ui$expandable_text$expandable_text_area_2$$ = function($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $maybe_ref__41576__auto__$jscomp$21$$) {
+  $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$), $maybe_ref__41576__auto__$jscomp$21$$], null);
+  $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, 0, null);
+  $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$ = $APP.$cljs$core$__destructure_map$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$);
+  var $idx$jscomp$66$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $APP.$cljs$cst$758$idx$$), $section_hint$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $cljs$cst$759$section_hint$$), $title$jscomp$17$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, 
+  $APP.$cljs$cst$287$title$$), $expand_button_label$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $cljs$cst$760$expand_button_label$$), $preview_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $cljs$cst$761$preview_text$$), $full_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, 
+  $cljs$cst$762$full_text$$), $footer_text$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, $cljs$cst$763$footer_text$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$ = $APP.$helix$hooks$use_state$$(!1);
-  var $expanded_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, 0, null), $set_expanded$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$, 1, null);
-  $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$ = function() {
+  $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$ = $APP.$helix$hooks$use_state$$(!1);
+  var $expanded_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, 0, null), $set_expanded$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$, 1, null);
+  $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$ = function() {
     return {idx:$APP.$cljs$core$truth_$$($idx$jscomp$66$$) ? $idx$jscomp$66$$ : 1, eyebrow:$section_hint$jscomp$1$$, title:$title$jscomp$17$$, children:[function() {
-      var $G__156921$$ = function() {
+      var $G__182525$$ = function() {
         return {className:"mt-6", children:$APP.$cljs$core$truth_$$($expanded_QMARK_$jscomp$1$$) ? function() {
-          var $G__156925$$ = {};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($full_text$jscomp$1$$, $G__156925$$) : $APP.$helix$core$jsx$$.call(null, $full_text$jscomp$1$$, $G__156925$$);
+          var $G__182529$$ = {};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($full_text$jscomp$1$$, $G__182529$$) : $APP.$helix$core$jsx$$.call(null, $full_text$jscomp$1$$, $G__182529$$);
         }() : function() {
-          var $G__156927$$ = function() {
+          var $G__182531$$ = function() {
             return {children:[function() {
-              var $G__156931$$ = {};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($preview_text$jscomp$1$$, $G__156931$$) : $APP.$helix$core$jsx$$.call(null, $preview_text$jscomp$1$$, $G__156931$$);
+              var $G__182535$$ = {};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($preview_text$jscomp$1$$, $G__182535$$) : $APP.$helix$core$jsx$$.call(null, $preview_text$jscomp$1$$, $G__182535$$);
             }(), function() {
-              var $G__156933$$ = function() {
+              var $G__182537$$ = function() {
                 return {className:"flex justify-center mt-6 px-4", children:function() {
-                  var $G__156937$$ = function() {
+                  var $G__182541$$ = function() {
                     return {"on-click":function() {
-                      var $G__156940$$ = $APP.$cljs$core$not$$($expanded_QMARK_$jscomp$1$$);
-                      return $set_expanded$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$($G__156940$$) : $set_expanded$jscomp$1$$.call(null, $G__156940$$);
+                      var $G__182544$$ = $APP.$cljs$core$not$$($expanded_QMARK_$jscomp$1$$);
+                      return $set_expanded$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$jscomp$1$$.$cljs$core$IFn$_invoke$arity$1$($G__182544$$) : $set_expanded$jscomp$1$$.call(null, $G__182544$$);
                     }, "class":"px-8 py-3", title:$expand_button_label$jscomp$1$$};
                   }();
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__156937$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__156937$$);
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__182541$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__182541$$);
                 }()};
               }();
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156933$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156933$$);
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182537$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182537$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156927$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156927$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182531$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182531$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156921$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156921$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182525$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182525$$);
     }(), $APP.$cljs$core$truth_$$($footer_text$jscomp$1$$) ? function() {
-      var $G__156942$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($footer_text$jscomp$1$$, $G__156942$$) : $APP.$helix$core$jsx$$.call(null, $footer_text$jscomp$1$$, $G__156942$$);
+      var $G__182546$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($footer_text$jscomp$1$$, $G__182546$$) : $APP.$helix$core$jsx$$.call(null, $footer_text$jscomp$1$$, $G__182546$$);
     }() : null]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$budget$section_block$section_block$$, $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$pages$budget$section_block$section_block$$, $G__156917_map__156912_map__156912__$1_props__41575__auto__$jscomp$20_vec__156909_vec__156913$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$budget$section_block$section_block$$, $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$pages$budget$section_block$section_block$$, $G__182521_map__182516_map__182516__$1_props__41575__auto__$jscomp$21_vec__182513_vec__182517$$);
 };
-$APP.$amp$ui$expandable_text$expandable_text_area_light$$ = function($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, $maybe_ref__41576__auto__$jscomp$21$$) {
-  $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$), $maybe_ref__41576__auto__$jscomp$21$$], null);
-  $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, 0, null);
-  $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$ = $APP.$cljs$core$__destructure_map$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$);
-  var $section_hint$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, $cljs$cst$759$section_hint$$), $title$jscomp$18$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, $APP.$cljs$cst$287$title$$), $expand_button_label$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, 
-  $cljs$cst$760$expand_button_label$$), $preview_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, $cljs$cst$761$preview_text$$), $full_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, $cljs$cst$762$full_text$$), $footer_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, 
+$APP.$amp$ui$expandable_text$expandable_text_area_light$$ = function($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, $maybe_ref__41576__auto__$jscomp$22$$) {
+  $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$), $maybe_ref__41576__auto__$jscomp$22$$], null);
+  $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, 0, null);
+  $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$ = $APP.$cljs$core$__destructure_map$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$);
+  var $section_hint$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, $cljs$cst$759$section_hint$$), $title$jscomp$18$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, $APP.$cljs$cst$287$title$$), $expand_button_label$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, 
+  $cljs$cst$760$expand_button_label$$), $preview_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, $cljs$cst$761$preview_text$$), $full_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, $cljs$cst$762$full_text$$), $footer_text$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, 
   $cljs$cst$763$footer_text$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$ = $APP.$helix$hooks$use_state$$(!1);
-  var $expanded_QMARK_$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, 0, null), $set_expanded$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$, 1, null);
-  $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$ = function() {
+  $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$ = $APP.$helix$hooks$use_state$$(!1);
+  var $expanded_QMARK_$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, 0, null), $set_expanded$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$, 1, null);
+  $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$ = function() {
     return {eyebrow:$section_hint$jscomp$2$$, title:$title$jscomp$18$$, children:[function() {
-      var $G__156958$$ = function() {
+      var $G__182562$$ = function() {
         return {className:"mt-6", children:$APP.$cljs$core$truth_$$($expanded_QMARK_$jscomp$2$$) ? function() {
-          var $G__156962$$ = {};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($full_text$jscomp$2$$, $G__156962$$) : $APP.$helix$core$jsx$$.call(null, $full_text$jscomp$2$$, $G__156962$$);
+          var $G__182566$$ = {};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($full_text$jscomp$2$$, $G__182566$$) : $APP.$helix$core$jsx$$.call(null, $full_text$jscomp$2$$, $G__182566$$);
         }() : function() {
-          var $G__156964$$ = function() {
+          var $G__182568$$ = function() {
             return {children:[function() {
-              var $G__156968$$ = {};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($preview_text$jscomp$2$$, $G__156968$$) : $APP.$helix$core$jsx$$.call(null, $preview_text$jscomp$2$$, $G__156968$$);
+              var $G__182572$$ = {};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($preview_text$jscomp$2$$, $G__182572$$) : $APP.$helix$core$jsx$$.call(null, $preview_text$jscomp$2$$, $G__182572$$);
             }(), function() {
-              var $G__156970$$ = function() {
+              var $G__182574$$ = function() {
                 return {className:"flex justify-center mt-6 px-4", children:function() {
-                  var $G__156974$$ = function() {
+                  var $G__182578$$ = function() {
                     return {"on-click":function() {
-                      var $G__156977$$ = $APP.$cljs$core$not$$($expanded_QMARK_$jscomp$2$$);
-                      return $set_expanded$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$($G__156977$$) : $set_expanded$jscomp$2$$.call(null, $G__156977$$);
+                      var $G__182581$$ = $APP.$cljs$core$not$$($expanded_QMARK_$jscomp$2$$);
+                      return $set_expanded$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$ ? $set_expanded$jscomp$2$$.$cljs$core$IFn$_invoke$arity$1$($G__182581$$) : $set_expanded$jscomp$2$$.call(null, $G__182581$$);
                     }, "class":"px-8 py-3", title:$expand_button_label$jscomp$2$$};
                   }();
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__156974$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__156974$$);
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$button$main_button$$, $G__182578$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$button$main_button$$, $G__182578$$);
                 }()};
               }();
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156970$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156970$$);
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182574$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182574$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156964$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__156964$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182568$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182568$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__156958$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__156958$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182562$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__182562$$);
     }(), $APP.$cljs$core$truth_$$($footer_text$jscomp$2$$) ? function() {
-      var $G__156979$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($footer_text$jscomp$2$$, $G__156979$$) : $APP.$helix$core$jsx$$.call(null, $footer_text$jscomp$2$$, $G__156979$$);
+      var $G__182583$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($footer_text$jscomp$2$$, $G__182583$$) : $APP.$helix$core$jsx$$.call(null, $footer_text$jscomp$2$$, $G__182583$$);
     }() : null]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$section_header$section_header$$, $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$section_header$section_header$$, $G__156954_map__156949_map__156949__$1_props__41575__auto__$jscomp$21_vec__156946_vec__156950$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$section_header$section_header$$, $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$section_header$section_header$$, $G__182558_map__182553_map__182553__$1_props__41575__auto__$jscomp$22_vec__182550_vec__182554$$);
 };
 $APP.$amp$ui$written_by$written_by$$ = function($G__85391_map__85389_map__85389__$1_props__41636__auto__$jscomp$8_vec__85386$$, $maybe_ref__41637__auto__$jscomp$8$$) {
   $G__85391_map__85389_map__85389__$1_props__41636__auto__$jscomp$8_vec__85386$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__85391_map__85389_map__85389__$1_props__41636__auto__$jscomp$8_vec__85386$$), $maybe_ref__41637__auto__$jscomp$8$$], null);
@@ -16654,162 +16673,162 @@ $APP.$amp$ui$section$section$$ = function($G__51868$jscomp$1_map__51853_props__4
   $G__51868$jscomp$1_map__51853_props__41636__auto__$jscomp$11_section_id_vec__51850$$ = {id:$G__51868$jscomp$1_map__51853_props__41636__auto__$jscomp$11_section_id_vec__51850$$, className:$APP.$helix$impl$props$normalize_class$$("snap-start\n                 min-h-screen \n                 w-full"), children:$children$jscomp$29_map__51853__$1_maybe_ref__41637__auto__$jscomp$11$$};
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__51868$jscomp$1_map__51853_props__41636__auto__$jscomp$11_section_id_vec__51850$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__51868$jscomp$1_map__51853_props__41636__auto__$jscomp$11_section_id_vec__51850$$);
 };
-$amp$pages$landing$studio$preview$$ = function($G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$, $maybe_ref__41576__auto__$jscomp$22$$) {
-  $G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$), $maybe_ref__41576__auto__$jscomp$22$$], null);
-  $G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$);
+$amp$pages$landing$studio$preview$$ = function($G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$, $maybe_ref__41576__auto__$jscomp$23$$) {
+  $G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$), $maybe_ref__41576__auto__$jscomp$23$$], null);
+  $G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$ = function() {
+  $G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$ = function() {
     return {className:"px-4", children:[function() {
-      var $G__158001$$ = {author:"Carlo McCormick", "class":"mb-6"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__158001$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__158001$$);
+      var $G__183800$$ = {author:"Carlo McCormick", "class":"mb-6"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__183800$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__183800$$);
     }(), function() {
-      var $G__158011$$ = function() {
+      var $G__183804$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_lg$$, "mb-6"]))), children:["Over the entire six-month duration of the Biennale, the ", function() {
-          var $G__158019$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Armenia Pavilion"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158019$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158019$$);
+          var $G__183808$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Armenia Pavilion"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183808$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183808$$);
         }(), " will operate as ", function() {
-          var $G__158031$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158031$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158031$$);
+          var $G__183812$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183812$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183812$$);
         }(), ", a functioning atelier where the artist ", function() {
-          var $G__158039$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Zadik Zadikian"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158039$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158039$$);
+          var $G__183816$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Zadik Zadikian"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183816$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183816$$);
         }(), ", with his son Aram and assistants, will be engaged in the process and the study of making things. ", "Located in the ", function() {
-          var $G__158051$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Arsenale Militare"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158051$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158051$$);
+          var $G__183820$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Arsenale Militare"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183820$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183820$$);
         }(), ", a vast complex of shipyards and armories that for over 900 years was the heart of Venetian naval power, ", "the studio becomes a neutral site where things are studied, formed, cast, assembled, and made through ", function() {
-          var $G__158061$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"precision, repetition, calibration, attentive labor, and careful consideration"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158061$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158061$$);
+          var $G__183824$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"precision, repetition, calibration, attentive labor, and careful consideration"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183824$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183824$$);
         }(), ". Using the art and language of craft—long a part of the culture of Armenia, of Venice, and of human experience everywhere—", "Zadikian actualizes the studio as a workshop of the handmade, the contemplative, and the constantly developing sculpture."]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158011$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158011$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183804$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183804$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157993_map__157977_props__41575__auto__$jscomp$22_vec__157973$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183796_map__183794_props__41575__auto__$jscomp$23_vec__183791$$);
 };
-$amp$pages$landing$studio$details$$ = function($G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$, $maybe_ref__41576__auto__$jscomp$23$$) {
-  $G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$), $maybe_ref__41576__auto__$jscomp$23$$], null);
-  $G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$);
+$amp$pages$landing$studio$details$$ = function($G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$, $maybe_ref__41576__auto__$jscomp$24$$) {
+  $G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$), $maybe_ref__41576__auto__$jscomp$24$$], null);
+  $G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$ = function() {
+  $G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$ = function() {
     return {children:function() {
-      var $G__158224$$ = function() {
+      var $G__183839$$ = function() {
         return {className:"px-4", children:[function() {
-          var $G__158231$$ = {author:"Carlo McCormick", "class":"mb-6"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__158231$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__158231$$);
+          var $G__183843$$ = {author:"Carlo McCormick", "class":"mb-6"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__183843$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__183843$$);
         }(), function() {
-          var $G__158235$$ = function() {
+          var $G__183847$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_lg$$, "mb-6"]))), children:["Over the entire six-month duration of the Biennale, the ", function() {
-              var $G__158239$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Armenia Pavilion"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158239$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158239$$);
+              var $G__183851$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Armenia Pavilion"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183851$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183851$$);
             }(), " will operate as ", function() {
-              var $G__158243$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158243$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158243$$);
+              var $G__183855$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183855$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183855$$);
             }(), ", a functioning atelier where the artist ", function() {
-              var $G__158247$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Zadik Zadikian"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158247$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158247$$);
+              var $G__183859$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Zadik Zadikian"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183859$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183859$$);
             }(), ", with his son Aram and assistants, will be engaged in the process and the study of making things. ", "Located in the ", function() {
-              var $G__158251$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Arsenale Militare"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158251$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158251$$);
+              var $G__183863$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Arsenale Militare"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183863$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183863$$);
             }(), ", a vast complex of shipyards and armories that for over 900 years was the heart of Venetian naval power, ", "the studio becomes a neutral site where things are studied, formed, cast, assembled, and made through ", function() {
-              var $G__158262$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"precision, repetition, calibration, attentive labor, and careful consideration"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158262$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158262$$);
+              var $G__183867$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"precision, repetition, calibration, attentive labor, and careful consideration"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183867$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183867$$);
             }(), ". Using the art and language of craft—long a part of the culture of Armenia, of Venice, and of human experience everywhere—", "Zadikian actualizes the studio as a workshop of the handmade, the contemplative, and the constantly developing sculpture."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158235$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158235$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183847$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183847$$);
         }(), function() {
-          var $G__158275$$ = function() {
+          var $G__183871$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["Centered on the most basic unit—the ", function() {
-              var $G__158283$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"block, or brick"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158283$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158283$$);
+              var $G__183875$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"block, or brick"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183875$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183875$$);
             }(), "—which has been continuously used for building for over eleven millennia, ", "Zadikian's simplified plaster casts are elemental and foundational: a humble aesthetics where form, beauty, and meaning emerge through ", "the assembly and fluid recombination of humanity's most common architectural building element. ", "Evolving from the block that has remained consistent in his practice for over half a century, ", "these new composite forms extend the human scale, infused with pigments across a broad chromatic spectrum, ", 
             "and—most importantly—remain ", function() {
-              var $G__158299$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"free of one another and moveable"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158299$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158299$$);
+              var $G__183879$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"free of one another and moveable"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183879$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183879$$);
             }(), "."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158275$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158275$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183871$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183871$$);
         }(), function() {
-          var $G__158313_JSCompiler_temp_const$jscomp$inline_3648$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"])));
-          var $G__158327$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"singular and interdependent"};
-          $G__158327$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158327$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158327$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$);
-          $G__158313_JSCompiler_temp_const$jscomp$inline_3648$$ = {className:$G__158313_JSCompiler_temp_const$jscomp$inline_3648$$, children:["Here, the studio encourages experimentation: variances within the basic units that generate unexpected amalgamations—", "multiple distinct forms resolving into a unified whole. ", "Minimal and maximal, the one and the many, the this and the that—", "the primary objects become at once ", $G__158327$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$, 
+          var $G__183883_JSCompiler_temp_const$jscomp$inline_3648$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"])));
+          var $G__183887$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"singular and interdependent"};
+          $G__183887$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183887$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183887$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$);
+          $G__183883_JSCompiler_temp_const$jscomp$inline_3648$$ = {className:$G__183883_JSCompiler_temp_const$jscomp$inline_3648$$, children:["Here, the studio encourages experimentation: variances within the basic units that generate unexpected amalgamations—", "multiple distinct forms resolving into a unified whole. ", "Minimal and maximal, the one and the many, the this and the that—", "the primary objects become at once ", $G__183887$jscomp$inline_3650_JSCompiler_inline_result$jscomp$inline_3649$$, 
           "."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158313_JSCompiler_temp_const$jscomp$inline_3648$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158313_JSCompiler_temp_const$jscomp$inline_3648$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183883_JSCompiler_temp_const$jscomp$inline_3648$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183883_JSCompiler_temp_const$jscomp$inline_3648$$);
         }(), function() {
-          var $G__158344$$ = function() {
+          var $G__183891$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:[function() {
-              var $G__158349$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158349$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158349$$);
+              var $G__183895$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183895$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183895$$);
             }(), ", for Zadikian, is ", function() {
-              var $G__158357$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"workroom, factory, and laboratory"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158357$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158357$$);
+              var $G__183899$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"workroom, factory, and laboratory"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183899$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183899$$);
             }(), " at once: a locus of constant production, invention, and reinvention. ", "It is a place of infinite possibility, where art is not only what is made, but the study of its creation—and what we make of it. ", "Amid Ruskin's ", function() {
-              var $G__158368$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Stones of Venice"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158368$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158368$$);
+              var $G__183903$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Stones of Venice"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183903$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183903$$);
             }(), ", within the seduction of sensations that bewitch the soul, ", "Zadikian's open studio reminds us that art can also be about ", function() {
-              var $G__158377$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"material presence and process"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158377$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158377$$);
+              var $G__183907$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"material presence and process"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183907$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183907$$);
             }(), "."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158344$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158344$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183891$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183891$$);
         }(), function() {
-          var $G__158389$$ = function() {
+          var $G__183911$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["Meaning does not arrive solely through explanation, but through the object's coming-into-being as witnessed over time. ", "The unit does not arrive as image, symbol, or representation. ", "It exists as a tangible fact—built through internal necessities of ", 
             function() {
-              var $G__158397$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"measure, form, weight, and placement"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158397$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158397$$);
+              var $G__183915$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"measure, form, weight, and placement"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183915$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183915$$);
             }(), ". ", "Here, sculpture is distilled to its organic essence—not to empty it of meaning, but to fully accord it its ", function() {
-              var $G__158408$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"epistemic and haptic"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158408$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158408$$);
+              var $G__183919$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"epistemic and haptic"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183919$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183919$$);
             }(), " qualities."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158389$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158389$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183911$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183911$$);
         }(), function() {
-          var $G__158423$$ = function() {
+          var $G__183923$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["This is why the studio itself matters—why it is foregrounded, front and center. ", "The act of making is not staged, but neither is it hidden. ", "The object's formation is not only shown as finished; it is witnessed in its making. ", "As the pavilion's curator, ", 
             function() {
-              var $G__158430$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Tony Shafrazi"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158430$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158430$$);
+              var $G__183927$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"Tony Shafrazi"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183927$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183927$$);
             }(), ", has described it, the studio offers the experience of ", function() {
-              var $G__158439$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"“seeing and studying art in the making.”"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__158439$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__158439$$);
+              var $G__183931$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"“seeing and studying art in the making.”"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183931$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183931$$);
             }(), " ", "The work is not fixed in certainty or frozen in stasis; ", "it is the continuous navigation of possibility—the sum of decisions made across the life of a studio practice."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__158423$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__158423$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__183923$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__183923$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__158224$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__158224$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183839$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183839$$);
     }()};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__158220_map__158218_props__41575__auto__$jscomp$23_vec__158215$$);
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183835_map__183833_props__41575__auto__$jscomp$24_vec__183830$$);
 };
-$APP.$amp$pages$landing$studio$about_studio$$ = function($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, $maybe_ref__41576__auto__$jscomp$24$$) {
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$), $maybe_ref__41576__auto__$jscomp$24$$], null);
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 0, null);
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = $APP.$cljs$core$__destructure_map$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$);
-  var $id$jscomp$82$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, $APP.$cljs$cst$285$id$$), $idx$jscomp$67$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, $APP.$cljs$cst$758$idx$$), $subtitle$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 
-  $APP.$cljs$cst$771$subtitle$$), $title$jscomp$19$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, $APP.$cljs$cst$287$title$$);
+$APP.$amp$pages$landing$studio$about_studio$$ = function($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, $maybe_ref__41576__auto__$jscomp$25$$) {
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$), $maybe_ref__41576__auto__$jscomp$25$$], null);
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 0, null);
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = $APP.$cljs$core$__destructure_map$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$);
+  var $id$jscomp$82$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, $APP.$cljs$cst$285$id$$), $idx$jscomp$67$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, $APP.$cljs$cst$758$idx$$), $subtitle$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 
+  $APP.$cljs$cst$771$subtitle$$), $title$jscomp$19$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, $APP.$cljs$cst$287$title$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $outer_ctx$$ = $APP.$helix$hooks$use_ref$$("outer-ctx"), $video_ref$$ = $APP.$helix$hooks$use_ref$$("video-ref");
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($video_ref$$, $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$741$end$$, "bottom"], null)]));
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 0, null);
-  var $video_is_visible_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 1, null);
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($outer_ctx$$, $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$741$end$$, "bottom"], null)]));
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 0, null);
-  var $is_visible_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$, 1, null);
-  $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$ = function() {
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($video_ref$$, $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$741$end$$, "bottom"], null)]));
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 0, null);
+  var $video_is_visible_QMARK_$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 1, null);
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($outer_ctx$$, $APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$741$end$$, "bottom"], null)]));
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 0, null);
+  var $is_visible_QMARK_$jscomp$1$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$, 1, null);
+  $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$ = function() {
     return {id:$id$jscomp$82$$, children:[function() {
-      var $G__158631$$ = {idx:$idx$jscomp$67$$, "section-hint":$subtitle$$, title:$title$jscomp$19$$, "expand-button-label":"Read more", "preview-text":$amp$pages$landing$studio$preview$$, "full-text":$amp$pages$landing$studio$details$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__158631$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__158631$$);
+      var $G__184110$$ = {idx:$idx$jscomp$67$$, "section-hint":$subtitle$$, title:$title$jscomp$19$$, "expand-button-label":"Read more", "preview-text":$amp$pages$landing$studio$preview$$, "full-text":$amp$pages$landing$studio$details$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__184110$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__184110$$);
     }(), function() {
-      var $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = {"playback-id":"ay2rRkV3PxHTy92Gfi00SibKfEDjDLqGqxmiTzbrz3sQ", "aspect-ratio":1.77, "should-play?":$video_is_visible_QMARK_$$, "allow-audio?":!0};
-      $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$studio$lazy_video$$, $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$studio$lazy_video$$, $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$);
-      $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = {className:"w-full aspect-[16/9] my-8", ref:$video_ref$$, children:$G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__158639_G__158663$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$);
+      var $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = {"playback-id":"ay2rRkV3PxHTy92Gfi00SibKfEDjDLqGqxmiTzbrz3sQ", "aspect-ratio":1.77, "should-play?":$video_is_visible_QMARK_$$, "allow-audio?":!0};
+      $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$studio$lazy_video$$, $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$studio$lazy_video$$, $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$);
+      $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$ = {className:"w-full aspect-[16/9] my-8", ref:$video_ref$$, children:$G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__184116_G__184122$jscomp$inline_3653_JSCompiler_inline_result$jscomp$inline_3652$$);
     }(), function() {
-      var $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = {"enabled?":$is_visible_QMARK_$jscomp$1$$, slides:new $APP.$cljs$core$PersistentVector$$(null, 13, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/blue_yellow/top_view.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 0.75, $APP.$cljs$cst$706$caption$$, "BLUE YELLOW BLUE YELLOW", $APP.$cljs$cst$707$credit$$, 
+      var $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = {"enabled?":$is_visible_QMARK_$jscomp$1$$, slides:new $APP.$cljs$core$PersistentVector$$(null, 13, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/blue_yellow/top_view.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 0.75, $APP.$cljs$cst$706$caption$$, "BLUE YELLOW BLUE YELLOW", $APP.$cljs$cst$707$credit$$, 
       "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/blue_yellow/side-2.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 0.75, $APP.$cljs$cst$706$caption$$, "BLUE YELLOW BLUE YELLOW", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red_walkway/5.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 1.82, $APP.$cljs$cst$706$caption$$, 
       "BIG RED AT ARSENALE", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/artwork/1.jpeg", $APP.$cljs$cst$733$aspect_ratio$$, 0.75, $APP.$cljs$cst$706$caption$$, "Leaning Red", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red_walkway/1.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 
       1.82, $APP.$cljs$cst$706$caption$$, "BIG RED AT ARSENALE", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 6, [$APP.$cljs$cst$25$type$$, $cljs$cst$772$threejs$$, $APP.$cljs$cst$733$aspect_ratio$$, 0.75, $APP.$cljs$cst$706$caption$$, "BIG RED — INTERACTIVE 3D", $APP.$cljs$cst$707$credit$$, "Zadik Zadikian 2026", $APP.$cljs$cst$562$camera$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$APP.$cljs$cst$447$position$$, new $APP.$cljs$core$PersistentVector$$(null, 
@@ -16827,314 +16846,314 @@ $APP.$amp$pages$landing$studio$about_studio$$ = function($G__158619_map__158579_
       null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red/master.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 1.78, $APP.$cljs$cst$706$caption$$, "THE BIG RED", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red/corner_low.jpg", $APP.$cljs$cst$733$aspect_ratio$$, .75, $APP.$cljs$cst$706$caption$$, "THE BIG RED", 
       $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red/black_leg.jpg", $APP.$cljs$cst$733$aspect_ratio$$, .75, $APP.$cljs$cst$706$caption$$, "THE BIG RED", $APP.$cljs$cst$707$credit$$, "Render 2026"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 4, [$APP.$cljs$cst$724$img_src$$, "https://atd-722658831.imgix.net/big_red/flag.jpg", $APP.$cljs$cst$733$aspect_ratio$$, 
       1.38, $APP.$cljs$cst$706$caption$$, "THE BIG RED", $APP.$cljs$cst$707$credit$$, "Render 2026"], null)], null)};
-      $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$image_gallery$lazy_image_gallery$$, $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$image_gallery$lazy_image_gallery$$, $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$);
-      $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = {ref:$outer_ctx$$, className:"my-4 relative pinstripe-bold", children:$G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__158688_G__158696$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$);
+      $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$image_gallery$lazy_image_gallery$$, $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$image_gallery$lazy_image_gallery$$, $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$);
+      $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$ = {ref:$outer_ctx$$, className:"my-4 relative pinstripe-bold", children:$G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__184126_G__184132$jscomp$inline_3656_JSCompiler_inline_result$jscomp$inline_3655$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__158619_map__158579_map__158579__$1_props__41575__auto__$jscomp$24_vec__158576_vec__158595_vec__158598$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__184105_map__184079_map__184079__$1_props__41575__auto__$jscomp$25_vec__184076_vec__184092_vec__184095$$);
 };
-$amp$pages$landing$press_release$header_block$$ = function($G__157019_props__41575__auto__$jscomp$25$$) {
-  $APP.$helix$core$extract_cljs_props$$($G__157019_props__41575__auto__$jscomp$25$$);
+$amp$pages$landing$press_release$header_block$$ = function($G__182608_props__41575__auto__$jscomp$26$$) {
+  $APP.$helix$core$extract_cljs_props$$($G__182608_props__41575__auto__$jscomp$26$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157019_props__41575__auto__$jscomp$25$$ = function() {
+  $G__182608_props__41575__auto__$jscomp$26$$ = function() {
     return {className:"mb-10 text-sm", children:[function() {
-      var $G__157023$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl font-medium leading-snug mb-1", "text-slate-900  dark:text-slate-100"]))), children:"Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157023$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157023$$);
+      var $G__182612$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-xl font-medium leading-snug mb-1", "text-slate-900  dark:text-slate-100"]))), children:"Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182612$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182612$$);
     }(), function() {
-      var $G__157028_G__157032$jscomp$inline_3659$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-lg font-medium italic", "text-slate-900  dark:text-slate-100"]))), children:"Zadik Zadikian: The Studio"};
-      $G__157028_G__157032$jscomp$inline_3659$$ = {className:"mt-6 mb-6", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157028_G__157032$jscomp$inline_3659$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157028_G__157032$jscomp$inline_3659$$)};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157028_G__157032$jscomp$inline_3659$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157028_G__157032$jscomp$inline_3659$$);
+      var $G__182616_G__182620$jscomp$inline_3659$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-lg font-medium italic", "text-slate-900  dark:text-slate-100"]))), children:"Zadik Zadikian: The Studio"};
+      $G__182616_G__182620$jscomp$inline_3659$$ = {className:"mt-6 mb-6", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182616_G__182620$jscomp$inline_3659$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182616_G__182620$jscomp$inline_3659$$)};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182616_G__182620$jscomp$inline_3659$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182616_G__182620$jscomp$inline_3659$$);
     }(), function() {
-      var $G__157040$$ = function() {
+      var $G__182624$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$amp$styles$info_grid$$]))), children:[function() {
-          var $G__157049$$ = function() {
+          var $G__182628$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$("flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline"), children:[function() {
-              var $G__157058$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Participation"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157058$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157058$$);
+              var $G__182632$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Participation"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182632$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182632$$);
             }(), function() {
-              var $G__157072$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"National Participation of the Republic of Armenia"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157072$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157072$$);
+              var $G__182637$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"National Participation of the Republic of Armenia"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182637$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182637$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157049$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157049$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182628$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182628$$);
         }(), function() {
-          var $G__157086$$ = function() {
+          var $G__182642$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$("flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline"), children:[function() {
-              var $G__157096$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Curated by"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157096$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157096$$);
+              var $G__182646$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Curated by"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182646$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182646$$);
             }(), function() {
-              var $G__157108$$ = function() {
+              var $G__182653$$ = function() {
                 return {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:[function() {
-                  var $G__157116$$ = {className:$APP.$helix$impl$props$normalize_class$$("font-semibold"), children:"Tony Shafrazi"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157116$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157116$$);
+                  var $G__182657$$ = {className:$APP.$helix$impl$props$normalize_class$$("font-semibold"), children:"Tony Shafrazi"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182657$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182657$$);
                 }(), " \x26 ", function() {
-                  var $G__157128$$ = {className:$APP.$helix$impl$props$normalize_class$$("font-semibold"), children:"Tina Chakarian"};
-                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157128$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157128$$);
+                  var $G__182661$$ = {className:$APP.$helix$impl$props$normalize_class$$("font-semibold"), children:"Tina Chakarian"};
+                  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182661$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182661$$);
                 }()]};
               }();
-              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157108$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__157108$$);
+              return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182653$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__182653$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157086$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157086$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182642$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182642$$);
         }(), function() {
-          var $G__157140$$ = function() {
+          var $G__182673$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$("flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline"), children:[function() {
-              var $G__157152$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Commissioner"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157152$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157152$$);
+              var $G__182685$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Commissioner"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182685$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182685$$);
             }(), function() {
-              var $G__157164$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "text-slate-700  dark:text-slate-300"]))), children:"Svetlana Sahakyan"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157164$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157164$$);
+              var $G__182689$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "text-slate-700  dark:text-slate-300"]))), children:"Svetlana Sahakyan"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182689$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182689$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157140$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157140$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182673$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182673$$);
         }(), function() {
-          var $G__157184$$ = function() {
+          var $G__182699$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$("flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline"), children:[function() {
-              var $G__157190$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Press contact"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157190$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157190$$);
+              var $G__182705$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Press contact"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182705$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182705$$);
             }(), function() {
-              var $G__157204$$ = {href:"mailto:pressoffice@armenianpavilion2026.org", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300", "break-all"]))), children:"pressoffice@armenianpavilion2026.org"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__157204$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__157204$$);
+              var $G__182709$$ = {href:"mailto:pressoffice@armenianpavilion2026.org", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300", "break-all"]))), children:"pressoffice@armenianpavilion2026.org"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__182709$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182709$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157184$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157184$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182699$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182699$$);
         }(), function() {
-          var $G__157215$$ = function() {
+          var $G__182714$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$("flex flex-col sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4 sm:items-baseline"), children:[function() {
-              var $G__157221$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Web"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157221$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157221$$);
+              var $G__182718$$ = {className:$APP.$helix$impl$props$normalize_class$$($amp$styles$label$$), children:"Web"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182718$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182718$$);
             }(), function() {
-              var $G__157229$$ = {href:"https://armenianpavilion2026.org", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300"]))), target:"_blank", children:"armenianpavilion2026.org"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__157229$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__157229$$);
+              var $G__182722$$ = {href:"https://armenianpavilion2026.org", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300"]))), target:"_blank", children:"armenianpavilion2026.org"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__182722$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182722$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157215$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157215$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182714$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182714$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157040$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157040$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182624$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182624$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157019_props__41575__auto__$jscomp$25$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157019_props__41575__auto__$jscomp$25$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182608_props__41575__auto__$jscomp$26$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182608_props__41575__auto__$jscomp$26$$);
 };
-$amp$pages$landing$press_release$preview$$ = function($G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$, $maybe_ref__41576__auto__$jscomp$26$$) {
-  $G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$), $maybe_ref__41576__auto__$jscomp$26$$], null);
-  $G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$);
+$amp$pages$landing$press_release$preview$$ = function($G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$, $maybe_ref__41576__auto__$jscomp$27$$) {
+  $G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$), $maybe_ref__41576__auto__$jscomp$27$$], null);
+  $G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$ = function() {
+  $G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$ = function() {
     return {className:"px-4", children:[function() {
-      var $G__157260$$ = {author:"Alejandro Jassan", "class":"mb-6"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__157260$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__157260$$);
+      var $G__182737$$ = {author:"Alejandro Jassan", "class":"mb-6"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__182737$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__182737$$);
     }(), function() {
-      var $G__157264$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$press_release$header_block$$, $G__157264$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$press_release$header_block$$, $G__157264$$);
+      var $G__182741$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$press_release$header_block$$, $G__182741$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$press_release$header_block$$, $G__182741$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157252_map__157245_props__41575__auto__$jscomp$26_vec__157242$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182733_map__182731_props__41575__auto__$jscomp$27_vec__182728$$);
 };
-$amp$pages$landing$press_release$details$$ = function($G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$, $maybe_ref__41576__auto__$jscomp$27$$) {
-  $G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$), $maybe_ref__41576__auto__$jscomp$27$$], null);
-  $G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$);
+$amp$pages$landing$press_release$details$$ = function($G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$, $maybe_ref__41576__auto__$jscomp$28$$) {
+  $G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$), $maybe_ref__41576__auto__$jscomp$28$$], null);
+  $G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$ = function() {
+  $G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$ = function() {
     return {className:"px-4", children:[function() {
-      var $G__157327$$ = {author:"Alejandro Jassan", "class":"mb-6"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__157327$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__157327$$);
+      var $G__182754$$ = {author:"Alejandro Jassan", "class":"mb-6"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$written_by$written_by$$, $G__182754$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$written_by$written_by$$, $G__182754$$);
     }(), function() {
-      var $G__157335$$ = {};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$press_release$header_block$$, $G__157335$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$press_release$header_block$$, $G__157335$$);
+      var $G__182758$$ = {};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$landing$press_release$header_block$$, $G__182758$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$landing$press_release$header_block$$, $G__182758$$);
     }(), function() {
-      var $G__157341$$ = function() {
+      var $G__182760$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_lg$$, "mb-6"]))), children:[function() {
-          var $G__157349$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Venice, Italy — "};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157349$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157349$$);
+          var $G__182764$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Venice, Italy — "};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182764$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182764$$);
         }(), "The Republic of Armenia presents ", function() {
-          var $G__157357$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"The Studio"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157357$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157357$$);
+          var $G__182768$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"The Studio"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182768$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182768$$);
         }(), ", a solo project by artist ", function() {
-          var $G__157363$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Zadik Zadikian"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157363$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157363$$);
+          var $G__182772$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Zadik Zadikian"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182772$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182772$$);
         }(), ", for the Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. The project is co-curated by legendary art dealer ", function() {
-          var $G__157371$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Tony Shafrazi"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157371$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157371$$);
+          var $G__182776$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Tony Shafrazi"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182776$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182776$$);
         }(), ", whose decades-long relationship and close collaboration with Zadikian shape the conceptual framework of the Pavilion, alongside Boston-based curator and cultural strategist ", function() {
-          var $G__157379$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Tina Chakarian"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157379$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157379$$);
+          var $G__182780$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Tina Chakarian"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182780$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182780$$);
         }(), ", who has played a central role in advancing Armenia’s presence at La Biennale di Venezia since 2015 as Commissioner and Development Director of the Armenian Pavilion. On view from May 9 through November 22, 2026, the Pavilion reimagines the exhibition space as a living studio—an active site of production, transformation, and renewal that unfolds over the full duration of La Biennale di Venezia."]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157341$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157341$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182760$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182760$$);
     }(), function() {
-      var $G__157387$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:"This presentation marks the continuation of Shafrazi and Zadikian’s decades-long collaboration, which began in the late 1970s with Zadikian’s first solo exhibition in Tehran at Shafrazi’s then-new eponymous gallery, just weeks before the fall of Iran’s ruling shah and on the cusp of the profound political and social transformations that would follow. At that time, a young Zadikian observed laborers carefully stacking clay bricks to dry in the open air at a facility nearly 200 miles from Tehran. “I was completely taken by the way they were making sculptures without knowing what they were doing,” he recalls. Ever since, the brick has become a central material and conceptual anchor in his work, continuing to inform Zadikian’s sustained engagement with repetition, labor, and the transformation of basic forms into complex structures."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157387$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157387$$);
+      var $G__182784$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:"This presentation marks the continuation of Shafrazi and Zadikian’s decades-long collaboration, which began in the late 1970s with Zadikian’s first solo exhibition in Tehran at Shafrazi’s then-new eponymous gallery, just weeks before the fall of Iran’s ruling shah and on the cusp of the profound political and social transformations that would follow. At that time, a young Zadikian observed laborers carefully stacking clay bricks to dry in the open air at a facility nearly 200 miles from Tehran. “I was completely taken by the way they were making sculptures without knowing what they were doing,” he recalls. Ever since, the brick has become a central material and conceptual anchor in his work, continuing to inform Zadikian’s sustained engagement with repetition, labor, and the transformation of basic forms into complex structures."};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182784$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182784$$);
     }(), function() {
-      var $G__157395$$ = function() {
+      var $G__182788$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["In Venice, Zadikian will operate a fully functioning studio, in which objects—principally plaster bricks of varying scales and pigments—are formed, cast, and assembled by the artist and his studio assistants over the course of the exhibition. Each composite form is built by stacking multiple individual bricks of different sizes that remain separate and movable, allowing the arrangement to change and develop over time. This emphasis on repetition and physical presence places the project in dialogue with early modernist and post-Minimalist sculpture, recalling the work of ", 
         function() {
-          var $G__157403$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Richard Serra"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157403$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157403$$);
+          var $G__182792$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Richard Serra"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182792$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182792$$);
         }(), ", ", function() {
-          var $G__157411$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Sol LeWitt"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157411$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157411$$);
+          var $G__182796$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Sol LeWitt"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182796$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182796$$);
         }(), ", and ", function() {
-          var $G__157419$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Carl Andre"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157419$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157419$$);
+          var $G__182800$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Carl Andre"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182800$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182800$$);
         }(), ", and reflecting a shared inquiry by both Zadikian and Shafrazi into form and the experience of space."]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157395$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157395$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182788$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182788$$);
     }(), function() {
-      var $G__157427$$ = function() {
+      var $G__182804$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["Aptly titled ", function() {
-          var $G__157435$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157435$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157435$$);
+          var $G__182808$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182808$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182808$$);
         }(), ", the installation invites visitors to witness and engage directly with Zadikian’s process and materials, allowing the work to unfold in real time. By making production visible, the project challenges the often ritualized and private conventions of the artist’s studio, reframing it instead as a site of openness, exchange, and collective labor. In this way, ", function() {
-          var $G__157439$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157439$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157439$$);
+          var $G__182812$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182812$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182812$$);
         }(), " recalls the legacy of Pop Art’s factories and ateliers—most notably Andy Warhol’s Factory—while emphasizing sustained, hands-on production over spectacle. As critic ", function() {
-          var $G__157444$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Carlo McCormack"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157444$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157444$$);
+          var $G__182816$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Carlo McCormack"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182816$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182816$$);
         }(), " observes, “", function() {
-          var $G__157448$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157448$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157448$$);
+          var $G__182820$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182820$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182820$$);
         }(), ", for Zadikian, is workroom, factory, and laboratory at once—a locus of constant production, invention, and reinvention, a place of infinite possibility where art is not simply what is made; it is the study of its creation, and what we make of it.”"]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157427$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157427$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182804$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182804$$);
     }(), function() {
-      var $G__157452$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:"Furthermore, Chakarian’s longstanding engagement with Armenia’s cultural infrastructure—both within the Republic and across its global diaspora—inflects the Pavilion with a broader commitment to visibility, continuity, and international dialogue. Since 2015, as Commissioner and Development Director of the Armenian Pavilion at La Biennale di Venezia, she has played a central role in shaping Armenia’s sustained presence on this global stage, overseeing curatorial development, institutional partnerships, and strategic fundraising efforts. Her work bridges generations of artists working in Yerevan and abroad, positioning Armenian contemporary art within an expansive transnational discourse while honoring its distinct historical and cultural narratives."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157452$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157452$$);
+      var $G__182824$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:"Furthermore, Chakarian’s longstanding engagement with Armenia’s cultural infrastructure—both within the Republic and across its global diaspora—inflects the Pavilion with a broader commitment to visibility, continuity, and international dialogue. Since 2015, as Commissioner and Development Director of the Armenian Pavilion at La Biennale di Venezia, she has played a central role in shaping Armenia’s sustained presence on this global stage, overseeing curatorial development, institutional partnerships, and strategic fundraising efforts. Her work bridges generations of artists working in Yerevan and abroad, positioning Armenian contemporary art within an expansive transnational discourse while honoring its distinct historical and cultural narratives."};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182824$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182824$$);
     }(), function() {
-      var $G__157456_JSCompiler_temp_const$jscomp$inline_3661$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"])));
-      var $G__157460$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
-      $G__157460$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157460$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157460$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$);
-      $G__157456_JSCompiler_temp_const$jscomp$inline_3661$$ = {className:$G__157456_JSCompiler_temp_const$jscomp$inline_3661$$, children:[$G__157460$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$, " will be located within the Arsenale Militare, a vast complex of shipyards and armories that for over 900 years served as the heart of Venetian naval power. Over the course of La Biennale di Venezia, hundreds of plaster bricks will be cast, stacked, disassembled, and reassembled within the Pavilion, allowing the installation to evolve continuously through ongoing production. Here, process is neither theatricalized nor concealed. As McCormack states, “the act of making is not staged, but neither is it hidden.”"]};
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157456_JSCompiler_temp_const$jscomp$inline_3661$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157456_JSCompiler_temp_const$jscomp$inline_3661$$);
+      var $G__182828_JSCompiler_temp_const$jscomp$inline_3661$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"])));
+      var $G__182832$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"The Studio"};
+      $G__182832$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182832$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182832$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$);
+      $G__182828_JSCompiler_temp_const$jscomp$inline_3661$$ = {className:$G__182828_JSCompiler_temp_const$jscomp$inline_3661$$, children:[$G__182832$jscomp$inline_3663_JSCompiler_inline_result$jscomp$inline_3662$$, " will be located within the Arsenale Militare, a vast complex of shipyards and armories that for over 900 years served as the heart of Venetian naval power. Over the course of La Biennale di Venezia, hundreds of plaster bricks will be cast, stacked, disassembled, and reassembled within the Pavilion, allowing the installation to evolve continuously through ongoing production. Here, process is neither theatricalized nor concealed. As McCormack states, “the act of making is not staged, but neither is it hidden.”"]};
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182828_JSCompiler_temp_const$jscomp$inline_3661$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182828_JSCompiler_temp_const$jscomp$inline_3661$$);
     }(), function() {
-      var $G__157464$$ = function() {
+      var $G__182836$$ = function() {
         return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-6"]))), children:["The Venice presentation follows Zadikian’s recent inclusion in a major group exhibition at the ", function() {
-          var $G__157468$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Brooklyn Museum"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157468$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157468$$);
+          var $G__182840$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Brooklyn Museum"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182840$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182840$$);
         }(), ", ", function() {
-          var $G__157472$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Solid Gold"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157472$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157472$$);
+          var $G__182844$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Solid Gold"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182844$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182844$$);
         }(), " (November 16, 2024–July 6, 2025), where his work ", function() {
-          var $G__157476$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Path to Nine"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157476$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157476$$);
+          var $G__182848$$ = {className:$APP.$helix$impl$props$normalize_class$$("italic"), children:"Path to Nine"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182848$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182848$$);
         }(), " (2024) took the form of a luminous wall composed of 999 gold leaf–covered bars, extending his long-standing engagement with modularity, material transformation, and symbolic value."]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157464$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157464$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182836$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182836$$);
     }(), function() {
-      var $G__157480$$ = function() {
+      var $G__182852$$ = function() {
         return {className:"mb-6 mt-8", children:[function() {
-          var $G__157484$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$heading_section$$), children:"About Zadik Zadikian"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157484$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157484$$);
+          var $G__182856$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$heading_section$$), children:"About Zadik Zadikian"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182856$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182856$$);
         }(), function() {
-          var $G__157488$$ = function() {
+          var $G__182860$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mt-2"]))), children:["Zadik Zadikian (b. 1948, Erevan, Soviet Armenia) has spent over five decades creating works that challenge both the materials and ideologies of contemporary art. A daring escape from the Soviet Union in his youth marked the beginning of an extraordinary journey, from his training under ", 
             function() {
-              var $G__157492$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Benjamino Bufano"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157492$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157492$$);
+              var $G__182864$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Benjamino Bufano"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182864$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182864$$);
             }(), " to his longstanding friendship with ", function() {
-              var $G__157496$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Richard Serra"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157496$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157496$$);
+              var $G__182868$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Richard Serra"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182868$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182868$$);
             }(), ". Zadikian’s work, particularly his exploration of gilded forms, has established him as one of the leading sculptors in the realm of contemporary alchemy. His pieces, often crafted from gold leaf, suggest a transcendence of time and place, pushing boundaries while creating worlds that seem to belong to another realm entirely."]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157488$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157488$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182860$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182860$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157480$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157480$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182852$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182852$$);
     }(), function() {
-      var $G__157500$$ = function() {
+      var $G__182872$$ = function() {
         return {className:"mb-6", children:[function() {
-          var $G__157504$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$heading_section$$, "mb-2"]))), children:"General information"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157504$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__157504$$);
+          var $G__182876$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$heading_section$$, "mb-2"]))), children:"General information"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182876$$) : $APP.$helix$core$jsx$$.call(null, "p", $G__182876$$);
         }(), function() {
-          var $G__157508$$ = function() {
+          var $G__182880$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-1"]))), children:[function() {
-              var $G__157512$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Venue: "};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157512$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157512$$);
+              var $G__182884$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Venue: "};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182884$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182884$$);
             }(), function() {
-              var $G__157516$$ = {href:"https://maps.app.goo.gl/aaFLEeWQZmVQNi7d9?g_st\x3dic", target:"_blank", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300"]))), children:"Case Nuove 2738/C, Castello, Venezia, Tesa 41, Arsenale Militare"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__157516$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__157516$$);
+              var $G__182888$$ = {href:"https://maps.app.goo.gl/aaFLEeWQZmVQNi7d9?g_st\x3dic", target:"_blank", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all", "text-slate-700  dark:text-slate-300"]))), children:"Case Nuove 2738/C, Castello, Venezia, Tesa 41, Arsenale Militare"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__182888$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__182888$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157508$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157508$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182880$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182880$$);
         }(), function() {
-          var $G__157520_JSCompiler_temp_const$jscomp$inline_3665$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-1"])));
-          var $G__157524$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Dates: "};
-          $G__157524$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157524$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157524$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$);
-          $G__157520_JSCompiler_temp_const$jscomp$inline_3665$$ = {className:$G__157520_JSCompiler_temp_const$jscomp$inline_3665$$, children:[$G__157524$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$, "9 May – 22 November 2026"]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157520_JSCompiler_temp_const$jscomp$inline_3665$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157520_JSCompiler_temp_const$jscomp$inline_3665$$);
+          var $G__182892_JSCompiler_temp_const$jscomp$inline_3665$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_base$$, "mb-1"])));
+          var $G__182896$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Dates: "};
+          $G__182896$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182896$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182896$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$);
+          $G__182892_JSCompiler_temp_const$jscomp$inline_3665$$ = {className:$G__182892_JSCompiler_temp_const$jscomp$inline_3665$$, children:[$G__182896$jscomp$inline_3667_JSCompiler_inline_result$jscomp$inline_3666$$, "9 May – 22 November 2026"]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182892_JSCompiler_temp_const$jscomp$inline_3665$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182892_JSCompiler_temp_const$jscomp$inline_3665$$);
         }(), function() {
-          var $G__157528_JSCompiler_temp_const$jscomp$inline_3669$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$body_base$$);
-          var $G__157532$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Press preview: "};
-          $G__157532$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157532$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157532$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$);
-          $G__157528_JSCompiler_temp_const$jscomp$inline_3669$$ = {className:$G__157528_JSCompiler_temp_const$jscomp$inline_3669$$, children:[$G__157532$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$, "6–8 May 2026"]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__157528_JSCompiler_temp_const$jscomp$inline_3669$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__157528_JSCompiler_temp_const$jscomp$inline_3669$$);
+          var $G__182900_JSCompiler_temp_const$jscomp$inline_3669$$ = $APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$body_base$$);
+          var $G__182905$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Press preview: "};
+          $G__182905$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__182905$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__182905$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$);
+          $G__182900_JSCompiler_temp_const$jscomp$inline_3669$$ = {className:$G__182900_JSCompiler_temp_const$jscomp$inline_3669$$, children:[$G__182905$jscomp$inline_3671_JSCompiler_inline_result$jscomp$inline_3670$$, "6–8 May 2026"]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__182900_JSCompiler_temp_const$jscomp$inline_3669$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__182900_JSCompiler_temp_const$jscomp$inline_3669$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157500$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157500$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182872$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182872$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157321_map__157319_props__41575__auto__$jscomp$27_vec__157316$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__182750_map__182748_props__41575__auto__$jscomp$28_vec__182745$$);
 };
-$amp$pages$landing$press_release$footer$$ = function($G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$, $maybe_ref__41576__auto__$jscomp$28$$) {
-  $G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$), $maybe_ref__41576__auto__$jscomp$28$$], null);
-  $G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$);
+$amp$pages$landing$press_release$footer$$ = function($G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$, $maybe_ref__41576__auto__$jscomp$29$$) {
+  $G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$), $maybe_ref__41576__auto__$jscomp$29$$], null);
+  $G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$ = function() {
+  $G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["p-4 italic text-lg text-red-300"]))), children:[function() {
-      var $G__157547$$ = {className:"mt-6", children:["*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue—a standard and widely accepted model for many non-permanent participating nations. ", "The selected site operates at a base rental cost of approximately "]};
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157547$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__157547$$);
+      var $G__183008$$ = {className:"mt-6", children:["*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue—a standard and widely accepted model for many non-permanent participating nations. ", "The selected site operates at a base rental cost of approximately "]};
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183008$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__183008$$);
     }(), function() {
-      var $G__157551$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$value_currency$$), children:"$145,600"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157551$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157551$$);
+      var $G__183012$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$value_currency$$), children:"$145,600"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183012$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183012$$);
     }(), function() {
-      var $G__157555$$ = {className:"text-red-300", children:[", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. ", "Comparable venues just minutes away within the Arsenale or Giardini typically begin at "]};
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157555$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__157555$$);
+      var $G__183018$$ = {className:"text-red-300", children:[", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. ", "Comparable venues just minutes away within the Arsenale or Giardini typically begin at "]};
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183018$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__183018$$);
     }(), function() {
-      var $G__157559$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$value_currency$$), children:"$450,000 or more"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157559$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157559$$);
+      var $G__183025$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$value_currency$$), children:"$450,000 or more"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183025$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183025$$);
     }(), function() {
-      var $G__157563$$ = {className:"text-red-300", children:[" in base rent alone—often closer to €450,000+—excluding construction, staffing, technical services, and operational expenses. ", "In this context, the Pavilion’s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."]};
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157563$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__157563$$);
+      var $G__183033$$ = {className:"text-red-300", children:[" in base rent alone—often closer to €450,000+—excluding construction, staffing, technical services, and operational expenses. ", "In this context, the Pavilion’s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."]};
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183033$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__183033$$);
     }(), function() {
-      var $G__157567$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block mt-6", "text-red-500 text-2xl"]))), children:"To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157567$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157567$$);
+      var $G__183041$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["block mt-6", "text-red-500 text-2xl"]))), children:"To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed."};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183041$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183041$$);
     }(), function() {
-      var $G__157571$$ = function() {
+      var $G__183049$$ = function() {
         return {className:"mt-6", children:[function() {
-          var $G__157575$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-medium", "text-slate-900  dark:text-slate-100"]))), children:"At present we are starting with a small committee including members "};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157575$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157575$$);
+          var $G__183057$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-medium", "text-slate-900  dark:text-slate-100"]))), children:"At present we are starting with a small committee including members "};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183057$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183057$$);
         }(), function() {
-          var $G__157579$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-medium", "text-slate-900  dark:text-slate-100"]))), children:["Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, ", "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian, "]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157579$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__157579$$);
+          var $G__183066$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-medium", "text-slate-900  dark:text-slate-100"]))), children:["Archbishop Hovnan Derderian, Tony Shafrazi, Tina Chakarian, Rafi Ourfalian, Khachik Khudikyan, ", "Andranik Torosyan, Aram Alajajian, and Vik Hovsepian, "]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183066$$) : $APP.$helix$core$jsxs$$.call(null, "span", $G__183066$$);
         }(), function() {
-          var $G__157583$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-bold", "text-rose-600   dark:text-rose-400"]))), children:" hopefully encouraging others more able to realize our goal."};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__157583$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__157583$$);
+          var $G__183074$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-bold", "text-rose-600   dark:text-rose-400"]))), children:" hopefully encouraging others more able to realize our goal."};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__183074$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__183074$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157571$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157571$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183049$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183049$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__157543_map__157541_props__41575__auto__$jscomp$28_vec__157538$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__183002_map__182996_props__41575__auto__$jscomp$29_vec__182993$$);
 };
-$APP.$amp$pages$landing$press_release$press_release$$ = function($G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$, $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$) {
-  $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$), $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$], null);
-  $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$, 0, null);
-  var $map__157592__$1_show_budget_footer_QMARK_$$ = $APP.$cljs$core$__destructure_map$$($G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$);
-  $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__157592__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$285$id$$);
-  $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__157592__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$758$idx$$);
-  var $subtitle$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__157592__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$771$subtitle$$), $title$jscomp$20$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__157592__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$287$title$$);
-  $map__157592__$1_show_budget_footer_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__157592__$1_show_budget_footer_QMARK_$$, $cljs$cst$773$show_budget_footer_QMARK_$$);
+$APP.$amp$pages$landing$press_release$press_release$$ = function($G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$, $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$) {
+  $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$), $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$], null);
+  $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$, 0, null);
+  var $map__183107__$1_show_budget_footer_QMARK_$$ = $APP.$cljs$core$__destructure_map$$($G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$);
+  $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183107__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$285$id$$);
+  $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183107__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$758$idx$$);
+  var $subtitle$jscomp$1$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183107__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$771$subtitle$$), $title$jscomp$20$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183107__$1_show_budget_footer_QMARK_$$, $APP.$cljs$cst$287$title$$);
+  $map__183107__$1_show_budget_footer_QMARK_$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__183107__$1_show_budget_footer_QMARK_$$, $cljs$cst$773$show_budget_footer_QMARK_$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$ = {idx:$G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$, "section-hint":$subtitle$jscomp$1$$, title:$title$jscomp$20$$, "expand-button-label":"Read full release", "preview-text":$amp$pages$landing$press_release$preview$$, "full-text":$amp$pages$landing$press_release$details$$, "footer-text":$APP.$cljs$core$truth_$$($map__157592__$1_show_budget_footer_QMARK_$$) ? 
+  $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$ = {idx:$G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$, "section-hint":$subtitle$jscomp$1$$, title:$title$jscomp$20$$, "expand-button-label":"Read full release", "preview-text":$amp$pages$landing$press_release$preview$$, "full-text":$amp$pages$landing$press_release$details$$, "footer-text":$APP.$cljs$core$truth_$$($map__183107__$1_show_budget_footer_QMARK_$$) ? 
   $amp$pages$landing$press_release$footer$$ : null};
-  $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, 
-  $G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$);
-  $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$ = {id:$G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$, children:$G__157599$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$29$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__157594_id$jscomp$83_map__157592_props__41575__auto__$jscomp$29_vec__157589$$);
+  $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, 
+  $G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$);
+  $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$ = {id:$G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$, children:$G__183125$jscomp$inline_3674_JSCompiler_inline_result$jscomp$inline_3673_idx$jscomp$68_maybe_ref__41576__auto__$jscomp$30$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__183117_id$jscomp$83_map__183107_props__41575__auto__$jscomp$30_vec__183104$$);
 };
 $goog$$ = $goog$$ || {};
 $goog$global$$ = this || self;
@@ -28149,6 +28168,8 @@ $APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$297$goog_SLA
 "amp.nav.menu/hamburger-icon"));
 var $amp$nav$menu$nav_items$$ = new $APP.$cljs$core$PersistentVector$$(null, 5, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$133$path$$, "/", $APP.$cljs$cst$287$title$$, "Home"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$133$path$$, "/visit", $APP.$cljs$cst$287$title$$, "Visit"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$133$path$$, "/artist", $APP.$cljs$cst$287$title$$, "Artist"], 
 null), new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$133$path$$, "/blog", $APP.$cljs$cst$287$title$$, "Blog"], null), new $APP.$cljs$core$PersistentArrayMap$$(null, 2, [$cljs$cst$133$path$$, "/press", $APP.$cljs$cst$287$title$$, "Press"], null)], null);
+$APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$297$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$66$tag$$, $APP.$cljs$cst$298$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($amp$nav$menu$cutout_logo$$, "", null, null) : (void 0).call(null, $amp$nav$menu$cutout_logo$$, "", null, null)), $APP.$helix$core$register_BANG_$$($amp$nav$menu$cutout_logo$$, 
+"amp.nav.menu/cutout-logo"));
 $APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$297$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$66$tag$$, $APP.$cljs$cst$298$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($amp$nav$menu$menu_link$$, "", null, null) : (void 0).call(null, $amp$nav$menu$menu_link$$, "", null, null)), $APP.$helix$core$register_BANG_$$($amp$nav$menu$menu_link$$, 
 "amp.nav.menu/menu-link"));
 $APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$297$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$66$tag$$, $APP.$cljs$cst$298$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($amp$nav$menu$menu$$, "(use-main-state)(hooks/use-state false)(hooks/use-callback [open?] (fn [_e] (set-open! (not open?))))(hooks/use-callback :always (fn [_e] (set-open! false)))", 
@@ -29527,8 +29548,8 @@ null, null)), $APP.$helix$core$register_BANG_$$($APP.$amp$pages$landing$press_re
 $APP.$module$node_modules$gsap$dist$gsap$$.gsap.registerPlugin($module$node_modules$gsap$ScrollToPlugin$$.ScrollToPlugin);
 $APP.$module$node_modules$gsap$dist$gsap$$.gsap.registerPlugin($module$node_modules$gsap$ScrollTrigger$$.ScrollTrigger);
 $APP.$module$node_modules$gsap$dist$gsap$$.gsap.registerPlugin($module$node_modules$gsap$SplitText$$.SplitText);
-var $JSCompiler_temp_const$jscomp$inline_2841$$ = $amp$core$root$$.render, $JSCompiler_inline_result$jscomp$inline_2842$$, $G__151186$jscomp$inline_2843$$ = {};
-$JSCompiler_inline_result$jscomp$inline_2842$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$core$app$$, $G__151186$jscomp$inline_2843$$) : $APP.$helix$core$jsx$$.call(null, $amp$core$app$$, $G__151186$jscomp$inline_2843$$);
+var $JSCompiler_temp_const$jscomp$inline_2841$$ = $amp$core$root$$.render, $JSCompiler_inline_result$jscomp$inline_2842$$, $G__194499$jscomp$inline_2843$$ = {};
+$JSCompiler_inline_result$jscomp$inline_2842$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$core$app$$, $G__194499$jscomp$inline_2843$$) : $APP.$helix$core$jsx$$.call(null, $amp$core$app$$, $G__194499$jscomp$inline_2843$$);
 $JSCompiler_temp_const$jscomp$inline_2841$$.call($amp$core$root$$, $JSCompiler_inline_result$jscomp$inline_2842$$);
 
 }).call(this);
