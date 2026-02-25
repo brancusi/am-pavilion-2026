@@ -177,3 +177,20 @@
         {:strokeLinecap "round"
          :strokeLinejoin "round"
          :d "m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"})))
+
+(defnc MapPinIcon [{:keys [class]}]
+  ($ "svg"
+     {:xmlns "http://www.w3.org/2000/svg"
+      :fill "none"
+      :viewBox "0 0 24 24"
+      :strokeWidth 1.5
+      :stroke "currentColor"
+      :class class}
+     ($ "path"
+        {:strokeLinecap "round"
+         :strokeLinejoin "round"
+         :d "M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"})
+     ($ "path"
+        {:strokeLinecap "round"
+         :strokeLinejoin "round"
+         :d "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"})))

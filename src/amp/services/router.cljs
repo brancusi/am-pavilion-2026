@@ -11,7 +11,27 @@
   (fn [_]
     (apply js/console.log params)))
 
-(def site-map [{:id ::budget
+(def site-map [{:id ::venue
+                :path "visit"
+                :title "Visit"
+                :view (lazy-component amp.pages.venue.page/venue-view)}
+
+               {:id ::artist
+                :path "artist"
+                :title "Artist"
+                :view (lazy-component amp.pages.artist.page/artist-view)}
+
+               {:id ::blog
+                :path "blog"
+                :title "Blog"
+                :view (lazy-component amp.pages.blog.page/blog-view)}
+
+               {:id ::press
+                :path "press"
+                :title "Press"
+                :view (lazy-component amp.pages.press.page/press-view)}
+
+               {:id ::budget
                 :path "budget"
                 :title "Budget"
                 :view (lazy-component amp.pages.budget.page/budget-view)}
@@ -19,6 +39,7 @@
                {:id ::mockups
                 :path "mockups"
                 :title "Mockups"
+                :hide-footer? true
                 :view (lazy-component amp.pages.mockup.page/mockup-view)}])
 
 (defn routes
@@ -29,10 +50,11 @@
            :view (lazy-component amp.pages.landing.page/landing-view)
            :controllers [{:start (log-fn "start" "landing controller")
                           :stop (log-fn "stop" "landing controller")}]}]]
-        (map (fn [{:keys [id path view]}]
+        (map (fn [{:keys [id path view hide-footer?]}]
                [path
                 {:name id
                  :view view
+                 :hide-footer? hide-footer?
                  :controllers [{:start (log-fn (str "start!!!" id))
                                 :stop (log-fn (str "stop!!!" id))}]}])
              site-map)))

@@ -11,9 +11,7 @@
    [amp.nav.back-up :refer [back-up-nav]]
    [amp.ui.section :refer [section]]
    [amp.pages.landing.studio :refer [about-studio]]
-   [amp.pages.budget.footer :refer [budget-footer]]
    [amp.pages.landing.press-release :refer [press-release]]
-   [amp.ui.theme-toggle :refer [theme-toggle]]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -30,10 +28,6 @@
 (defnc header
   []
   (d/div {:class "relative"}
-         ;; Theme toggle — pinned top-right
-         (d/div {:class "absolute top-4 right-4 z-10"}
-                ($ theme-toggle))
-
          (d/div {:class "w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4"}
                 (d/img {:src "images/graphics/61_biennale_logo_line.svg"
                         :class "invert dark:invert-0"}))
@@ -80,7 +74,7 @@
       :section-id "budget-section"}
      ($ back-up-nav)
      (d/div
-      {:class (str "w-full h-full "
+      {:class (str "w-full h-full pt-14 "
                    s/text-primary
                    " grey-grad flex items-center justify-center flex-col")}
       (d/div {:class (str "flex flex-col " s/content-column)}
@@ -123,6 +117,4 @@
 
              ($ why-support {:id "section-9"
                              :subtitle "why it matters"
-                             :title "why support"})
-
-             ($ budget-footer)))))
+                             :title "why support"})))))

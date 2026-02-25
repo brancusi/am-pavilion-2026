@@ -9,9 +9,7 @@
    [amp.pages.landing.venue :refer [location-section]]
    [amp.pages.landing.hero :refer [mobile-hero-section]]
    [amp.pages.landing.press-release :refer [press-release]]
-   [amp.pages.landing.footer :refer [site-footer]]
    [amp.pages.landing.teaser :refer [teaser-section]]
-   [amp.ui.theme-toggle :refer [theme-toggle]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -25,8 +23,6 @@
 
     ($ :div {:ref container-ref
              :class (str "overflow-x-hidden grey-grad " s/text-primary)}
-       (d/div {:class "fixed top-8 right-8 z-50"}
-              ($ theme-toggle))
        (when is-desktop?
          ($ logo-nav))
 
@@ -55,6 +51,4 @@
                      ($ artist-section {:id "artist"
                                         :title "The Artist"})
                      ($ curators-section {:id "curators"
-                                          :title "Curators"})))
-
-       ($ site-footer))))
+                                          :title "Curators"}))))))

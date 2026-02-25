@@ -71,6 +71,9 @@
 (def bg-surface      "bg-white        dark:bg-slate-900")
 (def bg-surface-alt  "bg-slate-100/60 dark:bg-slate-800/60")
 (def bg-overlay      "bg-white/40     dark:bg-black/40")
+(def bg-page         "grey-grad")
+(def bg-chrome       "bg-white dark:bg-slate-950")
+(def bg-footer       "bg-zinc-100 dark:bg-zinc-800")
 
 ;; --- Borders / dividers ---------------------------------------------------
 (def border-subtle   "border-slate-200 dark:border-white/15")

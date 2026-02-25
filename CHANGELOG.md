@@ -2,6 +2,75 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-02-24 — Site-Wide Layout Shell (Shared Footer & Chrome)
+
+**Rationale:** The footer only rendered on the landing page. All other pages (Visit, Budget, Artist, Blog, Press) ended abruptly with no footer, CTA, or contact info. Each page that wanted a footer had to import and render its own copy, leading to duplicate components (`pages/landing/footer.cljs`, `pages/budget/footer.cljs`) with slightly different content.
+**Summary:** Created a unified `amp.ui.footer` component with route-aware Quick Links (scroll-to-id on the landing page, site navigation links on other pages). Integrated it into `section-transitioner.cljs` (the layout shell) so every page automatically gets the footer. Added a `:hide-footer?` route-data flag for opt-out — the Mockup page uses this since it's a full-screen 3D experience. Deleted the two old page-specific footer files.
+
+### Changes
+
+| File                                  | Change                                                                                                                                                                |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ui/footer.cljs` (new)                | Unified site-wide footer with route-aware Quick Links, CTA, contact info, org info, and bottom bar                                                                    |
+| `ui/section_transitioner.cljs`        | Added `site-footer` import; restructured DOM so footer renders after the view-stack (outside `relative` context); conditionally hidden via `:hide-footer?` route flag |
+| `services/router.cljs`                | Added `:hide-footer? true` to the Mockup route; updated `routes` fn to pass `hide-footer?` through to route data                                                      |
+| `pages/landing/page.cljs`             | Removed `site-footer` import and render                                                                                                                               |
+| `pages/budget/section.cljs`           | Removed `budget-footer` import and render                                                                                                                             |
+| `pages/landing/footer.cljs` (deleted) | Superseded by `ui/footer.cljs`                                                                                                                                        |
+| `pages/budget/footer.cljs` (deleted)  | Superseded by `ui/footer.cljs`                                                                                                                                        |
+
+### Migration Notes
+
+- None — backward compatible. The footer now appears on all pages except Mockup automatically.
+
+## 2026-02-24 — Nav Redesign & Theme Toggle Integration
+
+**Rationale:** The navigation bar used hardcoded `bg-black/80 backdrop-blur-sm` backgrounds that violated the style guide (no blur, flat solid backgrounds) and broke in light mode. The theme toggle was rendered independently on each page (`landing/page.cljs`, `budget/section.cljs`) with fixed positioning, requiring every new page to remember to include it.
+**Summary:** Replaced all hardcoded nav backgrounds with dual-mode solid tokens (`bg-white dark:bg-slate-950`), fixed text/hover classes to use `s/` design tokens with proper light/dark variants, and moved the theme toggle into the nav bar itself — inline on desktop (right side, after links, with a border separator), and inside the mobile slide-down panel (below links, with a top border separator). Removed standalone toggle renders from both pages.
+
+### Changes
+
+| File                        | Change                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `nav/menu.cljs`             | Added `theme-toggle` import; replaced `bg-black/80 backdrop-blur-sm` with `bg-white dark:bg-slate-950` on both top bar and mobile panel; replaced `border-white/10` with `s/border-subtle`; fixed hover states from `hover:text-pink-300 dark:hover:text-pink-300` to `hover:text-pink-600 dark:hover:text-pink-300`; added theme toggle to desktop nav (with border separator) and mobile panel (with border separator) |
+| `pages/landing/page.cljs`   | Removed `amp.ui.theme-toggle` import and the `fixed top-8 right-8 z-50` toggle wrapper                                                                                                                                                                                                                                                                                                                                   |
+| `pages/budget/section.cljs` | Removed `amp.ui.theme-toggle` import and the `absolute top-4 right-4 z-10` toggle wrapper from `header`                                                                                                                                                                                                                                                                                                                  |
+
+### Migration Notes
+
+- None — backward compatible. The theme toggle is now rendered once in the nav instead of per-page.
+
+## 2026-02-24 — Phase 6: Router & Menu System Prep
+
+**Rationale:** The site needed route infrastructure for upcoming pages (venue directions, artist deep-dive, blog/vlog, press kit) and a navigation menu so users can move between them.
+**Summary:** Added 4 stub page modules with lazy-loaded code splitting, expanded the router with new routes and site-map entries, built a responsive navigation menu (hamburger on mobile, horizontal bar on desktop), and wired it into the layout wrapper.
+
+### Changes
+
+**New files:**
+
+| File                     | Namespace               | Purpose                              |
+| ------------------------ | ----------------------- | ------------------------------------ |
+| `pages/venue/page.cljs`  | `amp.pages.venue.page`  | Venue stub page (code-split module)  |
+| `pages/artist/page.cljs` | `amp.pages.artist.page` | Artist stub page (code-split module) |
+| `pages/blog/page.cljs`   | `amp.pages.blog.page`   | Blog stub page (code-split module)   |
+| `pages/press/page.cljs`  | `amp.pages.press.page`  | Press stub page (code-split module)  |
+
+**Modified files:**
+
+| File                           | Change                                                                                                                                            |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `shadow-cljs.edn`              | Added `:venue-view`, `:artist-view`, `:blog-view`, `:press-view` module entries in both `:app` and `:release` builds                              |
+| `services/router.cljs`         | Added 4 route entries to `site-map` with `lazy-component` references                                                                              |
+| `nav/menu.cljs`                | Replaced empty placeholder with full responsive menu component — hamburger toggle on mobile, horizontal nav on desktop, active-route highlighting |
+| `ui/section_transitioner.cljs` | Added `($ menu)` render call to wire the navigation into the layout                                                                               |
+
+### Migration Notes
+
+- Run `npm run release` to verify — expect only the benign `medley.core/abs` redef warning.
+- If you have a running dev server, restart it (`npm run dev`) to pick up the new shadow-cljs modules.
+- The Netlify `_redirects` already has a `/* /index.html 200` SPA fallback — no deployment config changes needed.
+
 ## 2026-02-24 — Phase 5D: Final Cleanup — Unify Nav, Relocate Survivors, Delete Dead Code
 
 **Rationale:** After Phases 4–5C, two nav directories existed (`nav/` and `components/navs/`), the `views/` directory still contained 4 dead view files, and `components/` held 34 dead files plus 3 surviving active files. This needed consolidation before Phase 6.

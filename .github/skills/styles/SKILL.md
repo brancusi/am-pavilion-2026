@@ -268,6 +268,211 @@ Elements start with `opacity-0` in CSS and are revealed by GSAP.
 | `italic` for headings              | `uppercase tracking-wide`                         |
 | Large `border-l-8`                 | `border-l-2`                                      |
 | `text-2xl` for totals              | `text-lg` or `text-base` with `font-semibold`     |
+| Bare `(d/p {}` with no class       | `(d/p {:class s/body-base}` or `s/body-lg`        |
+| `s/text-xl` on wrapper divs        | `s/body-lg` / `s/body-base` on each `<p>` element |
+| `s/weight-medium` for emphasis      | `s/em-strong` (brightness + weight)               |
+| Raw `"text-white"` in prose         | `s/em-strong` or `s/text-inverse`                 |
+| `"bg-black"` as page background    | `"grey-grad"` CSS class                           |
+| Single-mode Tailwind color          | Dual-mode pair: `"text-color dark:text-color"`    |
+
+---
+
+## Dark / Light Mode Theming
+
+### How It Works
+
+The site uses Tailwind's **class-based dark mode** (`darkMode: "class"` in `tailwind.config.js`).  
+The `<html>` element carries a `"dark"` class by default — dark mode is the primary experience.  
+Removing the `"dark"` class switches the entire site to light mode.
+
+In Tailwind's class strategy:
+- **Bare classes** → light mode (when `<html>` has NO `"dark"` class)
+- **`dark:` prefixed classes** → dark mode (when `<html class="dark">`)
+
+### The Golden Rule: Never Use Single-Mode Colors
+
+Every color you apply must work in **both** modes. This means:
+
+```
+❌  "text-white"              — invisible on white background in light mode
+❌  "bg-slate-900"            — dark rectangle on light page
+❌  "text-slate-300"          — too faint on light background
+❌  "border-white/15"         — invisible in light mode
+
+✅  "text-slate-900 dark:text-slate-100"   — or use s/text-primary
+✅  "bg-white dark:bg-slate-900"           — or use s/bg-surface
+✅  "text-slate-600 dark:text-slate-400"   — or use s/text-muted
+✅  "border-slate-200 dark:border-white/15" — or use s/border-subtle
+```
+
+### Always Use Style Tokens
+
+The `amp.styles` namespace provides dual-mode tokens for every common color role. **Always prefer tokens over raw Tailwind classes:**
+
+| Need                 | Token              | Resolves to (light / dark)                         |
+| -------------------- | ------------------ | -------------------------------------------------- |
+| Primary text         | `s/text-primary`   | `text-slate-900  dark:text-slate-100`              |
+| Secondary text       | `s/text-secondary` | `text-slate-700  dark:text-slate-300`              |
+| Muted text           | `s/text-muted`     | `text-slate-600  dark:text-slate-400`              |
+| Faint text           | `s/text-faint`     | `text-slate-500  dark:text-slate-500`              |
+| Ghost text           | `s/text-ghost`     | `text-slate-400  dark:text-slate-600`              |
+| Inverse text         | `s/text-inverse`   | `text-slate-950  dark:text-white`                  |
+| Accent (pink)        | `s/text-accent`    | `text-pink-700   dark:text-pink-300`               |
+| Value (indigo)       | `s/text-value`     | `text-indigo-600 dark:text-indigo-300`             |
+| Success (green)      | `s/text-positive`  | `text-emerald-600 dark:text-emerald-300`           |
+| Warning (amber)      | `s/text-warning`   | `text-amber-600  dark:text-amber-300`              |
+| Danger (rose)        | `s/text-danger`    | `text-rose-600   dark:text-rose-400`               |
+| Surface background   | `s/bg-surface`     | `bg-white        dark:bg-slate-900`                |
+| Alt surface          | `s/bg-surface-alt` | `bg-slate-100/60 dark:bg-slate-800/60`             |
+| Overlay background   | `s/bg-overlay`     | `bg-white/40     dark:bg-black/40`                 |
+| Subtle border        | `s/border-subtle`  | `border-slate-200 dark:border-white/15`            |
+| Accent border        | `s/border-accent`  | `border-pink-500/70 dark:border-pink-500/70`       |
+| Divider line         | `s/divider-accent` | `h-px bg-pink-500/70`                              |
+
+### Composed Tokens Are Already Dual-Mode
+
+The heading and body tokens bundle the correct text color automatically:
+
+| Token                | Includes Color    |
+| -------------------- | ----------------- |
+| `s/heading-display`  | `s/text-primary`  |
+| `s/heading-page`     | `s/text-inverse`  |
+| `s/heading-section`  | `s/text-primary`  |
+| `s/heading-sm`       | `s/text-secondary`|
+| `s/body-lg`          | `s/text-secondary`|
+| `s/body-base`        | `s/text-secondary`|
+| `s/body-sm`          | `s/text-muted`    |
+| `s/em-strong`        | `s/text-inverse`  |
+| `s/em-bold`          | `s/text-primary`  |
+| `s/value-hero`       | `s/text-primary`  |
+| `s/value-lg`         | `s/text-accent`   |
+| `s/btn-text`         | dual-mode hover   |
+| `s/link-subtle`      | dual-mode decor   |
+| `s/nav-link`         | dual-mode hover   |
+
+Because these tokens are pre-composed with dual-mode colors, **you rarely need to specify text color separately** on headings and body text. Only add an explicit `s/text-*` if overriding the default.
+
+### Page-Level Setup
+
+Every top-level page view must apply:
+
+1. **`"grey-grad"`** — the page background (defined in `tailwind.css` with both `:is(.dark)` and light variants)
+2. **`s/text-primary`** — establishes the default text color cascade for all descendants
+
+```clojure
+;; ✅ Correct page wrapper
+(defnc my-page-view [_props]
+  (d/div {:class (s/cx "min-h-screen grey-grad" s/text-primary)}
+         ;; page content ...
+         ))
+
+;; ❌ Missing grey-grad — wrong backgrounds in both modes
+(defnc my-page-view [_props]
+  (d/div {:class (s/cx "min-h-screen" s/text-primary)}
+         ;; ...
+         ))
+
+;; ❌ Missing text-primary — text color relies on browser default
+(defnc my-page-view [_props]
+  (d/div {:class "min-h-screen grey-grad"}
+         ;; ...
+         ))
+```
+
+### Section-Level Best Practices
+
+Sections **do not** set their own opaque background — they inherit from the page-level `grey-grad`. Use spacing tokens for vertical rhythm:
+
+```clojure
+;; ✅ Section wrapper
+(d/div {:class s/section-pb}
+       (d/div {:class "px-4"}
+              (d/p {:class (s/cx s/heading-section "pb-4")} "Section Title")
+              (d/div {:class "space-y-6"}
+                     (d/p {:class s/body-lg} "Lead paragraph ...")
+                     (d/p {:class s/body-base} "Running prose ..."))))
+
+;; ❌ Section with its own bg-* — breaks the visual flow
+(d/div {:class "bg-slate-900 pb-16"}  ;; Don't do this
+       ...)
+```
+
+### Emphasis in Prose
+
+Inline emphasis uses **brightness, not color** — via `s/em-strong`:
+
+```clojure
+;; ✅ Correct emphasis
+(d/p {:class s/body-base}
+     "The " (d/span {:class s/em-strong} "Arsenale") " is a historic complex.")
+
+;; ❌ Weight-only emphasis — no brightness shift, invisible in some modes
+(d/p {:class s/body-base}
+     "The " (d/span {:class s/weight-medium} "Arsenale") " is a historic complex.")
+
+;; ❌ Color emphasis in prose — violates design philosophy
+(d/p {:class s/body-base}
+     "The " (d/span {:class "text-pink-300"} "Arsenale") " is a historic complex.")
+```
+
+### Interactive Elements (Buttons, Links, CTAs)
+
+Interactive elements are the **only** place where pink accent color is allowed. Always provide dual-mode pairs:
+
+```clojure
+;; ✅ Filled CTA button — pink bg is correctly dual-mode, white text is intentional
+(d/a {:class (s/cx s/font-display s/weight-medium
+                   "inline-flex items-center justify-center gap-2"
+                   "px-6 py-3 text-sm uppercase tracking-wider"
+                   "bg-pink-600 dark:bg-pink-500 text-white"
+                   "hover:bg-pink-700 dark:hover:bg-pink-400"
+                   "transition-colors duration-200")}
+     "Call to Action")
+
+;; ✅ Text-style CTA link — accent color with dual-mode pairs
+(d/a {:class (s/cx s/font-display s/weight-medium
+                   "text-sm uppercase tracking-wider"
+                   "text-pink-600 dark:text-pink-300"
+                   "hover:text-pink-700 dark:hover:text-pink-200"
+                   "transition-colors duration-200")}
+     "See more →")
+
+;; ✅ Subtle secondary link using tokens
+(d/a {:class (s/cx s/font-display s/weight-medium
+                   "text-sm uppercase tracking-wider"
+                   s/text-faint
+                   "hover:text-pink-600 dark:hover:text-pink-300"
+                   "transition-colors duration-200")}
+     "Open in Maps ↗")
+```
+
+### When You Must Use Raw Tailwind Colors
+
+If no token exists for your exact need, **always write the dual-mode pair**:
+
+```clojure
+;; Custom background for a tag/badge
+"bg-slate-900/90 dark:bg-white/10"
+
+;; Custom divider
+"divide-slate-200/50 dark:divide-white/10"
+
+;; Custom role label color
+"text-amber-600 dark:text-amber-300/70"
+```
+
+### Quick Checklist for New Components
+
+Before shipping a new component, verify:
+
+- [ ] Every `text-*` class has a `dark:text-*` counterpart (or uses an `s/` token)
+- [ ] Every `bg-*` class has a `dark:bg-*` counterpart (or uses an `s/` token / `grey-grad`)
+- [ ] Every `border-*` class has a `dark:border-*` counterpart (or uses `s/border-subtle`)
+- [ ] No bare `(d/p {}` — every text element has at least `s/body-base` or `s/body-lg`
+- [ ] Page wrappers include `"grey-grad"` and `s/text-primary`
+- [ ] Emphasis uses `s/em-strong` (not `s/weight-medium` alone)
+- [ ] Pink is used only on interactive elements, never in prose emphasis
+- [ ] Spacing uses `s/section-pt` / `s/section-pb` tokens, not raw `pb-16`
 
 ---
 
