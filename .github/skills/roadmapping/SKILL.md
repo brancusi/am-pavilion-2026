@@ -7,9 +7,11 @@ description: How to manage the ROADMAP.md file — adding initiatives, archiving
 
 ## Overview
 
-`docs/ROADMAP.md` is the living planning document for Media Maniac. It tracks **active and planned** work. Completed initiatives are archived to `CHANGELOG.md` and then **removed** from the roadmap to keep context lean.
+`docs/ROADMAP.md` is the living planning document for the codebase. It tracks **active and planned** work. Completed initiatives are archived to `CHANGELOG.md` and then **removed** from the roadmap to keep context lean.
 
 This skill covers how to structure initiatives, when to prune, and how to write implementation strategies.
+
+*IMPORTANT: When roadmapping, don't start implementation until the user approves and asks to implement.
 
 ## File Structure
 

@@ -2,6 +2,57 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-02-24 — Shared Page Shell & Section Headers
+
+**Rationale:** Every page independently handled fixed nav clearance (budget `pt-14`, venue `pt-24`, artist none, blog/press none). The artist page reused budget-specific `section-block` headers (numbered eyebrows + massive display headings) that were visually too heavy for narrative prose. The venue page had a lighter eyebrow pattern but it was inline and not reusable.
+**Summary:** Created a universal `page-shell` component and `section-header` component. Migrated all pages (artist, venue, budget, blog, press) to use `page-shell` for consistent nav clearance and background. Replaced artist section headers with the lighter venue-style eyebrow pattern. Added an `expandable-text-area-light` variant for the biography section.
+
+### Changes
+
+| File                           | Change                                                                                       |
+| ------------------------------ | -------------------------------------------------------------------------------------------- |
+| `styles.cljs`                  | Added `s/page-shell` token (`min-h-screen pt-14 grey-grad text-primary`)                     |
+| `ui/page_shell.cljs` (new)     | Shared page wrapper: page-shell classes + content-column + back-up-nav                       |
+| `ui/section_header.cljs` (new) | Extracted venue-style eyebrow (`section-eyebrow`) + display heading (`section-header`)       |
+| `ui/expandable_text.cljs`      | Added `expandable-text-area-light` variant using `section-header` instead of `section-block` |
+| `pages/artist/page.cljs`       | Replaced inline wrapper with `page-shell`; removed `:idx` props from section calls           |
+| `pages/artist/biography.cljs`  | Switched from `expandable-text-area-2` to `expandable-text-area-light`                       |
+| `pages/artist/works.cljs`      | Replaced `section-block` with `section-header`                                               |
+| `pages/artist/escape.cljs`     | Replaced `section-block` with `section-header`                                               |
+| `pages/artist/video.cljs`      | Replaced `section-block` with `section-header`                                               |
+| `pages/artist/return.cljs`     | Replaced `section-block` with `section-header`                                               |
+| `pages/venue/page.cljs`        | Migrated to `page-shell`; replaced inline `venue-eyebrow` with shared `section-eyebrow`      |
+| `pages/budget/section.cljs`    | Migrated to `page-shell`; kept budget-specific `section-block` headers                       |
+| `pages/blog/page.cljs`         | Migrated to `page-shell`                                                                     |
+| `pages/press/page.cljs`        | Migrated to `page-shell`                                                                     |
+
+### Migration Notes
+
+- Landing page intentionally excluded — full-bleed hero sections skip nav clearance.
+- Budget page keeps its own `section-block` headers (numbered eyebrow is correct for TOC/data layout).
+- `section-block` remains in `pages/budget/` and `expandable-text-area`/`expandable-text-area-2` still reference it for backward compat.
+
+## 2026-02-24 — Artist Deep-Dive Page
+
+**Rationale:** The `/artist` route was a single-line "coming soon" placeholder. The site needed a full content page covering Zadikian's biography, artwork, escape story, video, and connection to Armenia/Venice.
+**Summary:** Replaced the placeholder with a six-section deep-dive page: hero portrait, expandable biography, artwork gallery, escape narrative, embedded video, and the return-to-Armenia story. All sections use existing reusable components (`section-block`, `expandable-text-area-2`, `lazy-image-gallery`, `video-background`, `lazy-image-with-overlay`) and follow the site's dual-mode design token system. Content is stubbed with realistic placeholder text and existing imgix/Mux assets — marked with TODO comments for future replacement.
+
+### Changes
+
+| File                                | Change                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------ |
+| `pages/artist/page.cljs`            | Rewritten from placeholder to page aggregator importing all six sections |
+| `pages/artist/portrait.cljs` (new)  | Hero portrait section with name/role overlay and pull-quote              |
+| `pages/artist/biography.cljs` (new) | Expandable biography with preview/full-text pattern                      |
+| `pages/artist/works.cljs` (new)     | Artwork gallery using `lazy-image-gallery` with stub slides              |
+| `pages/artist/escape.cljs` (new)    | Escape-from-Soviet-Union narrative prose section                         |
+| `pages/artist/video.cljs` (new)     | Embedded artist-speaking video via `video-background`                    |
+| `pages/artist/return.cljs` (new)    | Return-to-Armenia narrative with closing aphorism                        |
+
+### Migration Notes
+
+- None — backward compatible. No routing, module-splitting, or dependency changes required.
+
 ## 2026-02-24 — Site-Wide Layout Shell (Shared Footer & Chrome)
 
 **Rationale:** The footer only rendered on the landing page. All other pages (Visit, Budget, Artist, Blog, Press) ended abruptly with no footer, CTA, or contact info. Each page that wanted a footer had to import and render its own copy, leading to duplicate components (`pages/landing/footer.cljs`, `pages/budget/footer.cljs`) with slightly different content.

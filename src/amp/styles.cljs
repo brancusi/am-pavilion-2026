@@ -272,6 +272,15 @@
   "pb-10 sm:pb-12")
 
 ;; ---------------------------------------------------------------------------
+;; Page shell — universal page wrapper
+;; ---------------------------------------------------------------------------
+
+(def page-shell
+  "Universal page wrapper: min-height, page background, nav clearance, default text color.
+   Every routed page (except landing) should apply this to its outermost div."
+  (cx "min-h-screen pt-14" bg-page text-primary))
+
+;; ---------------------------------------------------------------------------
 ;; Info-grid (press release header, general info, etc.)
 ;; ---------------------------------------------------------------------------
 

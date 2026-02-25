@@ -7,6 +7,8 @@
    [amp.ui.map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.button :refer [main-button]]
+   [amp.ui.page-shell :refer [page-shell]]
+   [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.icons :refer [MapPinIcon]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
@@ -31,11 +33,8 @@
 ;; Stacked layout: pink accent line → small uppercase text → pink accent line.
 ;; Compact enough to never wrap, even on narrow mobile screens.
 
-(defnc venue-eyebrow [{:keys [text]}]
-  (d/div {:class "mb-6 flex flex-col gap-2 items-start"}
-         (d/div {:class (s/cx s/divider-accent "w-8")})
-         (d/p {:class (s/cx s/label-muted)} text)
-         (d/div {:class (s/cx s/divider-accent "w-8")})))
+;; Re-export from shared component for backward compat within this file
+(def venue-eyebrow section-eyebrow)
 
 ;; ── Gallery slides ─────────────────────────────────────────────────────────
 
@@ -74,8 +73,8 @@
 ;; ── Hero ───────────────────────────────────────────────────────────────────
 
 (defnc hero-section [{:keys []}]
-  ;; pt-24 (96px) = h-14 nav clearance (56px) + visual breathing room (40px)
-  (d/div {:class "pt-24 pb-16 px-4"}
+  ;; pt-10 (40px) visual breathing room — nav clearance handled by page-shell
+  (d/div {:class "pt-10 pb-16 px-4"}
          ($ venue-eyebrow {:text "Venice \u00B7 Arsenale Militare"})
 
          ;; Display title
@@ -281,11 +280,9 @@
 
 (defnc venue-view
   [_props]
-  (d/div {:class (s/cx "min-h-screen grey-grad flex items-center justify-center flex-col"
-                       s/text-primary)}
-         (d/div {:class (s/cx "flex flex-col" s/content-column)}
-                ($ hero-section)
-                ($ studio-section)
-                ($ outdoor-section)
-                ($ arsenale-section)
-                ($ getting-there-section))))
+  ($ page-shell
+     ($ hero-section)
+     ($ studio-section)
+     ($ outdoor-section)
+     ($ arsenale-section)
+     ($ getting-there-section)))

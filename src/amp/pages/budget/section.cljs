@@ -8,7 +8,7 @@
    [amp.pages.budget.sponsors :refer [sponsors-section]]
    [amp.pages.budget.why-support :refer [why-support]]
    [amp.ui.icons :refer [ChevronRightIcon]]
-   [amp.nav.back-up :refer [back-up-nav]]
+   [amp.ui.page-shell :refer [page-shell]]
    [amp.ui.section :refer [section]]
    [amp.pages.landing.studio :refer [about-studio]]
    [amp.pages.landing.press-release :refer [press-release]]
@@ -72,49 +72,44 @@
   ($ section
      {:key "budget-section"
       :section-id "budget-section"}
-     ($ back-up-nav)
-     (d/div
-      {:class (str "w-full h-full pt-14 "
-                   s/text-primary
-                   " grey-grad flex items-center justify-center flex-col")}
-      (d/div {:class (str "flex flex-col " s/content-column)}
-             ($ header)
+     ($ page-shell
+        ($ header)
 
-             ($ press-release {:id "section-1"
-                               :idx 1
-                               :subtitle "press"
-                               :title "press release"
-                               :show-budget-footer? true})
+        ($ press-release {:id "section-1"
+                          :idx 1
+                          :subtitle "press"
+                          :title "press release"
+                          :show-budget-footer? true})
 
-             ($ about-studio {:id "section-2"
-                              :idx 2
-                              :subtitle "overview"
-                              :title "Armenian Pavilion - The Studio"})
+        ($ about-studio {:id "section-2"
+                         :idx 2
+                         :subtitle "overview"
+                         :title "Armenian Pavilion - The Studio"})
 
-             ($ cost-breakdown {:id "section-3"
-                                :subtitle "financials"
-                                :title "budget"})
-
-             ($ cash-flow {:id "section-4"
+        ($ cost-breakdown {:id "section-3"
                            :subtitle "financials"
-                           :title "cashflow"})
+                           :title "budget"})
 
-             ($ committee {:id "section-5"
-                           :subtitle "team"
-                           :title "committee"})
+        ($ cash-flow {:id "section-4"
+                      :subtitle "financials"
+                      :title "cashflow"})
 
-             ($ sponsors-section {:id "section-6"
-                                  :subtitle "acknowledgements"
-                                  :title "patrons & sponsors"})
+        ($ committee {:id "section-5"
+                      :subtitle "team"
+                      :title "committee"})
 
-             ($ location-section {:id "section-7"
-                                  :subtitle "venue"
-                                  :title "location information"})
+        ($ sponsors-section {:id "section-6"
+                             :subtitle "acknowledgements"
+                             :title "patrons & sponsors"})
 
-             ($ non-profit {:id "section-8"
-                            :subtitle "non-profit"
-                            :title "donation information"})
+        ($ location-section {:id "section-7"
+                             :subtitle "venue"
+                             :title "location information"})
 
-             ($ why-support {:id "section-9"
-                             :subtitle "why it matters"
-                             :title "why support"})))))
+        ($ non-profit {:id "section-8"
+                       :subtitle "non-profit"
+                       :title "donation information"})
+
+        ($ why-support {:id "section-9"
+                        :subtitle "why it matters"
+                        :title "why support"}))))
