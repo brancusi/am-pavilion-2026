@@ -28,7 +28,7 @@
         palette     (get color-classes (or color :pink) (:pink color-classes))
         opacity-style (when bg-opacity {:backgroundColor (str "rgb(236 72 153 / " bg-opacity ")")})]
     (d/button {:class (str "group flex items-center
-                            font-display font-semibold uppercase
+                            font-body font-semibold uppercase
                             transition-colors duration-300 ease-in-out "
                            (:text palette) " "
                            (:border palette) " border "

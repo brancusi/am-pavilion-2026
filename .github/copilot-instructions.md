@@ -84,7 +84,7 @@ build/                    # Build helpers
 resources/                # Static assets (copied to public/ or release/ by npm scripts)
   css/tailwind.css        # Tailwind entry point with @font-face and custom CSS
   data/                   # GeoJSON and EDN data files
-  fonts/fira/             # FiraCode variable font (woff2)
+  fonts/fira/             # FiraCode variable font (woff2) — REMOVED Feb 2026
   images/                 # Site images (graphics, icons, portraits, QR codes)
 
 public/                   # Dev output directory (served at localhost:4200)
@@ -98,7 +98,7 @@ release/                  # Production output directory (deployed to Netlify)
 | `shadow-cljs.edn` | ClojureScript build config — defines `:app` (dev) and `:release` builds, module splitting, build hooks |
 | `deps.edn` | Clojure/ClojureScript dependencies (Helix, Reagent, threeagent, reitit, donut/system) |
 | `package.json` | Node dependencies and all npm scripts |
-| `tailwind.config.js` | Tailwind: dark mode via `"class"`, custom font families (display, fira-code, mono), `@tailwindcss/forms` plugin |
+| `tailwind.config.js` | Tailwind: dark mode via `"class"`, custom font families (display, mono), `@tailwindcss/forms` plugin |
 | `postcss.config.js` | PostCSS plugins: tailwindcss, autoprefixer, cssnano (production only) |
 | `.clj-kondo/config.edn` | Linter config with custom hooks for `lazy-component` and `for-indexed` macros, lint-as rules for helix/defnc |
 

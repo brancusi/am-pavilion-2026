@@ -12,7 +12,7 @@ Covers the design system: typography, color palette, component patterns, spacing
 
 ## Philosophy
 
-Modern, minimalist, tech/art. The aesthetic is **mathematical structure meets fine art** — geometric precision, clean grids, pattern and repetition. Two typefaces only: one Swiss grotesk (Neue Haas Grotesk Display) for display/prose, one monospaced (FiraCode) for data/labels. Weight is kept **light to medium** — the typeface does the work, not the boldness. Prose emphasis is through **brightness, not color** — white against slate-300 body text. Color accents (pink) are reserved for interactive elements only (buttons, hover states, CTAs). Information density over decoration. Data-forward, quietly confident.
+Modern, minimalist, tech/art. The aesthetic is **mathematical structure meets fine art** — geometric precision, clean grids, pattern and repetition. Two typefaces: one humanist sans-serif (Source Sans Pro) for all text — display headings, titles, nav, and prose body copy — and one monospaced (Source Code Pro) for data/labels. Weight is kept **light to medium** — the typeface does the work, not the boldness. Prose emphasis is through **brightness, not color** — white against slate-300 body text. Color accents (pink) are reserved for interactive elements only (buttons, hover states, CTAs). Body copy is always justified. Information density over decoration. Data-forward, quietly confident.
 
 ---
 
@@ -20,27 +20,30 @@ Modern, minimalist, tech/art. The aesthetic is **mathematical structure meets fi
 
 ### Two-Font System
 
-The site uses exactly two typefaces with clear, non-overlapping roles:
+The site uses exactly two typefaces. Both `font-display` and `font-body` resolve to Source Sans Pro (unified Feb 2026; Neue Haas Grotesk Display was removed). The semantic split between display and body tokens is preserved for clarity, but they render identically.
 
-| Token / Class  | Typeface                  | Source        | Role                                                      |
-| -------------- | ------------------------- | ------------- | --------------------------------------------------------- |
-| `font-display` | Neue Haas Grotesk Display | Adobe Typekit | Headings, titles, names, navigation, prose body text      |
-| `font-mono`    | FiraCode Variable         | Local woff2   | Labels, eyebrows, numbers, dates, financial figures, code |
+| Token / Class  | Typeface         | Source        | Role                                                      |
+| -------------- | ---------------- | ------------- | --------------------------------------------------------- |
+| `font-display` | Source Sans Pro  | Adobe Typekit | Headings, titles, names, navigation                       |
+| `font-body`    | Source Sans Pro  | Adobe Typekit | Prose body text (justified)                               |
+| `font-mono`    | Source Code Pro  | Adobe Typekit | Labels, eyebrows, numbers, dates, financial figures, code |
 
 **Style tokens** (in `amp.styles`):
 
-- `s/font-display` → `"font-display"` → Neue Haas Grotesk Display
-- `s/font-data` → `"font-mono"` → FiraCode
-- `s/font-ui` → alias for `s/font-data` (legacy, prefer `font-data`)
+- `s/font-display` → `"font-display"` → Source Sans Pro
+- `s/font-body` → `"font-body"` → Source Sans Pro
+- `s/font-data` → `"font-mono"` → Source Code Pro
+- `s/font-prose` → alias for `s/font-body`
+- `s/font-ui` → alias for `s/font-data`
 
 **Rules:**
 
 - Headings and titles: **always** `font-display`
-- Prose body text: **always** `font-display`
+- Prose body text: **always** `font-body` (justified via `text-justify`)
 - Numbers, financial figures, dates: **always** `font-mono`
 - Labels, eyebrows, badges, tags: **always** `font-mono`
 - Navigation links: `font-display`
-- Never use `font-sans`, `font-helvetica`, `font-futura-book` — these are dead config
+- Never use `font-sans`, `font-helvetica`, `font-futura-book`, `neue-haas-grotesk-display`, `FiraCode` — these are dead config
 
 ### Scale
 
@@ -52,9 +55,9 @@ The site uses exactly two typefaces with clear, non-overlapping roles:
 | **Small heading** | `s/heading-sm`      | `font-display font-medium uppercase tracking-wide text-sm sm:text-base`              |
 | **Eyebrow**       | `s/eyebrow`         | `font-mono font-semibold uppercase tracking-[0.15em] text-[10px]`                    |
 | **Label**         | `s/label`           | `font-mono uppercase tracking-[0.15em] text-[0.6rem]`                                |
-| **Lead body**     | `s/body-lg`         | `font-display text-lg`                                                               |
-| **Body base**     | `s/body-base`       | `font-display text-base`                                                             |
-| **Body small**    | `s/body-sm`         | `font-display text-sm`                                                               |
+| **Lead body**     | `s/body-lg`         | `font-body font-normal text-lg text-secondary text-justify leading-relaxed`          |
+| **Body base**     | `s/body-base`       | `font-body font-normal text-base text-secondary text-justify leading-relaxed`        |
+| **Body small**    | `s/body-sm`         | `font-body font-normal text-sm text-muted text-justify leading-relaxed`              |
 | **Financial fig** | `s/value-base`      | `font-mono font-semibold text-base`                                                  |
 | **Tag / badge**   | `s/label-sm`        | `font-mono font-semibold uppercase tracking-wider text-[9px]`                        |
 
@@ -62,10 +65,10 @@ The site uses exactly two typefaces with clear, non-overlapping roles:
 
 - All numbers and financial figures: **always** `font-mono` (`s/font-data`)
 - Headings: **always** `font-display` via style tokens (`s/heading-*`)
-- Prose body text: `font-display` via `s/body-*` tokens
+- Prose body text: `font-body` via `s/body-*` tokens (always justified)
 - Highlighted terms in prose: **brightness only** — `font-medium text-white` (via `s/em-strong`). No colored accents in prose.
 - Dollar amounts in prose: `font-mono font-medium text-white` (via `s/value-currency`)
-- Inline in components: prefer `s/font-display` or `s/font-data` over raw class strings
+- Inline in components: prefer `s/font-display`, `s/font-body`, or `s/font-data` over raw class strings
 - Weight ceiling: `font-bold` (700) for hero titles only. All other headings: `font-semibold` (600) or `font-medium` (500). No `font-extrabold`.
 
 ---
@@ -247,9 +250,10 @@ Elements start with `opacity-0` in CSS and are revealed by GSAP.
 
 | Avoid                              | Use Instead                                       |
 | ---------------------------------- | ------------------------------------------------- |
-| `font-helvetica`                   | `font-display` (NHG) or `font-mono` (Fira)        |
-| `font-sans`                        | `font-display` for prose, `font-mono` for data    |
-| `font-futura-book`                 | `font-display`                                    |
+| `font-helvetica`                   | `font-display` or `font-body` (Source Sans Pro)    |
+| `font-sans`                        | `font-display` for headings, `font-body` for prose |
+| `font-futura-book`                 | `font-display` or `font-body`                      |
+| `neue-haas-grotesk-display`        | Removed — use `font-display` (Source Sans Pro)     |
 | Raw `"font-mono"` in components    | `s/font-data` token from `amp.styles`             |
 | Raw `"font-futura"` in components  | `s/font-display` token from `amp.styles`          |
 | Inline `:style {:font-family ...}` | Tailwind class via token                          |

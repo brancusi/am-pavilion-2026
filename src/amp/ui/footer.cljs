@@ -40,8 +40,7 @@
   [_props]
   (let [scroll-to-id (use-scroll-to-id)]
     (d/div {:class "space-y-3"}
-           (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4"
-                               s/text-accent-50)}
+           (d/h3 {:class (s/cx s/footer-heading "mb-4")}
                  "Quick Links")
            (for [{:keys [label id]} landing-links]
              (d/button {:key id
@@ -53,8 +52,7 @@
   "Navigation links for non-landing pages."
   [_props]
   (d/div {:class "space-y-3"}
-         (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4"
-                             s/text-accent-50)}
+         (d/h3 {:class (s/cx s/footer-heading "mb-4")}
                "Quick Links")
          (for [{:keys [label href]} site-links]
            (d/a {:key href
@@ -75,7 +73,7 @@
         on-landing? (= route-name :home)]
 
     (d/footer
-     {:class (s/cx "relative w-full font-display"
+     {:class (s/cx "relative w-full" s/font-display
                    s/bg-footer)}
 
      ;; ── Divider ──
@@ -85,7 +83,7 @@
      (d/div {:class (s/cx s/content-column-container "py-16 lg:py-24 px-4")}
             (d/blockquote
              {:class (s/cx s/content-column "text-center")}
-             (d/p {:class (s/cx "text-xl lg:text-2xl italic font-light leading-relaxed"
+             (d/p {:class (s/cx s/font-display "text-xl lg:text-2xl italic" s/weight-normal "leading-relaxed"
                                 s/text-muted)}
                   "\u201CThe way you do anything is the way you do everything.\u201D")))
 
@@ -98,11 +96,10 @@
 
                    ;; Primary CTA
                    (d/div {:class "text-center mb-16"}
-                          (d/h2 {:class (s/cx "text-2xl lg:text-3xl font-semibold uppercase tracking-wider mb-3"
-                                              s/text-primary)}
+                          (d/h2 {:class (s/cx s/font-display "text-2xl lg:text-3xl" s/weight-semibold
+                                              "uppercase tracking-wider mb-3" s/text-primary)}
                                 "Support the Pavilion")
-                          (d/p {:class (s/cx "text-sm lg:text-base max-w-xl mx-auto mb-8"
-                                             s/text-muted)}
+                          (d/p {:class (s/cx s/body-sm "max-w-xl mx-auto mb-8 text-center")}
                                "Your contribution directly supports Armenia\u2019s national presentation at the 61st Venice Biennale.")
                           (d/div {:class "flex justify-center"}
                                  ($ main-button
@@ -116,24 +113,22 @@
 
                           ;; Contact
                           (d/div {:class "space-y-3"}
-                                 (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4"
-                                                     s/text-accent-50)}
+                                 (d/h3 {:class (s/cx s/footer-heading "mb-4")}
                                        "Get in Touch")
                                  (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
                                        :class (s/cx "block transition-colors"
                                                     s/text-secondary
-                                                    "hover:text-pink-600 dark:hover:text-pink-300")}
+                                                    s/link-hover-accent)}
                                       "hello@armenianpavilion2026.org")
                                  (d/a {:href "tel:+13234041152"
                                        :class (s/cx "block transition-colors"
                                                     s/text-secondary
-                                                    "hover:text-pink-600 dark:hover:text-pink-300")}
+                                                    s/link-hover-accent)}
                                       "+1 323-404-1152"))
 
                           ;; Organization
                           (d/div {:class "space-y-3"}
-                                 (d/h3 {:class (s/cx "text-[10px] font-medium uppercase tracking-[0.2em] mb-4"
-                                                     s/text-accent-50)}
+                                 (d/h3 {:class (s/cx s/footer-heading "mb-4")}
                                        "501(c)(3) Non-Profit")
                                  (d/p {:class s/text-secondary} "Fallen Angels Inc.")
                                  (d/p {:class s/text-muted} "EIN: 92-2395513")

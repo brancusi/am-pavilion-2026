@@ -18,7 +18,7 @@
   [{:keys []}]
   (d/div {:class "px-4"}
          ($ written-by {:author "Carlo McCormick" :class "mb-6"})
-         (d/p {:class (s/cx s/body-lg "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               "Over the entire six-month duration of the Biennale, the "
               (d/span {:class s/em-strong} "Armenia Pavilion")
               " will operate as "
@@ -40,7 +40,7 @@
    (d/div {:class "px-4"}
           ($ written-by {:author "Carlo McCormick" :class "mb-6"})
 
-          (d/p {:class (s/cx s/body-lg "mb-6")}
+          (d/p {:class (s/cx s/body-base "mb-6")}
                "Over the entire six-month duration of the Biennale, the "
                (d/span {:class s/em-strong} "Armenia Pavilion")
                " will operate as "

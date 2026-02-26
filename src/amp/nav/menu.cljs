@@ -3,26 +3,36 @@
             [amp.services.router :refer [site-map]]
             [amp.state.provider :refer [use-main-state]]
             [amp.styles :as s]
-            [amp.ui.icons :refer [XMarkIcon]]
             [amp.ui.theme-toggle :refer [theme-toggle]]
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
 ;; ---------------------------------------------------------------------------
-;; Hamburger icon (three horizontal bars)
+;; Animated hamburger / X icon — three bars that morph via CSS transitions.
 ;; ---------------------------------------------------------------------------
 
-(defnc hamburger-icon [{:keys [class]}]
-  (d/svg {:xmlns "http://www.w3.org/2000/svg"
-          :fill "none"
-          :viewBox "0 0 24 24"
-          :stroke-width "1.5"
-          :stroke "currentColor"
-          :class (or class "w-6 h-6")}
-         (d/path {:stroke-linecap "round"
-                  :stroke-linejoin "round"
-                  :d "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"})))
+(defnc hamburger-icon [{:keys [open? class]}]
+  (d/div {:class (s/cx "relative flex flex-col justify-center items-center"
+                       (or class "w-6 h-6"))}
+         ;; Top bar
+         (d/span {:class (s/cx "block absolute h-[1.5px] w-5 bg-current"
+                               "transition-all duration-300 ease-in-out"
+                               (if open?
+                                 "rotate-45 translate-y-0"
+                                 "-translate-y-[5px]"))})
+         ;; Middle bar
+         (d/span {:class (s/cx "block absolute h-[1.5px] w-5 bg-current"
+                               "transition-all duration-300 ease-in-out"
+                               (if open?
+                                 "opacity-0 scale-x-0"
+                                 "opacity-100"))})
+         ;; Bottom bar
+         (d/span {:class (s/cx "block absolute h-[1.5px] w-5 bg-current"
+                               "transition-all duration-300 ease-in-out"
+                               (if open?
+                                 "-rotate-45 translate-y-0"
+                                 "translate-y-[5px]"))})))
 
 ;; ---------------------------------------------------------------------------
 ;; Nav links for the menu — only the primary public pages (not budget/mockups)
@@ -34,8 +44,8 @@
   [{:path "/" :title "Home"}
    {:path "/visit" :title "Visit"}
    {:path "/artist" :title "Artist"}
-   {:path "/blog" :title "Blog"}
-   {:path "/press" :title "Press"}])
+   #_{:path "/blog" :title "Blog"}
+   #_{:path "/press" :title "Press"}])
 
 ;; ---------------------------------------------------------------------------
 ;; Cutout logo — W3Schools-style mix-blend-mode knockout.
@@ -83,6 +93,8 @@
         current-route-name (-> state :current-route :data :name)
         current-path (-> state :current-route :path)
 
+        nav-ref (hooks/use-ref nil)
+
         toggle! (hooks/use-callback
                  [open?]
                  (fn [_e]
@@ -93,12 +105,24 @@
                 (fn [_e]
                   (set-open! false)))]
 
+    ;; Close menu when clicking outside the nav
+    (hooks/use-effect
+     [open?]
+     (when open?
+       (let [handler (fn [e]
+                       (when-let [nav (.-current nav-ref)]
+                         (when-not (.contains nav (.-target e))
+                           (set-open! false))))]
+         (.addEventListener js/document "pointerdown" handler)
+         (fn [] (.removeEventListener js/document "pointerdown" handler)))))
+
     (<>
      ;; Cutout logo — rendered OUTSIDE the nav to avoid
      ;; backdrop-filter isolation trapping the blend mode.
-     ($ cutout-logo)
+     #_($ cutout-logo)
 
-     (d/nav {:class "fixed top-0 left-0 right-0 z-40"}
+     (d/nav {:ref nav-ref
+             :class "fixed top-0 left-0 right-0 z-40"}
 
             ;; ---- Top bar (frosted glass) ----
             (d/div {:class (s/cx "flex items-center justify-between"
@@ -130,9 +154,7 @@
                                            "transition-colors duration-200")
                               :on-click toggle!
                               :aria-label (if open? "Close menu" "Open menu")}
-                             (if open?
-                               ($ XMarkIcon {:class "w-6 h-6"})
-                               ($ hamburger-icon {:class "w-6 h-6"}))))
+                             ($ hamburger-icon {:open? open? :class "w-6 h-6"})))
 
             ;; ---- Mobile slide-down panel (frosted glass) ----
             (d/div {:class (s/cx "md:hidden overflow-hidden"

@@ -251,8 +251,10 @@
                            (d/p {:class (s/cx s/eyebrow "text-pink-300")}
                                 "Interactive 3D")
 
-                           ;; "Tap to explore" sub-label
-                           (d/p {:class (s/cx s/label "text-slate-400")}
+                           ;; "Tap to explore" CTA — large & visible
+                           (d/p {:class (s/cx s/font-display s/weight-medium s/uppercase-
+                                              "tracking-wider text-base sm:text-lg"
+                                              "text-slate-300 mt-1")}
                                 "Tap to explore")
 
                            ;; Caption + credit — hidden on mobile to avoid clipping

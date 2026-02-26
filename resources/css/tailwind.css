@@ -9,56 +9,7 @@
   50% { opacity: 1; transform: scale(1); }
 }
 
-@font-face {
-    font-family: 'FiraCode';
-    src: url('../fonts/fira/FiraCode-VF.woff2') format('woff2'),
-         url('../fonts/fira/FiraCode-VF.woff') format('woff');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
 
-@font-face {
-  font-family: "futura-100";
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "futura-100-book";
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100-book";
-  font-weight: 400;
-  font-style: italic;
-}
 
 .v-for-w {
   width: 100vh;
@@ -85,7 +36,7 @@
 
 .massive-title {
     font-size: 24em;
-    font-family: "FiraCode";
+    font-family: "source-code-pro", monospace;
     font-weight: 600;
     color: #EAEAEA;
     opacity: 0;

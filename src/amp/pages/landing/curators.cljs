@@ -41,16 +41,14 @@
       {:class "sm:flex-1 sm:min-w-0"}
 
       ;; Name — blocky bg treatment
-      (d/p {:class "font-display font-bold uppercase tracking-wider
-                    text-lg sm:text-xl text-white dark:text-white mb-1 leading-relaxed"}
+      (d/p {:class (s/cx s/person-name "mb-1")}
            (d/span {:class tag-bg :style tag-style} name))
 
       ;; Role — amber label
-      (d/p {:class "font-display font-medium text-xs uppercase tracking-[0.2em]
-                    text-amber-600 dark:text-amber-300/70 mb-3"} role)
+      (d/p {:class (s/cx s/person-role "mb-3")} role)
 
       ;; Bio
-      (d/p {:class (s/cx s/body-sm "sm:text-base")} bio)
+      (d/p {:class s/body-base} bio)
 
       ;; Clear float (mobile only)
       (d/div {:class "clear-both sm:hidden"})))))
@@ -69,9 +67,7 @@
 
      ;; Section heading — blocky teaser style
      (when title
-       (d/h2 {:class "font-display font-bold uppercase tracking-wider
-                      text-2xl sm:text-3xl text-white dark:text-white
-                      leading-relaxed mb-10 px-4"}
+       (d/h2 {:class (s/cx s/person-name-lg "mb-10 px-4")}
              (d/span {:class title-bg :style title-style} title)))
 
      ;; Curator cards

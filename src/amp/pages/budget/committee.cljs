@@ -59,20 +59,20 @@
 
 (defnc details
   [{:keys []}]
-  (d/div {:class (s/cx "p-4" s/body-lg)}
-         (d/p {:class (s/cx "italic text-lg text-red-300")}
+  (d/div {:class (s/cx "p-4" s/body-base)}
+         (d/p {:class (s/cx s/em-italic s/text-warning)}
               "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue\u2014a standard and widely accepted model for many non-permanent participating nations. "
               "The selected site operates at a base rental cost of approximately "
               (d/span {:class s/value-currency} "$145,600")
-              (d/span {:class "text-red-300"}
-                      ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
-                      "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
+              (d/span
+               ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
+               "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
               (d/span {:class s/value-currency} "$450,000 or more")
-              (d/span {:class "text-red-300"}
-                      " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
-                      "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."))
+              (d/span
+               " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
+               "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources."))
 
-         (d/p {:class (s/cx "mt-6 text-red-500 text-2xl")}
+         (d/p {:class (s/cx "mt-6 text-2xl" s/text-danger)}
               "To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed.")
 
          (d/div {:class "mt-6"}

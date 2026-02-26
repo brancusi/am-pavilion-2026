@@ -228,7 +228,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: FiraCode, monospace; /* 1 */
+  font-family: source-code-pro, monospace; /* 1 */
   font-feature-settings: normal; /* 2 */
   font-variation-settings: normal; /* 3 */
   font-size: 1em; /* 4 */
@@ -1000,6 +1000,9 @@ select{
 .h-7{
   height: 1.75rem;
 }
+.h-\[1\.5px\]{
+  height: 1.5px;
+}
 .h-\[70vh\]{
   height: 70vh;
 }
@@ -1142,12 +1145,28 @@ select{
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.-translate-y-\[5px\]{
+  --tw-translate-y: -5px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .translate-x-0{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-x-full{
   --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-0{
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-\[5px\]{
+  --tw-translate-y: 5px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-rotate-45{
+  --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .-rotate-90{
@@ -1158,8 +1177,16 @@ select{
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.rotate-45{
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .rotate-90{
   --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-x-0{
+  --tw-scale-x: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform{
@@ -1481,9 +1508,9 @@ select{
   --tw-border-opacity: 1;
   border-top-color: rgb(244 114 182 / var(--tw-border-opacity, 1));
 }
-.bg-amber-300{
+.bg-amber-400{
   --tw-bg-opacity: 1;
-  background-color: rgb(252 211 77 / var(--tw-bg-opacity, 1));
+  background-color: rgb(251 191 36 / var(--tw-bg-opacity, 1));
 }
 .bg-amber-400\/15{
   background-color: rgb(251 191 36 / 0.15);
@@ -1509,6 +1536,9 @@ select{
 }
 .bg-black\/80{
   background-color: rgb(0 0 0 / 0.8);
+}
+.bg-current{
+  background-color: currentColor;
 }
 .bg-emerald-400\/20{
   background-color: rgb(52 211 153 / 0.2);
@@ -1850,11 +1880,17 @@ select{
 .text-right{
   text-align: right;
 }
+.text-justify{
+  text-align: justify;
+}
+.font-body{
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif;
+}
 .font-display{
-  font-family: neue-haas-grotesk-display, neue-haas-grotesk-text, sans-serif;
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif;
 }
 .font-mono{
-  font-family: FiraCode, monospace;
+  font-family: source-code-pro, monospace;
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -1883,9 +1919,6 @@ select{
 }
 .text-\[14px\]{
   font-size: 14px;
-}
-.text-\[20px\]{
-  font-size: 20px;
 }
 .text-\[8px\]{
   font-size: 8px;
@@ -1918,9 +1951,6 @@ select{
 }
 .font-extrabold{
   font-weight: 800;
-}
-.font-light{
-  font-weight: 300;
 }
 .font-medium{
   font-weight: 500;
@@ -1972,13 +2002,6 @@ select{
 }
 .tracking-widest{
   letter-spacing: 0.1em;
-}
-.text-amber-200\/80{
-  color: rgb(253 230 138 / 0.8);
-}
-.text-amber-300{
-  --tw-text-opacity: 1;
-  color: rgb(252 211 77 / var(--tw-text-opacity, 1));
 }
 .text-amber-500{
   --tw-text-opacity: 1;
@@ -2235,56 +2258,7 @@ select{
   50% { opacity: 1; transform: scale(1); }
 }
 
-@font-face {
-    font-family: 'FiraCode';
-    src: url('../fonts/fira/FiraCode-VF.woff2') format('woff2'),
-         url('../fonts/fira/FiraCode-VF.woff') format('woff');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
 
-@font-face {
-  font-family: "futura-100";
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100";
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "futura-100-book";
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "futura-100-book";
-  font-weight: 400;
-  font-style: italic;
-}
 
 .v-for-w {
   width: 100vh;
@@ -2311,7 +2285,7 @@ select{
 
 .massive-title {
     font-size: 24em;
-    font-family: "FiraCode";
+    font-family: "source-code-pro", monospace;
     font-weight: 600;
     color: #EAEAEA;
     opacity: 0;
@@ -2808,10 +2782,6 @@ select{
   color: rgb(252 211 77 / 0.5);
 }
 
-.dark\:text-amber-300\/70:is(.dark *){
-  color: rgb(252 211 77 / 0.7);
-}
-
 .dark\:text-amber-300\/80:is(.dark *){
   color: rgb(252 211 77 / 0.8);
 }
@@ -3267,11 +3237,6 @@ select{
   .lg\:text-6xl{
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .lg\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 

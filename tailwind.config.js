@@ -13,24 +13,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Display — Neue Haas Grotesk Display (Typekit). Headings, titles, nav, prose body.
-        display: [
-          "neue-haas-grotesk-display",
-          "neue-haas-grotesk-text",
-          "sans-serif",
-        ],
-        // Legacy alias — kept so old `font-futura` refs still resolve
-        futura: [
-          "neue-haas-grotesk-display",
-          "neue-haas-grotesk-text",
-          "sans-serif",
-        ],
+        // Display — Source Sans Pro (Typekit). Headings, titles, nav.
+        // Previously Neue Haas Grotesk Display; unified to Source Sans Pro Feb 2026.
+        display: ["source-sans-pro", "Helvetica", "Arial", "sans-serif"],
 
-        // Data — FiraCode (local variable font). Labels, numbers, code, eyebrows.
-        "fira-code": ["FiraCode", "monospace"],
+        // Body — Source Sans Pro (Typekit). Prose body copy, descriptions.
+        body: ["source-sans-pro", "Helvetica", "Arial", "sans-serif"],
 
-        // Override Tailwind's default mono to use FiraCode everywhere
-        mono: ["FiraCode", "monospace"],
+        // Data — Source Code Pro (Adobe Typekit). Labels, numbers, code, eyebrows.
+        "fira-code": ["source-code-pro", "monospace"],
+
+        // Override Tailwind's default mono to use Source Code Pro everywhere
+        mono: ["source-code-pro", "monospace"],
 
         // Keep Inter as sans fallback (unused in design system, but safe default)
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],

@@ -46,7 +46,7 @@
        {:class "relative z-10 flex-1 flex flex-col items-center justify-center px-8"}
 
        ;; The Studio logo — hero centerpiece, amber tint via CSS mask
-       (d/div {:class "w-4/5 sm:w-2/3 max-w-2xl aspect-square mb-10 bg-amber-300 opacity-90"
+       (d/div {:class "w-4/5 sm:w-2/3 max-w-2xl aspect-square mb-10 bg-amber-400 opacity-90"
                :style {:WebkitMaskImage "url(images/graphics/the_studio_logo.svg)"
                        :maskImage "url(images/graphics/the_studio_logo.svg)"
                        :WebkitMaskSize "contain"
@@ -58,7 +58,7 @@
 
        ;; Subtitle — pavilion info
        (d/p
-        {:class "font-display text-xs sm:text-sm uppercase tracking-[0.2em] max-w-md text-center leading-loose text-white/90"}
+        {:class (s/cx s/font-display "text-xs sm:text-sm uppercase tracking-[0.2em] max-w-md text-center leading-loose text-white/90")}
         (d/span
          {:class block-bg-light
           :style clone-style}
@@ -67,8 +67,8 @@
       ;; Learn more — anchored to bottom
       (d/a
        {:href "#press-release"
-        :class "absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-1
-                text-white/80 hover:text-white transition-colors
-                font-display text-xs uppercase tracking-[0.2em]"}
+        :class (s/cx "absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-1
+                text-white/80 hover:text-white transition-colors"
+                     s/font-display "text-xs uppercase tracking-[0.2em]")}
        "Learn More"
        (d/span {:class "text-lg animate-bounce"} "\u2193"))))))

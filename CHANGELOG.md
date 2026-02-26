@@ -2,6 +2,74 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-02-25 — Unify Expandable Text to body-base (16 px)
+
+**Rationale:** Expandable text sections used `body-lg` (18 px) for preview/lead paragraphs and `body-base` (16 px) for continuation paragraphs, creating a visible size jump on expand.
+**Summary:** Changed all preview and details lead paragraphs from `s/body-lg` to `s/body-base` so text stays at a uniform 16 px throughout expand/collapse. Fixed `location.cljs` preview which had no body token at all.
+
+### Changes
+
+| File                                       | Change                                                                          |
+| ------------------------------------------ | ------------------------------------------------------------------------------- |
+| `src/amp/pages/landing/studio.cljs`        | Preview + details lead ¶ `s/body-lg` → `s/body-base`                            |
+| `src/amp/pages/landing/in_minor_keys.cljs` | Preview + details lead ¶ `s/body-lg` → `s/body-base`                            |
+| `src/amp/pages/artist/biography.cljs`      | Preview + details lead ¶ `s/body-lg` → `s/body-base`                            |
+| `src/amp/pages/landing/press_release.cljs` | Details paragraph 1 `s/body-lg` → `s/body-base`                                 |
+| `src/amp/pages/budget/location.cljs`       | Preview `class ""` → `s/body-base`; details wrapper `s/body-lg` → `s/body-base` |
+| `.github/skills/styles/SKILL.md`           | Corrected body token table to match actual `styles.cljs` definitions            |
+
+## 2026-02-25 — Remove Neue Haas Grotesk Display, Unify to Source Sans Pro
+
+**Rationale:** Simplify the font stack from three typefaces to two. Neue Haas Grotesk Display was the sole other Adobe Typekit font besides Source Sans Pro. Removing it reduces external font dependencies, download weight, and visual complexity — the site now uses Source Sans Pro for all text (headings, nav, body) and FiraCode for data/labels.
+**Summary:** Changed `font-display` Tailwind class to resolve to Source Sans Pro instead of Neue Haas Grotesk Display. Cleaned up raw `"font-display"` strings in 4 component files. Updated all documentation to reflect the two-font system.
+
+### Changes
+
+| File                                 | Change                                                                             |
+| ------------------------------------ | ---------------------------------------------------------------------------------- |
+| `tailwind.config.js`                 | `display` font-family changed from NHG Display to Source Sans Pro stack            |
+| `src/amp/styles.cljs`                | Updated font-family comments from three-font to two-font system                    |
+| `src/amp/pages/landing/hero.cljs`    | Replaced 2 raw `"font-display"` strings with `s/font-display` token via `s/cx`     |
+| `src/amp/pages/artist/portrait.cljs` | Replaced inline `"font-display font-medium text-xs..."` with `s/person-role` token |
+| `src/amp/ui/button.cljs`             | Changed raw `font-display` to `font-body` in class string                          |
+| `src/amp/ui/footer.cljs`             | Replaced raw `"font-display"` with `s/font-display` token                          |
+| `.github/skills/styles/SKILL.md`     | Updated to two-font system documentation, added NHG to anti-patterns               |
+
+### Migration Notes
+
+- You can now remove **Neue Haas Grotesk Display** and **Neue Haas Grotesk Text** from your Adobe Fonts web project. Only **Source Sans Pro** is needed from Typekit.
+- The `font-display` Tailwind class still works — it now resolves to Source Sans Pro instead of NHG.
+- All `s/font-display` tokens remain valid; they simply render in Source Sans Pro.
+
+## 2026-02-25 — Font Audit & Body Copy Unification
+
+**Rationale:** Body copy was inconsistent across sections — `body-lg` used `font-bold` while `body-base` used `font-medium`, creating jarring weight shifts between expandable-text previews and expanded content. Dead font references (`futura-100`, `futura-100-book`) cluttered the CSS. Over 250 inline font/weight/size/color classes across components made global style changes impossible from a single location.
+**Summary:** Removed all dead font declarations. Unified body copy to Source Sans Pro (`font-body`) at normal (400) weight, justified, with consistent leading. Added 7 new semantic tokens for person names, role labels, footer headings, and written-by patterns. Migrated 8 component files from inline classes to shared tokens.
+
+### Changes
+
+| File                                       | Change                                                                                                                                                                                 |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `resources/css/tailwind.css`               | Removed all `futura-100` and `futura-100-book` @font-face declarations                                                                                                                 |
+| `tailwind.config.js`                       | Removed `futura` legacy font alias                                                                                                                                                     |
+| `src/amp/styles.cljs`                      | Unified body tokens to `font-normal` weight; added `person-name`, `person-name-lg`, `person-role`, `written-by-label`, `written-by-name`, `footer-heading`, `link-hover-accent` tokens |
+| `src/amp/pages/landing/teaser.cljs`        | Migrated title/subtitle/body/info-grid from inline to `s/` tokens                                                                                                                      |
+| `src/amp/pages/landing/curators.cljs`      | Migrated name/role/bio/heading from inline to `s/person-name`, `s/person-role`, `s/body-base`                                                                                          |
+| `src/amp/pages/landing/artist.cljs`        | Migrated name/role/heading from inline to `s/person-name-lg`, `s/person-role`                                                                                                          |
+| `src/amp/pages/landing/in_minor_keys.cljs` | Migrated curator card name/role from inline to tokens                                                                                                                                  |
+| `src/amp/pages/landing/press_release.cljs` | Migrated header font classes to tokens; replaced inline `text-red-*` with `s/text-warning`/`s/text-danger`                                                                             |
+| `src/amp/pages/budget/committee.cljs`      | Replaced inline `text-red-*` with `s/text-warning`/`s/text-danger`                                                                                                                     |
+| `src/amp/ui/written_by.cljs`               | Replaced inline font/color with `s/written-by-label`/`s/written-by-name`                                                                                                               |
+| `src/amp/ui/footer.cljs`                   | Migrated heading/link/CTA classes to `s/footer-heading`, `s/link-hover-accent`, `s/body-sm`                                                                                            |
+| `.github/skills/styles/SKILL.md`           | Updated to three-font system doc, justified body copy, new token references                                                                                                            |
+
+### Migration Notes
+
+- You can now remove **Futura PT** from your Adobe Fonts web project — it is no longer referenced anywhere.
+- The `font-futura` Tailwind class no longer resolves. Any remaining ad-hoc uses will show the browser’s default sans-serif.
+- Body copy weight changed from bold/medium mix to uniform normal (400). Emphasis should use `s/em-strong` or `s/em-bold` inline spans.
+- None — backward compatible for all other components.
+
 ## 2026-02-24 — Shared Page Shell & Section Headers
 
 **Rationale:** Every page independently handled fixed nav clearance (budget `pt-14`, venue `pt-24`, artist none, blog/press none). The artist page reused budget-specific `section-block` headers (numbered eyebrows + massive display headings) that were visually too heavy for narrative prose. The venue page had a lighter eyebrow pattern but it was inline and not reusable.

@@ -35,9 +35,8 @@
                                "The Artist")
                           (d/h1 {:class (s/cx s/heading-display "mb-2")}
                                 "Zadik Zadikian")
-                          (d/p {:class (s/cx "font-display font-medium text-xs uppercase tracking-[0.2em]"
-                                             "text-amber-600 dark:text-amber-300/70")}
-                               "Sculptor \u00B7 b. 1948, Erevan"))))
+                          (d/p {:class (s/cx s/person-role)}
+                               "Sculptor \u00B7 Los Angeles, USA"))))
 
      ;; Pull-quote beneath portrait
      (d/div {:class "px-4 mt-10"}

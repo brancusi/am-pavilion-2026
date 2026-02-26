@@ -7,6 +7,17 @@
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
 
+;; ---------------------------------------------------------------------------
+;; Scroll restoration — push navigations scroll to top, pop (back/forward)
+;; restores the saved scroll position so the user lands where they left off.
+;; ---------------------------------------------------------------------------
+
+;; :push = user clicked a link  |  :pop = browser back/forward
+(defonce ^:private nav-type (atom :push))
+
+;; path → scroll-y, preserved across hot-reloads
+(defonce ^:private scroll-positions (atom {}))
+
 (defn log-fn [& params]
   (fn [_]
     (apply js/console.log params)))
@@ -76,22 +87,50 @@
                                [state]
                                (fn [new-route]
                                  (js/console.log new-route)
-                                 (let [old-route (:current-route state)]
-                                   (rfc/apply-controllers old-route new-route))
-                                 (dispatch! [:enter-route! new-route])))]
+                                 (let [old-route (:current-route state)
+                                       old-path  (:path old-route)]
+
+                                   ;; Save scroll position for the page we're leaving
+                                   (when old-path
+                                     (swap! scroll-positions assoc old-path (.-scrollY js/window)))
+
+                                   (rfc/apply-controllers old-route new-route)
+                                   (dispatch! [:enter-route! new-route])
+
+                                   ;; Scroll behaviour depends on navigation type
+                                   (let [type @nav-type]
+                                     (reset! nav-type :push) ;; reset for next navigation
+                                     (if (= type :pop)
+                                       ;; Back/forward → restore saved position (after view renders)
+                                       (let [saved (get @scroll-positions (:path new-route) 0)]
+                                         (js/requestAnimationFrame
+                                          #(.scrollTo js/window 0 saved)))
+                                       ;; Push (link click) → jump to top immediately
+                                       (.scrollTo js/window 0 0))))))]
 
     (hooks/use-effect
      :once
 
-     (rfe/start!
-      (rf/router
-       (routes)
-       {:data {:controllers [{:start (log-fn "start" "root-controller")
-                              :stop (log-fn "stop" "root controller")}]}})
-      route-change-callback
-      {:use-fragment false})
+     ;; Disable browser's automatic scroll restoration — we handle it
+     (set! (.. js/history -scrollRestoration) "manual")
 
-     (set-is-ready! true))
+     ;; Detect browser back/forward *before* reitit's handler fires
+     (let [on-pop (fn [_] (reset! nav-type :pop))]
+       (.addEventListener js/window "popstate" on-pop)
+
+       (rfe/start!
+        (rf/router
+         (routes)
+         {:data {:controllers [{:start (log-fn "start" "root-controller")
+                                :stop (log-fn "stop" "root controller")}]}})
+        route-change-callback
+        {:use-fragment false})
+
+       (set-is-ready! true)
+
+       ;; Cleanup
+       (fn []
+         (.removeEventListener js/window "popstate" on-pop))))
 
     (when is-ready?
       children)))

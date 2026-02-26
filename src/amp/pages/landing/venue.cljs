@@ -16,7 +16,7 @@
 (defnc preview
   [{:keys []}]
   (d/div {:class "px-4"}
-         (d/p {:class (s/cx s/body-lg "mb-6")}
+         (d/p {:class (s/cx s/text-base "mb-6")}
               "The Armenia Pavilion 2026 is located across "
               (d/span {:class s/em-strong} "two sites")
               " within the historic "
@@ -37,7 +37,7 @@
 
      ;; Intro paragraph
      (d/div {:class "px-4"}
-            (d/p {:class (s/cx s/body-lg "mb-6")}
+            (d/p {:class (s/cx s/text-base "mb-6")}
                  "The Armenia Pavilion 2026 is located across "
                  (d/span {:class s/em-strong} "two sites")
                  " within the historic "

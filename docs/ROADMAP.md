@@ -44,4 +44,78 @@
 - [x] **Step 6 — Validate release build** (2026-02-24)
       Run `npm run release` — completed with only the expected medley warning.
 
+## 2026-02-25 — Font Audit & Body Copy Unification
+
+**Goal:** Remove dead font references, unify all body copy to a single consistent style (Source Sans Pro, normal weight, justified), centralize all inline font/weight/size/color into shared tokens, and enable removal of unused Adobe fonts.
+
+**Current state:**
+
+- Dead `futura-100` / `futura-100-book` @font-face declarations in CSS, unused `futura` Tailwind alias.
+- Body copy tokens (`body-lg` vs `body-base`) use different weights (bold vs medium), creating jarring shifts between expandable-text preview and expanded content.
+- ~52 inline font-family, ~45 inline font-weight, ~100+ inline text-size, and ~80+ inline text-color occurrences across components.
+- Landing page sections (teaser, curators, artist, in-minor-keys) use all-inline typography.
+- No shared tokens for person names, role labels, footer headings, or written-by patterns.
+
+**Target state:**
+
+- Dead font CSS and Tailwind config removed. Adobe font project can drop unused families.
+- All body copy uses Source Sans Pro (`font-body`) at `font-normal` (400) weight, justified, with consistent leading.
+- New semantic tokens: `person-name`, `person-name-lg`, `person-role`, `written-by-label`, `written-by-name`, `footer-heading`, `link-hover-accent`.
+- Landing page sections, footer, written-by, press-release footer, and committee page migrated to tokens.
+
+### Tasks
+
+- [x] **Step 1 — Remove dead font references** (2026-02-25)
+      Removed futura-100/futura-100-book @font-face from CSS, futura alias from Tailwind config.
+
+- [x] **Step 2 — Unify body copy tokens** (2026-02-25)
+      Standardized body-lg/body-base/body-sm/body-closing to font-normal weight with leading-relaxed.
+
+- [x] **Step 3 — Add semantic tokens** (2026-02-25)
+      Added person-name, person-name-lg, person-role, written-by-label/name, footer-heading, link-hover-accent to styles.cljs.
+
+- [x] **Step 4 — Migrate landing sections** (2026-02-25)
+      Migrated teaser, curators, artist, in-minor-keys to use centralized tokens.
+
+- [x] **Step 5 — Migrate written-by, footer, press-release, committee** (2026-02-25)
+      Replaced all inline font/color classes with shared tokens.
+
+- [x] **Step 6 — Validate release build** (2026-02-25)
+      Run `npm run release` — completed with only the expected medley warning.
+
+## 2026-02-25 — Remove Neue Haas Grotesk Display, Unify to Source Sans Pro
+
+**Goal:** Eliminate Neue Haas Grotesk Display from the font stack and unify all text — display headings, navigation, and body copy — to Source Sans Pro. Reduces the two Adobe Typekit fonts to one.
+
+**Current state:**
+
+- `font-display` Tailwind class resolves to `neue-haas-grotesk-display, neue-haas-grotesk-text, sans-serif`.
+- `font-body` resolves to `source-sans-pro, Helvetica, Arial, sans-serif`.
+- ~20 `s/font-display` token usages and 4 raw `"font-display"` strings across 12 source files.
+- Adobe Typekit project serves both NHG Display + Source Sans Pro.
+
+**Target state:**
+
+- Both `font-display` and `font-body` resolve to `source-sans-pro, Helvetica, Arial, sans-serif`.
+- Two-font system: Source Sans Pro (all text) + FiraCode (data/labels).
+- Adobe Typekit project can drop NHG Display and NHG Text.
+- No remaining `neue-haas-grotesk` references in source.
+
+### Tasks
+
+- [x] **Step 1 — Update Tailwind font config** (2026-02-25)
+      Changed `display` font-family to Source Sans Pro stack in `tailwind.config.js`.
+
+- [x] **Step 2 — Update styles.cljs comments** (2026-02-25)
+      Updated font-family section from three-font to two-font documentation.
+
+- [x] **Step 3 — Clean up raw font-display strings** (2026-02-25)
+      Replaced 4 raw `"font-display"` strings in hero.cljs, portrait.cljs, button.cljs, footer.cljs with tokens.
+
+- [x] **Step 4 — Update docs** (2026-02-25)
+      Updated SKILL.md, ROADMAP.md, and CHANGELOG.md to reflect two-font system.
+
+- [x] **Step 5 — Validate release build** (2026-02-25)
+      Run `npm run release` — completed with only the expected medley warning.
+
 <!-- Add new initiatives above this line -->

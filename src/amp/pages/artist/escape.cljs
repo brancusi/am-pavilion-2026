@@ -8,50 +8,41 @@
    [helix.core :refer [$]]
    [helix.dom :as d]))
 
-;; TODO: Replace stub text with final escape narrative
-
 (defnc escape-section
   [{:keys [id]}]
   (d/div {:id id}
          ($ section-header {:eyebrow "origins" :title "The Escape"}
             (d/div {:class "mt-6 px-4"}
                    (d/p {:class (s/cx s/body-lg "mb-6")}
-                        "In the early 1970s, at the height of the Cold War, a young "
+                        "At nineteen\u2014armed only with conviction\u2014"
                         (d/span {:class s/em-strong} "Zadik Zadikian")
-                        " made the decision that would define the rest of his life: "
-                        "to leave Soviet Armenia. The borders were sealed, emigration all "
-                        "but impossible, and the penalties for attempting it severe. Yet "
-                        "the pull of artistic freedom\u2014the chance to work without "
-                        "ideological constraint\u2014proved stronger than fear.")
+                        " escaped Soviet Armenia by swimming across the "
+                        (d/span {:class s/em-strong} "Arax River")
+                        " under machine-gun fire. He arrived in America with nothing but "
+                        "the instincts that had guided him since childhood: to build, to "
+                        "shape matter, to seek form through discipline and elemental materials.")
 
                    (d/p {:class (s/cx s/body-base "mb-6")}
-                        "The journey was perilous, crossing through countries and relying on "
-                        "networks of sympathizers and fellow dissidents. Zadikian carried "
-                        "almost nothing\u2014a few sketches, the clothes on his back, and an "
-                        "unshakeable conviction that sculpture was worth risking everything for. "
-                        "The details of the crossing remain partially obscured, as much by the "
-                        "passage of time as by the deliberate silence that protected those who "
-                        "helped him.")
-
-                   (d/p {:class (s/cx s/body-base "mb-6")}
-                        "Arriving first in Europe and eventually reaching "
+                        "In "
                         (d/span {:class s/em-strong} "San Francisco")
-                        ", Zadikian found himself in a city teeming with artistic reinvention. "
-                        "It was here that he encountered "
-                        (d/span {:class s/em-strong} "Benjamino Bufano")
-                        ", the Italian-American sculptor whose monumental public works and "
-                        "pacifist convictions resonated deeply with the young Armenian exile. "
-                        "Under Bufano\u2019s mentorship, Zadikian learned not only technique but "
-                        "a philosophy of art as civic presence\u2014sculpture that belongs to everyone.")
+                        ", he apprenticed with sculptor "
+                        (d/span {:class s/em-strong} "Beniamino Bufano")
+                        ", absorbing a lifelong sense of scale, color, and the physical "
+                        "intelligence of large-form making. Drawn to the heat and velocity "
+                        "of New York, he moved east in 1974 and quickly found himself inside "
+                        "the crucible of the Minimalist movement, assisting "
+                        (d/span {:class s/em-strong} "Richard Serra")
+                        " on the monumental black oil-stick wall drawings\u2014one of which "
+                        "Serra titled "
+                        (d/em "Zadikian")
+                        ".")
 
                    (d/p {:class (s/cx s/body-base "mb-6")}
-                        "The escape from the Soviet Union was not merely a biographical event; "
-                        "it became the foundational metaphor of Zadikian\u2019s practice. The "
-                        "block\u2014the basic unit of construction and of confinement\u2014carries "
-                        "within it the memory of walls that constrain and walls that shelter. "
-                        "Every sculpture he builds is, in some sense, an act of rebuilding: "
-                        "taking the elemental unit of architecture and reassembling it into "
-                        "something free.")
+                        "The son of a builder, he grew up with materials\u2014clay, plaster, "
+                        "stone, the raw grammar of structure. In New York, these instincts "
+                        "crystallized. In 1976 he transformed his ten-thousand-square-foot "
+                        "home and studio into a continuous field of industrial gold, an act "
+                        "of totalizing vision that set the tone for everything that followed.")
 
                    (d/blockquote
                     {:class "border-l-2 border-white/20 dark:border-white/20 pl-6 my-8"}

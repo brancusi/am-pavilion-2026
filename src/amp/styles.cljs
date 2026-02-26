@@ -88,12 +88,16 @@
 ;; These are *atoms*: combine them freely to build any text style.
 
 ;; --- Font families --------------------------------------------------------
-;; Two-font system: Futura PT (display) + FiraCode (data/mono)
-(def font-display "font-display")              ;; Futura PT — headings, titles, nav, prose
-(def font-data    "font-mono")                  ;; FiraCode  — labels, numbers, eyebrows, code
-;; Legacy aliases (prefer font-display / font-data in new code)
+;; Two-font system: Source Sans Pro (display + body) + Source Code Pro (data/mono)
+;; Neue Haas Grotesk Display was removed Feb 2026; both display and body
+;; now resolve to Source Sans Pro via Tailwind config.
+;; FiraCode was removed Feb 2026 in favour of Source Code Pro (Adobe Typekit).
+(def font-display "font-display")              ;; Source Sans Pro — headings, titles, nav
+(def font-body    "font-body")                  ;; Source Sans Pro — prose body copy
+(def font-data    "font-mono")                  ;; Source Code Pro — labels, numbers, eyebrows, code
+;; Aliases (all three resolve to Source Sans Pro; kept for semantic clarity)
 (def font-ui      font-data)
-(def font-prose   font-display)
+(def font-prose   font-body)
 
 ;; --- Weights --------------------------------------------------------------
 (def weight-normal    "font-normal")
@@ -183,21 +187,24 @@
   (cx font-ui uppercase- tracking-wider text-xs weight-semibold text-muted))
 
 ;; Body / prose -------------------------------------------------------------
+;; All body copy uses Source Sans Pro (font-body), justified, with a consistent
+;; normal (400) weight. The only differentiator is size. Use s/em-strong or
+;; s/em-bold for inline emphasis in prose — never change the base weight.
 (def body-lg
-  "Lead paragraph (press release, about, why-support)."
-  (cx font-display text-lg weight-bold text-secondary))
+  "Lead paragraph (press release, about, why-support). Slightly larger."
+  (cx font-body text-lg weight-normal text-secondary "text-justify leading-relaxed"))
 
 (def body-base
   "Standard reading text."
-  (cx font-display text-lg weight-medium text-secondary))
+  (cx font-body text-base weight-normal text-secondary "text-justify leading-relaxed"))
 
 (def body-sm
   "Smaller detail text (descriptions, footnotes)."
-  (cx font-display text-sm text-muted))
+  (cx font-body text-sm weight-normal text-muted "text-justify leading-relaxed"))
 
 (def body-closing
   "Closing italic aphorism."
-  (cx font-display italic- weight-normal text-lg text-primary))
+  (cx font-body italic- weight-normal text-lg text-primary "text-justify leading-relaxed"))
 
 ;; Emphasis -----------------------------------------------------------------
 (def em-strong
@@ -238,10 +245,42 @@
   "Underlined link with soft decoration."
   "underline underline-offset-2 decoration-slate-500/40 dark:decoration-white/30 hover:decoration-slate-800/80 dark:hover:decoration-white/80 transition-all")
 
+(def link-hover-accent
+  "Hover color transition for interactive links."
+  "hover:text-pink-600 dark:hover:text-pink-300 transition-colors")
+
 (def btn-text
   "Text-style button / toggle."
   (cx font-ui weight-semibold uppercase- tracking-label text-xs
-      text-faint "hover:text-pink-600 dark:hover:text-pink-300 transition-colors"))
+      text-faint link-hover-accent))
+
+;; Person / credit blocks ---------------------------------------------------
+(def person-name
+  "Display name in curator/artist cards. Uppercase blocky treatment."
+  (cx font-display weight-bold uppercase- tracking-wider
+      "text-lg sm:text-xl leading-relaxed" text-inverse))
+
+(def person-name-lg
+  "Larger display name (artist section, curator section headings)."
+  (cx font-display weight-bold uppercase- tracking-wider
+      "text-2xl sm:text-3xl leading-relaxed" text-inverse))
+
+(def person-role
+  "Role / title label beneath a person's name."
+  (cx font-display weight-medium text-xs uppercase- "tracking-[0.2em]" text-warning))
+
+(def written-by-label
+  "The 'BY' prefix in written-by attribution."
+  (cx font-display weight-medium "text-[14px]" uppercase- tracking-label text-faint))
+
+(def written-by-name
+  "Author name in written-by attribution."
+  (cx font-display weight-medium text-xl text-muted))
+
+;; Footer micro-headings ----------------------------------------------------
+(def footer-heading
+  "Small uppercase label above footer columns (Quick Links, Get in Touch, etc.)."
+  (cx "text-[10px]" weight-medium uppercase- "tracking-[0.2em]" text-accent-50))
 
 ;; Navigation ---------------------------------------------------------------
 (def nav-link

@@ -40,11 +40,9 @@
      ;; Text
      (d/div
       {:class "sm:flex-1 sm:min-w-0"}
-      (d/p {:class "font-display font-bold uppercase tracking-wider
-                    text-lg sm:text-xl text-white dark:text-white mb-1 leading-relaxed"}
+      (d/p {:class (s/cx s/person-name "mb-1")}
            (d/span {:class tag-bg :style tag-style} "Koyo Kouoh"))
-      (d/p {:class "font-display font-medium text-xs uppercase tracking-[0.2em]
-                    text-amber-600 dark:text-amber-300/70 mb-3"}
+      (d/p {:class (s/cx s/person-role "mb-3")}
            "Curator, 61st Biennale Arte")
       (d/p {:class (s/cx s/body-base)}
            "The curatorial statement for the 61st International Art Exhibition \u2014 La Biennale di Venezia \u2014 invites us to listen to the minor keys: the quiet tones, the lower frequencies, the persistent signals of earth and life.")
@@ -65,7 +63,7 @@
                   (d/p {:class (s/cx s/body-base "italic")} "[Drop your shoulders]")
                   (d/p {:class (s/cx s/body-base "italic")} "[Close your eyes]"))
 
-           (d/p {:class (s/cx s/body-lg "mb-6")}
+           (d/p {:class (s/cx s/body-base "mb-6")}
                 "This is an invitation to encounter these words in the immediate physical, meteorological, ambient, and karmic conditions in which they meet you. To shift to a slower gear and tune in to the frequencies of the minor keys. Because, though often lost in the anxious cacophony of the present chaos raging through the world, the music continues. The songs of those producing beauty in spite of tragedy, the tunes of the fugitives recovering from the ruins, the harmonies of those repairing wounds and worlds."))))
 
 ;; ── Full text ──────────────────────────────────────────────────────────────
@@ -83,7 +81,7 @@
                   (d/p {:class (s/cx s/body-base "italic")} "[Drop your shoulders]")
                   (d/p {:class (s/cx s/body-base "italic")} "[Close your eyes]"))
 
-           (d/p {:class (s/cx s/body-lg "mb-6")}
+           (d/p {:class (s/cx s/body-base "mb-6")}
                 "This is an invitation to encounter these words in the immediate physical, meteorological, ambient, and karmic conditions in which they meet you. To shift to a slower gear and tune in to the frequencies of the minor keys. Because, though often lost in the anxious cacophony of the present chaos raging through the world, the music continues. The songs of those producing beauty in spite of tragedy, the tunes of the fugitives recovering from the ruins, the harmonies of those repairing wounds and worlds.")
 
            ($ pull-quote

@@ -12,12 +12,12 @@
   (let [label-class s/label]
     (d/div {:class "mb-10 text-sm"}
            ;; Title
-           (d/p {:class (s/cx "text-xl font-medium leading-snug mb-1" s/text-primary)}
+           (d/p {:class (s/cx s/font-display s/text-xl s/weight-medium "leading-snug mb-1" s/text-primary)}
                 "Pavilion of the Republic of Armenia at the 61st International Art Exhibition La Biennale di Venezia to be represented by Zadik Zadikian")
 
            ;; Exhibition title
            (d/p {:class "mt-6 mb-6"}
-                (d/span {:class (s/cx "text-lg font-medium italic" s/text-primary)}
+                (d/span {:class (s/cx s/font-display s/text-lg s/weight-medium s/em-italic s/text-primary)}
                         "Zadik Zadikian: The Studio"))
 
            ;; Structured info — stacked on mobile, side-by-side on sm+
@@ -72,7 +72,7 @@
          ($ header-block)
 
          ;; Paragraph 1
-         (d/p {:class (s/cx s/body-lg "mb-6")}
+         (d/p {:class (s/cx s/body-base "mb-6")}
               (d/span {:class s/em-italic} "Venice, Italy — ")
               "The Republic of Armenia presents "
               (d/span {:class s/em-strong} "The Studio")
@@ -157,25 +157,25 @@
 
 (defnc footer
   [{:keys []}]
-  (d/div {:class (s/cx "p-4 italic text-lg text-red-300")}
+  (d/div {:class (s/cx "p-4" s/body-base s/em-italic s/text-warning)}
          (d/span {:class "mt-6"}
                  "*Note: As Armenia does not maintain a permanent national pavilion in Venice, the Pavilion must be realized through a rented venue\u2014a standard and widely accepted model for many non-permanent participating nations. "
                  "The selected site operates at a base rental cost of approximately ")
 
          (d/span {:class s/value-currency} "$145,600")
 
-         (d/span {:class "text-red-300"}
-                 ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
-                 "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
+         (d/span
+          ", covering the entire six-month duration of the Exhibition, and represents a strategic and fiscally responsible choice given its immediate proximity to the Arsenale proper. "
+          "Comparable venues just minutes away within the Arsenale or Giardini typically begin at ")
 
          (d/span {:class s/value-currency} "$450,000 or more")
 
-         (d/span {:class "text-red-300"}
-                 " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
-                 "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources.")
+         (d/span
+          " in base rent alone\u2014often closer to \u20ac450,000+\u2014excluding construction, staffing, technical services, and operational expenses. "
+          "In this context, the Pavilion\u2019s location offers extraordinary visibility and access at a fraction of the cost, positioning Armenia at the heart of the Biennale circuit while maintaining responsible stewardship of resources.")
 
          ;; Fundraising committee
-         (d/span {:class (s/cx "block mt-6" "text-red-500 text-2xl")}
+         (d/span {:class (s/cx "block mt-6" s/text-danger "text-2xl")}
                  "To realize an undertaking of this scale and international significance, an urgent fundraising program is greatly needed.")
          #_(d/span {:class (s/cx "block mt-6" "text-red-300")}
                    "To support the scale and international significance of this undertaking, "

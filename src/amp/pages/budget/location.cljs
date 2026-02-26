@@ -10,7 +10,7 @@
    [helix.dom :as d]))
 
 (defnc preview-text []
-  (d/p {:class ""}
+  (d/p {:class s/body-base}
        "The Armenia Pavilion 2026 will be located across "
        (d/span {:class s/em-strong} "two sites,")
        " within the historic Arsenale of Venice. "
@@ -34,7 +34,7 @@
     (d/div
      {:class "space-y-8"}
 
-     (d/div {:class s/body-lg}
+     (d/div {:class s/body-base}
             (d/div {:class "p-4 mb-12"}
                    ($ preview-text))
 
