@@ -13,7 +13,7 @@
   (d/div {:id id}
          ($ section-header {:eyebrow "origins" :title "The Escape"}
             (d/div {:class "mt-6 px-4"}
-                   (d/p {:class (s/cx s/body-lg "mb-6")}
+                   (d/p {:class (s/cx s/body-base "mb-6")}
                         "At nineteen\u2014armed only with conviction\u2014"
                         (d/span {:class s/em-strong} "Zadik Zadikian")
                         " escaped Soviet Armenia by swimming across the "

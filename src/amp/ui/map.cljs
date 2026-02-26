@@ -181,7 +181,8 @@
                        :color \"#fbbf24\" :width 4 :duration 2}]"
   [{:keys [class initial-view dev interactive? layers ant-paths]
     :or {interactive? true}}]
-  (let [[view-state set-view-state!] (hooks/use-state (merge venice-arsenale initial-view))]
+  (let [[view-state set-view-state!] (hooks/use-state (merge venice-arsenale initial-view))
+        [map-loaded? set-map-loaded!] (hooks/use-state false)]
     ;; Sync initial-view prop into state on hot-reload / prop changes
     (hooks/use-effect
      [initial-view]
@@ -197,6 +198,7 @@
                :latitude (:latitude view-state)
                :zoom (:zoom view-state)
                :onMove (fn [e] (set-view-state! (js->clj (.-viewState e) :keywordize-keys true)))
+               :onLoad (fn [_] (set-map-loaded! true))
                :style #js {:width "100%" :height "100%"}
                :scrollZoom interactive?
                :boxZoom interactive?
@@ -216,7 +218,10 @@
                    ($ geojson-layer {:key (-> layer-cfg :layer :id)
                                      :source (:source layer-cfg)
                                      :layer (:layer layer-cfg)}))))
-              (when (seq ant-paths)
+              ;; Defer ant-path rendering until the map has fully loaded.
+              ;; This prevents a race where useMap().current is null on
+              ;; the first render (common on lazy-loaded route pages).
+              (when (and map-loaded? (seq ant-paths))
                 (<>
                  (for [path-cfg ant-paths]
                    ($ ant-path {:key (:source-id path-cfg)

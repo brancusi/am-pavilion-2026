@@ -15,7 +15,7 @@
   (d/div {:id id}
          ($ section-header {:eyebrow "full circle" :title "Return to Armenia"}
             (d/div {:class "mt-6 px-4"}
-                   (d/p {:class (s/cx s/body-lg "mb-6")}
+                   (d/p {:class (s/cx s/body-base "mb-6")}
                         "After decades in the United States, "
                         (d/span {:class s/em-strong} "Zadik Zadikian")
                         " began a gradual return\u2014not only to the country he had fled, "

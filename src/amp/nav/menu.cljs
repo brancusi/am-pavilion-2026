@@ -119,7 +119,7 @@
     (<>
      ;; Cutout logo — rendered OUTSIDE the nav to avoid
      ;; backdrop-filter isolation trapping the blend mode.
-     #_($ cutout-logo)
+     ($ cutout-logo)
 
      (d/nav {:ref nav-ref
              :class "fixed top-0 left-0 right-0 z-40"}
