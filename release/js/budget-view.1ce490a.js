@@ -827,7 +827,7 @@ $amp$pages$budget$location$full_details$$ = function($G__47319$jscomp$1_map__473
   $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__47319$jscomp$1_map__47317_map__47317__$1_props__41658__auto__$jscomp$23_vec__47314$$, $APP.$cljs$cst$773$subtitle$$);
   $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__47319$jscomp$1_map__47317_map__47317__$1_props__41658__auto__$jscomp$23_vec__47314$$, $APP.$cljs$cst$288$title$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  var $is_desktop_QMARK_$jscomp$2$$ = $APP.$amp$hooks$use_media_query$use_touch_enabled$$();
+  var $is_desktop_QMARK_$jscomp$3$$ = $APP.$amp$hooks$use_media_query$use_touch_enabled$$();
   $G__47319$jscomp$1_map__47317_map__47317__$1_props__41658__auto__$jscomp$23_vec__47314$$ = function() {
     return {className:"space-y-8", children:function() {
       var $G__47323$jscomp$1$$ = function() {
@@ -838,7 +838,7 @@ $amp$pages$budget$location$full_details$$ = function($G__47319$jscomp$1_map__473
         }(), function() {
           var $G__47333$$ = function() {
             return {className:"my-8", children:[function() {
-              var $G__47337$jscomp$1$$ = {dev:!1, "interactive?":$is_desktop_QMARK_$jscomp$2$$, "initial-view":$APP.$amp$pages$venue$map_config$initial_view$$, "ant-paths":$APP.$amp$pages$venue$map_config$ant_paths$$, layers:$APP.$amp$pages$venue$map_config$layers$$};
+              var $G__47337$jscomp$1$$ = {dev:!1, "interactive?":$is_desktop_QMARK_$jscomp$3$$, "initial-view":$APP.$amp$pages$venue$map_config$initial_view$$, "ant-paths":$APP.$amp$pages$venue$map_config$ant_paths$$, layers:$APP.$amp$pages$venue$map_config$layers$$};
               return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$map$mapbox_map$$, $G__47337$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$map$mapbox_map$$, $G__47337$jscomp$1$$);
             }(), function() {
               var $G__47341$jscomp$1$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-mono", "text-sm", "italic", "mt-4 px-4"]))), children:"* Walking path from the crossing to the pavilion. ~8 minutes"};
@@ -1893,268 +1893,262 @@ $amp$pages$budget$sponsors$sponsors_section$$ = function($G__267955_map__267896_
   }();
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__267955_map__267896_map__267896__$1_props__41575__auto__$jscomp$57_vec__267893$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__267955_map__267896_map__267896__$1_props__41575__auto__$jscomp$57_vec__267893$$);
 };
-$amp$pages$budget$why_support$preview$$ = function($G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$, $maybe_ref__41576__auto__$jscomp$58$$) {
-  $G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$), $maybe_ref__41576__auto__$jscomp$58$$], null);
-  $G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$);
+$amp$pages$budget$why_support$preview$$ = function($G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$, $maybe_ref__41659__auto__$jscomp$25$$) {
+  $G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$), $maybe_ref__41659__auto__$jscomp$25$$], null);
+  $G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$ = function() {
+  $G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_lg$$, "p-4"]))), children:[function() {
-      var $G__267836$$ = {children:'To stand on the Biennale\'s global stage is not "participation" in an art event—it is '};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267836$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267836$$);
+      var $G__55179$$ = {children:'To stand on the Biennale\'s global stage is not "participation" in an art event—it is '};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55179$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55179$$);
     }(), function() {
-      var $G__267844$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"presence in the world's most influential cultural forum"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267844$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267844$$);
+      var $G__55183$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"presence in the world's most influential cultural forum"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55183$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55183$$);
     }(), function() {
-      var $G__267853$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:", where nations are read, remembered, and measured in real time. "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267853$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267853$$);
+      var $G__55187$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:", where nations are read, remembered, and measured in real time. "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55187$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55187$$);
     }(), function() {
-      var $G__267865$$ = {children:"For the Republic of Armenia, a Pavilion is a sovereign act of cultural visibility: it declares that Armenia is not only a history to be mourned or a headline to be managed, but a "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267865$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267865$$);
+      var $G__55191$$ = {children:"For the Republic of Armenia, a Pavilion is a sovereign act of cultural visibility: it declares that Armenia is not only a history to be mourned or a headline to be managed, but a "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55191$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55191$$);
     }(), function() {
-      var $G__267870$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"living intelligence"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267870$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267870$$);
+      var $G__55195$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"living intelligence"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55195$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55195$$);
     }(), function() {
-      var $G__267874$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—capable of producing contemporary vision at the highest level. "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__267874$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__267874$$);
+      var $G__55199$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—capable of producing contemporary vision at the highest level. "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55199$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55199$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__267825_map__267819_props__41575__auto__$jscomp$58_vec__267816$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55175_map__55173_props__41658__auto__$jscomp$25_vec__55170$$);
 };
-$amp$pages$budget$why_support$details$$ = function($G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$, $maybe_ref__41576__auto__$jscomp$59$$) {
-  $G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$), $maybe_ref__41576__auto__$jscomp$59$$], null);
-  $G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$);
+$amp$pages$budget$why_support$details$$ = function($G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$, $maybe_ref__41659__auto__$jscomp$26$$) {
+  $G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$), $maybe_ref__41659__auto__$jscomp$26$$], null);
+  $G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$ = function() {
+  $G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_lg$$, "p-4"]))), children:[function() {
-      var $G__268000$$ = {children:'To stand on the Biennale\'s global stage is not "participation" in an art event—it is '};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268000$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268000$$);
+      var $G__55240$$ = {children:'To stand on the Biennale\'s global stage is not "participation" in an art event—it is '};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55240$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55240$$);
     }(), function() {
-      var $G__268008$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"presence in the world's most influential cultural forum"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268008$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268008$$);
+      var $G__55244$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"presence in the world's most influential cultural forum"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55244$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55244$$);
     }(), function() {
-      var $G__268012$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:", where nations are read, remembered, and measured in real time. "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268012$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268012$$);
+      var $G__55249$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:", where nations are read, remembered, and measured in real time. "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55249$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55249$$);
     }(), function() {
-      var $G__268022$$ = {children:"For the Republic of Armenia, a Pavilion is a sovereign act of cultural visibility: it declares that Armenia is not only a history to be mourned or a headline to be managed, but a "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268022$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268022$$);
+      var $G__55253$$ = {children:"For the Republic of Armenia, a Pavilion is a sovereign act of cultural visibility: it declares that Armenia is not only a history to be mourned or a headline to be managed, but a "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55253$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55253$$);
     }(), function() {
-      var $G__268028$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"living intelligence"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268028$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268028$$);
+      var $G__55257$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"living intelligence"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55257$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55257$$);
     }(), function() {
-      var $G__268033$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—capable of producing contemporary vision at the highest level. "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268033$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268033$$);
+      var $G__55262$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—capable of producing contemporary vision at the highest level. "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55262$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55262$$);
     }(), function() {
-      var $G__268041$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"This is how nations earn stature without asking permission: by contributing meaning, not pleading for sympathy. In Venice, Armenia enters the shared conversation that curators, museums, collectors, journalists, and governments track—and what is seen there echoes for years in exhibitions, acquisitions, education, tourism, diplomacy, and philanthropic interest."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268041$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268041$$);
+      var $G__55266$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"This is how nations earn stature without asking permission: by contributing meaning, not pleading for sympathy. In Venice, Armenia enters the shared conversation that curators, museums, collectors, journalists, and governments track—and what is seen there echoes for years in exhibitions, acquisitions, education, tourism, diplomacy, and philanthropic interest."};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55266$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55266$$);
     }(), function() {
-      var $G__268047_G__268051$jscomp$inline_3819$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_strong$$, "text-lg"]))), children:"This is why being present matters—and what it elevates:"};
-      $G__268047_G__268051$jscomp$inline_3819$$ = {className:"mt-8 mb-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268047_G__268051$jscomp$inline_3819$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268047_G__268051$jscomp$inline_3819$$)};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__268047_G__268051$jscomp$inline_3819$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__268047_G__268051$jscomp$inline_3819$$);
+      var $G__55274_G__55278$jscomp$inline_3819$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_strong$$, "text-lg"]))), children:"This is why being present matters—and what it elevates:"};
+      $G__55274_G__55278$jscomp$inline_3819$$ = {className:"mt-8 mb-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55274_G__55278$jscomp$inline_3819$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55274_G__55278$jscomp$inline_3819$$)};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55274_G__55278$jscomp$inline_3819$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55274_G__55278$jscomp$inline_3819$$);
     }(), function() {
-      var $G__268055$$ = function() {
-        return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "space-y-4 ml-4"]))), children:[function() {
-          var $G__268063_G__268073$jscomp$inline_3822$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"National dignity, made public: "};
-          $G__268063_G__268073$jscomp$inline_3822$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268063_G__268073$jscomp$inline_3822$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268063_G__268073$jscomp$inline_3822$$), "Armenia is framed through excellence, discipline, and contemporary creativity—not solely through tragedy or geopolitics."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268063_G__268073$jscomp$inline_3822$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268063_G__268073$jscomp$inline_3822$$);
+      var $G__55286$$ = function() {
+        return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "space-y-5"]))), children:[function() {
+          var $G__55294_G__55300$jscomp$inline_3822$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"National dignity, made public: "};
+          $G__55294_G__55300$jscomp$inline_3822$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55294_G__55300$jscomp$inline_3822$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55294_G__55300$jscomp$inline_3822$$), "Armenia is framed through excellence, discipline, and contemporary creativity—not solely through tragedy or geopolitics."]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55294_G__55300$jscomp$inline_3822$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55294_G__55300$jscomp$inline_3822$$);
         }(), function() {
-          var $G__268087_G__268093$jscomp$inline_3825$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Soft power that compounds: "};
-          $G__268087_G__268093$jscomp$inline_3825$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268087_G__268093$jscomp$inline_3825$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268087_G__268093$jscomp$inline_3825$$), "Cultural visibility becomes long-term credibility—opening doors that money or lobbying cannot."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268087_G__268093$jscomp$inline_3825$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268087_G__268093$jscomp$inline_3825$$);
+          var $G__55308_G__55316$jscomp$inline_3825$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"Soft power that compounds: "};
+          $G__55308_G__55316$jscomp$inline_3825$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55308_G__55316$jscomp$inline_3825$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55308_G__55316$jscomp$inline_3825$$), "Cultural visibility becomes long-term credibility—opening doors that money or lobbying cannot."]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55308_G__55316$jscomp$inline_3825$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55308_G__55316$jscomp$inline_3825$$);
         }(), function() {
-          var $G__268099_G__268108$jscomp$inline_3828$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Narrative control: "};
-          $G__268099_G__268108$jscomp$inline_3828$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268099_G__268108$jscomp$inline_3828$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268099_G__268108$jscomp$inline_3828$$), "If Armenia does not author its own image, others will—and they will simplify it."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268099_G__268108$jscomp$inline_3828$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268099_G__268108$jscomp$inline_3828$$);
+          var $G__55326_G__55332$jscomp$inline_3828$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"Narrative control: "};
+          $G__55326_G__55332$jscomp$inline_3828$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55326_G__55332$jscomp$inline_3828$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55326_G__55332$jscomp$inline_3828$$), "If Armenia does not author its own image, others will—and they will simplify it."]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55326_G__55332$jscomp$inline_3828$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55326_G__55332$jscomp$inline_3828$$);
         }(), function() {
-          var $G__268112_G__268116$jscomp$inline_3831$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"A platform for future generations: "};
-          $G__268112_G__268116$jscomp$inline_3831$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268112_G__268116$jscomp$inline_3831$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268112_G__268116$jscomp$inline_3831$$), 'A serious national presence signals to Armenian artists, students, and institutions that the world stage is not "for others."']};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268112_G__268116$jscomp$inline_3831$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268112_G__268116$jscomp$inline_3831$$);
+          var $G__55340_G__55348$jscomp$inline_3831$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"A platform for future generations: "};
+          $G__55340_G__55348$jscomp$inline_3831$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55340_G__55348$jscomp$inline_3831$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55340_G__55348$jscomp$inline_3831$$), 'A serious national presence signals to Armenian artists, students, and institutions that the world stage is not "for others."']};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55340_G__55348$jscomp$inline_3831$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55340_G__55348$jscomp$inline_3831$$);
         }(), function() {
-          var $G__268120_G__268124$jscomp$inline_3834$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Diaspora cohesion: "};
-          $G__268120_G__268124$jscomp$inline_3834$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268120_G__268124$jscomp$inline_3834$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268120_G__268124$jscomp$inline_3834$$), "A Pavilion becomes a shared achievement—an anchor event that unifies donors, families, and communities around something constructive and proud."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268120_G__268124$jscomp$inline_3834$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268120_G__268124$jscomp$inline_3834$$);
+          var $G__55360_G__55368$jscomp$inline_3834$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"Diaspora cohesion: "};
+          $G__55360_G__55368$jscomp$inline_3834$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55360_G__55368$jscomp$inline_3834$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55360_G__55368$jscomp$inline_3834$$), "A Pavilion becomes a shared achievement—an anchor event that unifies donors, families, and communities around something constructive and proud."]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55360_G__55368$jscomp$inline_3834$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55360_G__55368$jscomp$inline_3834$$);
         }(), function() {
-          var $G__268128_G__268137$jscomp$inline_3837$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_bold$$), children:"Institutional consequences: "};
-          $G__268128_G__268137$jscomp$inline_3837$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268128_G__268137$jscomp$inline_3837$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268128_G__268137$jscomp$inline_3837$$), "Serious participation invites museum partnerships, residencies, publications, acquisitions, and recurring invitations—real infrastructure, not a momentary spotlight."]};
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("li", $G__268128_G__268137$jscomp$inline_3837$$) : $APP.$helix$core$jsxs$$.call(null, "li", $G__268128_G__268137$jscomp$inline_3837$$);
+          var $G__55380_G__55388$jscomp$inline_3837$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$em_bold$$, "italic"]))), children:"Institutional consequences: "};
+          $G__55380_G__55388$jscomp$inline_3837$$ = {className:"", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55380_G__55388$jscomp$inline_3837$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55380_G__55388$jscomp$inline_3837$$), "Serious participation invites museum partnerships, residencies, publications, acquisitions, and recurring invitations—real infrastructure, not a momentary spotlight."]};
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("p", $G__55380_G__55388$jscomp$inline_3837$$) : $APP.$helix$core$jsxs$$.call(null, "p", $G__55380_G__55388$jscomp$inline_3837$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("ul", $G__268055$$) : $APP.$helix$core$jsxs$$.call(null, "ul", $G__268055$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55286$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55286$$);
     }(), function() {
-      var $G__268141$$ = function() {
+      var $G__55392$$ = function() {
         return {className:"block mt-8", children:[function() {
-          var $G__268145$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"The opportunity cost of not partaking is brutal and silent: "};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268145$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268145$$);
+          var $G__55397$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"The opportunity cost of not partaking is brutal and silent: "};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55397$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55397$$);
         }(), function() {
-          var $G__268149$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"invisibility"};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268149$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268149$$);
+          var $G__55401$jscomp$1$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"invisibility"};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55401$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55401$jscomp$1$$);
         }(), function() {
-          var $G__268153$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:". The world does not pause because a nation is under-resourced; it simply moves on, and the absence becomes a habit. In a cultural ecosystem, absence reads as incapacity. It reinforces the unfair but persistent idea that Armenia is peripheral—always reacting, never defining. "};
-          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268153$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268153$$);
+          var $G__55405$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:". The world does not pause because a nation is under-resourced; it simply moves on, and the absence becomes a habit. In a cultural ecosystem, absence reads as incapacity. It reinforces the unfair but persistent idea that Armenia is peripheral—always reacting, never defining. "};
+          return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55405$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55405$$);
         }()]};
       }();
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__268141$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__268141$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55392$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55392$$);
     }(), function() {
-      var $G__268157$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "block mt-6"]))), children:'That is the long-term gap: Armenia is not always "where it should be" because it has too often been forced into survival mode—outspent, out-networked, and underrepresented in the institutions that shape global memory. '};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268157$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268157$$);
+      var $G__55409$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "block mt-6"]))), children:'That is the long-term gap: Armenia is not always "where it should be" because it has too often been forced into survival mode—outspent, out-networked, and underrepresented in the institutions that shape global memory. '};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55409$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55409$$);
     }(), function() {
-      var $G__268161$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "block mt-6"]))), children:'A donor is not "buying" a sculpture or an event; they are buying '};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268161$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268161$$);
+      var $G__55413$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-700  dark:text-slate-300", "block mt-6"]))), children:'A donor is not "buying" a sculpture or an event; they are buying representation with consequences: an enduring record that Armenia showed up with seriousness, ambition, and world-class execution. The legacy is reputational and generational: a Pavilion that becomes a reference point—documented, published, archived, collected, cited—and a model that makes the next Armenian presence easier, stronger, and inevitable.'};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55413$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55413$$);
     }(), function() {
-      var $G__268165$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$em_strong$$), children:"representation with consequences"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268165$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268165$$);
+      var $G__55418$$ = {className:"block mt-8", children:"And yes: "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55418$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55418$$);
     }(), function() {
-      var $G__268169$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:": an enduring record that Armenia showed up with seriousness, ambition, and world-class execution. The legacy is reputational and generational: a Pavilion that becomes a reference point—documented, published, archived, collected, cited—and a model that makes the next Armenian presence easier, stronger, and inevitable."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268169$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268169$$);
+      var $G__55422$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"the cultural battle must be won"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55422$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55422$$);
     }(), function() {
-      var $G__268173$$ = {className:"block mt-8", children:"And yes: "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268173$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268173$$);
+      var $G__55426$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—not with aggression, but with clarity, consistency, and excellence. Culture is where nations become undeniable. It is where influence is built without violence; where history is not only remembered, but translated into future power. "};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55426$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55426$$);
     }(), function() {
-      var $G__268177$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["font-semibold", "italic", "text-slate-900  dark:text-slate-100"]))), children:"the cultural battle must be won"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268177$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268177$$);
-    }(), function() {
-      var $G__268181$$ = {className:$APP.$helix$impl$props$normalize_class$$("text-slate-700  dark:text-slate-300"), children:"—not with aggression, but with clarity, consistency, and excellence. Culture is where nations become undeniable. It is where influence is built without violence; where history is not only remembered, but translated into future power. "};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268181$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268181$$);
-    }(), function() {
-      var $G__268185$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_closing$$, "block mt-6"]))), children:"Supporting this Pavilion is patriotism in its most practical form: it is an investment in Armenia's standing, Armenia's narrative, and Armenia's right to be seen at full scale—on equal terms—where the world is watching."};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__268185$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__268185$$);
+      var $G__55430$$ = {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$([$APP.$amp$styles$body_closing$$, "block mt-6"]))), children:"Supporting this Pavilion is patriotism in its most practical form: it is an investment in Armenia's standing, Armenia's narrative, and Armenia's right to be seen at full scale—on equal terms—where the world is watching."};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("span", $G__55430$$) : $APP.$helix$core$jsx$$.call(null, "span", $G__55430$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__267986_map__267982_props__41575__auto__$jscomp$59_vec__267979$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55236_map__55233_props__41658__auto__$jscomp$26_vec__55230$$);
 };
-$amp$pages$budget$why_support$why_support$$ = function($G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$, $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$) {
-  $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$), $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$], null);
-  $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$, 0, null);
-  var $map__268194__$1_title$jscomp$30$$ = $APP.$cljs$core$__destructure_map$$($G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$);
-  $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__268194__$1_title$jscomp$30$$, $APP.$cljs$cst$286$id$$);
-  $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__268194__$1_title$jscomp$30$$, $APP.$cljs$cst$773$subtitle$$);
-  $map__268194__$1_title$jscomp$30$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__268194__$1_title$jscomp$30$$, $APP.$cljs$cst$288$title$$);
+$amp$pages$budget$why_support$why_support$$ = function($G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$, $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$) {
+  $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$), $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$], null);
+  $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$, 0, null);
+  var $map__55439__$1_title$jscomp$30$$ = $APP.$cljs$core$__destructure_map$$($G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$);
+  $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__55439__$1_title$jscomp$30$$, $APP.$cljs$cst$286$id$$);
+  $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__55439__$1_title$jscomp$30$$, $APP.$cljs$cst$773$subtitle$$);
+  $map__55439__$1_title$jscomp$30$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($map__55439__$1_title$jscomp$30$$, $APP.$cljs$cst$288$title$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$ = {idx:9, "section-hint":$G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$, title:$map__268194__$1_title$jscomp$30$$, "expand-button-label":"Read more", "preview-text":$amp$pages$budget$why_support$preview$$, "full-text":$amp$pages$budget$why_support$details$$};
-  $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, 
-  $G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$);
-  $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$ = {id:$G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$, children:$G__268200$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41576__auto__$jscomp$60_subtitle$jscomp$8$$};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__268196_id$jscomp$97_map__268194_props__41575__auto__$jscomp$60_vec__268191$$);
+  $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$ = {idx:9, "section-hint":$G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$, title:$map__55439__$1_title$jscomp$30$$, "expand-button-label":"Read more", "preview-text":$amp$pages$budget$why_support$preview$$, "full-text":$amp$pages$budget$why_support$details$$};
+  $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$ = $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$expandable_text$expandable_text_area_2$$, $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$expandable_text$expandable_text_area_2$$, 
+  $G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$);
+  $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$ = {id:$G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$, children:$G__55450$jscomp$inline_3840_JSCompiler_inline_result$jscomp$inline_3839_maybe_ref__41659__auto__$jscomp$27_subtitle$jscomp$8$$};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55442_id$jscomp$97_map__55439_props__41658__auto__$jscomp$27_vec__55436$$);
 };
-$amp$pages$budget$section$section_link$$ = function($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$, $maybe_ref__41659__auto__$jscomp$25$$) {
-  $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$), $maybe_ref__41659__auto__$jscomp$25$$], null);
-  $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$, 0, null);
-  $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$ = $APP.$cljs$core$__destructure_map$$($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$);
-  var $title$jscomp$31$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$, $APP.$cljs$cst$288$title$$), $anchor$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$, $cljs$cst$902$anchor$$);
+$amp$pages$budget$section$section_link$$ = function($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$, $maybe_ref__41659__auto__$jscomp$28$$) {
+  $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$), $maybe_ref__41659__auto__$jscomp$28$$], null);
+  $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$, 0, null);
+  $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$ = $APP.$cljs$core$__destructure_map$$($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$);
+  var $title$jscomp$31$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$, $APP.$cljs$cst$288$title$$), $anchor$jscomp$2$$ = $APP.$cljs$core$get$cljs$0core$0IFn$0_invoke$0arity$02$$($G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$, $cljs$cst$902$anchor$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $scroll_to_id$jscomp$3$$ = $APP.$amp$hooks$use_scroll_to$use_scroll_to_id$$();
-  $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$ = function() {
+  $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$ = function() {
     return {onClick:function() {
       return $scroll_to_id$jscomp$3$$.$cljs$core$IFn$_invoke$arity$1$ ? $scroll_to_id$jscomp$3$$.$cljs$core$IFn$_invoke$arity$1$($anchor$jscomp$2$$) : $scroll_to_id$jscomp$3$$.call(null, $anchor$jscomp$2$$);
     }, className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$nav_link$$), children:[$title$jscomp$31$$, " ", function() {
-      var $G__47711$$ = {"class":"w-4 h-4 inline-block ml-1"};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__47711$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$icons$ChevronRightIcon$$, $G__47711$$);
+      var $G__55646$$ = {"class":"w-4 h-4 inline-block ml-1"};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$icons$ChevronRightIcon$$, $G__55646$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$icons$ChevronRightIcon$$, $G__55646$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$) : $APP.$helix$core$jsxs$$.call(null, "button", $G__47707_map__47701_map__47701__$1_props__41658__auto__$jscomp$25_vec__47698$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("button", $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$) : $APP.$helix$core$jsxs$$.call(null, "button", $G__55640_map__55632_map__55632__$1_props__41658__auto__$jscomp$28_vec__55627$$);
 };
-$amp$pages$budget$section$header$$ = function($G__47749_props__41658__auto__$jscomp$26$$) {
-  $APP.$helix$core$extract_cljs_props$$($G__47749_props__41658__auto__$jscomp$26$$);
+$amp$pages$budget$section$header$$ = function($G__55658$jscomp$1_props__41658__auto__$jscomp$29$$) {
+  $APP.$helix$core$extract_cljs_props$$($G__55658$jscomp$1_props__41658__auto__$jscomp$29$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__47749_props__41658__auto__$jscomp$26$$ = function() {
+  $G__55658$jscomp$1_props__41658__auto__$jscomp$29$$ = function() {
     return {className:"relative", children:[function() {
-      var $G__47759_G__47778$jscomp$inline_3843$$ = {src:"images/graphics/61_biennale_logo_line.svg", className:"invert dark:invert-0"};
-      $G__47759_G__47778$jscomp$inline_3843$$ = {className:"w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("img", $G__47759_G__47778$jscomp$inline_3843$$) : $APP.$helix$core$jsx$$.call(null, "img", $G__47759_G__47778$jscomp$inline_3843$$)};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47759_G__47778$jscomp$inline_3843$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__47759_G__47778$jscomp$inline_3843$$);
+      var $G__55662_G__55667$jscomp$inline_3843$$ = {src:"images/graphics/61_biennale_logo_line.svg", className:"invert dark:invert-0"};
+      $G__55662_G__55667$jscomp$inline_3843$$ = {className:"w-1/2 lg:w-1/4 lg:max-w-64 mt-4 lg:mt-8 px-4", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("img", $G__55662_G__55667$jscomp$inline_3843$$) : $APP.$helix$core$jsx$$.call(null, "img", $G__55662_G__55667$jscomp$inline_3843$$)};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55662_G__55667$jscomp$inline_3843$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55662_G__55667$jscomp$inline_3843$$);
     }(), function() {
-      var $G__47791_G__47799$jscomp$inline_3846$$ = {translate:"no", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["notranslate", $APP.$amp$styles$heading_page$$]))), children:"ARMENIA PAVILION, 61st INTERNATIONAL ART EXHIBITION LA BIENNALE DI VENEZIA"};
-      $G__47791_G__47799$jscomp$inline_3846$$ = {className:"px-4 mt-12 lg:mt-16 max-w-4xl", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h1", $G__47791_G__47799$jscomp$inline_3846$$) : $APP.$helix$core$jsx$$.call(null, "h1", $G__47791_G__47799$jscomp$inline_3846$$)};
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47791_G__47799$jscomp$inline_3846$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__47791_G__47799$jscomp$inline_3846$$);
+      var $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$ = {translate:"no", className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["notranslate", $APP.$amp$styles$heading_page$$]))), children:"ARMENIA PAVILION, 61st INTERNATIONAL ART EXHIBITION LA BIENNALE DI VENEZIA"};
+      $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$ = {className:"px-4 mt-12 lg:mt-16 max-w-4xl", children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("h1", $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$) : $APP.$helix$core$jsx$$.call(null, "h1", $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$)};
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55671$jscomp$1_G__55679$jscomp$inline_3846$$);
     }(), function() {
-      var $G__47809$$ = function() {
+      var $G__55687$$ = function() {
         return {className:"w-full px-4 mt-8", children:function() {
-          var $G__47821$$ = function() {
+          var $G__55695$$ = function() {
             return {className:$APP.$helix$impl$props$normalize_class$$($APP.$amp$styles$cx$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($APP.$cljs$core$prim_seq$cljs$0core$0IFn$0_invoke$0arity$02$$(["text-slate-950  dark:text-white", "space-y-3 flex flex-col justify-start items-start"]))), children:[function() {
-              var $G__47839$$ = {title:"1. Press Release", anchor:"section-1"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47839$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47839$$);
+              var $G__55703$$ = {title:"1. Press Release", anchor:"section-1"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55703$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55703$$);
             }(), function() {
-              var $G__47855$$ = {title:"2. Overview - THE STUDIO", anchor:"section-2"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47855$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47855$$);
+              var $G__55711$$ = {title:"2. Overview - THE STUDIO", anchor:"section-2"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55711$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55711$$);
             }(), function() {
-              var $G__47869$$ = {title:"3. Budget", anchor:"section-3"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47869$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47869$$);
+              var $G__55717$$ = {title:"3. Budget", anchor:"section-3"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55717$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55717$$);
             }(), function() {
-              var $G__47881$$ = {title:"4. Cashflow", anchor:"section-4"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47881$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47881$$);
+              var $G__55727$jscomp$1$$ = {title:"4. Cashflow", anchor:"section-4"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55727$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55727$jscomp$1$$);
             }(), function() {
-              var $G__47885$$ = {title:"5. Committee", anchor:"section-5"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47885$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47885$$);
+              var $G__55735$$ = {title:"5. Committee", anchor:"section-5"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55735$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55735$$);
             }(), function() {
-              var $G__47891$jscomp$1$$ = {title:"6. Patrons \x26 Sponsors", anchor:"section-6"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47891$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47891$jscomp$1$$);
+              var $G__55743$$ = {title:"6. Patrons \x26 Sponsors", anchor:"section-6"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55743$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55743$$);
             }(), function() {
-              var $G__47895$$ = {title:"7. Location Details", anchor:"section-7"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47895$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47895$$);
+              var $G__55749$$ = {title:"7. Location Details", anchor:"section-7"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55749$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55749$$);
             }(), function() {
-              var $G__47899$$ = {title:"8. Donation Info", anchor:"section-8"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47899$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47899$$);
+              var $G__55755$$ = {title:"8. Donation Info", anchor:"section-8"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55755$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55755$$);
             }(), function() {
-              var $G__47903$$ = {title:"9. Why Support", anchor:"section-9"};
-              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__47903$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__47903$$);
+              var $G__55763$$ = {title:"9. Why Support", anchor:"section-9"};
+              return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$section_link$$, $G__55763$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$section_link$$, $G__55763$$);
             }()]};
           }();
-          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47821$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47821$$);
+          return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55695$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55695$$);
         }()};
       }();
-      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47809$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__47809$$);
+      return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55687$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55687$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47749_props__41658__auto__$jscomp$26$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47749_props__41658__auto__$jscomp$26$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55658$jscomp$1_props__41658__auto__$jscomp$29$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__55658$jscomp$1_props__41658__auto__$jscomp$29$$);
 };
-$amp$pages$budget$section$budget_section$$ = function($G__47915_props__41658__auto__$jscomp$27$$) {
-  $APP.$helix$core$extract_cljs_props$$($G__47915_props__41658__auto__$jscomp$27$$);
+$amp$pages$budget$section$budget_section$$ = function($G__55806$jscomp$1_props__41658__auto__$jscomp$30$$) {
+  $APP.$helix$core$extract_cljs_props$$($G__55806$jscomp$1_props__41658__auto__$jscomp$30$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__47915_props__41658__auto__$jscomp$27$$ = function() {
+  $G__55806$jscomp$1_props__41658__auto__$jscomp$30$$ = function() {
     return {"section-id":"budget-section", children:function() {
-      var $G__47924$jscomp$1$$ = {children:[function() {
-        var $G__47926$$ = {};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$header$$, $G__47926$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$header$$, $G__47926$$);
+      var $G__55811$$ = {children:[function() {
+        var $G__55813$$ = {};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$header$$, $G__55813$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$header$$, $G__55813$$);
       }(), function() {
-        var $G__47930$$ = {id:"section-1", idx:1, subtitle:"press", title:"press release", "show-budget-footer?":!0};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$landing$press_release$press_release$$, $G__47930$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$pages$landing$press_release$press_release$$, $G__47930$$);
+        var $G__55815$$ = {id:"section-1", idx:1, subtitle:"press", title:"press release", "show-budget-footer?":!0};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$landing$press_release$press_release$$, $G__55815$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$pages$landing$press_release$press_release$$, $G__55815$$);
       }(), function() {
-        var $G__47940$jscomp$1$$ = {id:"section-2", idx:2, subtitle:"overview", title:"Armenian Pavilion - The Studio"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$landing$studio$about_studio$$, $G__47940$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$pages$landing$studio$about_studio$$, $G__47940$jscomp$1$$);
+        var $G__55820$$ = {id:"section-2", idx:2, subtitle:"overview", title:"Armenian Pavilion - The Studio"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$pages$landing$studio$about_studio$$, $G__55820$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$pages$landing$studio$about_studio$$, $G__55820$$);
       }(), function() {
-        var $G__47950$$ = {id:"section-3", subtitle:"financials", title:"budget"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$cost_breakdown$cost_breakdown$$, $G__47950$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$cost_breakdown$cost_breakdown$$, $G__47950$$);
+        var $G__55824$$ = {id:"section-3", subtitle:"financials", title:"budget"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$cost_breakdown$cost_breakdown$$, $G__55824$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$cost_breakdown$cost_breakdown$$, $G__55824$$);
       }(), function() {
-        var $G__47956$jscomp$1$$ = {id:"section-4", subtitle:"financials", title:"cashflow"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$cash_flow$cash_flow$$, $G__47956$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$cash_flow$cash_flow$$, $G__47956$jscomp$1$$);
+        var $G__55829$jscomp$1$$ = {id:"section-4", subtitle:"financials", title:"cashflow"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$cash_flow$cash_flow$$, $G__55829$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$cash_flow$cash_flow$$, $G__55829$jscomp$1$$);
       }(), function() {
-        var $G__47966$jscomp$1$$ = {id:"section-5", subtitle:"team", title:"committee"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$committee$committee$$, $G__47966$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$committee$committee$$, $G__47966$jscomp$1$$);
+        var $G__55837$jscomp$1$$ = {id:"section-5", subtitle:"team", title:"committee"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$committee$committee$$, $G__55837$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$committee$committee$$, $G__55837$jscomp$1$$);
       }(), function() {
-        var $G__47974$$ = {id:"section-6", subtitle:"acknowledgements", title:"patrons \x26 sponsors"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$sponsors$sponsors_section$$, $G__47974$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$sponsors$sponsors_section$$, $G__47974$$);
+        var $G__55841$$ = {id:"section-6", subtitle:"acknowledgements", title:"patrons \x26 sponsors"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$sponsors$sponsors_section$$, $G__55841$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$sponsors$sponsors_section$$, $G__55841$$);
       }(), function() {
-        var $G__47982$jscomp$1$$ = {id:"section-7", subtitle:"venue", title:"location information"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$location$location_section$$, $G__47982$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$location$location_section$$, $G__47982$jscomp$1$$);
+        var $G__55849$jscomp$1$$ = {id:"section-7", subtitle:"venue", title:"location information"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$location$location_section$$, $G__55849$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$location$location_section$$, $G__55849$jscomp$1$$);
       }(), function() {
-        var $G__47990$jscomp$1$$ = {id:"section-8", subtitle:"non-profit", title:"donation information"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$non_profit$non_profit$$, $G__47990$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$non_profit$non_profit$$, $G__47990$jscomp$1$$);
+        var $G__55857$jscomp$1$$ = {id:"section-8", subtitle:"non-profit", title:"donation information"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$non_profit$non_profit$$, $G__55857$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$non_profit$non_profit$$, $G__55857$jscomp$1$$);
       }(), function() {
-        var $G__47996$jscomp$1$$ = {id:"section-9", subtitle:"why it matters", title:"why support"};
-        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$why_support$why_support$$, $G__47996$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$why_support$why_support$$, $G__47996$jscomp$1$$);
+        var $G__55865$$ = {id:"section-9", subtitle:"why it matters", title:"why support"};
+        return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$why_support$why_support$$, $G__55865$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$why_support$why_support$$, $G__55865$$);
       }()]};
-      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$page_shell$page_shell$$, $G__47924$jscomp$1$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$page_shell$page_shell$$, $G__47924$jscomp$1$$);
+      return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$page_shell$page_shell$$, $G__55811$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$page_shell$page_shell$$, $G__55811$$);
     }()};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($APP.$amp$ui$section$section$$, $G__47915_props__41658__auto__$jscomp$27$$, "budget-section") : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$section$section$$, $G__47915_props__41658__auto__$jscomp$27$$, "budget-section");
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$3$($APP.$amp$ui$section$section$$, $G__55806$jscomp$1_props__41658__auto__$jscomp$30$$, "budget-section") : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$section$section$$, $G__55806$jscomp$1_props__41658__auto__$jscomp$30$$, "budget-section");
 };
-$APP.$amp$pages$budget$page$budget_view$$ = function($G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$, $maybe_ref__41659__auto__$jscomp$28$$) {
-  $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$), $maybe_ref__41659__auto__$jscomp$28$$], null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$, 0, null);
+$APP.$amp$pages$budget$page$budget_view$$ = function($G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$, $maybe_ref__41659__auto__$jscomp$31$$) {
+  $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$), $maybe_ref__41659__auto__$jscomp$31$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$ = {};
-  $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$ = {children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$budget_section$$, $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$budget_section$$, $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$)};
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__48098$jscomp$3_G__48102$jscomp$inline_3436_props__41658__auto__$jscomp$28_vec__48094$$);
+  $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$ = {};
+  $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$ = {children:$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$budget$section$budget_section$$, $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$budget$section$budget_section$$, $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$)};
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__55912$jscomp$1_G__55916$jscomp$inline_3436_props__41658__auto__$jscomp$31_vec__55908$$);
 };
 $cljs$cst$850$admin_apr_26$$ = new $APP.$cljs$core$Keyword$$(null, "admin-apr-26", "admin-apr-26", -1594649114);
 $cljs$cst$864$venice_sep_26$$ = new $APP.$cljs$core$Keyword$$(null, "venice-sep-26", "venice-sep-26", 94763672);

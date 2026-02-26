@@ -42,24 +42,24 @@
                 (d/span {:class (s/cx s/em-strong s/text-lg)}
                         "This is why being present matters—and what it elevates:"))
 
-         (d/ul {:class (s/cx s/text-secondary "space-y-4 ml-4")}
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "National dignity, made public: ")
+         (d/div {:class (s/cx s/text-secondary "space-y-5")}
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "National dignity, made public: ")
                      "Armenia is framed through excellence, discipline, and contemporary creativity—not solely through tragedy or geopolitics.")
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "Soft power that compounds: ")
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "Soft power that compounds: ")
                      "Cultural visibility becomes long-term credibility—opening doors that money or lobbying cannot.")
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "Narrative control: ")
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "Narrative control: ")
                      "If Armenia does not author its own image, others will—and they will simplify it.")
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "A platform for future generations: ")
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "A platform for future generations: ")
                      "A serious national presence signals to Armenian artists, students, and institutions that the world stage is not \"for others.\"")
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "Diaspora cohesion: ")
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "Diaspora cohesion: ")
                      "A Pavilion becomes a shared achievement—an anchor event that unifies donors, families, and communities around something constructive and proud.")
-               (d/li {:class ""}
-                     (d/span {:class s/em-bold} "Institutional consequences: ")
+                (d/p {:class ""}
+                     (d/span {:class (s/cx s/em-bold s/em-italic)} "Institutional consequences: ")
                      "Serious participation invites museum partnerships, residencies, publications, acquisitions, and recurring invitations—real infrastructure, not a momentary spotlight."))
 
          ;; Opportunity cost paragraph
@@ -73,10 +73,9 @@
                  "That is the long-term gap: Armenia is not always \"where it should be\" because it has too often been forced into survival mode—outspent, out-networked, and underrepresented in the institutions that shape global memory. ")
 
          (d/span {:class (s/cx s/text-secondary "block mt-6")}
-                 "A donor is not \"buying\" a sculpture or an event; they are buying ")
-         (d/span {:class s/em-strong} "representation with consequences")
-         (d/span {:class s/text-secondary}
-                 ": an enduring record that Armenia showed up with seriousness, ambition, and world-class execution. The legacy is reputational and generational: a Pavilion that becomes a reference point—documented, published, archived, collected, cited—and a model that makes the next Armenian presence easier, stronger, and inevitable.")
+                 "A donor is not \"buying\" a sculpture or an event; they are buying representation with consequences: an enduring record that Armenia showed up with seriousness, ambition, and world-class execution. The legacy is reputational and generational: a Pavilion that becomes a reference point—documented, published, archived, collected, cited—and a model that makes the next Armenian presence easier, stronger, and inevitable.")
+
+
 
          ;; Closing — cultural battle
          (d/span {:class "block mt-8"}

@@ -72,34 +72,51 @@
 
 ;; ── Hero ───────────────────────────────────────────────────────────────────
 
-(defnc hero-section [{:keys []}]
-  ;; pt-10 (40px) visual breathing room — nav clearance handled by page-shell
-  (d/div {:class "pt-10 pb-16 px-4"}
-         ($ venue-eyebrow {:text "Venice \u00B7 Arsenale Militare"})
+(defnc hero-section
+  [{:keys []}]
+  (let [is-desktop? (use-touch-enabled)]
+    (d/div {:class "pt-10 pb-16 px-4"}
+           ($ venue-eyebrow {:text "Venice \u00B7 Arsenale Militare"})
 
-         ;; Display title
-         (d/h1 {:class (s/cx venue-display "mb-8")}
-               "The Spaces")
+           ;; Display title
+           (d/h1 {:class (s/cx venue-display "mb-8")}
+                 "Visit the pavilion")
 
-         ;; Navigate CTA — prominent, immediate action
-         ($ map-button)
+           ;; Navigate CTA — prominent, immediate action
+           ($ map-button)
 
-         ;; Lead copy — enticing, sets the two-site narrative
-         (d/div {:class "space-y-6"}
-                (d/p {:class s/body-lg}
-                     "The Armenia Pavilion unfolds across "
-                     (d/span {:class s/em-strong} "two sites")
-                     " within the historic Arsenale of Venice\u2014a "
-                     (d/span {:class s/em-strong} "5,000-square-foot interior studio")
-                     " and a monumental "
-                     (d/span {:class s/em-strong} "outdoor sculpture")
-                     " at the gates of the complex.")
+           (d/div {:class "mb-6"}
+                  ($ mapbox-map
+                     {:dev false
+                      :interactive? is-desktop?
+                      :initial-view mc/initial-view
+                      :ant-paths    mc/ant-paths
+                      :layers       mc/layers})
+                  (d/p {:class (s/cx s/font-ui s/text-sm s/em-italic s/text-muted "mt-4 px-4")}
+                       "Walking path from the crossing to the pavilion \u2014 approximately 8 minutes"))
 
-                (d/p {:class s/body-base}
-                     "Together they form a single constellation: "
-                     (d/span {:class s/em-italic} "a place for study, for work, to create, share, and exhibit")
-                     ". Over six months the Pavilion operates not as a static exhibition "
-                     "but as a living workshop\u2014open, evolving, and built in real time."))))
+
+           ;; Display title
+           (d/h1 {:class (s/cx venue-display "mb-8")}
+                 "About")
+
+           ;; Lead copy — enticing, sets the two-site narrative
+           (d/div {:class "space-y-6"}
+                  (d/p {:class s/body-lg}
+                       "The Armenia Pavilion unfolds across "
+                       (d/span {:class s/em-strong} "two sites")
+                       " within the historic Arsenale of Venice\u2014a "
+                       (d/span {:class s/em-strong} "5,000-square-foot interior studio")
+                       " and a monumental "
+                       (d/span {:class s/em-strong} "outdoor sculpture")
+                       " at the gates of the complex.")
+
+                  (d/p {:class s/body-base}
+                       "Together they form a single constellation: "
+                       (d/span {:class s/em-italic} "a place for study, for work, to create, share, and exhibit")
+                       ". Over six months the Pavilion operates not as a static exhibition "
+                       "but as a living workshop\u2014open, evolving, and built in real time.")))))
+;; pt-10 (40px) visual breathing room — nav clearance handled by page-shell)
 
 ;; ── The Studio (Tesa 41) ──────────────────────────────────────────────────
 

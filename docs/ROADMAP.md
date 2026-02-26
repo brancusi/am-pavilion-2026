@@ -1,121 +1,88 @@
 # Roadmap
 
-## 2026-02-24 — Shared Page Shell & Artist Section Headers
+## 2026-02-25 — Hard-Coded Blog with Slug-Based Routing
 
-**Goal:** Eliminate per-page nav clearance hacks by creating a universal `page-shell` component, and replace the budget-specific `section-block` headers on the artist page with the lighter venue-style eyebrow pattern.
+**Goal:** Ship a minimal, hard-coded blog system with slug-based URLs (`/blog/:slug`) that loads instantly, uses the standard nav/page-shell chrome, and supports rich content (text, images, video) with skeleton placeholders for media.
 
 **Current state:**
 
-- Every page independently handles nav clearance for the fixed `h-14` top nav: budget uses `pt-14`, venue uses `pt-24`, artist has none, blog/press use vertical centering. Each new page must rediscover and reimplement this.
-- Artist section headers use `section-block` from `pages/budget/` — a numbered eyebrow + massive `heading-display` (4xl→7xl) pattern that is budget-specific and visually too heavy for narrative prose pages.
-- The venue page has a lighter eyebrow pattern (`venue-eyebrow`) that is inline in `venue/page.cljs` and not reusable.
+- Blog module (`amp.pages.blog.page`) exists as a "coming soon" placeholder inside a `page-shell`. It's already wired into shadow-cljs module splitting (`:blog-view` module) and the router's `site-map`.
+- The router uses flat paths only — no path parameters. All routes are simple strings like `"blog"`, `"artist"`, etc.
+- `lazy-image` already has a two-phase loading pattern (preload → decode → GSAP reveal) with pulsing dots as a loading indicator, but there's no generic skeleton/shimmer placeholder for arbitrary content blocks.
+- Blog is commented out of the nav menu (`nav-items` in `menu.cljs`).
 
 **Target state:**
 
-- A shared `amp.ui.page-shell` component that wraps any routed page with: `min-h-screen grey-grad`, `text-primary`, `pt-14` nav clearance, content-column centering, and optional `back-up-nav`. All page views use it.
-- A shared `amp.ui.section-header` component extracted from the venue pattern: stacked pink accent lines around a muted label, plus a display heading. Available for any page to import.
-- Artist sections use the new `section-header` instead of `section-block`.
-- `s/page-shell` style token in `amp.styles` for pages that only need the class string without the component.
+- `/blog` shows an index page listing all posts with title, date, summary, and optional cover thumbnail.
+- `/blog/:slug` renders an individual post as a full page within `page-shell`, using the standard section-header eyebrow pattern.
+- Posts are hard-coded ClojureScript data + component functions — no CMS, no API calls, no build-time processing. Adding a new post means adding a namespace and a registry entry.
+- Media (images, video) uses skeleton placeholders that shimmer until loaded, then cross-fade in. Text is visible immediately since it's bundled in the JS module.
+- Blog is enabled in the nav menu.
+- All blog code lives in the existing `:blog-view` module — no new module-splitting entries needed.
 
 **Key decisions:**
 
-- **Component vs token:** Both. `s/page-shell` is the class string for simple pages (blog, press). `amp.ui.page-shell` is the full component with content-column and back-up-nav for rich pages (artist, venue, budget).
-- **Landing page excluded:** The landing page has full-bleed hero sections and snap-scroll behavior — it intentionally skips nav clearance. It will NOT use `page-shell`.
-- **Budget page:** Will use `page-shell` for the outer wrapper but keeps its own `section-block` headers (numbered eyebrow is correct for its data-dense TOC-style layout).
-- **Venue eyebrow extraction:** The `venue-eyebrow` component and `venue-display` heading def move to `amp.ui.section-header` so both venue and artist pages can share them.
+- **Hard-coded vs CMS:** Hard-coded. Posts are ClojureScript namespaces with a data map (metadata) and a render function (content). This is the simplest possible approach — no async data fetching, no loading states for text, instant rendering once the module loads.
+- **Routing approach:** Add a parameterized route `/blog/:slug` to reitit alongside the existing `/blog` index route. The blog page component reads the slug from route match params and dispatches to the correct post. Both routes resolve to the same lazy-loaded `:blog-view` module, so no additional module-splitting config is needed.
+- **Post registry pattern:** A single `amp.pages.blog.registry` namespace that maps slug strings to `{:title :date :summary :cover-image :component}` maps. The component value is the post's render function. The index page iterates this registry to build the listing.
+- **Media placeholders:** Add a `skeleton-box` component (`amp.ui.skeleton`) — a shimmering animated div with configurable aspect ratio. Wrap `lazy-image` usages in blog posts with this skeleton as the fallback. Since blog text is bundled JS, it renders instantly; only images/video show the skeleton.
+- **Navigation:** Uncomment blog from `nav-items` in `menu.cljs`. The existing menu system handles the rest.
+- **No pagination:** With a small number of hard-coded posts, the index page shows all posts. No pagination, filtering, or search needed.
+- **URL structure:** `/blog` = index, `/blog/some-post-title` = individual post. Slugs are kebab-case, URL-safe strings defined by the author.
+
+### Implementation Strategy
+
+The work divides into three phases: routing infrastructure, blog components, and polish.
+
+**Phase 1 — Routing.** The router needs to support path parameters for the first time. In `site-map`, change the blog entry's `:path` to `"blog"` (it likely already is). Add a second route entry in the `routes` function for `["/blog/:slug" {...}]` that points to the same blog-view lazy component. The blog page component then checks `(-> match :parameters :path :slug)` — if present, render the post; if nil, render the index. This keeps both views in the single `:blog-view` module.
+
+**Phase 2 — Blog components.** Create the registry namespace with 1–2 starter posts. Build the index page (list of cards linking to `/blog/:slug`). Build the post page (reads slug → looks up registry → renders the component inside page-shell with section-header). Each post is a `defnc` component that uses standard body-copy tokens and `lazy-image` for media.
+
+**Phase 3 — Skeleton placeholders.** Create `amp.ui.skeleton` with a `skeleton-box` component: a div with a CSS shimmer animation (Tailwind `animate-pulse` or a custom keyframe), configurable `aspect-ratio` or `h-*` classes. Use it as the wrapper/fallback around `lazy-image` in blog posts. This is the "instant feel" — text appears immediately, image slots show the shimmer, then images cross-fade in via the existing `lazy-image` GSAP transition.
+
+**Touch points:**
+
+- `src/amp/services/router.cljs` — add parameterized `/blog/:slug` route
+- `src/amp/pages/blog/page.cljs` — rewrite from placeholder to index/post dispatcher
+- `src/amp/pages/blog/registry.cljs` — new: post slug → metadata+component map
+- `src/amp/pages/blog/index.cljs` — new: index page listing component
+- `src/amp/pages/blog/post.cljs` — new: individual post page wrapper
+- `src/amp/pages/blog/posts/` — new directory: one namespace per post
+- `src/amp/ui/skeleton.cljs` — new: shimmer placeholder component
+- `src/amp/nav/menu.cljs` — uncomment blog from nav-items
+
+**Risks:**
+
+- Reitit route ordering — the parameterized `/blog/:slug` must not shadow the `/blog` index. Reitit handles this correctly if the static route is listed first (or use `:conflicting true`).
+- Module boundaries — all blog content (including post namespaces) must be required from within the `:blog-view` module entry point (`amp.pages.blog.page`) so shadow-cljs bundles them together. If a post namespace is accidentally required from `main`, it defeats code splitting.
 
 ### Tasks
 
-- [x] **Step 1 — Add `page-shell` token to `styles.cljs`** (2026-02-24)
-      Add `s/page-shell` class string: `"min-h-screen grey-grad pt-14"` + `text-primary`.
+- [ ] **Step 1 — Add parameterized blog route** (2026-02-25)
+      Modify `router.cljs` to add `/blog/:slug` alongside the existing `/blog` route, both pointing to the blog-view lazy component.
 
-- [x] **Step 2 — Create `amp.ui.page-shell` component** (2026-02-24)
-      Shared page wrapper: page-shell classes + content-column + optional back-up-nav.
+- [ ] **Step 2 — Create skeleton placeholder component** (2026-02-25)
+      Add `amp.ui.skeleton` with a `skeleton-box` component (shimmer animation, configurable aspect ratio).
 
-- [x] **Step 3 — Create `amp.ui.section-header` component** (2026-02-24)
-      Extract venue-eyebrow + venue-display into a reusable component.
+- [ ] **Step 3 — Create post registry** (2026-02-25)
+      Add `amp.pages.blog.registry` mapping slugs to `{:title :date :summary :cover-image :component}`.
 
-- [x] **Step 4 — Migrate artist sections to `section-header`** (2026-02-24)
-      Replace `section-block` imports with `section-header` in works, escape, video, return. Add `expandable-text-area-light` variant for biography. Remove `idx` props.
+- [ ] **Step 4 — Build blog index page** (2026-02-25)
+      Create `amp.pages.blog.index` — lists all posts from the registry as linked cards with title, date, summary.
 
-- [x] **Step 5 — Migrate all pages to `page-shell`** (2026-02-24)
-      Update artist, venue, budget, blog, press pages to use the shared wrapper.
+- [ ] **Step 5 — Build post page wrapper** (2026-02-25)
+      Create `amp.pages.blog.post` — reads slug from route params, looks up registry, renders the post component inside page-shell with section-header.
 
-- [x] **Step 6 — Validate release build** (2026-02-24)
-      Run `npm run release` — completed with only the expected medley warning.
+- [ ] **Step 6 — Rewrite blog page entry point** (2026-02-25)
+      Update `amp.pages.blog.page` to dispatch: no slug → index, slug present → post page.
 
-## 2026-02-25 — Font Audit & Body Copy Unification
+- [ ] **Step 7 — Write 1–2 starter posts** (2026-02-25)
+      Add example post namespaces in `src/amp/pages/blog/posts/` using body-copy tokens, lazy-image with skeleton fallbacks.
 
-**Goal:** Remove dead font references, unify all body copy to a single consistent style (Source Sans Pro, normal weight, justified), centralize all inline font/weight/size/color into shared tokens, and enable removal of unused Adobe fonts.
+- [ ] **Step 8 — Enable blog in navigation** (2026-02-25)
+      Uncomment blog from `nav-items` in `menu.cljs`.
 
-**Current state:**
-
-- Dead `futura-100` / `futura-100-book` @font-face declarations in CSS, unused `futura` Tailwind alias.
-- Body copy tokens (`body-lg` vs `body-base`) use different weights (bold vs medium), creating jarring shifts between expandable-text preview and expanded content.
-- ~52 inline font-family, ~45 inline font-weight, ~100+ inline text-size, and ~80+ inline text-color occurrences across components.
-- Landing page sections (teaser, curators, artist, in-minor-keys) use all-inline typography.
-- No shared tokens for person names, role labels, footer headings, or written-by patterns.
-
-**Target state:**
-
-- Dead font CSS and Tailwind config removed. Adobe font project can drop unused families.
-- All body copy uses Source Sans Pro (`font-body`) at `font-normal` (400) weight, justified, with consistent leading.
-- New semantic tokens: `person-name`, `person-name-lg`, `person-role`, `written-by-label`, `written-by-name`, `footer-heading`, `link-hover-accent`.
-- Landing page sections, footer, written-by, press-release footer, and committee page migrated to tokens.
-
-### Tasks
-
-- [x] **Step 1 — Remove dead font references** (2026-02-25)
-      Removed futura-100/futura-100-book @font-face from CSS, futura alias from Tailwind config.
-
-- [x] **Step 2 — Unify body copy tokens** (2026-02-25)
-      Standardized body-lg/body-base/body-sm/body-closing to font-normal weight with leading-relaxed.
-
-- [x] **Step 3 — Add semantic tokens** (2026-02-25)
-      Added person-name, person-name-lg, person-role, written-by-label/name, footer-heading, link-hover-accent to styles.cljs.
-
-- [x] **Step 4 — Migrate landing sections** (2026-02-25)
-      Migrated teaser, curators, artist, in-minor-keys to use centralized tokens.
-
-- [x] **Step 5 — Migrate written-by, footer, press-release, committee** (2026-02-25)
-      Replaced all inline font/color classes with shared tokens.
-
-- [x] **Step 6 — Validate release build** (2026-02-25)
-      Run `npm run release` — completed with only the expected medley warning.
-
-## 2026-02-25 — Remove Neue Haas Grotesk Display, Unify to Source Sans Pro
-
-**Goal:** Eliminate Neue Haas Grotesk Display from the font stack and unify all text — display headings, navigation, and body copy — to Source Sans Pro. Reduces the two Adobe Typekit fonts to one.
-
-**Current state:**
-
-- `font-display` Tailwind class resolves to `neue-haas-grotesk-display, neue-haas-grotesk-text, sans-serif`.
-- `font-body` resolves to `source-sans-pro, Helvetica, Arial, sans-serif`.
-- ~20 `s/font-display` token usages and 4 raw `"font-display"` strings across 12 source files.
-- Adobe Typekit project serves both NHG Display + Source Sans Pro.
-
-**Target state:**
-
-- Both `font-display` and `font-body` resolve to `source-sans-pro, Helvetica, Arial, sans-serif`.
-- Two-font system: Source Sans Pro (all text) + FiraCode (data/labels).
-- Adobe Typekit project can drop NHG Display and NHG Text.
-- No remaining `neue-haas-grotesk` references in source.
-
-### Tasks
-
-- [x] **Step 1 — Update Tailwind font config** (2026-02-25)
-      Changed `display` font-family to Source Sans Pro stack in `tailwind.config.js`.
-
-- [x] **Step 2 — Update styles.cljs comments** (2026-02-25)
-      Updated font-family section from three-font to two-font documentation.
-
-- [x] **Step 3 — Clean up raw font-display strings** (2026-02-25)
-      Replaced 4 raw `"font-display"` strings in hero.cljs, portrait.cljs, button.cljs, footer.cljs with tokens.
-
-- [x] **Step 4 — Update docs** (2026-02-25)
-      Updated SKILL.md, ROADMAP.md, and CHANGELOG.md to reflect two-font system.
-
-- [x] **Step 5 — Validate release build** (2026-02-25)
-      Run `npm run release` — completed with only the expected medley warning.
+- [ ] **Step 9 — Validate release build** (2026-02-25)
+      Run `npm run release` — must complete without errors (medley warning expected).
 
 <!-- Add new initiatives above this line -->
