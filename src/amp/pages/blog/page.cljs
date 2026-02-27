@@ -1,18 +1,19 @@
 (ns amp.pages.blog.page
-  (:require [amp.ui.page-shell :refer [page-shell]]
+  "Blog entry point — dispatches between the index page and individual
+   post pages based on the :slug route parameter.
+   All blog code loads in the :blog-view module."
+  (:require [amp.pages.blog.index :refer [blog-index]]
+            [amp.pages.blog.post :refer [blog-post]]
+            [amp.ui.page-shell :refer [page-shell]]
+            [amp.state.provider :refer [use-main-state]]
             [amp.lib.defnc :refer [defnc]]
-            [amp.styles :as s]
-            [helix.core :refer [$]]
-            [helix.dom :as d]))
+            [helix.core :refer [$]]))
 
 (defnc blog-view
   [_props]
-  ($ page-shell {:show-back-up? false}
-     (d/div {:class "flex flex-1 flex-col items-center justify-center px-4"}
-            (d/div {:class "max-w-2xl w-full text-center"}
-                   (d/p {:class (s/cx s/eyebrow s/text-faint "mb-6")}
-                        "Journal")
-                   (d/h1 {:class (s/cx s/heading-display "mb-8")}
-                         "Blog")
-                   (d/p {:class (s/cx s/body-lg s/text-secondary)}
-                        "Blog and vlog entries — coming soon.")))))
+  (let [[state _] (use-main-state)
+        slug (-> state :current-route :path-params :slug)]
+    ($ page-shell {:show-back-up? (some? slug)}
+       (if slug
+         ($ blog-post {:slug slug})
+         ($ blog-index)))))

@@ -58,31 +58,31 @@ The work divides into three phases: routing infrastructure, blog components, and
 
 ### Tasks
 
-- [ ] **Step 1 — Add parameterized blog route** (2026-02-25)
+- [x] **Step 1 — Add parameterized blog route** (2026-02-25)
       Modify `router.cljs` to add `/blog/:slug` alongside the existing `/blog` route, both pointing to the blog-view lazy component.
 
-- [ ] **Step 2 — Create skeleton placeholder component** (2026-02-25)
+- [x] **Step 2 — Create skeleton placeholder component** (2026-02-25)
       Add `amp.ui.skeleton` with a `skeleton-box` component (shimmer animation, configurable aspect ratio).
 
-- [ ] **Step 3 — Create post registry** (2026-02-25)
+- [x] **Step 3 — Create post registry** (2026-02-25)
       Add `amp.pages.blog.registry` mapping slugs to `{:title :date :summary :cover-image :component}`.
 
-- [ ] **Step 4 — Build blog index page** (2026-02-25)
+- [x] **Step 4 — Build blog index page** (2026-02-25)
       Create `amp.pages.blog.index` — lists all posts from the registry as linked cards with title, date, summary.
 
-- [ ] **Step 5 — Build post page wrapper** (2026-02-25)
+- [x] **Step 5 — Build post page wrapper** (2026-02-25)
       Create `amp.pages.blog.post` — reads slug from route params, looks up registry, renders the post component inside page-shell with section-header.
 
-- [ ] **Step 6 — Rewrite blog page entry point** (2026-02-25)
+- [x] **Step 6 — Rewrite blog page entry point** (2026-02-25)
       Update `amp.pages.blog.page` to dispatch: no slug → index, slug present → post page.
 
-- [ ] **Step 7 — Write 1–2 starter posts** (2026-02-25)
+- [x] **Step 7 — Write 1–2 starter posts** (2026-02-25)
       Add example post namespaces in `src/amp/pages/blog/posts/` using body-copy tokens, lazy-image with skeleton fallbacks.
 
-- [ ] **Step 8 — Enable blog in navigation** (2026-02-25)
+- [x] **Step 8 — Enable blog in navigation** (2026-02-25)
       Uncomment blog from `nav-items` in `menu.cljs`.
 
-- [ ] **Step 9 — Validate release build** (2026-02-25)
+- [x] **Step 9 — Validate release build** (2026-02-25)
       Run `npm run release` — must complete without errors (medley warning expected).
 
 <!-- Add new initiatives above this line -->

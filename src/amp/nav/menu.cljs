@@ -44,7 +44,7 @@
   [{:path "/" :title "Home"}
    {:path "/visit" :title "Visit"}
    {:path "/artist" :title "Artist"}
-   #_{:path "/blog" :title "Blog"}
+   {:path "/blog" :title "Blog"}
    #_{:path "/press" :title "Press"}])
 
 ;; ---------------------------------------------------------------------------

@@ -61,14 +61,19 @@
            :view (lazy-component amp.pages.landing.page/landing-view)
            :controllers [{:start (log-fn "start" "landing controller")
                           :stop (log-fn "stop" "landing controller")}]}]]
-        (map (fn [{:keys [id path view hide-footer?]}]
-               [path
-                {:name id
-                 :view view
-                 :hide-footer? hide-footer?
-                 :controllers [{:start (log-fn (str "start!!!" id))
-                                :stop (log-fn (str "stop!!!" id))}]}])
-             site-map)))
+        (mapcat (fn [{:keys [id path view hide-footer?]}]
+                  (let [route-data {:name id
+                                    :view view
+                                    :hide-footer? hide-footer?
+                                    :controllers [{:start (log-fn (str "start!!!" id))
+                                                   :stop (log-fn (str "stop!!!" id))}]}]
+                    (if (= id ::blog)
+                      ;; Blog gets two routes: index + slug-parameterized post
+                      [[path route-data]
+                       [(str path "/:slug")
+                        (assoc route-data :name ::blog-post)]]
+                      [[path route-data]])))
+                site-map)))
 
 (comment
 

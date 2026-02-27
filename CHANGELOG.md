@@ -2,6 +2,31 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-02-25 — Hard-Coded Blog with Slug-Based Routing
+
+**Rationale:** The site needed a blog/journal section for project updates. A hard-coded approach (posts as ClojureScript namespaces) is the simplest possible system — no CMS, no API calls, no async loading states for text. Adding a post means adding a namespace and a registry entry.
+**Summary:** Implemented a full blog system with `/blog` index page and `/blog/:slug` individual post pages. Posts are hard-coded ClojureScript data + component functions. Added parameterized routing to reitit for the first time. Blog enabled in navigation.
+
+### Changes
+
+| File                                                         | Change                                                                                                     |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `src/amp/services/router.cljs`                               | Added parameterized `/blog/:slug` route alongside `/blog` index, both resolving to the `:blog-view` module |
+| `src/amp/pages/blog/page.cljs`                               | Rewrote from "coming soon" placeholder to route dispatcher (index vs post based on slug param)             |
+| `src/amp/pages/blog/registry.cljs`                           | New: post slug → metadata+component registry                                                               |
+| `src/amp/pages/blog/index.cljs`                              | New: blog index page with post cards (title, date, summary, cover thumbnail)                               |
+| `src/amp/pages/blog/post.cljs`                               | New: individual post page wrapper with eyebrow, title, author, back link, 404 fallback                     |
+| `src/amp/pages/blog/posts/pavilion_construction_begins.cljs` | New: starter post about construction at Tesa 41                                                            |
+| `src/amp/pages/blog/posts/venice_arrival.cljs`               | New: starter post about team arriving in Venice                                                            |
+| `src/amp/ui/skeleton.cljs`                                   | New: shimmer placeholder component (`skeleton-box`) with configurable aspect ratio                         |
+| `src/amp/nav/menu.cljs`                                      | Uncommented blog from `nav-items` to enable it in navigation                                               |
+
+### Migration Notes
+
+- To add a new blog post: create a namespace in `src/amp/pages/blog/posts/`, export `post-meta` and `post-content`, then require it in `registry.cljs` and add the meta to the `posts` vector.
+- No new shadow-cljs module entries needed — all blog code loads via the existing `:blog-view` module.
+- None — backward compatible.
+
 ## 2026-02-25 — Unify Expandable Text to body-base (16 px)
 
 **Rationale:** Expandable text sections used `body-lg` (18 px) for preview/lead paragraphs and `body-base` (16 px) for continuation paragraphs, creating a visible size jump on expand.
