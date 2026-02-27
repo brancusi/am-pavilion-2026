@@ -2,6 +2,26 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-02-27 — Social Links & Blog Share Bar
+
+**Rationale:** An art-event pavilion site needs social media presence and easy content sharing. The footer had no social links, and blog posts had no way for visitors to share them.
+**Summary:** Added social media profile links (Instagram, Facebook, X, YouTube) to the global footer and a share bar to blog post pages (Facebook, X, LinkedIn, WhatsApp, email, copy link).
+
+### Changes
+
+| File                           | Change                                                                                                              |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `src/amp/ui/social_icons.cljs` | New: SVG icon components for Instagram, Facebook, X/Twitter, YouTube, LinkedIn, WhatsApp, Email, Link, Share, Check |
+| `src/amp/ui/social_links.cljs` | New: footer social-links component rendering profile icons under a "Follow Us" heading                              |
+| `src/amp/ui/share_bar.cljs`    | New: blog share bar with platform share buttons + copy-to-clipboard with "Copied!" feedback                         |
+| `src/amp/ui/footer.cljs`       | Added social-links column; grid changed from 3-col to 4-col (`sm:grid-cols-2 md:grid-cols-4`)                       |
+| `src/amp/pages/blog/post.cljs` | Added share-bar below author byline and above "All Posts" back link                                                 |
+
+### Migration Notes
+
+- Social profile URLs are placeholder handles (`armenianpavilion2026`). Update to real handles when accounts are created.
+- None — backward compatible.
+
 ## 2026-02-25 — Hard-Coded Blog with Slug-Based Routing
 
 **Rationale:** The site needed a blog/journal section for project updates. A hard-coded approach (posts as ClojureScript namespaces) is the simplest possible system — no CMS, no API calls, no async loading states for text. Adding a post means adding a namespace and a registry entry.

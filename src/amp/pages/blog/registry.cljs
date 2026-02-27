@@ -6,14 +6,15 @@
    3. Require the namespace here and add an entry to `posts`."
   (:require
    [amp.pages.blog.posts.pavilion-construction-begins :as post-1]
+   [amp.pages.blog.posts.blue-yellow-maquette :as post-byby]
    [amp.pages.blog.posts.venice-arrival :as post-2]))
 
 (def posts
   "Ordered vector of post maps. Newest first.
    Each entry: {:slug :title :date :summary :cover-image :component}"
-  [post-2/post-meta
-   post-1/post-meta])
+  [post-byby/post-meta])
 
 (def posts-by-slug
   "Lookup map: slug string → post map."
   (into {} (map (juxt :slug identity) posts)))
+

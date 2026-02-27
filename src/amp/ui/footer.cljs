@@ -4,6 +4,7 @@
    page, site navigation links on all other pages."
   (:require
    [amp.ui.button :refer [main-button]]
+   [amp.ui.social-links :refer [social-links]]
    [amp.config]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
@@ -108,8 +109,8 @@
                                                  "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00"
                                                  "_blank")})))
 
-                   ;; Three-column info
-                   (d/div {:class "grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 text-sm"}
+                   ;; Four-column info
+                   (d/div {:class "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 text-sm"}
 
                           ;; Contact
                           (d/div {:class "space-y-3"}
@@ -137,7 +138,10 @@
                           ;; Quick links — route-aware
                           (if on-landing?
                             ($ quick-links-landing)
-                            ($ quick-links-site)))))
+                            ($ quick-links-site))
+
+                          ;; Social links
+                          ($ social-links))))
 
      ;; ── Bottom bar ──
      (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"})
@@ -146,7 +150,7 @@
             (d/div {:class (s/cx s/content-column
                                  "flex flex-col sm:flex-row justify-between items-center gap-3")}
                    (d/div {:class "flex items-center gap-4"}
-                          (d/img {:src "images/graphics/61_biennale_logo_line.svg"
+                          (d/img {:src "/images/graphics/61_biennale_logo_line.svg"
                                   :class "h-6 opacity-40 invert dark:invert-0"})
                           (d/span {:class (s/cx "text-[10px] uppercase tracking-[0.15em] whitespace-nowrap"
                                                 s/text-muted)}

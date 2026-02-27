@@ -22,7 +22,7 @@
   [{:keys [show-back-up? children]
     :or   {show-back-up? true}}]
   (d/div {:class (s/cx s/page-shell
-                       "flex items-center justify-center flex-col")}
+                       "flex items-center flex-col")}
          (when show-back-up? ($ back-up-nav))
          (d/div {:class (s/cx "flex flex-col" s/content-column)}
                 children)))

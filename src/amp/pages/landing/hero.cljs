@@ -35,7 +35,7 @@
                                        :should-play? is-active?}))
 
       ;; ── Biennale logo — top right ──
-      (d/div {:class "absolute top-20 right-8 z-10"}
+      (d/div {:class "absolute top-20 right-8 z-20"}
              (d/div {:class "cursor-pointer w-24 sm:w-28 lg:w-32"
                      :on-click #(js/window.open "https://www.labiennale.org/en/art/2026" "_blank")}
                     (d/img {:src "images/graphics/61_biennale_logo_red.svg"

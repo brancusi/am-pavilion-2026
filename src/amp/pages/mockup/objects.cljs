@@ -131,11 +131,11 @@
      :depth        - plane depth in world units  (default 500)
      :height       - block thickness; 0 or nil = flat plane (default 0)
      :square-size  - world-unit size of one checker square (default 12, i.e. 1 ft)
-     :texture-path - path to the checker image  (default \"images/graphics/checker-grid-grey.png\")"
+     :texture-path - path to the checker image  (default \"/images/graphics/checker-grid-grey.png\")"
   [config]
   (let [{:keys [width depth height square-size texture-path position]
          :or {width 500 depth 500 height 0 square-size 12
-              texture-path "images/graphics/checker-grid-grey.png"}} config
+              texture-path "/images/graphics/checker-grid-grey.png"}} config
         ^js loader (THREE/TextureLoader.)
         ^js texture (.load loader texture-path)
         ;; One image tile = 2x2 checker squares, so one tile = 2 * square-size world units
@@ -153,7 +153,11 @@
             ;; Bake the downward offset into geometry so top face sits at y=0.
             ;; This prevents threeagent from overwriting the position offset.
             _ (.translate geometry 0 (- (/ height 2)) 0)
-            ^js material (THREE/MeshStandardMaterial. #js {:map texture})
+            ^js material (THREE/MeshStandardMaterial.
+                          #js {:map       texture
+                               :color     "#f0ebe5"  ;; warm cream tint — looks good in light & dark modes
+                               :roughness 0.85
+                               :metalness 0.0})
             ^js mesh (THREE/Mesh. geometry material)]
         (set! (.-receiveShadow mesh) true)
         (set! (.-castShadow mesh) true)
@@ -164,7 +168,11 @@
       (let [^js geometry (THREE/PlaneGeometry. width depth)
             ;; Bake rotation into geometry vertices so threeagent won't overwrite it
             _ (.rotateX geometry (- (/ js/Math.PI 2)))
-            ^js material (THREE/MeshStandardMaterial. #js {:map texture})
+            ^js material (THREE/MeshStandardMaterial.
+                          #js {:map       texture
+                               :color     "#f0ebe5"
+                               :roughness 0.85
+                               :metalness 0.0})
             ^js mesh (THREE/Mesh. geometry material)]
         (set! (.-receiveShadow mesh) true)
         (when position

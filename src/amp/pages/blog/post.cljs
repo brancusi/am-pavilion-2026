@@ -4,6 +4,7 @@
   (:require
    [amp.pages.blog.registry :refer [posts-by-slug]]
    [amp.ui.section-header :refer [section-eyebrow]]
+   [amp.ui.share-bar :refer [share-bar]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.core :refer [$]]
@@ -30,14 +31,20 @@
                    (when author
                      (d/p {:class (s/cx s/font-display s/weight-medium
                                         s/text-muted s/text-sm
-                                        s/uppercase- s/tracking-wider "mb-10")}
+                                        s/uppercase- s/tracking-wider "mb-6")}
                           (str "By " author)))
+
+                   ;; Share bar — top
+                   (d/div {:class "mb-10"}
+                          ($ share-bar {:title title}))
 
                    ;; Post body — rendered by the post's component function
                    ($ component)
 
-                   ;; Back link
+                   ;; Bottom share + back link
                    (d/div {:class (s/cx "mt-16 mb-12 pt-8 border-t" s/border-subtle)}
+                          (d/div {:class "mb-8"}
+                                 ($ share-bar {:title title}))
                           (d/a {:href "/blog"
                                 :class (s/cx s/btn-text
                                              "inline-flex items-center gap-2")}

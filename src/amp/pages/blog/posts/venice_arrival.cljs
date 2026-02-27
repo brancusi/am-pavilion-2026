@@ -1,38 +1,11 @@
 (ns amp.pages.blog.posts.venice-arrival
   "Blog post: Arriving in Venice — preparations for the Biennale opening."
   (:require
-   [amp.ui.skeleton :refer [skeleton-box]]
-   [amp.ui.image :refer [lazy-image]]
-   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
+   [amp.ui.image-figure :refer [image-figure]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.core :refer [$]]
-   [helix.dom :as d]
-   [helix.hooks :as hooks]))
-
-;; ---------------------------------------------------------------------------
-;; Blog image — same pattern as pavilion-construction-begins
-;; ---------------------------------------------------------------------------
-
-(defnc blog-image
-  [{:keys [src aspect-ratio caption]}]
-  (let [ref (hooks/use-ref nil)
-        [_visited? visible?] (use-intersection-observer ref)]
-    (d/figure {:class "my-8" :ref ref}
-              (d/div {:class "relative w-full overflow-hidden"
-                      :style {:aspectRatio (or aspect-ratio "16/9")}}
-                     ($ skeleton-box {:aspect-ratio (or aspect-ratio "16/9")
-                                      :class "absolute inset-0"})
-                     ($ lazy-image {:src src
-                                    :w 1200
-                                    :h (int (* 1200 (/ 1 (js/parseFloat (or aspect-ratio "1.78")))))
-                                    :should-load? visible?
-                                    :object-fit "cover"
-                                    :transition {:opacity 1 :duration 0.6 :ease "power2.out"}}))
-              (when caption
-                (d/figcaption {:class (s/cx s/font-data s/text-xs s/text-muted
-                                            "mt-3 px-1")}
-                              caption)))))
+   [helix.dom :as d]))
 
 ;; ---------------------------------------------------------------------------
 ;; Post content component
@@ -50,9 +23,9 @@
               ". After two years of preparation, the moment to bring the project "
               "into physical reality is finally here.")
 
-         ($ blog-image {:src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
-                        :aspect-ratio "1.82"
-                        :caption "The crossing at the Arsenale — site of the outdoor installation"})
+         ($ image-figure {:src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+                          :aspect-ratio "1.82"
+                          :caption "The crossing at the Arsenale — site of the outdoor installation"})
 
          (d/p {:class s/body-base}
               "Venice in late February is quiet, cold, and extraordinarily beautiful. The city "
@@ -71,9 +44,9 @@
               "satellite imagery, recalibrates everything. Scale, light, acoustics, the way "
               "visitors will move through — all of it becomes concrete.")
 
-         ($ blog-image {:src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
-                        :aspect-ratio "1.82"
-                        :caption "Approach to the Armenian Pavilion site"})
+         ($ image-figure {:src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+                          :aspect-ratio "1.82"
+                          :caption "Approach to the Armenian Pavilion site"})
 
          (d/p {:class s/body-base}
               "The outdoor piece will occupy one of the highest-traffic pedestrian junctions "

@@ -1,41 +1,11 @@
 (ns amp.pages.blog.posts.pavilion-construction-begins
   "Blog post: Pavilion construction begins at the Arsenale."
   (:require
-   [amp.ui.skeleton :refer [skeleton-box]]
-   [amp.ui.image :refer [lazy-image]]
-   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
+   [amp.ui.image-figure :refer [image-figure]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.core :refer [$]]
-   [helix.dom :as d]
-   [helix.hooks :as hooks]))
-
-;; ---------------------------------------------------------------------------
-;; Blog image — wraps lazy-image with a skeleton placeholder
-;; ---------------------------------------------------------------------------
-
-(defnc blog-image
-  "Image with skeleton shimmer while loading. Aspect ratio matches the skeleton."
-  [{:keys [src aspect-ratio caption]}]
-  (let [ref (hooks/use-ref nil)
-        [_visited? visible?] (use-intersection-observer ref)]
-    (d/figure {:class "my-8" :ref ref}
-              (d/div {:class "relative w-full overflow-hidden"
-                      :style {:aspectRatio (or aspect-ratio "16/9")}}
-                     ;; Skeleton underneath
-                     ($ skeleton-box {:aspect-ratio (or aspect-ratio "16/9")
-                                      :class "absolute inset-0"})
-                     ;; Lazy image on top
-                     ($ lazy-image {:src src
-                                    :w 1200
-                                    :h (int (* 1200 (/ 1 (js/parseFloat (or aspect-ratio "1.78")))))
-                                    :should-load? visible?
-                                    :object-fit "cover"
-                                    :transition {:opacity 1 :duration 0.6 :ease "power2.out"}}))
-              (when caption
-                (d/figcaption {:class (s/cx s/font-data s/text-xs s/text-muted
-                                            "mt-3 px-1")}
-                              caption)))))
+   [helix.dom :as d]))
 
 ;; ---------------------------------------------------------------------------
 ;; Post content component
@@ -53,9 +23,9 @@
               (d/span {:class s/em-strong} "Tesa 41")
               " within the historic Arsenale complex in Venice.")
 
-         ($ blog-image {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
-                        :aspect-ratio "1.34"
-                        :caption "Tesa 41 interior — first day of pavilion setup"})
+         ($ image-figure {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+                          :aspect-ratio "1.34"
+                          :caption "Tesa 41 interior — first day of pavilion setup"})
 
          (d/p {:class s/body-base}
               "The pavilion occupies approximately "
@@ -72,9 +42,9 @@
               (d/span {:class s/em-italic} "is")
               " the artwork.")
 
-         ($ blog-image {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
-                        :aspect-ratio "1.34"
-                        :caption "Structural framework taking shape inside Tesa 41"})
+         ($ image-figure {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
+                          :aspect-ratio "1.34"
+                          :caption "Structural framework taking shape inside Tesa 41"})
 
          (d/p {:class s/body-base}
               "The initial phase focuses on the spatial framework — establishing the modular grid "
