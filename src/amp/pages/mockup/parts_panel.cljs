@@ -11,10 +11,10 @@
      :mockup-data - full mockup data map (for part extraction)
      :on-close    - callback to close the panel"
   [{:keys [open? mockup-data on-close]}]
-  (d/div {:class (str "z-30 fixed top-0 right-0 h-full bg-white border-l-4 border-slate-800 shadow-lg "
+  (d/div {:class (str "z-30 fixed top-14 right-0 bg-white border-l-4 border-slate-800 shadow-lg "
                       "transition-transform duration-300 ease-in-out "
                       (if open? "translate-x-0" "translate-x-full"))
-          :style {:width "360px"}}
+          :style {:width "360px" :height "calc(100vh - 3.5rem)"}}
          ;; Panel header
          (d/div {:class "flex justify-between items-center px-4 py-3 border-b-2 border-slate-300"}
                 (d/h2 {:class "text-lg font-bold font-mono"} "Parts List")

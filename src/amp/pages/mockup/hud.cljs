@@ -29,7 +29,7 @@
      :on-toggle-parts-panel - callback to open parts panel"
   [{:keys [title mockup-data hud-open? wireframe? ground-plane?
            on-toggle-hud on-toggle-wireframe on-toggle-ground on-toggle-parts-panel]}]
-  (d/div {:class "z-20 flex flex-col gap-2 absolute bg-white/40 px-4 py-2 border-slate-800 border-4 m-2"}
+  (d/div {:class "z-20 flex flex-col gap-2 absolute bg-white/40 px-4 py-2 border-slate-800 border-4 m-2 mt-2"}
          ($ hud-header {:on-toggle on-toggle-hud
                         :title (or title "Untitled")
                         :hud-open? hud-open?})

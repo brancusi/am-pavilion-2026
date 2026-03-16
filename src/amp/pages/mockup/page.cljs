@@ -148,7 +148,7 @@
      (listen-to-edn piece-id display-firebase-data))
 
     (d/div
-     {:class "relative w-screen h-screen"}
+     {:class "relative w-screen h-screen pt-14"}
      (d/canvas {:class "fixed inset-0 z-10"
                 :style {:touch-action "none"}
                 :ref container-ref})

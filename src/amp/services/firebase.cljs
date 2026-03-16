@@ -117,7 +117,6 @@
   (-> (get-edn "mockup/layers")
       (.then #(tap> %))
       (.catch #(tap> {:error %})))
-  ;;=> #object [Promise [object Promise]]
 
   ;; Listen for EDN changes
   (def unsub (listen-to-edn "mockup/layers" #(tap> {:what %})))

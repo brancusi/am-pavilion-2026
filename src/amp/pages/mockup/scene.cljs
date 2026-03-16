@@ -141,6 +141,14 @@
                           ;; Configure shadow camera on newly-created directional lights
                           (when-let [ctx @(:context atoms)]
                             (objects/configure-shadow-camera! (:threejs-scene ctx)))
+                          ;; Detect theme change and update sky preset live
+                          (when-let [ctx @(:context atoms)]
+                            (let [^js renderer (:threejs-renderer ctx)
+                                  current-mode (if (dark-mode?) :dark :light)
+                                  sky @sky-state]
+                              (when (not= current-mode (:mode sky))
+                                (reset! sky-state
+                                        (update-sky! sky renderer current-mode)))))
                           ;; Animate sun via shared helper
                           (when-let [ctx @(:context atoms)]
                             (animate-sun! @sky-state (:threejs-scene ctx))))})

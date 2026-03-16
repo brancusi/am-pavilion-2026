@@ -811,6 +811,9 @@ select{
 .top-3{
   top: 0.75rem;
 }
+.top-14{
+  top: 3.5rem;
+}
 .z-10{
   z-index: 10;
 }
@@ -1009,8 +1012,17 @@ select{
 .h-7{
   height: 1.75rem;
 }
+.h-9{
+  height: 2.25rem;
+}
 .h-\[1\.5px\]{
   height: 1.5px;
+}
+.h-\[16px\]{
+  height: 16px;
+}
+.h-\[18px\]{
+  height: 18px;
 }
 .h-\[70vh\]{
   height: 70vh;
@@ -1026,15 +1038,6 @@ select{
 }
 .h-screen{
   height: 100vh;
-}
-.h-9{
-  height: 2.25rem;
-}
-.h-\[18px\]{
-  height: 18px;
-}
-.h-\[16px\]{
-  height: 16px;
 }
 .max-h-0{
   max-height: 0px;
@@ -1090,29 +1093,29 @@ select{
 .w-8{
   width: 2rem;
 }
-.w-\[150px\]{
-  width: 150px;
-}
-.w-\[170px\]{
-  width: 170px;
-}
-.w-full{
-  width: 100%;
-}
-.w-screen{
-  width: 100vw;
-}
 .w-9{
   width: 2.25rem;
 }
-.w-\[18px\]{
-  width: 18px;
+.w-\[150px\]{
+  width: 150px;
 }
 .w-\[16px\]{
   width: 16px;
 }
+.w-\[170px\]{
+  width: 170px;
+}
+.w-\[18px\]{
+  width: 18px;
+}
+.w-full{
+  width: 100%;
+}
 .w-px{
   width: 1px;
+}
+.w-screen{
+  width: 100vw;
 }
 .min-w-0{
   min-width: 0px;
@@ -1658,6 +1661,10 @@ select{
 .bg-slate-200\/80{
   background-color: rgb(226 232 240 / 0.8);
 }
+.bg-slate-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
+}
 .bg-slate-400{
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1));
@@ -1716,10 +1723,6 @@ select{
 .bg-zinc-100{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
-}
-.bg-slate-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
 }
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -2089,6 +2092,10 @@ select{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
+.text-emerald-500{
+  --tw-text-opacity: 1;
+  color: rgb(16 185 129 / var(--tw-text-opacity, 1));
+}
 .text-emerald-600{
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity, 1));
@@ -2201,10 +2208,6 @@ select{
 }
 .text-white\/90{
   color: rgb(255 255 255 / 0.9);
-}
-.text-emerald-500{
-  --tw-text-opacity: 1;
-  color: rgb(16 185 129 / var(--tw-text-opacity, 1));
 }
 .underline{
   text-decoration-line: underline;
@@ -2876,6 +2879,11 @@ select{
   color: rgb(110 231 183 / 0.6);
 }
 
+.dark\:text-emerald-400:is(.dark *){
+  --tw-text-opacity: 1;
+  color: rgb(52 211 153 / var(--tw-text-opacity, 1));
+}
+
 .dark\:text-indigo-300:is(.dark *){
   --tw-text-opacity: 1;
   color: rgb(165 180 252 / var(--tw-text-opacity, 1));
@@ -2949,11 +2957,6 @@ select{
 .dark\:text-white:is(.dark *){
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.dark\:text-emerald-400:is(.dark *){
-  --tw-text-opacity: 1;
-  color: rgb(52 211 153 / var(--tw-text-opacity, 1));
 }
 
 .dark\:decoration-white\/30:is(.dark *){
@@ -3100,16 +3103,16 @@ select{
     flex: 1 1 0%;
   }
 
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-\[8rem_1fr\]{
     grid-template-columns: 8rem 1fr;
-  }
-
-  .sm\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row{
@@ -3230,10 +3233,6 @@ select{
 
   .md\:aspect-\[16\/9\]{
     aspect-ratio: 16/9;
-  }
-
-  .md\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4{
