@@ -17,10 +17,10 @@ $amp$ui$icons$MapPinIcon$$ = function($G__52569_map__52567_map__52567__$1_props_
   }();
   return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("svg", $G__52569_map__52567_map__52567__$1_props__41652__auto__$jscomp$13_vec__52564$$) : $APP.$helix$core$jsxs$$.call(null, "svg", $G__52569_map__52567_map__52567__$1_props__41652__auto__$jscomp$13_vec__52564$$);
 };
-$amp$pages$venue$page$map_button$$ = function($G__46635_props__41644__auto__$jscomp$7$$) {
-  $APP.$helix$core$extract_cljs_props$$($G__46635_props__41644__auto__$jscomp$7$$);
+$amp$pages$venue$page$map_button$$ = function($G__46635_props__41644__auto__$jscomp$15$$) {
+  $APP.$helix$core$extract_cljs_props$$($G__46635_props__41644__auto__$jscomp$15$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__46635_props__41644__auto__$jscomp$7$$ = function() {
+  $G__46635_props__41644__auto__$jscomp$15$$ = function() {
     return {className:"mb-10 flex justify-center sm:justify-start", children:function() {
       var $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$ = {"class":"w-5 h-5"};
       $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$ = {className:"flex items-center gap-3", children:[$APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$ui$icons$MapPinIcon$$, $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$) : $APP.$helix$core$jsx$$.call(null, $amp$ui$icons$MapPinIcon$$, $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$), 
@@ -31,15 +31,15 @@ $amp$pages$venue$page$map_button$$ = function($G__46635_props__41644__auto__$jsc
       return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("a", $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$) : $APP.$helix$core$jsx$$.call(null, "a", $G__46639_G__46643$jscomp$inline_4320_G__46647$jscomp$inline_4321_G__46651$jscomp$inline_4322$$);
     }()};
   }();
-  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46635_props__41644__auto__$jscomp$7$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__46635_props__41644__auto__$jscomp$7$$);
+  return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46635_props__41644__auto__$jscomp$15$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__46635_props__41644__auto__$jscomp$15$$);
 };
-$amp$pages$venue$page$hero_section$$ = function($G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$, $maybe_ref__41645__auto__$jscomp$8$$) {
-  $G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$), $maybe_ref__41645__auto__$jscomp$8$$], null);
-  $G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$);
+$amp$pages$venue$page$hero_section$$ = function($G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$, $maybe_ref__41645__auto__$jscomp$16$$) {
+  $G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$), $maybe_ref__41645__auto__$jscomp$16$$], null);
+  $G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $is_desktop_QMARK_$jscomp$2$$ = $APP.$amp$hooks$use_media_query$use_touch_enabled$$();
-  $G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$ = function() {
+  $G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$ = function() {
     return {className:"pt-10 pb-16 px-4", children:[function() {
       var $G__46746$$ = {text:"Venice · Arsenale Militare"};
       return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$section_header$section_eyebrow$$, $G__46746$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$section_header$section_eyebrow$$, $G__46746$$);
@@ -90,18 +90,18 @@ $amp$pages$venue$page$hero_section$$ = function($G__46736_map__46727_props__4164
       return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46822$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__46822$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__46736_map__46727_props__41644__auto__$jscomp$8_vec__46724$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__46736_map__46727_props__41644__auto__$jscomp$16_vec__46724$$);
 };
-$amp$pages$venue$page$studio_section$$ = function($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$, $maybe_ref__41645__auto__$jscomp$9$$) {
-  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$), $maybe_ref__41645__auto__$jscomp$9$$], null);
-  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$);
+$amp$pages$venue$page$studio_section$$ = function($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$, $maybe_ref__41645__auto__$jscomp$17$$) {
+  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$), $maybe_ref__41645__auto__$jscomp$17$$], null);
+  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $ref$jscomp$14$$ = $APP.$helix$hooks$use_ref$$("studio-ref");
-  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$$($ref$jscomp$14$$);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$, 0, null);
-  var $is_visible_QMARK_$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$, 1, null);
-  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$ = function() {
+  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$$($ref$jscomp$14$$);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$, 0, null);
+  var $is_visible_QMARK_$jscomp$2$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$, 1, null);
+  $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$("pb-10 sm:pb-12"), children:[function() {
       var $G__46986$jscomp$1$$ = function() {
         return {className:"px-4", children:[function() {
@@ -192,18 +192,18 @@ $amp$pages$venue$page$studio_section$$ = function($G__46978$jscomp$1_map__46959_
       return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47185$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47185$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$9_vec__46956_vec__46968$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__46978$jscomp$1_map__46959_props__41644__auto__$jscomp$17_vec__46956_vec__46968$$);
 };
-$amp$pages$venue$page$outdoor_section$$ = function($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$, $maybe_ref__41645__auto__$jscomp$10$$) {
-  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$), $maybe_ref__41645__auto__$jscomp$10$$], null);
-  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$);
+$amp$pages$venue$page$outdoor_section$$ = function($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$, $maybe_ref__41645__auto__$jscomp$18$$) {
+  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$), $maybe_ref__41645__auto__$jscomp$18$$], null);
+  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $ref$jscomp$15$$ = $APP.$helix$hooks$use_ref$$("outdoor-ref");
-  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$$($ref$jscomp$15$$);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$, 0, null);
-  var $is_visible_QMARK_$jscomp$3$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$, 1, null);
-  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$ = function() {
+  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$ = $APP.$amp$hooks$use_intersection_observer$use_intersection_observer$$($ref$jscomp$15$$);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$, 0, null);
+  var $is_visible_QMARK_$jscomp$3$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$, 1, null);
+  $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$("pb-10 sm:pb-12"), children:[function() {
       var $G__47275$$ = function() {
         return {className:"px-4", children:[function() {
@@ -255,14 +255,14 @@ $amp$pages$venue$page$outdoor_section$$ = function($G__47271$jscomp$1_map__47266
       return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47323$jscomp$1_G__47327$jscomp$inline_3858_JSCompiler_inline_result$jscomp$inline_3857$$) : $APP.$helix$core$jsx$$.call(null, "div", $G__47323$jscomp$1_G__47327$jscomp$inline_3858_JSCompiler_inline_result$jscomp$inline_3857$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$10_vec__47263_vec__47267$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47271$jscomp$1_map__47266_props__41644__auto__$jscomp$18_vec__47263_vec__47267$$);
 };
-$amp$pages$venue$page$arsenale_section$$ = function($G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$, $maybe_ref__41645__auto__$jscomp$11$$) {
-  $G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$), $maybe_ref__41645__auto__$jscomp$11$$], null);
-  $G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$);
+$amp$pages$venue$page$arsenale_section$$ = function($G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$, $maybe_ref__41645__auto__$jscomp$19$$) {
+  $G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$), $maybe_ref__41645__auto__$jscomp$19$$], null);
+  $G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$ = function() {
+  $G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$("pb-10 sm:pb-12"), children:[function() {
       var $G__47357$$ = function() {
         return {className:"px-4", children:[function() {
@@ -326,15 +326,15 @@ $amp$pages$venue$page$arsenale_section$$ = function($G__47353_map__47342_props__
       return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47370$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47370$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47353_map__47342_props__41644__auto__$jscomp$11_vec__47339$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47353_map__47342_props__41644__auto__$jscomp$19_vec__47339$$);
 };
-$amp$pages$venue$page$getting_there_section$$ = function($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$, $maybe_ref__41645__auto__$jscomp$12$$) {
-  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$), $maybe_ref__41645__auto__$jscomp$12$$], null);
-  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$, 0, null);
-  $APP.$cljs$core$__destructure_map$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$);
+$amp$pages$venue$page$getting_there_section$$ = function($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$, $maybe_ref__41645__auto__$jscomp$20$$) {
+  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$), $maybe_ref__41645__auto__$jscomp$20$$], null);
+  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$ = $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$, 0, null);
+  $APP.$cljs$core$__destructure_map$$($G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
   var $is_desktop_QMARK_$jscomp$3$$ = $APP.$amp$hooks$use_media_query$use_touch_enabled$$();
-  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$ = function() {
+  $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$ = function() {
     return {className:$APP.$helix$impl$props$normalize_class$$("pb-10 sm:pb-12"), children:[function() {
       var $G__47497$jscomp$1$$ = function() {
         return {className:"px-4", children:[function() {
@@ -362,13 +362,13 @@ $amp$pages$venue$page$getting_there_section$$ = function($G__47489$jscomp$1_map_
       return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$venue$page$map_button$$, $G__47530$jscomp$1$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$venue$page$map_button$$, $G__47530$jscomp$1$$);
     }()]};
   }();
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$12_vec__47478$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$("div", $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$) : $APP.$helix$core$jsxs$$.call(null, "div", $G__47489$jscomp$1_map__47481_props__41644__auto__$jscomp$20_vec__47478$$);
 };
-$APP.$amp$pages$venue$page$venue_view$$ = function($G__47543_props__41644__auto__$jscomp$13_vec__47536$$, $maybe_ref__41645__auto__$jscomp$13$$) {
-  $G__47543_props__41644__auto__$jscomp$13_vec__47536$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47543_props__41644__auto__$jscomp$13_vec__47536$$), $maybe_ref__41645__auto__$jscomp$13$$], null);
-  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47543_props__41644__auto__$jscomp$13_vec__47536$$, 0, null);
+$APP.$amp$pages$venue$page$venue_view$$ = function($G__47543_props__41644__auto__$jscomp$21_vec__47536$$, $maybe_ref__41645__auto__$jscomp$21$$) {
+  $G__47543_props__41644__auto__$jscomp$21_vec__47536$$ = new $APP.$cljs$core$PersistentVector$$(null, 2, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, [$APP.$helix$core$extract_cljs_props$$($G__47543_props__41644__auto__$jscomp$21_vec__47536$$), $maybe_ref__41645__auto__$jscomp$21$$], null);
+  $APP.$cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__47543_props__41644__auto__$jscomp$21_vec__47536$$, 0, null);
   $APP.$cljs$core$truth_$$(!1) && $APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$0$ ? (void 0).$cljs$core$IFn$_invoke$arity$0$() : (void 0).call(null));
-  $G__47543_props__41644__auto__$jscomp$13_vec__47536$$ = {children:[function() {
+  $G__47543_props__41644__auto__$jscomp$21_vec__47536$$ = {children:[function() {
     var $G__47545$$ = {};
     return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$venue$page$hero_section$$, $G__47545$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$venue$page$hero_section$$, $G__47545$$);
   }(), function() {
@@ -384,7 +384,7 @@ $APP.$amp$pages$venue$page$venue_view$$ = function($G__47543_props__41644__auto_
     var $G__47558$$ = {};
     return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($amp$pages$venue$page$getting_there_section$$, $G__47558$$) : $APP.$helix$core$jsx$$.call(null, $amp$pages$venue$page$getting_there_section$$, $G__47558$$);
   }()]};
-  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$page_shell$page_shell$$, $G__47543_props__41644__auto__$jscomp$13_vec__47536$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$page_shell$page_shell$$, $G__47543_props__41644__auto__$jscomp$13_vec__47536$$);
+  return $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsxs$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$page_shell$page_shell$$, $G__47543_props__41644__auto__$jscomp$21_vec__47536$$) : $APP.$helix$core$jsxs$$.call(null, $APP.$amp$ui$page_shell$page_shell$$, $G__47543_props__41644__auto__$jscomp$21_vec__47536$$);
 };
 $APP.$JSCompiler_StaticMethods_beforeLoadModuleCode$$("venue-view");
 var $amp$pages$venue$page$lazy_video$$ = $APP.$amp$utils$lazy_loading$lazy_component_STAR_$$(new $APP.$shadow$lazy$Loadable$$(new $APP.$cljs$core$PersistentVector$$(null, 1, 5, $APP.$cljs$core$PersistentVector$EMPTY_NODE$$, ["video-background"], null), function() {
