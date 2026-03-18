@@ -20,7 +20,7 @@
 
 (defnc curator-card
   [{:keys [name role img bio visible?]}]
-  (let [tag-bg "bg-slate-900/90 dark:bg-white/10 px-2 py-0.5 inline decoration-clone"
+  (let [tag-bg "bg-slate-200/90 dark:bg-white/10 px-2 py-0.5 inline decoration-clone"
         tag-style {:boxDecorationBreak "clone"
                    :WebkitBoxDecorationBreak "clone"}]
     (d/div
@@ -57,7 +57,7 @@
   [{:keys [id title]}]
   (let [ref (hooks/use-ref "curators-ref")
         [_visited? visible?] (use-intersection-observer ref {:threshold 0.05})
-        title-bg "bg-slate-900/90 dark:bg-white/10 px-3 py-1.5 inline decoration-clone"
+        title-bg "bg-slate-200/90 dark:bg-white/10 px-3 py-1.5 inline decoration-clone"
         title-style {:boxDecorationBreak "clone"
                      :WebkitBoxDecorationBreak "clone"}]
     (d/section

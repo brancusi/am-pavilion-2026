@@ -21,7 +21,7 @@
 ;; ── Curator card ───────────────────────────────────────────────────────────
 (defnc curator-card
   [{:keys [visible?]}]
-  (let [tag-bg "bg-slate-900/90 dark:bg-white/10 px-2 py-0.5 inline decoration-clone"
+  (let [tag-bg "bg-slate-200/90 dark:bg-white/10 px-2 py-0.5 inline decoration-clone"
         tag-style {:boxDecorationBreak "clone"
                    :WebkitBoxDecorationBreak "clone"}]
     (d/div

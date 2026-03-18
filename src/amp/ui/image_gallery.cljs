@@ -151,18 +151,18 @@
        (fn [] (.off embla-api "select" on-select))))
 
     ;; --- Render ---
-    (d/div {:class "relative w-full max-w-full max-h-screen overflow-hidden select-none"}
+    (d/div {:class "relative w-full max-w-full select-none"}
 
            ;; Embla viewport
            (d/div {:ref   embla-container-ref
-                   :class "w-full max-w-full overflow-hidden max-h-screen"}
-                  (d/div {:class "flex items-center max-h-screen"}
+                   :class "w-full max-w-full overflow-hidden"}
+                  (d/div {:class "flex items-center"}
                          (map-indexed
                           (fn [idx slide]
                             (let [is-active?  (and enabled? (= idx current-index))
                                   slide-type  (or (:type slide) :image)]
                               (d/div {:key   idx
-                                      :class "flex-[0_0_100%] min-w-0 relative max-h-screen overflow-hidden"
+                                      :class "flex-[0_0_100%] min-w-0 relative"
                                       :style {:aspect-ratio (str (or (:aspect-ratio slide) "16/9"))}}
                                      (case slide-type
                                        :threejs

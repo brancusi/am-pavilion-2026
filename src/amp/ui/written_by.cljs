@@ -6,7 +6,7 @@
 
 (defnc written-by
   [{:keys [author class]}]
-  (d/div {:class (str "flex items-center gap-2 " class)}
+  (d/div {:class (str "flex items-baseline gap-2 " class)}
          (d/span {:class s/written-by-label}
                  "By")
          (d/span {:class s/written-by-name}

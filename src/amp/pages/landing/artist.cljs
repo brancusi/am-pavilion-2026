@@ -12,7 +12,7 @@
   [{:keys [id title]}]
   (let [ref (hooks/use-ref "artist-ref")
         [_visited? visible?] (use-intersection-observer ref {:threshold 0.05})
-        tag-bg "bg-slate-900/90 dark:bg-white/10 px-3 py-1.5 inline decoration-clone"
+        tag-bg "bg-slate-200/90 dark:bg-white/10 px-3 py-1.5 inline decoration-clone"
         tag-style {:boxDecorationBreak "clone"
                    :WebkitBoxDecorationBreak "clone"}]
     (d/section
