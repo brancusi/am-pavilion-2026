@@ -2,22 +2,24 @@
   (:require [amp.hooks.use-hover-animations :refer [use-hover-animations]]
             [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
             [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
+            [amp.services.router :as router]
             [amp.ui.button :refer [main-button]]
             [amp.utils.window :as win-utils]
             [amp.lib.defnc :refer [defnc]]
             [helix.core :refer [$]]
             [helix.dom :as d]
-            [helix.hooks :as hooks]))
+            [helix.hooks :as hooks]
+            [reitit.frontend.easy :as rfe]))
 
 
 
 (defnc logo-nav
   []
   (let [comp-ref (hooks/use-ref "comp-ref")
-        [visited? is-active?] (use-scroll-trigger comp-ref :start (fn [] (- (win-utils/height) (/ (win-utils/height) 8)))
-                                                  :end "1000000px"
-                                                  :markers? false
-                                                  :debug? false)]
+        [_visited? is-active?] (use-scroll-trigger comp-ref :start (fn [] (- (win-utils/height) (/ (win-utils/height) 8)))
+                                                   :end "1000000px"
+                                                   :markers? false
+                                                   :debug? false)]
     (use-hover-animations comp-ref
                           :over {:opacity 1}
                           :out {:opacity 0.7})
@@ -48,4 +50,4 @@
                              :additional-classes "w-full justify-center"
                              :size :sm
                              :bg-opacity 0.8
-                             :on-click #(js/window.open "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00" "_blank")}))))))
+                             :on-click #(rfe/push-state ::router/donate)}))))))

@@ -1,0 +1,3 @@
+SHADOW_ENV.evalLoad("shadow.module.donations-view.prepend.js", false, "\nshadow.loader.set_load_start(\x27donations-view\x27);");
+SHADOW_ENV.evalLoad("amp.pages.donations.page.js", true, "goog.provide(\x27amp.pages.donations.page\x27);\n");
+SHADOW_ENV.evalLoad("shadow.module.donations-view.append.js", false, "\nshadow.cljs.devtools.client.env.module_loaded(\x27donations-view\x27);\n\nshadow.loader.set_loaded();;\nSHADOW_ENV.setLoaded(\x22shadow.module.donations-view.prepend.js\x22);\nSHADOW_ENV.setLoaded(\x22amp.pages.donations.page.js\x22);\nSHADOW_ENV.setLoaded(\x22shadow.module.donations-view.append.js\x22);");

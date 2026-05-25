@@ -2,6 +2,25 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-04-08 — Dedicated Donations Page
+
+**Rationale:** Donation information was split between direct Stripe buttons and the budget page's bank-transfer section, leaving no single shareable page for patrons, institutions, or supporters.
+**Summary:** Added a dedicated `/donate` page that combines the project's support narrative, Stripe giving flow, and domestic/international bank-transfer instructions. Centralized donation data so the new page, budget section, and existing donation CTAs stay in sync.
+
+### Changes
+
+- Added `src/amp/data/donations.cljs` as the single source of truth for the Stripe URL, nonprofit details, receipt note, and transfer instructions.
+- Added `src/amp/pages/donations/page.cljs` with a new routed donations experience using the site's existing visual language and support messaging.
+- Updated `src/amp/services/router.cljs` and `shadow-cljs.edn` to register the new `/donate` route and lazy-loaded `:donations-view` module.
+- Updated `src/amp/nav/logo.cljs` and `src/amp/ui/footer.cljs` so existing Donate CTAs route through the new donations page, while the footer keeps direct Stripe checkout available on `/donate` itself.
+- Updated `src/amp/pages/budget/non_profit.cljs` to reuse the centralized donation data instead of duplicating bank-transfer details.
+
+### Migration Notes
+
+- Share the donations page at `/donate` for supporters who need both Stripe and bank-transfer options.
+- Run `npm run release` after changing donation details to propagate updates to the routed page and budget section.
+- None — backward compatible.
+
 ## 2026-02-27 — Social Links & Blog Share Bar
 
 **Rationale:** An art-event pavilion site needs social media presence and easy content sharing. The footer had no social links, and blog posts had no way for visitors to share them.

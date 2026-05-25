@@ -85,4 +85,39 @@ The work divides into three phases: routing infrastructure, blog components, and
 - [x] **Step 9 — Validate release build** (2026-02-25)
       Run `npm run release` — must complete without errors (medley warning expected).
 
+## 2026-04-08 — Dedicated Donations Page
+
+**Goal:** Create a dedicated donations landing page that consolidates the site's support messaging, Stripe checkout, and bank transfer instructions into a single direct-link route without adding it to the main top-bar navigation.
+
+**Current state:**
+
+- Donation information is fragmented across the site: the landing-page floating CTA and the global footer both go straight to Stripe, while the budget page contains the non-profit and bank transfer details.
+- There is no dedicated route or page for donations, so there is no single URL to share with patrons, institutions, or supporters.
+- Stripe and bank information are hard-coded in multiple places, which increases the chance that donation details drift out of sync over time.
+- The main menu intentionally exposes only the primary public pages, so a donations route needs to exist without appearing in the top navigation.
+
+**Target state:**
+
+- `/donate` serves as a dedicated donations page using the site's existing design language, with a strong hero, support rationale, Stripe CTA, and domestic/international bank transfer information.
+- Existing donation CTAs route visitors to the new page instead of bypassing it, while the Stripe checkout link remains available as the primary online giving action on-page.
+- Shared donation details live in one namespace and are reused by the donations page, budget donation section, and any CTA components that need them.
+- The donations route is wired into reitit and shadow-cljs module splitting, but it remains absent from the main top-bar nav.
+
+### Tasks
+
+- [x] **Step 1 — Centralize donation data** (2026-04-08)
+      Extract the Stripe URL, nonprofit details, and transfer instructions into a shared namespace used by all donation-related UI.
+
+- [x] **Step 2 — Build the donations page** (2026-04-08)
+      Create a dedicated routed page with a strong visual hierarchy, online and wire-transfer giving options, and support language drawn from the existing budget section.
+
+- [x] **Step 3 — Wire direct-link routing** (2026-04-08)
+      Add a `/donate` route and shadow-cljs module entry while keeping the page out of the top navigation.
+
+- [x] **Step 4 — Retarget existing donation CTAs** (2026-04-08)
+      Update current Donate buttons to send users to the new donations page instead of directly to Stripe.
+
+- [x] **Step 5 — Validate release build** (2026-04-08)
+      Run `npm run release` to verify the new route, module, and page compile successfully.
+
 <!-- Add new initiatives above this line -->

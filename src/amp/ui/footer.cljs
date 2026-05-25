@@ -3,15 +3,18 @@
    Quick Links adapt based on the current route: scroll-to-id on the landing
    page, site navigation links on all other pages."
   (:require
+   [amp.data.donations :as donations]
    [amp.ui.button :refer [main-button]]
    [amp.ui.social-links :refer [social-links]]
    [amp.config]
    [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
+   [amp.services.router :as router]
    [amp.state.provider :refer [use-main-state]]
    [amp.styles :as s]
    [helix.core :refer [$]]
-   [helix.dom :as d]))
+   [helix.dom :as d]
+   [reitit.frontend.easy :as rfe]))
 
 ;; ---------------------------------------------------------------------------
 ;; Quick Links — route-aware
@@ -71,7 +74,8 @@
   [_props]
   (let [[state _] (use-main-state)
         route-name (-> state :current-route :data :name)
-        on-landing? (= route-name :home)]
+        on-landing? (= route-name :home)
+        donations-page? (= route-name ::router/donate)]
 
     (d/footer
      {:class (s/cx "relative w-full" s/font-display
@@ -104,10 +108,12 @@
                                "Your contribution directly supports Armenia\u2019s national presentation at the 61st Venice Biennale.")
                           (d/div {:class "flex justify-center"}
                                  ($ main-button
-                                    {:title "Donate Now"
-                                     :on-click #(js/window.open
-                                                 "https://donate.stripe.com/14A5kC6SC5RQfo4frS6Ri00"
-                                                 "_blank")})))
+                                    {:title (if donations-page?
+                                              "Open Stripe Checkout"
+                                              "Donate Now")
+                                     :on-click #(if donations-page?
+                                                  (js/window.open donations/stripe-link "_blank")
+                                                  (rfe/push-state ::router/donate))})))
 
                    ;; Four-column info
                    (d/div {:class "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 text-sm"}

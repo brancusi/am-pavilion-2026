@@ -47,6 +47,11 @@
                 :title "Budget"
                 :view (lazy-component amp.pages.budget.page/budget-view)}
 
+               {:id ::donate
+                :path "donate"
+                :title "Donate"
+                :view (lazy-component amp.pages.donations.page/donations-view)}
+
                {:id ::mockups
                 :path "mockups"
                 :title "Mockups"

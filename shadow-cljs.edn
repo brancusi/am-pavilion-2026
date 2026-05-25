@@ -23,6 +23,9 @@
          :budget-view {:entries [amp.pages.budget.page]
                        :depends-on #{:main}}
 
+         :donations-view {:entries [amp.pages.donations.page]
+                          :depends-on #{:main}}
+
          :mockup-view {:entries [amp.pages.mockup.page]
                        :depends-on #{:main}}
 
@@ -60,6 +63,9 @@
 
              :budget-view {:entries [amp.pages.budget.page]
                            :depends-on #{:main}}
+
+             :donations-view {:entries [amp.pages.donations.page]
+                              :depends-on #{:main}}
 
 
              :mockup-view {:entries [amp.pages.mockup.page]

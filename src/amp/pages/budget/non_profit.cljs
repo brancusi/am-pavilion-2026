@@ -1,10 +1,38 @@
 (ns amp.pages.budget.non-profit
   (:require
+   [amp.data.donations :as donations]
    [amp.pages.budget.section-block :refer [section-block]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
+
+
+(defnc transfer-field
+  [{:keys [label value field-label field-value]}]
+  (d/div {:class "flex items-start justify-between gap-6"}
+         (d/span {:class field-label} (str label ":"))
+         (if (sequential? value)
+           (d/div {:class "text-right leading-snug"}
+                  (map-indexed (fn [idx line]
+                                 (d/p {:key (str label "-" idx)} line))
+                               value))
+           (d/span {:class field-value} value))))
+
+(defnc transfer-card
+  [{:keys [title fields field-label field-value]}]
+  (d/div
+   (d/p {:class (s/cx s/heading-section s/text-primary "mb-4")}
+        title)
+   (d/div {:class (s/cx s/font-ui s/text-sm "space-y-3")}
+          (map (fn [{:keys [label] :as field}]
+                 ($ transfer-field
+                    {:key label
+                     :label (:label field)
+                     :value (:value field)
+                     :field-label field-label
+                     :field-value field-value}))
+               fields))))
 
 
 
@@ -23,9 +51,9 @@
 
                       (d/p {}
                            "The Armenia Pavilion 2026 is supported through "
-                           (d/span {:class s/weight-semibold} "Fallen Angels Inc.")
+                           (d/span {:class s/weight-semibold} (:name donations/organization))
                            ", a registered "
-                           (d/span {:class s/weight-semibold} "501(c)(3)")
+                           (d/span {:class s/weight-semibold} (:status donations/organization))
                            " public non-profit organization. "
                            (d/span {:class s/weight-semibold} "Contributions are tax deductible")
                            " to the extent permitted by law.")
@@ -33,63 +61,27 @@
                       (d/div {:class (s/cx s/font-ui s/text-sm "mt-6 space-y-1")}
                              (d/p {}
                                   (d/span {:class field-label} "Organization: ")
-                                  "Fallen Angels Inc.")
+                                  (:name donations/organization))
                              (d/p {}
                                   (d/span {:class field-label} "EIN: ")
-                                  (d/span {:class field-value} "92-2395513"))
+                                  (d/span {:class field-value} (:ein donations/organization)))
                              (d/p {}
                                   (d/span {:class field-label} "Located in: ")
-                                  (d/span {:class s/em-bold} "Los Angeles, CA")))
+                                  (d/span {:class s/em-bold} (:location donations/organization))))
 
                       (d/div {:class "mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10"}
 
-                             (d/div
-                              (d/p {:class (s/cx s/heading-section s/text-primary "mb-4")}
-                                   "Domestic "
-                                   (d/span {:class (s/cx "font-normal" s/text-muted)} "Transfers"))
+                             ($ transfer-card
+                                {:title (:title donations/domestic-transfer)
+                                 :fields (:fields donations/domestic-transfer)
+                                 :field-label field-label
+                                 :field-value field-value})
 
-                              (d/div {:class (s/cx s/font-ui s/text-sm "space-y-3")}
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "Name:")
-                                            (d/span {:class "text-right"} "Fallen Angels Inc."))
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "Routing:")
-                                            (d/span {:class field-value} "091311229"))
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "Account #:")
-                                            (d/span {:class field-value} "202535309341"))
-                                     (d/div {:class "flex items-start justify-between gap-6"}
-                                            (d/span {:class field-label} "Address:")
-                                            (d/div {:class "text-right leading-snug"}
-                                                   (d/p {} "Choice Financial Group")
-                                                   (d/p {} "4501 23rd Avenue S")
-                                                   (d/p {} "Fargo, ND 58104")))))
-
-                             ;; International
-                             (d/div
-                              (d/p {:class (s/cx s/heading-section s/text-primary "mb-4")}
-                                   "International "
-                                   (d/span {:class (s/cx "font-normal" s/text-muted)} "Transfers"))
-
-                              (d/div {:class (s/cx s/font-ui s/text-sm "space-y-3")}
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "Name:")
-                                            (d/span {:class "text-right"} "Fallen Angels Inc."))
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "SWIFT/BIC:")
-                                            (d/span {:class field-value} "CHFGUS44021"))
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "ABA/Routing:")
-                                            (d/span {:class field-value} "091311229"))
-                                     (d/div {:class "flex items-baseline justify-between gap-6"}
-                                            (d/span {:class field-label} "IBAN/Account #:")
-                                            (d/span {:class field-value} "202535309341"))
-                                     (d/div {:class "flex items-start justify-between gap-6"}
-                                            (d/span {:class field-label} "Address:")
-                                            (d/div {:class "text-right leading-snug"}
-                                                   (d/p {} "Choice Financial Group")
-                                                   (d/p {} "4501 23rd Avenue S")
-                                                   (d/p {} "Fargo, ND 58104")))))))
+                             ($ transfer-card
+                                {:title (:title donations/international-transfer)
+                                 :fields (:fields donations/international-transfer)
+                                 :field-label field-label
+                                 :field-value field-value})))
 
                (d/p {:class (s/cx s/text-muted "p-4 mt-10 text-sm md:text-base")}
-                    "If you would like a receipt letter for your records, please include your name and email address with the transfer memo."))))))
+                    donations/receipt-note))))))
