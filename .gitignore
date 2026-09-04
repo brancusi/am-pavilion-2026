@@ -36,3 +36,5 @@ cljs-runtime
 
 # NPM greensock related
 .npmrc
+
+.local
