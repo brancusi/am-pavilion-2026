@@ -29,7 +29,7 @@ $APP.$amp$pages$press$page$press_view$$ = function($G__52417_props__41646__auto_
   return $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$ ? $APP.$helix$core$jsx$$.$cljs$core$IFn$_invoke$arity$2$($APP.$amp$ui$page_shell$page_shell$$, $G__52417_props__41646__auto__$jscomp$18_vec__52411$$) : $APP.$helix$core$jsx$$.call(null, $APP.$amp$ui$page_shell$page_shell$$, $G__52417_props__41646__auto__$jscomp$18_vec__52411$$);
 };
 $APP.$JSCompiler_StaticMethods_beforeLoadModuleCode$$("press-view");
-$APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$301$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$66$tag$$, $APP.$cljs$cst$302$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($APP.$amp$pages$press$page$press_view$$, "", null, null) : (void 0).call(null, $APP.$amp$pages$press$page$press_view$$, "", null, null)), $APP.$helix$core$register_BANG_$$($APP.$amp$pages$press$page$press_view$$, 
+$APP.$cljs$core$truth_$$($APP.$cljs$core$with_meta$$($APP.$cljs$cst$302$goog_SLASH_DEBUG$$, new $APP.$cljs$core$PersistentArrayMap$$(null, 1, [$APP.$cljs$cst$66$tag$$, $APP.$cljs$cst$303$clojure_DOT_core_SLASH_boolean$$], null))) && ($APP.$cljs$core$truth_$$() && ((void 0).$cljs$core$IFn$_invoke$arity$4$ ? (void 0).$cljs$core$IFn$_invoke$arity$4$($APP.$amp$pages$press$page$press_view$$, "", null, null) : (void 0).call(null, $APP.$amp$pages$press$page$press_view$$, "", null, null)), $APP.$helix$core$register_BANG_$$($APP.$amp$pages$press$page$press_view$$, 
 "amp.pages.press.page/press-view"));
 $APP.$module$contents$shadow$loader_set_loaded$$();
 
