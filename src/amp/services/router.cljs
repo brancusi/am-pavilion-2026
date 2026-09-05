@@ -52,6 +52,11 @@
                 :title "Donate"
                 :view (lazy-component amp.pages.donations.page/donations-view)}
 
+               {:id ::delivery
+                :path "delivery"
+                :title "Consegne"
+                :view (lazy-component amp.pages.delivery.page/delivery-view)}
+
                {:id ::mockups
                 :path "mockups"
                 :title "Mockups"

@@ -20,20 +20,29 @@
 
 ;; ── Ant paths (animated walking route) ─────────────────────────────────────
 
-(def ant-paths
+(def visitor-data-url "/data/biennale_data.geojson")
+
+(defn ant-paths-for
+  "Animated walking-route ant path for the LineString in `url`."
+  [url]
   [{:source-id "directions-ant"
-    :url "/data/biennale_data.geojson"
+    :url url
     :filter ["==" ["geometry-type"] "LineString"]
     :color "#c7630b"
     :width 4
     :bg-opacity 0.2
     :duration 2}])
 
+(def ant-paths (ant-paths-for visitor-data-url))
+
 ;; ── GeoJSON layers ─────────────────────────────────────────────────────────
 
-(def layers
+(defn layers-for
+  "Declarative GeoJSON layers (footprint, start/end markers, pavilion pin,
+   labels) for the features in `url`."
+  [url]
   [;; Polygon fill — venue footprints
-   {:source {:id "biennale" :url "/data/biennale_data.geojson"}
+   {:source {:id "biennale" :url url}
     :layer  {:id "biennale-fill"
              :type "fill"
              :filter ["==" ["geometry-type"] "Polygon"]
@@ -41,7 +50,7 @@
                      :fill-opacity 0.5}}}
 
    ;; Walking-route start marker
-   {:source {:id "biennale-start" :url "/data/biennale_data.geojson"}
+   {:source {:id "biennale-start" :url url}
     :layer  {:id "directions-start"
              :type "circle"
              :filter ["==" ["get" "marker"] "start"]
@@ -51,7 +60,7 @@
                      :circle-stroke-color "#ffffff"}}}
 
    ;; Walking-route end marker
-   {:source {:id "biennale-end" :url "/data/biennale_data.geojson"}
+   {:source {:id "biennale-end" :url url}
     :layer  {:id "directions-end"
              :type "circle"
              :filter ["==" ["get" "marker"] "end"]
@@ -61,7 +70,7 @@
                      :circle-stroke-color "#ffffff"}}}
 
    ;; Pavilion point markers
-   {:source {:id "biennale-points" :url "/data/biennale_data.geojson"}
+   {:source {:id "biennale-points" :url url}
     :layer  {:id "biennale-point"
              :type "circle"
              :filter ["all"
@@ -73,7 +82,7 @@
                      :circle-stroke-color "#ffffff"}}}
 
    ;; Text labels
-   {:source {:id "biennale-labels" :url "/data/biennale_data.geojson"}
+   {:source {:id "biennale-labels" :url url}
     :layer  {:id "biennale-label"
              :type "symbol"
              :filter ["all"
@@ -88,3 +97,19 @@
              :paint {:text-color "#be136e"
                      :text-halo-color "#ffffff"
                      :text-halo-width 5}}}])
+
+(def layers (layers-for visitor-data-url))
+
+;; ── Delivery map (/delivery) ───────────────────────────────────────────────
+;; Shorter walking route that starts at the Arsenale Militare gate by the
+;; Celestia church instead of the main Biennale entrance to the south.
+
+(def delivery-data-url "/data/delivery_data.geojson")
+
+(def delivery-initial-view
+  {:longitude 12.350250
+   :latitude  45.437300
+   :zoom      17.2})
+
+(def delivery-ant-paths (ant-paths-for delivery-data-url))
+(def delivery-layers    (layers-for delivery-data-url))

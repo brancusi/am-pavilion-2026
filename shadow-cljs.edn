@@ -39,7 +39,10 @@
                      :depends-on #{:main}}
 
          :press-view {:entries [amp.pages.press.page]
-                      :depends-on #{:main}}}
+                      :depends-on #{:main}}
+
+         :delivery-view {:entries [amp.pages.delivery.page]
+                         :depends-on #{:main}}}
         :build-hooks [(git-hash/hook)]
         :devtools {:reload-strategy :full
                    :repl-pprint true
@@ -81,7 +84,10 @@
                          :depends-on #{:main}}
 
              :press-view {:entries [amp.pages.press.page]
-                          :depends-on #{:main}}}
+                          :depends-on #{:main}}
+
+             :delivery-view {:entries [amp.pages.delivery.page]
+                             :depends-on #{:main}}}
             :build-hooks [(git-hash/hook)]
             :js-options {:output-feature-set :es-unsupported
                          :language-in :unsupported}
