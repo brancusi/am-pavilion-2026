@@ -10,7 +10,7 @@
    [amp.ui.section-header :refer [section-eyebrow section-display]]
    [amp.ui.directions :refer [pavilion-address marine-office-phone water-taxi-map-src
                               phone-link map-button sub-heading mini-heading
-                              address-block callout numbered-steps]]
+                              address-block callout numbered-steps opening-hours]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -264,6 +264,7 @@
   [_props]
   ($ page-shell
      ($ hero-section)
+     ($ opening-hours {:lang :it})
      ($ facts-section)
      ($ options-section)
      ($ foot-section)

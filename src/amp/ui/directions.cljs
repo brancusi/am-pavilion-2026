@@ -81,6 +81,25 @@
   (d/div {:class (s/cx "border-l-2 pl-4 py-1" s/border-accent)}
          children))
 
+(defnc opening-hours
+  "Pavilion opening hours in the page's language."
+  [{:keys [lang] :or {lang :en}}]
+  (let [italian? (= lang :it)]
+    (d/section {:class (s/cx s/section-pb "px-4") :lang (name lang)}
+               (d/h2 {:class (s/cx s/heading-section "mb-4")}
+                     (if italian? "Orari di apertura" "Opening Hours"))
+               ($ callout
+                  (d/p {:class (s/cx s/body-base "text-left mb-2")}
+                       (d/span {:class s/em-strong}
+                               (if italian? "Lunedì" "Monday"))
+                       (if italian?
+                         " — Il padiglione è chiuso."
+                         " — The pavilion is closed."))
+                  (d/p {:class (s/cx s/body-base "text-left")}
+                       (d/span {:class s/em-strong}
+                               (if italian? "Da martedì a domenica" "Tuesday through Sunday"))
+                       (if italian? " — 11:00–18:30" " — 11am–6:30pm"))))))
+
 (defnc numbered-steps
   [{:keys [steps]}]
   (d/ol {:class "space-y-3"}
