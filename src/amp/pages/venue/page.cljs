@@ -10,7 +10,7 @@
    [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.directions :refer [marine-office-phone water-taxi-map-src
                               phone-link map-button sub-heading mini-heading
-                              address-block callout numbered-steps]]
+                              address-block callout numbered-steps opening-hours]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
@@ -431,6 +431,7 @@
   [_props]
   ($ page-shell
      ($ hero-section)
+     ($ opening-hours)
      ($ getting-there-section)
      ($ about-section)
      ($ studio-section)
