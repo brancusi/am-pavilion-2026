@@ -178,9 +178,14 @@
      :ant-paths    - vector of ant-path configs, e.g.
                      [{:source-id \"dir\" :url \"/data/geo.geojson\"
                        :filter [\"==\" [\"geometry-type\"] \"LineString\"]
-                       :color \"#fbbf24\" :width 4 :duration 2}]"
-  [{:keys [class initial-view dev interactive? layers ant-paths]
-    :or {interactive? true}}]
+                       :color \"#fbbf24\" :width 4 :duration 2}]
+     :bounds       - optional [[west south] [east north]]; when given, the
+                     camera is fitted to these bounds once the map loads (with
+                     :bounds-padding px, default 32) so the framing adapts to
+                     the viewport. :initial-view is the pre-load camera.
+     :bounds-padding - number or {:top _ :bottom _ :left _ :right _}"
+  [{:keys [class initial-view dev interactive? layers ant-paths bounds bounds-padding]
+    :or {interactive? true bounds-padding 32}}]
   (let [[view-state set-view-state!] (hooks/use-state (merge venice-arsenale initial-view))
         [map-loaded? set-map-loaded!] (hooks/use-state false)]
     ;; Sync initial-view prop into state on hot-reload / prop changes
@@ -198,7 +203,23 @@
                :latitude (:latitude view-state)
                :zoom (:zoom view-state)
                :onMove (fn [e] (set-view-state! (js->clj (.-viewState e) :keywordize-keys true)))
-               :onLoad (fn [_] (set-map-loaded! true))
+               :onLoad (fn [e]
+                         ;; The camera is controlled by `view-state`, so ask
+                         ;; Mapbox for the camera that fits `bounds` and feed
+                         ;; it into state (an imperative fitBounds would be
+                         ;; overridden by the controlled props).
+                         (when bounds
+                           (when-let [cam (.cameraForBounds ^js (.-target e)
+                                                            (clj->js bounds)
+                                                            (clj->js {:padding bounds-padding}))]
+                             (let [center (.-center ^js cam)]
+                               (set-view-state!
+                                (fn [vs]
+                                  (assoc vs
+                                         :longitude (.-lng ^js center)
+                                         :latitude  (.-lat ^js center)
+                                         :zoom      (.-zoom ^js cam)))))))
+                         (set-map-loaded! true))
                :style #js {:width "100%" :height "100%"}
                :scrollZoom interactive?
                :boxZoom interactive?

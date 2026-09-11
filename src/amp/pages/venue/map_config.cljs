@@ -113,3 +113,78 @@
 
 (def delivery-ant-paths (ant-paths-for delivery-data-url))
 (def delivery-layers    (layers-for delivery-data-url))
+
+;; ── Water taxi map (/route-from-hotel-gabrielli) ───────────────────────────
+;; Hotel Gabrielli (Riva degli Schiavoni) → Rio della Pietà → Rio di
+;; Sant'Antonin → Rio di Santa Giustina → North Lagoon → Rio delle Galeazze
+;; → pavilion landing beside Tesa 41. Route geometry follows the OSM canal
+;; centrelines; the lagoon leg sits just north of the marked channel.
+
+(def water-taxi-data-url "/data/water_taxi_route.geojson")
+
+(def water-taxi-initial-view
+  "Frames the whole route: Riva degli Schiavoni at the bottom, the North
+   Lagoon at the top."
+  {:longitude 12.348900
+   :latitude  45.437000
+   :zoom      15.3})
+
+(def water-taxi-bounds
+  "Bounding box of the route line; the map fits this on load so the whole
+   route is visible on any viewport."
+  [[12.34535 45.43305] [12.35190 45.44012]])
+
+(def water-taxi-ant-paths
+  (ant-paths-for water-taxi-data-url))
+
+(def water-taxi-layers
+  "Tesa 41 footprint, start/end markers, and data-driven labels (each label
+   point carries an `anchor` property so labels sit clear of the route)."
+  [;; Tesa 41 footprint
+   {:source {:id "water-taxi-footprint" :url water-taxi-data-url}
+    :layer  {:id "water-taxi-footprint-fill"
+             :type "fill"
+             :filter ["==" ["geometry-type"] "Polygon"]
+             :paint {:fill-color "#b91c1c"
+                     :fill-opacity 0.5}}}
+
+   ;; Start marker — Hotel Gabrielli landing
+   {:source {:id "water-taxi-start" :url water-taxi-data-url}
+    :layer  {:id "water-taxi-start-marker"
+             :type "circle"
+             :filter ["==" ["get" "marker"] "start"]
+             :paint {:circle-radius 7
+                     :circle-color "#0c0cd0"
+                     :circle-stroke-width 2
+                     :circle-stroke-color "#ffffff"}}}
+
+   ;; End marker — pavilion landing
+   {:source {:id "water-taxi-end" :url water-taxi-data-url}
+    :layer  {:id "water-taxi-end-marker"
+             :type "circle"
+             :filter ["==" ["get" "marker"] "end"]
+             :paint {:circle-radius 7
+                     :circle-color "#ef4444"
+                     :circle-stroke-width 2
+                     :circle-stroke-color "#ffffff"}}}
+
+   ;; Labels — every point that carries a `label`
+   {:source {:id "water-taxi-labels" :url water-taxi-data-url}
+    :layer  {:id "water-taxi-label"
+             :type "symbol"
+             :filter ["all"
+                      ["==" ["geometry-type"] "Point"]
+                      ["has" "label"]]
+             :layout {:text-field ["get" "label"]
+                      :text-font ["Source Code Pro Semibold"]
+                      :text-size 13
+                      :text-anchor ["get" "anchor"]
+                      :text-offset ["match" ["get" "anchor"]
+                                    "left"  ["literal" [1 0]]
+                                    "right" ["literal" [-1 0]]
+                                    "top"   ["literal" [0 1]]
+                                    ["literal" [0 -1.2]]]
+                      :text-allow-overlap true}
+             :paint {:text-color "#be136e"
+                     :text-halo-color "#ffffff"
+                     :text-halo-width 4}}}])

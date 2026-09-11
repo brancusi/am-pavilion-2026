@@ -22,16 +22,37 @@
 (def marine-office-phone
   {:display "+39 041 244 1595" :tel "+390412441595"})
 
+;; Water-taxi access to the Arsenale is coordinated by people, not by the
+;; Marine Office (which cannot be contacted directly). Call in this order.
+(def julda-contact
+  "Primary contact for water access to the pavilion."
+  {:name "Julda" :display "+39 342 0841435" :tel "+393420841435"})
+
+(def luca-contact
+  "Secondary contact for water access to the pavilion."
+  {:name "Luca" :display "+39 329 342 4470" :tel "+393293424470"})
+
+(def aram-contact
+  "Third contact — English only."
+  {:name "Aram" :display "+39 344 5697130" :tel "+393445697130"})
+
+(def hotel-gabrielli-address
+  ["Hotel Gabrielli"
+   "Riva degli Schiavoni 4110"
+   "Castello"
+   "Venezia"])
+
 (def water-taxi-map-src "/images/graphics/water_taxi_route.jpg")
 
 ;; ── Building blocks ────────────────────────────────────────────────────────
 
 (defnc phone-link
-  "Tap-to-call phone number."
+  "Tap-to-call phone number. Renders plain text when :tel is nil."
   [{:keys [display tel]}]
-  (d/a {:href (str "tel:" tel)
-        :class (s/cx s/font-ui s/weight-semibold s/text-lg s/text-accent s/link-subtle s/nowrap-)}
-       display))
+  (let [cls (s/cx s/font-ui s/weight-semibold s/text-lg s/text-accent s/nowrap-)]
+    (if tel
+      (d/a {:href (str "tel:" tel) :class (s/cx cls s/link-subtle)} display)
+      (d/span {:class cls} display))))
 
 (defnc map-button
   "Opens the Google Maps pin for Tesa 41 in a new tab."
@@ -99,6 +120,22 @@
                        (d/span {:class s/em-strong}
                                (if italian? "Da martedì a domenica" "Tuesday through Sunday"))
                        (if italian? " — 11:00–18:30" " — 11am–6:30pm"))))))
+
+(defnc lang-toggle
+  "Italiano / English switch for bilingual driver instructions."
+  [{:keys [lang on-change]}]
+  (d/div {:class "flex items-center gap-4 mb-6"}
+         (for [[k label] [[:it "Italiano"] [:en "English"]]]
+           (d/button {:key (name k)
+                      :type "button"
+                      :on-click #(on-change k)
+                      :aria-pressed (= k lang)
+                      :class (s/cx s/font-ui s/weight-semibold s/uppercase- s/tracking-label s/text-sm
+                                   "py-2 pr-2" s/link-hover-accent
+                                   (if (= k lang)
+                                     (s/cx s/text-accent "underline underline-offset-4 decoration-2")
+                                     s/text-faint))}
+                     label))))
 
 (defnc numbered-steps
   [{:keys [steps]}]

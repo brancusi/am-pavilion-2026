@@ -10,7 +10,8 @@
    [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.directions :refer [marine-office-phone water-taxi-map-src
                               phone-link map-button sub-heading mini-heading
-                              address-block callout numbered-steps opening-hours]]
+                              address-block callout numbered-steps opening-hours
+                              lang-toggle]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
@@ -105,23 +106,6 @@
                        "Raggiungere l’approdo del Padiglione Armenia."]
         :map-caption  "Percorso del taxi acqueo — entrare dalla Laguna Nord tramite il Rio delle Galeazze e proseguire verso sud fino all’approdo del padiglione"
         :address-title "Indirizzo"}})
-
-;; ── Language toggle ───────────────────────────────────────────────────────
-
-(defnc lang-toggle
-  [{:keys [lang on-change]}]
-  (d/div {:class "flex items-center gap-4 mb-6"}
-         (for [[k label] [[:it "Italiano"] [:en "English"]]]
-           (d/button {:key (name k)
-                      :type "button"
-                      :on-click #(on-change k)
-                      :aria-pressed (= k lang)
-                      :class (s/cx s/font-ui s/weight-semibold s/uppercase- s/tracking-label s/text-sm
-                                   "py-2 pr-2" s/link-hover-accent
-                                   (if (= k lang)
-                                     (s/cx s/text-accent "underline underline-offset-4 decoration-2")
-                                     s/text-faint))}
-                     label))))
 
 ;; ── Directions — On Foot ───────────────────────────────────────────────────
 
