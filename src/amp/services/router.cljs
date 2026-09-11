@@ -57,6 +57,11 @@
                 :title "Consegne"
                 :view (lazy-component amp.pages.delivery.page/delivery-view)}
 
+               {:id ::water-taxi
+                :path "route-from-hotel-gabrielli"
+                :title "Water Taxi"
+                :view (lazy-component amp.pages.water-taxi.page/water-taxi-view)}
+
                {:id ::mockups
                 :path "mockups"
                 :title "Mockups"
