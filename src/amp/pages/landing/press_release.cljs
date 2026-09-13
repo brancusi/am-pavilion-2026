@@ -147,7 +147,7 @@
                      (d/a {:href "https://maps.app.goo.gl/aaFLEeWQZmVQNi7d9?g_st=ic"
                            :target "_blank"
                            :class (s/cx s/link-subtle s/text-secondary)}
-                          "Case Nuove 2738/C, Castello, Venezia, Tesa 41, Arsenale Militare"))
+                          "Fondamenta Case Nuove, Castello 2737, Arsenale Militare, Tesa 41, Venezia 30122"))
                 (d/p {:class (s/cx s/body-base "mb-1")}
                      (d/span {:class s/em-bold} "Dates: ")
                      "9 May \u2013 22 November 2026")

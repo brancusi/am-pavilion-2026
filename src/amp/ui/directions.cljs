@@ -13,11 +13,11 @@
 ;; ── Data ───────────────────────────────────────────────────────────────────
 
 (def pavilion-address
-  ["Armenian Pavilion"
-   "Rio delle Galeazze"
-   "Fondamenta Case Nuove"
-   "Castello 2738/C"
-   "Venezia"])
+  "Postal address that couriers have found to work (2738/C did not).
+   Shared by the Visit, delivery and water-taxi pages."
+  ["Fondamenta Case Nuove, Castello 2737"
+   "Arsenale Militare, Tesa 41"
+   "Venezia, Venezia 30122"])
 
 (def marine-office-phone
   {:display "+39 041 244 1595" :tel "+390412441595"})
