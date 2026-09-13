@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "npm run dev & npx shadow-cljs watch app; kill $! 2>/dev/null"],
+      "port": 4200
+    }
+  ]
+}
