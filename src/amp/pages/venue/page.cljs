@@ -12,6 +12,7 @@
                               phone-link map-button sub-heading mini-heading
                               address-block callout numbered-steps opening-hours
                               lang-toggle]]
+   [amp.ui.temporary-closure :refer [closure-notice]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
@@ -408,18 +409,6 @@
                      "The Armenia Pavilion's presence continues a tradition of nations "
                      (d/span {:class s/em-italic} "working within")
                      " the Arsenale's industrial grain, not against it."))))
-
-;; ── Temporary closure notice ───────────────────────────────────────────────
-;; Remove once the pavilion has reopened on October 9, 2026.
-
-(defnc closure-notice
-  [_props]
-  (d/aside {:class (s/cx "px-4 pb-8") :aria-label "Temporary closure"}
-           ($ callout
-              (d/p {:class (s/cx s/body-base "text-left")}
-                   (d/span {:class s/em-strong} "Temporarily closed.")
-                   " The pavilion is closed from October 4 because of the military symposium at the Arsenale. "
-                   (d/span {:class s/em-strong} "We reopen on October 9, 2026.")))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 
