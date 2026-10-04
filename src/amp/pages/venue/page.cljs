@@ -409,12 +409,25 @@
                      (d/span {:class s/em-italic} "working within")
                      " the Arsenale's industrial grain, not against it."))))
 
+;; ── Temporary closure notice ───────────────────────────────────────────────
+;; Remove once the pavilion has reopened on October 9, 2026.
+
+(defnc closure-notice
+  [_props]
+  (d/aside {:class (s/cx "px-4 pb-8") :aria-label "Temporary closure"}
+           ($ callout
+              (d/p {:class (s/cx s/body-base "text-left")}
+                   (d/span {:class s/em-strong} "Temporarily closed.")
+                   " The pavilion is closed from October 4 because of the military symposium at the Arsenale. "
+                   (d/span {:class s/em-strong} "We reopen on October 9, 2026.")))))
+
 ;; ── Page ───────────────────────────────────────────────────────────────────
 
 (defnc venue-view
   [_props]
   ($ page-shell
      ($ hero-section)
+     ($ closure-notice)
      ($ opening-hours)
      ($ getting-there-section)
      ($ about-section)
