@@ -7,7 +7,17 @@
             [helix.hooks :as hooks]
             [amp.lib.defnc :refer [defnc]]))
 
-(def access-token "pk.eyJ1IjoiYXJhbXphZGlraWFuIiwiYSI6IkVhVERJS28ifQ.fpzwPGWJ9AWc1Jab8LeKPA")
+;; Mapbox's stylesheet is only needed once this module loads, so inject it
+;; here rather than render-blocking every page from index.html.
+(defonce ^:private stylesheet
+  (let [href "https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.css"]
+    (when-not (js/document.querySelector (str "link[href='" href "']"))
+      (let [link (js/document.createElement "link")]
+        (set! (.-rel link) "stylesheet")
+        (set! (.-href link) href)
+        (.appendChild js/document.head link)))))
+
+(def access-token"pk.eyJ1IjoiYXJhbXphZGlraWFuIiwiYSI6IkVhVERJS28ifQ.fpzwPGWJ9AWc1Jab8LeKPA")
 (def map-style "mapbox://styles/aramzadikian/cmlmon0w9004n01sw24b3an9h")
 
 (def venice-arsenale

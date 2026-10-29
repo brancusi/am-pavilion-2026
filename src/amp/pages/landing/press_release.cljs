@@ -51,10 +51,10 @@
                   ;; Website
                   (d/div {:class s/info-row}
                          (d/span {:class label-class} "Web")
-                         (d/a {:href "https://armenianpavilion2026.org"
+                         (d/a {:href "https://armenianpavilion.org"
                                :class (s/cx s/link-subtle s/text-secondary)
                                :target "_blank"}
-                              "armenianpavilion2026.org"))))))
+                              "armenianpavilion.org"))))))
 
 (defnc preview
   [{:keys []}]

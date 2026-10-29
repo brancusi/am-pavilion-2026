@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-Website for the Armenian Pavilion at the 2026 Venice Biennale. Single-page app built with **ClojureScript** (shadow-cljs) using the **Helix** React wrapper, styled with **Tailwind CSS 3**, deployed to **Netlify**. Features include a landing page with GSAP scroll animations, a 3D mockup viewer (Three.js via threeagent), a budget view, and a CMS integration (Sanity). No automated tests or CI pipelines exist.
+Website for the Armenian Pavilion at the 2026 Venice Biennale. Single-page app built with **ClojureScript** (shadow-cljs) using the **Helix** React wrapper, styled with **Tailwind CSS 3**, deployed to **Cloudflare Workers** (static assets). Features include a landing page with GSAP scroll animations, a 3D mockup viewer (Three.js via threeagent), a budget view, and a CMS integration (Sanity). No automated tests or CI pipelines exist.
 
 ## Runtimes & Versions
 
@@ -88,7 +88,7 @@ resources/                # Static assets (copied to public/ or release/ by npm 
   images/                 # Site images (graphics, icons, portraits, QR codes)
 
 public/                   # Dev output directory (served at localhost:4200)
-release/                  # Production output directory (deployed to Netlify)
+release/                  # Production output directory (deployed to Cloudflare)
 ```
 
 ### Key Configuration Files

@@ -1,6 +1,6 @@
 ---
 name: push-to-production
-description: Ship the current changes of the Armenian Pavilion 2026 site to production — source commit, release build, release commit, Netlify production deploy, push the branch, open and merge a PR into main. Use when the user says "push to production" or "/push-to-production". If they add "and wind down" / "wind it down", also shut down the local dev server, close the preview tab, and clean up generated files and lingering processes.
+description: Ship the current changes of the Armenian Pavilion 2026 site to production — source commit, release build, release commit, Cloudflare production deploy, push the branch, open and merge a PR into main. Use when the user says "push to production" or "/push-to-production". If they add "and wind down" / "wind it down", also shut down the local dev server, close the preview tab, and clean up generated files and lingering processes.
 ---
 
 # Push to production
@@ -10,7 +10,7 @@ End-to-end release of the current working-tree changes. Two forms:
 - **"push to production"** → steps 0–7.
 - **"push to production and wind down"** → steps 0–7, then step 8.
 
-Run each `git`, `gh` and `netlify` step as its own Bash call. A single command that chains
+Run each `git`, `gh` and `wrangler` step as its own Bash call. A single command that chains
 `git push`, `gh pr create` and `gh pr merge` gets blocked by the safety layer; separate calls go through.
 Do not ask for confirmation between steps — the phrase "push to production" is the approval.
 
@@ -23,22 +23,23 @@ Do not ask for confirmation between steps — the phrase "push to production" is
   - If on `main`, create a branch first: `git checkout -b claude/<short-slug>`.
 - `git fetch origin` then `git rev-list --count HEAD..origin/main`. If main has moved, merge `origin/main`
   into the branch, resolve, and tell the user before continuing.
-- `npx netlify status` must show the linked project `am-pavilion-2026` (https://armenianpavilion2026.org).
-  If it is not logged in or not linked, stop and ask the user to run `npx netlify login` / `npx netlify link`
+- `npx wrangler whoami` must be logged into the Cloudflare account that owns the `armenianpavilion.org`
+  zone. If it is not logged in or shows the wrong account, stop and ask the user to run `! npx wrangler login`
   themselves. Never enter credentials.
 - If there is nothing to commit and `release/` already matches HEAD, say so and continue from step 5.
 
 ## 1. Source commit
 
 `git add` only source paths: `src/`, `resources/`, `shadow-cljs.edn`, `deps.edn`, `package.json`,
-`package-lock.json`, `tailwind.config.js`, `postcss.config.js`, `public/index.html`, `netlify.toml`,
+`package-lock.json`, `tailwind.config.js`, `postcss.config.js`, `public/index.html`, `netlify.toml`, `wrangler.jsonc`, `cloudflare/`, `build/`, `.gitignore`,
 `docs/`, `.claude/skills/`, `.claude/launch.json`, `.github/`.
 Commit with a message that says what changed and why, ending with the attribution trailer from the
 system reminder. Then capture the short hash: `H=$(git rev-parse --short HEAD)`.
 
 ## 2. Release build
 
-`npm run release` (about 20 s). It cleans `release/js`, runs the advanced shadow-cljs build stamped with `$H`,
+`npm run release` (about 20 s). If `clojure` fails with "No version is set for shim", prefix with
+`MISE_CLOJURE_VERSION=<installed> MISE_JAVA_VERSION=<installed>` (see `mise ls`). It cleans `release/js`, runs the advanced shadow-cljs build stamped with `$H`,
 runs PostCSS, copies assets, and rewrites `release/index.html`.
 
 Expected, benign warnings: 11 × `:undeclared-var` in `src/amp/pages/budget/non_profit.cljs` and
@@ -54,11 +55,13 @@ If the change touched user-visible text, grep the new string in `release/js/*.js
 `git add release && git commit -m "Release build $H"` plus the attribution trailer.
 This matches the repo's existing "Release build <hash>" commits.
 
-## 4. Deploy to Netlify production
+## 4. Deploy to Cloudflare production
 
-`npx netlify deploy --prod --dir release --message "Release build $H" --json` and read `deploy_id`.
+`npx wrangler deploy --message "Release build $H"` (config in `wrangler.jsonc`, serves `release/`) and read
+the version id from its output. The redirect Worker in `cloudflare/redirect/` only needs
+`npx wrangler deploy --config cloudflare/redirect/wrangler.jsonc` when that folder changed.
 
-Verify live: `curl -s https://armenianpavilion2026.org/ | grep -o 'main\.[0-9a-f]*\.js'` must print
+Verify live: `curl -s https://armenianpavilion.org/ | grep -o 'main\.[0-9a-f]*\.js'` must print
 `main.$H.js`. Spot-check a changed string in the live bundle when practical.
 
 ## 5. Push the branch
@@ -75,7 +78,7 @@ Verify live: `curl -s https://armenianpavilion2026.org/ | grep -o 'main\.[0-9a-f
 
 ## 7. Report
 
-Lead with the live URL and what changed. List the source commit, release commit, deploy id and PR link.
+Lead with the live URL and what changed. List the source commit, release commit, Worker version id and PR link.
 Mention anything left dirty (dev-build output under `public/`, untracked files) and anything skipped.
 
 ## 8. Wind down (only when asked)

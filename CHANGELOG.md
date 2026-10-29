@@ -2,6 +2,27 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-10-29 — Faster Loads, Capped Image Sizes, Cloudflare Hosting
+
+**Rationale:** Every visitor downloaded a 5.8 MB main bundle (1.09 MB compressed) that included Mapbox GL and Three.js before anything rendered, and large or high-DPR screens requested images up to ~4800–7200 px wide, each fetched twice. Hosting moves to Cloudflare with armenianpavilion.org as the primary domain.
+**Summary:** Main bundle down to 909 KB (246 KB compressed). Mapbox and Three.js load only when a map or 3D slide is about to be shown. Images are capped at 2400 px on the long edge and fetched once. Site config for Cloudflare Workers with a redirect Worker for the old domain.
+
+### Changes
+
+- `shadow-cljs.edn`: new `:map` and `:threejs` modules; `:mockup-view` depends on `:threejs`; release build no longer uses `:pretty-print`/`:pseudo-names`.
+- Added `src/amp/ui/lazy_map.cljs`, a drop-in `mapbox-map` that fetches the `:map` module when within a screen of the viewport. Map pages now require it instead of `amp.ui.map`.
+- `src/amp/ui/map.cljs` injects the Mapbox stylesheet itself (now matching the installed v3.18.1) instead of render-blocking every page from `index.html`.
+- `src/amp/ui/image_gallery.cljs`: 3D slides are lazy-loaded and only mount once the gallery has been in view.
+- `src/amp/ui/image.cljs`: srcset candidates are 1x/1.5x/2x, each capped at 2400 px and deduplicated; 2x uses q=50. The preload uses the same srcset, so the browser downloads one image instead of a 1x copy plus a dense copy.
+- `public/index.html`: Typekit linked from the head (was a CSS `@import`), preconnects for Typekit and imgix, OG/Twitter URLs on armenianpavilion.org.
+- `build/update-html.js`: stamps `main.css?v=<hash>` and fails if a replacement does not match.
+- Added `resources/misc/_headers` (immutable caching for hashed JS/CSS), `wrangler.jsonc`, and `cloudflare/redirect/`. Removed the Netlify `_redirects` file.
+- Site links in the press release and mockup share link point to armenianpavilion.org. Email addresses stay on armenianpavilion2026.org.
+
+### Migration Notes
+
+- Deploy with `npm run release && npx wrangler deploy` (see README). `netlify.toml` stays until the Cloudflare cutover is verified.
+
 ## 2026-04-08 — Dedicated Donations Page
 
 **Rationale:** Donation information was split between direct Stripe buttons and the budget page's bank-transfer section, leaving no single shareable page for patrons, institutions, or supporters.

@@ -6,8 +6,9 @@
    until the user exits."
   (:require ["embla-carousel-react" :as use-embla-carousel]
             ["embla-carousel-autoplay" :as auto-play]
+            ["react" :as react]
 
-            [amp.ui.threejs-slide :refer [threejs-slide]]
+            [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [amp.ui.image-overlay :refer [lazy-image-with-overlay]]
             [amp.ui.overlays :refer [caption-overlay]]
             [amp.ui.icons :refer [ChevronRightIcon]]
@@ -34,6 +35,10 @@
                                                "rgba(255,255,255,1)"
                                                "rgba(255,255,255,0.35)")
                                  :transition "all 0.3s ease"}}))))
+
+;; Three.js (~600 KB) lives in the `:threejs` module and is only fetched when
+;; a gallery with a 3D slide actually renders.
+(def ^:private threejs-slide (lazy-component amp.ui.threejs-slide/threejs-slide))
 
 ;; ---------------------------------------------------------------------------
 ;; Slide renderers (dispatched by :type in the main component)
@@ -93,6 +98,10 @@
         [current-index set-current-index!] (hooks/use-state 0)
         total-slides (count slides)
 
+        ;; Seen? — latches true the first time the gallery is enabled (scrolled
+        ;; into view), so 3D slides don't fetch Three.js for off-screen galleries
+        [seen? set-seen!] (hooks/use-state false)
+
         ;; Locked? — true while a threejs slide is in interactive mode
         [locked? set-locked!] (hooks/use-state false)
 
@@ -134,6 +143,10 @@
              (.reInit embla-api (clj->js {:watchDrag true})))
            (when (and autoplay enabled?) (.play autoplay))))]
 
+    (hooks/use-effect
+     [enabled?]
+     (when enabled? (set-seen! true)))
+
     ;; --- Autoplay play/stop based on visibility ---
     (hooks/use-layout-effect
      [autoplay enabled? locked?]
@@ -166,15 +179,17 @@
                                       :style {:aspect-ratio (str (or (:aspect-ratio slide) "16/9"))}}
                                      (case slide-type
                                        :threejs
-                                       ($ threejs-slide
-                                          {:scene-data (:scene-data slide)
-                                           :camera     (:camera slide)
-                                           :caption    (:caption slide)
-                                           :credit     (:credit slide)
-                                           :active?    is-active?
-                                           :on-lock    lock-carousel!
-                                           :on-unlock  unlock-carousel!
-                                           :lazy-image-parent-styles lazy-image-parent-styles})
+                                       (when seen?
+                                         ($ react/Suspense {:fallback nil}
+                                           ($ threejs-slide
+                                              {:scene-data (:scene-data slide)
+                                               :camera     (:camera slide)
+                                               :caption    (:caption slide)
+                                               :credit     (:credit slide)
+                                               :active?    is-active?
+                                               :on-lock    lock-carousel!
+                                               :on-unlock  unlock-carousel!
+                                               :lazy-image-parent-styles lazy-image-parent-styles})))
 
                                        ;; default → image
                                        ($ image-slide

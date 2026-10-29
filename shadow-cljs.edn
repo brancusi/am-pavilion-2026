@@ -20,6 +20,13 @@
          :video-background {:entries [amp.ui.video-background]
                             :depends-on #{:main}}
 
+         ;; Heavy libraries split out so they only load on pages that use them
+         :map {:entries [amp.ui.map]
+               :depends-on #{:main}}
+
+         :threejs {:entries [amp.ui.threejs-slide]
+                   :depends-on #{:main}}
+
          :budget-view {:entries [amp.pages.budget.page]
                        :depends-on #{:main}}
 
@@ -27,7 +34,7 @@
                           :depends-on #{:main}}
 
          :mockup-view {:entries [amp.pages.mockup.page]
-                       :depends-on #{:main}}
+                       :depends-on #{:threejs}}
 
          :venue-view {:entries [amp.pages.venue.page]
                       :depends-on #{:main}}
@@ -69,6 +76,13 @@
              :video-background {:entries [amp.ui.video-background]
                                 :depends-on #{:main}}
 
+             ;; Heavy libraries split out so they only load on pages that use them
+             :map {:entries [amp.ui.map]
+                   :depends-on #{:main}}
+
+             :threejs {:entries [amp.ui.threejs-slide]
+                       :depends-on #{:main}}
+
              :budget-view {:entries [amp.pages.budget.page]
                            :depends-on #{:main}}
 
@@ -77,7 +91,7 @@
 
 
              :mockup-view {:entries [amp.pages.mockup.page]
-                           :depends-on #{:main}}
+                           :depends-on #{:threejs}}
 
              :venue-view {:entries [amp.pages.venue.page]
                           :depends-on #{:main}}
@@ -104,6 +118,4 @@
             :compiler-options {:output-feature-set :es8
                                :infer-externs true
                                :externs ["externs/three.ext.js"]
-                               :optimizations :advanced
-                               :pretty-print true
-                               :pseudo-names true}}}}
+                               :optimizations :advanced}}}}
