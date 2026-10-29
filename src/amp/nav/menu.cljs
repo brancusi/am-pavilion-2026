@@ -14,6 +14,7 @@
   "The pages in the main menu, in order."
   [{:path "/"       :title "Exhibition"}
    {:path "/artist" :title "Artist"}
+   {:path "/armenian-as-well" :title "Story"}
    {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
    {:path "/blog"   :title "Journal"}])
 

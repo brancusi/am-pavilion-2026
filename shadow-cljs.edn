@@ -44,6 +44,9 @@
                          :depends-on #{:main}}
 
 
+         :story-view {:entries [amp.pages.story.page]
+                      :depends-on #{:main}}
+
          :water-taxi-view {:entries [amp.pages.water-taxi.page]
 
                            :depends-on #{:main}}}
@@ -93,7 +96,10 @@
                              :depends-on #{:main}}
 
 
-             :water-taxi-view {:entries [amp.pages.water-taxi.page]
+             :story-view {:entries [amp.pages.story.page]
+                      :depends-on #{:main}}
+
+         :water-taxi-view {:entries [amp.pages.water-taxi.page]
 
                                :depends-on #{:main}}}
             :build-hooks [(git-hash/hook)]

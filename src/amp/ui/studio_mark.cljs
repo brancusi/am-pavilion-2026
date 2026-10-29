@@ -7,7 +7,8 @@
    solid ink. Motion stops under prefers-reduced-motion (handled in CSS)."
   (:require [amp.lib.defnc :refer [defnc]]
             [clojure.string :as str]
-            [helix.dom :as d]))
+            [helix.dom :as d]
+            [helix.hooks :as hooks]))
 
 (def ^:private tiles
   [
@@ -66,6 +67,50 @@
   (let [step 244.84]
     (str (* step (mod i 3)) " " (* step (quot i 3)) " 228.14 228.14")))
 
+(def ^:private edge-samples 96)
+
+(defn- edge-mask
+  "CSS mask for one side of tile `i`: solid where the face meets that edge,
+   cut away where the letter opens onto it (so the cut goes right through
+   the block instead of stopping on a floor). nil when the edge is solid."
+  [^js face i side]
+  (let [step 244.84 size 228.14 inset 0.8
+        x0 (* step (mod i 3)) y0 (* step (quot i 3))
+        shapes (array-seq (.-children face))
+        point (fn [t]
+                (let [u (* size t)]
+                  (case side
+                    "top"    [(+ x0 u) (+ y0 inset)]
+                    "bottom" [(+ x0 u) (- (+ y0 size) inset)]
+                    "left"   [(+ x0 inset) (+ y0 u)]
+                    "right"  [(- (+ x0 size) inset) (+ y0 u)])))
+        solid? (fn [t]
+                 (let [[x y] (point t) pt (js/DOMPoint. x y)]
+                   (some #(.isPointInFill ^js % pt) shapes)))
+        ts (map #(/ (+ % 0.5) edge-samples) (range edge-samples))
+        flags (mapv solid? ts)]
+    (when-not (every? identity flags)
+      (let [runs (partition-by identity (map-indexed vector flags))
+            stops (for [run runs
+                        :let [[a f] (first run) [b _] (last run)
+                              from (* 100 (/ a edge-samples)) to (* 100 (/ (inc b) edge-samples))]]
+                    (str (if f "#000" "transparent") " " from "% " to "%"))]
+        (str "linear-gradient(" (if (#{"top" "bottom"} side) "to right" "to bottom") ", "
+             (str/join ", " stops) ")")))))
+
+(defn- cut-sides!
+  "Mask every tile's sides with the letter's footprint on that edge."
+  [^js root]
+  (doseq [[i ^js cell] (map-indexed vector (array-seq (.querySelectorAll root ".ap-mark3d__cell")))
+          :let [layers (.querySelectorAll cell ".ap-mark3d__layer")
+                face (aget layers (dec (.-length layers)))]
+          side ["top" "bottom" "left" "right"]
+          :let [mask (edge-mask face i side)]
+          :when mask]
+    (let [st (.-style (.querySelector cell (str ".ap-mark3d__side--" side)))]
+      (.setProperty st "mask-image" mask)
+      (.setProperty st "-webkit-mask-image" mask))))
+
 (defn- fine-pointer? []
   (and (.-matches (js/matchMedia "(hover: hover) and (pointer: fine)"))
        (not (.-matches (js/matchMedia "(prefers-reduced-motion: reduce)")))))
@@ -100,7 +145,10 @@
    (\"red\", \"ink\", …) and with nil when the pointer leaves.
    Variants: :stack, :pigment."
   [{:keys [variants class label on-hover] :or {label "The Studio"}}]
-  (d/div {:class (str/join " " (concat ["ap-mark ap-mark3d"]
+  (let [root (hooks/use-ref nil)]
+    (hooks/use-effect :once (some-> @root cut-sides!))
+  (d/div {:ref root
+          :class (str/join " " (concat ["ap-mark ap-mark3d"]
                                        (map #(str "ap-mark--" (name %)) variants)
                                        (when class [class])))
           :role (when label "img")
@@ -134,4 +182,4 @@
                                           (d/polygon {:key j :points v})
                                           (d/path {:key j :d v})))
                                       shapes)))))))
-          tiles)))
+          tiles))))

@@ -64,18 +64,19 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-mark3d__body { position: absolute; inset: 0; transform-style: preserve-3d; transform-origin: 50% 50% calc(var(--D) / -2); transform: translateZ(calc(var(--D) * .12)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform var(--heavy-dur) var(--heavy), transform-origin var(--heavy-dur) var(--heavy); }
 /* Following the pointer: still damped, so the block lags like a weight. */
 .ap-mark3d__cell[data-active] .ap-mark3d__body { transition-duration: .8s; }
-.ap-mark3d__side { position: absolute; display: block; transition: transform var(--heavy-dur) var(--heavy), top var(--heavy-dur) var(--heavy), left var(--heavy-dur) var(--heavy), width var(--heavy-dur) var(--heavy), height var(--heavy-dur) var(--heavy), background 1.4s ease-in-out; }
+.ap-mark3d__side { position: absolute; display: block; mask-size: 100% 100%; -webkit-mask-size: 100% 100%; transition: transform var(--heavy-dur) var(--heavy), top var(--heavy-dur) var(--heavy), left var(--heavy-dur) var(--heavy), width var(--heavy-dur) var(--heavy), height var(--heavy-dur) var(--heavy), background 1.4s ease-in-out; }
 .ap-mark3d__side--top, .ap-mark3d__side--bottom { left: 0; width: 100%; height: var(--D); transform: translateZ(calc(var(--D) / -2)) rotateX(90deg); }
-.ap-mark3d__side--top { top: calc(var(--D) / -2); background: color-mix(in srgb, var(--tile-fill) 82%, #fff); }
-.ap-mark3d__side--bottom { top: calc(100% - var(--D) / 2); background: color-mix(in srgb, var(--tile-fill) 50%, #000); }
+.ap-mark3d__side--top { top: calc(var(--D) / -2 - var(--o)); background: color-mix(in srgb, var(--tile-fill) 82%, #fff); }
+.ap-mark3d__side--bottom { top: calc(100% - var(--D) / 2 + var(--o)); background: color-mix(in srgb, var(--tile-fill) 50%, #000); }
 .ap-mark3d__side--left, .ap-mark3d__side--right { top: 0; height: 100%; width: var(--D); transform: translateZ(calc(var(--D) / -2)) rotateY(90deg); }
-.ap-mark3d__side--left { left: calc(var(--D) / -2); background: color-mix(in srgb, var(--tile-fill) 70%, #000); }
-.ap-mark3d__side--right { left: calc(100% - var(--D) / 2); background: color-mix(in srgb, var(--tile-fill) 60%, #000); }
+.ap-mark3d__side--left { left: calc(var(--D) / -2 - var(--o)); background: color-mix(in srgb, var(--tile-fill) 70%, #000); }
+.ap-mark3d__side--right { left: calc(100% - var(--D) / 2 + var(--o)); background: color-mix(in srgb, var(--tile-fill) 60%, #000); }
 .ap-mark3d__layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: color-mix(in srgb, var(--tile-fill) calc(78% - var(--k) * 1.6%), #000); transform: translateZ(calc(var(--k) * var(--d, 0px) * -1)); transition: transform var(--heavy-dur) var(--heavy), fill 1.4s ease-in-out; }
 .ap-mark3d__layer:last-child { fill: var(--tile-fill); }
-/* Keep the letter walls off the block's outer edges, where they would share
-   a plane with the sides and flicker through as stripes. */
-.ap-mark3d__layer:not(:last-child) { clip-path: inset(2%); }
+/* The sides sit a hair outside the face (--o) so the letter walls' edges
+   never share their plane (which flickers as stripes); the sides are
+   masked where the letter opens onto an edge (amp.ui.studio-mark). */
+.ap-mark3d__cell { --o: .5cqw; }
 
 /* The Unit: the ground and its text colour are registered colour
    properties, so the cycle blends between pigments (text always the
@@ -92,6 +93,10 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-chapter.ap-chapter--ephemeral[data-ground] { --hold: 1; }
 
 /* Artist page */
+.ap-story-link { padding: var(--space-8); gap: var(--space-3); border: 1px solid var(--rule); transition: background var(--dur-base); }
+.ap-story-link:hover { background: #24211e; }
+.ap-story-link .ap-link { color: var(--on-night); }
+@media (min-width: 960px) { .ap-story-link { padding: var(--space-16); } }
 .ap-artist-head { align-items: end; }
 .ap-artist-head__portrait .ap-figure__frame { max-height: 78vh; }
 .ap-artist-head__portrait .ap-figure__frame > img { object-fit: cover; }

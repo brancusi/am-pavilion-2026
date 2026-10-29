@@ -44,6 +44,11 @@
                 :title "Consegne"
                 :view (lazy-component amp.pages.delivery.page/delivery-view)}
 
+               {:id ::story
+                :path "armenian-as-well"
+                :title "Armenian as well: Zadikian and Shafrazi"
+                :view (lazy-component amp.pages.story.page/story-view)}
+
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
                 :title "Water Taxi"

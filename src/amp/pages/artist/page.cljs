@@ -146,6 +146,16 @@
                                               (d/span {:class "ap-tomb__credit"} (str where " · " (:when film)))))
                       (d/p {:class "ap-body m-0 max-w-[60ch]"} summary)))))
 
+(defnc story-link []
+  (d/section {:class "ap-sec" :id "story"}
+             (d/div {:class "ap-wrap"}
+                    (d/a {:class "ap-article__next ap-story-link" :href "/armenian-as-well"}
+                         (d/span {:class "ap-label text-yellow"} "A story · 1973–2026")
+                         (d/span {:class "ap-display-l"} "Armenian as well")
+                         (d/span {:class "ap-body m-0 max-w-[52ch]"}
+                                 "Zadik Zadikian and Tony Shafrazi: from a meeting in Richard Serra’s studio, through a Tehran gallery lost to a revolution, to The Studio in Venice.")
+                         (d/span {:class "ap-link self-start mt-2"} "Read the story →")))))
+
 (defnc return-section []
   (d/section {:class "ap-chapter ap-chapter--red" :id "return"}
              (d/div {:class "ap-wrap !px-0 grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-24"}
@@ -172,4 +182,5 @@
          ($ chronology-section)
          ($ works-section)
          ($ film-section)
+         ($ story-link)
          ($ return-section)))

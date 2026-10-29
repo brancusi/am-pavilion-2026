@@ -36,8 +36,8 @@
 
     (d/div {:ref wrapper-ref
             :class (if active?
-                     "w-full overflow-x-hidden"
-                     "absolute inset-0 w-full overflow-x-hidden")}
+                     "w-full overflow-x-clip"
+                     "absolute inset-0 w-full overflow-x-clip")}
            ($ view))))
 
 (defnc section-transitioner
