@@ -173,10 +173,14 @@
   ;; Hovering a letter (desktop) holds the ground on its pigment, so that
   ;; letter sinks into it and only its tilted depth shows.
   (let [[ground set-ground!] (hooks/use-state nil)
-        [bg on] (grounds ground)]
+        ;; Keep the last colour after the pointer leaves so the overlay
+        ;; fades out in it instead of snapping to transparent.
+        [last-ground set-last!] (hooks/use-state nil)
+        _ (hooks/use-effect [ground] (when ground (set-last! ground)))
+        [bg on] (grounds (or ground last-ground))]
     (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit"
                 :data-ground (when ground "")
-                :style (when ground #js {"--ground" (str "var(" bg ")") "--ground-on" (str "var(" on ")")})}
+                :style (when (or ground last-ground) #js {"--ground" (str "var(" bg ")") "--ground-on" (str "var(" on ")")})}
                (d/div {:class "ap-wrap ap-ch-grid !px-0"}
                       (d/div {:class "flex flex-col gap-4"}
                              (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Chapter")
