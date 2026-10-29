@@ -42,6 +42,24 @@
   [ref]
   (set! (.-current ref) (inc (.-current ref))))
 
+(defn- show!
+  "Fade the new page in, or, while a part of it is still loading (Suspense
+   renders nothing yet), once it's there."
+  [^js el]
+  (let [fade-in! #(.fromTo gsap el #js {:opacity 0}
+                           #js {:opacity 1 :duration in-s :ease "power2.out" :overwrite true
+                                :clearProps "opacity"})]
+    (if (pos? (.-childElementCount el))
+      (fade-in!)
+      (let [mo (js/MutationObserver.
+                (fn [_ ^js mo]
+                  (when (pos? (.-childElementCount el))
+                    (.disconnect mo)
+                    (flush-scroll!)
+                    (fade-in!))))]
+        (.set gsap el #js {:opacity 0})
+        (.observe mo el #js {:childList true})))))
+
 (defnc section-transitioner
   []
   (let [[state _] (use-main-state)
@@ -91,12 +109,9 @@
      [(:n shown)]
      (when shown
        (flush-scroll!)
-       (when-let [el @wrapper]
-         (if (and (:fade? shown) (not (reduced-motion?)))
-           (.fromTo gsap el #js {:opacity 0}
-                    #js {:opacity 1 :duration in-s :ease "power2.out" :overwrite true
-                         :clearProps "opacity"})
-           (.set gsap el #js {:clearProps "opacity"}))))
+       (if-let [el (and (:fade? shown) (not (reduced-motion?)) @wrapper)]
+         (show! el)
+         (some-> @wrapper (#(.set gsap % #js {:clearProps "opacity"})))))
      js/undefined)
 
     (d/div
@@ -105,8 +120,10 @@
      ;; page is still loading its content.
      (d/div {:ref wrapper :class "w-full overflow-x-clip min-h-[100svh]"}
             (when-let [view (:view shown)]
-              ($ react/Suspense {:fallback nil}
-                 ($ view {:key (:n shown)}))))
+              ;; A boundary of its own per page: while a part of the new page
+              ;; is still loading, React shows nothing, never the old page.
+              ($ react/Suspense {:key (:n shown) :fallback nil}
+                 ($ view))))
      (when shown
        ($ site-footer))
      ($ back-up-nav))))
