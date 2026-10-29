@@ -30,7 +30,8 @@
 
                    ;; Name & role overlay — bottom-left
                    (d/div {:class "absolute bottom-0 left-0 right-0 p-6 sm:p-10
-                                   bg-gradient-to-t from-black/70 to-transparent"}
+                                   bg-gradient-to-t from-black/70 to-transparent
+                                   [&_*]:!text-white"}
                           (d/p {:class (s/cx s/eyebrow s/text-faint "mb-2")}
                                "The Artist")
                           (d/h1 {:class (s/cx s/heading-display "mb-2")}
