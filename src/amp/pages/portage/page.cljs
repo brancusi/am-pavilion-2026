@@ -607,7 +607,13 @@
 (defnc portage-view
   [_props]
   (let [[state _] (use-main-state)
-        route-slug (or (-> state :current-route :path-params :sheet) "home")
+        route (:current-route state)
+        ;; While another page's route is fading this one out, stay on the
+        ;; sheet that's showing instead of reading it as the home sheet.
+        last-slug (hooks/use-ref "home")
+        route-slug (if (= :amp.services.router/portage (-> route :data :group))
+                     (set! (.-current last-slug) (or (-> route :path-params :sheet) "home"))
+                     @last-slug)
         body-ref (hooks/use-ref nil)
         slug (use-sheet-swap! route-slug body-ref)
         sheet (by-slug slug)

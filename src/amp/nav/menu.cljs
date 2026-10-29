@@ -17,7 +17,8 @@
    {:path "/armenian-as-well" :title "Story"}
    {:path "/portage" :title "Portage"}
    {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
-   {:path "/blog"   :title "Journal"}])
+   {:path "/blog"   :title "Journal"}
+   {:path "/press"  :title "Press"}])
 
 (defn- active?
   "A nav item is current when the path matches (or one of its `:also`
