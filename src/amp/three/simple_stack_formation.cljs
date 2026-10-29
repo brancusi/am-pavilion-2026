@@ -1,8 +1,8 @@
-(ns amp.pages.mockup.renderers.simple-stack-formation
+(ns amp.three.simple-stack-formation
   "Renderer for simple stacked-box formations.
    Converts a vector of levels (each with :bounds and :layers) into a
    threeagent scene tree with lighting, ground plane, and selection outlines."
-  (:require [amp.pages.mockup.geometry :as geometry]))
+  (:require [amp.three.geometry :as geometry]))
 
 (declare build-box-tree)
 

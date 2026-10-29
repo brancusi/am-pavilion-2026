@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-Website for the Armenian Pavilion at the 2026 Venice Biennale. Single-page app built with **ClojureScript** (shadow-cljs) using the **Helix** React wrapper, styled with **Tailwind CSS 3**, deployed to **Cloudflare Workers** (static assets). Features include a landing page with GSAP scroll animations, a 3D mockup viewer (Three.js via threeagent), a budget view, and a CMS integration (Sanity). No automated tests or CI pipelines exist.
+Website for the Armenian Pavilion at the 2026 Venice Biennale. Single-page app built with **ClojureScript** (shadow-cljs) using the **Helix** React wrapper, styled with **Tailwind CSS 3**, deployed to **Cloudflare Workers** (static assets). Features include a landing page with GSAP scroll animations, interactive 3D gallery slides (Three.js via threeagent), a budget view, and a CMS integration (Sanity). No automated tests or CI pipelines exist.
 
 ## Runtimes & Versions
 
@@ -61,14 +61,14 @@ src/amp/                  # All application source (ClojureScript)
   components/
     sections/             # Page sections (hero, artist, curators, team, etc.)
     elements/             # Reusable elements (lazy-image, video, budget tables)
-    threejs/              # 3D mockup viewer (threeagent scene, geometry, objects)
     navs/                 # Navigation components
     ui/                   # Buttons, toggles, overlays
     fragments/            # Small reusable fragments
   hooks/                  # Custom React hooks (scroll, resize, intersection, etc.)
   providers/              # React context providers (main-provider.cljs)
   reducers/               # useReducer-based state (multimethod dispatch via api.cljs)
-  services/               # Router (reitit) and Firebase realtime DB
+  services/               # Router (reitit)
+  three/                  # threeagent scene, objects, geometry, stack formation (3D gallery slides)
   lib/                    # defnc macro (wraps helix.core/defnc with fast-refresh)
   utils/                  # Helpers: lazy-loading macro, GSAP utils, math, axios, debug
   api/                    # Sanity CMS queries (cms.cljs)
@@ -136,7 +136,7 @@ Reitit frontend router in `amp.services.router`. Routes defined inline. Views ar
 
 ### Module Splitting
 
-shadow-cljs splits code into modules: `main`, `landing-view`, `budget-view`, `mockup-view`, `video-background`. The module-loader handles async loading. When adding a new top-level view, add an entry to both the `:app` and `:release` builds in `shadow-cljs.edn`.
+shadow-cljs splits code into modules: `main`, `landing-view`, `budget-view`, `video-background`, plus `map` and `threejs` library modules. The module-loader handles async loading. When adding a new top-level view, add an entry to both the `:app` and `:release` builds in `shadow-cljs.edn`.
 
 ### NPM Interop
 
@@ -149,7 +149,7 @@ JS libraries are consumed directly via shadow-cljs npm integration:
 
 ### Three.js / 3D Mockups
 
-The 3D mockup viewer uses `threeagent` (Reagent-style reactive scene graph). Source in `src/amp/components/threejs/`. See `.github/skills/threejs-dsl/SKILL.md` for the full DSL reference.
+The 3D gallery slides use `threeagent` (Reagent-style reactive scene graph). Source in `src/amp/three/` and `src/amp/ui/threejs_slide.cljs`. The old `/mockups` viewer is archived (see `docs/mockup-viewer.md`). See `.github/skills/threejs-dsl/SKILL.md` for the full DSL reference.
 
 ## Common Pitfalls
 

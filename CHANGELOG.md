@@ -2,6 +2,22 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-10-29 — Remove Mockup Viewer and Firebase
+
+**Rationale:** The unlinked `/mockups` 3D viewer was the only user of Firebase and is no longer needed on the site.
+**Summary:** Removed the viewer, its authoring scripts and Firebase. The full viewer is preserved at git tag `archive/mockup-viewer`; the 3D gallery slides keep working from the shared scene code.
+
+### Changes
+
+- Removed `src/amp/pages/mockup/` (page, HUD, parts panel, selection bar, share link, manual-formation renderer), `src/amp/services/firebase.cljs`, `dev/mockups/`, the `/mockups` route and the `:mockup-view` modules.
+- Moved the code the gallery slides still use to `src/amp/three/` (`objects`, `scene`, `geometry`, `simple-stack-formation`).
+- Removed the `firebase` npm dependency and the now-unused `:hide-footer?` route flag.
+- Added `docs/mockup-viewer.md` describing the archive and the Firebase data that remains.
+
+### Migration Notes
+
+- `/mockups` links no longer work. Check out `archive/mockup-viewer` to run the viewer locally.
+
 ## 2026-10-29 — Faster Loads, Capped Image Sizes, Cloudflare Hosting
 
 **Rationale:** Every visitor downloaded a 5.8 MB main bundle (1.09 MB compressed) that included Mapbox GL and Three.js before anything rendered, and large or high-DPR screens requested images up to ~4800–7200 px wide, each fetched twice. Hosting moves to Cloudflare with armenianpavilion.org as the primary domain.

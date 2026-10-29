@@ -47,7 +47,7 @@
     :caption      "FOAM CORE — ALIGNMENT"
     :credit       "Los Angeles 2026"}
 
-   ;; Interactive 3D mockup — same scene data as mockups?piece=mockup-007
+   ;; Interactive 3D mockup (mockup-007 from the archived mockup viewer)
    {:type         :threejs
     :aspect-ratio 0.75
     :caption      "MOCKUP 007 — INTERACTIVE 3D"

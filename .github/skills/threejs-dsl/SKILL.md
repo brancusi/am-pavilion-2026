@@ -3,6 +3,12 @@ name: threejs-dsl
 description: Reference for building 3D scenes in the Armenian Pavilion mockup viewer — threeagent DSL, Three.js fundamentals, custom entity types, renderer system, and Firebase data format.
 ---
 
+> **Note (2026-10-29):** the `/mockups` viewer, its renderer registry and the Firebase data flow
+> described below were removed from the site and archived at git tag `archive/mockup-viewer`
+> (see `docs/mockup-viewer.md`). The threeagent DSL, entity types and `simple-stack-formation`
+> renderer still apply to the 3D gallery slides, now under `src/amp/three/`.
+
+
 # ThreeJS DSL — Skills Reference
 
 Reference for building 3D scenes in the Armenian Pavilion mockup viewer.
