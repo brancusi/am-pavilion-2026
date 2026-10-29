@@ -54,7 +54,10 @@
   "Pigment of each tile, in order (matches .ap-mark--pigment)."
   ["red" "blue" "yellow" "turquoise" "red" "pink" "brick" "blue" "ink"])
 
-(def ^:private depth-layers 7)
+(def ^:private depth-layers
+  "Copies of the tile, spaced through the block's depth: together they form
+   the walls of the letter, which is cut right through the cube."
+  20)
 (def ^:private max-tilt 10)
 
 (defn- tile-box
@@ -81,7 +84,7 @@
       ;; --D: the block's thickness (a full cube); --d: step between the
       ;; layers that form the walls of the carved letter.
       (.setProperty st "--D" "100cqw")
-      (.setProperty st "--d" "2.4cqw")
+      (.setProperty st "--d" "5cqw")
       (.setAttribute cell "data-active" ""))))
 
 (defn- untilt! [^js e]
@@ -118,11 +121,10 @@
                       :on-pointer-move tilt!
                       :on-pointer-leave untilt!}
                      (d/div {:class "ap-mark3d__body"}
-                            ;; The block's four sides, then the floor of the
-                            ;; carved letter, its wall layers and the face.
+                            ;; The block's four sides, then the layers that
+                            ;; wall the cut-through letter, and the face.
                             (for [side ["top" "bottom" "left" "right"]]
                               (d/i {:key side :class (str "ap-mark3d__side ap-mark3d__side--" side)}))
-                            (d/i {:class "ap-mark3d__floor"})
                             (for [k (range depth-layers -1 -1)]
                               (d/svg {:key k :class "ap-mark3d__layer" :viewBox (tile-box i)
                                       :style #js {"--k" k}}
