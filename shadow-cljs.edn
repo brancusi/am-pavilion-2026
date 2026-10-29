@@ -47,6 +47,9 @@
          :story-view {:entries [amp.pages.story.page]
                       :depends-on #{:main}}
 
+         :portage-view {:entries [amp.pages.portage.page]
+                        :depends-on #{:main}}
+
          :water-taxi-view {:entries [amp.pages.water-taxi.page]
 
                            :depends-on #{:main}}}
@@ -98,6 +101,9 @@
 
              :story-view {:entries [amp.pages.story.page]
                       :depends-on #{:main}}
+
+         :portage-view {:entries [amp.pages.portage.page]
+                        :depends-on #{:main}}
 
          :water-taxi-view {:entries [amp.pages.water-taxi.page]
 

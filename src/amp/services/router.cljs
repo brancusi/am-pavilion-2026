@@ -49,6 +49,11 @@
                 :title "Armenian as well: Zadikian and Shafrazi"
                 :view (lazy-component amp.pages.story.page/story-view)}
 
+               {:id ::portage
+                :path "portage"
+                :title "Portage"
+                :view (lazy-component amp.pages.portage.page/portage-view)}
+
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
                 :title "Water Taxi"
@@ -64,11 +69,15 @@
                   (let [route-data {:name id
                                     :view view
                                     :title title}]
-                    (if (= id ::blog)
+                    (case id
                       ;; Blog gets two routes: index + slug-parameterized post
-                      [[path route-data]
-                       [(str path "/:slug")
-                        (assoc route-data :name ::blog-post)]]
+                      ::blog [[path route-data]
+                              [(str path "/:slug")
+                               (assoc route-data :name ::blog-post)]]
+                      ;; Portage: the home sheet + one route per sheet
+                      ::portage [[path route-data]
+                                 [(str path "/:sheet")
+                                  (assoc route-data :name ::portage-sheet)]]
                       [[path route-data]])))
                 site-map)))
 
