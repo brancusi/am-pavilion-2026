@@ -19,6 +19,22 @@
 ;; path → scroll-y, preserved across hot-reloads
 (defonce ^:private scroll-positions (atom {}))
 
+;; The path on screen. Kept here, not read from state: the route callback is
+;; handed to reitit once, so the state it closes over never updates.
+(defonce ^:private current-path (atom nil))
+
+;; The scroll for the latest navigation, held until the new content is in
+;; place: the section transitioner (or a page that swaps its own content)
+;; runs it, so the old page never jumps while it fades out.
+(defonce ^:private pending-scroll (atom nil))
+
+(defn flush-scroll!
+  "Run the scroll held for the latest navigation, once."
+  []
+  (when-let [f @pending-scroll]
+    (reset! pending-scroll nil)
+    (f)))
+
 (def site-map [{:id ::venue
                 :path "visit"
                 :title "Visit"
@@ -74,10 +90,12 @@
                       ::blog [[path route-data]
                               [(str path "/:slug")
                                (assoc route-data :name ::blog-post)]]
-                      ;; Portage: the home sheet + one route per sheet
-                      ::portage [[path route-data]
-                                 [(str path "/:sheet")
-                                  (assoc route-data :name ::portage-sheet)]]
+;; Portage: the home sheet + one route per sheet. One page for the
+                      ;; transitioner (:group); it swaps sheets itself (:inner-swap).
+                      ::portage (let [route-data (assoc route-data :group ::portage :inner-swap true)]
+                                  [[path route-data]
+                                   [(str path "/:sheet")
+                                    (assoc route-data :name ::portage-sheet)]])
                       [[path route-data]])))
                 site-map)))
 
@@ -112,11 +130,21 @@
     ((fn attempt []
        (if-let [el (.getElementById js/document id)]
          (do (.scrollIntoView el #js {:block "start"})
-             ;; The outgoing page fades out over 0.4s and images above the
-             ;; anchor may still change the layout: settle once more.
+             ;; Images above the anchor may still change the layout:
+             ;; settle once more.
              (js/setTimeout #(.scrollIntoView el #js {:block "start"}) 500))
          (when (< (swap! tries inc) 40)
            (js/setTimeout attempt 50)))))))
+
+(defn- restore-scroll!
+  "Scroll back to `y`, retrying for a moment while the page is still too
+   short to reach it (content that loads after the page mounts)."
+  [y]
+  (let [frames (atom 0)]
+    ((fn attempt []
+       (.scrollTo js/window 0 y)
+       (when (and (> (- y (.-scrollY js/window)) 2) (< (swap! frames inc) 90))
+         (js/requestAnimationFrame attempt))))))
 
 (defnc router
   [{:keys [children]}]
@@ -129,29 +157,31 @@
                                (fn [match]
                                  (let [new-route (or match (not-found-route))
                                        old-route (:current-route state)
-                                       old-path  (:path old-route)]
+                                       old-path  @current-path]
 
                                    ;; Save scroll position for the page we're leaving
                                    (when old-path
                                      (swap! scroll-positions assoc old-path (.-scrollY js/window)))
+                                   (reset! current-path (:path new-route))
 
                                    (rfc/apply-controllers old-route new-route)
                                    (dispatch! [:enter-route! new-route])
                                    (set-title! new-route)
 
-                                   ;; Scroll behaviour depends on navigation type
-                                   (let [type @nav-type]
+                                   ;; Scroll behaviour depends on navigation type. Held in
+                                   ;; pending-scroll until the new content has rendered
+                                   ;; (see flush-scroll!).
+                                   (let [type @nav-type
+                                         hash (not-empty (subs (.. js/location -hash) 1))
+                                         saved (get @scroll-positions (:path new-route) 0)]
                                      (reset! nav-type :push) ;; reset for next navigation
-                                     (if (= type :pop)
-                                       ;; Back/forward → restore saved position (after view renders)
-                                       (let [saved (get @scroll-positions (:path new-route) 0)]
-                                         (js/requestAnimationFrame
-                                          #(.scrollTo js/window 0 saved)))
-                                       ;; Push (link click) → top, or to the #anchor
-                                       ;; once the page has rendered it.
-                                       (if-let [id (not-empty (subs (.. js/location -hash) 1))]
-                                         (scroll-to-anchor! id)
-                                         (.scrollTo js/window 0 0)))))))]
+                                     (reset! pending-scroll
+                                             (cond
+                                               ;; Back/forward → restore saved position
+                                               (= type :pop) #(restore-scroll! saved)
+                                               ;; Push (link click) → the #anchor, or top
+                                               hash #(scroll-to-anchor! hash)
+                                               :else #(.scrollTo js/window 0 0)))))))]
 
     (hooks/use-effect
      :once
