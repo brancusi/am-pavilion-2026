@@ -1,0 +1,22 @@
+# Cache rules for Cloudflare static assets (copied into release/ by misc:release).
+# HTML is left to the default (always revalidated) so new releases show up at once.
+
+# Every JS chunk carries the git hash in its filename
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# index.html references main.css?v=<hash>, so it changes URL on each release
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/data/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+
+/financial-reports/*
+  Cache-Control: public, max-age=3600
