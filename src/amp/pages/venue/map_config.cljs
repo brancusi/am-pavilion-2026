@@ -1,11 +1,17 @@
-(ns amp.pages.venue.map-config)
+(ns amp.pages.venue.map-config
+  "Map data for the directions maps: GeoJSON urls, camera framing, route
+   lines and pins. Point labels are drawn as HTML by amp.ui.map/html-labels
+   from each file's `label` properties (pass :labels-url).")
 
 ;; ── Route colours (design system: MapGuide) ────────────────────────────────
 ;; Walking is solid yellow with an ink casing, water taxi is a marching blue
 ;; line, the pavilion is red.
 
+;; Theme tokens, resolved to their current values by amp.ui.map (so the
+;; routes and pins follow light/dark). Water uses the text blue, which is
+;; lighter in the dark theme.
 (def pigment
-  {:yellow "#f2cf2e" :blue "#2f4f9e" :red "#c93a31" :ink "#141312" :paper "#f7f6f2"})
+  {:yellow "var(--yellow)" :blue "var(--blue-text)" :red "var(--red)" :ink "var(--ink)" :paper "var(--paper)"})
 
 ;; ── Coordinates ────────────────────────────────────────────────────────────
 
@@ -87,7 +93,7 @@
              :paint {:circle-radius 6
                      :circle-color (:red pigment)
                      :circle-stroke-width 2
-                     :circle-stroke-color "#ffffff"}}}
+                     :circle-stroke-color (:paper pigment)}}}
 
    ;; Pavilion point markers
    {:source {:id "biennale-points" :url url}
@@ -99,24 +105,7 @@
              :paint {:circle-radius 8
                      :circle-color (:red pigment)
                      :circle-stroke-width 2
-                     :circle-stroke-color "#ffffff"}}}
-
-   ;; Text labels
-   {:source {:id "biennale-labels" :url url}
-    :layer  {:id "biennale-label"
-             :type "symbol"
-             :filter ["all"
-                      ["==" ["geometry-type"] "Point"]
-                      ["!" ["has" "marker"]]]
-             :layout {:text-field ["get" "label"]
-                      :text-font ["Source Code Pro Semibold"]
-                      :text-size 14
-                      :text-offset [0 -1.5]
-                      :text-anchor "bottom"
-                      :text-allow-overlap true}
-             :paint {:text-color (:ink pigment)
-                     :text-halo-color (:paper pigment)
-                     :text-halo-width 5}}}])
+                     :circle-stroke-color (:paper pigment)}}}])
 
 (def layers (layers-for visitor-data-url))
 
@@ -191,25 +180,4 @@
              :paint {:circle-radius 7
                      :circle-color (:red pigment)
                      :circle-stroke-width 2
-                     :circle-stroke-color "#ffffff"}}}
-
-   ;; Labels — every point that carries a `label`
-   {:source {:id "water-taxi-labels" :url water-taxi-data-url}
-    :layer  {:id "water-taxi-label"
-             :type "symbol"
-             :filter ["all"
-                      ["==" ["geometry-type"] "Point"]
-                      ["has" "label"]]
-             :layout {:text-field ["get" "label"]
-                      :text-font ["Source Code Pro Semibold"]
-                      :text-size 13
-                      :text-anchor ["get" "anchor"]
-                      :text-offset ["match" ["get" "anchor"]
-                                    "left"  ["literal" [1 0]]
-                                    "right" ["literal" [-1 0]]
-                                    "top"   ["literal" [0 1]]
-                                    ["literal" [0 -1.2]]]
-                      :text-allow-overlap true}
-             :paint {:text-color (:ink pigment)
-                     :text-halo-color (:paper pigment)
-                     :text-halo-width 4}}}])
+                     :circle-stroke-color (:paper pigment)}}}])

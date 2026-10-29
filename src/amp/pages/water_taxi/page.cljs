@@ -5,20 +5,15 @@
    route and instructions to hand to the driver.
 
    The whole page is bilingual. Italian is the default because the page is
-   meant to be handed to the (Italian-speaking) driver as-is; a toggle at
-   the top switches everything to English for the guest.
+   meant to be handed to the (Italian-speaking) driver as-is; a switch in
+   the page head turns everything to English for the guest.
    Lives at /route-from-hotel-gabrielli; not linked from the main nav."
   (:require
    [amp.pages.venue.map-config :as mc]
-   [amp.ui.lazy-map :refer [mapbox-map]]
-   [amp.ui.page-shell :refer [page-shell]]
-   [amp.ui.section-header :refer [section-eyebrow section-display]]
-   [amp.ui.directions :refer [hotel-gabrielli-address julda-contact luca-contact
-                              aram-contact phone-link mini-heading address-block
-                              callout numbered-steps opening-hours lang-toggle]]
+   [amp.ui.directions :refer [hotel-gabrielli-address julda-contact luca-contact aram-contact]]
+   [amp.ui.wayfinding :as wf :refer [rich]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
@@ -29,6 +24,8 @@
 
 (def copy
   {:it {;; Hero
+        :facts            [["Partenza" "Approdo Hotel Gabrielli"] ["Arrivo" "Approdo Tesa 41"]
+                           ["Durata" "15–20 minuti"] ["Orari" "mar – dom, 11:00–18:30"]]
         :eyebrow          "Hotel Gabrielli → Arsenale Militare"
         :title            "In taxi acqueo"
         :lead             ["Dall’approdo dell’" [:em "Hotel Gabrielli"]
@@ -84,6 +81,8 @@
                            "Proseguire verso sud lungo il Rio delle Galeazze fino all’approdo del Padiglione Armenia, accanto alla Tesa 41."]}
 
    :en {;; Hero
+        :facts            [["From" "Hotel Gabrielli landing"] ["To" "Tesa 41 landing"]
+                           ["Time" "15–20 minutes"] ["Hours" "Tue – Sun, 11:00–18:30"]]
         :eyebrow          "Hotel Gabrielli → Arsenale Militare"
         :title            "By Water Taxi"
         :lead             ["From the " [:em "Hotel Gabrielli"]
@@ -138,137 +137,76 @@
                            "Enter through the only permitted entrance: Galeazze – Rio delle Galeazze."
                            "Continue south along Rio delle Galeazze to the Armenia Pavilion landing, beside Tesa 41."]}})
 
-;; ── Small pieces ───────────────────────────────────────────────────────────
+;; ── Sections ───────────────────────────────────────────────────────────────
 
-(defn rich
-  "Render a vector of plain strings and [:em \"text\"] segments as inline
-   prose; :em segments get the site's strong-emphasis treatment."
-  [segments]
-  (map-indexed (fn [i seg]
-                 (if (vector? seg)
-                   (d/span {:key i :class s/em-strong} (second seg))
-                   seg))
-               segments))
+(defnc essentials [{:keys [c]}]
+  (d/section {:class "ap-sec"}
+             (d/div {:class "ap-wrap grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start"}
+                    (d/div {:class "flex flex-col gap-8"}
+                           (d/p {:class "ap-lede m-0"} (rich (:intro c)))
+                           (d/div {:class "grid sm:grid-cols-2 gap-8"}
+                                  ($ wf/address {:title (:from-title c) :lines hotel-gabrielli-address})
+                                  ($ wf/address {:title (:to-title c)})))
+                    ($ wf/contacts {:title (:contacts-title c)
+                                    :intro (:contacts-intro c)
+                                    :items [[(:contact-primary c) julda-contact]
+                                            [(:contact-secondary c) luca-contact]
+                                            [(:contact-third c) aram-contact (:contact-third-note c)]]}))))
 
-(defnc contact-card
-  [{:keys [label note contact]}]
-  (d/div
-   (d/p {:class (s/cx s/label-muted "mb-1")} label)
-   ($ phone-link {& contact})
-   (when note
-     (d/p {:class (s/cx s/body-sm "mt-1 text-left")} note))))
+(defnc route [{:keys [c lang]}]
+  (let [interactive? (use-touch-enabled)]
+    (d/section {:class "ap-sec !pt-0"}
+               (d/div {:class "ap-wrap"}
+                      ($ wf/section-head {:label (:route-eyebrow c) :title (:route-title c)
+                                          :lede (rich (:route-body c))})
+                      ($ wf/route-map
+                         {:tall? true
+                          :map {:interactive? interactive?
+                                :initial-view mc/water-taxi-initial-view
+                                :bounds mc/water-taxi-bounds
+                                :bounds-padding {:top 48 :bottom 48 :left 32 :right 32}
+                                :ant-paths mc/water-taxi-ant-paths
+                                :layers mc/water-taxi-layers
+                                :labels-url mc/water-taxi-data-url}
+                          :legend [[:water (if (= lang :it) "Percorso del taxi" "Taxi route")]
+                                   [:start "Hotel Gabrielli"]
+                                   [:pav (if (= lang :it) "Padiglione Armenia" "Armenia Pavilion")]]
+                          :caption (:map-caption c)})))))
 
-;; ── Hero (with the page-wide language toggle) ──────────────────────────────
-
-(defnc hero-section [{:keys [c lang on-lang]}]
-  (d/div {:class "pt-10 pb-6 px-4"}
-         ($ lang-toggle {:lang lang :on-change on-lang})
-         ($ section-eyebrow {:text (:eyebrow c)})
-         (d/h1 {:class (s/cx section-display "mb-8")} (:title c))
-         (d/p {:class (s/cx s/body-lg "mb-4")} (rich (:lead c)))
-         (d/p {:class s/body-base} (rich (:intro c)))))
-
-;; ── Essentials — from / to / contacts ──────────────────────────────────────
-
-(defnc essentials-section [{:keys [c]}]
-  (d/div {:class (s/cx s/section-pb "px-4")}
-         (d/div {:class "grid grid-cols-1 sm:grid-cols-2 gap-8"}
-                ($ address-block {:title (:from-title c) :lines hotel-gabrielli-address})
-                ($ address-block {:title (:to-title c)}))
-         (d/div {:class "mt-8"}
-                ($ mini-heading {:text (:contacts-title c)})
-                (d/p {:class (s/cx s/body-base "mb-4 text-left")} (:contacts-intro c))
-                (d/div {:class "grid grid-cols-1 sm:grid-cols-3 gap-6"}
-                       ($ contact-card {:label (:contact-primary c) :contact julda-contact})
-                       ($ contact-card {:label (:contact-secondary c) :contact luca-contact})
-                       ($ contact-card {:label   (:contact-third c)
-                                        :contact aram-contact
-                                        :note    (:contact-third-note c)})))))
-
-;; ── Route map ──────────────────────────────────────────────────────────────
-
-(defnc route-section [{:keys [c]}]
-  (let [is-desktop? (use-touch-enabled)]
-    (d/div {:class s/section-pb}
-           (d/div {:class "px-4"}
-                  ($ section-eyebrow {:text (:route-eyebrow c)})
-                  (d/h2 {:class (s/cx section-display "mb-8")} (:route-title c))
-                  (d/p {:class (s/cx s/body-base "mb-8")} (rich (:route-body c))))
-
-           ($ mapbox-map
-              {:dev false
-               :interactive? is-desktop?
-               :initial-view mc/water-taxi-initial-view
-               :bounds       mc/water-taxi-bounds
-               :bounds-padding {:top 36 :bottom 36 :left 24 :right 24}
-               :ant-paths    mc/water-taxi-ant-paths
-               :layers       mc/water-taxi-layers})
-           (d/p {:class (s/cx s/font-ui s/text-sm s/em-italic s/text-muted "mt-4 px-4")}
-                (:map-caption c)))))
-
-;; ── Driver instructions ────────────────────────────────────────────────────
-
-(defnc driver-section [{:keys [c]}]
-  (d/div {:class (s/cx s/section-pb "px-4")}
-         ($ section-eyebrow {:text (:driver-eyebrow c)})
-         (d/h2 {:class (s/cx section-display "mb-8")} (:driver-title c))
-         (d/p {:class (s/cx s/body-base "mb-8")} (:driver-intro c))
-
-         ;; Header
-         (d/h3 {:class (s/cx s/heading-section "mb-1")} (:driver-heading c))
-         (d/p {:class (s/cx s/label-muted "mb-6")} (:driver-subtitle c))
-
-         ;; Authorization statement
-         (d/div {:class "space-y-3 mb-8"}
-                (d/p {:class (s/cx s/body-base s/em-strong)} (first (:authorized c)))
-                (d/p {:class s/body-base} (second (:authorized c))))
-
-         ;; Before entering — call Julda, then Luca
-         (d/div {:class "mb-8"}
-                ($ callout
-                   ($ mini-heading {:text (:before-title c) :warn? true})
-                   (d/p {:class (s/cx s/body-base "mb-2")} (:before-body c))
-                   (d/p {:class (s/cx s/body-closing "mb-4")} (:before-quote c))
-                   (d/div {:class "grid grid-cols-1 sm:grid-cols-2 gap-4"}
-                          (d/div
-                           (d/p {:class (s/cx s/label-muted "mb-1")} (:before-primary c))
-                           ($ phone-link {& julda-contact}))
-                          (d/div
-                           (d/p {:class (s/cx s/label-muted "mb-1")} (:before-secondary c))
-                           ($ phone-link {& luca-contact})))
-                   (d/p {:class (s/cx s/body-sm "mt-3 text-left")} (:before-note c))))
-
-         ;; Only permitted entrance
-         (d/div {:class "mb-8"}
-                ($ callout
-                   ($ mini-heading {:text (:entrance-title c) :warn? true})
-                   (d/p {:class (s/cx s/body-base "mb-2")} (:entrance-lead c))
-                   (d/p {:class (s/cx s/font-display s/weight-semibold s/text-lg s/text-primary "mb-3")}
-                        (:entrance-name c))
-                   (d/p {:class (s/cx s/body-base "mb-2")} (:entrance-body c))
-                   (d/p {:class (s/cx s/font-body s/text-base s/weight-medium s/text-danger "leading-relaxed")}
-                        (:entrance-warn c))))
-
-         ;; Route, step by step
-         (d/div {:class "mb-8"}
-                ($ mini-heading {:text (:steps-title c)})
-                ($ numbered-steps {:steps (:steps c)}))
-
-         ;; From / to
-         (d/div {:class "grid grid-cols-1 sm:grid-cols-2 gap-8"}
-                ($ address-block {:title (:from-title c) :lines hotel-gabrielli-address})
-                ($ address-block {:title (:to-title c)}))))
+(defnc driver [{:keys [c lang]}]
+  (d/section {:class "ap-sec bg-paper-sunk" :id "driver"}
+             (d/div {:class "ap-wrap flex flex-col gap-6 !max-w-[880px]"}
+                    ($ wf/section-head {:label (:driver-eyebrow c) :title (:driver-title c)
+                                        :lede (:driver-intro c)})
+                    ($ wf/driver-card
+                       {:lang lang
+                        :c {:subtitle (:driver-subtitle c)
+                            :authorized (:authorized c)
+                            :before-title (:before-title c)
+                            :before-body (:before-body c)
+                            :before-quote (:before-quote c)
+                            :contacts [[(:before-primary c) julda-contact]
+                                       [(:before-secondary c) luca-contact]]
+                            :before-note (:before-note c)
+                            :entrance-title (:entrance-title c)
+                            :entrance-name (:entrance-name c)
+                            :entrance-body (:entrance-body c)
+                            :entrance-warn (:entrance-warn c)
+                            :steps-title (:steps-title c)
+                            :steps (:steps c)}}))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 
 (defnc water-taxi-view
   [_props]
-  (let [[lang set-lang] (hooks/use-state :it)
+  (let [[lang set-lang!] (hooks/use-state :it)
         c (get copy lang)]
-    ($ page-shell
-       (d/div {:lang (name lang)}
-              ($ hero-section {:c c :lang lang :on-lang set-lang})
-              ($ opening-hours {:lang lang})
-              ($ essentials-section {:c c})
-              ($ route-section {:c c})
-              ($ driver-section {:c c})))))
+    (d/div {:lang (name lang) :class "bg-paper text-ink"}
+           ($ wf/page-head {:eyebrow (:eyebrow c)
+                            :title (:title c)
+                            :lede (rich (:lead c))
+                            :facts (:facts c)
+                            :aside ($ wf/lang-switch {:lang lang :on-change set-lang!})})
+           ($ essentials {:c c})
+           ($ route {:c c :lang lang})
+           ($ driver {:c c :lang lang}))))

@@ -7,9 +7,9 @@
    [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.section-header :refer [section-eyebrow]]
-   [amp.ui.directions :refer [address-block
-                              julda-contact luca-contact]]
+   [amp.ui.directions :refer [julda-contact luca-contact]]
    [amp.ui.temporary-closure :refer [closure-notice]]
+   [amp.ui.wayfinding :as wf]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
@@ -180,14 +180,14 @@
                                                          :interactive? is-desktop?
                                                          :initial-view mc/initial-view
                                                          :ant-paths mc/ant-paths
-                                                         :layers mc/layers})
+                                                         :layers mc/layers :labels-url mc/visitor-data-url})
                                           ($ mapbox-map {:key "water"
                                                          :class "!h-full !shadow-none"
                                                          :interactive? is-desktop?
                                                          :initial-view mc/water-taxi-initial-view
                                                          :bounds mc/water-taxi-bounds
                                                          :ant-paths mc/water-taxi-ant-paths
-                                                         :layers mc/water-taxi-layers})))
+                                                         :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url})))
                                  (d/div {:class "ap-legend"}
                                         (d/span (d/i {:class "walk"}) "Walking route")
                                         (d/span (d/i {:class "water"}) "Water taxi")
@@ -198,11 +198,9 @@
                                         (d/a {:class "ap-btn ap-btn--ghost" :href "#taxi"} "Driver card")))
                       (d/div {:class "flex flex-col gap-6"}
                              (if (= mode :walk) ($ walk-steps) ($ water-steps))
-                             ($ address-block {:title "Address"}))))))
+                             ($ wf/address {:title "Address"}))))))
 
 ;; ── Water taxi driver card ────────────────────────────────────────────────
-
-(def ^:private water-contacts {:julda julda-contact :luca luca-contact})
 
 (defnc taxi-card []
   (let [[lang set-lang!] (hooks/use-state :it)
@@ -214,40 +212,16 @@
                               (d/p {:class "ap-label ap-muted m-0 mb-1"}
                                    (if (= lang :it) "Mostrare al conducente" "Show this to your driver"))
                               (d/h2 {:class "ap-h1"} (:title c)))
-                             (d/div {:class "ap-lang" :role "group" :aria-label "Language"}
-                                    (for [[k label] [[:it "IT"] [:en "EN"]]]
-                                      (d/button {:key label :aria-pressed (= k lang) :on-click #(set-lang! k)}
-                                                label))))
-                      (d/div {:class "ap-taxicard" :lang (name lang)}
-                             (d/p {:class "ap-label m-0 text-blue-text"} (:subtitle c))
-                             (for [para (:authorized c)]
-                               (d/p {:key para :class "ap-body m-0"} para))
-                             (d/div {:class "ap-callout ap-callout--blue"}
-                                    (d/span {:class "ap-label"} (:before-title c))
-                                    (d/span {:class "ap-body-s"} (:before-body c))
-                                    (d/span (:before-quote c))
-                                    (d/div {:class "grid sm:grid-cols-2 gap-x-6 gap-y-1 mt-1"}
-                                           (for [[label who] (:contacts c)
-                                                 :let [{:keys [tel display]} (water-contacts who)]]
-                                             (d/a {:key label :class "ap-telrow" :href (str "tel:" tel)}
-                                                  (d/span {:class "ap-label"} label)
-                                                  (d/span {:class "ap-telrow__num"} display))))
-                                    (d/span {:class "ap-caption !text-on-blue"} (:before-note c)))
-                             (d/div {:class "flex flex-col gap-1.5"}
-                                    (d/p {:class "ap-label ap-muted m-0"} (:entrance-title c))
-                                    (d/p {:class "ap-h2 m-0"} (:entrance-name c))
-                                    (d/p {:class "ap-body-s m-0"} (:entrance-body c)))
-                             (d/p {:class "ap-taxicard__warn"} (:entrance-warn c))
-                             (d/figure {:class "ap-figure"}
-                                       (d/div {:class "ap-map__live" :role "img"
-                                               :aria-label "Map of the Arsenale showing the only permitted water taxi entrance at Rio delle Galeazze and the route south to the Armenia Pavilion landing"}
-                                              ($ mapbox-map {:class "!h-full"
-                                                             :interactive? false
-                                                             :initial-view mc/water-taxi-initial-view
-                                                             :bounds mc/galeazze-bounds
-                                                             :ant-paths mc/water-taxi-ant-paths
-                                                             :layers mc/water-taxi-layers}))
-                                       (d/figcaption {:class "ap-caption"} (:map-caption c))))))))
+                             ($ wf/lang-switch {:lang lang :on-change set-lang!}))
+                      ($ wf/driver-card
+                         {:lang lang
+                          :c (assoc c :contacts (for [[label who] (:contacts c)]
+                                                  [label ({:julda julda-contact :luca luca-contact} who)]))})
+                      (d/a {:class "ap-link ap-body-s self-start py-3"
+                            :href "/route-from-hotel-gabrielli"}
+                           (if (= lang :it)
+                             "Percorso completo dall’Hotel Gabrielli"
+                             "Full route from Hotel Gabrielli"))))))
 
 ;; ── About ──────────────────────────────────────────────────────────────────
 

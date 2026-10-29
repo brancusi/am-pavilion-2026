@@ -267,7 +267,7 @@
                                                  :initial-view mc/water-taxi-initial-view
                                                  :bounds mc/galeazze-bounds
                                                  :ant-paths mc/water-taxi-ant-paths
-                                                 :layers mc/water-taxi-layers}))
+                                                 :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url}))
                            (d/p {:class "ap-caption m-0 p-4"}
                                 "Water taxi route: enter from the North Lagoon via Rio delle Galeazze to the pavilion drop-off point."))
                     (d/div {:class "flex flex-col gap-6"}
