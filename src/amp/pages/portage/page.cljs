@@ -7,7 +7,9 @@
    Portage sub-nav, loads a sheet and ports the original page scripts:
    strip galleries, credit popovers, the lightbox and the Walk's route."
   (:require [amp.lib.defnc :refer [defnc]]
+            [amp.services.router :refer [flush-scroll!]]
             [amp.state.provider :refer [use-main-state]]
+            ["gsap" :refer [gsap]]
             [clojure.string :as str]
             [helix.core :refer [$]]
             [helix.dom :as d]
@@ -15,6 +17,19 @@
 
 (def ^:private css-url "/data/portage/portage.css")
 (defn- html-url [slug] (str "/data/portage/" slug ".html"))
+
+;; slug → sheet HTML once fetched, so a sheet renders at once on its swap.
+(defonce ^:private loaded (atom {}))
+
+(defn- fetch-sheet
+  "A promise of the sheet's HTML (\"\" if it can't be had)."
+  [slug]
+  (if-let [html (get @loaded slug)]
+    (js/Promise.resolve html)
+    (-> (js/fetch (html-url slug))
+        (.then #(if (.-ok %) (.text %) ""))
+        (.then (fn [html] (when (seq html) (swap! loaded assoc slug html)) html))
+        (.catch (fn [_] "")))))
 
 (def sheets
   "Every sheet in reading order. :n is the number shown in red; the five
@@ -515,17 +530,21 @@
 (defnc sheet-body
   [{:keys [slug css?]}]
   (let [root (hooks/use-ref nil)
-        [html set-html!] (hooks/use-state nil)]
+        born (hooks/use-ref (js/performance.now))
+        [html set-html!] (hooks/use-state #(get @loaded slug))]
     (hooks/use-effect
      :once
-     (-> (js/fetch (html-url slug))
-         (.then #(if (.-ok %) (.text %) ""))
-         (.then set-html!)
-         (.catch (fn [_] (set-html! "")))))
-    (hooks/use-effect
+     (when-not html (.then (fetch-sheet slug) set-html!)))
+    ;; A layout effect: the sheet is in place before the frame is painted
+    ;; (and before portage-view scrolls), so nothing shifts.
+    (hooks/use-layout-effect
      [html css?]
      (when-let [el (and html css? @root)]
        (set! (.-innerHTML el) (str html lightbox-html))
+       ;; Arrived after the page was already showing (first visit, while
+       ;; the stylesheet or sheet loaded): fade in rather than pop.
+       (when (and (> (- (js/performance.now) @born) 50) (not (reduced-motion?)))
+         (.fromTo gsap el #js {:opacity 0} #js {:opacity 1 :duration 0.24 :ease "power2.out" :clearProps "opacity"}))
        (let [data (try (js/JSON.parse (or (some-> (.querySelector el "script.lb-data") .-textContent) "{}"))
                        (catch :default _ #js {}))
              offs (concat (map gallery! (array-seq (.querySelectorAll el ".gal-strip")))
@@ -536,16 +555,61 @@
          #(doseq [off offs :when off] (off)))))
     (d/div {:aria-busy (not (and html css?))}
            (when-not (and html css?)
-             (d/p {:class "ap-label ap-muted px-4 py-24 text-center m-0"} "Loading…"))
+             (d/p {:class "pt-loading ap-label ap-muted px-4 py-24 text-center m-0"} "Loading…"))
            (when (= html "")
              (d/p {:class "ap-body px-4 py-24 text-center m-0"} "This sheet could not be loaded."))
            ;; Filled with innerHTML above; React renders no children here.
-           (d/div {:ref root}))))
+           (d/div {:ref root})
+           ;; Only under a filled sheet, so it never sits up top and jumps.
+           (when (and (seq html) css?)
+             ($ next-sheet {:slug slug})))))
+
+(defn- use-sheet-swap!
+  "The sheet on screen trails the route: on a new sheet the current one
+   fades out while the next is fetched, then it swaps, scrolls and fades in.
+   The sub-nav follows the route at once. Returns the slug to show."
+  [slug body-ref]
+  (let [[shown set-shown!] (hooks/use-state slug)
+        token (hooks/use-ref 0)
+        swapped (hooks/use-ref false)]
+    (hooks/use-effect
+     [slug]
+     (let [t (set! (.-current token) (inc @token))
+           el @body-ref]
+       (if (= slug shown)
+         (do (when el (.to gsap el #js {:opacity 1 :duration 0.2 :overwrite true}))
+             (flush-scroll!))
+         (-> (js/Promise.all
+              #js [(js/Promise. (fn [resolve]
+                                  (if (or (nil? el) (reduced-motion?))
+                                    (resolve nil)
+                                    (.to gsap el #js {:opacity 0 :duration 0.12 :ease "power1.in"
+                                                      :overwrite true :onComplete resolve}))))
+                   (fetch-sheet slug)])
+             (.then #(when (= t @token)
+                       (set! (.-current swapped) true)
+                       (set-shown! slug)))))
+       js/undefined))
+    (hooks/use-layout-effect
+     [shown]
+     (when @swapped
+       (set! (.-current swapped) false)
+       (flush-scroll!)
+       (when-let [el @body-ref]
+         (if (reduced-motion?)
+           (.set gsap el #js {:clearProps "opacity"})
+           (.fromTo gsap el #js {:opacity 0}
+                    #js {:opacity 1 :duration 0.22 :ease "power2.out" :overwrite true
+                         :clearProps "opacity"}))))
+     js/undefined)
+    shown))
 
 (defnc portage-view
   [_props]
   (let [[state _] (use-main-state)
-        slug (or (-> state :current-route :path-params :sheet) "home")
+        route-slug (or (-> state :current-route :path-params :sheet) "home")
+        body-ref (hooks/use-ref nil)
+        slug (use-sheet-swap! route-slug body-ref)
         sheet (by-slug slug)
         [css? set-css!] (hooks/use-state false)]
     (use-css! #(set-css! true))
@@ -556,9 +620,8 @@
              (str (:long sheet) " · Portage · Armenia Pavilion")
              "Portage · Armenia Pavilion")))
     (d/div {:class "pt"}
-           ($ sub-nav {:slug (if sheet slug "home")})
+           ($ sub-nav {:slug (if (by-slug route-slug) route-slug "home")})
            (if sheet
-             (d/div
-              ($ sheet-body {:key slug :slug slug :css? css?})
-              ($ next-sheet {:slug slug}))
+             (d/div {:ref body-ref}
+              ($ sheet-body {:key slug :slug slug :css? css?}))
              (d/p {:class "ap-body px-4 py-24 text-center m-0"} "There is no such sheet.")))))

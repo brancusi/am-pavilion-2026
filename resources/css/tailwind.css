@@ -773,3 +773,5 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .pt-next__next { grid-column: 2; text-align: right; }
 .pt-next__t { font: 500 clamp(20px, 2.4vw, 28px)/1.1 var(--font-display); }
 @media (min-width: 1100px) { .pt-next { padding-left: 48px; padding-right: 48px; } }
+/* Only say so when a sheet is slow to arrive; a quick one just fades in. */
+.pt-loading { animation: ap-fade .2s .6s both; }
