@@ -6,19 +6,16 @@
    [amp.pages.venue.map-config :as mc]
    [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
-   [amp.ui.page-shell :refer [page-shell]]
    [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.directions :refer [marine-office-phone water-taxi-map-src
-                              phone-link map-button sub-heading mini-heading
-                              address-block callout numbered-steps opening-hours
-                              lang-toggle]]
+                              address-block opening-hours]]
    [amp.ui.temporary-closure :refer [closure-notice]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
-   [helix.core :refer [$]]
+   [helix.core :refer [$ <>]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
@@ -42,22 +39,22 @@
 ;; ── Gallery slides ─────────────────────────────────────────────────────────
 
 (def tesa-41-slides
-  [{:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+  [{:img-src "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
     :aspect-ratio 1.34
     :active? true}
-   {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
+   {:img-src "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
     :aspect-ratio 1.34
     :active? true}
-   {:img-src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
+   {:img-src "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.18.tif"
     :aspect-ratio 1.34
     :active? true}])
 
 (def crossing-slides
-  [{:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+  [{:img-src "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
     :aspect-ratio 1.82
     :caption "Crossing at the Arsenale"
     :credit "Render 2026"}
-   {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+   {:img-src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
     :aspect-ratio 1.82
     :caption "Crossing at the Arsenale"
     :credit "Render 2026"}])
@@ -108,131 +105,146 @@
         :map-caption  "Percorso del taxi acqueo — entrare dalla Laguna Nord tramite il Rio delle Galeazze e proseguire verso sud fino all’approdo del padiglione"
         :address-title "Indirizzo"}})
 
-;; ── Directions — On Foot ───────────────────────────────────────────────────
+;; ── Header ─────────────────────────────────────────────────────────────────
 
-(defnc walking-directions [{:keys []}]
-  (let [is-desktop? (use-touch-enabled)]
-    (d/div {:class "mb-16"}
-           (d/div {:class "px-4"}
-                  ($ sub-heading {:text "On Foot"})
-                  (d/p {:class (s/cx s/body-base "mb-6")}
-                       "The pavilion sits inside the Arsenale, roughly an "
-                       (d/span {:class s/em-strong} "eight-minute walk")
-                       " from the crossing at the "
-                       (d/span {:class s/em-strong} "Piraeus Lion")
-                       ". Follow the highlighted route on the map to "
-                       (d/span {:class s/em-strong} "Tesa 41")
-                       ".")
+(defnc visit-head []
+  (<>
+   (d/section {:class "ap-vhead"}
+              (d/div {:class "ap-wrap ap-vhead__grid"}
+                     (d/div {:class "flex flex-col gap-5"}
+                            (d/p {:class "ap-label m-0 text-yellow"} "Visit · Venice · Arsenale Militare")
+                            (d/h1 {:class "ap-display-xl"} "Getting to Tesa 41")
+                            (d/p {:class "ap-lede max-w-[36ch]"}
+                                 "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. "
+                                 "Guests by water taxi enter from the North Lagoon."))
+                     (d/dl {:class "ap-keyfacts"}
+                           (for [[k v] [["Dates" "9 May – 22 Nov 2026"]
+                                        ["Hours" "Tue – Sun, 11:00–18:30"]
+                                        ["Hall" "Tesa 41"]
+                                        ["On foot" "≈ 8 min from the Lion"]]]
+                             (d/div {:key k} (d/dt k) (d/dd v))))))
+   (d/div {:class "ap-hero__strip" :aria-hidden true}
+          (for [i (range 9)] (d/i {:key i})))))
 
-                  (d/div {:class "mb-8"}
-                         ($ address-block {:title "Address"})))
+;; ── Map guide ──────────────────────────────────────────────────────────────
 
-           ($ map-button)
+(def ^:private modes
+  {:walk  {:no "01" :title "On foot from the Piraeus Lion" :meta "About 8 minutes through the Arsenale"}
+   :water {:no "02" :title "By water taxi" :meta "North Lagoon → Rio delle Galeazze → pavilion landing"}})
 
-           (d/div {:class "mb-6"}
-                  ($ mapbox-map
-                     {:dev false
-                      :interactive? is-desktop?
-                      :initial-view mc/initial-view
-                      :ant-paths    mc/ant-paths
-                      :layers       mc/layers})
-                  (d/p {:class (s/cx s/font-ui s/text-sm s/em-italic s/text-muted "mt-4 px-4")}
-                       "Walking path from the crossing to the pavilion — approximately 8 minutes")))))
+(defnc walk-steps []
+  (<>
+   (d/p {:class "ap-label ap-muted m-0"} "On foot · about 8 min")
+   (d/ol {:class "ap-steps"}
+         (d/li {:class "ap-step"}
+               (d/span {:class "ap-step__dist"} "START")
+               (d/h3 {:class "ap-step__title"} "The Piraeus Lion")
+               (d/p {:class "ap-step__body"} "Begin at the crossing by the lion, the landmark at the Arsenale approach."))
+         (d/li {:class "ap-step"}
+               (d/span {:class "ap-step__dist"} "ROUTE")
+               (d/h3 {:class "ap-step__title"} "Follow the yellow line")
+               (d/p {:class "ap-step__body"} "The highlighted route on the map leads through the Arsenale to Tesa 41."))
+         (d/li {:class "ap-step ap-step--end"}
+               (d/span {:class "ap-step__dist"} "≈ 8 MIN")
+               (d/h3 {:class "ap-step__title"} "Tesa 41")
+               (d/p {:class "ap-step__body"} "Armenia Pavilion, Arsenale Militare.")))))
 
-;; ── Directions — By Water Taxi ─────────────────────────────────────────────
+(defnc water-steps []
+  (let [steps (get-in water-taxi-copy [:en :route-steps])
+        heads ["North Lagoon" "Only entrance" "South" "Landing"]]
+    (<>
+     (d/p {:class "ap-label ap-muted m-0"} "Water taxi · authorised access")
+     (d/ol {:class "ap-steps ap-steps--water"}
+           (map-indexed
+            (fn [i step]
+              (d/li {:key i :class (str "ap-step" (when (= i (dec (count steps))) " ap-step--end"))}
+                    (d/span {:class "ap-step__dist"} (.toUpperCase (nth heads i)))
+                    (d/p {:class "ap-step__body"} step)))
+            steps))
+     (d/a {:class "ap-link ap-body-s self-start" :href "/route-from-hotel-gabrielli"}
+          "Full route from Hotel Gabrielli"))))
 
-(defnc water-taxi-directions [{:keys []}]
-  (let [[lang set-lang] (hooks/use-state :it)
+(defnc map-guide []
+  (let [[mode set-mode!] (hooks/use-state :walk)
+        is-desktop? (use-touch-enabled)
+        {:keys [no title meta]} (modes mode)]
+    (d/section {:class "ap-sec"}
+               (d/div {:class "ap-wrap ap-guide"}
+                      (d/section {:class "ap-map ap-map--stack" :aria-labelledby "guide-title"}
+                                 (d/div {:class "ap-map__head"}
+                                        (d/p {:class "ap-label ap-muted m-0"} (str "Guide · " no))
+                                        (d/h2 {:class "ap-h2" :id "guide-title"} title)
+                                        (d/p {:class "ap-caption m-0"} meta))
+                                 (d/div {:class "ap-map__modes" :role "group" :aria-label "Route"}
+                                        (d/button {:aria-pressed (= mode :walk) :on-click #(set-mode! :walk)}
+                                                  (d/i {:class "bg-yellow outline outline-1 outline-ink"}) "On foot")
+                                        (d/button {:aria-pressed (= mode :water) :on-click #(set-mode! :water)}
+                                                  (d/i {:class "bg-blue"}) "Water taxi"))
+                                 (d/div {:class "ap-map__live"}
+                                        (if (= mode :walk)
+                                          ($ mapbox-map {:key "walk"
+                                                         :class "!h-full !shadow-none"
+                                                         :interactive? is-desktop?
+                                                         :initial-view mc/initial-view
+                                                         :ant-paths mc/ant-paths
+                                                         :layers mc/layers})
+                                          ($ mapbox-map {:key "water"
+                                                         :class "!h-full !shadow-none"
+                                                         :interactive? is-desktop?
+                                                         :initial-view mc/water-taxi-initial-view
+                                                         :bounds mc/water-taxi-bounds
+                                                         :ant-paths mc/water-taxi-ant-paths
+                                                         :layers mc/water-taxi-layers})))
+                                 (d/div {:class "ap-legend"}
+                                        (d/span (d/i {:class "walk"}) "Walking route")
+                                        (d/span (d/i {:class "water"}) "Water taxi")
+                                        (d/span (d/i {:class "pav"}) "Armenia Pavilion"))
+                                 (d/div {:class "ap-map__actions"}
+                                        (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
+                                             "Open in Maps")
+                                        (d/a {:class "ap-btn ap-btn--ghost" :href "#taxi"} "Driver card")))
+                      (d/div {:class "flex flex-col gap-6"}
+                             (if (= mode :walk) ($ walk-steps) ($ water-steps))
+                             ($ address-block {:title "Address"}))))))
+
+;; ── Water taxi driver card ────────────────────────────────────────────────
+
+(defnc taxi-card []
+  (let [[lang set-lang!] (hooks/use-state :it)
         c (get water-taxi-copy lang)]
-    (d/div {:class "mb-8"}
-           (d/div {:class "px-4"}
-                  ($ sub-heading {:text "By Water Taxi"})
-
-                  (d/p {:class (s/cx s/body-base "mb-6")}
-                       "Water taxis can bring guests directly to the pavilion’s landing inside the "
-                       (d/span {:class s/em-strong} "Arsenale Militare")
-                       ". Access is approved by the Marine Office, but the driver must follow the procedure below. "
-                       (d/span {:class s/em-italic} "Show these instructions to your driver — they are in Italian by default, with English available."))
-
-                  ($ lang-toggle {:lang lang :on-change set-lang})
-
-                  ;; Header
-                  (d/h4 {:class (s/cx s/heading-section "mb-1")} (:title c))
-                  (d/p {:class (s/cx s/label-muted "mb-6")} (:subtitle c))
-
-                  ;; Authorization statement
-                  (d/div {:class "space-y-3 mb-8"}
-                         (d/p {:class (s/cx s/body-base s/em-strong)} (first (:authorized c)))
-                         (d/p {:class s/body-base} (second (:authorized c))))
-
-                  ;; Before entering — call the Marine Office
-                  (d/div {:class "mb-8"}
-                         ($ callout
-                            ($ mini-heading {:text (:before-title c) :warn? true})
-                            (d/p {:class (s/cx s/body-base "mb-2")} (:before-body c))
-                            (d/p {:class (s/cx s/body-closing "mb-4")} (:before-quote c))
-                            (d/p {:class (s/cx s/label-muted "mb-1")} (:marine-label c))
-                            ($ phone-link {& marine-office-phone})))
-
-                  ;; Only permitted entrance
-                  (d/div {:class "mb-8"}
-                         ($ callout
-                            ($ mini-heading {:text (:entrance-title c) :warn? true})
-                            (d/p {:class (s/cx s/body-base "mb-2")} (:entrance-lead c))
-                            (d/p {:class (s/cx s/font-display s/weight-semibold s/text-lg s/text-primary "mb-3")}
-                                 (:entrance-name c))
-                            (d/p {:class (s/cx s/body-base "mb-2")} (:entrance-body c))
-                            (d/p {:class (s/cx s/font-body s/text-base s/weight-medium s/text-danger "leading-relaxed")} (:entrance-warn c))))
-
-                  ;; Route
-                  (d/div {:class "mb-8"}
-                         ($ mini-heading {:text (:route-title c)})
-                         ($ numbered-steps {:steps (:route-steps c)}))
-
-                  ;; Address
-                  (d/div {:class "mb-8"}
-                         ($ address-block {:title (:address-title c)})))
-
-           ;; Route map
-           (d/div {:class "mb-8"}
-                  (d/img {:src water-taxi-map-src
-                          :alt "Map of the Arsenale showing the only permitted water taxi entrance at Rio delle Galeazze and the route south to the Armenian Pavilion drop-off point"
-                          :loading "lazy"
-                          :class "w-full h-auto"})
-                  (d/p {:class (s/cx s/font-ui s/text-sm s/em-italic s/text-muted "mt-4 px-4")}
-                       (:map-caption c))))))
-
-;; ── Getting There (walking + water taxi) ──────────────────────────────────
-
-(defnc getting-there-section [{:keys []}]
-  (d/div {:class s/section-pb}
-         (d/div {:class "px-4"}
-                ($ venue-eyebrow {:text "Directions"})
-                (d/h2 {:class (s/cx venue-display "mb-8")}
-                      "Getting There"))
-         ($ walking-directions)
-         ($ water-taxi-directions)))
-
-;; ── Hero ───────────────────────────────────────────────────────────────────
-
-(defnc hero-section
-  [{:keys []}]
-  (d/div {:class "pt-10 pb-4 px-4"}
-         ($ venue-eyebrow {:text "Venice · Arsenale Militare"})
-
-         ;; Display title
-         (d/h1 {:class (s/cx venue-display "mb-8")}
-               "Visit the pavilion")
-
-         ;; Lead copy — enticing, sets the two-site narrative
-         (d/p {:class (s/cx s/body-lg "mb-4")}
-              "The Armenia Pavilion unfolds across "
-              (d/span {:class s/em-strong} "two sites")
-              " within the historic Arsenale of Venice. Reach it "
-              (d/span {:class s/em-strong} "on foot")
-              " through the Biennale grounds, or arrive by "
-              (d/span {:class s/em-strong} "water taxi")
-              " directly at the pavilion’s landing.")))
+    (d/section {:class "ap-sec bg-paper-sunk" :id "taxi"}
+               (d/div {:class "ap-wrap flex flex-col gap-6 !max-w-[880px]"}
+                      (d/div {:class "ap-head-row !m-0"}
+                             (d/div
+                              (d/p {:class "ap-label ap-muted m-0 mb-1"}
+                                   (if (= lang :it) "Mostrare al conducente" "Show this to your driver"))
+                              (d/h2 {:class "ap-h1"} (:title c)))
+                             (d/div {:class "ap-lang" :role "group" :aria-label "Language"}
+                                    (for [[k label] [[:it "IT"] [:en "EN"]]]
+                                      (d/button {:key label :aria-pressed (= k lang) :on-click #(set-lang! k)}
+                                                label))))
+                      (d/div {:class "ap-taxicard" :lang (name lang)}
+                             (d/p {:class "ap-label m-0 text-blue-text"} (:subtitle c))
+                             (for [para (:authorized c)]
+                               (d/p {:key para :class "ap-body m-0"} para))
+                             (d/div {:class "ap-callout ap-callout--blue"}
+                                    (d/span {:class "ap-label"} (:before-title c))
+                                    (d/span {:class "ap-body-s"} (:before-body c))
+                                    (d/q {:class "[quotes:none]"} (:before-quote c))
+                                    (d/span {:class "ap-caption !text-on-blue"}
+                                            (:marine-label c) " · "
+                                            (d/a {:class "underline text-on-blue"
+                                                  :href (str "tel:" (:tel marine-office-phone))}
+                                                 (:display marine-office-phone))))
+                             (d/div {:class "flex flex-col gap-1.5"}
+                                    (d/p {:class "ap-label ap-muted m-0"} (:entrance-title c))
+                                    (d/p {:class "ap-h2 m-0"} (:entrance-name c))
+                                    (d/p {:class "ap-body-s m-0"} (:entrance-body c)))
+                             (d/p {:class "ap-taxicard__warn"} (:entrance-warn c))
+                             (d/figure {:class "ap-figure"}
+                                       (d/img {:src water-taxi-map-src :loading "lazy" :class "w-full h-auto"
+                                               :alt "Map of the Arsenale showing the only permitted water taxi entrance at Rio delle Galeazze and the route south to the Armenia Pavilion drop-off point"})
+                                       (d/figcaption {:class "ap-caption"} (:map-caption c))))))))
 
 ;; ── About ──────────────────────────────────────────────────────────────────
 
@@ -414,12 +426,15 @@
 
 (defnc venue-view
   [_props]
-  ($ page-shell
-     ($ hero-section)
-     ($ closure-notice)
-     ($ opening-hours)
-     ($ getting-there-section)
-     ($ about-section)
-     ($ studio-section)
-     ($ outdoor-section)
-     ($ arsenale-section)))
+  (d/div
+   ($ visit-head)
+   (d/div {:class "ap-wrap pt-8"} ($ closure-notice))
+   ($ map-guide)
+   ($ taxi-card)
+   (d/div {:class (s/cx s/content-column-container "pt-16 lg:pt-24")}
+          (d/div {:class (s/cx "flex flex-col" s/content-column)}
+                 ($ opening-hours)
+                 ($ about-section)
+                 ($ studio-section)
+                 ($ outdoor-section)
+                 ($ arsenale-section)))))

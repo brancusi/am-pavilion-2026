@@ -1,168 +1,78 @@
 (ns amp.ui.footer
-  "Site-wide footer rendered by the layout shell (section-transitioner).
-   Quick Links adapt based on the current route: scroll-to-id on the landing
-   page, site navigation links on all other pages."
+  "Site-wide footer (design system: Footer), rendered by the layout shell.
+   A night band in both themes: red donate block, link columns, contact and
+   non-profit details, partner marks and the legal line."
   (:require
-   [amp.data.donations :as donations]
-   [amp.ui.button :refer [main-button]]
-   [amp.ui.social-links :refer [social-links]]
    [amp.config]
-   [amp.hooks.use-scroll-to :refer [use-scroll-to-id]]
    [amp.lib.defnc :refer [defnc]]
    [amp.services.router :as router]
    [amp.state.provider :refer [use-main-state]]
-   [amp.styles :as s]
+   [amp.ui.social-links :refer [social-links]]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [reitit.frontend.easy :as rfe]))
 
-;; ---------------------------------------------------------------------------
-;; Quick Links — route-aware
-;; ---------------------------------------------------------------------------
-
-(def ^:private landing-links
-  "Scroll targets for the landing page."
-  [{:label "The Film"       :id "video"}
-   {:label "Press Release"  :id "press-release"}
-   {:label "The Studio"     :id "about-studio"}])
-
-(def ^:private site-links
-  "Navigation links shown on non-landing pages."
-  [{:label "Home"    :href "/"}
-   {:label "Visit"   :href "/visit"}
-   {:label "Artist"  :href "/artist"}
-   {:label "Blog"    :href "/blog"}
-   {:label "Press"   :href "/press"}])
-
-(def ^:private link-class
-  (str "block transition-colors text-left "
-       s/text-secondary
-       " hover:text-pink-600 dark:hover:text-pink-300"))
-
-(defnc quick-links-landing
-  "Scroll-to-id links for the landing page."
-  [_props]
-  (let [scroll-to-id (use-scroll-to-id)]
-    (d/div {:class "space-y-3"}
-           (d/h3 {:class (s/cx s/footer-heading "mb-4")}
-                 "Quick Links")
-           (for [{:keys [label id]} landing-links]
-             (d/button {:key id
-                        :class link-class
-                        :on-click #(scroll-to-id id)}
-                       label)))))
-
-(defnc quick-links-site
-  "Navigation links for non-landing pages."
-  [_props]
-  (d/div {:class "space-y-3"}
-         (d/h3 {:class (s/cx s/footer-heading "mb-4")}
-               "Quick Links")
-         (for [{:keys [label href]} site-links]
-           (d/a {:key href
-                 :href href
-                 :class link-class}
-                label))))
-
-;; ---------------------------------------------------------------------------
-;; Site Footer
-;; ---------------------------------------------------------------------------
+(def ^:private columns
+  [{:title "Exhibition"
+    :links [{:label "The Studio" :href "/"}
+            {:label "Artist"     :href "/artist"}
+            {:label "Press"      :href "/press"}]}
+   {:title "Visit"
+    :links [{:label "Getting there"   :href "/visit"}
+            {:label "Water taxi" :href "/visit"}]}
+   {:title "More"
+    :links [{:label "Journal" :href "/blog"}
+            {:label "Budget"  :href "/budget"}
+            {:label "Donate"  :href "/donate"}]}])
 
 (defnc site-footer
-  "Shared site-wide footer. Reads current route from app state to decide
-   which Quick Links variant to render."
   [_props]
   (let [[state _] (use-main-state)
-        route-name (-> state :current-route :data :name)
-        on-landing? (= route-name :home)
-        donations-page? (= route-name ::router/donate)]
-
+        donations-page? (= (-> state :current-route :data :name) ::router/donate)]
     (d/footer
-     {:class (s/cx "relative w-full" s/font-display
-                   s/bg-footer)}
+     {:class "ap-footer"}
 
-     ;; ── Divider ──
-     (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"})
+     ;; The donate page carries this message itself.
+     (when-not donations-page?
+       (d/div {:class "ap-footer__donate"}
+              (d/p {:class "ap-label m-0"} "Support the pavilion")
+              (d/p {:class "ap-h2 m-0"} "Help bring The Studio to Venice.")
+              (d/p {:class "ap-body-s m-0"}
+                   "Your contribution directly supports Armenia’s national presentation at Biennale Arte 2026.")
+              (d/a {:class "ap-btn self-start" :href (rfe/href ::router/donate)}
+                   "Donate")))
 
-     ;; ── Pull quote ──
-     (d/div {:class (s/cx s/content-column-container "py-16 lg:py-24 px-4")}
-            (d/blockquote
-             {:class (s/cx s/content-column "text-center")}
-             (d/p {:class (s/cx s/font-display "text-xl lg:text-2xl italic" s/weight-normal "leading-relaxed"
-                                s/text-muted)}
-                  "\u201CThe way you do anything is the way you do everything.\u201D")))
+     (d/div {:class (str "ap-footer__cols" (when donations-page? " lg:col-span-2"))}
+            (for [{:keys [title links]} columns]
+              (d/div {:key title}
+                     (d/h4 title)
+                     (d/ul
+                      (for [{:keys [label href]} links]
+                        (d/li {:key label} (d/a {:href href} label)))))))
 
-     ;; ── Divider ──
-     (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"})
+     (d/div {:class "grid gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3"}
+            (d/div {:class "ap-footer__cols !grid-cols-1 !gap-2"}
+                   (d/div
+                    (d/h4 "Get in touch")
+                    (d/ul
+                     (d/li (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"}
+                                "hello@armenianpavilion2026.org"))
+                     (d/li (d/a {:href "tel:+13234041152"} "+1 323-404-1152")))))
+            (d/div {:class "ap-footer__cols !grid-cols-1 !gap-2"}
+                   (d/div
+                    (d/h4 "501(c)(3) non-profit")
+                    (d/p {:class "ap-body-s m-0"} "Fallen Angels Inc.")
+                    (d/p {:class "ap-caption m-0 !text-on-night opacity-80"} "EIN 92-2395513 · Los Angeles, CA")))
+            (d/div ($ social-links)))
 
-     ;; ── CTA + Contact grid ──
-     (d/div {:class (s/cx s/content-column-container "py-16 lg:py-20 px-4")}
-            (d/div {:class (s/cx s/content-column)}
+     (d/div {:class "ap-footer__partners"}
+            (d/a {:href "https://www.labiennale.org/en/art/2026" :target "_blank" :rel "noopener"
+                  :aria-label "La Biennale di Venezia — Biennale Arte 2026"}
+                 (d/img {:src "/images/graphics/61_biennale_logo_line.svg"
+                         :alt "Biennale Arte 2026"})))
 
-                   ;; Primary CTA
-                   (d/div {:class "text-center mb-16"}
-                          (d/h2 {:class (s/cx s/font-display "text-2xl lg:text-3xl" s/weight-semibold
-                                              "uppercase tracking-wider mb-3" s/text-primary)}
-                                "Support the Pavilion")
-                          (d/p {:class (s/cx s/body-sm "max-w-xl mx-auto mb-8 text-center")}
-                               "Your contribution directly supports Armenia\u2019s national presentation at the 61st Venice Biennale.")
-                          (d/div {:class "flex justify-center"}
-                                 ($ main-button
-                                    {:title (if donations-page?
-                                              "Open Stripe Checkout"
-                                              "Donate Now")
-                                     :on-click #(if donations-page?
-                                                  (js/window.open donations/stripe-link "_blank")
-                                                  (rfe/push-state ::router/donate))})))
-
-                   ;; Four-column info
-                   (d/div {:class "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 text-sm"}
-
-                          ;; Contact
-                          (d/div {:class "space-y-3"}
-                                 (d/h3 {:class (s/cx s/footer-heading "mb-4")}
-                                       "Get in Touch")
-                                 (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"
-                                       :class (s/cx "block transition-colors"
-                                                    s/text-secondary
-                                                    s/link-hover-accent)}
-                                      "hello@armenianpavilion2026.org")
-                                 (d/a {:href "tel:+13234041152"
-                                       :class (s/cx "block transition-colors"
-                                                    s/text-secondary
-                                                    s/link-hover-accent)}
-                                      "+1 323-404-1152"))
-
-                          ;; Organization
-                          (d/div {:class "space-y-3"}
-                                 (d/h3 {:class (s/cx s/footer-heading "mb-4")}
-                                       "501(c)(3) Non-Profit")
-                                 (d/p {:class s/text-secondary} "Fallen Angels Inc.")
-                                 (d/p {:class s/text-muted} "EIN: 92-2395513")
-                                 (d/p {:class s/text-muted} "Los Angeles, CA"))
-
-                          ;; Quick links — route-aware
-                          (if on-landing?
-                            ($ quick-links-landing)
-                            ($ quick-links-site))
-
-                          ;; Social links
-                          ($ social-links))))
-
-     ;; ── Bottom bar ──
-     (d/div {:class "w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"})
-
-     (d/div {:class (s/cx s/content-column-container "py-6 px-4")}
-            (d/div {:class (s/cx s/content-column
-                                 "flex flex-col sm:flex-row justify-between items-center gap-3")}
-                   (d/div {:class "flex items-center gap-4"}
-                          (d/img {:src "/images/graphics/61_biennale_logo_line.svg"
-                                  :class "h-6 opacity-40 invert dark:invert-0"})
-                          (d/span {:class (s/cx "text-[10px] uppercase tracking-[0.15em] whitespace-nowrap"
-                                                s/text-muted)}
-                                  "Armenia Pavilion \u00B7 61st Venice Biennale"))
-                   (d/div {:class "flex items-center gap-4"}
-                          (d/span {:class (s/cx "text-[10px]" s/text-muted)}
-                                  "\u00A9 2026 AZ Studios Inc.")
-                          (d/span {:class (s/cx "text-[10px]" s/text-ghost)}
-                                  (str "v" amp.config/git-hash))))))))
+     (d/p {:class "ap-footer__legal"}
+          "Armenia Pavilion · 61st International Art Exhibition — La Biennale di Venezia · "
+          "Arsenale Militare, Tesa 41 · 9 May – 22 November 2026"
+          (d/br)
+          "© 2026 AZ Studios Inc. · v" amp.config/git-hash))))

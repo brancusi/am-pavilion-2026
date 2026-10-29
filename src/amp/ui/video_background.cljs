@@ -69,6 +69,9 @@
                :playsInline ""
                :autoPlay should-play?
                :streamType "on-demand"
+               ;; Several edits have captions burned in; keep Mux's generated
+               ;; track available in the menu but hidden by default.
+               :defaultHiddenCaptions true
                :preferplayback "mse"})
 
            (when allow-audio?
@@ -78,3 +81,19 @@
                          SpeakerWaveIcon
                          SpeakerXMarkIcon)
                        {:className "w-6 h-6"}))))))
+
+(defnc film-player
+  "Full player for films people choose to watch: controls, sound on, and
+   Mux's generated captions available (hidden by default) in the menu."
+  [{:keys [playback-id title poster]}]
+  ($ MuxPlayer
+     {:playbackId playback-id
+      :class "w-full h-full block"
+      :autoPlay true
+      :playsInline true
+      :streamType "on-demand"
+      :defaultHiddenCaptions true
+      :accentColor "#f2cf2e"
+      :poster poster
+      :metadata #js {:video_title title}
+      :style #js {"--media-object-fit" "cover" :aspectRatio "16 / 9"}}))

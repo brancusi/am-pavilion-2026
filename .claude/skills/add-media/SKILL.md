@@ -39,7 +39,18 @@ sign in and choose **Production**. It exposes:
 
 The sandbox only reaches Mux API hosts: it **cannot read local files**, which is why uploads use the CLI.
 
-## 1. Upload to Mux (CLI)
+## 1. Upload to Mux
+
+**4K and captions:** the CLI can't combine `--upload` with a settings file, and Mux caps new assets at
+1080p unless `max_resolution_tier` is set. For studio films, create a direct upload through the MCP
+`execute` tool with `new_asset_settings: {playback_policies: ["public"], video_quality: "plus",
+max_resolution_tier: "2160p", passthrough, inputs: [{generated_subtitles: [{language_code: "en",
+name: "English (generated)"}]}]}`, then send the file from this machine with
+`curl -X PUT --upload-file <file> "<upload url>"`. The transcript is then at
+`https://stream.mux.com/<playback_id>/text/<text_track_id>.txt`. Players hide captions by default
+(several edits have them burned in).
+
+For a quick 1080p upload without captions, the CLI is enough:
 
 Local file(s); each file becomes its own asset, and globs work:
 
@@ -82,8 +93,8 @@ Current placements (grep `:playback-id` under `src/` to refresh this list):
 
 | Where | File |
 |---|---|
-| Home hero | `src/amp/pages/landing/hero.cljs` |
-| Home teaser | `src/amp/pages/landing/teaser.cljs` |
+| Home hero (background loop) | `hero-playback-id` in `src/amp/pages/landing/page.cljs` |
+| Home films reel (pick and play, with sound) | `src/amp/data/films.cljs`: add an entry, newest first |
 | Home "The Studio" | `src/amp/pages/landing/studio.cljs` |
 | Visit page | `src/amp/pages/venue/page.cljs` |
 | Artist page | `src/amp/pages/artist/video.cljs` |

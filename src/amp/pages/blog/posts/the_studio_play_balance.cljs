@@ -17,22 +17,22 @@
 ;; ---------------------------------------------------------------------------
 
 (def ^:private gallery-slides
-  [{:img-src      "https://atd-722658831.imgix.net/media/26/03/15/the_studio0493.jpg"
+  [{:img-src      "https://media.armenianpavilion.org/media/26/03/15/the_studio0493.jpg"
     :aspect-ratio 0.667
     :caption      "THE STUDIO — PLASTER BLOCKS"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/media/26/03/15/the_studio0492.jpg"
+   {:img-src      "https://media.armenianpavilion.org/media/26/03/15/the_studio0492.jpg"
     :aspect-ratio 0.667
     :caption      "THE STUDIO — COMPOSITION"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/media/26/03/15/the_studio0512.jpg"
+   {:img-src      "https://media.armenianpavilion.org/media/26/03/15/the_studio0512.jpg"
     :aspect-ratio 0.667
     :caption      "THE STUDIO — ARRANGEMENT"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/media/26/03/15/the_studio0479.jpg"
+   {:img-src      "https://media.armenianpavilion.org/media/26/03/15/the_studio0479.jpg"
     :aspect-ratio 1.5
     :caption      "THE STUDIO — OVERVIEW"
     :credit       "Los Angeles 2026"}])
@@ -179,15 +179,3 @@
                         "experimentation remains visible, and form is allowed to remain fluid. A "
                         "modest unit, approached with care, can open onto an entire world.")))))
 
-;; ---------------------------------------------------------------------------
-;; Post metadata
-;; ---------------------------------------------------------------------------
-
-(def post-meta
-  {:slug        "the-studio-play-balance"
-   :title       "The Studio: Play, Balance, and the Life of Form"
-   :date        "2026-03-15"
-   :author      "Armenian Pavilion Team"
-   :summary     "What happens when sculpture begins not with monumentality, but with a single, beautiful unit? At the heart of Zadik Zadikian\u2019s work is a small plaster block\u2014a tool for improvisation, rhythm, and thinking through form by touch."
-   :cover-image "https://atd-722658831.imgix.net/media/26/03/15/the_studio0493.jpg"
-   :component   post-content})

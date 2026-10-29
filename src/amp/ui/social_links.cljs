@@ -9,7 +9,7 @@
    [helix.dom :as d]))
 
 (def ^:private social-profiles
-  "Armenian Pavilion 2026 social accounts."
+  "Armenia Pavilion 2026 social accounts."
   [{:platform "Instagram"
     :href     "https://www.instagram.com/armenia.pavilion.2026/"
     :icon     InstagramIcon}
@@ -26,17 +26,16 @@
 (def ^:private icon-link-class
   "Styling for a single social icon in the footer."
   (s/cx "inline-flex items-center justify-center"
-        "w-9 h-9"
-        s/text-muted
-        "hover:text-pink-600 dark:hover:text-pink-300"
-        "transition-colors duration-200"))
+        "w-11 h-11 -ml-3"
+        "text-on-night opacity-80 hover:opacity-100"
+        "transition-opacity duration-200"))
 
 (defnc social-links
   "Social profile icons for the footer. Renders a heading + icon row."
   [_props]
-  (d/div {:class "space-y-3"}
-         (d/h3 {:class (s/cx s/footer-heading "mb-4")}
-               "Follow Us")
+  (d/div
+         (d/h4 {:class (s/cx s/footer-heading "mb-3")}
+               "Follow")
          (d/div {:class "flex items-center gap-1"}
                 (for [{:keys [platform href icon]} social-profiles]
                   (d/a {:key      platform

@@ -11,11 +11,11 @@
 (def curators
   [{:name "Tony Shafrazi"
     :role "Curator"
-    :img  "https://atd-722658831.imgix.net/committee/tony.png"
+    :img  "https://media.armenianpavilion.org/committee/tony.png"
     :bio  "Tony Shafrazi (b. 1943, Abadan, Iran) is a renowned art dealer, gallerist, and curator. Trained at the Royal College of Art in London, he moved to New York in 1969 and opened the Tony Shafrazi Gallery in 1979, championing Jean-Michel Basquiat, Keith Haring, and Kenny Scharf alongside Picasso, Francis Bacon, and Warhol. He first met Zadik Zadikian while the artist was working with Richard Serra, and has supported his work for decades."}
    {:name "Tina Chakarian"
     :role "Curator"
-    :img  "https://atd-722658831.imgix.net/committee/tina.png"
+    :img  "https://media.armenianpavilion.org/committee/tina.png"
     :bio  "Tina Chakarian is a curator based in Boston and Yerevan. Born in Beirut, she studied Visual Arts at UCLA and Tufts University. Since 2015, she has served as Commissioner and Development Director of the Armenian Pavilion at La Biennale di Venezia, playing a central role in shaping Armenia\u2019s sustained presence on the global stage."}])
 
 (defnc curator-card

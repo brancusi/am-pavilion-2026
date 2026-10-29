@@ -12,40 +12,40 @@
 (def committee-members
   [{:name "Archbishop Derderian"
     :role "Committee Lead"
-    :img-src "https://atd-722658831.imgix.net/committee/hovnan.png"
+    :img-src "https://media.armenianpavilion.org/committee/hovnan.png"
     :credit "Courtesy of the Committee"}
    {:name "Tony Shafrazi"
     :role "Chief Curator"
-    :img-src "https://atd-722658831.imgix.net/committee/tony.png"
+    :img-src "https://media.armenianpavilion.org/committee/tony.png"
     :credit "Courtesy of the Committee"}
    {:name "Tina Chakarian"
     :role "Curator"
-    :img-src "https://atd-722658831.imgix.net/committee/tina.png"
+    :img-src "https://media.armenianpavilion.org/committee/tina.png"
     :credit "Courtesy of the Committee"}
    {:name "Zadik Zadikian"
     :role "Artist"
-    :img-src "https://atd-722658831.imgix.net/committee/zadik.png"
+    :img-src "https://media.armenianpavilion.org/committee/zadik.png"
     :credit "Courtesy of the Committee"}
    {:name "Rafi Ourfalian"
     :role "Legal Advisor"
-    :img-src "https://atd-722658831.imgix.net/committee/rafi.png"
+    :img-src "https://media.armenianpavilion.org/committee/rafi.png"
     :credit "Courtesy of the Committee"}
    {:name "Khachik Khudikyan"
     :role "Logistics Advisor"
-    :img-src "https://atd-722658831.imgix.net/committee/chris.png"
+    :img-src "https://media.armenianpavilion.org/committee/chris.png"
     :credit "Courtesy of the Committee"}
    {:name "Andranik Torosyan"
     :role "Financial Advisor"
-    :img-src "https://atd-722658831.imgix.net/committee/andy.png"
+    :img-src "https://media.armenianpavilion.org/committee/andy.png"
     :credit "Courtesy of the Committee"}
    {:name "Aram Alajajian"
     :role "Architect"
-    :img-src "https://atd-722658831.imgix.net/committee/aram.png"
+    :img-src "https://media.armenianpavilion.org/committee/aram.png"
     :credit "Courtesy of the Committee"}
    {:name "Vik Hovsepian"
     :role "Committee Member"
     :credit "Courtesy of the Committee"
-    :img-src "https://atd-722658831.imgix.net/committee/vic.png"}])
+    :img-src "https://media.armenianpavilion.org/committee/vic.png"}])
 
 (defnc preview
   [{:keys []}]

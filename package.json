@@ -1,6 +1,7 @@
 {
   "name": "amp",
   "scripts": {
+    "media": "node scripts/media.mjs",
     "ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
     "build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html",
     "postcss:dev": "cross-env TAILWIND_MODE=watch postcss resources/css/tailwind.css -o ./public/css/main.css --verbose -w",
@@ -63,6 +64,7 @@
     "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",
     "shadow-cljs": "^3.3.5",
+    "sharp": "^0.34.4",
     "tailwindcss": "^3.2.4",
     "wrangler": "^4.155.0"
   }

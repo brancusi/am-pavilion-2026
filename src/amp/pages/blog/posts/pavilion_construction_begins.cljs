@@ -23,7 +23,7 @@
               (d/span {:class s/em-strong} "Tesa 41")
               " within the historic Arsenale complex in Venice.")
 
-         ($ image-figure {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+         ($ image-figure {:src "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
                           :aspect-ratio "1.34"
                           :caption "Tesa 41 interior — first day of pavilion setup"})
 
@@ -42,7 +42,7 @@
               (d/span {:class s/em-italic} "is")
               " the artwork.")
 
-         ($ image-figure {:src "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
+         ($ image-figure {:src "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2010.59.08.tif"
                           :aspect-ratio "1.34"
                           :caption "Structural framework taking shape inside Tesa 41"})
 
@@ -69,5 +69,5 @@
    :date "2026-02-10"
    :author "Armenian Pavilion Team"
    :summary "After months of planning, construction has officially begun on the Armenia Pavilion at Tesa 41 within the historic Arsenale complex in Venice."
-   :cover-image "https://atd-722658831.imgix.net/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
+   :cover-image "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
    :component post-content})

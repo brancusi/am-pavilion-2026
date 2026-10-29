@@ -24,7 +24,7 @@
 
                    ;; TODO: Replace with final high-res portrait
                    ($ lazy-image-with-overlay
-                      {:img-src "https://atd-722658831.imgix.net/portraits/zz-portrait-2.jpg"
+                      {:img-src "https://media.armenianpavilion.org/portraits/zz-portrait-2.jpg"
                        :fit     "crop"
                        :active? visible?})
 
