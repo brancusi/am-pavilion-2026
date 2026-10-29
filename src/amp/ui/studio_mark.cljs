@@ -55,7 +55,7 @@
   ["red" "blue" "yellow" "turquoise" "red" "pink" "brick" "blue" "ink"])
 
 (def ^:private depth-layers 7)
-(def ^:private max-tilt 16)
+(def ^:private max-tilt 10)
 
 (defn- tile-box
   "viewBox of tile i inside the full mark."
