@@ -27,7 +27,7 @@
                           " speak about his practice, his relationship with material, and "
                           "the significance of representing "
                           (d/span {:class s/em-strong} "Armenia")
-                          " at the 61st Venice Biennale.")
+                          " at the 61st Biennale Arte.")
 
                      ;; Video player — 16:9 aspect ratio
                      ;; TODO: Replace stub playback ID with the final artist interview

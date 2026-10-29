@@ -1,18 +1,11 @@
 (ns amp.pages.landing.studio
   (:require
-   [amp.ui.captioned-image :refer [captioned-image]]
    [amp.ui.expandable-text :refer [expandable-text-area-2]]
    [amp.ui.written-by :refer [written-by]]
-   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
-   [helix.hooks :as hooks]
-   [amp.ui.image-gallery :refer [lazy-image-gallery]]
-   [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.core :refer [$]]
    [helix.dom :as d]))
-
-(def lazy-video (lazy-component amp.ui.video-background/video-background))
 
 (defnc preview
   [{:keys []}]
@@ -118,105 +111,10 @@
 
 (defnc about-studio
   [{:keys [id idx subtitle title]}]
-  (let [outer-ctx (hooks/use-ref "outer-ctx")
-        video-ref (hooks/use-ref "video-ref")
-        [video-visited? video-is-visible?] (use-intersection-observer video-ref {:end "bottom"})
-        [visited? is-visible?] (use-intersection-observer outer-ctx {:end "bottom"})]
-    (d/div {:id id}
-           ($ expandable-text-area-2 {:idx idx
-                                      :section-hint subtitle
-                                      :title title
-                                      :expand-button-label "Read more"
-                                      :preview-text preview
-                                      :full-text details})
-
-           (d/div {:class "w-full aspect-[16/9] my-8"
-                   :ref video-ref}
-                  ($ lazy-video {:playback-id "ay2rRkV3PxHTy92Gfi00SibKfEDjDLqGqxmiTzbrz3sQ"
-                                 :aspect-ratio 1.77
-                                 :should-play? video-is-visible?
-                                 :allow-audio? true}))
-           (d/div {:ref outer-ctx
-                   :class "my-4 relative pinstripe-bold"}
-
-                  ($ lazy-image-gallery {:enabled? is-visible?
-                                         :slides [{:img-src "https://media.armenianpavilion.org/blue_yellow/top_view.jpg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "BLUE YELLOW BLUE YELLOW"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/blue_yellow/side-2.jpg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "BLUE YELLOW BLUE YELLOW"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
-                                                   :aspect-ratio 1.82
-                                                   :caption "BIG RED AT ARSENALE"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/artwork/1.jpeg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "Leaning Red"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
-                                                   :aspect-ratio 1.82
-                                                   :caption "BIG RED AT ARSENALE"
-                                                   :credit "Render 2026"}
-
-                                                  {:type        :threejs
-                                                   :aspect-ratio 0.75
-                                                   :caption     "BIG RED — INTERACTIVE 3D"
-                                                   :credit      "Zadik Zadikian 2026"
-                                                   :camera      {:position [250 250 250]
-                                                                 :target   [10 60 0]}
-                                                   :scene-data  {:lighting [[:ambient-light {:intensity 0.7}]
-                                                                            [:directional-light {:cast-shadow   true
-                                                                                                 :position      [-100 120 60]
-                                                                                                 :intensity     1.5}]]
-                                                                 :data [{:bounds [144 36 72]
-                                                                         :layers [[{:align :tr :color "#1ebe3a" :dims [9 6 9]}
-                                                                                   {:align :tl :color "#0b080c" :dims [24 6 12]}
-                                                                                   {:align :br :color "#0b080c" :dims [36 6 12]}
-                                                                                   {:align :bl :color "#ec9c3b" :dims [6 6 12]}]
-                                                                                  [{:dims [144 36 72] :color "#ef3548"}]
-                                                                                  [{:dims [36 9 36] :align :tr :color "#0070df"}]
-                                                                                  [{:dims [18 9 18] :align :tr :color "#f1afed"}]
-                                                                                  [{:dims [9 4.5 9] :align :tr :color "#0b080c"}]
-                                                                                  [{:dims [4.5 9 4.5] :align :tr :color "#ec9c3b"}]]}]}}
-
-                                                  {:img-src "https://media.armenianpavilion.org/blue_yellow/cu-2.jpg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "BLUE YELLOW BLUE YELLOW"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/photos/blue_unit_with_hand.jpg"
-                                                   :aspect-ratio 1.50
-                                                   :caption "BLUE BLOCK"
-                                                   :credit "Los Angeles 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red/low_side.jpg"
-                                                   :aspect-ratio 1.78
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red/master.jpg"
-                                                   :aspect-ratio 1.78
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red/corner_low.jpg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red/black_leg.jpg"
-                                                   :aspect-ratio 0.75
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}
-
-                                                  {:img-src "https://media.armenianpavilion.org/big_red/flag.jpg"
-                                                   :aspect-ratio 1.38
-                                                   :caption "THE BIG RED"
-                                                   :credit "Render 2026"}]})))))
+  (d/div {:id id}
+         ($ expandable-text-area-2 {:idx idx
+                                    :section-hint subtitle
+                                    :title title
+                                    :expand-button-label "Read more"
+                                    :preview-text preview
+                                    :full-text details})))

@@ -1,7 +1,6 @@
 (ns amp.ui.video-background
   (:require
    ["@mux/mux-player-react$default" :as MuxPlayer]
-   [amp.ui.icons :refer [SpeakerWaveIcon SpeakerXMarkIcon]]
 
    [amp.lib.defnc :refer [defnc]]
    [applied-science.js-interop :as j]
@@ -46,10 +45,12 @@
 
     (hooks/use-effect
      [should-play?]
-     (if should-play?
-       (.play @video-ref)
-       (when (not (j/get @video-ref :paused))
-         (.pause @video-ref))))
+     (when-let [^js v @video-ref]
+       (if should-play?
+         ;; play() rejects when a new source interrupts it; that's expected.
+         (some-> (.play v) (.catch (fn [_])))
+         (when (not (j/get v :paused))
+           (.pause v)))))
 
     #_(hooks/use-effect
        [video-ref]
@@ -75,17 +76,23 @@
                :preferplayback "mse"})
 
            (when allow-audio?
-             (d/div {:class "p-2 cursor-pointer absolute right-4 bottom-4 flex middle hover:text-white text-slate-300"
-                     :on-click toggle-audio}
-                    ($ (if audio-muted?
-                         SpeakerWaveIcon
-                         SpeakerXMarkIcon)
-                       {:className "w-6 h-6"}))))))
+             (d/button {:class "ap-iconbtn absolute right-4 bottom-4"
+                        :aria-label (if audio-muted? "Turn sound on" "Turn sound off")
+                        :aria-pressed (not audio-muted?)
+                        :on-click toggle-audio}
+                       (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"
+                               :stroke-width 1.4 :stroke-linecap "round" :aria-hidden true}
+                              (d/path {:d "M2 6h2.5L8 3v10L4.5 10H2z" :fill "currentColor"})
+                              (if audio-muted?
+                                (d/path {:d "M11 6l4 4M15 6l-4 4"})
+                                (d/path {:d "M10.5 5.5a3.5 3.5 0 0 1 0 5M12.5 3.5a6.5 6.5 0 0 1 0 9"}))))))))
 
 (defnc film-player
   "Full player for films people choose to watch: controls, sound on, and
-   Mux's generated captions available (hidden by default) in the menu."
-  [{:keys [playback-id title poster]}]
+   Mux's generated captions available (hidden by default) in the menu.
+   `fill?` fits the whole frame inside its box (the lightbox) instead of
+   cropping to a 16:9 frame."
+  [{:keys [playback-id title poster fill?]}]
   ($ MuxPlayer
      {:playbackId playback-id
       :class "w-full h-full block"
@@ -96,4 +103,6 @@
       :accentColor "#f2cf2e"
       :poster poster
       :metadata #js {:video_title title}
-      :style #js {"--media-object-fit" "cover" :aspectRatio "16 / 9"}}))
+      :style (if fill?
+               #js {"--media-object-fit" "contain" :height "100%" :background "#000"}
+               #js {"--media-object-fit" "cover" :aspectRatio "16 / 9"})}))

@@ -1,5 +1,6 @@
 (ns amp.ui.section-transitioner
   (:require [amp.lib.defnc :refer [defnc]]
+            [amp.nav.back-up :refer [back-up-nav]]
             [amp.nav.menu :refer [menu]]
             [amp.state.provider :refer [use-main-state]]
             [amp.ui.footer :refer [site-footer]]
@@ -83,4 +84,5 @@
                                         (fn [prev]
                                           (filterv #(not= (:uuid %) uuid) prev))))}})))))
      (when has-state-view?
-       ($ site-footer)))))
+       ($ site-footer))
+     ($ back-up-nav))))

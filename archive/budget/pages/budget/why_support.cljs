@@ -91,7 +91,7 @@
 (defnc why-support
   [{:keys [id subtitle title]}]
   (d/div {:id id}
-         ($ expandable-text-area-2 {:idx 9
+         ($ expandable-text-area-2 {:idx 8
                                     :section-hint subtitle
                                     :title title
                                     :expand-button-label "Read more"

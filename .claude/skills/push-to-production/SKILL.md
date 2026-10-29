@@ -42,8 +42,8 @@ system reminder. Then capture the short hash: `H=$(git rev-parse --short HEAD)`.
 `MISE_CLOJURE_VERSION=<installed> MISE_JAVA_VERSION=<installed>` (see `mise ls`). It cleans `release/js`, runs the advanced shadow-cljs build stamped with `$H`,
 runs PostCSS, copies assets, and rewrites `release/index.html`.
 
-Expected, benign warnings: 11 × `:undeclared-var` in `src/amp/pages/budget/non_profit.cljs` and
-`src/amp/ui/footer.cljs`, one `:redef` for `medley.core/abs`, one `:invalid-arithmetic` in loom.
+Expected, benign warnings: one `:redef` for `medley.core/abs` and one `:invalid-arithmetic`
+(`bit-or`) in library code.
 Anything else is a real problem: stop and fix before deploying.
 
 Verify: `release/js/main.$H.js` exists and `grep "main.$H.js" release/index.html` matches.

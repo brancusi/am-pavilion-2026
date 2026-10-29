@@ -1,1 +1,0 @@
-(ns amp.data.donations)

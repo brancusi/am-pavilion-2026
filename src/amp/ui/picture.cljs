@@ -50,7 +50,7 @@
   "Responsive <img>. `sizes` is the CSS sizes attribute (defaults to full
    width); `eager?` is for above-the-fold images. `ar` is accepted for
    callers' layout intent; the frame crops with object-fit."
-  [{:keys [src alt ar sizes eager? class]}]
+  [{:keys [src alt ar sizes eager? class on-load]}]
   (d/img {:src (image-url src {:w 1200})
           :srcSet (when (str/starts-with? src media-host)
                     (->> widths
@@ -60,4 +60,8 @@
           :alt (or alt "")
           :class class
           :loading (if eager? "eager" "lazy")
-          :decoding "async"}))
+          :decoding "async"
+          ;; Lets CSS fade the image in once it has actually arrived.
+          :on-load (fn [e]
+                     (.setAttribute (.-currentTarget e) "data-loaded" "")
+                     (when on-load (on-load e)))}))

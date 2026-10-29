@@ -3,7 +3,6 @@
    (/visit) and the Italian delivery-instructions page (/delivery)."
   (:require
    [amp.pages.venue.map-config :as mc]
-   [amp.ui.button :refer [main-button]]
    [amp.ui.icons :refer [MapPinIcon]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -58,14 +57,13 @@
   "Opens the Google Maps pin for Tesa 41 in a new tab."
   [{:keys [label]
     :or   {label "Navigate to the Pavilion"}}]
-  (d/div {:class "mb-10 flex justify-center sm:justify-start"}
-         (d/a {:href mc/maps-url
+  (d/div {:class "mb-10 px-4 flex"}
+         (d/a {:class "ap-btn ap-btn--ghost"
+               :href mc/maps-url
                :target "_blank"
                :rel "noopener noreferrer"}
-              ($ main-button
-                 {:children (d/span {:class "flex items-center gap-3"}
-                                    ($ MapPinIcon {:class "w-5 h-5"})
-                                    label)}))))
+              ($ MapPinIcon {:class "w-5 h-5"})
+              label)))
 
 (defnc sub-heading
   "Secondary heading inside a directions section (ON FOOT / BY WATER TAXI)."
@@ -119,7 +117,7 @@
                   (d/p {:class (s/cx s/body-base "text-left")}
                        (d/span {:class s/em-strong}
                                (if italian? "Da martedì a domenica" "Tuesday through Sunday"))
-                       (if italian? " — 11:00–18:30" " — 11am–6:30pm"))))))
+                       " — 11:00–18:30")))))
 
 (defnc lang-toggle
   "Italiano / English switch for bilingual driver instructions."

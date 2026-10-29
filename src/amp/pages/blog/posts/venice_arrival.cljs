@@ -19,7 +19,7 @@
               "The team has arrived in Venice ahead of the "
               (d/span {:class s/em-strong} "61st International Art Exhibition")
               " — the "
-              (d/span {:class s/em-strong} "Venice Biennale 2026")
+              (d/span {:class s/em-strong} "Biennale Arte 2026")
               ". After two years of preparation, the moment to bring the project "
               "into physical reality is finally here.")
 
@@ -46,7 +46,7 @@
 
          ($ image-figure {:src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
                           :aspect-ratio "1.82"
-                          :caption "Approach to the Armenian Pavilion site"})
+                          :caption "Approach to the Armenia Pavilion site"})
 
          (d/p {:class s/body-base}
               "The outdoor piece will occupy one of the highest-traffic pedestrian junctions "
@@ -68,7 +68,7 @@
   {:slug "venice-arrival"
    :title "Arriving in Venice"
    :date "2026-02-20"
-   :author "Armenian Pavilion Team"
+   :author "Armenia Pavilion Team"
    :summary "The team has arrived in Venice ahead of the 61st International Art Exhibition. After two years of preparation, the moment to bring the project into physical reality is here."
    :cover-image "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
    :component post-content})
