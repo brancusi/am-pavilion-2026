@@ -47,3 +47,82 @@
                       (d/path {:key j :d v})))
                   shapes)))
           tiles)))
+
+;; ── 3D mark ────────────────────────────────────────────────────────────────
+
+(def ^:private pigments
+  "Pigment of each tile, in order (matches .ap-mark--pigment)."
+  ["red" "blue" "yellow" "turquoise" "red" "pink" "brick" "blue" "ink"])
+
+(def ^:private depth-layers 7)
+(def ^:private max-tilt 16)
+
+(defn- tile-box
+  "viewBox of tile i inside the full mark."
+  [i]
+  (let [step 244.84]
+    (str (* step (mod i 3)) " " (* step (quot i 3)) " 228.14 228.14")))
+
+(defn- fine-pointer? []
+  (and (.-matches (js/matchMedia "(hover: hover) and (pointer: fine)"))
+       (not (.-matches (js/matchMedia "(prefers-reduced-motion: reduce)")))))
+
+(defn- tilt!
+  "Tilt the hovered tile's face away from the pointer and open up its depth."
+  [^js e]
+  (when (and (= "mouse" (.-pointerType e)) (fine-pointer?))
+    (let [cell (.-currentTarget e)
+          r (.getBoundingClientRect cell)
+          x (/ (- (.-clientX e) (.-left r)) (.-width r))
+          y (/ (- (.-clientY e) (.-top r)) (.-height r))
+          st (.-style cell)]
+      (.setProperty st "--rx" (str (* (- 0.5 y) 2 max-tilt) "deg"))
+      (.setProperty st "--ry" (str (* (- x 0.5) 2 max-tilt) "deg"))
+      (.setProperty st "--d" "2cqw")
+      (.setAttribute cell "data-active" ""))))
+
+(defn- untilt! [^js e]
+  (let [cell (.-currentTarget e)
+        st (.-style cell)]
+    (doseq [k ["--rx" "--ry" "--d"]] (.removeProperty st k))
+    (.removeAttribute cell "data-active")))
+
+(defnc studio-mark-3d
+  "The mark as nine HTML tiles, each a stack of SVG layers. On desktop the
+   hovered letter tilts with the pointer and shows its depth; the others
+   stay flat. `on-hover` is called with the hovered tile's pigment name
+   (\"red\", \"ink\", …) and with nil when the pointer leaves.
+   Variants: :stack, :pigment."
+  [{:keys [variants class label on-hover] :or {label "The Studio"}}]
+  (d/div {:class (str/join " " (concat ["ap-mark ap-mark3d"]
+                                       (map #(str "ap-mark--" (name %)) variants)
+                                       (when class [class])))
+          :role (when label "img")
+          :aria-label label
+          :aria-hidden (when-not label true)
+          :on-pointer-leave (when on-hover #(on-hover nil))}
+         (map-indexed
+          (fn [i {:keys [shapes]}]
+            (let [pigment (nth pigments i)]
+              (d/div {:key i
+                      :class "ap-mark__tile ap-mark3d__cell"
+                      :aria-hidden true
+                      :style #js {"--i" i "--c" (mod i 3) "--r" (quot i 3)
+                                  "--tc" (if (contains? variants :pigment) (str "var(--" pigment ")") "var(--ink)")}
+                      :on-pointer-enter (when on-hover
+                                          #(when (and (= "mouse" (.-pointerType %)) (fine-pointer?))
+                                             (on-hover pigment)))
+                      :on-pointer-move tilt!
+                      :on-pointer-leave untilt!}
+                     (d/div {:class "ap-mark3d__body"}
+                            ;; Back layers first; the last one is the face.
+                            (for [k (range depth-layers -1 -1)]
+                              (d/svg {:key k :class "ap-mark3d__layer" :viewBox (tile-box i)
+                                      :style #js {"--k" k}}
+                                     (map-indexed
+                                      (fn [j [kind v]]
+                                        (if (= kind :polygon)
+                                          (d/polygon {:key j :points v})
+                                          (d/path {:key j :d v})))
+                                      shapes)))))))
+          tiles)))
