@@ -27,7 +27,7 @@
    {:slug "tesa-41-september" :title "In Tesa 41" :when "September 2026" :where "Tesa 41, Venice"
     :duration 86 :poster 59
     :playback-id "Z2iSmsgAN1ECHGEZzV1OkuHPmWRmLGuHHqOZYcjDn200"
-    :summary "The Italian flag in its foam state, interlocking parts, pigments and brushes as the studio fills with colour."}
+    :summary "The Italian flag in its foam state, interlocking parts, pigments and brushes as the studio fills with color."}
 
    {:slug "maquette" :title "The Maquette" :when "February 2026" :where "Los Angeles"
     :duration 261 :poster 45

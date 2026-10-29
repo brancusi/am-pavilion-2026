@@ -68,8 +68,9 @@
 (defnc html-labels
   "Point labels from the GeoJSON at `url` (features with a `label`
    property, optional `anchor`: top/left/right/bottom), drawn as HTML so
-   they use the site's type and theme colours; the pavilion's label is red."
-  [{:keys [url]}]
+   they use the site's type and theme colours; the pavilion's label is red.
+   With `lang` :it a feature's `label_it` is shown when it has one."
+  [{:keys [url lang]}]
   (let [[features set-features!] (hooks/use-state [])]
     (hooks/use-effect
      [url]
@@ -88,13 +89,14 @@
      (for [^js f features
            :let [props (.-properties f)
                  [lng lat] (.. f -geometry -coordinates)
+                 text (or (when (= lang :it) (.-label_it props)) (.-label props))
                  anchor (or (.-anchor props) "bottom")
                  ;; Marker anchor is the side of the label touching the point.
                  marker-anchor ({"top" "top" "bottom" "bottom" "left" "left" "right" "right"} anchor "bottom")]]
        ($ Marker {:key (str lng lat) :longitude lng :latitude lat :anchor marker-anchor}
           (d/span {:class (str "ap-maplabel ap-maplabel--" anchor
                                (when (re-find #"Pavilion|Padiglione" (.-label props)) " ap-maplabel--pavilion"))}
-                  (.-label props)))))))
+                  text))))))
 
 (def venice-arsenale
   {:longitude 12.3525
@@ -290,7 +292,7 @@
                      :bounds-padding px, default 32) so the framing adapts to
                      the viewport. :initial-view is the pre-load camera.
      :bounds-padding - number or {:top _ :bottom _ :left _ :right _}"
-  [{:keys [class initial-view dev interactive? layers ant-paths bounds bounds-padding labels-url]
+  [{:keys [class initial-view dev interactive? layers ant-paths bounds bounds-padding labels-url lang]
     :or {interactive? true bounds-padding 32}}]
   (let [dark? (use-dark-theme)
         [view-state set-view-state!] (hooks/use-state (merge venice-arsenale initial-view))
@@ -365,7 +367,7 @@
                :mapboxLogo false}
               (when interactive? ($ NavigationControl {:position "top-right" :showCompass false}))
               ($ theme-sync {:dark? dark?})
-              (when (and map-loaded? labels-url) ($ html-labels {:url labels-url}))
+              (when (and map-loaded? labels-url) ($ html-labels {:key (str lang) :url labels-url :lang lang}))
               ;; Standard loads its imports asynchronously: add our sources
               ;; and layers only once the map reports it has loaded.
               (when (and map-loaded? (seq layers))

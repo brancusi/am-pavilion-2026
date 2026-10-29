@@ -153,8 +153,8 @@
                                 "61st International Art Exhibition — La Biennale di Venezia · In Minor Keys")
                            (d/h2 {:class "ap-display-l"} "One unit, set by hand, again and again.")
                            (d/p {:class "ap-lede"}
-                                "At the heart of Zadik Zadikian’s work is a small plaster block, coloured all the way through. "
-                                "Gathered, balanced and stacked, the units become The Studio: a working room of colour inside the Arsenale.")
+                                "At the heart of Zadik Zadikian’s work is a small plaster block, colored all the way through. "
+                                "Gathered, balanced and stacked, the units become The Studio: a working room of color inside the Arsenale.")
                            (d/a {:class "ap-link ap-body-s self-start py-3 -my-3" :href "/blog/the-studio-play-balance"}
                                 "Read: Play, Balance, and the Life of Form"))
                     (d/dl {:class "ap-facts"}
@@ -171,9 +171,9 @@
                            (d/p {:class "ap-numeral" :aria-hidden true} "I")
                            (d/h2 {:class "ap-display-l ap-chapter__title"} "The Unit")
                            (d/p {:class "ap-body m-0 max-w-[36ch]"}
-                                "Each block is resolved on its own before it joins anything. Colour is embedded in the material, not painted on.")
+                                "Each block is resolved on its own before it joins anything. Color is embedded in the material, not painted on.")
                            (d/p {:class "ap-ephemeral-note"}
-                                "Structures are assembled for a moment, then gone. Watch the ground: each colour erases its own letters."))
+                                "Structures are assembled for a moment, then gone. Watch the ground: each color erases its own letters."))
                     (d/div {:class "ap-ch-mark"}
                            ($ studio-mark {:variants #{:stack :pigment}})))))
 

@@ -161,7 +161,7 @@
                                           :lede (rich (:route-body c))})
                       ($ wf/route-map
                          {:tall? true
-                          :map {:interactive? interactive?
+                          :map {:interactive? interactive? :lang lang
                                 :initial-view mc/water-taxi-initial-view
                                 :bounds mc/water-taxi-bounds
                                 :bounds-padding {:top 48 :bottom 48 :left 32 :right 32}
@@ -201,6 +201,7 @@
   [_props]
   (let [[lang set-lang!] (hooks/use-state :it)
         c (get copy lang)]
+    (wf/use-doc-lang lang)
     (d/div {:lang (name lang) :class "bg-paper text-ink"}
            ($ wf/page-head {:eyebrow (:eyebrow c)
                             :title (:title c)

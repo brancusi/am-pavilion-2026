@@ -14,16 +14,17 @@
   "The pages in the main menu, in order."
   [{:path "/"       :title "Exhibition"}
    {:path "/artist" :title "Artist"}
-   {:path "/visit"  :title "Visit"}
+   {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
    {:path "/blog"   :title "Journal"}])
 
 (defn- active?
-  "A nav item is current when the path matches, or for the Journal, any post."
+  "A nav item is current when the path matches (or one of its `:also`
+   pages, e.g. the directions pages under Visit), or for the Journal, any post."
   [item current-path]
   (let [p (or current-path "/")]
     (if (= (:path item) "/")
       (= p "/")
-      (.startsWith p (:path item)))))
+      (some #(.startsWith p %) (cons (:path item) (:also item))))))
 
 (defnc menu-icon [{:keys [open?]}]
   (d/svg {:viewBox "0 0 24 24" :fill "none" :stroke "currentColor"

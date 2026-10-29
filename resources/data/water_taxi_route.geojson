@@ -79,12 +79,12 @@
     },
     {
       "type": "Feature",
-      "properties": { "marker": "end", "label": "Armenia Pavilion", "anchor": "top" },
+      "properties": { "marker": "end", "label": "Armenia Pavilion", "label_it": "Padiglione Armenia", "anchor": "top" },
       "geometry": { "type": "Point", "coordinates": [12.350800, 45.436820] }
     },
     {
       "type": "Feature",
-      "properties": { "label": "Only entrance\nRio delle Galeazze", "anchor": "right" },
+      "properties": { "label": "Only entrance\nRio delle Galeazze", "label_it": "Unico ingresso\nRio delle Galeazze", "anchor": "right" },
       "geometry": { "type": "Point", "coordinates": [12.351740, 45.438540] }
     }
   ]

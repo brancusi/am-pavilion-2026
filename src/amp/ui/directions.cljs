@@ -10,7 +10,7 @@
    Shared by the Visit, delivery and water-taxi pages."
   ["Fondamenta Case Nuove, Castello 2737"
    "Arsenale Militare, Tesa 41"
-   "Venezia, Venezia 30122"])
+   "30122 Venezia (VE)"])
 
 (def marine-office-phone
   {:display "+39 041 244 1595" :tel "+390412441595"})
