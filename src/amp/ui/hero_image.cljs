@@ -60,6 +60,6 @@
                                        p-1
                                        px-4
                                        mb-4
-                                       text-slate-700
+                                       text-ink
                                        whitespace-nowrap"}
                                   children)))))))

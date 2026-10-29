@@ -11,7 +11,9 @@
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
    [amp.styles :as s]
+   [amp.pages.venue.map-config :as mc]
    [amp.ui.fit-gallery :refer [fit-gallery]]
+   [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture mux-poster]]
    [amp.ui.post-card :refer [post-card]]
@@ -131,8 +133,8 @@
                               (d/span "9 May – 22 November 2026")
                               (d/span "Arsenale Militare, Venice"))
                        (d/div {:class "flex flex-wrap gap-2"}
-                              (d/a {:class "ap-btn ap-btn--yellow" :href "#film"
-                                    :on-click (fn [e] (.preventDefault e) (set-film-open! true))}
+                              (d/button {:class "ap-btn ap-btn--yellow" :type "button"
+                                         :on-click #(set-film-open! true)}
                                    (d/svg {:viewBox "0 0 16 16" :fill "currentColor" :aria-hidden true}
                                           (d/path {:d "M4 2l10 6-10 6z"}))
                                    "Watch the film")
@@ -153,7 +155,7 @@
                            (d/p {:class "ap-lede"}
                                 "At the heart of Zadik Zadikian’s work is a small plaster block, coloured all the way through. "
                                 "Gathered, balanced and stacked, the units become The Studio: a working room of colour inside the Arsenale.")
-                           (d/a {:class "ap-link ap-body-s self-start" :href "/blog/the-studio-play-balance"}
+                           (d/a {:class "ap-link ap-body-s self-start py-3 -my-3" :href "/blog/the-studio-play-balance"}
                                 "Read: Play, Balance, and the Life of Form"))
                     (d/dl {:class "ap-facts"}
                           (for [[k v] facts]
@@ -258,10 +260,14 @@
   (d/section {:class "ap-sec"}
              (d/div {:class "ap-wrap ap-visit"}
                     (d/div {:class "ap-map ap-map--stack"}
-                           (d/div {:class "ap-map__plate"}
-                                  (d/img {:src "/images/graphics/water_taxi_route.jpg"
-                                          :alt "Map of the water taxi route through Rio delle Galeazze to the Arsenale"
-                                          :loading "lazy"}))
+                           (d/div {:class "ap-map__plate" :role "img"
+                                   :aria-label "Map of the water taxi route through Rio delle Galeazze to the pavilion landing"}
+                                  ($ mapbox-map {:class "!h-full"
+                                                 :interactive? false
+                                                 :initial-view mc/water-taxi-initial-view
+                                                 :bounds mc/galeazze-bounds
+                                                 :ant-paths mc/water-taxi-ant-paths
+                                                 :layers mc/water-taxi-layers}))
                            (d/p {:class "ap-caption m-0 p-4"}
                                 "Water taxi route: enter from the North Lagoon via Rio delle Galeazze to the pavilion drop-off point."))
                     (d/div {:class "flex flex-col gap-6"}

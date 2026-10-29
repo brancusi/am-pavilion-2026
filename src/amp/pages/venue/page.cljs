@@ -7,8 +7,8 @@
    [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.section-header :refer [section-eyebrow]]
-   [amp.ui.directions :refer [marine-office-phone water-taxi-map-src
-                              address-block]]
+   [amp.ui.directions :refer [address-block
+                              julda-contact luca-contact]]
    [amp.ui.temporary-closure :refer [closure-notice]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
@@ -21,19 +21,10 @@
 
 (def lazy-video (lazy-component amp.ui.video-background/video-background))
 
-;; Venue-specific display heading — same treatment as s/heading-display but
-;; with a smaller mobile base so multi-word titles ("The Outdoor Piece",
-;; "Arsenale Militare") don't overflow narrow viewports.
-(def venue-display
-  (s/cx s/font-display s/weight-semibold s/uppercase-
-        "leading-none text-3xl sm:text-5xl md:text-7xl"
-        s/text-primary))
+;; Section headings on this page (design system: display L).
+(def venue-display "ap-display-l")
 
-;; ── Shared eyebrow component ──────────────────────────────────────────────
-;; Stacked layout: pink accent line → small uppercase text → pink accent line.
-;; Compact enough to never wrap, even on narrow mobile screens.
-
-;; Re-export from shared component for backward compat within this file
+;; Eyebrow above section headings (amp.ui.section-header).
 (def venue-eyebrow section-eyebrow)
 
 ;; ── Gallery slides ─────────────────────────────────────────────────────────
@@ -67,11 +58,12 @@
   {:en {:title        "Water Taxi Instructions"
         :subtitle     "Authorized access to the Arsenale – Armenia Pavilion"
         :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenia Pavilion."
-                       "The Marine Office is aware and has approved access for water taxis transporting visitors to the Armenia Pavilion."]
-        :before-title "Before entering"
-        :before-body  "Call the Marine Office and say:"
+                       "The Marine Office has approved access for water taxis bringing visitors to the Armenia Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
+        :before-title "Before entering the Arsenale"
+        :before-body  "Call Julda and say:"
         :before-quote "“I am arriving with a visitor for the Armenia Pavilion.”"
-        :marine-label "Marine Office"
+        :contacts     [["Julda · primary contact" :julda] ["Luca · secondary contact" :luca]]
+        :before-note  "If Julda does not answer, call Luca."
         :entrance-title "Only permitted entrance"
         :entrance-lead  "There is only one entrance for water taxis:"
         :entrance-name  "Galeazze – North Lagoon side – Rio delle Galeazze"
@@ -87,11 +79,12 @@
    :it {:title        "Istruzioni per il taxi acqueo"
         :subtitle     "Accesso autorizzato all’Arsenale – Padiglione Armenia"
         :authorized   ["Questo taxi è autorizzato a entrare nell’area dell’Arsenale Militare perché trasporta ospiti diretti al Padiglione Armenia."
-                       "L’Ufficio della Marina è informato e ha dato il permesso di accesso ai taxi acquei che accompagnano visitatori al Padiglione Armenia."]
-        :before-title "Prima di entrare"
-        :before-body  "Chiamare l’Ufficio della Marina e comunicare:"
+                       "L’Ufficio della Marina ha autorizzato l’accesso dei taxi acquei che accompagnano visitatori al Padiglione Armenia. L’accesso è coordinato da Julda: non contattare direttamente l’Ufficio della Marina."]
+        :before-title "Prima di entrare nell’Arsenale"
+        :before-body  "Chiamare Julda e comunicare:"
         :before-quote "«Sto arrivando con un visitatore diretto al Padiglione Armenia.»"
-        :marine-label "Ufficio della Marina"
+        :contacts     [["Julda · contatto principale" :julda] ["Luca · contatto secondario" :luca]]
+        :before-note  "Se Julda non risponde, chiamare Luca."
         :entrance-title "Unico ingresso consentito"
         :entrance-lead  "Esiste un solo ingresso per i taxi acquei:"
         :entrance-name  "Galeazze – lato Laguna Nord – Rio delle Galeazze"
@@ -209,6 +202,8 @@
 
 ;; ── Water taxi driver card ────────────────────────────────────────────────
 
+(def ^:private water-contacts {:julda julda-contact :luca luca-contact})
+
 (defnc taxi-card []
   (let [[lang set-lang!] (hooks/use-state :it)
         c (get water-taxi-copy lang)]
@@ -231,19 +226,27 @@
                                     (d/span {:class "ap-label"} (:before-title c))
                                     (d/span {:class "ap-body-s"} (:before-body c))
                                     (d/span (:before-quote c))
-                                    (d/span {:class "ap-caption !text-on-blue"}
-                                            (:marine-label c) " · "
-                                            (d/a {:class "underline text-on-blue"
-                                                  :href (str "tel:" (:tel marine-office-phone))}
-                                                 (:display marine-office-phone))))
+                                    (d/div {:class "grid sm:grid-cols-2 gap-x-6 gap-y-1 mt-1"}
+                                           (for [[label who] (:contacts c)
+                                                 :let [{:keys [tel display]} (water-contacts who)]]
+                                             (d/a {:key label :class "ap-telrow" :href (str "tel:" tel)}
+                                                  (d/span {:class "ap-label"} label)
+                                                  (d/span {:class "ap-telrow__num"} display))))
+                                    (d/span {:class "ap-caption !text-on-blue"} (:before-note c)))
                              (d/div {:class "flex flex-col gap-1.5"}
                                     (d/p {:class "ap-label ap-muted m-0"} (:entrance-title c))
                                     (d/p {:class "ap-h2 m-0"} (:entrance-name c))
                                     (d/p {:class "ap-body-s m-0"} (:entrance-body c)))
                              (d/p {:class "ap-taxicard__warn"} (:entrance-warn c))
                              (d/figure {:class "ap-figure"}
-                                       (d/img {:src water-taxi-map-src :loading "lazy" :class "w-full h-auto"
-                                               :alt "Map of the Arsenale showing the only permitted water taxi entrance at Rio delle Galeazze and the route south to the Armenia Pavilion drop-off point"})
+                                       (d/div {:class "ap-map__live" :role "img"
+                                               :aria-label "Map of the Arsenale showing the only permitted water taxi entrance at Rio delle Galeazze and the route south to the Armenia Pavilion landing"}
+                                              ($ mapbox-map {:class "!h-full"
+                                                             :interactive? false
+                                                             :initial-view mc/water-taxi-initial-view
+                                                             :bounds mc/galeazze-bounds
+                                                             :ant-paths mc/water-taxi-ant-paths
+                                                             :layers mc/water-taxi-layers}))
                                        (d/figcaption {:class "ap-caption"} (:map-caption c))))))))
 
 ;; ── About ──────────────────────────────────────────────────────────────────

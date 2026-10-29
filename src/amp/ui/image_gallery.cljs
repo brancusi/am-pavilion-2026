@@ -10,4 +10,4 @@
   "`slides` as in amp.ui.fit-gallery. `enabled?` (used to drive autoplay in
    the old carousel) is ignored: images load lazily on their own."
   [{:keys [slides]}]
-  ($ fit-gallery {:slides slides}))
+  ($ fit-gallery {:slides slides :inset? true}))
