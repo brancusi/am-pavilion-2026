@@ -3,7 +3,7 @@
   "features": [
     {
       "type": "Feature",
-      "properties": { "name": "Water taxi route — Hotel Gabrielli to the Armenian Pavilion" },
+      "properties": { "name": "Water taxi route — Hotel Gabrielli to the Armenia Pavilion" },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -79,7 +79,7 @@
     },
     {
       "type": "Feature",
-      "properties": { "marker": "end", "label": "Armenian Pavilion", "anchor": "top" },
+      "properties": { "marker": "end", "label": "Armenia Pavilion", "anchor": "top" },
       "geometry": { "type": "Point", "coordinates": [12.350800, 45.436820] }
     },
     {

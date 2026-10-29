@@ -46,27 +46,31 @@
   [{:keys [slug]}]
   (let [article (hooks/use-ref nil)
         post (get posts-by-slug slug)]
+    (hooks/use-effect
+     [post]
+     (set! (.-title js/document)
+           (str (if post (:title post) "Post not found") " · Armenia Pavilion")))
     (if post
-      (let [{:keys [title date author kind tone summary cover-image component]} post
+      (let [{:keys [title date author kind tone cover-image component]} post
             nxt (next-post slug)]
         (d/div
          ($ progress-bar {:target article})
          (d/article {:ref article :class "ap-article pb-16 lg:pb-24"}
                     (d/header {:class "ap-article__head"}
-                              (d/a {:class "ap-label ap-muted justify-self-start no-underline hover:text-red-text"
+                              (d/a {:class "ap-label ap-muted justify-self-start no-underline hover:text-red-text py-3 -my-3"
                                     :href "/blog"}
                                    "← Journal")
                               (when kind
                                 (d/span {:class (str "ap-tag justify-self-start ap-tag--" (name (or tone :red)))} kind))
                               (d/h1 {:class "ap-display-l"} title)
-                              (when summary (d/p {:class "ap-lede m-0"} summary))
                               (d/div {:class "ap-article__byline"}
                                      (d/span (journal/display-date date))
                                      (when author (d/span (str "By " author)))))
                     (when cover-image
+                      ;; Whole image, never cropped: portrait covers are capped in height.
                       (d/figure {:class "ap-figure ap-full ap-wide"}
-                                (d/div {:class "ap-figure__frame" :style #js {"--ar" "3/2"}}
-                                       ($ picture {:src cover-image :ar 1.5 :eager? true :alt ""
+                                (d/div {:class "ap-cover"}
+                                       ($ picture {:src cover-image :eager? true :alt ""
                                                    :sizes "(min-width: 960px) 1000px, 100vw"}))))
                     (d/div {:class "ap-article__body"}
                            ($ component))

@@ -67,7 +67,7 @@
   {:slug "pavilion-construction-begins"
    :title "Pavilion Construction Begins"
    :date "2026-02-10"
-   :author "Armenian Pavilion Team"
+   :author "Armenia Pavilion Team"
    :summary "After months of planning, construction has officially begun on the Armenia Pavilion at Tesa 41 within the historic Arsenale complex in Venice."
    :cover-image "https://media.armenianpavilion.org/tesa_41/weavy-Gemini%203%20(Nano%20Banana%20Pro)-2025-12-22%20at%2011.12.05.tif"
    :component post-content})

@@ -116,7 +116,7 @@
                 "The Full-Scale Maquette as Prelude to Venice")
 
            (d/p {:class s/body-lg}
-                "In preparation for the Venice Biennale, "
+                "In preparation for Biennale Arte 2026, "
                 (d/span {:class s/em-strong} "Zadik Zadikian")
                 " is developing a full-scale maquette of a new sculptural variation titled "
                 (d/span {:class s/em-strong} "Blue Yellow Blue Yellow")
@@ -127,7 +127,7 @@
                 "and chromatic rhythm\u2014an architectural test before the casting of plaster and the final "
                 "realization of form within "
                 (d/span {:class s/em-strong} "The Studio")
-                ", the Armenian Pavilion\u2019s living atelier.")
+                ", the Armenia Pavilion\u2019s living atelier.")
 
            (d/p {:class s/body-base}
                 "At its core, the work investigates reflection and repetition. A square side\u2014precise, "
@@ -173,7 +173,7 @@
 
            ;; Image gallery — CNC process photos + interactive 3D mockup
            (d/div {:ref gallery-ref
-                   :class "my-8 relative pinstripe-bold"}
+                   :class "my-8 relative"}
                   ($ lazy-image-gallery {:enabled? gallery-visible?
                                          :slides   gallery-slides}))
 

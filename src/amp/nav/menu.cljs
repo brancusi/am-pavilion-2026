@@ -3,22 +3,19 @@
    StudioMark and name; inline links from 960px, a full-screen numbered
    menu sheet below that."
   (:require [amp.lib.defnc :refer [defnc]]
-            [amp.services.router :as router]
             [amp.state.provider :refer [use-main-state]]
             [amp.ui.studio-mark :refer [studio-mark]]
             [amp.ui.theme-toggle :refer [theme-toggle]]
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
-            [helix.hooks :as hooks]
-            [reitit.frontend.easy :as rfe]))
+            [helix.hooks :as hooks]))
 
 (def nav-items
   "The pages in the main menu, in order."
   [{:path "/"       :title "Exhibition"}
    {:path "/artist" :title "Artist"}
    {:path "/visit"  :title "Visit"}
-   {:path "/blog"   :title "Journal"}
-   {:path "/press"  :title "Press"}])
+   {:path "/blog"   :title "Journal"}])
 
 (defn- active?
   "A nav item is current when the path matches, or for the Journal, any post."
@@ -41,7 +38,9 @@
   (let [[state _] (use-main-state)
         [open? set-open!] (hooks/use-state false)
         current-path (-> state :current-route :path)
-        close! (hooks/use-callback :once (fn [_] (set-open! false)))]
+        close! (hooks/use-callback :once (fn [_] (set-open! false)))
+        toggle-ref (hooks/use-ref nil)
+        sheet-ref (hooks/use-ref nil)]
 
     ;; Close the sheet whenever the route changes, and lock page scroll while it is open.
     (hooks/use-effect [current-path] (set-open! false))
@@ -49,6 +48,26 @@
      [open?]
      (set! (.. js/document -body -style -overflow) (if open? "hidden" ""))
      (fn [] (set! (.. js/document -body -style -overflow) "")))
+
+    ;; While open: Escape closes and returns focus to the toggle; Tab cycles
+    ;; through the toggle and the sheet only.
+    (hooks/use-effect
+     [open?]
+     (when open?
+       (let [focusables #(into [@toggle-ref]
+                               (array-seq (.querySelectorAll @sheet-ref "a, button")))
+             on-key (fn [e]
+                      (case (.-key e)
+                        "Escape" (do (set-open! false) (some-> @toggle-ref (.focus)))
+                        "Tab" (let [els (focusables)
+                                    i (.indexOf (to-array els) (.-activeElement js/document))
+                                    n (count els)
+                                    j (mod (+ i (if (.-shiftKey e) -1 1)) n)]
+                                (.preventDefault e)
+                                (.focus (nth els (if (neg? i) 0 j))))
+                        nil))]
+         (.addEventListener js/document "keydown" on-key)
+         (fn [] (.removeEventListener js/document "keydown" on-key)))))
 
     (<>
      (d/header {:class "ap-header"}
@@ -64,17 +83,16 @@
                               :aria-current (when (active? item current-path) "page")}
                              (:title item))))
                (d/div {:class "hidden lg:flex items-center"} ($ theme-toggle))
-               (d/a {:class "ap-btn ap-btn--red"
-                     :href (rfe/href ::router/donate)}
-                    "Support")
-               (d/button {:class "ap-header__menu"
+               (d/button {:ref toggle-ref
+                          :class "ap-header__menu"
                           :aria-expanded open?
                           :aria-controls "site-menu"
                           :aria-label (if open? "Close menu" "Open menu")
                           :on-click #(set-open! (not open?))}
                          ($ menu-icon {:open? open?})))
 
-     (d/nav {:id "site-menu"
+     (d/nav {:ref sheet-ref
+             :id "site-menu"
              :class "ap-sheet lg:hidden"
              :data-open (str open?)
              :aria-label "Menu"
@@ -90,11 +108,6 @@
                     (:title item)))
              nav-items)
             (d/div {:class "ap-sheet__foot"}
-                   (d/a {:class "ap-btn ap-btn--red ap-btn--block"
-                         :href (rfe/href ::router/donate)
-                         :tab-index (if open? 0 -1)
-                         :on-click close!}
-                        "Support the pavilion")
                    (d/div {:class "flex items-center justify-between"}
                           (d/p {:class "ap-caption m-0"}
                                "Arsenale Militare, Tesa 41 · 9 May – 22 November 2026")

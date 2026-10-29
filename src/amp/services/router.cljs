@@ -3,6 +3,7 @@
             [amp.state.provider :refer [use-main-state]]
             [helix.hooks :as hooks]
             [reitit.frontend :as rf]
+            [amp.pages.not-found :refer [not-found-view]]
             [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
@@ -18,10 +19,6 @@
 ;; path → scroll-y, preserved across hot-reloads
 (defonce ^:private scroll-positions (atom {}))
 
-(defn log-fn [& params]
-  (fn [_]
-    (apply js/console.log params)))
-
 (def site-map [{:id ::venue
                 :path "visit"
                 :title "Visit"
@@ -34,23 +31,13 @@
 
                {:id ::blog
                 :path "blog"
-                :title "Blog"
+                :title "Journal"
                 :view (lazy-component amp.pages.blog.page/blog-view)}
 
                {:id ::press
                 :path "press"
                 :title "Press"
                 :view (lazy-component amp.pages.press.page/press-view)}
-
-               {:id ::budget
-                :path "budget"
-                :title "Budget"
-                :view (lazy-component amp.pages.budget.page/budget-view)}
-
-               {:id ::donate
-                :path "donate"
-                :title "Donate"
-                :view (lazy-component amp.pages.donations.page/donations-view)}
 
                {:id ::delivery
                 :path "delivery"
@@ -67,14 +54,11 @@
   (into ["/"
          [""
           {:name :home
-           :view (lazy-component amp.pages.landing.page/landing-view)
-           :controllers [{:start (log-fn "start" "landing controller")
-                          :stop (log-fn "stop" "landing controller")}]}]]
-        (mapcat (fn [{:keys [id path view]}]
+           :view (lazy-component amp.pages.landing.page/landing-view)}]]
+        (mapcat (fn [{:keys [id path view title]}]
                   (let [route-data {:name id
                                     :view view
-                                    :controllers [{:start (log-fn (str "start!!!" id))
-                                                   :stop (log-fn (str "stop!!!" id))}]}]
+                                    :title title}]
                     (if (= id ::blog)
                       ;; Blog gets two routes: index + slug-parameterized post
                       [[path route-data]
@@ -90,6 +74,33 @@
   ;;Keep from folding
   )
 
+(def ^:private site-title "Armenia Pavilion — Zadik Zadikian: The Studio · Biennale Arte 2026")
+
+(defn- not-found-route
+  "A match-shaped value for paths with no route."
+  []
+  {:path (.. js/location -pathname)
+   :data {:name ::not-found :view not-found-view :title "Page not found"}})
+
+(defn- set-title!
+  "Page title: \"<Page> · Armenia Pavilion\", the full site title at home.
+   Blog posts set their own once their content has loaded."
+  [route]
+  (set! (.-title js/document)
+        (if-let [t (-> route :data :title)]
+          (str t " · Armenia Pavilion")
+          site-title)))
+
+(defn- scroll-to-anchor!
+  "Scroll to element `id`, retrying for a moment while a lazy page loads."
+  [id]
+  (let [tries (atom 0)]
+    ((fn attempt []
+       (if-let [el (.getElementById js/document id)]
+         (.scrollIntoView el #js {:behavior "smooth" :block "start"})
+         (when (< (swap! tries inc) 40)
+           (js/setTimeout attempt 50)))))))
+
 (defnc router
   [{:keys [children]}]
 
@@ -98,9 +109,9 @@
 
         route-change-callback (hooks/use-callback
                                [state]
-                               (fn [new-route]
-                                 (js/console.log new-route)
-                                 (let [old-route (:current-route state)
+                               (fn [match]
+                                 (let [new-route (or match (not-found-route))
+                                       old-route (:current-route state)
                                        old-path  (:path old-route)]
 
                                    ;; Save scroll position for the page we're leaving
@@ -109,6 +120,7 @@
 
                                    (rfc/apply-controllers old-route new-route)
                                    (dispatch! [:enter-route! new-route])
+                                   (set-title! new-route)
 
                                    ;; Scroll behaviour depends on navigation type
                                    (let [type @nav-type]
@@ -118,8 +130,11 @@
                                        (let [saved (get @scroll-positions (:path new-route) 0)]
                                          (js/requestAnimationFrame
                                           #(.scrollTo js/window 0 saved)))
-                                       ;; Push (link click) → jump to top immediately
-                                       (.scrollTo js/window 0 0))))))]
+                                       ;; Push (link click) → top, or to the #anchor
+                                       ;; once the page has rendered it.
+                                       (if-let [id (not-empty (subs (.. js/location -hash) 1))]
+                                         (scroll-to-anchor! id)
+                                         (.scrollTo js/window 0 0)))))))]
 
     (hooks/use-effect
      :once
@@ -134,8 +149,7 @@
        (rfe/start!
         (rf/router
          (routes)
-         {:data {:controllers [{:start (log-fn "start" "root-controller")
-                                :stop (log-fn "stop" "root controller")}]}})
+         {})
         route-change-callback
         {:use-fragment false})
 

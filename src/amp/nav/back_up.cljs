@@ -1,48 +1,40 @@
 (ns amp.nav.back-up
-  (:require [amp.hooks.use-hover-animations :refer [use-hover-animations]]
-            [amp.hooks.use-media-query :refer [use-media-breakpoint]]
-            [amp.hooks.use-scroll-threshold :refer [use-scroll-threshold]]
-            [amp.hooks.use-scroll-to :refer [use-scroll-to-top]]
-            [amp.hooks.use-toggle-animations :refer [use-toggle-animations]]
-            [amp.utils.window :as win-utils]
+  "Back-to-top button (design system: BackToTop). Fixed bottom right on every
+   page; shown once the reader is two screens down and hidden again while the
+   footer is on screen, so it never sits over the legal line."
+  (:require [amp.hooks.use-scroll-to :refer [use-scroll-to-top]]
             [amp.lib.defnc :refer [defnc]]
-            [amp.ui.icons :refer [ArrowTurnRightUp]]
-            [helix.core :refer [$]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
+(defn- show? []
+  (let [y (.-scrollY js/window)
+        h (.-innerHeight js/window)
+        footer-top (some-> (.querySelector js/document ".ap-footer")
+                           (.getBoundingClientRect) (.-top))]
+    (and (> y (* 2 h))
+         (or (nil? footer-top) (> footer-top h)))))
+
 (defnc back-up-nav
   []
-  (let [is-desktop? (use-media-breakpoint :md)
-        container-ref (hooks/use-ref nil)
-        button-ref (hooks/use-ref nil)
-        scroll-to-top (use-scroll-to-top {:duration 1})
-        is-active? (use-scroll-threshold
-                    #(* 0.875 (win-utils/height)))]
-
-    (use-hover-animations button-ref
-                          :over {:opacity 1}
-                          :out {:opacity 0.7})
-
-    (use-toggle-animations
-     {:target container-ref
-      :on-to {:y 60
-              :opacity 1}
-      :off-to {:y -100
-               :opacity 0}
-      :is-on? (and is-active? (not is-desktop?))})
-
-    (d/div {:ref container-ref
-            :class "fixed top-0 right-0 cursor-pointer z-30 md:hidden"}
-           (d/div {:ref button-ref
-                   :class "flex items-center gap-1
-                           bg-pink-300
-                           text-slate-900
-                           opacity-90
-                           font-bold
-                           text-xl
-                           px-4 py-1
-                           whitespace-nowrap"
-                   :on-click scroll-to-top}
-                  "To Top "
-                  ($ ArrowTurnRightUp {})))))
+  (let [scroll-to-top (use-scroll-to-top {:duration 1})
+        [active? set-active!] (hooks/use-state false)]
+    (hooks/use-effect
+     :once
+     (let [update! #(set-active! (show?))]
+       (.addEventListener js/window "scroll" update! #js {:passive true})
+       (.addEventListener js/window "resize" update!)
+       (update!)
+       (fn []
+         (.removeEventListener js/window "scroll" update!)
+         (.removeEventListener js/window "resize" update!))))
+    (d/button {:class "ap-totop"
+               :data-hidden (when-not active? "")
+               :aria-hidden (not active?)
+               :aria-label "Back to top"
+               :tab-index (if active? 0 -1)
+               :on-click scroll-to-top}
+              (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"
+                      :stroke-width 1.6 :aria-hidden true}
+                     (d/path {:d "M8 13V3M3.5 7.5L8 3l4.5 4.5"}))
+              (d/span {:class "ap-totop__label"} "Top"))))

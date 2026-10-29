@@ -1,14 +1,14 @@
 (ns amp.pages.venue.page
   "Visitor Guide — wayfinding, venue history, and space details.
    Full dedicated page for the Armenia Pavilion location at the
-   Venice Biennale 2026."
+   Biennale Arte 2026."
   (:require
    [amp.pages.venue.map-config :as mc]
    [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.directions :refer [marine-office-phone water-taxi-map-src
-                              address-block opening-hours]]
+                              address-block]]
    [amp.ui.temporary-closure :refer [closure-notice]]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
@@ -65,12 +65,12 @@
 ;; since it is meant to be shown directly to the driver; English is opt-in.
 (def water-taxi-copy
   {:en {:title        "Water Taxi Instructions"
-        :subtitle     "Authorized access to the Arsenale – Armenian Pavilion"
-        :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenian Pavilion."
-                       "The Marine Office is aware and has approved access for water taxis transporting visitors to the Armenian Pavilion."]
+        :subtitle     "Authorized access to the Arsenale – Armenia Pavilion"
+        :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenia Pavilion."
+                       "The Marine Office is aware and has approved access for water taxis transporting visitors to the Armenia Pavilion."]
         :before-title "Before entering"
         :before-body  "Call the Marine Office and say:"
-        :before-quote "“I am arriving with a visitor for the Armenian Pavilion.”"
+        :before-quote "“I am arriving with a visitor for the Armenia Pavilion.”"
         :marine-label "Marine Office"
         :entrance-title "Only permitted entrance"
         :entrance-lead  "There is only one entrance for water taxis:"
@@ -81,7 +81,7 @@
         :route-steps  ["Approach from the north side of the lagoon."
                        "Enter through the only permitted taxi entrance: Galeazze – Rio delle Galeazze."
                        "Continue south along Rio delle Galeazze, following the route shown on the map."
-                       "Proceed to the Armenian Pavilion landing."]
+                       "Proceed to the Armenia Pavilion landing."]
         :map-caption  "Water taxi route — enter from the North Lagoon via Rio delle Galeazze and continue south to the pavilion drop-off point"
         :address-title "Address"}
    :it {:title        "Istruzioni per il taxi acqueo"
@@ -230,7 +230,7 @@
                              (d/div {:class "ap-callout ap-callout--blue"}
                                     (d/span {:class "ap-label"} (:before-title c))
                                     (d/span {:class "ap-body-s"} (:before-body c))
-                                    (d/q {:class "[quotes:none]"} (:before-quote c))
+                                    (d/span (:before-quote c))
                                     (d/span {:class "ap-caption !text-on-blue"}
                                             (:marine-label c) " · "
                                             (d/a {:class "underline text-on-blue"
@@ -360,7 +360,7 @@
 
                   (d/p {:class s/body-base}
                        "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
-                       "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
+                       "The Armenia Pavilion lies less than a ten-minute walk from this point, making the installation both a "
                        (d/span {:class s/em-strong} "threshold")
                        " and a "
                        (d/span {:class s/em-strong} "directional marker")
@@ -411,7 +411,7 @@
                      "Since "
                      (d/span {:class s/em-strong} "1980")
                      ", the Arsenale has served as a primary exhibition site for the "
-                     (d/span {:class s/em-strong} "Venice Biennale")
+                     (d/span {:class s/em-strong} "La Biennale di Venezia")
                      "\u2014its raw, monumental spaces providing a counterpoint to the refined galleries of the Giardini. "
                      "National pavilions, large-scale installations, and the central International Exhibition share this vast industrial landscape, "
                      "transforming shipbuilding halls into some of the most powerful exhibition spaces in the world.")
@@ -433,7 +433,6 @@
    ($ taxi-card)
    (d/div {:class (s/cx s/content-column-container "pt-16 lg:pt-24")}
           (d/div {:class (s/cx "flex flex-col" s/content-column)}
-                 ($ opening-hours)
                  ($ about-section)
                  ($ studio-section)
                  ($ outdoor-section)

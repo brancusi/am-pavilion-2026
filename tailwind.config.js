@@ -40,7 +40,9 @@ module.exports = {
         red: { ...twColors.red, DEFAULT: token("red") },
         blue: { ...twColors.blue, DEFAULT: token("blue") },
         yellow: { ...twColors.yellow, DEFAULT: token("yellow") },
-        pink: { ...twColors.pink, DEFAULT: token("pink") },
+        // Older pages used numbered pinks as their accent; they now resolve to
+        // the red shades so that accent reads as the design system's red.
+        pink: { ...twColors.red, DEFAULT: token("pink") },
       },
       maxWidth: { content: "1440px", measure: "68ch" },
     },

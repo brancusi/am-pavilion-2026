@@ -53,6 +53,6 @@
         [_visited? visible?] (use-intersection-observer ref {:threshold 0.05})]
     (d/div {:id id :ref ref}
            ($ section-header {:eyebrow "selected works" :title "The Work"}
-              (d/div {:class "mt-6 relative pinstripe-bold"}
+              (d/div {:class "mt-6 relative"}
                      ($ lazy-image-gallery {:enabled? visible?
                                             :slides   slides}))))))

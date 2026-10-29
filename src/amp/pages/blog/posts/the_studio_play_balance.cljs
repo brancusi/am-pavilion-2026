@@ -59,18 +59,13 @@
         [_gallery-visited? gallery-visible?] (use-intersection-observer gallery-ref)]
     (d/div {:class "space-y-6 pb-8"}
 
-           ;; Subtitle
-           (d/p {:class (s/cx s/font-display s/weight-medium s/text-muted
-                              "text-lg sm:text-xl italic mb-2")}
-                "Play, Balance, and the Life of Form")
-
            (d/p {:class s/body-lg}
                 "What happens when sculpture begins not with monumentality, but with a single, beautiful unit?")
 
            (d/p {:class s/body-base}
                 "At the heart of "
                 (d/span {:class s/em-strong} "Zadik Zadikian\u2019s")
-                " work for the upcoming Venice Biennale is a small plaster block: pigmented, finely "
+                " work for Biennale Arte 2026 is a small plaster block: pigmented, finely "
                 "finished, tactile, and deceptively simple. It recalls the directness of a child\u2019s "
                 "wooden toy block, yet in Zadikian\u2019s hands it becomes something far more "
                 "expansive\u2014a tool for improvisation, a way of sketching in space, and a means of "
@@ -104,7 +99,7 @@
 
            ;; Image gallery
            (d/div {:ref gallery-ref
-                   :class "my-8 relative pinstripe-bold"}
+                   :class "my-8 relative"}
                   ($ lazy-image-gallery {:enabled? gallery-visible?
                                          :slides   gallery-slides}))
 

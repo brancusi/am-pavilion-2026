@@ -32,7 +32,7 @@
 
                    (d/p {:class (s/cx s/body-base "mb-6")}
                         "The invitation to represent "
-                        (d/span {:class s/em-strong} "Armenia at the 61st Venice Biennale")
+                        (d/span {:class s/em-strong} "Armenia at the 61st Biennale Arte")
                         " carries a particular resonance. Venice and Armenia share a deep "
                         "historical connection: the island of "
                         (d/span {:class s/em-strong} "San Lazzaro degli Armeni")

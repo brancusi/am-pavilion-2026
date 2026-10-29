@@ -296,7 +296,7 @@
 ;; ---------------------------------------------------------------------------
 
 (def content-column
-  "Centered column that caps width on large screens (matches budget layout)."
+  "Centered column that caps width on large screens."
   "w-full lg:w-8/12 max-w-[1100px] min-w-0")
 
 (def content-column-container

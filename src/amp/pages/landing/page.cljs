@@ -11,6 +11,8 @@
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
    [amp.styles :as s]
+   [amp.ui.fit-gallery :refer [fit-gallery]]
+   [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture mux-poster]]
    [amp.ui.post-card :refer [post-card]]
    [amp.ui.studio-mark :refer [studio-mark]]
@@ -29,18 +31,60 @@
 
 (def ^:private media picture/media-host)
 
+(def ^:private big-red-model
+  "Interactive Big Red: the stack-formation data for amp.ui.threejs-slide."
+  {:camera     {:position [250 250 250] :target [10 60 0]}
+   :scene-data {:lighting [[:ambient-light {:intensity 0.7}]
+                           [:directional-light {:cast-shadow true :position [-100 120 60] :intensity 1.5}]]
+                :data [{:bounds [144 36 72]
+                        :layers [[{:align :tr :color "#1ebe3a" :dims [9 6 9]}
+                                  {:align :tl :color "#0b080c" :dims [24 6 12]}
+                                  {:align :br :color "#0b080c" :dims [36 6 12]}
+                                  {:align :bl :color "#ec9c3b" :dims [6 6 12]}]
+                                 [{:dims [144 36 72] :color "#ef3548"}]
+                                 [{:dims [36 9 36] :align :tr :color "#0070df"}]
+                                 [{:dims [18 9 18] :align :tr :color "#f1afed"}]
+                                 [{:dims [9 4.5 9] :align :tr :color "#0b080c"}]
+                                 [{:dims [4.5 9 4.5] :align :tr :color "#ec9c3b"}]]}]}})
+
 (def ^:private works
-  [{:src "blue_yellow/top_view.jpg"         :title "Blue Yellow Blue Yellow" :credit "Maquette · 2026"
+  "Works gallery. :aspect-ratio is each image's own (width / height), so
+   nothing is cropped."
+  [{:img-src "blue_yellow/top_view.jpg" :aspect-ratio 0.75
+    :caption "Blue Yellow Blue Yellow" :credit "Maquette · 2026"
     :alt "A turquoise and yellow plaster unit seen from above, casting a long blue shadow"}
-   {:src "big_red/master.jpg"               :title "The Big Red"             :credit "Render · 2026"
+   {:img-src "big_red/master.jpg" :aspect-ratio 1.778
+    :caption "The Big Red" :credit "Render · 2026"
     :alt "A long red plaster block on black feet, with smaller blue and pink units on top"}
-   {:src "artwork/1.jpeg"                   :title "Leaning Red"             :credit "Pigmented plaster · 2026"
+   {:img-src "artwork/1.jpeg" :aspect-ratio 0.75
+    :caption "Leaning Red" :credit "Pigmented plaster · 2026"
     :alt "A tall red slab leaning against a wall beside a narrow green unit"}
-   {:src "blue_yellow/cu-2.jpg"             :title "Blue Yellow Blue Yellow" :credit "Detail · 2026"
+   (merge {:type :threejs :aspect-ratio 0.75
+           :caption "The Big Red" :credit "Interactive 3D"}
+          big-red-model)
+   {:img-src "big_red_walkway/5.jpg" :aspect-ratio 1.791
+    :caption "The Big Red at the Arsenale" :credit "Render · 2026"
+    :alt "The Big Red on the quay beside the canal at the Arsenale gate, with a wooden footbridge"}
+   {:img-src "blue_yellow/side-2.jpg" :aspect-ratio 0.75
+    :caption "Blue Yellow Blue Yellow" :credit "Render · 2026"
+    :alt "A turquoise unit topped with yellow, its shadow falling across a pale floor"}
+   {:img-src "blue_yellow/cu-2.jpg" :aspect-ratio 0.75
+    :caption "Blue Yellow Blue Yellow" :credit "Detail · 2026"
     :alt "Close view of turquoise and yellow plaster faces meeting at a corner"}
-   {:src "photos/blue_unit_with_hand.jpg"   :title "Blue Block"              :credit "Los Angeles · 2026"
+   {:img-src "big_red/low_side.jpg" :aspect-ratio 1.778
+    :caption "The Big Red" :credit "Render · 2026"
+    :alt "The Big Red from a low angle, with blue, pink and black units stepped on its top"}
+   {:img-src "photos/blue_unit_with_hand.jpg" :aspect-ratio 1.5
+    :caption "Blue Block" :credit "Los Angeles · 2026"
     :alt "A hand resting on a single blue plaster unit"}
-   {:src "big_red/flag.jpg"                 :title "The Big Red"             :credit "Render · 2026"
+   {:img-src "big_red/corner_low.jpg" :aspect-ratio 0.75
+    :caption "The Big Red" :credit "Render · 2026"
+    :alt "The Big Red seen corner-on, its stepped units rising to a small yellow block"}
+   {:img-src "big_red/black_leg.jpg" :aspect-ratio 0.75
+    :caption "The Big Red" :credit "Detail · 2026"
+    :alt "Close view of a black foot and a green foot under the red block"}
+   {:img-src "big_red/flag.jpg" :aspect-ratio 1.383
+    :caption "The Big Red" :credit "Render · 2026"
     :alt "The Big Red from above, its shadow stretched across a pale floor"}])
 
 (def ^:private facts
@@ -56,15 +100,19 @@
 (defnc hero []
   (let [ref (hooks/use-ref nil)
         [_ in-view?] (use-scroll-trigger ref {:start "top bottom" :end "bottom top"})
-        [paused? set-paused!] (hooks/use-state false)]
+        [paused? set-paused!] (hooks/use-state false)
+        [film-open? set-film-open!] (hooks/use-state false)
+        hero-film (some #(when (= hero-playback-id (:playback-id %)) %) films/films)]
     (<>
+     ($ film-lightbox {:film (when film-open? hero-film)
+                       :on-close #(set-film-open! false)})
      (d/section {:ref ref :class "ap-hero isolate"}
                 (d/div {:class "ap-hero__media" :aria-hidden true}
                        (d/img {:src (mux-poster hero-playback-id {:w 1600 :time 100})
                                :alt "" :class "absolute inset-0 w-full h-full object-cover"})
                        ($ lazy-video {:allow-audio? false
                                       :playback-id hero-playback-id
-                                      :should-play? (and in-view? (not paused?))}))
+                                      :should-play? (and in-view? (not paused?) (not film-open?))}))
                 (d/div {:class "ap-hero__controls"}
                        (d/button {:class "ap-iconbtn"
                                   :aria-label (if paused? "Play background video" "Pause background video")
@@ -83,7 +131,11 @@
                               (d/span "9 May – 22 November 2026")
                               (d/span "Arsenale Militare, Venice"))
                        (d/div {:class "flex flex-wrap gap-2"}
-                              (d/a {:class "ap-btn ap-btn--yellow" :href "#film"} "Watch the film")
+                              (d/a {:class "ap-btn ap-btn--yellow" :href "#film"
+                                    :on-click (fn [e] (.preventDefault e) (set-film-open! true))}
+                                   (d/svg {:viewBox "0 0 16 16" :fill "currentColor" :aria-hidden true}
+                                          (d/path {:d "M4 2l10 6-10 6z"}))
+                                   "Watch the film")
                               (d/a {:class "ap-btn ap-btn--ghost !text-white !border-white" :href "/visit"}
                                    "Plan your visit"))))
      (d/div {:class "ap-hero__strip" :aria-hidden true}
@@ -126,34 +178,13 @@
 ;; ── Works gallery ───────────────────────────────────────────────────────
 
 (defnc works-gallery []
-  (let [track (hooks/use-ref nil)
-        scroll! (fn [dir]
-                  (when-let [el @track]
-                    (.scrollBy el #js {:left (* dir 0.8 (.-clientWidth el)) :behavior "smooth"})))]
-    (d/section {:class "ap-sec" :aria-label "Works"}
-               (d/div {:class "ap-gallery"}
-                      (d/div {:class "ap-gallery__head ap-wrap !px-4 lg:!px-12"}
-                             (d/div
-                              (d/p {:class "ap-label ap-muted m-0 mb-1"} "Works · 2026")
-                              (d/h2 {:class "ap-h1"} "The units, assembled"))
-                             (d/div {:class "flex items-center gap-4"}
-                                    (d/div {:class "ap-gallery__nav hidden md:flex"}
-                                           (d/button {:aria-label "Previous" :on-click #(scroll! -1)} "←")
-                                           (d/button {:aria-label "Next" :on-click #(scroll! 1)} "→"))
-                                    (d/a {:class "ap-btn ap-btn--ghost hidden sm:inline-flex" :href "/artist"} "The artist")))
-                      (d/div {:ref track :class "ap-gallery__track" :tab-index 0
-                              :aria-label "Works, swipe for more"}
-                             (map-indexed
-                              (fn [i {:keys [src title credit alt]}]
-                                (d/figure {:key src :class "ap-figure"}
-                                          (d/div {:class "ap-figure__frame" :style #js {"--ar" "4/5"}}
-                                                 ($ picture {:src (str media src) :ar 0.8 :alt alt
-                                                             :sizes "(min-width: 960px) 30vw, 82vw"}))
-                                          (d/figcaption {:class "ap-tomb"}
-                                                        (d/span {:class "ap-tomb__no"} (str "0" (inc i)))
-                                                        (d/span {:class "ap-tomb__title"} title)
-                                                        (d/span {:class "ap-tomb__credit"} credit))))
-                              works))))))
+  (d/section {:class "ap-sec" :aria-label "Works"}
+             ($ fit-gallery {:label "Works · 2026"
+                             :title "The units, assembled"
+                             :slides (mapv #(cond-> % (:img-src %) (update :img-src (partial str media)))
+                                           works)
+                             :action (d/a {:class "ap-btn ap-btn--ghost max-sm:!hidden" :href "/artist"}
+                                          "The artist")})))
 
 ;; ── Chapter 41: the Hall ────────────────────────────────────────────────
 
