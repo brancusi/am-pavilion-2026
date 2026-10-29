@@ -4,7 +4,7 @@
    menu sheet below that."
   (:require [amp.lib.defnc :refer [defnc]]
             [amp.state.provider :refer [use-main-state]]
-            [amp.ui.studio-mark :refer [studio-mark]]
+            [amp.ui.studio-mark :refer [studio-mark-3d]]
             [amp.ui.theme-toggle :refer [theme-toggle]]
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
@@ -73,7 +73,7 @@
     (<>
      (d/header {:class "ap-header"}
                (d/a {:class "ap-header__brand" :href "/" :on-click close!}
-                    ($ studio-mark {:variants #{:pigment} :label nil})
+                    ($ studio-mark-3d {:variants #{:pigment} :label nil})
                     (d/span {:class "ap-header__name"}
                             "Armenia Pavilion" (d/br)
                             (d/span {:class "ap-muted"} "Biennale Arte 2026")))

@@ -17,7 +17,7 @@
    [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture mux-poster]]
    [amp.ui.post-card :refer [post-card]]
-   [amp.ui.studio-mark :refer [studio-mark]]
+   [amp.ui.studio-mark :refer [studio-mark-3d]]
    [amp.ui.temporary-closure :refer [closure-banner]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [helix.core :refer [$ <>]]
@@ -163,19 +163,31 @@
 
 ;; ── Chapter I: the ephemeral ground ─────────────────────────────────────
 
+(def ^:private grounds
+  "Ground and text colour for each pigment a hovered letter can carry."
+  {"red" ["--red" "--on-red"] "blue" ["--blue" "--on-blue"] "yellow" ["--yellow" "--on-yellow"]
+   "turquoise" ["--turquoise" "--on-turquoise"] "pink" ["--pink" "--on-pink"]
+   "brick" ["--brick" "--on-yellow"] "ink" ["--night" "--on-night"]})
+
 (defnc unit-chapter []
-  (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit"}
-             (d/div {:class "ap-wrap ap-ch-grid !px-0"}
-                    (d/div {:class "flex flex-col gap-4"}
-                           (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Chapter")
-                           (d/p {:class "ap-numeral" :aria-hidden true} "I")
-                           (d/h2 {:class "ap-display-l ap-chapter__title"} "The Unit")
-                           (d/p {:class "ap-body m-0 max-w-[36ch]"}
-                                "Each block is resolved on its own before it joins anything. Color is embedded in the material, not painted on.")
-                           (d/p {:class "ap-ephemeral-note"}
-                                "Structures are assembled for a moment, then gone. Watch the ground: each color erases its own letters."))
-                    (d/div {:class "ap-ch-mark"}
-                           ($ studio-mark {:variants #{:stack :pigment}})))))
+  ;; Hovering a letter (desktop) holds the ground on its pigment, so that
+  ;; letter sinks into it and only its tilted depth shows.
+  (let [[ground set-ground!] (hooks/use-state nil)
+        [bg on] (grounds ground)]
+    (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit"
+                :data-ground (when ground "")
+                :style (when ground #js {"--ground" (str "var(" bg ")") "--ground-on" (str "var(" on ")")})}
+               (d/div {:class "ap-wrap ap-ch-grid !px-0"}
+                      (d/div {:class "flex flex-col gap-4"}
+                             (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Chapter")
+                             (d/p {:class "ap-numeral" :aria-hidden true} "I")
+                             (d/h2 {:class "ap-display-l ap-chapter__title"} "The Unit")
+                             (d/p {:class "ap-body m-0 max-w-[36ch]"}
+                                  "Each block is resolved on its own before it joins anything. Color is embedded in the material, not painted on.")
+                             (d/p {:class "ap-ephemeral-note"}
+                                  "Structures are assembled for a moment, then gone. Watch the ground: each color erases its own letters."))
+                      (d/div {:class "ap-ch-mark"}
+                             ($ studio-mark-3d {:variants #{:stack :pigment} :on-hover set-ground!}))))))
 
 ;; ── Works gallery ───────────────────────────────────────────────────────
 
