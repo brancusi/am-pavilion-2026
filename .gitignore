@@ -37,4 +37,5 @@ cljs-runtime
 # NPM greensock related
 .npmrc
 
-.local.wrangler/
+.local
+.wrangler/
