@@ -13,9 +13,9 @@
    4. Slide scrolls away → automatically tears down & resets to step 1."
   (:require ["three" :as THREE]
             ["three/addons/controls/OrbitControls.js" :refer [OrbitControls]]
-            [amp.pages.mockup.objects :as objects]
-            [amp.pages.mockup.scene :as scene]
-            [amp.pages.mockup.renderers.simple-stack-formation :as ssf]
+            [amp.three.objects :as objects]
+            [amp.three.scene :as scene]
+            [amp.three.simple-stack-formation :as ssf]
             [amp.ui.icons :refer [XMarkIcon CubeIcon]]
             [amp.ui.button :refer [main-button]]
             [amp.ui.overlays :refer [caption-overlay]]

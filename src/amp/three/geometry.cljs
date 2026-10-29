@@ -1,4 +1,4 @@
-(ns amp.pages.mockup.geometry)
+(ns amp.three.geometry)
 
 (defn fmt-dim
   "Formats a dimension value: integer when whole, 1 decimal place otherwise."

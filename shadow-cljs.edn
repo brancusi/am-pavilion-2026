@@ -33,8 +33,6 @@
          :donations-view {:entries [amp.pages.donations.page]
                           :depends-on #{:main}}
 
-         :mockup-view {:entries [amp.pages.mockup.page]
-                       :depends-on #{:threejs}}
 
          :venue-view {:entries [amp.pages.venue.page]
                       :depends-on #{:main}}
@@ -90,8 +88,6 @@
                               :depends-on #{:main}}
 
 
-             :mockup-view {:entries [amp.pages.mockup.page]
-                           :depends-on #{:threejs}}
 
              :venue-view {:entries [amp.pages.venue.page]
                           :depends-on #{:main}}

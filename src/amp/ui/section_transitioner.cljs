@@ -50,7 +50,6 @@
 
         state-view (:view current-state-view-data)
         state-view-id (:name current-state-view-data)
-        hide-footer? (:hide-footer? current-state-view-data)
 
         has-state-view? (keyword? state-view-id)]
 
@@ -83,5 +82,5 @@
                                        (set-view-stack!
                                         (fn [prev]
                                           (filterv #(not= (:uuid %) uuid) prev))))}})))))
-     (when (and has-state-view? (not hide-footer?))
+     (when has-state-view?
        ($ site-footer)))))

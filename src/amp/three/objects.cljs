@@ -1,4 +1,4 @@
-(ns amp.pages.mockup.objects
+(ns amp.three.objects
   (:require ["three" :as THREE]
             ["three/addons/lines/Line2.js" :refer [Line2]]
             ["three/addons/lines/LineMaterial.js" :refer [LineMaterial]]

@@ -35,7 +35,7 @@
                                  "translate-y-[5px]"))})))
 
 ;; ---------------------------------------------------------------------------
-;; Nav links for the menu — only the primary public pages (not budget/mockups)
+;; Nav links for the menu — only the primary public pages (not budget)
 ;; ---------------------------------------------------------------------------
 
 (def nav-items

@@ -1,9 +1,9 @@
-(ns amp.pages.mockup.scene
+(ns amp.three.scene
   (:require [threeagent.core :as th]
             ["three" :as THREE]
             ["three/addons/controls/OrbitControls.js" :refer [OrbitControls]]
             ["three/addons/objects/Sky.js" :refer [Sky]]
-            [amp.pages.mockup.objects :as objects]))
+            [amp.three.objects :as objects]))
 
 ;; ---------------------------------------------------------------------------
 ;; Sky presets — shared config for dark / light mode

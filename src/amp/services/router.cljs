@@ -60,13 +60,7 @@
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
                 :title "Water Taxi"
-                :view (lazy-component amp.pages.water-taxi.page/water-taxi-view)}
-
-               {:id ::mockups
-                :path "mockups"
-                :title "Mockups"
-                :hide-footer? true
-                :view (lazy-component amp.pages.mockup.page/mockup-view)}])
+                :view (lazy-component amp.pages.water-taxi.page/water-taxi-view)}])
 
 (defn routes
   []
@@ -76,10 +70,9 @@
            :view (lazy-component amp.pages.landing.page/landing-view)
            :controllers [{:start (log-fn "start" "landing controller")
                           :stop (log-fn "stop" "landing controller")}]}]]
-        (mapcat (fn [{:keys [id path view hide-footer?]}]
+        (mapcat (fn [{:keys [id path view]}]
                   (let [route-data {:name id
                                     :view view
-                                    :hide-footer? hide-footer?
                                     :controllers [{:start (log-fn (str "start!!!" id))
                                                    :stop (log-fn (str "stop!!!" id))}]}]
                     (if (= id ::blog)
