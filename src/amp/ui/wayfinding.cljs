@@ -9,7 +9,17 @@
             [amp.ui.directions :refer [pavilion-address]]
             [amp.ui.lazy-map :refer [mapbox-map]]
             [helix.core :refer [$ <>]]
-            [helix.dom :as d]))
+            [helix.dom :as d]
+            [helix.hooks :as hooks]))
+
+(defn use-doc-lang
+  "Sets <html lang> while a page shows content in `lang` (so screen readers
+   pronounce the Italian correctly); back to English on leaving."
+  [lang]
+  (hooks/use-effect
+   [lang]
+   (set! (.. js/document -documentElement -lang) (name lang))
+   #(set! (.. js/document -documentElement -lang) "en")))
 
 (defn rich
   "Inline prose from plain strings and [:em \"text\"] segments."
@@ -155,7 +165,7 @@
            (d/div {:class "flex flex-col gap-4"}
                   (d/p {:class "ap-label ap-muted m-0"} (:steps-title c))
                   ($ steps {:items (:steps c) :water? true})))
-         ($ route-map {:map galeazze-map :caption (:map-caption c)
+         ($ route-map {:map (assoc galeazze-map :lang lang) :caption (:map-caption c)
                        :legend [[:water (if (= lang :it) "Percorso in acqua" "Water route")]
                                 [:pav (if (= lang :it) "Padiglione Armenia" "Armenia Pavilion")]]})
          children))

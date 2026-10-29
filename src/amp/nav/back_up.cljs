@@ -33,7 +33,8 @@
                :aria-hidden (not active?)
                :aria-label "Back to top"
                :tab-index (if active? 0 -1)
-               :on-click scroll-to-top}
+               ;; Drop focus so it doesn't stay on the button once it hides.
+               :on-click (fn [e] (.blur (.-currentTarget e)) (scroll-to-top))}
               (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"
                       :stroke-width 1.6 :aria-hidden true}
                      (d/path {:d "M8 13V3M3.5 7.5L8 3l4.5 4.5"}))

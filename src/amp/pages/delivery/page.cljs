@@ -26,7 +26,7 @@
    "Prima di entrare, chiamare l’Ufficio della Marina."
    "Entrare dall’unico ingresso consentito: Galeazze – Rio delle Galeazze."
    "Proseguire verso sud lungo il Rio delle Galeazze, seguendo il percorso indicato sulla mappa."
-   "Raggiungere l’approdo del Padiglione Armenia e scaricare al punto indicato (“Drop-off point”)."])
+   "Raggiungere l’approdo del Padiglione Armenia (punto rosso sulla mappa) e scaricare lì."])
 
 (def foot-steps
   ["Raggiungere l’ingresso dell’Arsenale Militare alla Celestia, accanto alla Chiesa di Cristo Re alla Celestia (Fondamenta Case Nuove)."
@@ -83,15 +83,17 @@
                                           :lede "Per pacchi e materiali trasportabili a mano o con carrello. Il padiglione è a pochi minuti a piedi dall’ingresso dell’Arsenale Militare alla Celestia, accanto alla Chiesa di Cristo Re alla Celestia."})
                       (d/div {:class "ap-guide lg:!grid-cols-[1.4fr_1fr]"}
                              ($ wf/route-map
-                                {:map {:interactive? interactive?
+                                {:map {:interactive? interactive? :lang :it
                                        :initial-view mc/delivery-initial-view
+                                       :bounds mc/delivery-bounds
+                                       :bounds-padding 56
                                        :ant-paths mc/delivery-ant-paths
                                        :layers mc/delivery-layers
                                        :labels-url mc/delivery-data-url}
                                  :legend [[:walk "Percorso a piedi"] [:pav "Padiglione Armenia"]]
                                  :caption "Dall’ingresso alla Celestia (punto giallo) fino al padiglione: pochi minuti a piedi."
                                  :actions (<> (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
-                                                   "Apri in Google Maps"))})
+                                                   "Apri in Maps"))})
                              (d/div {:class "flex flex-col gap-6"}
                                     (d/p {:class "ap-label ap-muted m-0"} "Percorso")
                                     ($ wf/steps {:items foot-steps}))))))) 
@@ -125,13 +127,14 @@
                             (d/li {:key title}
                                   (d/h3 {:class "ap-h3"} title)
                                   (d/p {:class "ap-body-s m-0"} body))))
-                    (d/p {:class "ap-lede mt-12 mb-0 max-w-[48ch]"}
+                    (d/p {:class "ap-lede !mt-12 mb-0 max-w-[48ch]"}
                          "Grazie per la collaborazione: una consegna ben preparata arriva in studio senza intoppi."))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 
 (defnc delivery-view
   [_props]
+  (wf/use-doc-lang :it)
   (d/div {:lang "it" :class "bg-paper text-ink"}
          ($ wf/page-head
             {:eyebrow "Venezia · Arsenale Militare"

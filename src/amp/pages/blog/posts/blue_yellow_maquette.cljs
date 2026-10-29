@@ -50,7 +50,7 @@
    ;; Interactive 3D mockup (mockup-007 from the archived mockup viewer)
    {:type         :threejs
     :aspect-ratio 0.75
-    :caption      "MOCKUP 007 — INTERACTIVE 3D"
+    :caption      "Maquette — interactive 3D"
     :credit       "Zadik Zadikian 2026"
     :camera       {:position [150 150 150]
                    :target   [0 50 0]}

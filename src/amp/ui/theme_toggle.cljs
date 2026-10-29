@@ -75,7 +75,7 @@
          (apply-theme! :system)
          (fn [] (.removeEventListener mql "change" handler)))))
 
-    (d/div {:class (s/cx "ap-theme" class) :role "group" :aria-label "Colour theme"}
+    (d/div {:class (s/cx "ap-theme" class) :role "group" :aria-label "Color theme"}
            (for [[m label icon] modes]
              (d/button {:key (name m)
                         :class "ap-theme__btn"

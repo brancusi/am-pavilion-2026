@@ -179,6 +179,8 @@
                                                          :class "!h-full !shadow-none"
                                                          :interactive? is-desktop?
                                                          :initial-view mc/initial-view
+                                                         :bounds mc/visitor-bounds
+                                                         :bounds-padding 48
                                                          :ant-paths mc/ant-paths
                                                          :layers mc/layers :labels-url mc/visitor-data-url})
                                           ($ mapbox-map {:key "water"
@@ -189,12 +191,14 @@
                                                          :ant-paths mc/water-taxi-ant-paths
                                                          :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url})))
                                  (d/div {:class "ap-legend"}
-                                        (d/span (d/i {:class "walk"}) "Walking route")
-                                        (d/span (d/i {:class "water"}) "Water taxi")
+                                        (if (= mode :walk)
+                                          (d/span (d/i {:class "walk"}) "Walking route")
+                                          (d/span (d/i {:class "water"}) "Water taxi"))
                                         (d/span (d/i {:class "pav"}) "Armenia Pavilion"))
                                  (d/div {:class "ap-map__actions"}
-                                        (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
-                                             "Open in Maps")
+                                        (when (= mode :walk)
+                                          (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
+                                               "Open in Maps"))
                                         (d/a {:class "ap-btn ap-btn--ghost" :href "#taxi"} "Driver card")))
                       (d/div {:class "flex flex-col gap-6"}
                              (if (= mode :walk) ($ walk-steps) ($ water-steps))

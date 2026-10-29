@@ -369,11 +369,16 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-gallery__track--fit .ap-figure__frame { aspect-ratio: var(--ar); }
 .ap-gallery__track--fit .ap-figure__frame > img { object-fit: contain; animation: none; opacity: 0; transition: opacity var(--dur-slow, .6s) var(--ease-place); }
 .ap-gallery__track--fit .ap-figure__frame > img[data-loaded] { opacity: 1; }
+/* Phones: the 3D slide is shorter so it doesn't leave a gap under photos. */
+@media (max-width: 719px) { .ap-gallery__track--fit .ap-figure--3d { --ar: 1.33 !important; } }
 @media (min-width: 720px) {
-  .ap-gallery__track--fit { grid-auto-columns: max-content; align-items: end; }
-  .ap-gallery__track--fit .ap-figure { width: max-content; }
-  .ap-gallery__track--fit .ap-figure__frame { height: clamp(320px, 58vh, 600px); width: auto; }
-  .ap-gallery__track--fit .ap-tomb { max-width: calc(clamp(320px, 58vh, 600px) * var(--ar)); }
+  /* One row height, but never wider than the gallery itself (narrow text
+     columns), so wide images shrink instead of overlapping the next one. */
+  .ap-gallery:has(.ap-gallery__track--fit) { container-type: inline-size; }
+  .ap-gallery__track--fit, .ap-gallery--inset .ap-gallery__track--fit { grid-auto-columns: max-content; align-items: end; }
+  .ap-gallery__track--fit .ap-figure { --fh: min(clamp(320px, 58vh, 600px), calc((100cqw - 2 * var(--space-8)) / var(--ar))); width: max-content; }
+  .ap-gallery__track--fit .ap-figure__frame { height: var(--fh); width: auto; }
+  .ap-gallery__track--fit .ap-tomb { max-width: calc(var(--fh) * var(--ar)); }
 }
 .ap-gallery__track--fit .ap-figure--3d .ap-figure__frame { background: var(--paper-sunk); }
 .ap-3d__cover { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: var(--space-3); padding: var(--space-6); text-align: center; border: 0; width: 100%; background: transparent; color: var(--ink); cursor: pointer; }
@@ -427,7 +432,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-option .ap-label { color: var(--ink-muted); }
 .ap-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); counter-reset: check; }
 @media (min-width: 720px) { .ap-checks { grid-template-columns: 1fr 1fr; } }
-.ap-checks li { display: grid; gap: var(--space-2); padding: var(--space-6); background: var(--paper); counter-increment: check; }
+.ap-checks li { display: grid; align-content: start; gap: var(--space-2); padding: var(--space-6); background: var(--paper); counter-increment: check; }
 .ap-checks li::before { content: counter(check, decimal-leading-zero); font: 500 12px/1 var(--font-mono); color: var(--red-text); letter-spacing: .08em; }
 
 /* Share bar */

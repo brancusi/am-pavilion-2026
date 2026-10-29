@@ -23,8 +23,11 @@
    the rest of the site. Mixed-case captions are left alone."
   [s]
   (if (= s (.toUpperCase s))
-    (.replace (.toLowerCase s) (js/RegExp. "(^|[\\s—–(-])(\\S)" "g")
-              (fn [_ pre c] (str pre (.toUpperCase c))))
+    (-> (.toLowerCase s)
+        (.replace (js/RegExp. "(^|[\\s—–(-])(\\S)" "g")
+                  (fn [_ pre c] (str pre (.toUpperCase c))))
+        ;; Acronyms stay upper case.
+        (.replace (js/RegExp. "\\b(Cnc|3d|2d|Led|Pvc|Mdf)\\b" "g") #(.toUpperCase %)))
     s))
 
 (def ^:private threejs-slide (lazy-component amp.ui.threejs-slide/threejs-slide))

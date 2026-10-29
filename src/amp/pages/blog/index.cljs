@@ -24,9 +24,12 @@
                          (d/div {:class "flex flex-col gap-3"}
                                 (d/p {:class "ap-label ap-muted m-0"} "Journal")
                                 (d/h1 {:class "ap-display-xl"} "Notes from the studio"))
-                         (d/span {:class "ap-jhead__count"
-                                  :aria-label (str (count journal/posts) " posts")}
-                                 (.padStart (str (count journal/posts)) 2 "0")))
+                         (d/div {:class "flex flex-col items-end gap-2" :aria-live "polite"
+                                 :aria-label (str (count shown) (if (= 1 (count shown)) " post" " posts"))}
+                                (d/span {:class "ap-jhead__count" :aria-hidden true}
+                                        (.padStart (str (count shown)) 2 "0"))
+                                (d/span {:class "ap-label ap-muted" :aria-hidden true}
+                                        (if (= 1 (count shown)) "Post" "Posts"))))
                   (d/p {:class "ap-lede m-0 max-w-[44ch]"}
                        "Process, travel and the making of The Studio, from Los Angeles to Tesa 41.")
                   (when (> (count kinds) 2)

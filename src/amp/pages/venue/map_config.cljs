@@ -59,6 +59,11 @@
     :bg-opacity 0.3
     :duration 1.2}])
 
+(def visitor-bounds
+  "The walking route from the Piraeus Lion to Tesa 41; fitted on load so
+   the whole route shows on any viewport."
+  [[12.34842 45.43443] [12.35076 45.43802]])
+
 (def ant-paths (ant-paths-for visitor-data-url))
 
 ;; ── GeoJSON layers ─────────────────────────────────────────────────────────
@@ -119,6 +124,9 @@
   {:longitude 12.350250
    :latitude  45.437300
    :zoom      17.2})
+
+(def delivery-bounds
+  [[12.34993 45.43674] [12.35076 45.43802]])
 
 (def delivery-ant-paths (ant-paths-for delivery-data-url))
 (def delivery-layers    (layers-for delivery-data-url))
