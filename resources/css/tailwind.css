@@ -74,6 +74,9 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-mark3d__cell[data-active] .ap-mark3d__floor { opacity: 1; }
 .ap-mark3d__layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: color-mix(in srgb, var(--tile-fill) 55%, #000); transform: translateZ(calc(var(--k) * var(--d, 0px) * -1)); transition: transform var(--dur-base) var(--ease-place), fill var(--dur-base); }
 .ap-mark3d__layer:last-child { fill: var(--tile-fill); }
+/* Keep the letter walls and floor off the block's outer edges, where they
+   would share a plane with the sides and flicker through as stripes. */
+.ap-mark3d__layer:not(:last-child), .ap-mark3d__floor { clip-path: inset(2%); }
 
 /* The Unit: hovering a letter holds the ground on that letter's pigment
    (an overlay fades in over the cycling ground). */
