@@ -1,0 +1,18 @@
+// Permanently redirects the old and www hostnames to https://armenianpavilion.org,
+// keeping the path and query string. Deploy with:
+//   npx wrangler deploy --config cloudflare/redirect/wrangler.jsonc
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "am-pavilion-redirect",
+  "account_id": "badb2c07d9cd1effc4c60bc8b6e55826",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  // Routes take over traffic on each hostname's existing proxied (orange-cloud)
+  // DNS record, whatever that record points at.
+  "routes": [
+    { "pattern": "www.armenianpavilion.org/*", "zone_name": "armenianpavilion.org" },
+    { "pattern": "armenianpavilion2026.org/*", "zone_name": "armenianpavilion2026.org" },
+    { "pattern": "www.armenianpavilion2026.org/*", "zone_name": "armenianpavilion2026.org" }
+  ]
+}

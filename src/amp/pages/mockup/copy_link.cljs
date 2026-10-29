@@ -18,7 +18,7 @@
      :piece-id - the piece identifier used to construct the URL"
   [{:keys [piece-id]}]
   (let [[copied? set-copied!] (hooks/use-state false)
-        url (str "https://armenianpavilion2026.org/mockups?piece=" piece-id)]
+        url (str "https://armenianpavilion.org/mockups?piece=" piece-id)]
     (d/button {:class (str "z-20 fixed top-14 right-0 m-2 p-2 rounded "
                            "bg-white/40 border-2 border-slate-800 "
                            "hover:bg-white/60 transition-colors")

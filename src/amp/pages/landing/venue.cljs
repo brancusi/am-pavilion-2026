@@ -4,7 +4,7 @@
   (:require
    [amp.pages.venue.map-config :as mc]
    [amp.ui.expandable-text :refer [expandable-text-area-2]]
-   [amp.ui.map :refer [mapbox-map]]
+   [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]

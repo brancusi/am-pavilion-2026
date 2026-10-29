@@ -4,7 +4,7 @@
    Venice Biennale 2026."
   (:require
    [amp.pages.venue.map-config :as mc]
-   [amp.ui.map :refer [mapbox-map]]
+   [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.page-shell :refer [page-shell]]
    [amp.ui.section-header :refer [section-eyebrow]]

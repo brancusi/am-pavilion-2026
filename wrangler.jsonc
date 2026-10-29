@@ -1,0 +1,21 @@
+// Armenian Pavilion 2026 site — static assets on Cloudflare Workers.
+// `npm run release` builds into ./release, then `npx wrangler deploy` ships it.
+// armenianpavilion2026.org and www.* are redirected here by cloudflare/redirect.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "am-pavilion",
+  // Az@atd.dev's Account — owns the armenianpavilion.org and armenianpavilion2026.org zones
+  "account_id": "badb2c07d9cd1effc4c60bc8b6e55826",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./release",
+    // Client-side routes (/visit, /blog/:slug, …) fall back to index.html
+    "not_found_handling": "single-page-application"
+  },
+  "workers_dev": true,
+  // A route (not a custom domain) because the zone's existing proxied record
+  // stays in place; the Worker answers every request before it reaches it.
+  "routes": [
+    { "pattern": "armenianpavilion.org/*", "zone_name": "armenianpavilion.org" }
+  ]
+}

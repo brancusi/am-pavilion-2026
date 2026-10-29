@@ -18,23 +18,29 @@ Fire up http://localhost:4200/
 
 ### Deployment
 
-Build the release package
+The site is hosted on Cloudflare Workers (static assets) at https://armenianpavilion.org.
+`wrangler.jsonc` serves `release/` and attaches the `armenianpavilion.org` custom domain.
+`cloudflare/redirect/` is a tiny Worker that 301-redirects `armenianpavilion2026.org`,
+`www.armenianpavilion2026.org` and `www.armenianpavilion.org` to the primary domain,
+keeping the path.
+
+Log into the Cloudflare account that owns both zones and check it is the right one:
+
+```bash
+npx wrangler whoami
+```
+
+Build and deploy the site:
 
 ```bash
 npm run release
+npx wrangler deploy
 ```
 
-Log into the correct netlify account
+The redirect Worker only needs redeploying if `cloudflare/redirect/` changes:
 
-```
-netlify sites:list
-```
-
-Make sure the amp site is listed, so you know you are logged into the right account
-
-```
-npm run release
-netlify deploy --prod
+```bash
+npx wrangler deploy --config cloudflare/redirect/wrangler.jsonc
 ```
 
-Until netlify updates clojure, build manualy
+Cache rules live in `resources/misc/_headers` (copied into `release/` by the build).

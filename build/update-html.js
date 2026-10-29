@@ -11,11 +11,28 @@ const manifest = fs.readFileSync(manifestPath, "utf8");
 const match = manifest.match(/:output-name\s+"([^"]+)"/);
 const hashedFilename = match ? match[1] : "main.js";
 
+// The build hash (e.g. "3c11d31" from "main.3c11d31.js") versions main.css,
+// which lets it be cached as immutable (see resources/misc/_headers).
+const buildHash = hashedFilename.split(".").slice(1, -1).join(".");
+
+function replaceOrFail(html, pattern, replacement) {
+  if (!pattern.test(html)) {
+    throw new Error(`update-html: ${pattern} not found in public/index.html`);
+  }
+  return html.replace(pattern, replacement);
+}
+
 // Read and update HTML
 let html = fs.readFileSync(htmlPath, "utf8");
-html = html.replace(
+html = replaceOrFail(
+  html,
   /<script async src="\/js\/main\.js"><\/script>/,
   `<script async src="/js/${hashedFilename}"></script>`,
+);
+html = replaceOrFail(
+  html,
+  /<link rel="stylesheet" href="\/css\/main\.css">/,
+  `<link rel="stylesheet" href="/css/main.css?v=${buildHash}">`,
 );
 
 // Write updated HTML

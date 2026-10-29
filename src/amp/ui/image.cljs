@@ -42,12 +42,45 @@
       [snapped-w snapped-h])
     [0 0]))
 
+(def ^:private max-edge
+  "Longest edge, in device pixels, we ever ask imgix for. Past this the
+   extra detail is invisible but the bytes are not."
+  2400)
+
+(def ^:private densities [1 1.5 2])
+
+(defn- srcset-candidates
+  "Returns [{:url _ :dpr _}] for each display density. Each candidate's
+   pixel size is w×dpr by h×dpr, scaled down to fit within `max-edge`.
+   Densities that would hit the cap at the same size as a lower one are
+   dropped, since they'd fetch the same pixels. High-density renders use a
+   lower quality setting, which imgix recommends because the extra pixels
+   hide compression artefacts."
+  [src base-params w h]
+  (when (and (pos? w) (pos? h))
+    (->> densities
+         (map (fn [dpr]
+                (let [scale (min dpr (/ max-edge (max w h)))
+                      pw    (js/Math.round (* w scale))
+                      ph    (js/Math.round (* h scale))]
+                  {:dpr dpr
+                   :size [pw ph]
+                   :url (str src base-params
+                             "&w=" pw "&h=" ph
+                             "&q=" (if (> dpr 1) 50 75))})))
+         (reduce (fn [acc c]
+                   (if (= (:size c) (:size (peek acc))) acc (conj acc c)))
+                 []))))
+
 (defn preload-image
   "Preloads an image and waits for full decode before calling on-success.
    Uses .decode() which ensures the image is fully decoded and ready to
-   render without layout shift."
-  [url on-success on-error]
+   render without layout shift. Pass the same srcset the <img> will use so
+   the browser fetches (and caches) the one candidate it will display,
+   rather than the 1x src followed by a second, denser download."
+  [url src-set on-success on-error]
   (let [image (js/Image.)]
+    (when src-set (set! (.-srcset image) src-set))
     (set! (.-onload image)
           (fn [_]
             (if (.-decode image)
@@ -88,29 +121,28 @@
 
         ;; imgix best practices: use auto format, auto compression, and fit=crop with focal point
         base-params (hooks/use-memo
-                     [fp-x fp-y]
+                     [fit fp-x fp-y]
                      (str "?fit=" (or fit "clip")
                           "&crop=focalpoint"
                           "&fp-x=" (or fp-x 0.5)
                           "&fp-y=" (or fp-y 0.5)
-                          "&auto=format,compress"
-                          "&q=75"))
+                          "&auto=format,compress"))
 
-        ;; Primary src with target dimensions 
-        img-src (hooks/use-memo
-                 [src base-params w h]
-                 (str src base-params "&w=" w "&h=" h))
+        ;; One candidate per display density, each capped at `max-edge` so
+        ;; large and high-DPR screens never pull multi-megabyte renders.
+        candidates (hooks/use-memo
+                    [src base-params w h]
+                    (srcset-candidates src base-params w h))
 
-        ;; imgix srcset best practice: use DPR (device pixel ratio) for responsive images
-        ;; Generate srcset for 1x, 1.5x, 2x, and 3x displays
+        ;; Primary src is the 1x candidate
+        img-src (:url (first candidates))
+
         img-src-set (hooks/use-memo
-                     [src base-params w h]
-                     (str src base-params "&w=" w "&h=" h "&dpr=1 1x, "
-                          src base-params "&w=" w "&h=" h "&dpr=1.5 1.5x, "
-                          src base-params "&w=" w "&h=" h "&dpr=2 2x, "
-                          src base-params "&w=" w "&h=" h "&dpr=3 3x"))
-
-        sizes "100vw"
+                     [candidates]
+                     (->> candidates
+                          (map (fn [{:keys [url dpr]}] (str url " " dpr "x")))
+                          (interpose ", ")
+                          (apply str)))
 
         ;; Layout mode for the <img> element:
         ;; - "cover" (default): absolute-positioned, fills container, crops excess.
@@ -150,12 +182,13 @@
                        (set-painted! true)))]
 
     (hooks/use-effect
-     [img-src w h should-load? preloaded?]
+     [img-src img-src-set w h should-load? preloaded?]
 
      (when (and should-load?
                 (not preloaded?)
                 (pos? w) (pos? h))
        (preload-image img-src
+                      img-src-set
                       on-success-handler
                       on-error-handler)))
 
@@ -179,7 +212,6 @@
                      :class "relative w-full h-full"}
                     (d/img {:srcSet img-src-set
                             :src img-src
-                            :sizes sizes
                             :alt ""
                             :class img-class
                             :onLoad on-img-load})

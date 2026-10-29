@@ -10,7 +10,7 @@
    Lives at /route-from-hotel-gabrielli; not linked from the main nav."
   (:require
    [amp.pages.venue.map-config :as mc]
-   [amp.ui.map :refer [mapbox-map]]
+   [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.page-shell :refer [page-shell]]
    [amp.ui.section-header :refer [section-eyebrow section-display]]
    [amp.ui.directions :refer [hotel-gabrielli-address julda-contact luca-contact
