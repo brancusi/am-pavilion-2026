@@ -39,3 +39,4 @@ cljs-runtime
 
 .local
 .wrangler/
+.media-out/

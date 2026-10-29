@@ -3,13 +3,14 @@
             [helix.hooks :as hooks]
             [helix.dom :as d]
             [amp.utils.gsap :as gsap]
+            [amp.ui.picture :as picture]
             [amp.lib.defnc :refer [defnc]]))
 
 (def ^:private size-buckets
-  "Pre-computed width/height buckets for imgix cache friendliness.
+  "Pre-computed width/height buckets so nearby sizes share a render.
    Small images get fine-grained buckets; large images get coarse ones.
    Every requested dimension snaps UP to the next value in this list so
-   that nearby viewport sizes share the same cached imgix render.
+   that nearby viewport sizes share the same render.
    Covers 50 → 3200 px which handles everything from avatars to 4K hero
    images at 2× DPR."
   [50 75 100 150 200 300 400 500 600 700 800 900
@@ -43,33 +44,25 @@
     [0 0]))
 
 (def ^:private max-edge
-  "Longest edge, in device pixels, we ever ask imgix for. Past this the
+  "Longest edge, in device pixels, we ever ask for. Past this the
    extra detail is invisible but the bytes are not."
   2400)
 
 (def ^:private densities [1 1.5 2])
 
 (defn- srcset-candidates
-  "Returns [{:url _ :dpr _}] for each display density. Each candidate's
-   pixel size is w×dpr by h×dpr, scaled down to fit within `max-edge`.
-   Densities that would hit the cap at the same size as a lower one are
-   dropped, since they'd fetch the same pixels. High-density renders use a
-   lower quality setting, which imgix recommends because the extra pixels
-   hide compression artefacts."
-  [src base-params w h]
+  "Returns [{:url _ :dpr _}] for each display density. Each candidate is
+   the stored rendition covering w×dpr by h×dpr (the larger edge, since the
+   frame crops with object-fit: cover), capped at `max-edge`. Densities that
+   resolve to the same file as a lower one are dropped."
+  [src w h]
   (when (and (pos? w) (pos? h))
     (->> densities
          (map (fn [dpr]
-                (let [scale (min dpr (/ max-edge (max w h)))
-                      pw    (js/Math.round (* w scale))
-                      ph    (js/Math.round (* h scale))]
-                  {:dpr dpr
-                   :size [pw ph]
-                   :url (str src base-params
-                             "&w=" pw "&h=" ph
-                             "&q=" (if (> dpr 1) 50 75))})))
+                (let [edge (min max-edge (js/Math.round (* dpr (max w h))))]
+                  {:dpr dpr :url (picture/image-url src {:w edge})})))
          (reduce (fn [acc c]
-                   (if (= (:size c) (:size (peek acc))) acc (conj acc c)))
+                   (if (= (:url c) (:url (peek acc))) acc (conj acc c)))
                  []))))
 
 (defn preload-image
@@ -92,10 +85,10 @@
     (set! (.-src image) url)))
 
 (defnc lazy-image
-  "Renders an image element with lazy loading using imgix API. The image will only load when the `should-load?` flag is set to true.
+  "Renders an image element with lazy loading from the media host (see amp.ui.picture). The image will only load when the `should-load?` flag is set to true.
   
   Parameters:
-  - src: The imgix image source URL.
+  - src: The image URL (https://media.armenianpavilion.org/<path>).
   - w: Target width in pixels.
   - h: Target height in pixels.
   - fp-x: Focal point x-coordinate (0-1).
@@ -108,7 +101,7 @@
   - An image element if the image is loaded, otherwise a div element with a gray background.
 
   Example usage:
-  (lazy-image {:src \"https://example.imgix.net/image.jpg\"
+  (lazy-image {:src \"https://media.armenianpavilion.org/big_red/master.jpg\"
                :w 1920
                :h 1080
                :fp-x 0.5
@@ -119,20 +112,11 @@
   (let [;; Snap dimensions to cache-friendly buckets, preserving aspect ratio.
         [w h] (snap-dimensions w h)
 
-        ;; imgix best practices: use auto format, auto compression, and fit=crop with focal point
-        base-params (hooks/use-memo
-                     [fit fp-x fp-y]
-                     (str "?fit=" (or fit "clip")
-                          "&crop=focalpoint"
-                          "&fp-x=" (or fp-x 0.5)
-                          "&fp-y=" (or fp-y 0.5)
-                          "&auto=format,compress"))
-
         ;; One candidate per display density, each capped at `max-edge` so
         ;; large and high-DPR screens never pull multi-megabyte renders.
         candidates (hooks/use-memo
-                    [src base-params w h]
-                    (srcset-candidates src base-params w h))
+                    [src w h]
+                    (srcset-candidates src w h))
 
         ;; Primary src is the 1x candidate
         img-src (:url (first candidates))

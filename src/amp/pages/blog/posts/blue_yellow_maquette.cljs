@@ -17,32 +17,32 @@
 ;; ---------------------------------------------------------------------------
 
 (def ^:private gallery-slides
-  [{:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/Screenshot%202026-02-27%20at%209.02.01%E2%80%AFAM.png"
+  [{:img-src      "https://media.armenianpavilion.org/photos/02-13-26/Screenshot%202026-02-27%20at%209.02.01%E2%80%AFAM.png"
     :aspect-ratio 1.77
     :caption      "CNC FOAM MILLING"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00117198.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00117198.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — MILLED UNIT"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00116841.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116841.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — DETAIL"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00116751.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116751.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — CNC EDGE"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00116035.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116035.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — STACKING TEST"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00115488.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00115488.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — ALIGNMENT"
     :credit       "Los Angeles 2026"}
@@ -68,22 +68,22 @@
                           {:layers [[{:color "#ff9f9f" :align :tl :dims [12 6 12]}]]}
                           {:layers [[{:color "#eb0000" :align :tl :dims [4 4 4]}]]}]}}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00091415.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00091415.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — ASSEMBLY"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00088317.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00088317.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — STRUCTURE"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00086751.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00086751.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — PROFILE"
     :credit       "Los Angeles 2026"}
 
-   {:img-src      "https://atd-722658831.imgix.net/photos/02-13-26/foam_00091886.jpg"
+   {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00091886.jpg"
     :aspect-ratio 1.77
     :caption      "FOAM CORE — COMPLETED UNIT"
     :credit       "Los Angeles 2026"}])
@@ -248,15 +248,3 @@
                 (d/span {:class s/em-italic}
                         "In the discipline of repetition, change begins.")))))
 
-;; ---------------------------------------------------------------------------
-;; Post metadata
-;; ---------------------------------------------------------------------------
-
-(def post-meta
-  {:slug "blue-yellow-maquette"
-   :title "Blue Yellow Blue Yellow"
-   :date "2026-02-14"
-   :author "Armenian Pavilion Team"
-   :summary "In preparation for the Venice Biennale, Zadik Zadikian is developing a full-scale maquette of a new sculptural variation\u2014an architectural test of structure, proportion, and chromatic rhythm."
-   :cover-image "https://atd-722658831.imgix.net/photos/02-13-26/foam_00117198.jpg"
-   :component post-content})

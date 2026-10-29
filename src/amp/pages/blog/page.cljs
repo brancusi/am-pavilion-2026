@@ -4,7 +4,6 @@
    All blog code loads in the :blog-view module."
   (:require [amp.pages.blog.index :refer [blog-index]]
             [amp.pages.blog.post :refer [blog-post]]
-            [amp.ui.page-shell :refer [page-shell]]
             [amp.state.provider :refer [use-main-state]]
             [amp.lib.defnc :refer [defnc]]
             [helix.core :refer [$]]))
@@ -13,7 +12,6 @@
   [_props]
   (let [[state _] (use-main-state)
         slug (-> state :current-route :path-params :slug)]
-    ($ page-shell {:show-back-up? (some? slug)}
-       (if slug
-         ($ blog-post {:slug slug})
-         ($ blog-index)))))
+    (if slug
+      ($ blog-post {:key slug :slug slug})
+      ($ blog-index))))

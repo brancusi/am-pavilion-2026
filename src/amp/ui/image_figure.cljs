@@ -7,7 +7,7 @@
    dimensions are measured at runtime — no hardcoded widths.
 
    Usage:
-       ($ image-figure {:src \"https://example.imgix.net/photo.jpg\"
+       ($ image-figure {:src \"https://media.armenianpavilion.org/big_red/master.jpg\"
                         :aspect-ratio \"16/9\"
                         :caption \"Optional caption text\"})"
   (:require
@@ -23,14 +23,14 @@
 
 (defnc image-figure
   "Image with skeleton shimmer while loading. Aspect ratio drives layout;
-   pixel dimensions are measured from the container so the imgix request
+   pixel dimensions are measured from the container so the image request
    always matches the actual rendered size.
 
    Props:
-     :src          — imgix image URL (required)
+     :src          — image URL on the media host (required)
      :aspect-ratio — CSS aspect-ratio string, e.g. \"16/9\", \"1.34\" (default \"16/9\")
      :caption      — optional figcaption text
-     :fit          — imgix fit mode passed to lazy-image (default \"cover\")
+     :fit          — fit mode passed to lazy-image (default \"cover\")
      :class        — additional classes on the outer <figure>"
   [{:keys [src aspect-ratio caption fit class]}]
   (let [aspect (or aspect-ratio "16/9")

@@ -140,27 +140,27 @@
                    :class "my-4 relative pinstripe-bold"}
 
                   ($ lazy-image-gallery {:enabled? is-visible?
-                                         :slides [{:img-src "https://atd-722658831.imgix.net/blue_yellow/top_view.jpg"
+                                         :slides [{:img-src "https://media.armenianpavilion.org/blue_yellow/top_view.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/blue_yellow/side-2.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/blue_yellow/side-2.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
                                                    :aspect-ratio 1.82
                                                    :caption "BIG RED AT ARSENALE"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/artwork/1.jpeg"
+                                                  {:img-src "https://media.armenianpavilion.org/artwork/1.jpeg"
                                                    :aspect-ratio 0.75
                                                    :caption "Leaning Red"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
                                                    :aspect-ratio 1.82
                                                    :caption "BIG RED AT ARSENALE"
                                                    :credit "Render 2026"}
@@ -186,37 +186,37 @@
                                                                                   [{:dims [9 4.5 9] :align :tr :color "#0b080c"}]
                                                                                   [{:dims [4.5 9 4.5] :align :tr :color "#ec9c3b"}]]}]}}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/blue_yellow/cu-2.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/blue_yellow/cu-2.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "BLUE YELLOW BLUE YELLOW"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/photos/blue_unit_with_hand.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/photos/blue_unit_with_hand.jpg"
                                                    :aspect-ratio 1.50
                                                    :caption "BLUE BLOCK"
                                                    :credit "Los Angeles 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/low_side.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red/low_side.jpg"
                                                    :aspect-ratio 1.78
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/master.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red/master.jpg"
                                                    :aspect-ratio 1.78
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/corner_low.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red/corner_low.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/black_leg.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red/black_leg.jpg"
                                                    :aspect-ratio 0.75
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}
 
-                                                  {:img-src "https://atd-722658831.imgix.net/big_red/flag.jpg"
+                                                  {:img-src "https://media.armenianpavilion.org/big_red/flag.jpg"
                                                    :aspect-ratio 1.38
                                                    :caption "THE BIG RED"
                                                    :credit "Render 2026"}]})))))

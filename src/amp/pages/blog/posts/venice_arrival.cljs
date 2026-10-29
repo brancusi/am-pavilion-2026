@@ -23,7 +23,7 @@
               ". After two years of preparation, the moment to bring the project "
               "into physical reality is finally here.")
 
-         ($ image-figure {:src "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+         ($ image-figure {:src "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
                           :aspect-ratio "1.82"
                           :caption "The crossing at the Arsenale — site of the outdoor installation"})
 
@@ -44,7 +44,7 @@
               "satellite imagery, recalibrates everything. Scale, light, acoustics, the way "
               "visitors will move through — all of it becomes concrete.")
 
-         ($ image-figure {:src "https://atd-722658831.imgix.net/big_red_walkway/1.jpg"
+         ($ image-figure {:src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
                           :aspect-ratio "1.82"
                           :caption "Approach to the Armenian Pavilion site"})
 
@@ -70,5 +70,5 @@
    :date "2026-02-20"
    :author "Armenian Pavilion Team"
    :summary "The team has arrived in Venice ahead of the 61st International Art Exhibition. After two years of preparation, the moment to bring the project into physical reality is here."
-   :cover-image "https://atd-722658831.imgix.net/big_red_walkway/5.jpg"
+   :cover-image "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
    :component post-content})

@@ -1,5 +1,12 @@
 (ns amp.pages.venue.map-config)
 
+;; ── Route colours (design system: MapGuide) ────────────────────────────────
+;; Walking is solid yellow with an ink casing, water taxi is a marching blue
+;; line, the pavilion is red.
+
+(def pigment
+  {:yellow "#f2cf2e" :blue "#2f4f9e" :red "#c93a31" :ink "#141312" :paper "#f7f6f2"})
+
 ;; ── Coordinates ────────────────────────────────────────────────────────────
 
 (def tesa-41-coords
@@ -28,10 +35,23 @@
   [{:source-id "directions-ant"
     :url url
     :filter ["==" ["geometry-type"] "LineString"]
-    :color "#c7630b"
-    :width 4
-    :bg-opacity 0.2
+    :color (:yellow pigment)
+    :dash-color "#fff6c2"
+    :casing (:ink pigment)
+    :width 5
+    :bg-opacity 1
     :duration 2}])
+
+(defn water-ant-paths-for
+  "Marching water-taxi route for the LineString in `url`."
+  [url]
+  [{:source-id "water-ant"
+    :url url
+    :filter ["==" ["geometry-type"] "LineString"]
+    :color (:blue pigment)
+    :width 5
+    :bg-opacity 0.3
+    :duration 1.2}])
 
 (def ant-paths (ant-paths-for visitor-data-url))
 
@@ -46,7 +66,7 @@
     :layer  {:id "biennale-fill"
              :type "fill"
              :filter ["==" ["geometry-type"] "Polygon"]
-             :paint {:fill-color "#b91c1c"
+             :paint {:fill-color (:red pigment)
                      :fill-opacity 0.5}}}
 
    ;; Walking-route start marker
@@ -55,9 +75,9 @@
              :type "circle"
              :filter ["==" ["get" "marker"] "start"]
              :paint {:circle-radius 6
-                     :circle-color "#0c0cd0"
+                     :circle-color (:yellow pigment)
                      :circle-stroke-width 2
-                     :circle-stroke-color "#ffffff"}}}
+                     :circle-stroke-color (:ink pigment)}}}
 
    ;; Walking-route end marker
    {:source {:id "biennale-end" :url url}
@@ -65,7 +85,7 @@
              :type "circle"
              :filter ["==" ["get" "marker"] "end"]
              :paint {:circle-radius 6
-                     :circle-color "#ef4444"
+                     :circle-color (:red pigment)
                      :circle-stroke-width 2
                      :circle-stroke-color "#ffffff"}}}
 
@@ -77,7 +97,7 @@
                       ["==" ["geometry-type"] "Point"]
                       ["!" ["has" "marker"]]]
              :paint {:circle-radius 8
-                     :circle-color "#b91c1c"
+                     :circle-color (:red pigment)
                      :circle-stroke-width 2
                      :circle-stroke-color "#ffffff"}}}
 
@@ -94,8 +114,8 @@
                       :text-offset [0 -1.5]
                       :text-anchor "bottom"
                       :text-allow-overlap true}
-             :paint {:text-color "#be136e"
-                     :text-halo-color "#ffffff"
+             :paint {:text-color (:ink pigment)
+                     :text-halo-color (:paper pigment)
                      :text-halo-width 5}}}])
 
 (def layers (layers-for visitor-data-url))
@@ -135,7 +155,7 @@
   [[12.34535 45.43305] [12.35190 45.44012]])
 
 (def water-taxi-ant-paths
-  (ant-paths-for water-taxi-data-url))
+  (water-ant-paths-for water-taxi-data-url))
 
 (def water-taxi-layers
   "Tesa 41 footprint, start/end markers, and data-driven labels (each label
@@ -145,7 +165,7 @@
     :layer  {:id "water-taxi-footprint-fill"
              :type "fill"
              :filter ["==" ["geometry-type"] "Polygon"]
-             :paint {:fill-color "#b91c1c"
+             :paint {:fill-color (:red pigment)
                      :fill-opacity 0.5}}}
 
    ;; Start marker — Hotel Gabrielli landing
@@ -154,9 +174,9 @@
              :type "circle"
              :filter ["==" ["get" "marker"] "start"]
              :paint {:circle-radius 7
-                     :circle-color "#0c0cd0"
+                     :circle-color (:blue pigment)
                      :circle-stroke-width 2
-                     :circle-stroke-color "#ffffff"}}}
+                     :circle-stroke-color (:paper pigment)}}}
 
    ;; End marker — pavilion landing
    {:source {:id "water-taxi-end" :url water-taxi-data-url}
@@ -164,7 +184,7 @@
              :type "circle"
              :filter ["==" ["get" "marker"] "end"]
              :paint {:circle-radius 7
-                     :circle-color "#ef4444"
+                     :circle-color (:red pigment)
                      :circle-stroke-width 2
                      :circle-stroke-color "#ffffff"}}}
 
@@ -185,6 +205,6 @@
                                     "top"   ["literal" [0 1]]
                                     ["literal" [0 -1.2]]]
                       :text-allow-overlap true}
-             :paint {:text-color "#be136e"
-                     :text-halo-color "#ffffff"
+             :paint {:text-color (:ink pigment)
+                     :text-halo-color (:paper pigment)
                      :text-halo-width 4}}}])

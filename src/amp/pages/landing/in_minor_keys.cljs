@@ -32,7 +32,7 @@
       {:class "float-left mr-4 mb-2 sm:float-none sm:mr-0 sm:mb-0
                w-24 aspect-square sm:w-40
                flex-shrink-0 rounded-sm overflow-hidden"}
-      ($ lazy-image-with-overlay {:img-src "https://atd-722658831.imgix.net/portraits/koyo.png"
+      ($ lazy-image-with-overlay {:img-src "https://media.armenianpavilion.org/portraits/koyo.png"
                                   :fit "crop"
                                   :aspect-ratio 1
                                   :active? visible?}))

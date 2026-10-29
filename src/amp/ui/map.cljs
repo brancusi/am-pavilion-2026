@@ -77,10 +77,13 @@
      :color      - line color (default \"#fbbf24\")
      :width      - line width (default 4)
      :bg-opacity - background line opacity (default 0.4)
-     :duration   - full animation cycle in seconds (default 2)"
-  [{:keys [source-id url filter color width bg-opacity duration]
+     :duration   - full animation cycle in seconds (default 2)
+     :dash-color - colour of the moving dashes (defaults to :color)
+     :casing     - optional outline colour drawn 4px wider beneath the line"
+  [{:keys [source-id url filter color width bg-opacity duration dash-color casing]
     :or {color "#fbbf24" width 4 bg-opacity 0.4 duration 2}}]
   (let [current (.-current (useMap))
+        casing-id (str source-id "-casing")
         bg-id (str source-id "-bg")
         dash-id (str source-id "-dash")]
 
@@ -96,6 +99,17 @@
                (when-not (.getSource ^js map-obj source-id)
                  (.addSource ^js map-obj source-id
                              #js {:type "geojson" :data url}))
+
+               ;; Casing — a darker outline under the route
+               (when (and casing (not (.getLayer ^js map-obj casing-id)))
+                 (.addLayer ^js map-obj
+                            (clj->js (cond-> {:id casing-id
+                                              :type "line"
+                                              :source source-id
+                                              :layout {:line-join "round" :line-cap "round"}
+                                              :paint {:line-color casing
+                                                      :line-width (+ width 4)}}
+                                       filter (assoc :filter filter)))))
 
                ;; Background line — fills the gaps in the dashed line
                (when-not (.getLayer ^js map-obj bg-id)
@@ -114,7 +128,7 @@
                             (clj->js (cond-> {:id dash-id
                                               :type "line"
                                               :source source-id
-                                              :paint {:line-color color
+                                              :paint {:line-color (or dash-color color)
                                                       :line-width width
                                                       :line-dasharray [0 4 3]}}
                                        filter (assoc :filter filter)))))
@@ -149,6 +163,7 @@
            (try
              (when (.getLayer ^js map-obj dash-id) (.removeLayer ^js map-obj dash-id))
              (when (.getLayer ^js map-obj bg-id) (.removeLayer ^js map-obj bg-id))
+             (when (.getLayer ^js map-obj casing-id) (.removeLayer ^js map-obj casing-id))
              (when (.getSource ^js map-obj source-id) (.removeSource ^js map-obj source-id))
              (catch :default _))))))
 

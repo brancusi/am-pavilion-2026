@@ -1,8 +1,14 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const twColors = require("tailwindcss/colors");
 
 const screens = {
   ...defaultTheme.screens,
 };
+
+// Colours resolve to the design-system custom properties declared in
+// resources/css/tailwind.css (light on :root, dark on .dark), so `bg-paper`,
+// `text-ink`, `bg-red` etc. follow the theme without `dark:` variants.
+const token = (name) => `var(--${name})`;
 
 module.exports = {
   darkMode: "class",
@@ -13,22 +19,30 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Display — Source Sans Pro (Typekit). Headings, titles, nav.
-        // Previously Neue Haas Grotesk Display; unified to Source Sans Pro Feb 2026.
-        display: ["source-sans-pro", "Helvetica", "Arial", "sans-serif"],
-
-        // Body — Source Sans Pro (Typekit). Prose body copy, descriptions.
-        body: ["source-sans-pro", "Helvetica", "Arial", "sans-serif"],
-
-        // Data — Source Code Pro (Adobe Typekit). Labels, numbers, code, eyebrows.
-        "fira-code": ["source-code-pro", "monospace"],
-
-        // Override Tailwind's default mono to use Source Code Pro everywhere
-        mono: ["source-code-pro", "monospace"],
-
-        // Keep Inter as sans fallback (unused in design system, but safe default)
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        // Display — Jost (Google Fonts). Headings, numerals, nav.
+        display: ["Jost", "Futura", "Century Gothic", ...defaultTheme.fontFamily.sans],
+        // Body — Newsreader (Google Fonts). Reading text, Journal.
+        body: ["Newsreader", "Georgia", "Times New Roman", "serif"],
+        // Data — IBM Plex Mono (Google Fonts). Labels, captions, numbers.
+        mono: ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
+        "fira-code": ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
       },
+      colors: {
+        ...Object.fromEntries(
+          [
+            "paper", "paper-raised", "paper-sunk", "ink", "ink-muted", "rule", "rule-strong",
+            "on-red", "red-text", "on-blue", "blue-text", "on-yellow", "turquoise", "on-turquoise",
+            "on-pink", "lilac", "brick", "focus", "night", "on-night", "on-media",
+          ].map((n) => [n, token(n)])
+        ),
+        // Pigments keep Tailwind's numbered shades (still used by older pages)
+        // and add the design-system value as the bare class: `bg-red`, `text-blue`.
+        red: { ...twColors.red, DEFAULT: token("red") },
+        blue: { ...twColors.blue, DEFAULT: token("blue") },
+        yellow: { ...twColors.yellow, DEFAULT: token("yellow") },
+        pink: { ...twColors.pink, DEFAULT: token("pink") },
+      },
+      maxWidth: { content: "1440px", measure: "68ch" },
     },
     screens,
   },
