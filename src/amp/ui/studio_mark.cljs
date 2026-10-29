@@ -78,13 +78,16 @@
           st (.-style cell)]
       (.setProperty st "--rx" (str (* (- 0.5 y) 2 max-tilt) "deg"))
       (.setProperty st "--ry" (str (* (- x 0.5) 2 max-tilt) "deg"))
-      (.setProperty st "--d" "2cqw")
+      ;; --D: the block's thickness (a full cube); --d: step between the
+      ;; layers that form the walls of the carved letter.
+      (.setProperty st "--D" "100cqw")
+      (.setProperty st "--d" "2.4cqw")
       (.setAttribute cell "data-active" ""))))
 
 (defn- untilt! [^js e]
   (let [cell (.-currentTarget e)
         st (.-style cell)]
-    (doseq [k ["--rx" "--ry" "--d"]] (.removeProperty st k))
+    (doseq [k ["--rx" "--ry" "--D" "--d"]] (.removeProperty st k))
     (.removeAttribute cell "data-active")))
 
 (defnc studio-mark-3d
@@ -115,7 +118,11 @@
                       :on-pointer-move tilt!
                       :on-pointer-leave untilt!}
                      (d/div {:class "ap-mark3d__body"}
-                            ;; Back layers first; the last one is the face.
+                            ;; The block's four sides, then the floor of the
+                            ;; carved letter, its wall layers and the face.
+                            (for [side ["top" "bottom" "left" "right"]]
+                              (d/i {:key side :class (str "ap-mark3d__side ap-mark3d__side--" side)}))
+                            (d/i {:class "ap-mark3d__floor"})
                             (for [k (range depth-layers -1 -1)]
                               (d/svg {:key k :class "ap-mark3d__layer" :viewBox (tile-box i)
                                       :style #js {"--k" k}}
