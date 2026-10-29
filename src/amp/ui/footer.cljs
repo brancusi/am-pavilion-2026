@@ -14,7 +14,8 @@
     :links [{:label "The Studio" :href "/"}
             {:label "Artist"     :href "/artist"}
             {:label "Journal"    :href "/blog"}
-            {:label "Armenian as well" :href "/armenian-as-well"}]}
+            {:label "Armenian as well" :href "/armenian-as-well"}
+            {:label "Portage" :href "/portage"}]}
    {:title "Visit"
     :links [{:label "Getting there" :href "/visit"}
             {:label "Water taxi"    :href "/visit#taxi"}]}])
