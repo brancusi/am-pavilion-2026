@@ -2,6 +2,7 @@
   "name": "amp",
   "scripts": {
     "media": "node scripts/media.mjs",
+    "press": "node scripts/press.mjs",
     "ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
     "build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html",
     "postcss:dev": "cross-env TAILWIND_MODE=watch postcss resources/css/tailwind.css -o ./public/css/main.css --verbose -w",
