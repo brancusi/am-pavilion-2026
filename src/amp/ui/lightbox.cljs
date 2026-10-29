@@ -27,16 +27,16 @@
              on-key (fn [e] (when (= "Escape" (.-key e)) (on-close)))]
          (set! (.. body -style -overflow) "hidden")
          (.addEventListener js/window "keydown" on-key)
-         (some-> @close-ref (.focus))
+         (some-> @close-ref (.focus #js {:preventScroll true}))
          (fn []
            (set! (.. body -style -overflow) prev-overflow)
            (.removeEventListener js/window "keydown" on-key)
-           (some-> prev-focus (.focus))))))
+           (some-> prev-focus (.focus #js {:preventScroll true}))))))
     (when film
       (let [{:keys [title playback-id poster where duration]} film]
         (createPortal
          (d/div {:class "ap-lightbox" :role "dialog" :aria-modal true :aria-label title
-                 :on-click #(when (= (.-target %) (.-currentTarget %)) (on-close))}
+                 :on-click #(when (.matches (.-target %) ".ap-lightbox, .ap-lightbox__stage") (on-close))}
                 (d/div {:class "ap-lightbox__bar"}
                        (d/p {:class "ap-label m-0"}
                             (d/span {:class "text-yellow"} (films/running-time duration))

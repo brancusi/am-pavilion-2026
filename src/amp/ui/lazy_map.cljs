@@ -16,8 +16,8 @@
 (defnc map-placeholder
   "Same footprint as the real map container so nothing shifts when it swaps in."
   [{:keys [class]}]
-  (d/div {:class (str "relative w-full h-[70vh] overflow-hidden shadow-lg "
-                      "bg-slate-100 dark:bg-slate-800 " class)}))
+  (d/div {:class (str "relative w-full h-[70vh] overflow-hidden "
+                      "bg-paper-sunk " class)}))
 
 (defnc mapbox-map
   [{:keys [class] :as props}]

@@ -14,6 +14,6 @@
      :class        — additional Tailwind classes"
   [{:keys [aspect-ratio class]}]
   (d/div {:class (s/cx "w-full animate-pulse"
-                       "bg-slate-200 dark:bg-slate-800"
+                       "bg-paper-sunk"
                        class)
           :style {:aspectRatio (or aspect-ratio "16/9")}}))

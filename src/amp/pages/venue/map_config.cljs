@@ -154,6 +154,11 @@
    route is visible on any viewport."
   [[12.34535 45.43305] [12.35190 45.44012]])
 
+(def galeazze-bounds
+  "The last leg only: the Rio delle Galeazze entrance from the North Lagoon
+   down to the pavilion landing (driver card, homepage teaser)."
+  [[12.3492 45.4361] [12.3528 45.4398]])
+
 (def water-taxi-ant-paths
   (water-ant-paths-for water-taxi-data-url))
 

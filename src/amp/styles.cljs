@@ -65,13 +65,13 @@
 (def text-accent     "text-red-text")
 (def text-accent-50  "text-ink-muted")
 (def text-value      "text-blue-text")
-(def text-positive   "text-emerald-600 dark:text-emerald-300")
-(def text-positive-50 "text-emerald-600/50 dark:text-emerald-300/50")
-(def text-warning    "text-amber-600  dark:text-amber-300")
-(def text-warning-80 "text-amber-600/80 dark:text-amber-300/80")
-(def text-warning-50 "text-amber-600/50 dark:text-amber-300/50")
-(def text-danger     "text-rose-600   dark:text-rose-400")
-(def text-error      "text-red-600    dark:text-red-400")
+(def text-positive   "text-blue-text")
+(def text-positive-50 "text-blue-text opacity-60")
+(def text-warning    "text-red-text")
+(def text-warning-80 "text-red-text opacity-80")
+(def text-warning-50 "text-red-text opacity-60")
+(def text-danger     "text-red-text")
+(def text-error      "text-red-text")
 
 ;; --- Backgrounds ----------------------------------------------------------
 (def bg-surface      "bg-paper-raised")
@@ -117,9 +117,9 @@
 (def tracking-label   "tracking-[0.08em]")      ;; 0.08em  – labels/eyebrows
 
 ;; --- Sizes ----------------------------------------------------------------
-(def text-2xs  "text-[9px]")
-(def text-xs   "text-[10px]")
-(def text-xs+  "text-[11px]")
+(def text-2xs  "text-[11px]")
+(def text-xs   "text-xs")
+(def text-xs+  "text-xs")
 (def text-sm   "text-sm")                       ;; 14px
 (def text-base "text-base")                     ;; 16px
 (def text-lg   "text-lg")                       ;; 18px

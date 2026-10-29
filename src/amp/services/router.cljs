@@ -97,7 +97,10 @@
   (let [tries (atom 0)]
     ((fn attempt []
        (if-let [el (.getElementById js/document id)]
-         (.scrollIntoView el #js {:behavior "smooth" :block "start"})
+         (do (.scrollIntoView el #js {:block "start"})
+             ;; The outgoing page fades out over 0.4s and images above the
+             ;; anchor may still change the layout: settle once more.
+             (js/setTimeout #(.scrollIntoView el #js {:block "start"}) 500))
          (when (< (swap! tries inc) 40)
            (js/setTimeout attempt 50)))))))
 

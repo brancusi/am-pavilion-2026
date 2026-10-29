@@ -18,6 +18,15 @@
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
+(defn- title-case
+  "Older slide data has ALL-CAPS captions; show them in title case to match
+   the rest of the site. Mixed-case captions are left alone."
+  [s]
+  (if (= s (.toUpperCase s))
+    (.replace (.toLowerCase s) (js/RegExp. "(^|[\\s—–(-])(\\S)" "g")
+              (fn [_ pre c] (str pre (.toUpperCase c))))
+    s))
+
 (def ^:private threejs-slide (lazy-component amp.ui.threejs-slide/threejs-slide))
 
 (defnc model-frame
@@ -48,14 +57,14 @@
 (defnc fit-gallery
   "`label`/`title` add a heading row; `action` is an optional element shown
    beside the arrows."
-  [{:keys [slides label title action]}]
+  [{:keys [slides label title action inset?]}]
   (let [track (hooks/use-ref nil)
         [at-start? set-at-start!] (hooks/use-state true)
         [at-end? set-at-end!] (hooks/use-state false)
         scroll! (fn [dir]
                   (when-let [el @track]
                     (.scrollBy el #js {:left (* dir 0.8 (.-clientWidth el)) :behavior "smooth"})))
-        nav (when (> (count slides) 1)
+        nav (when (and (> (count slides) 1) (not (and at-start? at-end?)))
               (d/div {:class "ap-gallery__nav max-md:!hidden"}
                      (d/button {:aria-label "Previous" :disabled at-start? :on-click #(scroll! -1)} "←")
                      (d/button {:aria-label "Next" :disabled at-end? :on-click #(scroll! 1)} "→")))
@@ -80,7 +89,7 @@
          (fn []
            (.removeEventListener el "scroll" update!)
            (.disconnect ro)))))
-    (d/div {:class "ap-gallery"}
+    (d/div {:class (str "ap-gallery" (when inset? " ap-gallery--inset"))}
            (if title
              (d/div {:class "ap-gallery__head"}
                     (d/div
@@ -104,6 +113,6 @@
                                  (d/figcaption {:class "ap-tomb"}
                                                (d/span {:class "ap-tomb__no"}
                                                        (str (when (< i 9) "0") (inc i)))
-                                               (when caption (d/span {:class "ap-tomb__title"} caption))
+                                               (when caption (d/span {:class "ap-tomb__title"} (title-case caption)))
                                                (when credit (d/span {:class "ap-tomb__credit"} credit))))))
                    slides)))))

@@ -73,7 +73,7 @@
      ;; Curator cards
      (d/div
       {:class "space-y-8 sm:space-y-12
-              divide-y divide-slate-200/50 dark:divide-white/10"}
+              divide-y divide-rule"}
       (for [{:keys [name] :as curator} curators]
         (d/div {:key name :class "pt-8 sm:pt-12 first:pt-0 first:border-t-0"}
                ($ curator-card {:visible? visible?
