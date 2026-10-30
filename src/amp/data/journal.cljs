@@ -14,7 +14,7 @@
     :kind        "Venice"
     :tone        :blue
     :summary     "In Venice every delivery ends on foot, one bridge at a time. On the realities of logistics in a city that resists the car, a summer away for visas, and the studio's return to full production."
-    :cover-image "https://media.armenianpavilion.org/journal/26-09-03/bridge-steps.jpg"
+    :cover-image "https://media.armenianpavilion.org/journal/26-09-03-filmic/bridge-steps.jpg"
     :cover-ar    1.7778}
 
    {:slug        "the-studio-play-balance"

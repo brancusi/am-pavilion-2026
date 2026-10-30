@@ -7,7 +7,7 @@
    [helix.core :refer [$ <>]]
    [helix.dom :as d]))
 
-(def ^:private media "https://media.armenianpavilion.org/journal/26-09-03/")
+(def ^:private media "https://media.armenianpavilion.org/journal/26-09-03-filmic/")
 
 (defn- figure
   "One captioned still, in the post's reading measure."
@@ -44,7 +44,7 @@
         "then again at the next one.")
 
    (figure {:src "crane-boat.jpg" :ar 1.7778
-            :caption "Crates come off a crane boat inside the Arsenale"
+            :caption "Crates landed on the Arsenale quay, the crane still at work"
             :credit "Venice, 2026"})
 
    (d/p "A delivery that would take an afternoon in Los Angeles becomes a small expedition. "
