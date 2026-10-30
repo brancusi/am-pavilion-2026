@@ -29,10 +29,10 @@
 (def chronology
   [{:dist "Age 19" :title "The Arax River"
     :body "Escapes Soviet Armenia by swimming across the Arax under machine-gun fire, and reaches America with nothing."}
-   {:dist "San Francisco" :title "Apprentice to Bufano"
-    :body "Works with the sculptor Beniamino Bufano and learns scale, color and the physical intelligence of large-form making."}
-   {:dist "1974" :title "New York and Serra"
-    :body "Moves east into the Minimalist circle and assists Richard Serra on the black oil-stick wall drawings, one of which Serra titles Zadikian."}
+   {:dist "San Francisco" :title "Assistant to Bufano"
+    :body "Works as an assistant to the sculptor Beniamino Bufano and learns scale, color and the physical intelligence of large-form making."}
+   {:dist "1973" :title "New York and Serra"
+    :body "Moves east into the Minimalist circle and assists Richard Serra on the black oil-stick wall drawings, one of which Serra titles Zadikians."}
    {:dist "1976" :title "A field of gold"
     :body "Turns his ten-thousand-square-foot home and studio into a continuous field of industrial gold."}
    {:dist "1978" :title "1,000 Bricks"
@@ -96,10 +96,10 @@
                     (d/p {:class "ap-dropcap"}
                          "Born in Yerevan, " (d/strong "Zadik Zadikian")
                          "’s life began in extremes. At nineteen—armed only with conviction—he escaped Soviet Armenia by swimming across the Arax River under machine-gun fire. He arrived in America with nothing but the instincts that had guided him since childhood: to build, to shape matter, to seek form through discipline and elemental materials.")
-                    (d/p "In San Francisco, he apprenticed with sculptor " (d/strong "Beniamino Bufano")
-                         ", absorbing a lifelong sense of scale, color, and the physical intelligence of large-form making. Drawn to the heat and velocity of New York, he moved east in 1974 and quickly found himself inside the crucible of the Minimalist movement, assisting "
+                    (d/p "In San Francisco, he worked as an assistant to the sculptor " (d/strong "Beniamino Bufano")
+                         ", absorbing a lifelong sense of scale, color, and the physical intelligence of large-form making. Drawn to the heat and velocity of New York, he moved east in 1973 and quickly found himself inside the crucible of the Minimalist movement, assisting "
                          (d/strong "Richard Serra") " on the monumental black oil-stick wall drawings—one of which Serra titled "
-                         (d/em "Zadikian") ".")
+                         (d/em "Zadikians") ".")
                     (d/p "This immersion into New York’s severity and possibility forged an artist who has always moved toward intensity: toward weight, clarity, touch. The son of a builder, he grew up with materials—clay, plaster, stone, the raw grammar of structure. In New York, these instincts crystallized. In 1976 he transformed his ten-thousand-square-foot home and studio into a continuous field of industrial gold, an act of totalizing vision that set the tone for everything that followed."))
              (d/blockquote {:class "ap-quote ap-quote--block ap-wide !my-4"}
                            (d/p "The block remembers two things—the wall it was taken from and the wall it will become.")

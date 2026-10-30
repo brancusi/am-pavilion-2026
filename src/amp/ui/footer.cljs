@@ -8,6 +8,7 @@
    [amp.data.journal :as journal]
    [amp.lib.defnc :refer [defnc]]
    [amp.state.provider :refer [use-main-state]]
+   [amp.ui.share-bar :refer [share-bar]]
    [amp.ui.social-links :refer [social-links]]
    [amp.ui.studio-mark :refer [studio-mark-3d]]
    [helix.core :refer [$]]
@@ -82,7 +83,13 @@
                     (d/h2 {:class "ap-footer__h"} "501(c)(3) non-profit")
                     (d/p {:class "ap-body-s m-0"} "Fallen Angels Inc.")
                     (d/p {:class "ap-body-s m-0 opacity-70"} "EIN 92-2395513 · Los Angeles, CA"))
-                   ($ social-links))
+                   ($ social-links)
+                   (d/div
+                    (d/h2 {:class "ap-footer__h"} "Share this site")
+                    ($ share-bar {:title "Zadik Zadikian: The Studio. Armenia Pavilion, Biennale Arte 2026"
+                                  :url   "https://armenianpavilion.org/"
+                                  :label ""
+                                  :class "ap-sharebar--night"})))
 
             (d/div {:class "ap-footer__base"}
                    (d/a {:href "https://www.labiennale.org/en/art/2026" :target "_blank" :rel "noopener"
