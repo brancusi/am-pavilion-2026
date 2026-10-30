@@ -202,6 +202,22 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-chapter__eyebrow { display: flex; gap: var(--space-3); align-items: center; }
 .ap-chapter__eyebrow::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: .6; }
 .ap-chapter__title { text-transform: uppercase; }
+/* The Unit's words, one per pigment, all stacked in one cell so nothing
+   moves. The cycle layer crossfades each word in while its colour comes in
+   (21s, 3s a colour, timed as ap-ground). A hovered letter fades the held
+   layer in over it, and back out with the ground. Without motion: the first. */
+.ap-swap, .ap-swap__cycle, .ap-swap__held { display: grid; }
+.ap-swap > *, .ap-swap__cycle > *, .ap-swap__held > * { grid-area: 1 / 1; }
+.ap-swap__cycle, .ap-swap__held { transition: opacity .9s ease-in-out; }
+.ap-swap__held { opacity: 0; }
+[data-ground] .ap-swap__cycle { opacity: 0; }
+[data-ground] .ap-swap__held { opacity: 1; }
+.ap-swap__cycle > * { opacity: 0; animation: ap-word 21s linear infinite; animation-delay: calc(var(--k) * 3s - 21s); }
+.ap-swap__cycle > :first-child { opacity: 1; }
+.ap-swap__held > * { opacity: 0; }
+[data-ground] .ap-swap__held > * { transition: opacity .6s ease-in-out; }
+.ap-swap__held > [data-on] { opacity: 1; }
+@keyframes ap-word { 0%, 7.9% { opacity: 1; } 14.3%, 93.6% { opacity: 0; } 100% { opacity: 1; } }
 .ap-chapter__spine { position: absolute; top: 0; bottom: 0; right: 30%; width: 2px; background: currentColor; opacity: .25; }
 @media (min-width: 960px) { .ap-chapter { padding: var(--space-40) var(--space-12); } }
 
