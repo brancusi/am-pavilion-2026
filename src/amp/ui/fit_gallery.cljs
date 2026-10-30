@@ -9,6 +9,7 @@
    A :threejs slide shows a cover until someone chooses to explore it; only
    then is Three.js (its own lazy module) fetched."
   (:require ["react" :as react]
+            [amp.hooks.use-in-view :refer [watch-edges!]]
             [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
             [amp.lib.defnc :refer [defnc]]
             [amp.ui.icons :refer [CubeIcon]]
@@ -79,19 +80,15 @@
                        (when (and (pos? w) (pos? h))
                          (some-> (.closest img ".ap-figure")
                                  (.. -style (setProperty "--ar" (str (/ w h))))))))]
+    ;; The arrows' ends, from IntersectionObserver on markers at the first
+    ;; and last slide.
     (hooks/use-effect
      :once
-     (when-let [el @track]
-       (let [update! (fn []
-                       (set-at-start! (<= (.-scrollLeft el) 4))
-                       (set-at-end! (>= (+ (.-scrollLeft el) (.-clientWidth el)) (- (.-scrollWidth el) 4))))
-             ro (js/ResizeObserver. update!)]
-         (.addEventListener el "scroll" update! #js {:passive true})
-         (.observe ro el)
-         (update!)
-         (fn []
-           (.removeEventListener el "scroll" update!)
-           (.disconnect ro)))))
+     (when-let [^js el @track]
+       (watch-edges! el (.querySelector el ".ap-edge--start") (.querySelector el ".ap-edge--end")
+                     (fn [{:keys [start? end?]}]
+                       (set-at-start! start?)
+                       (set-at-end! end?)))))
     (d/div {:class (str "ap-gallery" (when inset? " ap-gallery--inset"))}
            (if title
              (d/div {:class "ap-gallery__head"}
@@ -107,6 +104,8 @@
                      (d/figure {:key (or img-src (str "slide-" i))
                                 :class (str "ap-figure" (when (= type :threejs) " ap-figure--3d"))
                                 :style #js {"--ar" (str (or aspect-ratio 1.5))}}
+                               (when (zero? i) (d/span {:class "ap-edge ap-edge--start" :aria-hidden true}))
+                               (when (= i (dec (count slides))) (d/span {:class "ap-edge ap-edge--end" :aria-hidden true}))
                                (d/div {:class "ap-figure__frame"}
                                       (if (= type :threejs)
                                         ($ model-frame {:& slide})

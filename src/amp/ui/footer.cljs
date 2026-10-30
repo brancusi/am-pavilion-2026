@@ -88,7 +88,9 @@
                    (d/a {:href "https://www.labiennale.org/en/art/2026" :target "_blank" :rel "noopener"
                          :class "ap-footer__biennale"
                          :aria-label "La Biennale di Venezia — Biennale Arte 2026"}
+                        ;; Sized up front, so the legal line beside it never moves.
                         (d/img {:src "/images/graphics/61_biennale_logo_line.svg"
+                                :width 158 :height 146
                                 :alt "Biennale Arte 2026"}))
                    (d/p {:class "ap-footer__legal"}
                         "Armenia Pavilion · 61st International Art Exhibition — La Biennale di Venezia"

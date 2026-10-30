@@ -6,7 +6,8 @@
    portage.css; images on R2 under portage/). This namespace draws the
    Portage sub-nav, loads a sheet and ports the original page scripts:
    strip galleries, credit popovers, the lightbox and the Walk's route."
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.hooks.use-in-view :refer [observe! watch-edges!]]
+            [amp.lib.defnc :refer [defnc]]
             [amp.services.router :refer [flush-scroll!]]
             [amp.state.provider :refer [use-main-state]]
             ["gsap" :refer [gsap]]
@@ -76,16 +77,26 @@
         prev (.querySelector g ".gal-prev")
         next (.querySelector g ".gal-next")
         step #(max 260 (* 0.8 (.-clientWidth track)))
-        update! (fn []
-                  (let [over? (> (.-scrollWidth track) (+ 4 (.-clientWidth track)))]
-                    (when ctl (set! (.-hidden ctl) (not over?)))
-                    (when prev (set! (.-disabled prev) (< (.-scrollLeft track) 4)))
-                    (when next (set! (.-disabled next) (> (+ (.-scrollLeft track) (.-clientWidth track))
-                                                          (- (.-scrollWidth track) 4))))))
-        ro (js/ResizeObserver. update!)
+        ;; Ends from IntersectionObserver: 1px markers at the first and last item.
+        edge (fn [^js item cls]
+               (let [m (js/document.createElement "span")]
+                 (set! (.-className m) (str "ap-edge " cls))
+                 (.setAttribute m "aria-hidden" "true")
+                 (when (= "static" (.-position (js/getComputedStyle item)))
+                   (set! (.. item -style -position) "relative"))
+                 (.append item m)
+                 m))
+        start (some-> (.-firstElementChild track) (edge "ap-edge--start"))
+        end (some-> (.-lastElementChild track) (edge "ap-edge--end"))
+        stop-edges (if (and start end)
+                     (watch-edges! track start end
+                                   (fn [{:keys [start? end?]}]
+                                     (when ctl (set! (.-hidden ctl) (and start? end?)))
+                                     (when prev (set! (.-disabled prev) start?))
+                                     (when next (set! (.-disabled next) end?))))
+                     (fn []))
         offs [(when prev (listen! prev "click" #(.scrollBy track #js {:left (- (step))})))
               (when next (listen! next "click" #(.scrollBy track #js {:left (step)})))
-              (listen! track "scroll" update! #js {:passive true})
               (listen! track "keydown"
                        (fn [^js e]
                          (when (= (.-target e) track)
@@ -97,9 +108,8 @@
     (.setAttribute track "aria-label"
                    (str (or (some-> (.querySelector g ".h3") .-textContent) "Gallery")
                         ": scroll with the arrow keys"))
-    (.observe ro track)
-    (update!)
-    #(do (.disconnect ro) (doseq [off offs :when off] (off)))))
+    #(do (stop-edges) (some-> start .remove) (some-> end .remove)
+         (doseq [off offs :when off] (off)))))
 
 ;; ── Credit popovers ────────────────────────────────────────────────────────
 
@@ -366,11 +376,24 @@
                      (some-> ^js (:el cur) .-classList (.add "on"))
                      (reset! last-on (:el cur)))))
         schedule! #(when-not @queued (reset! queued true) (js/requestAnimationFrame frame!))
-        offs [(listen! js/window "scroll" schedule! #js {:passive true})
-              (listen! js/window "resize" schedule! #js {:passive true})]]
+        ;; The line follows the scroll, so it needs scroll events, but only
+        ;; while a drawing is on screen (IntersectionObserver turns them on).
+        on-screen (atom #{})
+        unlisten (atom nil)
+        stop-watch (observe! (distinct (map :svg lines))
+                             (fn [^js e]
+                               (swap! on-screen (if (.-isIntersecting e) conj disj) (.-target e))
+                               (cond
+                                 (and (seq @on-screen) (not @unlisten))
+                                 (reset! unlisten (listen! js/window "scroll" schedule! #js {:passive true}))
+                                 (and (empty? @on-screen) @unlisten)
+                                 (do (@unlisten) (reset! unlisten nil)))
+                               (schedule!))
+                             :root-margin "25% 0px")
+        offs [(listen! js/window "resize" schedule! #js {:passive true})]]
     (doseq [{:keys [^js el]} bridges] (.remove (.-classList el) "on"))
     (frame!)
-    #(do (.remove odo) (doseq [off offs] (off)))))
+    #(do (.remove odo) (stop-watch) (some-> @unlisten (apply [])) (doseq [off offs] (off)))))
 
 ;; ── Small things ───────────────────────────────────────────────────────────
 
@@ -420,34 +443,49 @@
 
 ;; ── Sub-nav ────────────────────────────────────────────────────────────────
 
+(def ^:private scroll-timeline?
+  (and (exists? js/CSS) (.supports js/CSS "animation-timeline: scroll()")))
+
 (defn- use-route-fill!
   "The red route under the stations: drawn to the current station, then on
-   toward the next as the sheet is read. Off the route, it draws nothing."
-  [stations-ref slug]
-  (let [[fill set-fill!] (hooks/use-state 0)]
+   toward the next as the sheet is read. Off the route, it draws nothing.
+   Returns [from to] in px; CSS draws between them with the page's scroll
+   (a scroll-driven animation), measured again only when sizes change.
+   Browsers without scroll timelines get a throttled scroll listener."
+  [stations-ref fill-ref slug]
+  (let [[span set-span!] (hooks/use-state [0 0])]
     (hooks/use-effect
      [slug]
      (let [i (first (keep-indexed #(when (= slug (:slug %2)) %1) stations))
-           queued (atom false)
            measure! (fn []
-                      (reset! queued false)
                       (when-let [^js el @stations-ref]
                         (let [links (vec (array-seq (.querySelectorAll el "a")))
                               x0 (.-left (.getBoundingClientRect el))
-                              mid #(let [r (.getBoundingClientRect ^js %)] (- (+ (.-left r) (/ (.-width r) 2)) x0))
-                              doc (.-documentElement js/document)
-                              p (min 1 (max 0 (/ js/scrollY (max 1 (- (.-scrollHeight doc) js/innerHeight)))))]
-                          (set-fill! (cond
-                                       (nil? i) 0
-                                       (= i (dec (count links))) (mid (links i))
-                                       :else (+ (mid (links i)) (* p (- (mid (links (inc i))) (mid (links i))))))))))
-           schedule! #(when-not @queued (reset! queued true) (js/requestAnimationFrame measure!))
-           offs [(listen! js/window "scroll" schedule! #js {:passive true})
-                 (listen! js/window "resize" schedule!)]]
-       (schedule!)
-       (.then (.-ready js/document.fonts) schedule!)
-       #(doseq [off offs] (off))))
-    fill))
+                              mid #(let [r (.getBoundingClientRect ^js %)] (- (+ (.-left r) (/ (.-width r) 2)) x0))]
+                          (set-span! (cond
+                                       (nil? i) [0 0]
+                                       (= i (dec (count links))) [(mid (links i)) (mid (links i))]
+                                       :else [(mid (links i)) (mid (links (inc i)))])))))
+           ro (js/ResizeObserver. measure!)]
+       (some->> @stations-ref (.observe ro))
+       (.then (.-ready js/document.fonts) measure!)
+       #(.disconnect ro)))
+    (hooks/use-effect
+     [span]
+     (when-not scroll-timeline?
+       (let [[from to] span
+             queued (atom false)
+             draw! (fn []
+                     (reset! queued false)
+                     (when-let [^js f @fill-ref]
+                       (let [doc (.-documentElement js/document)
+                             p (min 1 (max 0 (/ js/scrollY (max 1 (- (.-scrollHeight doc) js/innerHeight)))))]
+                         (set! (.. f -style -width) (str (+ from (* p (- to from))) "px")))))
+             schedule! #(when-not @queued (reset! queued true) (js/requestAnimationFrame draw!))
+             off (listen! js/window "scroll" schedule! #js {:passive true})]
+         (draw!)
+         off)))
+    span))
 
 (defnc sheet-menu
   [{:keys [slug]}]
@@ -479,7 +517,8 @@
 (defnc sub-nav
   [{:keys [slug]}]
   (let [stations-ref (hooks/use-ref nil)
-        fill (use-route-fill! stations-ref slug)
+        fill-ref (hooks/use-ref nil)
+        [from to] (use-route-fill! stations-ref fill-ref slug)
         {:keys [n long]} (by-slug slug)
         cur-i (first (keep-indexed #(when (= slug (:slug %2)) %1) stations))]
     (d/nav {:class "pt-nav" :aria-label "Portage"}
@@ -495,7 +534,8 @@
                                  :aria-current (when (= s slug) "page")}
                                 (d/i n) short))
                          (d/span {:class "pt-nav__route" :aria-hidden true}
-                                 (d/span {:class "pt-nav__fill" :style {:width (str fill "px")}})))
+                                 (d/span {:ref fill-ref :class "pt-nav__fill"
+                                          :style #js {"--from" (str from "px") "--to" (str to "px")}})))
                   ($ sheet-menu {:slug slug})))))
 
 (defnc next-sheet

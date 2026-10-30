@@ -4,30 +4,13 @@
    footer is on screen, so it never sits over the legal line."
   (:require [amp.hooks.use-scroll-to :refer [use-scroll-to-top]]
             [amp.lib.defnc :refer [defnc]]
-            [helix.dom :as d]
-            [helix.hooks :as hooks]))
-
-(defn- show? []
-  (let [y (.-scrollY js/window)
-        h (.-innerHeight js/window)
-        footer-top (some-> (.querySelector js/document ".ap-footer")
-                           (.getBoundingClientRect) (.-top))]
-    (and (> y (* 2 h))
-         (or (nil? footer-top) (> footer-top h)))))
+            [helix.dom :as d]))
 
 (defnc back-up-nav
-  []
-  (let [scroll-to-top (use-scroll-to-top {:duration 1})
-        [active? set-active!] (hooks/use-state false)]
-    (hooks/use-effect
-     :once
-     (let [update! #(set-active! (show?))]
-       (.addEventListener js/window "scroll" update! #js {:passive true})
-       (.addEventListener js/window "resize" update!)
-       (update!)
-       (fn []
-         (.removeEventListener js/window "scroll" update!)
-         (.removeEventListener js/window "resize" update!))))
+  "`active?` comes from the layout shell's observers (two screens down,
+   footer not on screen)."
+  [{:keys [active?]}]
+  (let [scroll-to-top (use-scroll-to-top {:duration 1})]
     (d/button {:class "ap-totop"
                :data-hidden (when-not active? "")
                :aria-hidden (not active?)

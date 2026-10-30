@@ -157,22 +157,26 @@
                          (d/div {:class "flex flex-col gap-3"}
                                 (d/p {:class "ap-label ap-muted m-0"} "Press")
                                 (d/h1 {:class "ap-display-xl"} "Press images"))
-                         (when data
-                           (d/div {:class "flex flex-col items-end gap-2" :aria-live "polite"
-                                   :aria-label (str (count shown) " images")}
+                         ;; Held in place (hidden) until the list arrives, so nothing moves.
+                         (d/div {:class (str "flex flex-col items-end gap-2" (when-not data " invisible"))
+                                 :aria-live "polite"
+                                 :aria-label (when data (str (count shown) " images"))}
                                   (d/span {:class "ap-jhead__count" :aria-hidden true} (pad2 (count shown)))
-                                  (d/span {:class "ap-label ap-muted" :aria-hidden true} "Images"))))
+                                  (d/span {:class "ap-label ap-muted" :aria-hidden true} "Images")))
                   (d/p {:class "ap-lede m-0 max-w-[52ch]"}
                        "The Studio, Zadik Zadikian’s Armenia Pavilion at Biennale Arte 2026: the work, its making, the people and the archive behind it.")
                   (d/p {:class "ap-label ap-muted m-0 max-w-[70ch] leading-relaxed"}
                        "For press use with the caption and credit given. Each image downloads as a 2400 px JPEG for the web, or at full size for print. "
                        (d/a {:href csv-url :download "armenia-pavilion-press-captions.csv" :class "underline underline-offset-2"}
                             "All captions (CSV)"))
-                  (when (> (count filters) 1)
+                  (if (nil? data)
+                    ;; The filter row's height, until the sections are known.
+                    (d/div {:class "ap-filter invisible" :aria-hidden true} (d/button {:tab-index -1} "All"))
+                    (when (> (count filters) 1)
                     (d/div {:class "ap-filter" :role "group" :aria-label "Filter by section"}
                            (d/button {:aria-pressed (nil? sec) :on-click #(set-sec! nil)} "All")
                            (for [[k label] filters]
-                             (d/button {:key k :aria-pressed (= k sec) :on-click #(set-sec! k)} label)))))
+                             (d/button {:key k :aria-pressed (= k sec) :on-click #(set-sec! k)} label))))))
            (cond
              (nil? data) (d/div {:class "min-h-[60vh]"})
              (empty? shown) (d/p {:class "ap-body ap-muted py-12"} "Press images are on their way.")

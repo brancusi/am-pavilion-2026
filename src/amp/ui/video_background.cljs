@@ -91,18 +91,41 @@
   "Full player for films people choose to watch: controls, sound on, and
    Mux's generated captions available (hidden by default) in the menu.
    `fill?` fits the whole frame inside its box (the lightbox) instead of
-   cropping to a 16:9 frame."
+   cropping to a 16:9 frame.
+
+   It plays only while on screen: scrolled out of view it pauses, and back
+   in view it resumes, unless the viewer paused it themselves."
   [{:keys [playback-id title poster fill?]}]
-  ($ MuxPlayer
-     {:playbackId playback-id
-      :class "w-full h-full block"
-      :autoPlay true
-      :playsInline true
-      :streamType "on-demand"
-      :defaultHiddenCaptions true
-      :accentColor "#eac54f"
-      :poster poster
-      :metadata #js {:video_title title}
-      :style (if fill?
-               #js {"--media-object-fit" "contain" :height "100%" :background "#000"}
-               #js {"--media-object-fit" "cover" :aspectRatio "16 / 9"})}))
+  (let [player (hooks/use-ref nil)]
+    (hooks/use-effect
+     :once
+     (when-let [^js el @player]
+       (let [auto-paused? (atom false)
+             io (js/IntersectionObserver.
+                 (fn [entries]
+                   (let [^js e (last entries)]
+                     (if (.-isIntersecting e)
+                       (when @auto-paused?
+                         (reset! auto-paused? false)
+                         (some-> (.play el) (.catch (fn [_]))))
+                       (when-not (.-paused el)
+                         (reset! auto-paused? true)
+                         (.pause el)))))
+                 ;; Paused once less than a fifth of it is on screen.
+                 #js {:threshold 0.2})]
+         (.observe io el)
+         #(.disconnect io))))
+    ($ MuxPlayer
+       {:ref player
+        :playbackId playback-id
+        :class "w-full h-full block"
+        :autoPlay true
+        :playsInline true
+        :streamType "on-demand"
+        :defaultHiddenCaptions true
+        :accentColor "#eac54f"
+        :poster poster
+        :metadata #js {:video_title title}
+        :style (if fill?
+                 #js {"--media-object-fit" "contain" :height "100%" :background "#000"}
+                 #js {"--media-object-fit" "cover" :aspectRatio "16 / 9"})})))

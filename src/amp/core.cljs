@@ -2,7 +2,6 @@
 
   (:require ["gsap" :refer [gsap]]
             ["gsap/ScrollToPlugin" :refer [ScrollToPlugin]]
-            ["gsap/ScrollTrigger" :refer [ScrollTrigger]]
             ["gsap/SplitText" :refer [SplitText]]
             ["react-dom/client" :as rdom]
             [amp.hooks.use-media-query :refer [use-touch-enabled]]
@@ -25,7 +24,6 @@
   []
   ;; Register all gsap plugins
   (.registerPlugin gsap ScrollToPlugin)
-  (.registerPlugin gsap ScrollTrigger)
   (.registerPlugin gsap SplitText)
 
   (.render root ($ app)))
