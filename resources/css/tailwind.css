@@ -485,12 +485,13 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 [id] { scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
 
 /* Film lightbox */
-.ap-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; grid-template-rows: auto 1fr; background: rgba(10, 10, 9, .985); color: var(--on-night); animation: ap-fade var(--dur-base) var(--ease-place) both; }
+.ap-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; grid-template-rows: auto minmax(0, 1fr); background: rgba(10, 10, 9, .985); color: var(--on-night); animation: ap-fade var(--dur-base) var(--ease-place) both; }
 .ap-lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) var(--space-4); }
 .ap-lightbox__bar .ap-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ap-lightbox__where { color: #b5ad9e; }
 @media (max-width: 719px) { .ap-lightbox__where { display: none; } }
-.ap-lightbox__stage { min-height: 0; padding: 0 0 var(--space-4); display: grid; }
+.ap-lightbox__stage { min-height: 0; padding: 0 0 var(--space-4); display: grid; grid-template-rows: minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); }
+.ap-lightbox__stage > mux-player { min-height: 0; min-width: 0; max-height: 100%; }
 @media (min-width: 960px) { .ap-lightbox__bar { padding: var(--space-4) var(--space-12); } .ap-lightbox__stage { padding: 0 var(--space-12) var(--space-12); } }
 
 /* Tap-to-call row: label over a large number, 44px+ tall. */
