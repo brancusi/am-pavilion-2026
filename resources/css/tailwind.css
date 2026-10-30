@@ -297,10 +297,12 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-dropcap::first-letter { float: left; font: 600 5.2em/.78 var(--font-display); margin: .06em .08em 0 0; color: var(--red-text); }
 .ap-progressbar { position: sticky; top: var(--header-h); height: 3px; background: var(--red); transform-origin: 0 50%; z-index: 10; transform: scaleX(0); }
 @keyframes ap-read { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* Scroll-driven rules use animation longhands: the minifier moves an
+   `animation` shorthand after `animation-timeline`, which resets it. */
 @supports (animation-timeline: view()) {
   .ap-post { timeline-scope: --ap-read; }
   .ap-post > .ap-article { view-timeline: --ap-read block; }
-  .ap-post > .ap-progressbar { animation: ap-read linear both; animation-timeline: --ap-read; animation-range: contain 0% contain 100%; }
+  .ap-post > .ap-progressbar { animation-name: ap-read; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: --ap-read; animation-range: contain 0% contain 100%; }
 }
 .ap-article__next { display: grid; gap: var(--space-2); padding: var(--space-6); background: var(--night); color: var(--on-night); text-decoration: none; }
 @media (min-width: 960px) {
@@ -810,7 +812,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
   .pt-nav__stations a:hover, .pt-nav__stations a[aria-current="page"] { color: var(--pt-red); }
   .pt-nav__route { position: absolute; left: 0; right: 0; bottom: 10px; height: 1.5px; background: var(--pt-rule); }
   .pt-nav__fill { position: absolute; left: 0; top: 0; bottom: 0; width: var(--from); background: var(--pt-red); }
-  @supports (animation-timeline: scroll()) { .pt-nav__fill { animation: pt-fill linear both; animation-timeline: scroll(root block); } }
+  @supports (animation-timeline: scroll()) { .pt-nav__fill { animation-name: pt-fill; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: scroll(root block); } }
   .pt-menu { margin-left: 0; }
 }
 @keyframes pt-fill { from { width: var(--from); } to { width: var(--to); } }
