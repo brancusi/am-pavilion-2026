@@ -10,7 +10,6 @@
    [amp.pages.landing.curators :refer [curators-section]]
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
-   [amp.styles :as s]
    [amp.pages.venue.map-config :as mc]
    [amp.ui.fit-gallery :refer [fit-gallery]]
    [amp.ui.lazy-map :refer [mapbox-map]]
@@ -272,36 +271,60 @@
 
 ;; ── Visit teaser ────────────────────────────────────────────────────────
 
+(def ^:private visit-modes
+  [{:id :walk :swatch "bg-yellow outline outline-2 outline-ink" :title "On foot"
+    :body "About an eight-minute walk from the crossing at the Piraeus Lion."
+    :caption "Walking route: from the Piraeus Lion through the Arsenale to Tesa 41."}
+   {:id :water :swatch "bg-blue" :title "Water taxi"
+    :body "From the North Lagoon through Rio delle Galeazze, the only permitted entrance."
+    :caption "Water taxi route: enter from the North Lagoon via Rio delle Galeazze to the pavilion drop-off point."}])
+
 (defnc visit-teaser []
-  (d/section {:class "ap-sec"}
-             (d/div {:class "ap-wrap ap-visit"}
-                    (d/div {:class "ap-map ap-map--stack"}
-                           (d/div {:class "ap-map__plate" :role "img"
-                                   :aria-label "Map of the water taxi route through Rio delle Galeazze to the pavilion landing"}
-                                  ($ mapbox-map {:class "!h-full"
-                                                 :interactive? false
-                                                 :initial-view mc/water-taxi-initial-view
-                                                 :bounds mc/galeazze-bounds
-                                                 :ant-paths mc/water-taxi-ant-paths
-                                                 :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url}))
-                           (d/p {:class "ap-caption m-0 p-4"}
-                                "Water taxi route: enter from the North Lagoon via Rio delle Galeazze to the pavilion drop-off point."))
-                    (d/div {:class "flex flex-col gap-6"}
-                           (d/p {:class "ap-label ap-muted m-0"} "Visit · Venice")
-                           (d/h2 {:class "ap-display-l"} "Getting to Tesa 41")
-                           (d/ul {:class "ap-modes"}
-                                 (d/li (d/i {:class "ap-swatch bg-yellow outline outline-2 outline-ink"})
-                                       (d/div (d/h3 {:class "ap-h3"} "On foot")
-                                              (d/p {:class "ap-body-s mt-1 mb-0"}
-                                                   "About an eight-minute walk from the crossing at the Piraeus Lion.")))
-                                 (d/li (d/i {:class "ap-swatch bg-blue"})
-                                       (d/div (d/h3 {:class "ap-h3"} "Water taxi")
-                                              (d/p {:class "ap-body-s mt-1 mb-0"}
-                                                   "From the North Lagoon through Rio delle Galeazze, the only permitted entrance."))))
-                           (d/div {:class "flex flex-wrap gap-2"}
-                                  (d/a {:class "ap-btn ap-btn--blue" :href "/visit"} "Plan your visit")
-                                  (d/a {:class "ap-btn ap-btn--ghost" :href "/route-from-hotel-gabrielli"}
-                                       "Water taxi card"))))))
+  ;; On foot by default; the two ways in switch the map.
+  (let [[mode set-mode!] (hooks/use-state :walk)
+        walk? (= mode :walk)]
+    (d/section {:class "ap-sec"}
+               (d/div {:class "ap-wrap ap-visit"}
+                      (d/div {:class "ap-map ap-map--stack"}
+                             (d/div {:class "ap-map__plate" :role "img"
+                                     :aria-label (if walk?
+                                                   "Map of the walking route from the Piraeus Lion to the pavilion"
+                                                   "Map of the water taxi route through Rio delle Galeazze to the pavilion landing")}
+                                    (if walk?
+                                      ($ mapbox-map {:key "walk" :class "!h-full"
+                                                     :interactive? false
+                                                     :initial-view mc/initial-view
+                                                     :bounds mc/visitor-bounds :bounds-padding 32
+                                                     :ant-paths mc/ant-paths
+                                                     :layers mc/layers :labels-url mc/visitor-data-url})
+                                      ($ mapbox-map {:key "water" :class "!h-full"
+                                                     :interactive? false
+                                                     :initial-view mc/water-taxi-initial-view
+                                                     :bounds mc/galeazze-bounds
+                                                     :ant-paths mc/water-taxi-ant-paths
+                                                     :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url})))
+                             (d/p {:class "ap-caption m-0 p-4"}
+                                  (:caption (some #(when (= mode (:id %)) %) visit-modes))))
+                      (d/div {:class "flex flex-col gap-6"}
+                             (d/p {:class "ap-label ap-muted m-0"} "Visit · Venice")
+                             (d/h2 {:class "ap-display-l"} "Getting to Tesa 41")
+                             (d/ul {:class "ap-modes" :role "group" :aria-label "Route on the map"}
+                                   (for [{:keys [id swatch title body]} visit-modes]
+                                     (d/li {:key (name id)}
+                                           (d/button {:type "button" :aria-pressed (= mode id)
+                                                      :on-click #(set-mode! id)}
+                                                     (d/i {:class (str "ap-swatch " swatch)})
+                                                     (d/span
+                                                      (d/span {:class "ap-h3 block"} title)
+                                                      (d/span {:class "ap-body-s block mt-1"} body))))))
+                             (d/div {:class "flex flex-wrap gap-2"}
+                                    (d/a {:class "ap-btn ap-btn--blue" :href "/visit"} "Plan your visit")
+                                    (if walk?
+                                      (d/a {:class "ap-btn ap-btn--ghost" :href mc/maps-url
+                                            :target "_blank" :rel "noopener"}
+                                           "Open in Maps")
+                                      (d/a {:class "ap-btn ap-btn--ghost" :href "/route-from-hotel-gabrielli"}
+                                           "Water taxi card"))))))))
 
 ;; ── Journal teaser ──────────────────────────────────────────────────────
 
@@ -336,8 +359,6 @@
          ($ films-section)
          ($ visit-teaser)
          ($ journal-teaser)
-         (d/div {:class (s/cx s/content-column-container "border-t border-rule")}
-                (d/div {:class (str "flex flex-col " s/content-column)}
-                       ($ about-studio {:id "about-studio" :title "The Studio"})
-                       ($ in-minor-keys {:id "in-minor-keys" :title "In Minor Keys"})
-                       ($ curators-section {:id "curators" :title "Curators"})))))
+         ($ about-studio {:id "about-studio"})
+         ($ in-minor-keys {:id "in-minor-keys"})
+         ($ curators-section {:id "curators"})))
