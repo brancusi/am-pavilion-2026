@@ -2,6 +2,22 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-10-30 — Repo tidy, journal-post skill, layout-shift check
+
+**Rationale:** Keep what was learnt writing the autumn journal posts, and make the repo easy to pick up from scratch.
+**Summary:** New `journal-post` skill (sources, blackbox film stills, R2 uploads, galleries, zero-shift check), `npm run qa:cls` layout-shift sweep, README rewritten as a map of the repo, dead code removed.
+
+### Changes
+
+- Added `.claude/skills/journal-post/SKILL.md` and `scripts/qa/cls.mjs` (`npm run qa:cls`, `playwright-core` dev dependency, uses the installed Chrome).
+- `add-media` skill: images are on R2 (was imgix). `push-to-production` skill: stages `scripts/`, live layout-shift check, no `netlify.toml`.
+- Removed the unpublished drafts `venice_arrival.cljs` and `pavilion_construction_begins.cljs` (required but never listed) and `netlify.toml` (the site is on Cloudflare).
+- Moved the finished February plans to `docs/history/`.
+
+### Migration Notes
+
+- The two drafts are in git history (`git show 55ee8be:src/amp/pages/blog/posts/venice_arrival.cljs`).
+
 ## 2026-10-29 — Remove Mockup Viewer and Firebase
 
 **Rationale:** The unlinked `/mockups` 3D viewer was the only user of Firebase and is no longer needed on the site.

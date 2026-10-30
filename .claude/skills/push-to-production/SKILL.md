@@ -31,7 +31,7 @@ Do not ask for confirmation between steps — the phrase "push to production" is
 ## 1. Source commit
 
 `git add` only source paths: `src/`, `resources/`, `shadow-cljs.edn`, `deps.edn`, `package.json`,
-`package-lock.json`, `tailwind.config.js`, `postcss.config.js`, `public/index.html`, `netlify.toml`, `wrangler.jsonc`, `cloudflare/`, `build/`, `.gitignore`,
+`package-lock.json`, `tailwind.config.js`, `postcss.config.js`, `public/index.html`, `scripts/`, `wrangler.jsonc`, `cloudflare/`, `build/`, `.gitignore`,
 `docs/`, `.claude/skills/`, `.claude/launch.json`, `.github/`.
 Commit with a message that says what changed and why, ending with the attribution trailer from the
 system reminder. Then capture the short hash: `H=$(git rev-parse --short HEAD)`.
@@ -77,6 +77,9 @@ Verify live: `curl -s https://armenianpavilion.org/ | grep -o 'main\.[0-9a-f]*\.
 - If `gh` is unavailable or the merge is refused, fall back to `git push origin HEAD:main` (fast-forward) and say so.
 
 ## 7. Report
+
+For changes to layout, fonts or images, sweep live first:
+`npm run qa:cls -- https://armenianpavilion.org | grep -v 0.0000` should print nothing.
 
 Lead with the live URL and what changed. List the source commit, release commit, Worker version id and PR link.
 Mention anything left dirty (dev-build output under `public/`, untracked files) and anything skipped.
