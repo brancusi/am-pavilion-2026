@@ -7,7 +7,17 @@
 (def posts
   "Newest first. :kind is the filter tag; :tone picks its pigment; :cover-ar
    is the cover's width / height, so its space is held before it loads."
-  [{:slug        "the-studio-play-balance"
+  [{:slug        "carried-by-hand"
+    :title       "Carried by Hand"
+    :date        "2026-09-03"
+    :author      "Armenia Pavilion Team"
+    :kind        "Venice"
+    :tone        :blue
+    :summary     "In Venice every delivery ends on foot, one bridge at a time. On the realities of logistics in a city that resists the car, a summer away for visas, and the studio's return to full production."
+    :cover-image "https://media.armenianpavilion.org/journal/26-09-03/bridge-steps.jpg"
+    :cover-ar    1.7778}
+
+   {:slug        "the-studio-play-balance"
     :title       "The Studio: Play, Balance, and the Life of Form"
     :date        "2026-03-15"
     :author      "Armenia Pavilion Team"
