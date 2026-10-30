@@ -1,12 +1,10 @@
 (ns amp.pages.landing.curators
+  "The pavilion's curators: portrait, name, role and a short biography."
   (:require
-   [amp.ui.image-overlay :refer [lazy-image-with-overlay]]
-   [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.styles :as s]
+   [amp.ui.picture :refer [picture]]
    [helix.core :refer [$]]
-   [helix.dom :as d]
-   [helix.hooks :as hooks]))
+   [helix.dom :as d]))
 
 (def curators
   [{:name "Tony Shafrazi"
@@ -16,65 +14,23 @@
    {:name "Tina Chakarian"
     :role "Curator"
     :img  "https://media.armenianpavilion.org/committee/tina.png"
-    :bio  "Tina Chakarian is a curator based in Boston and Yerevan. Born in Beirut, she studied Visual Arts at UCLA and Tufts University. Since 2015, she has served as Commissioner and Development Director of the Armenia Pavilion at La Biennale di Venezia, playing a central role in shaping Armenia\u2019s sustained presence on the global stage."}])
-
-(defnc curator-card
-  [{:keys [name role img bio visible?]}]
-  (let [tag-bg ""
-        tag-style {:boxDecorationBreak "clone"
-                   :WebkitBoxDecorationBreak "clone"}]
-    (d/div
-     {:class "px-4 sm:flex sm:gap-8 sm:items-start"}
-
-     ;; Portrait — floated left on mobile, flex child on desktop
-     (d/div
-      {:class "float-left mr-4 mb-2 sm:float-none sm:mr-0 sm:mb-0
-               w-20 aspect-square sm:w-36
-               flex-shrink-0 rounded-sm overflow-hidden"}
-      ($ lazy-image-with-overlay {:img-src img
-                                  :fit "crop"
-                                  :aspect-ratio 1
-                                  :active? visible?}))
-
-     ;; Text — wraps around image on mobile, flex child on desktop
-     (d/div
-      {:class "sm:flex-1 sm:min-w-0"}
-
-      ;; Name — blocky bg treatment
-      (d/p {:class (s/cx s/person-name "mb-1")}
-           (d/span {:class tag-bg :style tag-style} name))
-
-      ;; Role — amber label
-      (d/p {:class (s/cx s/person-role "mb-3")} role)
-
-      ;; Bio
-      (d/p {:class s/body-base} bio)
-
-      ;; Clear float (mobile only)
-      (d/div {:class "clear-both sm:hidden"})))))
+    :bio  "Tina Chakarian is a curator based in Boston and Yerevan. Born in Beirut, she studied Visual Arts at UCLA and Tufts University. Since 2015, she has served as Commissioner and Development Director of the Armenia Pavilion at La Biennale di Venezia, playing a central role in shaping Armenia’s sustained presence on the global stage."}])
 
 (defnc curators-section
-  [{:keys [id title]}]
-  (let [ref (hooks/use-ref "curators-ref")
-        [_visited? visible?] (use-intersection-observer ref {:threshold 0.05})
-        title-bg ""
-        title-style {:boxDecorationBreak "clone"
-                     :WebkitBoxDecorationBreak "clone"}]
-    (d/section
-     {:id id
-      :ref ref
-      :class (s/cx s/section-pt s/section-pb)}
-
-     ;; Section heading — blocky teaser style
-     (when title
-       (d/h2 {:class (s/cx s/person-name-lg "mb-10 px-4")}
-             (d/span {:class title-bg :style title-style} title)))
-
-     ;; Curator cards
-     (d/div
-      {:class "space-y-8 sm:space-y-12
-              divide-y divide-rule"}
-      (for [{:keys [name] :as curator} curators]
-        (d/div {:key name :class "pt-8 sm:pt-12 first:pt-0 first:border-t-0"}
-               ($ curator-card {:visible? visible?
-                                :& curator})))))))
+  [{:keys [id]}]
+  (d/section {:id id :class "ap-sec lg:!pb-24"}
+             (d/div {:class "ap-wrap"}
+                    (d/div {:class "ap-head-row"}
+                           (d/div
+                            (d/p {:class "ap-label ap-muted m-0 mb-1"} "Armenia Pavilion")
+                            (d/h2 {:class "ap-display-l"} "Curators")))
+                    (d/ul {:class "ap-people"}
+                          (for [{:keys [name role img bio]} curators]
+                            (d/li {:key name :class "ap-person"}
+                                  (d/div {:class "ap-person__portrait"}
+                                         ($ picture {:src img :alt name
+                                                     :sizes "(min-width: 720px) 160px, 112px"}))
+                                  (d/div {:class "flex flex-col gap-2"}
+                                         (d/h3 {:class "ap-h3 m-0"} name)
+                                         (d/p {:class "ap-label ap-muted m-0"} role)
+                                         (d/p {:class "ap-body-s m-0 mt-2"} bio))))))))

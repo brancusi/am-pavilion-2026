@@ -34,8 +34,7 @@
   "Social profile icons for the footer. Renders a heading + icon row."
   [_props]
   (d/div
-         (d/h4 {:class (s/cx s/footer-heading "mb-3")}
-               "Follow")
+         (d/h2 {:class "ap-footer__h"} "Follow")
          (d/div {:class "flex items-center gap-1"}
                 (for [{:keys [platform href icon]} social-profiles]
                   (d/a {:key      platform
@@ -43,5 +42,6 @@
                         :target   "_blank"
                         :rel      "noopener noreferrer"
                         :title    platform
+                        :aria-label platform
                         :class    icon-link-class}
                        ($ icon {:class "w-[18px] h-[18px]"}))))))
