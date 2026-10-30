@@ -1,5 +1,6 @@
 (ns amp.ui.section-transitioner
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.hooks.use-in-view :refer [use-in-view]]
+            [amp.lib.defnc :refer [defnc]]
             [amp.nav.back-up :refer [back-up-nav]]
             [amp.nav.menu :refer [menu]]
             [amp.services.router :refer [flush-scroll!]]
@@ -69,7 +70,12 @@
         [shown set-shown!] (hooks/use-state nil)
         shown-ref (hooks/use-ref nil)
         wrapper (hooks/use-ref nil)
-        token (hooks/use-ref 0)]
+        token (hooks/use-ref 0)
+        ;; Where the reader is, from IntersectionObserver: off the top of the
+        ;; page, two screens down, and whether the footer is on screen.
+        [top-ref {top-in? :in?}] (use-in-view)
+        [deep-ref {deep-above? :above?}] (use-in-view)
+        [footer-ref {footer-in? :in?}] (use-in-view)]
     (set! (.-current shown-ref) shown)
 
     (hooks/use-effect
@@ -114,8 +120,12 @@
          (some-> @wrapper (#(.set gsap % #js {:clearProps "opacity"})))))
      js/undefined)
 
-    (d/div
-     ($ menu)
+    ;; Clipped, so the marker two screens down never makes a short page
+    ;; scrollable (clip, unlike hidden, keeps the header sticky).
+    (d/div {:class "relative overflow-clip"}
+     (d/div {:ref top-ref :class "absolute top-0 left-0 w-px h-px pointer-events-none" :aria-hidden true})
+     (d/div {:ref deep-ref :class "absolute top-0 left-0 w-px h-[200vh] pointer-events-none" :aria-hidden true})
+     ($ menu {:scrolled? (not top-in?)})
      ;; At least a screen tall, so the footer never rises into view while a
      ;; page is still loading its content.
      (d/div {:ref wrapper :class "w-full overflow-x-clip min-h-[100svh]"}
@@ -125,5 +135,6 @@
               ($ react/Suspense {:key (:n shown) :fallback nil}
                  ($ view))))
      (when shown
-       ($ site-footer))
-     ($ back-up-nav))))
+       (d/div {:ref footer-ref}
+              ($ site-footer)))
+     ($ back-up-nav {:active? (and deep-above? (not footer-in?))}))))

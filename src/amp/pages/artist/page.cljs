@@ -4,6 +4,7 @@
    works gallery, a studio film and the closing chapter on Armenia."
   (:require
    [amp.data.films :as films]
+   [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.lib.defnc :refer [defnc]]
    [amp.ui.fit-gallery :refer [fit-gallery]]
    [amp.ui.picture :refer [picture mux-poster]]
@@ -121,8 +122,12 @@
 
 (defnc film-section []
   (let [[playing? set-playing!] (hooks/use-state false)
-        {:keys [title playback-id poster summary where duration]} film]
-    (d/section {:class "ap-sec ap-film" :id "film"}
+        {:keys [title playback-id poster summary where duration]} film
+        [ref {near? :in?}] (use-in-view :root-margin "100% 0px")
+        _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))
+        still (d/img {:src (mux-poster playback-id {:w 1600 :time poster})
+                      :alt "" :loading "lazy"})]
+    (d/section {:ref ref :class "ap-sec ap-film" :id "film"}
                (d/div {:class "ap-wrap flex flex-col gap-6"}
                       (d/div
                        (d/p {:class "ap-label m-0 mb-1 text-yellow"} "In the studio")
@@ -131,10 +136,10 @@
                                 (d/div {:class "ap-figure__frame" :style #js {"--ar" "16/9"}}
                                        (if playing?
                                          ($ lazy-film {:playback-id playback-id :title title
+                                                       :fallback still
                                                        :poster (mux-poster playback-id {:w 1600 :time poster})})
                                          (<>
-                                          (d/img {:src (mux-poster playback-id {:w 1600 :time poster})
-                                                  :alt "" :loading "lazy"})
+                                          still
                                           (d/button {:class "ap-play" :aria-label (str "Play " title)
                                                      :on-click #(set-playing! true)}
                                                     (d/svg {:width 28 :height 28 :viewBox "0 0 16 16"

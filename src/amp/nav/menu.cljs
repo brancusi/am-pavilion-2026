@@ -37,11 +37,11 @@
            (d/path {:d "M3 7h18M3 12h18M3 17h18"}))))
 
 (defnc menu
-  "Site navigation: sticky header plus the phone menu sheet."
-  [_props]
+  "Site navigation: sticky header plus the phone menu sheet. `scrolled?`
+   (the page has moved under the bar) shows a rule beneath it."
+  [{:keys [scrolled?]}]
   (let [[state _] (use-main-state)
         [open? set-open!] (hooks/use-state false)
-        [scrolled? set-scrolled!] (hooks/use-state false)
         current-path (-> state :current-route :path)
         close! (hooks/use-callback :once (fn [_] (set-open! false)))
         toggle-ref (hooks/use-ref nil)
@@ -73,14 +73,6 @@
                         nil))]
          (.addEventListener js/document "keydown" on-key)
          (fn [] (.removeEventListener js/document "keydown" on-key)))))
-
-    ;; A rule under the bar only once the page has scrolled under it.
-    (hooks/use-effect
-     :once
-     (let [on-scroll #(set-scrolled! (pos? (.-scrollY js/window)))]
-       (on-scroll)
-       (.addEventListener js/window "scroll" on-scroll #js {:passive true})
-       #(.removeEventListener js/window "scroll" on-scroll)))
 
     (<>
      (d/header {:class "ap-header" :data-scrolled (when scrolled? "")}

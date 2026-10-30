@@ -5,7 +5,7 @@
   (:require
    [amp.data.films :as films]
    [amp.data.journal :as journal]
-   [amp.hooks.use-scroll-trigger :refer [use-scroll-trigger]]
+   [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.lib.defnc :refer [defnc]]
    [amp.pages.landing.curators :refer [curators-section]]
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
@@ -99,8 +99,7 @@
 ;; ── Hero ────────────────────────────────────────────────────────────────
 
 (defnc hero []
-  (let [ref (hooks/use-ref nil)
-        [_ in-view?] (use-scroll-trigger ref {:start "top bottom" :end "bottom top"})
+  (let [[ref {in-view? :in?}] (use-in-view)
         [paused? set-paused!] (hooks/use-state false)
         [film-open? set-film-open!] (hooks/use-state false)
         hero-film (some #(when (= hero-playback-id (:playback-id %)) %) films/films)]
@@ -229,8 +228,13 @@
   (let [[current set-current!] (hooks/use-state (first films/films))
         [playing? set-playing!] (hooks/use-state false)
         {:keys [title playback-id poster summary where duration]} current
-        pick! (fn [f] (set-current! f) (set-playing! true))]
-    (d/section {:class "ap-sec ap-film" :id "film"}
+        pick! (fn [f] (set-current! f) (set-playing! true))
+        ;; Fetch the player's code before anyone presses play.
+        [ref {near? :in?}] (use-in-view :root-margin "100% 0px")
+        _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))
+        still (d/img {:src (mux-poster playback-id {:w 1600 :time poster})
+                      :alt "" :loading "lazy"})]
+    (d/section {:ref ref :class "ap-sec ap-film" :id "film"}
                (d/div {:class "ap-wrap flex flex-col gap-6"}
                       (d/div {:class "ap-head-row !m-0"}
                              (d/div
@@ -242,10 +246,10 @@
                                 (d/div {:class "ap-figure__frame" :style #js {"--ar" "16/9"}}
                                        (if playing?
                                          ($ lazy-film {:key playback-id :playback-id playback-id :title title
+                                                       :fallback still
                                                        :poster (mux-poster playback-id {:w 1600 :time poster})})
                                          (<>
-                                          (d/img {:src (mux-poster playback-id {:w 1600 :time poster})
-                                                  :alt "" :loading "lazy"})
+                                          still
                                           (d/button {:class "ap-play" :aria-label (str "Play " title)
                                                      :on-click #(set-playing! true)}
                                                     (d/svg {:width 28 :height 28 :viewBox "0 0 16 16"

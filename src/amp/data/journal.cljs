@@ -5,7 +5,8 @@
    ship with the homepage.")
 
 (def posts
-  "Newest first. :kind is the filter tag; :tone picks its pigment."
+  "Newest first. :kind is the filter tag; :tone picks its pigment; :cover-ar
+   is the cover's width / height, so its space is held before it loads."
   [{:slug        "the-studio-play-balance"
     :title       "The Studio: Play, Balance, and the Life of Form"
     :date        "2026-03-15"
@@ -13,7 +14,8 @@
     :kind        "Process"
     :tone        :red
     :summary     "What happens when sculpture begins not with monumentality, but with a single, beautiful unit? At the heart of Zadik Zadikian’s work is a small plaster block—a tool for improvisation, rhythm, and thinking through form by touch."
-    :cover-image "https://media.armenianpavilion.org/media/26/03/15/the_studio0493.jpg"}
+    :cover-image "https://media.armenianpavilion.org/media/26/03/15/the_studio0493.jpg"
+    :cover-ar    0.6667}
 
    {:slug        "blue-yellow-maquette"
     :title       "Blue Yellow Blue Yellow"
@@ -22,7 +24,8 @@
     :kind        "Maquette"
     :tone        :turquoise
     :summary     "Zadik Zadikian is developing a full-scale maquette of a new sculptural variation—an architectural test of structure, proportion, and chromatic rhythm."
-    :cover-image "https://media.armenianpavilion.org/photos/02-13-26/foam_00117198.jpg"}])
+    :cover-image "https://media.armenianpavilion.org/photos/02-13-26/foam_00117198.jpg"
+    :cover-ar    1.7778}])
 
 (def ^:private months
   ["Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"])

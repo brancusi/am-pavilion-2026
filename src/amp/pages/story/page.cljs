@@ -5,7 +5,8 @@
    .zz in story.css; images on R2 under zz_story/). This namespace loads it
    and ports the original page script: swipe galleries, the chapter index,
    and reading progress."
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.hooks.use-in-view :refer [observe!]]
+            [amp.lib.defnc :refer [defnc]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
@@ -37,21 +38,31 @@
         slides (vec (array-seq (.-children track)))
         n (count slides)
         at (atom 0)
-        queued (atom false)
         left-of (fn [el] (+ (- (.-left (.getBoundingClientRect el))
                                (.-left (.getBoundingClientRect track)))
                             (.-scrollLeft track)))
         pad (fn [] (or (js/parseFloat (.-scrollPaddingLeft (js/getComputedStyle track))) 0))
-        update! (fn []
-                  (reset! queued false)
-                  (let [x (+ (.-scrollLeft track) (pad))
-                        i (if (>= (+ (.-scrollLeft track) (.-clientWidth track)) (- (.-scrollWidth track) 2))
-                            (dec n)
-                            (apply min-key #(js/Math.abs (- (left-of (slides %)) x)) (range n)))]
-                    (reset! at i)
-                    (set! (.-textContent counter) (str (pad2 (inc i)) " / " (pad2 n)))
-                    (set! (.-disabled prev) (zero? i))
-                    (set! (.-disabled next) (= i (dec n)))))
+        ;; How much of each slide is in view, from IntersectionObserver. The
+        ;; current slide is the first one (nearly) whole in view, the last at
+        ;; the end of the row, or else the one most in view.
+        ratios (atom (vec (repeat n 0)))
+        show! (fn []
+                (let [r @ratios
+                      whole (filter #(>= (r %) 0.9) (range n))
+                      i (cond
+                          (and (>= (r (dec n)) 0.9) (< (r 0) 0.9)) (dec n)
+                          (seq whole) (first whole)
+                          :else (apply max-key r (range n)))]
+                  (reset! at i)
+                  (set! (.-textContent counter) (str (pad2 (inc i)) " / " (pad2 n)))
+                  (set! (.-disabled prev) (zero? i))
+                  (set! (.-disabled next) (= i (dec n)))))
+        index-of (into {} (map-indexed (fn [i el] [el i]) slides))
+        stop-watch (observe! slides
+                             (fn [^js e]
+                               (swap! ratios assoc (index-of (.-target e)) (.-intersectionRatio e))
+                               (show!))
+                             :root track :threshold #js [0 0.25 0.5 0.75 0.9 1])
         go! (fn [i]
               (let [el (slides (max 0 (min (dec n) i)))]
                 (.scrollTo track #js {:left (- (left-of el) (pad))
@@ -65,13 +76,10 @@
                            (when-not (or (.-altKey e) (.-ctrlKey e) (.-metaKey e))
                              (.preventDefault e)
                              (go! i)))))
-              (listen! track "scroll"
-                       #(when-not @queued (reset! queued true) (js/requestAnimationFrame update!))
-                       #js {:passive true})
-              (listen! js/window "resize" #(js/requestAnimationFrame update!))]]
+              ]]
     (set! (.-hidden ctl) false)
-    (update!)
-    #(doseq [off offs] (off))))
+    (show!)
+    #(do (stop-watch) (doseq [off offs] (off)))))
 
 ;; ── Chapter bar ────────────────────────────────────────────────────────────
 
@@ -92,63 +100,85 @@
                           :title (.-textContent (.querySelector r ".ix-t"))})
                        rows)
         n (count chapters)
-        queued (atom false) reticks (atom false) current (atom -1)
+        current (atom -1)
         header-h #(or (some-> (js/document.querySelector ".ap-header") .-offsetHeight) 0)
         span (fn [] (max 1 (- (.-offsetHeight pg) js/innerHeight)))
         pg-top #(+ (.-top (.getBoundingClientRect pg)) js/scrollY)
+        ;; Chapter ticks on the bar, moved in place when sizes change (never
+        ;; removed and re-added, which would register as movement).
+        tick-els (atom [])
         ticks! (fn []
-                 (doseq [k (array-seq (.querySelectorAll prog ".prog-k"))] (.remove k))
-                 (doseq [{:keys [target]} (rest chapters) :when target]
-                   (let [y (- (+ (.-top (.getBoundingClientRect target)) js/scrollY) (pg-top))
-                         k (js/document.createElement "i")]
-                     (set! (.-className k) "prog-k")
-                     (set! (.. k -style -left) (str (min 100 (max 0 (* 100 (/ y (span))))) "%"))
-                     (.append prog k))))
-        update! (fn []
-                  (reset! queued false)
-                  (when @reticks (reset! reticks false) (ticks!))
-                  (let [p (min 1 (max 0 (/ (- js/scrollY (pg-top)) (span))))
-                        line (+ (header-h) 72)
-                        i (reduce (fn [acc [i {:keys [target]}]]
-                                    (if (and target (<= (.-top (.getBoundingClientRect target)) line)) i acc))
-                                  0 (map-indexed vector chapters))]
-                    (set! (.. fill -style -transform) (str "scaleX(" p ")"))
-                    (set! (.-textContent pct) (str (js/Math.round (* p 100)) "%"))
-                    (when (not= i @current)
-                      (reset! current i)
-                      (let [{:keys [number title] :as _c} (chapters i)]
-                        (set! (.-textContent num) number)
-                        (set! (.-textContent title-el) title))
-                      (set! (.-textContent ahead)
-                            (if (= i (dec n)) "Last chapter" (str (- n 1 i) " of " (dec n) " ahead")))
-                      (doseq [[j {:keys [row]}] (map-indexed vector chapters)]
-                        (.toggle (.-classList row) "is-done" (< j i))
-                        (.toggle (.-classList row) "is-cur" (= j i))
-                        (if (= j i)
-                          (.setAttribute row "aria-current" "location")
-                          (.removeAttribute row "aria-current"))))))
-        schedule! (fn [& [ticks?]]
-                    (when ticks? (reset! reticks true))
-                    (when-not @queued (reset! queued true) (js/requestAnimationFrame update!)))
+                 (let [targets (keep :target (rest chapters))]
+                   (when (not= (count @tick-els) (count targets))
+                     (doseq [k @tick-els] (.remove k))
+                     (reset! tick-els (mapv (fn [_] (doto (js/document.createElement "i")
+                                                      (-> .-className (set! "prog-k"))
+                                                      (->> (.append prog))))
+                                            targets)))
+                   (doseq [[^js k target] (map vector @tick-els targets)]
+                     (let [y (- (+ (.-top (.getBoundingClientRect target)) js/scrollY) (pg-top))
+                           left (str (.toFixed (min 100 (max 0 (* 100 (/ y (span))))) 2) "%")]
+                       (when (not= left (.. k -style -left))
+                         (set! (.. k -style -left) left))))))
+        set-chapter! (fn [i]
+                       (when (not= i @current)
+                         (reset! current i)
+                         (let [{:keys [number title]} (chapters i)]
+                           (set! (.-textContent num) number)
+                           (set! (.-textContent title-el) title))
+                         (set! (.-textContent ahead)
+                               (if (= i (dec n)) "Last chapter" (str (- n 1 i) " of " (dec n) " ahead")))
+                         (doseq [[j {:keys [row]}] (map-indexed vector chapters)]
+                           (.toggle (.-classList row) "is-done" (< j i))
+                           (.toggle (.-classList row) "is-cur" (= j i))
+                           (if (= j i)
+                             (.setAttribute row "aria-current" "location")
+                             (.removeAttribute row "aria-current")))))
+        ;; The current chapter is the section crossing a thin band just under
+        ;; the bars, from IntersectionObserver (the band is redrawn on resize).
+        index-of (into {} (keep-indexed (fn [i {:keys [target]}] (when target [target i])) chapters))
+        stop-band (atom nil)
+        band! (fn []
+                (some-> @stop-band (apply []))
+                (let [line (+ (header-h) 72)]
+                  (reset! stop-band
+                          (observe! (keys index-of)
+                                    (fn [^js e] (when (.-isIntersecting e) (set-chapter! (index-of (.-target e)))))
+                                    :root-margin (str (- line) "px 0px " (- (- js/innerHeight line 1)) "px 0px")))))
+        ;; Progress: a CSS scroll-driven animation over #pg where supported
+        ;; (.is-scrub, see tailwind.css); elsewhere a throttled scroll listener.
+        scrub? (and (exists? js/CSS) (.supports js/CSS "animation-timeline: view()"))
+        queued (atom false)
+        progress! (fn []
+                    (reset! queued false)
+                    (let [p (min 1 (max 0 (/ (- js/scrollY (pg-top)) (span))))]
+                      (set! (.. fill -style -transform) (str "scaleX(" p ")"))
+                      (set! (.-textContent pct) (str (js/Math.round (* p 100)) "%"))))
+        schedule! #(when-not @queued (reset! queued true) (js/requestAnimationFrame progress!))
         open! (fn [open?]
                 (set! (.-hidden ix) (not open?))
                 (.setAttribute now "aria-expanded" (str open?)))
-        ro (js/ResizeObserver. #(schedule! true))
+        ro (js/ResizeObserver. ticks!)
         offs [(listen! now "click" #(open! (.-hidden ix)))
               (listen! js/document "keydown"
                        #(when (and (= "Escape" (.-key %)) (not (.-hidden ix)))
                           (open! false) (.focus now)))
               (listen! js/document "click"
                        #(when-not (.contains nav (.-target %)) (open! false)))
-              (listen! js/window "scroll" #(schedule!) #js {:passive true})
-              (listen! js/window "resize" #(schedule! true))]
+              (listen! js/window "resize" band!)
+              (when-not scrub? (listen! js/window "scroll" schedule! #js {:passive true}))]
         row-offs (mapv (fn [r] (listen! r "click" #(open! false))) rows)]
+    (if scrub?
+      (do (.add (.-classList pg) "is-scrub") (set! (.-textContent pct) ""))
+      (progress!))
+    (set-chapter! 0)
+    (band!)
     (.observe ro pg)
-    (.then (.-ready js/document.fonts) #(schedule! true))
-    (schedule! true)
+    (.then (.-ready js/document.fonts) ticks!)
     (fn []
       (.disconnect ro)
-      (doseq [off (concat offs row-offs)] (off)))))
+      (some-> @stop-band (apply []))
+      (doseq [off (concat offs row-offs) :when off] (off)))))
 
 ;; ── In-page links ──────────────────────────────────────────────────────────
 
@@ -199,7 +229,7 @@
      [html css?]
      (when-let [el (and html css? @root)]
        (set! (.-innerHTML el) html)
-       (let [offs (concat (map gallery! (array-seq (.querySelectorAll el ".sw[data-gallery]")))
+       (let [offs (concat (mapv gallery! (array-seq (.querySelectorAll el ".sw[data-gallery]")))
                           [(chapter-bar! el) (anchor-links! el)])]
          ;; Arriving with a #chapter in the URL: jump there now it exists.
          (when-let [id (not-empty (subs (.. js/location -hash) 1))]

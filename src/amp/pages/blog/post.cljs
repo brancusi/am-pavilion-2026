@@ -12,27 +12,33 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(def ^:private scrub?
+  (and (exists? js/CSS) (.supports js/CSS "animation-timeline: view()")))
+
 (defnc progress-bar
-  "Red bar under the header that fills as the article is read."
+  "Red bar under the header that fills as the article is read. Driven by
+   the scroll itself (a CSS scroll-driven animation on the article's view
+   timeline, see .ap-post in tailwind.css); browsers without that get a
+   throttled scroll listener."
   [{:keys [target]}]
   (let [bar (hooks/use-ref nil)]
     (hooks/use-effect
      :once
-     (let [update! (fn []
-                     (when-let [el @target]
-                       (let [r (.getBoundingClientRect el)
-                             total (- (.-height r) (.-innerHeight js/window))
-                             p (if (pos? total) (/ (- (.-top r)) total) 1)]
-                         (set! (.. @bar -style -transform)
-                               (str "scaleX(" (max 0 (min 1 p)) ")")))))]
-       (update!)
-       (.addEventListener js/window "scroll" update! #js {:passive true})
-       (.addEventListener js/window "resize" update!)
-       (fn []
-         (.removeEventListener js/window "scroll" update!)
-         (.removeEventListener js/window "resize" update!))))
-    (d/div {:ref bar :class "ap-progressbar" :style {:transform "scaleX(0)"}
-            :aria-hidden true})))
+     (when-not scrub?
+       (let [queued (atom false)
+             update! (fn []
+                       (reset! queued false)
+                       (when-let [el @target]
+                         (let [r (.getBoundingClientRect el)
+                               total (- (.-height r) (.-innerHeight js/window))
+                               p (if (pos? total) (/ (- (.-top r)) total) 1)]
+                           (set! (.. @bar -style -transform)
+                                 (str "scaleX(" (max 0 (min 1 p)) ")")))))
+             schedule! #(when-not @queued (reset! queued true) (js/requestAnimationFrame update!))]
+         (update!)
+         (.addEventListener js/window "scroll" schedule! #js {:passive true})
+         #(.removeEventListener js/window "scroll" schedule!))))
+    (d/div {:ref bar :class "ap-progressbar" :aria-hidden true})))
 
 (defn- next-post
   "The post after `slug` in the listing, wrapping to the first."
@@ -51,9 +57,9 @@
      (set! (.-title js/document)
            (str (if post (:title post) "Post not found") " · Armenia Pavilion")))
     (if post
-      (let [{:keys [title date author kind tone cover-image component]} post
+      (let [{:keys [title date author kind tone cover-image cover-ar component]} post
             nxt (next-post slug)]
-        (d/div
+        (d/div {:class "ap-post"}
          ($ progress-bar {:target article})
          (d/article {:ref article :class "ap-article pb-16 lg:pb-24"}
                     (d/header {:class "ap-article__head"}
@@ -69,7 +75,7 @@
                     (when cover-image
                       ;; Whole image, never cropped: portrait covers are capped in height.
                       (d/figure {:class "ap-figure ap-full ap-wide"}
-                                (d/div {:class "ap-cover"}
+                                (d/div {:class "ap-cover" :style (when cover-ar #js {"--ar" (str cover-ar)})}
                                        ($ picture {:src cover-image :eager? true :alt ""
                                                    :sizes "(min-width: 960px) 1000px, 100vw"}))))
                     (d/div {:class "ap-article__body"}
