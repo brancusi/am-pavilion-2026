@@ -141,7 +141,7 @@
              :title "Consegne al Padiglione"
              :lede "Istruzioni per corrieri, fornitori e trasportatori. Il Padiglione Armenia è nella Tesa 41, all’interno dell’Arsenale Militare: le consegne arrivano a piedi oppure via acqua."
              :facts [["Destinatario" "Padiglione Armenia – Tesa 41"]
-                     ["Orari" "mar – dom, 11:00–18:30"]
+                     ["Orari" "mar – dom, 10:00–17:30"]
                      ["A piedi" "Ingresso alla Celestia"]
                      ["Via acqua" "Rio delle Galeazze"]]})
          ($ essentials)
