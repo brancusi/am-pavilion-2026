@@ -94,7 +94,7 @@
    ["Commissioner" "Svetlana Sahakyan"]
    ["Venue"        "Arsenale Militare, Tesa 41"]
    ["Dates"        "9 May – 22 November 2026"]
-   ["Hours"        "Tuesday – Sunday, 11:00–18:30 · closed Mondays"]])
+   ["Hours"        "Tuesday – Sunday, 10:00–17:30 · closed Mondays"]])
 
 ;; ── Hero ────────────────────────────────────────────────────────────────
 

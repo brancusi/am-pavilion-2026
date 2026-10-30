@@ -112,7 +112,7 @@
                                  "Guests by water taxi enter from the North Lagoon."))
                      (d/dl {:class "ap-keyfacts"}
                            (for [[k v] [["Dates" "9 May – 22 Nov 2026"]
-                                        ["Hours" "Tue – Sun, 11:00–18:30"]
+                                        ["Hours" "Tue – Sun, 10:00–17:30"]
                                         ["Hall" "Tesa 41"]
                                         ["On foot" "≈ 8 min from the Lion"]]]
                              (d/div {:key k} (d/dt k) (d/dd v))))))

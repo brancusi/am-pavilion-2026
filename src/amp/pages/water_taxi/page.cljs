@@ -25,7 +25,7 @@
 (def copy
   {:it {;; Hero
         :facts            [["Partenza" "Approdo Hotel Gabrielli"] ["Arrivo" "Approdo Tesa 41"]
-                           ["Durata" "15–20 minuti"] ["Orari" "mar – dom, 11:00–18:30"]]
+                           ["Durata" "15–20 minuti"] ["Orari" "mar – dom, 10:00–17:30"]]
         :eyebrow          "Hotel Gabrielli → Arsenale Militare"
         :title            "In taxi acqueo"
         :lead             ["Dall’approdo dell’" [:em "Hotel Gabrielli"]
@@ -82,7 +82,7 @@
 
    :en {;; Hero
         :facts            [["From" "Hotel Gabrielli landing"] ["To" "Tesa 41 landing"]
-                           ["Time" "15–20 minutes"] ["Hours" "Tue – Sun, 11:00–18:30"]]
+                           ["Time" "15–20 minutes"] ["Hours" "Tue – Sun, 10:00–17:30"]]
         :eyebrow          "Hotel Gabrielli → Arsenale Militare"
         :title            "By Water Taxi"
         :lead             ["From the " [:em "Hotel Gabrielli"]
