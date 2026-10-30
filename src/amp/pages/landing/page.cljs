@@ -8,6 +8,7 @@
    [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.lib.defnc :refer [defnc]]
    [amp.pages.landing.curators :refer [curators-section]]
+   [amp.pages.landing.supporters :refer [supporters-section]]
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
    [amp.pages.venue.map-config :as mc]
@@ -167,15 +168,48 @@
    "turquoise" ["--turquoise" "--on-turquoise"] "pink" ["--pink" "--on-pink"]
    "brick" ["--brick" "--on-yellow"] "ink" ["--night" "--on-night"]})
 
+(def ^:private unit-words
+  "A word and a line for each pigment, in the order the ground cycles
+   through them (the ap-ground keyframes): each shows while its colour holds
+   the ground, and hovering a block shows the word of its colour."
+  [["yellow" "The Unit" "Each block is resolved on its own before it joins anything. Color is embedded in the material, not painted on."]
+   ["red" "Touch" "Form is thought through by hand, one block at a time."]
+   ["blue" "Hand" "In Venice everything arrives on foot or by boat, carried by hand."]
+   ["turquoise" "Ephemeral" "A stack stands for a day, then becomes the next one."]
+   ["pink" "Improvise" "The block is a tool for improvisation, for rhythm, for play."]
+   ["brick" "Stack" "One block on another: the oldest way to build."]
+   ["ink" "Tune" "“You tune into simplicity, blocks of colour.” Zadik Zadikian"]])
+
 (defnc unit-chapter []
-  ;; Hovering a letter (desktop) holds the ground on its pigment, so that
-  ;; letter sinks into it and only its tilted depth shows.
+  ;; The words follow the ground: each pigment's word shows while that colour
+  ;; holds (CSS, in step with ap-ground). Hovering a letter (desktop) holds
+  ;; the ground on its pigment, so that letter sinks into it and only its
+  ;; tilted depth shows, and holds that colour's word.
   (let [[ground set-ground!] (hooks/use-state nil)
         ;; Keep the last colour after the pointer leaves so the overlay
         ;; fades out in it instead of snapping to transparent.
         [last-ground set-last!] (hooks/use-state nil)
         _ (hooks/use-effect [ground] (when ground (set-last! ground)))
-        [bg on] (grounds (or ground last-ground))]
+        [bg on] (grounds (or ground last-ground))
+        ;; Every word sits in the same grid cell, so the block is as tall as
+        ;; the longest and nothing below it moves when the words change.
+        ;; Two layers: the cycle (CSS, in step with the ground) and the held
+        ;; word of the hovered colour, kept through the fade back out.
+        held (or ground last-ground)
+        swap (fn [class tag k]
+               (let [text (fn [[_ word line]] (if (= k :word) word line))]
+                 (d/div {:class (str "ap-swap " class)}
+                        (d/div {:class "ap-swap__cycle"}
+                               (map-indexed (fn [i w]
+                                              ($ tag {:key i :class "m-0" :style #js {"--k" i}
+                                                      :aria-hidden (when (pos? i) true)}
+                                                 (text w)))
+                                            unit-words))
+                        (d/div {:class "ap-swap__held" :aria-hidden true}
+                               (for [[pigment :as w] unit-words]
+                                 ($ tag {:key pigment :class "m-0"
+                                         :data-on (when (= pigment held) "")}
+                                    (text w)))))))]
     (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit"
                 :data-ground (when ground "")
                 :style (when (or ground last-ground) #js {"--ground" (str "var(" bg ")") "--ground-on" (str "var(" on ")")})}
@@ -183,9 +217,9 @@
                       (d/div {:class "flex flex-col gap-4"}
                              (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Chapter")
                              (d/p {:class "ap-numeral" :aria-hidden true} "I")
-                             (d/h2 {:class "ap-display-l ap-chapter__title"} "The Unit")
-                             (d/p {:class "ap-body m-0 max-w-[36ch]"}
-                                  "Each block is resolved on its own before it joins anything. Color is embedded in the material, not painted on.")
+                             (d/h2 {:class "ap-display-l ap-chapter__title m-0"}
+                                   (swap "" "span" :word))
+                             (swap "ap-body max-w-[36ch]" "p" :line)
                              (d/p {:class "ap-ephemeral-note"}
                                   "Structures are assembled for a moment, then gone. Watch the ground: each color erases its own letters."))
                       (d/div {:class "ap-ch-mark"}
@@ -365,4 +399,5 @@
          ($ journal-teaser)
          ($ about-studio {:id "about-studio"})
          ($ in-minor-keys {:id "in-minor-keys"})
-         ($ curators-section {:id "curators"})))
+         ($ curators-section {:id "curators"})
+         ($ supporters-section {:id "supporters"})))

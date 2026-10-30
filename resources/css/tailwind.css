@@ -202,6 +202,22 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-chapter__eyebrow { display: flex; gap: var(--space-3); align-items: center; }
 .ap-chapter__eyebrow::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: .6; }
 .ap-chapter__title { text-transform: uppercase; }
+/* The Unit's words, one per pigment, all stacked in one cell so nothing
+   moves. The cycle layer crossfades each word in while its colour comes in
+   (21s, 3s a colour, timed as ap-ground). A hovered letter fades the held
+   layer in over it, and back out with the ground. Without motion: the first. */
+.ap-swap, .ap-swap__cycle, .ap-swap__held { display: grid; }
+.ap-swap > *, .ap-swap__cycle > *, .ap-swap__held > * { grid-area: 1 / 1; }
+.ap-swap__cycle, .ap-swap__held { transition: opacity .9s ease-in-out; }
+.ap-swap__held { opacity: 0; }
+[data-ground] .ap-swap__cycle { opacity: 0; }
+[data-ground] .ap-swap__held { opacity: 1; }
+.ap-swap__cycle > * { opacity: 0; animation: ap-word 21s linear infinite; animation-delay: calc(var(--k) * 3s - 21s); }
+.ap-swap__cycle > :first-child { opacity: 1; }
+.ap-swap__held > * { opacity: 0; }
+[data-ground] .ap-swap__held > * { transition: opacity .6s ease-in-out; }
+.ap-swap__held > [data-on] { opacity: 1; }
+@keyframes ap-word { 0%, 7.9% { opacity: 1; } 14.3%, 93.6% { opacity: 0; } 100% { opacity: 1; } }
 .ap-chapter__spine { position: absolute; top: 0; bottom: 0; right: 30%; width: 2px; background: currentColor; opacity: .25; }
 @media (min-width: 960px) { .ap-chapter { padding: var(--space-40) var(--space-12); } }
 
@@ -352,7 +368,8 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-footer__legal { margin: 0; font: 400 12px/1.6 var(--font-mono); color: #b5ad9e; }
 .ap-footer__top { justify-self: start; min-height: var(--tap-min); padding-inline: var(--space-4); background: none; color: var(--on-night); border: 1px solid rgba(255, 255, 255, .4); cursor: pointer; }
 .ap-footer__top:hover { border-color: var(--on-night); }
-@media (min-width: 720px) { .ap-footer__info { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 720px) { .ap-footer__info { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .ap-footer__info { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.4fr); } }
 @media (min-width: 960px) {
   .ap-footer__in { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-16) var(--space-12); padding: var(--space-24) var(--space-12) var(--space-8); }
   .ap-footer__map { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-top: 0; border-top: 0; }
@@ -546,6 +563,11 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-sharebtn { display: inline-grid; place-items: center; width: var(--tap-min); height: var(--tap-min); border: 0; background: transparent; color: var(--ink-muted); cursor: pointer; transition: color var(--dur-fast); }
 .ap-sharebtn:hover { color: var(--red-text); }
 .ap-sharebtn[data-copied] { color: var(--blue-text); }
+.ap-sharebar { display: grid; gap: var(--space-2); }
+/* Icons sit centred in 44px targets: pull the row back so the first lines up with the label. */
+.ap-sharebar__icons { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); margin-left: -14px; }
+.ap-sharebar--night .ap-sharebtn { color: var(--on-night); opacity: .8; }
+.ap-sharebar--night .ap-sharebtn:hover, .ap-sharebar--night .ap-sharebtn[data-copied] { opacity: 1; color: var(--yellow); }
 
 /* Theme toggle */
 .ap-theme { display: inline-flex; border: 1px solid var(--rule-strong); }

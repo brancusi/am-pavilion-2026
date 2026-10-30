@@ -81,7 +81,8 @@
                     (d/div {:class "ap-article__body"}
                            ($ component))
                     (d/div {:class "pt-6 border-t border-rule"}
-                           ($ share-bar {:title title}))
+                           ($ share-bar {:title title
+                                        :url   (str "https://armenianpavilion.org/blog/" slug)}))
                     (when nxt
                       (d/a {:class "ap-article__next" :href (str "/blog/" (:slug nxt))}
                            (d/span {:class "ap-label text-yellow"} "Next in the journal")

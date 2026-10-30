@@ -7,8 +7,12 @@
   // Az@atd.dev's Account — owns the armenianpavilion.org and armenianpavilion2026.org zones
   "account_id": "badb2c07d9cd1effc4c60bc8b6e55826",
   "compatibility_date": "2026-10-01",
+  // Gives each journal post its own link preview; see cloudflare/site/worker.js
+  "main": "cloudflare/site/worker.js",
   "assets": {
     "directory": "./release",
+    "binding": "ASSETS",
+    "run_worker_first": ["/blog/*"],
     // Client-side routes (/visit, /blog/:slug, …) fall back to index.html
     "not_found_handling": "single-page-application"
   },
