@@ -8,6 +8,7 @@
    [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.lib.defnc :refer [defnc]]
    [amp.pages.landing.curators :refer [curators-section]]
+   [amp.pages.landing.supporters :refer [supporters-section]]
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
    [amp.pages.venue.map-config :as mc]
@@ -365,4 +366,5 @@
          ($ journal-teaser)
          ($ about-studio {:id "about-studio"})
          ($ in-minor-keys {:id "in-minor-keys"})
-         ($ curators-section {:id "curators"})))
+         ($ curators-section {:id "curators"})
+         ($ supporters-section {:id "supporters"})))

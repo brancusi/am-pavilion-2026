@@ -21,7 +21,8 @@
             {:label "Films" :href "/#film"}
             {:label "The essay" :href "/#about-studio"}
             {:label "In Minor Keys" :href "/#in-minor-keys"}
-            {:label "Curators" :href "/#curators"}]}
+            {:label "Curators" :href "/#curators"}
+            {:label "Supporters" :href "/#supporters"}]}
    {:title "The artist"
     :links [{:label "Zadik Zadikian" :href "/artist"}
             {:label "Chronology" :href "/artist#chronology"}
