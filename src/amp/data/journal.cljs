@@ -7,7 +7,17 @@
 (def posts
   "Newest first. :kind is the filter tag; :tone picks its pigment; :cover-ar
    is the cover's width / height, so its space is held before it loads."
-  [{:slug        "making-a-flag"
+  [{:slug        "seven-steps-to-heaven"
+    :title       "The Making of Seven Steps to Heaven"
+    :date        "2026-10-30"
+    :author      "Armenia Pavilion Team"
+    :kind        "Process"
+    :tone        :turquoise
+    :summary     "Seven steps against the corner of two walls, rising to nowhere. From a pen sketch with a question on it, through nine versions and ten proportions of rise to run, to a stair carried by hand into Tesa 41."
+    :cover-image "https://media.armenianpavilion.org/journal/26-10-30/seven-steps-into-tesa-41.jpg"
+    :cover-ar    1.7778}
+
+   {:slug        "making-a-flag"
     :title       "Making a Flag"
     :date        "2026-10-30"
     :author      "Armenia Pavilion Team"

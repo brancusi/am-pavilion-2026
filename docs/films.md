@@ -5,6 +5,7 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 | Film | Source file | Length | Asset | Playback ID |
 |---|---|---|---|---|
+| Seven Steps to Heaven | `10/steps_to_heaven_1_edit_4k_10-30-26.mp4` (uploaded 30 Oct) | 2:26 | `B2Ijd6weptJXB11NipcaHmLBFTSOXtv02KhHrAQKkdmo` | `uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM` |
 | The Italian Flag | `10/italian_flag_edit_4k.mp4` | 2:57 | `FAoWwgVbffOXKMd77clal7qd2hsMiLfuELfbX92MKfY` | `CR1rPwf1QHVhvNMICOawghM2g5QnylGxbMs0201QQxlLM` |
 | Carrying | `10/carrying_edit_4k.mp4` | 2:04 | `T2tJiZU4oBo4f452nVvyg0025ldCXTVtrokoz100Yh94M` | `El6mWAaeWtIxqHERgu7fYE00pcLH7szuH8EG16lbn7CE` |
 | Murano | `10/murano_edit_4k.MP4` (1080p source) | 2:19 | `7eqb00udK7rxMhOKLCUKqPdmoNOJS1cpqF6okU2gLh3E` | `dTuGRlujrWzZyjgD4CK00NH4Mg8MJbheTS00WSvUJ9n2Y` |
@@ -15,6 +16,10 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 ## What's in them
 
+- **Seven Steps to Heaven:** a white stair carried along the water and into Tesa 41, skimmed, sanded and
+  painted; the team on cubes, a "viaggio" with no clear finish, the present; Zadikian on steps that take you
+  "mentally, or emotionally"; closing in Italian (subtitled) on "the climb to heaven in a relatively small
+  space". English subtitles burned in.
 - **The Italian Flag:** painting green, spreading spackle; green, white and red panels standing on their
   own feet in Tesa 41; a conversation about play ("Through play is the only way to create"), roots, a
   flag "loaded with message", and carrying it to San Marco for a day. Captions burned in.

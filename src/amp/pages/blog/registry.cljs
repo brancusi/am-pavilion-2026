@@ -10,10 +10,12 @@
    [amp.pages.blog.posts.blue-yellow-maquette :as post-byby]
    [amp.pages.blog.posts.carried-by-hand :as post-carried]
    [amp.pages.blog.posts.making-a-flag :as post-flag]
+   [amp.pages.blog.posts.seven-steps-to-heaven :as post-steps]
    [amp.pages.blog.posts.the-studio-play-balance :as post-studio]))
 
 (def ^:private components
-  {"making-a-flag"           post-flag/post-content
+  {"seven-steps-to-heaven"   post-steps/post-content
+   "making-a-flag"           post-flag/post-content
    "carried-by-hand"         post-carried/post-content
    "the-studio-play-balance" post-studio/post-content
    "blue-yellow-maquette"    post-byby/post-content})
