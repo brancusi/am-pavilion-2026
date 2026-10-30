@@ -322,7 +322,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 
 /* ── Footer ──────────────────────────────────────────────────────────── */
 .ap-footer { background: var(--night); color: var(--on-night); }
-.ap-footer a { color: var(--on-night); }
+.ap-footer a:not(.ap-btn) { color: var(--on-night); }
 .ap-footer__in { display: grid; gap: var(--space-12); padding: var(--space-12) var(--space-4) var(--space-6); max-width: var(--content-max); margin-inline: auto; }
 .ap-footer__lead { display: grid; gap: var(--space-4); justify-items: start; }
 .ap-footer__brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; }
