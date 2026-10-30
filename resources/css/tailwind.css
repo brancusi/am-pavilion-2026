@@ -8,8 +8,8 @@
    Source: the "Armenia Pavilion" design system artifact (tokens.json, components/bundle.css).
    Light theme on :root, dark theme on .dark (html class toggled by the theme switch).
    ========================================================================== */
-:root {--paper:#f7f6f2;--paper-raised:#ffffff;--paper-sunk:#ecebe5;--ink:#141312;--ink-muted:#57534d;--rule:#d9d6cd;--rule-strong:var(--ink);--red:#c93a31;--on-red:#ffffff;--red-text:#b8322a;--blue:#2f4f9e;--on-blue:#ffffff;--blue-text:#2f4f9e;--yellow:#f2cf2e;--on-yellow:#141312;--turquoise:#02aeb5;--on-turquoise:#141312;--pink:#fb859f;--on-pink:#141312;--lilac:#eea5e2;--brick:#9d846e;--focus:#2f4f9e;--night:#141312;--on-night:#f4f2ec;--scrim:rgba(20, 19, 18, 0.55);--on-media:#ffffff;}
-.dark {--paper:#141312;--paper-raised:#1f1d1b;--paper-sunk:#0c0b0b;--ink:#f4f2ec;--ink-muted:#b1aca3;--rule:#34312d;--rule-strong:var(--ink);--red:#c93a31;--on-red:#ffffff;--red-text:#ef6a5e;--blue:#2f4f9e;--on-blue:#ffffff;--blue-text:#8fa8ee;--yellow:#f2cf2e;--on-yellow:#141312;--turquoise:#02aeb5;--on-turquoise:#141312;--pink:#fb859f;--on-pink:#141312;--lilac:#eea5e2;--brick:#9d846e;--focus:#f2cf2e;--night:#0c0b0b;--on-night:#f4f2ec;--scrim:rgba(12, 11, 11, 0.6);--on-media:#ffffff;}
+:root {--paper:#f5f0e4;--paper-raised:#fffcf5;--paper-sunk:#ebe4d4;--ink:#1b1a17;--ink-muted:#5a544a;--rule:#d8cfbd;--rule-strong:var(--ink);--red:#bf3b2f;--on-red:#fffcf5;--red-text:#a8322a;--blue:#2d5287;--on-blue:#fffcf5;--blue-text:#2d5287;--yellow:#eac54f;--on-yellow:#1b1a17;--turquoise:#4aaab0;--on-turquoise:#1b1a17;--pink:#ec8e9a;--on-pink:#1b1a17;--lilac:#e3a7d6;--brick:#a28670;--focus:#2d5287;--night:#1b1a17;--on-night:#f5f0e4;--scrim:rgba(27, 26, 23, 0.55);--on-media:#ffffff;}
+.dark {--paper:#171512;--paper-raised:#221f1b;--paper-sunk:#0f0e0c;--ink:#f3ecdd;--ink-muted:#b5ad9e;--rule:#38332c;--rule-strong:var(--ink);--red:#bf3b2f;--on-red:#fffcf5;--red-text:#ef7466;--blue:#2d5287;--on-blue:#fffcf5;--blue-text:#93acde;--yellow:#eac54f;--on-yellow:#1b1a17;--turquoise:#4aaab0;--on-turquoise:#1b1a17;--pink:#ec8e9a;--on-pink:#1b1a17;--lilac:#e3a7d6;--brick:#a28670;--focus:#eac54f;--night:#0f0e0c;--on-night:#f3ecdd;--scrim:rgba(15, 14, 12, 0.6);--on-media:#ffffff;}
 :root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-40:160px;--radius-0:0;--radius-pin:50%;--measure:68ch;--content-max:1440px;--tap-min:44px;--header-h:56px;--dur-fast:160ms;--dur-base:420ms;--dur-slow:900ms;--ease-place:cubic-bezier(0.2, 0.9, 0.1, 1);--ease-lift:cubic-bezier(0.6, 0, 0.8, 0.2);--font-display:Jost, Futura, "Century Gothic", system-ui, sans-serif;--font-text:Newsreader, Georgia, "Times New Roman", serif;--font-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;}
 
 /* Armenia Pavilion 2026 — component styles. Values come from tokens.css; prefix ap-. */
@@ -82,9 +82,9 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
    properties, so the cycle blends between pigments (text always the
    pigment's contrast colour, never a hard flip). Hovering a letter
    cross-fades (--hold 0 → 1) to that letter's pigment. */
-@property --ap-bg { syntax: "<color>"; inherits: true; initial-value: #f2c230; }
+@property --ap-bg { syntax: "<color>"; inherits: true; initial-value: #eac54f; }
 @property --ap-fg { syntax: "<color>"; inherits: true; initial-value: #121110; }
-@property --ground { syntax: "<color>"; inherits: true; initial-value: #f2c230; }
+@property --ground { syntax: "<color>"; inherits: true; initial-value: #eac54f; }
 @property --ground-on { syntax: "<color>"; inherits: true; initial-value: #121110; }
 @property --hold { syntax: "<number>"; inherits: true; initial-value: 0; }
 .ap-chapter.ap-chapter--ephemeral { --hold: 0; transition: --hold 1.6s ease-in-out, --ground 1.4s ease-in-out, --ground-on 1.4s ease-in-out;
@@ -327,7 +327,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-footer__lead { display: grid; gap: var(--space-4); justify-items: start; }
 .ap-footer__brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; }
 .ap-footer__brand .ap-mark { width: 28px; height: 28px; }
-.ap-footer__when { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); color: #b1aca3; }
+.ap-footer__when { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); color: #b5ad9e; }
 .ap-footer__h { margin: 0 0 var(--space-2); font: 500 12px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); }
 .ap-footer__map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-6); padding-top: var(--space-8); border-top: 1px solid rgba(255, 255, 255, .2); }
 .ap-footer ul { list-style: none; margin: 0; padding: 0; display: grid; }
@@ -338,7 +338,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-footer__info li a { overflow-wrap: anywhere; }
 .ap-footer__base { display: grid; gap: var(--space-6); align-items: center; padding-top: var(--space-6); border-top: 1px solid rgba(255, 255, 255, .2); }
 .ap-footer__biennale img { height: 72px; width: auto; display: block; }
-.ap-footer__legal { margin: 0; font: 400 12px/1.6 var(--font-mono); color: #b1aca3; }
+.ap-footer__legal { margin: 0; font: 400 12px/1.6 var(--font-mono); color: #b5ad9e; }
 .ap-footer__top { justify-self: start; min-height: var(--tap-min); padding-inline: var(--space-4); background: none; color: var(--on-night); border: 1px solid rgba(255, 255, 255, .4); cursor: pointer; }
 .ap-footer__top:hover { border-color: var(--on-night); }
 @media (min-width: 720px) { .ap-footer__info { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -378,7 +378,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-film { background: var(--night); color: var(--on-night); }
 .ap-film .ap-tomb { border-color: var(--on-night); }
 .ap-film .ap-tomb__no, .ap-film .ap-tomb__title { color: var(--on-night); }
-.ap-film .ap-tomb__credit { color: #b1aca3; }
+.ap-film .ap-tomb__credit { color: #b5ad9e; }
 .ap-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; border-radius: 50%; background: var(--yellow); color: var(--on-yellow); display: grid; place-items: center; border: 0; cursor: pointer; transition: transform var(--dur-fast, .15s) var(--ease-place); }
 .ap-play:hover { transform: translate(-50%, -50%) scale(1.06); }
 .ap-visit { display: grid; gap: var(--space-8); }
@@ -408,9 +408,9 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 /* Visit page */
 .ap-vhead { background: var(--night); color: var(--on-night); padding-block: var(--space-12) var(--space-8); }
 .ap-vhead__grid { display: grid; gap: var(--space-8); }
-.ap-keyfacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 0; background: #34312d; border: 1px solid #34312d; }
+.ap-keyfacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 0; background: #38332c; border: 1px solid #38332c; }
 .ap-keyfacts div { background: var(--night); padding: var(--space-4); display: flex; flex-direction: column; gap: 6px; }
-.ap-keyfacts dt { font: 500 11px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: #b1aca3; }
+.ap-keyfacts dt { font: 500 11px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: #b5ad9e; }
 .ap-keyfacts dd { margin: 0; font: 400 16px/1.35 var(--font-text); color: var(--on-night); }
 .ap-guide { display: grid; gap: var(--space-8); }
 .ap-map__live { position: relative; aspect-ratio: 4 / 5; background: var(--paper-sunk); }
@@ -445,7 +445,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-reel__item[aria-current="true"] .ap-reel__thumb { outline-color: var(--yellow); }
 .ap-reel__time { position: absolute; right: 0; bottom: 0; padding: 2px 6px; background: var(--night); font: 500 11px/1.4 var(--font-mono); }
 .ap-reel__title { font: 500 17px/1.25 var(--font-display); }
-.ap-reel__meta { font: 400 12px/1.3 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: #b1aca3; }
+.ap-reel__meta { font: 400 12px/1.3 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: #b5ad9e; }
 @media (min-width: 720px) { .ap-reel { grid-auto-columns: calc((100% - 3 * var(--space-4)) / 4); } }
 @media (min-width: 1100px) { .ap-reel { grid-auto-columns: calc((100% - 6 * var(--space-4)) / 7); } }
 
@@ -487,7 +487,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; grid-template-rows: auto 1fr; background: rgba(10, 10, 9, .985); color: var(--on-night); animation: ap-fade var(--dur-base) var(--ease-place) both; }
 .ap-lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) var(--space-4); }
 .ap-lightbox__bar .ap-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ap-lightbox__where { color: #b1aca3; }
+.ap-lightbox__where { color: #b5ad9e; }
 @media (max-width: 719px) { .ap-lightbox__where { display: none; } }
 .ap-lightbox__stage { min-height: 0; padding: 0 0 var(--space-4); display: grid; }
 @media (min-width: 960px) { .ap-lightbox__bar { padding: var(--space-4) var(--space-12); } .ap-lightbox__stage { padding: 0 var(--space-12) var(--space-12); } }
@@ -773,7 +773,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
    This is the frame: the sub-nav, whose red route fills station by station
    to the sheet being read, and the next-sheet links. Light in both themes,
    like the sheets. */
-.pt { --pt-nav-h: 52px; --pt-paper: #f4f1ea; --pt-ink: #141312; --pt-rule: #cfc9bb; --pt-mute: #57534d; --pt-red: #c93a31; background: var(--pt-paper); color: var(--pt-ink); }
+.pt { --pt-nav-h: 52px; --pt-paper: #f5f0e4; --pt-ink: #1b1a17; --pt-rule: #d8cfbd; --pt-mute: #5a544a; --pt-red: #bf3b2f; background: var(--pt-paper); color: var(--pt-ink); }
 .pt-nav { position: sticky; top: var(--header-h); z-index: 15; background: var(--pt-paper); border-bottom: 1px solid var(--pt-ink); }
 .pt-nav__bar { display: flex; align-items: center; gap: var(--space-4); max-width: 1440px; height: var(--pt-nav-h); margin: 0 auto; padding: 0 var(--space-4); }
 .pt-nav__brand { font: 500 14px/1 var(--font-display); letter-spacing: .24em; text-transform: uppercase; text-decoration: none; color: inherit; white-space: nowrap; }

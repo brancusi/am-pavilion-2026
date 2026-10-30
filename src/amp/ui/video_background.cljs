@@ -100,7 +100,7 @@
       :playsInline true
       :streamType "on-demand"
       :defaultHiddenCaptions true
-      :accentColor "#f2cf2e"
+      :accentColor "#eac54f"
       :poster poster
       :metadata #js {:video_title title}
       :style (if fill?
