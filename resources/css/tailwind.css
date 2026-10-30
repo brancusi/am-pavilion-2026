@@ -126,7 +126,8 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-tag--pink { background: var(--pink); color: var(--on-pink); }
 
 /* ── SiteHeader ──────────────────────────────────────────────────────── */
-.ap-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--space-4); height: var(--header-h); padding: 0 var(--space-4); background: var(--paper); border-bottom: 1px solid var(--rule-strong); }
+.ap-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--space-4); height: var(--header-h); padding: 0 var(--space-4); background: var(--paper); border-bottom: 1px solid transparent; transition: border-color var(--dur-fast); }
+.ap-header[data-scrolled] { border-bottom-color: var(--rule); }
 .ap-header__brand { display: flex; align-items: center; gap: var(--space-3); color: var(--ink); text-decoration: none; min-height: var(--tap-min); }
 .ap-header__brand .ap-mark { width: 32px; }
 .ap-header__name { font: 500 13px/1.1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
