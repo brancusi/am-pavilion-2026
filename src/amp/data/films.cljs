@@ -4,7 +4,12 @@
    Source edits live in Dropbox: Else Run/projects/the_studio/media/video.")
 
 (def films
-  [{:slug "italian-flag" :title "The Italian Flag" :when "October 2026" :where "Tesa 41, Venice"
+  [{:slug "seven-steps-to-heaven" :title "Seven Steps to Heaven" :when "October 2026" :where "Arsenale and Tesa 41, Venice"
+    :duration 146 :poster 63
+    :playback-id "uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM"
+    :summary "A stair of seven steps that goes nowhere, carried by hand into Tesa 41 and painted white: on cubes, journeys, the present, and a climb to heaven in a small space."}
+
+   {:slug "italian-flag" :title "The Italian Flag" :when "October 2026" :where "Tesa 41, Venice"
     :duration 177 :poster 44
     :playback-id "CR1rPwf1QHVhvNMICOawghM2g5QnylGxbMs0201QQxlLM"
     :summary "Green, white and red panels on their own feet: a flag made from the pavilion’s units, and a conversation about play, roots and carrying the flag to San Marco."}
