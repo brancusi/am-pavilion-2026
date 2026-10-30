@@ -62,10 +62,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://media.armenianpavilion.org">
 
-  <!-- Fonts: Jost (display), Newsreader (text), IBM Plex Mono (labels). Linked here so the browser finds them early.
-       The italic is fetched as soon as the sheet arrives, not when italic text first renders, so it never swaps in and reflows a line. -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap"
-        onload="document.fonts && document.fonts.load('italic 400 1em Newsreader')">
+  <!-- Fonts: Jost (display), Newsreader (text), IBM Plex Mono (labels). Linked here so the browser finds them early;
+       amp.core/init! waits for them before the first render. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
 
   <!-- Remove _b suffix if reverting to non-hashed builds -->
   <link rel="stylesheet" href="/css/main.css">

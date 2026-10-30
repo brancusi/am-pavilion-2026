@@ -17,15 +17,48 @@
 
 (def ^:private journal (str media-host "journal/26-10-30/"))
 
+;; Each gallery keeps to one orientation: in the reading measure, mixing
+;; portrait and landscape frames leaves the landscapes short.
+
+(def ^:private american-flag
+  "Jasper Johns' American Flag, v4: the views through the star."
+  (let [credit "Rendering · Zadik Zadikian"
+        slide (fn [file caption] {:img-src (str journal "american-flag-" file ".png")
+                                  :aspect-ratio 1.7778 :caption caption :credit credit})]
+    [(slide "through-the-stars" "Through the stars: from one spot, the three cuts line up")
+     (slide "front" "Front: the blue slab, the white and red seen through the star")
+     (slide "front-right" "From the front right")
+     (slide "high" "From above: three slabs, one star")
+     (slide "back" "From the back: the red slab")
+     (slide "side" "Side: blue, white and red stand apart")]))
+
 (def ^:private gubbio
   "Italian Flags, the proposal near Gubbio: renderings, from the Folio work."
   (let [credit "Rendering · Zadik Zadikian"]
     [{:img-src (str journal "gubbio-morning.jpg") :aspect-ratio 1.4906
       :caption "Italian Flags, morning, with Gubbio beyond" :credit credit}
+     {:img-src (str journal "gubbio-into-the-light.jpg") :aspect-ratio 1.7917
+      :caption "Italian Flags, into the light" :credit credit}
      {:img-src (str journal "gubbio-storm.jpg") :aspect-ratio 2.3571
       :caption "Italian Flags, storm light on the crest" :credit credit}
      {:img-src (str journal "gubbio-last-light.jpg") :aspect-ratio 2.3571
       :caption "Italian Flags, the last light" :credit credit}]))
+
+(def ^:private gubbio-skies
+  "The same proposal under summer cumulus: the portrait renderings."
+  (let [credit "Rendering · Zadik Zadikian"]
+    [{:img-src (str media-host "press/b0b6fdec92") :aspect-ratio 0.7467
+      :caption "Italian Flags, a summer afternoon on the hillside" :credit credit}
+     {:img-src (str journal "gubbio-view-from-the-work.jpg") :aspect-ratio 0.8056
+      :caption "Italian Flags, the view from the work" :credit credit}
+     {:img-src (str journal "gubbio-raking-light.jpg") :aspect-ratio 0.8056
+      :caption "Italian Flags, upright, in raking light" :credit credit}
+     {:img-src (str media-host "press/f64bf7f0b6") :aspect-ratio 0.5581
+      :caption "Italian Flags, three blades on the crest" :credit credit}
+     {:img-src (str journal "gubbio-crest-above.jpg") :aspect-ratio 0.5581
+      :caption "Italian Flags, the crest above Gubbio" :credit credit}
+     {:img-src (str journal "gubbio-plaster-meets-turf.jpg") :aspect-ratio 1
+      :caption "Italian Flags, where the slabs meet the turf" :credit credit}]))
 
 (defn- figure
   "One captioned image, in the post's reading measure: `key` is a press
@@ -114,6 +147,12 @@
    (figure {:src (str journal "american-flag-study.png") :ar 1.7778
             :caption "Jasper Johns’ American Flag, 2026. Study for three free-standing slabs with a star cut through all three. Rendering"
             :credit "Zadik Zadikian"})
+
+   (d/p "Walk around it and the flag comes and goes. Head on, the star is a window "
+        "through blue to white to red. From the side there is no flag at all, only three "
+        "slabs standing apart.")
+
+   ($ fit-gallery {:slides american-flag :inset? true})
 
    (figure {:key "press/8a0cadcb1a" :ar 1.7778
             :caption "Painting the red"
@@ -204,6 +243,8 @@
         "not photographs.")
 
    ($ fit-gallery {:slides gubbio :inset? true})
+
+   ($ fit-gallery {:slides gubbio-skies :inset? true})
 
    (d/h2 "An open question")
 
