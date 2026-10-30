@@ -105,8 +105,10 @@ page; if the page has no `lazy-video` yet, add the `def` and require
 `[amp.utils.lazy-loading :refer-macros [lazy-component]]` and the intersection-observer hook.
 Keep the aspect-ratio wrapper so the page doesn't jump while the player loads.
 
-Images are not on Mux: they are served by imgix (`https://atd-722658831.imgix.net/...`) and placed with
-`image-figure`, `lazy-image-with-overlay` or gallery `:img-src` entries.
+Images are not on Mux: they are on Cloudflare R2 at `https://media.armenianpavilion.org/<path>`,
+uploaded with `npm run media -- add <file> <path>` (see `scripts/media.mjs`) and shown with
+`amp.ui.picture/picture` or `fit-gallery` `:img-src` entries. Keys are cached immutable for a year, so a
+replacement goes under a new key. For posts, stills and galleries see the `journal-post` skill.
 
 ## 4. Check and ship
 
