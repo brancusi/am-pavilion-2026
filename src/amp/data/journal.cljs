@@ -7,7 +7,17 @@
 (def posts
   "Newest first. :kind is the filter tag; :tone picks its pigment; :cover-ar
    is the cover's width / height, so its space is held before it loads."
-  [{:slug        "carried-by-hand"
+  [{:slug        "making-a-flag"
+    :title       "Making a Flag"
+    :date        "2026-10-30"
+    :author      "Armenia Pavilion Team"
+    :kind        "Studio"
+    :tone        :red
+    :summary     "Why would the Armenian Pavilion make an Italian flag? On Jasper Johns and things the mind already knows, three colours with no official meaning, an Armenian anthem that began with an Italian girl sewing a flag, and a flag that stands on its own feet."
+    :cover-image "https://media.armenianpavilion.org/press/444786d448"
+    :cover-ar    1.7778}
+
+   {:slug        "carried-by-hand"
     :title       "Carried by Hand"
     :date        "2026-09-03"
     :author      "Armenia Pavilion Team"

@@ -28,6 +28,33 @@
 
   (.render root ($ app)))
 
+(def ^:private faces
+  "The faces the first screen of any page uses. Loaded before the first
+   render, so text never swaps from a fallback font and reflows."
+  ["500 1em Jost" "400 1em Newsreader" "italic 400 1em Newsreader" "400 1em 'IBM Plex Mono'"])
+
+(defn- sheet-ready
+  "Resolves once the Google Fonts stylesheet has arrived: until then the
+   browser doesn't know the faces, and loading them resolves at once."
+  []
+  (let [^js link (js/document.querySelector "link[href*='fonts.googleapis.com/css']")]
+    (if (or (nil? link) (.-sheet link))
+      (js/Promise.resolve)
+      (js/Promise. (fn [resolve]
+                     (.addEventListener link "load" resolve)
+                     (.addEventListener link "error" resolve))))))
+
+(defn- fonts-ready
+  "Resolves once `faces` have loaded, or after `ms`: a slow font network
+   delays the first render by at most that much, then fonts swap as usual."
+  [ms]
+  (js/Promise.race
+   #js [(if-let [fonts (.-fonts js/document)]
+          (.then (sheet-ready)
+                 #(js/Promise.allSettled (into-array (map (fn [f] (.load fonts f)) faces))))
+          (js/Promise.resolve))
+        (js/Promise. (fn [resolve] (js/setTimeout resolve ms)))]))
+
 (defn init!
   []
-  (start))
+  (.then (fonts-ready 1200) start))
