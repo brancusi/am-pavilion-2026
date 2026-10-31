@@ -101,6 +101,13 @@
                                   [[path route-data]
                                    [(str path "/:sheet")
                                     (assoc route-data :name ::portage-sheet)]])
+                      ;; Press: the overview + one route per section, one page
+                      ;; (:group) that swaps its sections itself (:inner-swap).
+                      (::press ::press-it)
+                      (let [route-data (assoc route-data :group id :inner-swap true)]
+                        [[path route-data]
+                         [(str path "/:section")
+                          (assoc route-data :name (keyword "amp.services.router" (str (name id) "-section")))]])
                       [[path route-data]])))
                 site-map)))
 
