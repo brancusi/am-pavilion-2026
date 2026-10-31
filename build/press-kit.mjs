@@ -34,12 +34,12 @@ const HELD = ['tesa-41-september'];
 // new files go under a new folder, keys are cached for a year).
 const LOGO_HOST = 'https://media.armenianpavilion.org/press/kit/logos-261031/';
 const LOGOS = [
-  ['La Biennale di Venezia · National Participations · colour', 'biennale-61-national-participations-RGB', ['png', 'pdf', 'eps'], { cmyk: true }],
-  ['La Biennale di Venezia · National Participations · black', 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
-  ['La Biennale di Venezia · National Participations · negative', 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
+  ['La Biennale · National Participations, colour', 'biennale-61-national-participations-RGB', ['png', 'pdf', 'eps'], { cmyk: true }],
+  ['La Biennale · National Participations, black', 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
+  ['La Biennale · National Participations, negative', 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
   ['The Studio', 'the-studio-square', ['png', 'pdf', 'eps']],
-  ['Pavilion of the Republic of Armenia · wordmark', 'armenian-pavilion-wordmark', ['png', 'pdf', 'eps']],
-  ['Pavilion of the Republic of Armenia · wordmark, expanded', 'armenian-pavilion-wordmark-expanded', ['png', 'pdf', 'eps']],
+  ['Pavilion wordmark', 'armenian-pavilion-wordmark', ['png', 'pdf', 'eps']],
+  ['Pavilion wordmark, expanded', 'armenian-pavilion-wordmark-expanded', ['png', 'pdf', 'eps']],
 ].map(([name, base, kinds, o = {}]) => ({
   name, preview: `${LOGO_HOST}${base}.png`, dark: !!o.dark,
   files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? 'PDF (vector)' : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
@@ -83,7 +83,26 @@ const longDate = (d, l) => (/^\d{4}-\d{2}-\d{2}$/.test(d || '')
   ? new Intl.DateTimeFormat(l === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(d))
   : d);
 
+// "**Key:** value" paragraphs and "- **Key:** value" items become table rows
+// (a value can carry its own list on the following lines); the first plain
+// paragraph is the lead, and anything else stays as text.
+function rows(body) {
+  const out = { lead: null, rows: [], rest: [] };
+  for (const block of body.split(/\n\s*\n/)) {
+    const items = block.split(/\n(?=- \*\*)/);
+    for (const raw of items) {
+      const b = raw.replace(/^- (?=\*\*)/, '');
+      const m = b.match(/^\*\*([^*]+?):\*\*\s*([\s\S]*)$/);
+      if (m) out.rows.push({ k: m[1].trim(), html: m[2].includes('\n- ') ? md(m[2]) : inline(m[2]) });
+      else if (!out.lead && !out.rows.length && !/^[-#>]/.test(b.trim())) out.lead = md(b);
+      else out.rest.push(raw);
+    }
+  }
+  return { lead: out.lead, rows: out.rows, html: out.rest.length ? md(out.rest.join('\n\n')) : null };
+}
+
 const parsers = {
+  table: (r) => ({ title: r.title, ...rows(r.body), text: plain(r.body) }),
   page: (r) => ({ title: r.title, html: md(r.body), text: plain(r.body), date: date(r.fm.date),
                   pdf_title: r.fm.pdf_title || null,
                   earlier: (r.fm.earlier || []).map((e) => ({ title: e.title, date: date(e.date), url: e.url || null })) }),
@@ -124,7 +143,7 @@ const parsers = {
 function lang(l) {
   const out = {};
   const put = (name, kind) => { const r = read(name, l); if (r) out[name] = parsers[kind](r); };
-  for (const p of PAGES) put(p, 'page');
+  for (const p of PAGES) put(p, ['facts', 'essentials'].includes(p) ? 'table' : 'page');
   for (const n of NOTES) put(n, 'note');
   put('people', 'people'); put('chronology', 'chronology'); put('quotes', 'quotes');
   put('coverage', 'coverage'); put('video', 'video');

@@ -1,8 +1,9 @@
 (ns amp.pages.press.page
-  "The press page, /press and /it/press: the press kit (amp.data.press-kit,
-   built from the press_kit Markdown by build/press-kit.mjs), then the image
-   library, films, people, quotes, visits, coverage and logos. Each section
-   has a stable anchor (/press#serra) for pitches to link to.
+  "The press kit, /press and /it/press: an overview and a sub-page per
+   section (/press/release, /press/stories#serra, /press/images, …), with a
+   menu beside them. The text is amp.data.press-kit, built from the press_kit
+   Markdown by build/press-kit.mjs. Links to the old single page's anchors
+   (/press#serra) are sent on to the sub-page.
 
    The images are resources/data/press/press.json, built by `npm run press`
    from the Caption Genius project \"Pavilion — Press\" (the images marked
@@ -19,6 +20,8 @@
             [amp.data.films :as films]
             [amp.data.press-kit :as press-kit]
             [amp.lib.defnc :refer [defnc]]
+            [amp.services.router :refer [flush-scroll!]]
+            [amp.state.provider :refer [use-main-state]]
             [amp.ui.picture :refer [picture media-host]]
             [clojure.string :as str]
             [helix.core :refer [$ <>]]
@@ -323,12 +326,13 @@
              (map-indexed
               (fn [i image]
                 (d/li {:key (:uid image)}
-                      (d/button {:type "button" :class "ap-press__frame" :on-click #(set-at! i)
-                                 :aria-label (str (t :view) (title-of image))}
-                                ($ picture {:src (src image) :alt (title-of image)
-                                            :sizes "(min-width: 1100px) 20vw, 50vw"}))
-                      ($ badge {:image image :t t})
-                      (d/p {:class "ap-label ap-muted m-0 mt-2"} (title-of image))))
+                      (d/div {:class "relative"}
+                             (d/button {:type "button" :class "ap-press__frame" :on-click #(set-at! i)
+                                        :aria-label (str (t :view) (title-of image))}
+                                       ($ picture {:src (src image) :alt (title-of image)
+                                                   :sizes "(min-width: 1100px) 20vw, 50vw"}))
+                             ($ badge {:image image :t t}))
+                      (d/p {:class "ap-label ap-muted m-0"} (title-of image))))
               images))
        ($ viewer {:images (vec images) :at at :on-go set-at! :on-close #(set-at! nil) :lang lang :t t})))))
 
@@ -344,11 +348,11 @@
                (d/img {:src (str "https://image.mux.com/" playback-id "/thumbnail.webp?width=640&time=" poster)
                        :alt "" :loading "lazy" :width 640 :height 360}))
           (d/div {:class "grid gap-2 content-start"}
-                 (d/h3 {:class "ap-h3 m-0"} (or (:title text) title))
+                 (d/h2 {:class "ap-h3 m-0"} (or (:title text) title))
                  (d/p {:class "ap-label ap-muted m-0"}
                       (str/join " · " (remove str/blank? [(mmss duration) (or date (:when film)) credit])))
-                 (when line (d/p {:class "ap-body m-0"} line))
-                 (when-let [h (:html text)] ($ html {:of h :class "ap-muted"}))
+                 (when line (d/p {:class "ap-kit__filmline"} line))
+                 (when-let [h (:html text)] ($ html {:of h :class "ap-kit__small ap-muted"}))
                  (d/div {:class "ap-press__dl"}
                         (if held
                           (d/a {:class "ap-press__btn" :href (str "mailto:" press-email "?subject=" (js/encodeURIComponent (str "Film: " title)))}
@@ -357,185 +361,281 @@
                             (d/a {:key r :class "ap-press__btn"
                                   :href (str "https://stream.mux.com/" playback-id "/" r ".mp4?download="
                                              (js/encodeURIComponent (str "armenian-pavilion-" slug "-" r)))}
-                                 (str (t :film-download) " · " r)))))))))
+                                 (str "MP4 · " r)))))))))
 
-(defn- section-list
-  "The sections present, in page order: [id label]."
-  [k t]
-  (filter
-   some?
-   (concat
-    [(when (:essentials k) ["essentials" (t :essentials)])
-     (when (:release k) ["release" (t :release)])
-     (when (:facts k) ["facts" (t :facts)])
-     (when (some k (map keyword notes)) ["notes" (t :notes)])
-     ["images" (t :images)]
-     (when (:video k) ["video" (t :video)])
-     (when (:people k) ["people" (t :people)])
-     (when (:chronology k) ["chronology" (t :chronology)])
-     (when (:quotes k) ["quotes" (t :quotes)])
-     (when (:visit k) ["visit" (t :visit)])
-     (when (:coverage k) ["coverage" (t :coverage)])
-     (when (:logos k) ["logos" (t :logos)])])))
+(defnc fact-table
+  "Property: value rows, with a copy button for the whole sheet."
+  [{:keys [rows]}]
+  (d/dl {:class "ap-kit__table"}
+        (for [{:keys [k html]} rows]
+          (d/div {:key k :class "ap-kit__row"}
+                 (d/dt k)
+                 (d/dd {:dangerouslySetInnerHTML #js {:__html html}})))))
+
+;; ── Sections and the menu ──────────────────────────────────────────────────
+
+(def ^:private pages
+  "The press kit's sub-pages, in menu order: [path label-key blurb-key needs]
+   (needs: the kit sections that must exist for the page to be listed)."
+  [["" :overview nil nil]
+   ["release" :release :release-blurb [:release]]
+   ["facts" :facts :facts-blurb [:facts]]
+   ["stories" :notes :notes-blurb (mapv keyword notes)]
+   ["images" :images :images-blurb nil]
+   ["films" :video :video-blurb [:video]]
+   ["people" :people :people-blurb [:people :chronology]]
+   ["quotes" :quotes :quotes-blurb [:quotes]]
+   ["visit" :visit :visit-blurb [:visit]]
+   ["coverage" :coverage :coverage-blurb [:coverage]]
+   ["logos" :logos :logos-blurb [:logos]]])
+
+(def ^:private blurbs
+  {:en {:release-blurb "The current release, on the page and as PDF, with earlier releases."
+        :facts-blurb "Names, dates, venue, hours and contacts, ready to copy."
+        :notes-blurb "Six story notes for features, each with images to use."
+        :images-blurb "Captioned images by section: single files or ZIPs."
+        :video-blurb "Eight short films from the studio, to download up to 4K."
+        :people-blurb "The artist, curators and studio director, and a chronology."
+        :quotes-blurb "Quotes with their sources."
+        :visit-blurb "Studio visits, interviews and how to get in."
+        :coverage-blurb "Coverage published so far."
+        :logos-blurb "Logos for print and web, and how to credit images."
+        :overview "Overview" :sections "Sections" :language "Language"}
+   :it {:release-blurb "Il comunicato attuale, sulla pagina e in PDF, e quelli precedenti."
+        :facts-blurb "Nomi, date, sede, orari e contatti, pronti da copiare."
+        :notes-blurb "Sei approfondimenti per articoli, ognuno con immagini."
+        :images-blurb "Immagini con didascalia per sezione: singole o in ZIP."
+        :video-blurb "Otto brevi film dallo studio, da scaricare fino al 4K."
+        :people-blurb "L’artista, i curatori e il direttore dello studio, e una cronologia."
+        :quotes-blurb "Citazioni con le loro fonti."
+        :visit-blurb "Visite in studio, interviste e come arrivare."
+        :coverage-blurb "Gli articoli pubblicati finora."
+        :logos-blurb "Loghi per stampa e web, e come citare le immagini."
+        :overview "Panoramica" :sections "Sezioni" :language "Lingua"}})
+
+(def ^:private old-anchors
+  "Anchors of the single-page kit (pitches link to them): where they live now."
+  (merge {"essentials" "" "release" "release" "facts" "facts" "notes" "stories"
+          "images" "images" "video" "films" "people" "people" "chronology" "people"
+          "quotes" "quotes" "visit" "visit" "coverage" "coverage" "logos" "logos"}
+         (zipmap notes (repeat "stories"))))
+
+(defn- base [lang] (if (= lang :it) "/it/press" "/press"))
+(defn- page-href [lang path] (str (base lang) (when (seq path) (str "/" path))))
+
+(defn- go!
+  "Replace the address with `url` and let the router follow it."
+  [url]
+  (.replaceState js/history nil "" url)
+  (.dispatchEvent js/window (js/PopStateEvent. "popstate")))
+
+(defnc press-menu
+  [{:keys [lang listed here t k]}]
+  (let [ref (hooks/use-ref nil)]
+    ;; On phones the menu is a scrolling row: bring the current tab into view.
+    (hooks/use-layout-effect
+     [here]
+     (when-let [nav @ref]
+       (when-let [a (.querySelector nav "[aria-current=page]")]
+         (when (> (.-scrollWidth nav) (.-clientWidth nav))
+           (set! (.-scrollLeft nav) (- (.-offsetLeft a) (/ (- (.-clientWidth nav) (.-offsetWidth a)) 2)))))))
+  (d/nav {:class "ap-kit__menu" :aria-label (t :sections) :ref ref}
+         (d/ol {:class "ap-kit__menu-list"}
+               (for [[path label] listed]
+                 (d/li {:key path}
+                       (d/a {:href (page-href lang path)
+                             :aria-current (when (= path here) "page")}
+                            (t label))
+                       ;; The story notes, under Stories while it's open.
+                       (when (and (= path "stories") (= here "stories"))
+                         (d/ol {:class "ap-kit__menu-sub"}
+                               (for [id notes :let [note (get k (keyword id))] :when note]
+                                 (d/li {:key id} (d/a {:href (str (page-href lang "stories") "#" id)} (:title note)))))))))
+         (d/div {:class "ap-kit__lang" :role "group" :aria-label (t :language)}
+                (d/a {:href (page-href :en here) :aria-current (when (= lang :en) "true")} "EN")
+                (d/a {:href (page-href :it here) :aria-current (when (= lang :it) "true")} "IT")))))
 
 (defnc press-page
   [{:keys [lang]}]
   (let [lang (or lang :en)
-        t (fn [k] (get-in copy [lang k] (get-in copy [:en k])))
+        t (fn [x] (or (get-in blurbs [lang x]) (get-in copy [lang x]) (get-in copy [:en x]) (get-in blurbs [:en x])))
         kit? (show-kit?)
         own (get press-kit/kit lang)
         en (:en press-kit/kit)
         ;; A section with no Italian version shows in English, marked so.
         k (if kit? (merge en own) {})
         en-only (fn [id] (when (and (not= lang :en) (not (get own id))) (t :english-only)))
+        [state _] (use-main-state)
+        route (:current-route state)
+        group (if (= lang :it) :amp.services.router/press-it :amp.services.router/press)
+        ;; While another page's route fades this one out, keep the section showing.
+        last-here (hooks/use-ref "")
+        here (if (= group (-> route :data :group))
+               (set! (.-current last-here) (or (-> route :path-params :section) ""))
+               @last-here)
+        listed (if kit?
+                 (filter (fn [[_ _ _ needs]] (or (nil? needs) (some k needs))) pages)
+                 [["images" :images]])
+        here (if (some #(= here (first %)) listed) here (if kit? "" "images"))
         data (use-press)
         images (:images data)
         by-uid (into {} (map (juxt :uid identity)) images)
-        listed (section-list k t)
-        num (into {} (map-indexed (fn [i [id]] [id (inc i)])) listed)
-        {:keys [essentials release facts people chronology quotes visit coverage logos video]} k]
+        {:keys [essentials release facts people chronology quotes visit coverage logos video]} k
+        title (some (fn [[p l]] (when (= p here) (t l))) listed)]
+    ;; Old single-page anchors (/press#serra) go to their sub-page.
+    (hooks/use-layout-effect
+     :once
+     (let [h (subs (.. js/location -hash) 1)]
+       (when (and kit? (= here "") (contains? old-anchors h) (not= h "essentials"))
+         (go! (str (page-href lang (old-anchors h)) (when (some #{h} notes) (str "#" h)) (when (= h "chronology") "#chronology"))))))
+    (hooks/use-effect
+     [here]
+     (flush-scroll!)
+     (set! (.-title js/document)
+           (str (if (= here "") (t (if kit? :title :images-title)) title) " · " (t :eyebrow) " · Armenian Pavilion")))
     (d/div {:class "ap-wrap"}
-           (d/div {:class "ap-jhead"}
-                  (d/div {:class "ap-jhead__title"}
-                         (d/div {:class "flex flex-col gap-3"}
-                                (d/p {:class "ap-label ap-muted m-0"} (t :eyebrow))
-                                (d/h1 {:class "ap-display-xl"} (if kit? (t :title) (t :images-title))))
-                         (d/div {:class "flex flex-col items-end gap-2"}
-                                (d/span {:class "ap-jhead__count" :aria-hidden true} (pad2 (count images)))
-                                (d/span {:class "ap-label ap-muted" :aria-hidden true} (t :images))))
-                  (d/p {:class "ap-lede m-0 max-w-[52ch]"} (t :lede))
+           (d/div {:class "ap-kit__top"}
+                  (d/p {:class "ap-label ap-muted m-0"}
+                       (if (= here "")
+                         (t :eyebrow)
+                         (d/a {:href (page-href lang "") :class "ap-kit__crumb"} (t (if kit? :title :eyebrow)))))
+                  (d/h1 {:class "ap-display-l m-0"}
+                        (cond (not kit?) (t :images-title)
+                              (= here "") (t :title)
+                              :else title))
                   (when (and kit? (not (:live press-kit/kit)))
-                    (d/p {:class "ap-kit__draft"} (t :draft)))
-                  (when kit?
-                    (d/nav {:class "ap-kit__toc" :aria-label (t :contents)}
-                           (d/p {:class "ap-label ap-muted m-0"} (t :contents))
-                           (d/ol
-                            (for [[id label] listed]
-                              (d/li {:key id} (d/a {:href (str "#" id)} label))))
-                           (d/p {:class "ap-label m-0"}
-                                (d/a {:href (if (= lang :it) "/press" "/it/press")} (if (= lang :it) "English" "Italiano"))))))
+                    (d/p {:class "ap-kit__draft"} (t :draft))))
+           (d/div {:class (if kit? "ap-kit" "")}
+                  (when kit? ($ press-menu {:lang lang :listed listed :here here :t t :k k}))
+                  (d/div {:class "ap-kit__main"}
+                         (when-let [n (and (not (#{"" "images" "stories"} here))
+                                           (en-only (keyword (if (= here "films") "video" here))))]
+                           (d/p {:class "ap-label ap-muted m-0"} n))
+                         (case here
+                           ""
+                           (<>
+                            (when essentials
+                              (<>
+                               ($ html {:of (:lead essentials) :class "ap-kit__lead"})
+                               (when-let [rows (seq (remove #(re-find #"^(Book|Prenota)" (:k %)) (:rows essentials)))]
+                                 ($ fact-table {:rows rows}))
+                               (when (seq (:html essentials)) ($ html {:of (:html essentials)}))
+                               (d/p {:class "m-0"}
+                                    (d/a {:class "ap-btn ap-btn--red"
+                                          :href (str "mailto:" press-email "?subject=" (js/encodeURIComponent (t :book-subject)))}
+                                         (t :book)))))
+                            (d/ul {:class "ap-kit__cards"}
+                                  (for [[path label blurb] (rest listed)]
+                                    (d/li {:key path}
+                                          (d/a {:href (page-href lang path)}
+                                               (d/span {:class "ap-h3"} (t label))
+                                               (d/span {:class "ap-kit__blurb"} (t blurb))
+                                               (d/span {:class "ap-kit__arrow" :aria-hidden true} "→"))))))
 
-           (when essentials
-             ($ sec {:id "essentials" :n (num "essentials") :label (t :essentials) :note (en-only :essentials)}
-                ($ html {:of (:html essentials) :class "ap-kit__lead"})
-                (d/p {:class "m-0"}
-                     (d/a {:class "ap-btn ap-btn--red"
-                           :href (str "mailto:" press-email "?subject=" (js/encodeURIComponent (t :book-subject)))}
-                          (t :book)))))
+                           "release"
+                           (<>
+                            (d/div {:class "ap-kit__dl"}
+                                   (when-let [d (or (:date-text release) (:date release))] (d/span {:class "ap-label"} d))
+                                   (for [[l url] (:pdfs release)]
+                                     (d/a {:key l :class "ap-press__btn" :href url :download true}
+                                          (str (t :pdf) " · " (str/upper-case (name l))))))
+                            ($ html {:of (:html release)})
+                            (when (seq (:earlier release))
+                              (d/div {:class "ap-kit__earlier"}
+                                     (d/p {:class "ap-label ap-muted m-0"} (t :earlier))
+                                     (d/ul
+                                      (for [{:keys [title date url]} (:earlier release)]
+                                        (d/li {:key title}
+                                              (d/span {:class "ap-label ap-muted"} date)
+                                              (if url (d/a {:href url} title) (d/span title))))))))
 
-           (when release
-             ($ sec {:id "release" :n (num "release") :label (t :release) :note (en-only :release)}
-                (d/div {:class "ap-kit__release"}
-                       (d/div {:class "ap-kit__dl"}
-                              (when-let [d (or (:date-text release) (:date release))] (d/p {:class "ap-label m-0"} d))
-                              (for [[l url] (:pdfs release)]
-                                (d/a {:key l :class "ap-press__btn" :href url :download true}
-                                     (str (t :pdf) " · " (str/upper-case (name l))))))
-                       ($ html {:of (:html release)}))
-                (when (seq (:earlier release))
-                  (d/div {:class "ap-kit__earlier"}
-                         (d/p {:class "ap-label ap-muted m-0"} (t :earlier))
-                         (d/ul
-                          (for [{:keys [title date url]} (:earlier release)]
-                            (d/li {:key title}
-                                  (d/span {:class "ap-label ap-muted"} date) " "
-                                  (if url (d/a {:href url} title) title))))))))
+                           "facts"
+                           (<>
+                            (d/p {:class "m-0"} ($ copy-button {:text (:text facts) :label (t :copy-facts) :done (t :copied)}))
+                            ($ fact-table {:rows (:rows facts)})
+                            (when (seq (:html facts)) ($ html {:of (:html facts)})))
 
-           (when facts
-             ($ sec {:id "facts" :n (num "facts") :label (t :facts) :note (en-only :facts)}
-                ($ html {:of (:html facts) :class "ap-kit__facts"})
-                (d/p {:class "m-0"} ($ copy-button {:text (:text facts) :label (t :copy-facts) :done (t :copied)}))))
+                           "stories"
+                           (for [id notes
+                                 :let [note (get k (keyword id))]
+                                 :when note]
+                             (d/article {:key id :id id :class "ap-kit__note"}
+                                        (d/h2 {:class "ap-h1 m-0"} (:title note))
+                                        (when-let [n (en-only (keyword id))] (d/p {:class "ap-label ap-muted m-0"} n))
+                                        ($ html {:of (:html note)})
+                                        ($ note-images {:uids (:images note) :by-uid by-uid :lang lang :t t})))
 
-           (when (num "notes")
-             (d/div {:id "notes" :class "ap-kit__sec"}
-                    (d/header {:class "ap-kit__head"}
-                              (d/p {:class "ap-label ap-muted m-0"} (str (pad2 (num "notes")) " · " (t :notes))))
-                    (for [id notes
-                          :let [note (get k (keyword id))]
-                          :when note]
-                      (d/article {:key id :id id :class "ap-kit__note"}
-                                 (d/h2 {:class "ap-h1 m-0"} (:title note))
-                                 (when-let [n (en-only (keyword id))] (d/p {:class "ap-label ap-muted m-0"} n))
-                                 ($ html {:of (:html note)})
-                                 ($ note-images {:uids (:images note) :by-uid by-uid :lang lang :t t})))))
+                           "images"
+                           ($ library {:images images :lang lang :t t})
 
-           (d/section {:id "images" :class (if kit? "ap-kit__sec" "")}
-                      (when kit?
-                        (d/header {:class "ap-kit__head"}
-                                  (d/p {:class "ap-label ap-muted m-0"} (str (pad2 (num "images")) " · " (t :images)))))
-                      ($ library {:images images :lang lang :t t}))
+                           "films"
+                           (d/ul {:class "ap-kit__films"}
+                                 (for [film films/films
+                                       :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
+                                   ($ film-row {:key (:slug film) :film film :text text :t t})))
 
-           (when video
-             ($ sec {:id "video" :n (num "video") :label (t :video) :note (en-only :video)}
-                (d/ul {:class "ap-kit__films"}
-                      (for [film films/films
-                            :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
-                        ($ film-row {:key (:slug film) :film film :text text :t t})))))
+                           "people"
+                           (<>
+                            (d/div {:class "ap-kit__people"}
+                                   (for [{:keys [name role html short text]} (:people people)]
+                                     (d/article {:key name :class "ap-kit__person"}
+                                                (d/h2 {:class "ap-h3 m-0"} name)
+                                                (d/p {:class "ap-label ap-muted m-0"} role)
+                                                ($ amp.pages.press.page/html {:of html :class "ap-kit__small"})
+                                                (when short
+                                                  (d/p {:class "ap-kit__short"} (d/span {:class "ap-label ap-muted"} (t :short)) " " short))
+                                                (d/p {:class "m-0"} ($ copy-button {:text text :label (t :copy-bio) :done (t :copied)})))))
+                            (when chronology
+                              (d/section {:id "chronology" :class "ap-kit__chron-wrap"}
+                                         (d/h2 {:class "ap-h1 m-0"} (t :chronology))
+                                         (d/ol {:class "ap-kit__chron"}
+                                               (for [[i item] (map-indexed vector (:items chronology))]
+                                                 (d/li {:key i}
+                                                       (d/span {:class "ap-label"} (:when item))
+                                                       (d/span {:dangerouslySetInnerHTML #js {:__html (:html item)}})))))))
 
-           (when people
-             ($ sec {:id "people" :n (num "people") :label (t :people) :note (en-only :people)}
-                (d/div {:class "ap-kit__people"}
-                       (for [{:keys [name role html short text]} (:people people)]
-                         (d/article {:key name :class "ap-kit__person"}
-                                    (d/h3 {:class "ap-h3 m-0"} name)
-                                    (d/p {:class "ap-label ap-muted m-0"} role)
-                                    ($ amp.pages.press.page/html {:of html})
-                                    (when short
-                                      (d/p {:class "ap-kit__short"} (d/span {:class "ap-label ap-muted"} (t :short)) " " short))
-                                    (d/p {:class "m-0"} ($ copy-button {:text text :label (t :copy-bio) :done (t :copied)})))))))
+                           "quotes"
+                           (d/ul {:class "ap-kit__quotes"}
+                                 (for [[i {:keys [speaker text source]}] (map-indexed vector (:quotes quotes))]
+                                   (d/li {:key i}
+                                         (d/blockquote {:class "m-0"} (str "“" text "”"))
+                                         (d/p {:class "ap-label m-0"} speaker)
+                                         (when source
+                                           (d/p {:class "ap-label ap-muted m-0"}
+                                                (str (t :source) ": ")
+                                                (d/span {:dangerouslySetInnerHTML #js {:__html source}})))
+                                         (d/p {:class "m-0"}
+                                              ($ copy-button {:text (str "“" text "” " speaker) :label (t :copy-quote) :done (t :copied)})))))
 
-           (when chronology
-             ($ sec {:id "chronology" :n (num "chronology") :label (t :chronology) :note (en-only :chronology)}
-                (d/ol {:class "ap-kit__chron"}
-                      (for [[i item] (map-indexed vector (:items chronology))]
-                        (d/li {:key i}
-                              (d/span {:class "ap-label"} (:when item))
-                              (d/span {:dangerouslySetInnerHTML #js {:__html (:html item)}}))))))
+                           "visit"
+                           ($ html {:of (:html visit)})
 
-           (when quotes
-             ($ sec {:id "quotes" :n (num "quotes") :label (t :quotes) :note (en-only :quotes)}
-                (d/ul {:class "ap-kit__quotes"}
-                      (for [[i {:keys [speaker text source]}] (map-indexed vector (:quotes quotes))]
-                        (d/li {:key i}
-                              (d/blockquote {:class "m-0"} (str "“" text "”"))
-                              (d/p {:class "ap-label m-0"} speaker)
-                              (when source
-                                (d/p {:class "ap-label ap-muted m-0"}
-                                     (str (t :source) ": ")
-                                     (d/span {:dangerouslySetInnerHTML #js {:__html source}})))
-                              (d/p {:class "m-0"}
-                                   ($ copy-button {:text (str "“" text "” " speaker) :label (t :copy-quote) :done (t :copied)})))))))
+                           "coverage"
+                           (d/ul {:class "ap-kit__coverage"}
+                                 (for [{:keys [outlet title date url]} (:items coverage)]
+                                   (d/li {:key (str outlet title)}
+                                         (d/span {:class "ap-label"} outlet)
+                                         (if url
+                                           (d/a {:href url :target "_blank" :rel "noopener noreferrer"} title)
+                                           (d/span title))
+                                         (d/span {:class "ap-label ap-muted"} date))))
 
-           (when visit
-             ($ sec {:id "visit" :n (num "visit") :label (t :visit) :title (:title visit) :note (en-only :visit)}
-                ($ html {:of (:html visit)})))
+                           "logos"
+                           (<>
+                            (when (seq (:files logos))
+                              (d/ul {:class "ap-kit__logos"}
+                                    (for [{:keys [name preview dark files]} (:files logos)]
+                                      (d/li {:key name}
+                                            (d/div {:class (str "ap-kit__logo" (when dark " ap-kit__logo--dark"))}
+                                                   (d/img {:src preview :alt name :loading "lazy"}))
+                                            (d/p {:class "ap-label m-0"} name)
+                                            (d/div {:class "ap-press__dl"}
+                                                   (for [{:keys [label url]} files]
+                                                     (d/a {:key label :class "ap-press__btn" :href url :download true} label)))))))
+                            ($ html {:of (:html logos)}))
 
-           (when coverage
-             ($ sec {:id "coverage" :n (num "coverage") :label (t :coverage) :note (en-only :coverage)}
-                (d/ul {:class "ap-kit__coverage"}
-                      (for [{:keys [outlet title date url]} (:items coverage)]
-                        (d/li {:key (str outlet title)}
-                              (d/span {:class "ap-label"} outlet)
-                              (if url
-                                (d/a {:href url :target "_blank" :rel "noopener noreferrer"} title)
-                                (d/span title))
-                              (d/span {:class "ap-label ap-muted"} date))))))
-
-           (when logos
-             ($ sec {:id "logos" :n (num "logos") :label (t :logos) :note (en-only :logos)}
-                (when (seq (:files logos))
-                  (d/ul {:class "ap-kit__logos"}
-                        (for [{:keys [name preview dark files]} (:files logos)]
-                          (d/li {:key name}
-                                (d/div {:class (str "ap-kit__logo" (when dark " ap-kit__logo--dark"))}
-                                       (d/img {:src preview :alt name :loading "lazy"}))
-                                (d/p {:class "ap-label m-0"} name)
-                                (d/div {:class "ap-press__dl"}
-                                       (for [{:keys [label url]} files]
-                                         (d/a {:key label :class "ap-press__btn" :href url :download true} label)))))))
-                ($ html {:of (:html logos)})))
-
-           (d/div {:class "pb-16"}))))
+                           nil)
+                         (d/div {:class "pb-16"}))))))
 
 (defnc press-view [_props] ($ press-page {:lang :en}))
 
