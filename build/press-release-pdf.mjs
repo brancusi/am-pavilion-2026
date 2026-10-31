@@ -16,6 +16,7 @@ import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { marked } from 'marked';
 import YAML from 'yaml';
+import { publishable } from './press-kit-clean.mjs';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright-core');
@@ -56,7 +57,7 @@ ${body}
 function read(lang) {
   const f = join(DIR, lang === 'it' ? 'release.it.md' : 'release.md');
   if (!existsSync(f)) return null;
-  let src = readFileSync(f, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  let src = publishable(readFileSync(f, 'utf8').replace(/<!--[\s\S]*?-->/g, ''));
   let fm = {};
   const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
   if (m) { fm = YAML.parse(m[1]) || {}; src = src.slice(m[0].length); }

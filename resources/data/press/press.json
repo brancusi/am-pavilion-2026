@@ -238,7 +238,7 @@
    "date": "2026",
    "materials": "",
    "caption": "Rendering of The Studio, Armenian Pavilion, Biennale Arte 2026. Rendering: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "The Studio, 2026, rendering",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -282,13 +282,13 @@
    "key": "press/f64bf7f0b6",
    "w": 3072,
    "h": 5504,
-   "section": "",
+   "section": "renderings",
    "title": "Italian Flags, rendering",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "Pigmented cement",
-   "caption": "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work in a landscape.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work, three blades on the crest of a hillside near Gubbio, Umbria.",
+   "caption_short": "Italian Flags, 2026, rendering",
    "credit": "",
    "dl": {
     "jpg": {
@@ -307,13 +307,13 @@
    "key": "press/d55d66ba78",
    "w": 7424,
    "h": 9216,
-   "section": "",
+   "section": "renderings",
    "title": "Armenian Flag Stack, drawing",
    "artist": "",
    "date": "2026",
-   "materials": "",
-   "caption": "Drawing for Armenian Flag Stack, 2026.",
-   "caption_short": "",
+   "materials": "Marker and ink on paper",
+   "caption": "Zadik Zadikian, drawing for Armenian Flag Stack, 2026. Marker and ink on paper, with unit dimensions. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Armenian Flag Stack, 2026, drawing",
    "credit": "",
    "dl": {
     "jpg": {
@@ -357,13 +357,13 @@
    "key": "press/06087305db",
    "w": 10112,
    "h": 6784,
-   "section": "",
+   "section": "renderings",
    "title": "Armenian Flag Stack, rendering in Yerevan",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "Pigmented plaster units",
    "caption": "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan.",
-   "caption_short": "",
+   "caption_short": "Armenian Flag Stack, 2026, rendering",
    "credit": "",
    "dl": {
     "jpg": {
@@ -382,13 +382,13 @@
    "key": "press/9a6527c5e6",
    "w": 6784,
    "h": 10112,
-   "section": "",
+   "section": "renderings",
    "title": "Armenian Flag Stack, rendering in Yerevan",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "Pigmented plaster units",
    "caption": "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan.",
-   "caption_short": "",
+   "caption_short": "Armenian Flag Stack, 2026, rendering",
    "credit": "",
    "dl": {
     "jpg": {
@@ -407,13 +407,13 @@
    "key": "press/88efa5c0f4",
    "w": 10112,
    "h": 6784,
-   "section": "",
+   "section": "renderings",
    "title": "Armenian Flag Stack, rendering in Yerevan",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "Pigmented plaster units",
    "caption": "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan.",
-   "caption_short": "",
+   "caption_short": "Armenian Flag Stack, 2026, rendering",
    "credit": "",
    "dl": {
     "jpg": {
@@ -432,13 +432,13 @@
    "key": "press/f272623d8e",
    "w": 3584,
    "h": 4800,
-   "section": "",
+   "section": "renderings",
    "title": "7 Steps to Heaven, drawing",
    "artist": "",
    "date": "2026",
-   "materials": "",
-   "caption": "Drawing for 7 Steps to Heaven, 2026.",
-   "caption_short": "",
+   "materials": "Pen and pencil on paper",
+   "caption": "Zadik Zadikian, drawing for 7 Steps to Heaven, 2026. Pen and pencil on paper, with dimensions. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "7 Steps to Heaven, 2026, drawing",
    "credit": "",
    "dl": {
     "jpg": {
@@ -503,17 +503,17 @@
   },
   {
    "uid": "827f88dbc0",
-   "file": "armenian-pavilion-untitled-gemini-3-nano-banana-pro-2026-10-22-09-827f88dbc0",
+   "file": "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0",
    "key": "press/827f88dbc0",
    "w": 3584,
    "h": 4800,
-   "section": "",
-   "title": "",
+   "section": "renderings",
+   "title": "Leaning Slab Between Blocks, study",
    "artist": "",
    "date": "",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Study for Zadik Zadikian, Leaning Slab Between Blocks, 2026. Digital sketch made with AI image software from the artist’s drawings.",
+   "caption_short": "Leaning Slab Between Blocks, 2026, study",
    "credit": "",
    "dl": {
     "jpg": {
@@ -853,17 +853,17 @@
   },
   {
    "uid": "8a84f0295c",
-   "file": "armenian-pavilion-process-stills-2026-10-001-8a84f0295c",
+   "file": "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c",
    "key": "press/8a84f0295c",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Colour palettes on the workbench",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes laid out on the workbench, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Colour palettes on the workbench, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -878,17 +878,17 @@
   },
   {
    "uid": "66126f601c",
-   "file": "armenian-pavilion-process-stills-2026-10-002-66126f601c",
+   "file": "armenian-pavilion-carrying-the-italian-flag-66126f601c",
    "key": "press/66126f601c",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Carrying the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: assistants carrying white and red sections of the Italian flag across the studio, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Carrying the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -911,9 +911,9 @@
    "title": "The Italian flag in the studio",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: the Italian flag in green, white and red, in the studio, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "The Italian flag in the studio, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -928,17 +928,17 @@
   },
   {
    "uid": "6868e95922",
-   "file": "armenian-pavilion-process-stills-2026-10-004-6868e95922",
+   "file": "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922",
    "key": "press/6868e95922",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Zadik Zadikian with a guest",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian with a guest in front of the Italian flag, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Zadik Zadikian with a guest, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -963,7 +963,7 @@
    "date": "2026",
    "materials": "",
    "caption": "Zadik Zadikian, Maria Carmela Colaiacovo, Tony Shafrazi, and Gianni Scipione Rossi in the Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian.",
-   "caption_short": "Zadik Zadikian, Maria Carmela Colaiacovo and Tony Shafrazi in the Armenian Pavilion, 2026. Photo: Aram Zadikian.",
+   "caption_short": "With Maria Carmela Colaiacovo, Tony Shafrazi and Gianni Scipione Rossi, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -978,17 +978,17 @@
   },
   {
    "uid": "c41b5988cc",
-   "file": "armenian-pavilion-process-stills-2026-10-027-c41b5988cc",
+   "file": "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc",
    "key": "press/c41b5988cc",
    "w": 7680,
    "h": 4320,
    "section": "people",
-   "title": "",
+   "title": "Tony Shafrazi and Zadik Zadikian with a guest",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "From left: Tony Shafrazi, a guest and Zadik Zadikian, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Tony Shafrazi and Zadik Zadikian, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1003,17 +1003,17 @@
   },
   {
    "uid": "3580e9b080",
-   "file": "armenian-pavilion-process-stills-2026-10-005-3580e9b080",
+   "file": "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080",
    "key": "press/3580e9b080",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Tony Shafrazi at the workbench",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Tony Shafrazi looking at a palette sleeve with an assistant at the workbench, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Tony Shafrazi at the workbench, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1028,17 +1028,17 @@
   },
   {
    "uid": "cf203e22ed",
-   "file": "armenian-pavilion-process-stills-2026-10-006-cf203e22ed",
+   "file": "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed",
    "key": "press/cf203e22ed",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Carrying a section of the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant carrying a red section of the Italian flag, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Carrying a section of the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1061,9 +1061,9 @@
    "title": "Assembling the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant assembling the Italian flag, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Assembling the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1086,9 +1086,9 @@
    "title": "Assembling the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant assembling the Italian flag, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Assembling the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1103,17 +1103,17 @@
   },
   {
    "uid": "82c998897e",
-   "file": "armenian-pavilion-process-stills-2026-10-009-82c998897e",
+   "file": "armenian-pavilion-setting-up-the-italian-flag-82c998897e",
    "key": "press/82c998897e",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Setting up the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: setting the Italian flag on its feet in the studio, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Setting up the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1128,17 +1128,17 @@
   },
   {
    "uid": "70dd92afbf",
-   "file": "armenian-pavilion-process-stills-2026-10-010-70dd92afbf",
+   "file": "armenian-pavilion-the-italian-flag-front-view-70dd92afbf",
    "key": "press/70dd92afbf",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "The Italian flag, front view",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "materials": "EPS foam and paint",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: the Italian flag in the studio, front view, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "The Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1153,17 +1153,17 @@
   },
   {
    "uid": "b6052edd36",
-   "file": "armenian-pavilion-process-stills-2026-10-011-b6052edd36",
+   "file": "armenian-pavilion-the-italian-flag-its-feet-b6052edd36",
    "key": "press/b6052edd36",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "The Italian flag, its feet",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "materials": "EPS foam and paint",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: detail of the Italian flag, showing the coloured feet the sections stand on, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "The Italian flag, detail, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1178,17 +1178,17 @@
   },
   {
    "uid": "41bc72df87",
-   "file": "armenian-pavilion-process-stills-2026-10-012-41bc72df87",
+   "file": "armenian-pavilion-adjusting-the-italian-flag-41bc72df87",
    "key": "press/41bc72df87",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Adjusting the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: adjusting a section of the Italian flag in the studio, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Adjusting the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1211,9 +1211,9 @@
    "title": "Zadik Zadikian with the Italian flag",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian in front of the Italian flag in the studio, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Zadik Zadikian with the Italian flag, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1236,9 +1236,9 @@
    "title": "Painting the green",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian painting the green of the Italian flag, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Painting the green, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1253,17 +1253,17 @@
   },
   {
    "uid": "2c3807ad70",
-   "file": "armenian-pavilion-process-stills-2026-10-024-2c3807ad70",
+   "file": "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70",
    "key": "press/2c3807ad70",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Italian flag unit on the workbench",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a single unit painted in the three colours of the Italian flag, among coloured units on the workbench, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Italian flag unit, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1278,17 +1278,17 @@
   },
   {
    "uid": "bc12377c2d",
-   "file": "armenian-pavilion-process-stills-2026-10-025-bc12377c2d",
+   "file": "armenian-pavilion-works-in-the-studio-bc12377c2d",
    "key": "press/bc12377c2d",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Works in the studio",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: works in the studio, including a stepped pink and teal stack and a small Italian flag, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Works in the studio, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1311,9 +1311,9 @@
    "title": "Painting the red",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "EPS foam and paint",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: painting the red of the Italian flag in the studio, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Painting the red, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1328,17 +1328,17 @@
   },
   {
    "uid": "876f5435df",
-   "file": "armenian-pavilion-process-stills-2026-10-013-876f5435df",
+   "file": "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df",
    "key": "press/876f5435df",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Zadik Zadikian with a guest in the studio",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian showing a guest around the studio, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Zadik Zadikian with a guest, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1353,17 +1353,17 @@
   },
   {
    "uid": "78e5577dff",
-   "file": "armenian-pavilion-process-stills-2026-10-022-78e5577dff",
+   "file": "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff",
    "key": "press/78e5577dff",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Tony Shafrazi with the colour palettes",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Tony Shafrazi looking at colour palettes in the studio, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Tony Shafrazi with the colour palettes, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1388,7 +1388,7 @@
    "date": "2026",
    "materials": "",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes standing in their sleeves, inscribed Jasper Johns, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Palettes in their sleeves, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1411,9 +1411,9 @@
    "title": "Pigmenting a unit",
    "artist": "Zadik Zadikian",
    "date": "2026",
-   "materials": "",
+   "materials": "Plaster and pure pigment",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a yellow unit being pigmented, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Pigmenting a unit, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1438,7 +1438,7 @@
    "date": "2026",
    "materials": "",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes standing in their sleeves, inscribed Jasper Johns, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Palettes in their sleeves, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1463,7 +1463,7 @@
    "date": "2026",
    "materials": "",
    "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes on the workbench, 2026. Photo: Aram Zadikian.",
-   "caption_short": "",
+   "caption_short": "Colour palettes, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1478,17 +1478,17 @@
   },
   {
    "uid": "250cb528da",
-   "file": "armenian-pavilion-process-stills-2026-10-020-250cb528da",
+   "file": "armenian-pavilion-working-on-a-palette-sleeve-250cb528da",
    "key": "press/250cb528da",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Working on a palette sleeve",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: working on a white palette sleeve at the workbench, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Working on a palette sleeve, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1503,17 +1503,17 @@
   },
   {
    "uid": "8919bfe877",
-   "file": "armenian-pavilion-process-stills-2026-10-021-8919bfe877",
+   "file": "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877",
    "key": "press/8919bfe877",
    "w": 7680,
    "h": 4320,
    "section": "process",
-   "title": "",
+   "title": "Brushing a coat on the workbench",
    "artist": "Zadik Zadikian",
    "date": "2026",
    "materials": "",
-   "caption": "",
-   "caption_short": "",
+   "caption": "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: brushing a white coat across a black mat on the workbench, Tesa 41, 2026. Photo: Aram Zadikian.",
+   "caption_short": "Brushing a coat, 2026",
    "credit": "Aram Zadikian",
    "dl": {
     "jpg": {
@@ -1537,8 +1537,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Pearlescent traffic-yellow paint",
-   "caption": "Zadik Zadikian, Yellow Space, 1974. Pearlescent traffic-yellow paint. Interior view, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Interior view, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Yellow Space, 1973–74",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1562,8 +1562,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Pearlescent traffic-yellow paint",
-   "caption": "Zadik Zadikian, Yellow Space, 1974. Pearlescent traffic-yellow paint. Exterior view, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Exterior view, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Yellow Space, 1973–74",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1587,8 +1587,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Traffic-red paint",
-   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Red Space, 1974",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1612,8 +1612,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Traffic-red paint",
-   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Red Space, 1974",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1637,8 +1637,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Traffic-red paint",
-   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Exterior view, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Exterior view, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Red Space, 1974",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1662,8 +1662,8 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, gilded stairs going down, 1974. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, gilded stairs going down, c. 1977–78. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gilded stairs, P.S. 1, c. 1977–78",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1687,9 +1687,9 @@
    "artist": "Zadik Zadikian",
    "date": "1974",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, gilded stairwell, 1974. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York.",
-   "caption_short": "",
-   "credit": "",
+   "caption": "Zadik Zadikian, gilded stairwell, c. 1977–78. Industrial gold foil. Entrance, P.S. 1 (now MoMA PS1), Long Island City, New York. Photo: Ivan Dalla Tana. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gilded stairwell, P.S. 1, c. 1977–78",
+   "credit": "Ivan Dalla Tana",
    "dl": {
     "jpg": {
      "bytes": 468072,
@@ -1712,8 +1712,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "",
-   "caption": "Zadik Zadikian stacking gold bricks at 9 Jay Street, eight-room apartment, studio, 1975.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian stacking gold bricks at 9 Jay Street, his eight-room apartment and studio, New York, 1975–76. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Stacking gold bricks, 9 Jay Street, 1975–76",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1737,8 +1737,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. View of the hallway. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the hallway. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "9 Jay Street, 1975–76",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1762,8 +1762,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. View of the kitchen. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the kitchen. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "9 Jay Street, 1975–76",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1787,8 +1787,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. Detail of a radiator. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of a radiator. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "9 Jay Street, 1975–76",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1812,8 +1812,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Industrial gold foil",
-   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. Detail of the water heater. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of the water heater. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "9 Jay Street, 1975–76",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1862,8 +1862,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Plaster and 24-karat gold leaf",
-   "caption": "Zadik Zadikian, Gold Bricks in Cart, 1975. Plaster and 24-karat gold leaf.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Gold Bricks in Cart, 1975. Plaster and 24-karat gold leaf. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gold Bricks in Cart, 1975",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1887,8 +1887,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "Plaster and 24-karat gold leaf",
-   "caption": "Zadik Zadikian, Gold Stack, 1975. Plaster and 24-karat gold leaf. Installed on a New York sidewalk.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Gold Stack, 1975. Plaster and 24-karat gold leaf. Installed on a New York sidewalk. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gold Stack, 1975",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1912,8 +1912,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "24-karat gold leaf",
-   "caption": "Zadik Zadikian, gilded shovel and pickaxe with Golden Nails, 1975. 24-karat gold leaf.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, gilded shovel and pickaxe with Golden Nails, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gilded shovel, pickaxe and Golden Nails, 1975",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1937,8 +1937,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "24-karat gold leaf",
-   "caption": "Zadik Zadikian, two gilded shovels, 1975. 24-karat gold leaf.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, two gilded shovels, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Two gilded shovels, 1975",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1962,8 +1962,8 @@
    "artist": "Zadik Zadikian",
    "date": "1975",
    "materials": "24-karat gold leaf, steel and cardboard",
-   "caption": "Zadik Zadikian, Golden Nails, 1975. 24-karat gold leaf on steel nails, in a cardboard box.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Golden Nails, 1975. 24-karat gold leaf on steel nails, in a cardboard box. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Golden Nails, 1975",
    "credit": "",
    "dl": {
     "jpg": {
@@ -1986,9 +1986,9 @@
    "title": "With Tony Shafrazi, Tehran",
    "artist": "Zadik Zadikian",
    "date": "1978",
-   "materials": "Plaster and 24-karat gold leaf",
-   "caption": "Tony Shafrazi and Zadik Zadikian with One Thousand Gold Bricks, getting ready for the opening, Tony Shafrazi Gallery, Tehran, 1978. Photographer unknown.",
-   "caption_short": "",
+   "materials": "",
+   "caption": "Tony Shafrazi and Zadik Zadikian with Gold Bricks, getting ready for the opening, Tony Shafrazi Gallery, Tehran, 1978. Photographer unknown. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "With Tony Shafrazi, Tehran, 1978",
    "credit": "Photographer unknown",
    "dl": {
     "jpg": {
@@ -2003,17 +2003,17 @@
   },
   {
    "uid": "dbac198dd8",
-   "file": "armenian-pavilion-one-thousand-gold-bricks-dbac198dd8",
+   "file": "armenian-pavilion-gold-bricks-dbac198dd8",
    "key": "press/dbac198dd8",
    "w": 5626,
    "h": 4078,
    "section": "archive",
-   "title": "One Thousand Gold Bricks",
+   "title": "Gold Bricks",
    "artist": "Zadik Zadikian",
    "date": "1978",
-   "materials": "Plaster and 24-karat gold leaf",
-   "caption": "Zadik Zadikian, One Thousand Gold Bricks, 1978. Plaster and 24-karat gold leaf. Installation view, Tony Shafrazi Gallery, Tehran, 1978, the gallery’s first and only exhibition, which opened on the eve of the Iranian Revolution. The thousand gilded bricks were later looted and lost. Photo: Tony Shafrazi.",
-   "caption_short": "",
+   "materials": "",
+   "caption": "Zadik Zadikian, Gold Bricks, 1978. Installation view, Tony Shafrazi Gallery, Tehran, the gallery’s first and only exhibition, which opened on 31 October 1978. About a thousand gilded bricks; the work was stolen from storage after the Revolution and is lost. Photo: Tony Shafrazi.",
+   "caption_short": "Gold Bricks, 1978",
    "credit": "Tony Shafrazi",
    "dl": {
     "jpg": {
@@ -2028,17 +2028,17 @@
   },
   {
    "uid": "52a0b99f06",
-   "file": "armenian-pavilion-one-thousand-gold-bricks-single-stack-52a0b99f06",
+   "file": "armenian-pavilion-gold-bricks-single-stack-52a0b99f06",
    "key": "press/52a0b99f06",
    "w": 3244,
    "h": 6438,
    "section": "archive",
-   "title": "One Thousand Gold Bricks, single stack",
+   "title": "Gold Bricks, single stack",
    "artist": "Zadik Zadikian",
    "date": "1978",
    "materials": "Plaster and 24-karat gold leaf",
-   "caption": "Zadik Zadikian, One Thousand Gold Bricks (single stack), 1978. Plaster and 24-karat gold leaf. Tony Shafrazi Gallery, Tehran.",
-   "caption_short": "",
+   "caption": "Zadik Zadikian, Gold Bricks (single stack), 1978. Tony Shafrazi Gallery, Tehran. Courtesy Zadik Zadikian Studio.",
+   "caption_short": "Gold Bricks, 1978",
    "credit": "",
    "dl": {
     "jpg": {
@@ -2061,9 +2061,9 @@
    "title": "Zadik, Aram, Made in USA (Aspet)",
    "artist": "",
    "date": "2025",
-   "materials": "",
-   "caption": "Zadik Zadikian and son Aram Zadikian beside Made in USA (Aspet), Independent Art Fair, NY, 2025",
-   "caption_short": "",
+   "materials": "Plaster and gold leaf",
+   "caption": "Zadik Zadikian and his son Aram Zadikian beside Made in USA (Aspet), 2025, Independent 20th Century, New York, 2025.",
+   "caption_short": "Zadik and Aram Zadikian with Made in USA (Aspet), 2025",
    "credit": "",
    "dl": {
     "jpg": {
@@ -2088,7 +2088,7 @@
    "date": "c. 1981",
    "materials": "",
    "caption": "Zadik Zadikian with his column of white bricks, c. 1981. Reproduced from the Champions catalogue. Photographer unknown.",
-   "caption_short": "",
+   "caption_short": "Zadik Zadikian with a column of white bricks, c. 1981",
    "credit": "Photographer unknown",
    "dl": {
     "jpg": {

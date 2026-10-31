@@ -7,23 +7,25 @@
 //   npm run press:kit                    the default folder
 //   PRESS_KIT=<dir> npm run press:kit    another one
 //
-// Each section becomes HTML (marked). "[TO CONFIRM]" and "[PLACEHOLDER …]" notes
-// are kept and marked, so they stand out on the review build; the page hides
-// the whole kit on armenianpavilion.org until `live` below is true.
+// Each section becomes HTML (marked). Open points ("[TO CONFIRM]", "[PLACEHOLDER …]")
+// are left out (press-kit-clean.mjs); the page hides the whole kit on
+// armenianpavilion.org while `live` below is false.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { marked } from 'marked';
 import YAML from 'yaml';
+import { publishable } from './press-kit-clean.mjs';
 
 const DIR = process.env.PRESS_KIT ||
   join(homedir(), 'Library/CloudStorage/Dropbox-AZStudios/Else Run/projects/the_studio/public_relations/press_kit');
 const OUT = 'src/amp/data/press_kit.cljs';
 const PDFS = 'build/press-release-pdfs.json';   // written by build/press-release-pdf.mjs
 
-// Shown on armenianpavilion.org only once Aram has the press office's approval.
-const LIVE = false;
+// Shown on armenianpavilion.org: Aram said go live on 31 Oct 2026. Set false to
+// keep a kit to the review build (workers.dev) only.
+const LIVE = true;
 
 // Films whose download is held back (streaming is unaffected).
 const HELD = ['tesa-41-september'];
@@ -59,7 +61,7 @@ const plain = (s) => s.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g,
 function read(name, lang) {
   const f = join(DIR, lang === 'it' ? `${name}.it.md` : `${name}.md`);
   if (!existsSync(f)) return null;
-  let src = readFileSync(f, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  let src = publishable(readFileSync(f, 'utf8').replace(/<!--[\s\S]*?-->/g, ''));
   let fm = {};
   const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
   if (m) { fm = YAML.parse(m[1]) || {}; src = src.slice(m[0].length); }
