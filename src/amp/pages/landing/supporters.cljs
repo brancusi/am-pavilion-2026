@@ -20,7 +20,7 @@
              (d/div {:class "ap-wrap"}
                     (d/div {:class "border-t border-rule pt-12 grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-12"}
                            (d/div
-                            (d/p {:class "ap-label ap-muted m-0 mb-1"} "Armenia Pavilion")
+                            (d/p {:class "ap-label ap-muted m-0 mb-1"} "Armenian Pavilion")
                             (d/h2 {:class "ap-display-l"} "With the support of"))
                            (d/div {:class "flex flex-col gap-6"}
                                   (d/p {:class "ap-h1 m-0"} lead)

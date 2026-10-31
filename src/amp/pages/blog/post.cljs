@@ -55,7 +55,7 @@
     (hooks/use-effect
      [post]
      (set! (.-title js/document)
-           (str (if post (:title post) "Post not found") " · Armenia Pavilion")))
+           (str (if post (:title post) "Post not found") " · Armenian Pavilion")))
     (if post
       (let [{:keys [title date author kind tone cover-image cover-ar component]} post
             nxt (next-post slug)]

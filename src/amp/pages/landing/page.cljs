@@ -124,7 +124,7 @@
                                           (<> (d/rect {:x 3 :y 2 :width 3.5 :height 12})
                                               (d/rect {:x 9.5 :y 2 :width 3.5 :height 12}))))))
                 (d/div {:class "ap-hero__body"}
-                       (d/p {:class "ap-label m-0"} "Armenia Pavilion · Biennale Arte 2026")
+                       (d/p {:class "ap-label m-0"} "Armenian Pavilion · Biennale Arte 2026")
                        (d/h1 {:class "ap-display-xl ap-hero__title"} "Zadik Zadikian: The Studio")
                        (d/p {:class "ap-lede max-w-[34ch]"}
                             "Pigmented plaster units, cast and set by hand in Tesa 41 at the Arsenale.")

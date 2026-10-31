@@ -1,7 +1,7 @@
 (ns amp.styles
-  "Centralized design-token system for the Armenia Pavilion 2026 site.
+  "Centralized design-token system for the Armenian Pavilion 2026 site.
 
-   Values follow the Armenia Pavilion design system: colours are the CSS
+   Values follow the Armenian Pavilion design system: colours are the CSS
    custom properties declared in resources/css/tailwind.css (light on :root,
    dark on .dark), exposed to Tailwind as `paper`, `ink`, `red`, `blue`…;
    type is Jost (display), Newsreader (body) and IBM Plex Mono (labels).

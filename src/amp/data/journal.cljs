@@ -10,7 +10,7 @@
   [{:slug        "seven-steps-to-heaven"
     :title       "The Making of Seven Steps to Heaven"
     :date        "2026-10-30"
-    :author      "Armenia Pavilion Team"
+    :author      "Armenian Pavilion Team"
     :kind        "Process"
     :tone        :turquoise
     :summary     "Seven steps against the corner of two walls, rising to nowhere. From a pen sketch with a question on it, through nine versions and ten proportions of rise to run, to a stair carried by hand into Tesa 41."
@@ -20,7 +20,7 @@
    {:slug        "making-a-flag"
     :title       "Making a Flag"
     :date        "2026-10-30"
-    :author      "Armenia Pavilion Team"
+    :author      "Armenian Pavilion Team"
     :kind        "Studio"
     :tone        :red
     :summary     "Why would the Armenian Pavilion make an Italian flag? On Jasper Johns and things the mind already knows, three colours with no official meaning, an Armenian anthem that began with an Italian girl sewing a flag, and a flag that stands on its own feet."
@@ -30,7 +30,7 @@
    {:slug        "carried-by-hand"
     :title       "Carried by Hand"
     :date        "2026-09-03"
-    :author      "Armenia Pavilion Team"
+    :author      "Armenian Pavilion Team"
     :kind        "Venice"
     :tone        :blue
     :summary     "In Venice every delivery ends on foot, one bridge at a time. On the realities of logistics in a city that resists the car, a summer away for visas, and the studio's return to full production."
@@ -40,7 +40,7 @@
    {:slug        "the-studio-play-balance"
     :title       "The Studio: Play, Balance, and the Life of Form"
     :date        "2026-03-15"
-    :author      "Armenia Pavilion Team"
+    :author      "Armenian Pavilion Team"
     :kind        "Process"
     :tone        :red
     :summary     "What happens when sculpture begins not with monumentality, but with a single, beautiful unit? At the heart of Zadik Zadikian’s work is a small plaster block—a tool for improvisation, rhythm, and thinking through form by touch."
@@ -50,7 +50,7 @@
    {:slug        "blue-yellow-maquette"
     :title       "Blue Yellow Blue Yellow"
     :date        "2026-02-14"
-    :author      "Armenia Pavilion Team"
+    :author      "Armenian Pavilion Team"
     :kind        "Maquette"
     :tone        :turquoise
     :summary     "Zadik Zadikian is developing a full-scale maquette of a new sculptural variation—an architectural test of structure, proportion, and chromatic rhythm."

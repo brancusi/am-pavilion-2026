@@ -1,5 +1,5 @@
 (ns amp.pages.water-taxi.page
-  "Water-taxi directions from Hotel Gabrielli to the Armenia Pavilion.
+  "Water-taxi directions from Hotel Gabrielli to the Armenian Pavilion.
    A single-purpose cut of the Visit page's directions: one departure
    point, one mode of transport, one route — with an animated Mapbox
    route and instructions to hand to the driver.
@@ -102,7 +102,7 @@
         :contact-third    "Third contact · Aram"
         :contact-third-note "English only."
         ;; Route map
-        :route-eyebrow    "Hotel Gabrielli → Armenia Pavilion"
+        :route-eyebrow    "Hotel Gabrielli → Armenian Pavilion"
         :route-title      "The Route"
         :route-body       ["West along the Bacino, then north through "
                            [:em "Rio della Pietà"] ", " [:em "Rio di Sant’Antonin"] " and " [:em "Rio di Santa Giustina"]
@@ -115,12 +115,12 @@
         :driver-title     "Driver Instructions"
         :driver-intro     "Show this section to your driver."
         :driver-heading   "Water Taxi Instructions"
-        :driver-subtitle  "Hotel Gabrielli → Armenia Pavilion · Arsenale Militare"
-        :authorized       ["This water taxi is authorized to enter the military Arsenale because it is carrying guests visiting the Armenia Pavilion."
-                           "The Marine Office has approved access for water taxis bringing visitors to the Armenia Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
+        :driver-subtitle  "Hotel Gabrielli → Armenian Pavilion · Arsenale Militare"
+        :authorized       ["This water taxi is authorized to enter the military Arsenale because it is carrying guests visiting the Armenian Pavilion."
+                           "The Marine Office has approved access for water taxis bringing visitors to the Armenian Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
         :before-title     "Before entering the Arsenale"
         :before-body      "Call Julda and say:"
-        :before-quote     "“I am arriving with a visitor for the Armenia Pavilion.”"
+        :before-quote     "“I am arriving with a visitor for the Armenian Pavilion.”"
         :before-primary   "Julda · primary contact"
         :before-secondary "Luca · secondary contact"
         :before-note      "If Julda does not answer, call Luca."
@@ -135,7 +135,7 @@
                            "Continue north along Rio di Santa Giustina and exit into the North Lagoon."
                            "Turn east and follow the shore past the Celestia stop to the Arsenale."
                            "Enter through the only permitted entrance: Galeazze – Rio delle Galeazze."
-                           "Continue south along Rio delle Galeazze to the Armenia Pavilion landing, beside Tesa 41."]}})
+                           "Continue south along Rio delle Galeazze to the Armenian Pavilion landing, beside Tesa 41."]}})
 
 ;; ── Sections ───────────────────────────────────────────────────────────────
 
@@ -170,7 +170,7 @@
                                 :labels-url mc/water-taxi-data-url}
                           :legend [[:water (if (= lang :it) "Percorso del taxi" "Taxi route")]
                                    [:start "Hotel Gabrielli"]
-                                   [:pav (if (= lang :it) "Padiglione Armenia" "Armenia Pavilion")]]
+                                   [:pav (if (= lang :it) "Padiglione Armenia" "Armenian Pavilion")]]
                           :caption (:map-caption c)})))))
 
 (defnc driver [{:keys [c lang]}]

@@ -9,7 +9,7 @@
    [helix.dom :as d]))
 
 (def ^:private social-profiles
-  "Armenia Pavilion 2026 social accounts."
+  "Armenian Pavilion 2026 social accounts."
   [{:platform "Instagram"
     :href     "https://www.instagram.com/armenia.pavilion.2026/"
     :icon     InstagramIcon}

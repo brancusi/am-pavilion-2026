@@ -1,6 +1,6 @@
 (ns amp.pages.delivery.page
   "Istruzioni per le consegne — Italian-language delivery instructions for
-   couriers and suppliers bringing materials to the Armenia Pavilion
+   couriers and suppliers bringing materials to the Armenian Pavilion
    (Tesa 41, Arsenale Militare). Two options: via acqua (boat) and a piedi
    (on foot). Lives at /delivery; not linked from the main nav."
   (:require
