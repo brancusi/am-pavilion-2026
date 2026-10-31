@@ -11,13 +11,14 @@
                     :pdf-title nil
                     :earlier []}
        :release {:title "The Studio: the final weeks"
-                 :html "<h2>Zadik Zadikian: The Studio. The final weeks</h2>\n<p>Venice, 31 October 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.</p>\n<p>In 1974 Richard Serra titled one of his first installation drawings <em>Zadikians</em>, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra&#39;s studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion&#39;s curator.</p>\n<p>Zadikian went on to open both of Shafrazi&#39;s galleries. On 31 October 1978, <em>Gold Bricks</em> opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery&#39;s first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, <em>Zadik Zadikian: Sculptures</em> opened Tony Shafrazi Gallery in New York.</p>\n<p>In Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.</p>\n<p>&quot;I leave spaces between my blocks, my units, so that they can breathe,&quot; Zadikian says.</p>\n<p>The Venice project follows <em>Path to Nine</em> (2024), 999 gilded plaster ingots in eighteen stacks, shown in <em>Solid Gold</em> at the Brooklyn Museum (16 November 2024 – 6 July 2025).</p>\n<p><em>In Minor Keys</em>, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as &quot;seeing and studying art in the making.&quot;</p>\n<p><strong>Closing.</strong> <mark class=\"ap-kit__flag\">PLACEHOLDER, NOT CONFIRMED: Saturday 21 November 2026, open studio and final restack with Zadik Zadikian and Tony Shafrazi. Time and details to follow.</mark> The exhibition&#39;s last day is Sunday 22 November.</p>\n<h3>Visiting</h3>\n<ul>\n<li><strong>Venue:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Dates:</strong> until 22 November 2026</li>\n<li><strong>Hours:</strong> Tuesday to Sunday, 10:00–17:30; closed Mondays <mark class=\"ap-kit__flag\">TO CONFIRM</mark></li>\n<li><strong>On foot:</strong> about eight minutes from the crossing at the Piraeus Lion, through the Arsenale</li>\n<li><strong>By water taxi:</strong> from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)</li>\n</ul>\n<p>Journalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.</p>\n<h3>Credits</h3>\n<ul>\n<li><strong>Artist:</strong> Zadik Zadikian</li>\n<li><strong>Curators:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissioner:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist&#39;s assistants from the Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>With the support of</strong> The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family</p>\n<h3>Press contact</h3>\n<p>Aram Zadikian, Director, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press</p>\n<h3>Notes to editors</h3>\n<ul>\n<li>Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.</li>\n<li>The 61st International Art Exhibition, <em>In Minor Keys</em>, runs from 9 May to 22 November 2026.</li>\n<li>Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
-                 :text "Zadik Zadikian: The Studio. The final weeks\n\nVenice, 31 October 2026\n\nZadik Zadikian: The Studio, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.\n\nIn 1974 Richard Serra titled one of his first installation drawings Zadikians, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra's studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion's curator.\n\nZadikian went on to open both of Shafrazi's galleries. On 31 October 1978, Gold Bricks opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery's first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, Zadik Zadikian: Sculptures opened Tony Shafrazi Gallery in New York.\n\nIn Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.\n\n\"I leave spaces between my blocks, my units, so that they can breathe,\" Zadikian says.\n\nThe Venice project follows Path to Nine (2024), 999 gilded plaster ingots in eighteen stacks, shown in Solid Gold at the Brooklyn Museum (16 November 2024 – 6 July 2025).\n\nIn Minor Keys, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as \"seeing and studying art in the making.\"\n\nClosing. [PLACEHOLDER, NOT CONFIRMED: Saturday 21 November 2026, open studio and final restack with Zadik Zadikian and Tony Shafrazi. Time and details to follow.] The exhibition's last day is Sunday 22 November.\n\nVisiting\n\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Dates: until 22 November 2026\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays [TO CONFIRM]\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)\n\nJournalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.\n\nCredits\n\n- Artist: Zadik Zadikian\n- Curators: Tony Shafrazi, Tina Chakarian\n- Commissioner: Svetlana Sahakyan\n- Studio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nWith the support of The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family\n\nPress contact\n\nAram Zadikian, Director, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press\n\nNotes to editors\n\n- Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.\n- The 61st International Art Exhibition, In Minor Keys, runs from 9 May to 22 November 2026.\n- Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
+                 :html "<h1>Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. The final weeks</h2>\n<p>Venice, 31 October 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.</p>\n<p>In 1974 Richard Serra titled one of his first installation drawings <em>Zadikians</em>, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra&#39;s studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion&#39;s curator.</p>\n<p>Zadikian went on to open both of Shafrazi&#39;s galleries. On 31 October 1978, <em>Gold Bricks</em> opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery&#39;s first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, <em>Zadik Zadikian: Sculptures</em> opened Tony Shafrazi Gallery in New York.</p>\n<p>In Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.</p>\n<p>&quot;I leave spaces between my blocks, my units, so that they can breathe,&quot; Zadikian says.</p>\n<p>The Venice project follows <em>Path to Nine</em> (2024), 999 gilded plaster ingots in eighteen stacks, shown in <em>Solid Gold</em> at the Brooklyn Museum (16 November 2024 – 6 July 2025).</p>\n<p><em>In Minor Keys</em>, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as &quot;seeing and studying art in the making.&quot;</p>\n<p><strong>Closing.</strong> <mark class=\"ap-kit__flag\">PLACEHOLDER, NOT CONFIRMED: Saturday 21 November 2026, open studio and final restack with Zadik Zadikian and Tony Shafrazi. Time and details to follow.</mark> The exhibition&#39;s last day is Sunday 22 November.</p>\n<h3>Visiting</h3>\n<ul>\n<li><strong>Venue:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Dates:</strong> until 22 November 2026</li>\n<li><strong>Hours:</strong> Tuesday to Sunday, 10:00–17:30; closed Mondays <mark class=\"ap-kit__flag\">TO CONFIRM</mark></li>\n<li><strong>On foot:</strong> about eight minutes from the crossing at the Piraeus Lion, through the Arsenale</li>\n<li><strong>By water taxi:</strong> from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)</li>\n</ul>\n<p>Journalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.</p>\n<h3>Credits</h3>\n<ul>\n<li><strong>Artist:</strong> Zadik Zadikian</li>\n<li><strong>Curators:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissioner:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist&#39;s assistants from the Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>With the support of</strong> The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family</p>\n<h3>Press contact</h3>\n<p>Aram Zadikian, Director, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press</p>\n<h3>Notes to editors</h3>\n<ul>\n<li>Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.</li>\n<li>The 61st International Art Exhibition, <em>In Minor Keys</em>, runs from 9 May to 22 November 2026.</li>\n<li>Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                 :text "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia\n\nZadik Zadikian: The Studio. The final weeks\n\nVenice, 31 October 2026\n\nZadik Zadikian: The Studio, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.\n\nIn 1974 Richard Serra titled one of his first installation drawings Zadikians, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra's studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion's curator.\n\nZadikian went on to open both of Shafrazi's galleries. On 31 October 1978, Gold Bricks opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery's first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, Zadik Zadikian: Sculptures opened Tony Shafrazi Gallery in New York.\n\nIn Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.\n\n\"I leave spaces between my blocks, my units, so that they can breathe,\" Zadikian says.\n\nThe Venice project follows Path to Nine (2024), 999 gilded plaster ingots in eighteen stacks, shown in Solid Gold at the Brooklyn Museum (16 November 2024 – 6 July 2025).\n\nIn Minor Keys, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as \"seeing and studying art in the making.\"\n\nClosing. [PLACEHOLDER, NOT CONFIRMED: Saturday 21 November 2026, open studio and final restack with Zadik Zadikian and Tony Shafrazi. Time and details to follow.] The exhibition's last day is Sunday 22 November.\n\nVisiting\n\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Dates: until 22 November 2026\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays [TO CONFIRM]\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)\n\nJournalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.\n\nCredits\n\n- Artist: Zadik Zadikian\n- Curators: Tony Shafrazi, Tina Chakarian\n- Commissioner: Svetlana Sahakyan\n- Studio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nWith the support of The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family\n\nPress contact\n\nAram Zadikian, Director, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press\n\nNotes to editors\n\n- Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.\n- The 61st International Art Exhibition, In Minor Keys, runs from 9 May to 22 November 2026.\n- Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
                  :date "2026-10-31"
                  :pdf-title "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Zadik Zadikian: The Studio, the final weeks"
                  :earlier [{:title "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia to be represented by Zadik Zadikian"
-                            :date "2026-02-12"
+                            :date "12 February 2026"
                             :url nil}]
+                 :date-text "31 October 2026"
                  :pdfs {:en "https://media.armenianpavilion.org/press/kit/armenian-pavilion-press-release-2026-10-31-en-7cd63992.pdf"
                         :it "https://media.armenianpavilion.org/press/kit/armenian-pavilion-press-release-2026-10-31-it-d7841b0c.pdf"}}
        :facts {:title "Fact sheet"
@@ -315,13 +316,14 @@
                     :pdf-title nil
                     :earlier []}
        :release {:title "The Studio: le ultime settimane"
-                 :html "<h2>Zadik Zadikian: The Studio. Le ultime settimane</h2>\n<p>Venezia, 31 ottobre 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell&#39;Arsenale Militare, aperto da martedì a domenica.</p>\n<p>Nel 1974 Richard Serra intitolò <em>Zadikians</em> uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L&#39;opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.</p>\n<p>Fu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran <em>Gold Bricks</em>: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L&#39;anno seguente, dal 16 ottobre al 5 novembre 1979, <em>Zadik Zadikian: Sculptures</em> inaugurò la Tony Shafrazi Gallery di New York.</p>\n<p>A Venezia l&#39;artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell&#39;Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall&#39;inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.</p>\n<p>«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.</p>\n<p>Il progetto veneziano segue <em>Path to Nine</em> (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra <em>Solid Gold</em> al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).</p>\n<p><em>In Minor Keys</em>, la 61. Esposizione Internazionale d&#39;Arte ideata da Koyo Kouoh, mette al centro l&#39;ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l&#39;arte nel suo farsi».</p>\n<p><strong>Chiusura.</strong> <mark class=\"ap-kit__flag\">SEGNAPOSTO, DA CONFERMARE: sabato 21 novembre 2026, studio aperto e ultima ricomposizione delle pile alla presenza di Zadik Zadikian e Tony Shafrazi. Orario e dettagli a seguire.</mark> L&#39;ultimo giorno di apertura è domenica 22 novembre.</p>\n<h3>Informazioni per la visita</h3>\n<ul>\n<li><strong>Sede:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Date:</strong> fino al 22 novembre 2026</li>\n<li><strong>Orari:</strong> da martedì a domenica, 10:00–17:30; lunedì chiuso <mark class=\"ap-kit__flag\">DA CONFERMARE</mark></li>\n<li><strong>A piedi:</strong> circa otto minuti dal Leone del Pireo, attraverso l&#39;Arsenale</li>\n<li><strong>In taxi acqueo:</strong> dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)</li>\n</ul>\n<p>I giornalisti possono prenotare una visita allo studio o un&#39;intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.</p>\n<h3>Crediti</h3>\n<ul>\n<li><strong>Artista:</strong> Zadik Zadikian</li>\n<li><strong>Curatori:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissaria:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell&#39;Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>Con il sostegno di</strong> The Shafrazian Foundation; Armenia Fund; Ministero dell&#39;Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia</p>\n<h3>Contatto stampa</h3>\n<p>Aram Zadikian, Direttore, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press</p>\n<h3>Note per la redazione</h3>\n<ul>\n<li>Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.</li>\n<li>La 61. Esposizione Internazionale d&#39;Arte, <em>In Minor Keys</em>, è aperta dal 9 maggio al 22 novembre 2026.</li>\n<li>Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
-                 :text "Zadik Zadikian: The Studio. Le ultime settimane\n\nVenezia, 31 ottobre 2026\n\nZadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, aperto da martedì a domenica.\n\nNel 1974 Richard Serra intitolò Zadikians uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L'opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.\n\nFu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran Gold Bricks: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L'anno seguente, dal 16 ottobre al 5 novembre 1979, Zadik Zadikian: Sculptures inaugurò la Tony Shafrazi Gallery di New York.\n\nA Venezia l'artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell'Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall'inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.\n\n«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.\n\nIl progetto veneziano segue Path to Nine (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra Solid Gold al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).\n\nIn Minor Keys, la 61. Esposizione Internazionale d'Arte ideata da Koyo Kouoh, mette al centro l'ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l'arte nel suo farsi».\n\nChiusura. [SEGNAPOSTO, DA CONFERMARE: sabato 21 novembre 2026, studio aperto e ultima ricomposizione delle pile alla presenza di Zadik Zadikian e Tony Shafrazi. Orario e dettagli a seguire.] L'ultimo giorno di apertura è domenica 22 novembre.\n\nInformazioni per la visita\n\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Date: fino al 22 novembre 2026\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso [DA CONFERMARE]\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)\n\nI giornalisti possono prenotare una visita allo studio o un'intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.\n\nCrediti\n\n- Artista: Zadik Zadikian\n- Curatori: Tony Shafrazi, Tina Chakarian\n- Commissaria: Svetlana Sahakyan\n- Studio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nCon il sostegno di The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia\n\nContatto stampa\n\nAram Zadikian, Direttore, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press\n\nNote per la redazione\n\n- Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.\n- La 61. Esposizione Internazionale d'Arte, In Minor Keys, è aperta dal 9 maggio al 22 novembre 2026.\n- Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
+                 :html "<h1>Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. Le ultime settimane</h2>\n<p>Venezia, 31 ottobre 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell&#39;Arsenale Militare, aperto da martedì a domenica.</p>\n<p>Nel 1974 Richard Serra intitolò <em>Zadikians</em> uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L&#39;opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.</p>\n<p>Fu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran <em>Gold Bricks</em>: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L&#39;anno seguente, dal 16 ottobre al 5 novembre 1979, <em>Zadik Zadikian: Sculptures</em> inaugurò la Tony Shafrazi Gallery di New York.</p>\n<p>A Venezia l&#39;artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell&#39;Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall&#39;inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.</p>\n<p>«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.</p>\n<p>Il progetto veneziano segue <em>Path to Nine</em> (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra <em>Solid Gold</em> al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).</p>\n<p><em>In Minor Keys</em>, la 61. Esposizione Internazionale d&#39;Arte ideata da Koyo Kouoh, mette al centro l&#39;ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l&#39;arte nel suo farsi».</p>\n<p><strong>Chiusura.</strong> <mark class=\"ap-kit__flag\">SEGNAPOSTO, DA CONFERMARE: sabato 21 novembre 2026, studio aperto e ultima ricomposizione delle pile alla presenza di Zadik Zadikian e Tony Shafrazi. Orario e dettagli a seguire.</mark> L&#39;ultimo giorno di apertura è domenica 22 novembre.</p>\n<h3>Informazioni per la visita</h3>\n<ul>\n<li><strong>Sede:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Date:</strong> fino al 22 novembre 2026</li>\n<li><strong>Orari:</strong> da martedì a domenica, 10:00–17:30; lunedì chiuso <mark class=\"ap-kit__flag\">DA CONFERMARE</mark></li>\n<li><strong>A piedi:</strong> circa otto minuti dal Leone del Pireo, attraverso l&#39;Arsenale</li>\n<li><strong>In taxi acqueo:</strong> dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)</li>\n</ul>\n<p>I giornalisti possono prenotare una visita allo studio o un&#39;intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.</p>\n<h3>Crediti</h3>\n<ul>\n<li><strong>Artista:</strong> Zadik Zadikian</li>\n<li><strong>Curatori:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissaria:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell&#39;Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>Con il sostegno di</strong> The Shafrazian Foundation; Armenia Fund; Ministero dell&#39;Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia</p>\n<h3>Contatto stampa</h3>\n<p>Aram Zadikian, Direttore, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press</p>\n<h3>Note per la redazione</h3>\n<ul>\n<li>Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.</li>\n<li>La 61. Esposizione Internazionale d&#39;Arte, <em>In Minor Keys</em>, è aperta dal 9 maggio al 22 novembre 2026.</li>\n<li>Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                 :text "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia\n\nZadik Zadikian: The Studio. Le ultime settimane\n\nVenezia, 31 ottobre 2026\n\nZadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, aperto da martedì a domenica.\n\nNel 1974 Richard Serra intitolò Zadikians uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L'opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.\n\nFu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran Gold Bricks: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L'anno seguente, dal 16 ottobre al 5 novembre 1979, Zadik Zadikian: Sculptures inaugurò la Tony Shafrazi Gallery di New York.\n\nA Venezia l'artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell'Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall'inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.\n\n«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.\n\nIl progetto veneziano segue Path to Nine (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra Solid Gold al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).\n\nIn Minor Keys, la 61. Esposizione Internazionale d'Arte ideata da Koyo Kouoh, mette al centro l'ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l'arte nel suo farsi».\n\nChiusura. [SEGNAPOSTO, DA CONFERMARE: sabato 21 novembre 2026, studio aperto e ultima ricomposizione delle pile alla presenza di Zadik Zadikian e Tony Shafrazi. Orario e dettagli a seguire.] L'ultimo giorno di apertura è domenica 22 novembre.\n\nInformazioni per la visita\n\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Date: fino al 22 novembre 2026\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso [DA CONFERMARE]\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)\n\nI giornalisti possono prenotare una visita allo studio o un'intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.\n\nCrediti\n\n- Artista: Zadik Zadikian\n- Curatori: Tony Shafrazi, Tina Chakarian\n- Commissaria: Svetlana Sahakyan\n- Studio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nCon il sostegno di The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia\n\nContatto stampa\n\nAram Zadikian, Direttore, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+39 344 5697130 (WhatsApp)\narmenianpavilion.org/press\n\nNote per la redazione\n\n- Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.\n- La 61. Esposizione Internazionale d'Arte, In Minor Keys, è aperta dal 9 maggio al 22 novembre 2026.\n- Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
                  :date "2026-10-31"
                  :pdf-title "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Zadik Zadikian: The Studio, le ultime settimane"
                  :earlier [{:title "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Zadik Zadikian rappresenterà la Repubblica di Armenia"
-                            :date "2026-02-12"
+                            :date "12 febbraio 2026"
                             :url nil}]
+                 :date-text "31 ottobre 2026"
                  :pdfs {:en "https://media.armenianpavilion.org/press/kit/armenian-pavilion-press-release-2026-10-31-en-7cd63992.pdf"
                         :it "https://media.armenianpavilion.org/press/kit/armenian-pavilion-press-release-2026-10-31-it-d7841b0c.pdf"}}
        :facts {:title "Scheda informativa"
@@ -343,7 +345,7 @@
                             "eff02ea41a"]
                    :html "<p>Negli anni Settanta Zadik Zadikian è stato assistente di Richard Serra. A Venezia gli assistenti sono suoi: sette studenti dell&#39;Accademia di Belle Arti di Venezia, che lavorano nel Padiglione della Repubblica di Armenia in base a una convenzione con l&#39;Accademia.</p>\n<p>Sono loro a svolgere il lavoro quotidiano dello studio, davanti al pubblico, dal martedì alla domenica. Preparano e colano il gesso, pigmentano le unità e le carteggiano. Tagliano le forme in EPS, stampano in resina alcuni elementi e lavorano il legno. Ogni pezzo deve poi entrare nella Tesa 41 a mano. A ottobre la squadra ha trasportato lungo la fondamenta, un segmento alla volta, <em>Seven Steps to Heaven</em>, una scala di sette gradini che non porta da nessuna parte; in studio l&#39;ha poi rasata, carteggiata e dipinta di bianco.</p>\n<p>La squadra parla anche di ciò che sta facendo, e lo studio riprende queste conversazioni. Davanti alla scala un membro della squadra ha osservato che una scultura così, priva di punti di riferimento, si riempie di chi la guarda. Per un altro è un viaggio: &quot;C&#39;è un inizio, c&#39;è una fine, ma la fine non è così chiara.&quot;</p>\n<p>Zadikian conosce questo lavoro dall&#39;altra parte. Nel 1974 Serra intitolò uno dei suoi disegni installativi <em>Zadikians</em>, dal nome dell&#39;assistente che aveva contribuito a realizzarlo. Cinquant&#39;anni dopo, la domanda su chi faccia l&#39;opera fa parte della vita quotidiana del Padiglione.</p>\n<p>È possibile intervistare gli studenti, in italiano o in inglese, fino alla chiusura del Padiglione, domenica 22 novembre.</p>\n"}}
   :images [{:uid "488ef42b59"
-            :file "armenia-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59"
+            :file "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59"
             :key "press/488ef42b59"
             :w 6240
             :h 4160
@@ -356,7 +358,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "e3f1da5d21"
-            :file "armenia-pavilion-the-studio-installation-view-e3f1da5d21"
+            :file "armenian-pavilion-the-studio-installation-view-e3f1da5d21"
             :key "press/e3f1da5d21"
             :w 12243
             :h 5638
@@ -369,7 +371,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "05bb6e78bc"
-            :file "armenia-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc"
+            :file "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc"
             :key "press/05bb6e78bc"
             :w 1728
             :h 2304
@@ -382,7 +384,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "c29e5dffe9"
-            :file "armenia-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9"
+            :file "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9"
             :key "press/c29e5dffe9"
             :w 6240
             :h 4160
@@ -395,7 +397,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "a4f1411376"
-            :file "armenia-pavilion-big-red-bed-where-dreams-come-true-a4f1411376"
+            :file "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376"
             :key "press/a4f1411376"
             :w 6146
             :h 3777
@@ -408,7 +410,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "e1b45df3f9"
-            :file "armenia-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9"
+            :file "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9"
             :key "press/e1b45df3f9"
             :w 3564
             :h 4289
@@ -421,7 +423,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "2dca28bc4a"
-            :file "armenia-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a"
+            :file "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a"
             :key "press/2dca28bc4a"
             :w 12069
             :h 7980
@@ -434,7 +436,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "69a51760b0"
-            :file "armenia-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0"
+            :file "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0"
             :key "press/69a51760b0"
             :w 4320
             :h 5760
@@ -447,7 +449,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "f169adfcb7"
-            :file "armenia-pavilion-big-red-bed-rendering-f169adfcb7"
+            :file "armenian-pavilion-big-red-bed-rendering-f169adfcb7"
             :key "press/f169adfcb7"
             :w 6144
             :h 11008
@@ -460,7 +462,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "3af3c2fa5f"
-            :file "armenia-pavilion-the-studio-rendering-3af3c2fa5f"
+            :file "armenian-pavilion-the-studio-rendering-3af3c2fa5f"
             :key "press/3af3c2fa5f"
             :w 7168
             :h 9600
@@ -473,7 +475,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "b0b6fdec92"
-            :file "armenia-pavilion-italian-flags-rendering-b0b6fdec92"
+            :file "armenian-pavilion-italian-flags-rendering-b0b6fdec92"
             :key "press/b0b6fdec92"
             :w 3584
             :h 4800
@@ -486,7 +488,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "f64bf7f0b6"
-            :file "armenia-pavilion-italian-flags-rendering-f64bf7f0b6"
+            :file "armenian-pavilion-italian-flags-rendering-f64bf7f0b6"
             :key "press/f64bf7f0b6"
             :w 3072
             :h 5504
@@ -499,7 +501,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "d55d66ba78"
-            :file "armenia-pavilion-armenian-flag-stack-drawing-d55d66ba78"
+            :file "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78"
             :key "press/d55d66ba78"
             :w 7424
             :h 9216
@@ -512,7 +514,7 @@
             :credit ""
             :artist ""}
            {:uid "f35e171351"
-            :file "armenia-pavilion-armenian-flag-stack-rendering-f35e171351"
+            :file "armenian-pavilion-armenian-flag-stack-rendering-f35e171351"
             :key "press/f35e171351"
             :w 7680
             :h 4320
@@ -525,7 +527,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "06087305db"
-            :file "armenia-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db"
+            :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db"
             :key "press/06087305db"
             :w 10112
             :h 6784
@@ -538,7 +540,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "9a6527c5e6"
-            :file "armenia-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6"
+            :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6"
             :key "press/9a6527c5e6"
             :w 6784
             :h 10112
@@ -551,7 +553,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "88efa5c0f4"
-            :file "armenia-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4"
+            :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4"
             :key "press/88efa5c0f4"
             :w 10112
             :h 6784
@@ -564,7 +566,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "f272623d8e"
-            :file "armenia-pavilion-7-steps-to-heaven-drawing-f272623d8e"
+            :file "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e"
             :key "press/f272623d8e"
             :w 3584
             :h 4800
@@ -577,7 +579,7 @@
             :credit ""
             :artist ""}
            {:uid "7aa979a667"
-            :file "armenia-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667"
+            :file "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667"
             :key "press/7aa979a667"
             :w 5056
             :h 3392
@@ -590,7 +592,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "6720f32e7a"
-            :file "armenia-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a"
+            :file "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a"
             :key "press/6720f32e7a"
             :w 5056
             :h 3392
@@ -603,7 +605,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "827f88dbc0"
-            :file "armenia-pavilion-untitled-gemini-3-nano-banana-pro-2026-10-22-09-827f88dbc0"
+            :file "armenian-pavilion-untitled-gemini-3-nano-banana-pro-2026-10-22-09-827f88dbc0"
             :key "press/827f88dbc0"
             :w 3584
             :h 4800
@@ -616,7 +618,7 @@
             :credit ""
             :artist ""}
            {:uid "bf3353f55a"
-            :file "armenia-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a"
+            :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a"
             :key "press/bf3353f55a"
             :w 5056
             :h 3392
@@ -629,7 +631,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "6d50531860"
-            :file "armenia-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860"
+            :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860"
             :key "press/6d50531860"
             :w 5056
             :h 3392
@@ -642,7 +644,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "13725fa570"
-            :file "armenia-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570"
+            :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570"
             :key "press/13725fa570"
             :w 5056
             :h 3392
@@ -655,7 +657,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "f29f48089f"
-            :file "armenia-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f"
+            :file "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f"
             :key "press/f29f48089f"
             :w 7680
             :h 4320
@@ -668,7 +670,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "05d81f0f74"
-            :file "armenia-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74"
+            :file "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74"
             :key "press/05d81f0f74"
             :w 7680
             :h 4320
@@ -681,7 +683,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "6c0a6a5afc"
-            :file "armenia-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc"
+            :file "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc"
             :key "press/6c0a6a5afc"
             :w 7680
             :h 4320
@@ -694,7 +696,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "44ad05c943"
-            :file "armenia-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943"
+            :file "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943"
             :key "press/44ad05c943"
             :w 5056
             :h 3392
@@ -707,7 +709,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "e584a0d978"
-            :file "armenia-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978"
+            :file "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978"
             :key "press/e584a0d978"
             :w 7680
             :h 4320
@@ -720,7 +722,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "1b232048c8"
-            :file "armenia-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8"
+            :file "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8"
             :key "press/1b232048c8"
             :w 7680
             :h 4320
@@ -733,7 +735,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "a4383d9f8e"
-            :file "armenia-pavilion-pigmented-plaster-unit-a4383d9f8e"
+            :file "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e"
             :key "press/a4383d9f8e"
             :w 4096
             :h 2731
@@ -746,7 +748,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "c51b00e769"
-            :file "armenia-pavilion-plaster-unit-in-its-mold-c51b00e769"
+            :file "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769"
             :key "press/c51b00e769"
             :w 6240
             :h 4160
@@ -759,7 +761,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "eff02ea41a"
-            :file "armenia-pavilion-white-units-on-the-workbench-eff02ea41a"
+            :file "armenian-pavilion-white-units-on-the-workbench-eff02ea41a"
             :key "press/eff02ea41a"
             :w 6240
             :h 4160
@@ -772,7 +774,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "81f39add05"
-            :file "armenia-pavilion-eps-foam-forms-in-the-workshop-81f39add05"
+            :file "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05"
             :key "press/81f39add05"
             :w 7680
             :h 4320
@@ -785,7 +787,7 @@
             :credit "Bibiana Juritz"
             :artist "Zadik Zadikian"}
            {:uid "8a84f0295c"
-            :file "armenia-pavilion-process-stills-2026-10-001-8a84f0295c"
+            :file "armenian-pavilion-process-stills-2026-10-001-8a84f0295c"
             :key "press/8a84f0295c"
             :w 7680
             :h 4320
@@ -798,7 +800,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "66126f601c"
-            :file "armenia-pavilion-process-stills-2026-10-002-66126f601c"
+            :file "armenian-pavilion-process-stills-2026-10-002-66126f601c"
             :key "press/66126f601c"
             :w 7680
             :h 4320
@@ -811,7 +813,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "444786d448"
-            :file "armenia-pavilion-the-italian-flag-in-the-studio-444786d448"
+            :file "armenian-pavilion-the-italian-flag-in-the-studio-444786d448"
             :key "press/444786d448"
             :w 7680
             :h 4320
@@ -824,7 +826,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "6868e95922"
-            :file "armenia-pavilion-process-stills-2026-10-004-6868e95922"
+            :file "armenian-pavilion-process-stills-2026-10-004-6868e95922"
             :key "press/6868e95922"
             :w 7680
             :h 4320
@@ -837,7 +839,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "e93b6a1a17"
-            :file "armenia-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17"
+            :file "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17"
             :key "press/e93b6a1a17"
             :w 7680
             :h 4320
@@ -850,7 +852,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "c41b5988cc"
-            :file "armenia-pavilion-process-stills-2026-10-027-c41b5988cc"
+            :file "armenian-pavilion-process-stills-2026-10-027-c41b5988cc"
             :key "press/c41b5988cc"
             :w 7680
             :h 4320
@@ -863,7 +865,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "3580e9b080"
-            :file "armenia-pavilion-process-stills-2026-10-005-3580e9b080"
+            :file "armenian-pavilion-process-stills-2026-10-005-3580e9b080"
             :key "press/3580e9b080"
             :w 7680
             :h 4320
@@ -876,7 +878,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "cf203e22ed"
-            :file "armenia-pavilion-process-stills-2026-10-006-cf203e22ed"
+            :file "armenian-pavilion-process-stills-2026-10-006-cf203e22ed"
             :key "press/cf203e22ed"
             :w 7680
             :h 4320
@@ -889,7 +891,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "58b122556e"
-            :file "armenia-pavilion-assembling-the-italian-flag-58b122556e"
+            :file "armenian-pavilion-assembling-the-italian-flag-58b122556e"
             :key "press/58b122556e"
             :w 7680
             :h 4320
@@ -902,7 +904,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "4061cedbde"
-            :file "armenia-pavilion-assembling-the-italian-flag-4061cedbde"
+            :file "armenian-pavilion-assembling-the-italian-flag-4061cedbde"
             :key "press/4061cedbde"
             :w 7680
             :h 4320
@@ -915,7 +917,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "82c998897e"
-            :file "armenia-pavilion-process-stills-2026-10-009-82c998897e"
+            :file "armenian-pavilion-process-stills-2026-10-009-82c998897e"
             :key "press/82c998897e"
             :w 7680
             :h 4320
@@ -928,7 +930,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "70dd92afbf"
-            :file "armenia-pavilion-process-stills-2026-10-010-70dd92afbf"
+            :file "armenian-pavilion-process-stills-2026-10-010-70dd92afbf"
             :key "press/70dd92afbf"
             :w 7680
             :h 4320
@@ -941,7 +943,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "b6052edd36"
-            :file "armenia-pavilion-process-stills-2026-10-011-b6052edd36"
+            :file "armenian-pavilion-process-stills-2026-10-011-b6052edd36"
             :key "press/b6052edd36"
             :w 7680
             :h 4320
@@ -954,7 +956,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "41bc72df87"
-            :file "armenia-pavilion-process-stills-2026-10-012-41bc72df87"
+            :file "armenian-pavilion-process-stills-2026-10-012-41bc72df87"
             :key "press/41bc72df87"
             :w 7680
             :h 4320
@@ -967,7 +969,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "8b3ff68d3c"
-            :file "armenia-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c"
+            :file "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c"
             :key "press/8b3ff68d3c"
             :w 7680
             :h 4320
@@ -980,7 +982,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "0f7f296e78"
-            :file "armenia-pavilion-painting-the-green-0f7f296e78"
+            :file "armenian-pavilion-painting-the-green-0f7f296e78"
             :key "press/0f7f296e78"
             :w 7680
             :h 4320
@@ -993,7 +995,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "2c3807ad70"
-            :file "armenia-pavilion-process-stills-2026-10-024-2c3807ad70"
+            :file "armenian-pavilion-process-stills-2026-10-024-2c3807ad70"
             :key "press/2c3807ad70"
             :w 7680
             :h 4320
@@ -1006,7 +1008,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "bc12377c2d"
-            :file "armenia-pavilion-process-stills-2026-10-025-bc12377c2d"
+            :file "armenian-pavilion-process-stills-2026-10-025-bc12377c2d"
             :key "press/bc12377c2d"
             :w 7680
             :h 4320
@@ -1019,7 +1021,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "8a0cadcb1a"
-            :file "armenia-pavilion-painting-the-red-8a0cadcb1a"
+            :file "armenian-pavilion-painting-the-red-8a0cadcb1a"
             :key "press/8a0cadcb1a"
             :w 7680
             :h 4320
@@ -1032,7 +1034,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "876f5435df"
-            :file "armenia-pavilion-process-stills-2026-10-013-876f5435df"
+            :file "armenian-pavilion-process-stills-2026-10-013-876f5435df"
             :key "press/876f5435df"
             :w 7680
             :h 4320
@@ -1045,7 +1047,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "78e5577dff"
-            :file "armenia-pavilion-process-stills-2026-10-022-78e5577dff"
+            :file "armenian-pavilion-process-stills-2026-10-022-78e5577dff"
             :key "press/78e5577dff"
             :w 7680
             :h 4320
@@ -1058,7 +1060,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "c5f50cd69e"
-            :file "armenia-pavilion-palettes-in-their-sleeves-c5f50cd69e"
+            :file "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e"
             :key "press/c5f50cd69e"
             :w 7680
             :h 4320
@@ -1071,7 +1073,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "8998ba35ae"
-            :file "armenia-pavilion-pigmenting-a-unit-8998ba35ae"
+            :file "armenian-pavilion-pigmenting-a-unit-8998ba35ae"
             :key "press/8998ba35ae"
             :w 7680
             :h 4320
@@ -1084,7 +1086,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "4b6de7dfcc"
-            :file "armenia-pavilion-palettes-in-their-sleeves-4b6de7dfcc"
+            :file "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc"
             :key "press/4b6de7dfcc"
             :w 7680
             :h 4320
@@ -1097,7 +1099,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "cc3071f65e"
-            :file "armenia-pavilion-colour-palettes-cc3071f65e"
+            :file "armenian-pavilion-colour-palettes-cc3071f65e"
             :key "press/cc3071f65e"
             :w 7680
             :h 4320
@@ -1110,7 +1112,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "250cb528da"
-            :file "armenia-pavilion-process-stills-2026-10-020-250cb528da"
+            :file "armenian-pavilion-process-stills-2026-10-020-250cb528da"
             :key "press/250cb528da"
             :w 7680
             :h 4320
@@ -1123,7 +1125,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "8919bfe877"
-            :file "armenia-pavilion-process-stills-2026-10-021-8919bfe877"
+            :file "armenian-pavilion-process-stills-2026-10-021-8919bfe877"
             :key "press/8919bfe877"
             :w 7680
             :h 4320
@@ -1136,7 +1138,7 @@
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "8c28815040"
-            :file "armenia-pavilion-yellow-space-8c28815040"
+            :file "armenian-pavilion-yellow-space-8c28815040"
             :key "press/8c28815040"
             :w 4094
             :h 6176
@@ -1149,7 +1151,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "3df1b597cb"
-            :file "armenia-pavilion-yellow-space-3df1b597cb"
+            :file "armenian-pavilion-yellow-space-3df1b597cb"
             :key "press/3df1b597cb"
             :w 4094
             :h 6176
@@ -1162,7 +1164,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "6100c559fa"
-            :file "armenia-pavilion-red-space-6100c559fa"
+            :file "armenian-pavilion-red-space-6100c559fa"
             :key "press/6100c559fa"
             :w 6142
             :h 4078
@@ -1175,7 +1177,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "e40d510727"
-            :file "armenia-pavilion-red-space-e40d510727"
+            :file "armenian-pavilion-red-space-e40d510727"
             :key "press/e40d510727"
             :w 5176
             :h 3414
@@ -1188,7 +1190,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "f4b244dc19"
-            :file "armenia-pavilion-red-space-f4b244dc19"
+            :file "armenian-pavilion-red-space-f4b244dc19"
             :key "press/f4b244dc19"
             :w 4126
             :h 6064
@@ -1201,7 +1203,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "77d6d25a98"
-            :file "armenia-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98"
+            :file "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98"
             :key "press/77d6d25a98"
             :w 4752
             :h 6544
@@ -1214,7 +1216,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "3b9aa96133"
-            :file "armenia-pavilion-gilded-stairwell-p-s-1-3b9aa96133"
+            :file "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133"
             :key "press/3b9aa96133"
             :w 5990
             :h 3984
@@ -1227,7 +1229,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "430e8e9073"
-            :file "armenia-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073"
+            :file "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073"
             :key "press/430e8e9073"
             :w 6064
             :h 4078
@@ -1240,7 +1242,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "3800768b0a"
-            :file "armenia-pavilion-9-jay-street-hallway-3800768b0a"
+            :file "armenian-pavilion-9-jay-street-hallway-3800768b0a"
             :key "press/3800768b0a"
             :w 6176
             :h 4080
@@ -1253,7 +1255,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "65422250b8"
-            :file "armenia-pavilion-9-jay-street-kitchen-65422250b8"
+            :file "armenian-pavilion-9-jay-street-kitchen-65422250b8"
             :key "press/65422250b8"
             :w 5826
             :h 3702
@@ -1266,7 +1268,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "f4c0ffbcd5"
-            :file "armenia-pavilion-9-jay-street-radiator-f4c0ffbcd5"
+            :file "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5"
             :key "press/f4c0ffbcd5"
             :w 6064
             :h 3936
@@ -1279,7 +1281,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "fbbf837d62"
-            :file "armenia-pavilion-9-jay-street-water-heater-fbbf837d62"
+            :file "armenian-pavilion-9-jay-street-water-heater-fbbf837d62"
             :key "press/fbbf837d62"
             :w 3854
             :h 6176
@@ -1292,7 +1294,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "11d60e8063"
-            :file "armenia-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063"
+            :file "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063"
             :key "press/11d60e8063"
             :w 6064
             :h 3856
@@ -1305,7 +1307,7 @@
             :credit "Zadik Zadikian"
             :artist "Zadik Zadikian"}
            {:uid "cd781307e6"
-            :file "armenia-pavilion-untitled-gold-bricks-in-cart-cd781307e6"
+            :file "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6"
             :key "press/cd781307e6"
             :w 3607
             :h 2866
@@ -1318,7 +1320,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "e2806f8fe6"
-            :file "armenia-pavilion-untitled-gold-bricks-on-street-e2806f8fe6"
+            :file "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6"
             :key "press/e2806f8fe6"
             :w 3080
             :h 1928
@@ -1331,7 +1333,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "56861f0b66"
-            :file "armenia-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66"
+            :file "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66"
             :key "press/56861f0b66"
             :w 5732
             :h 7214
@@ -1344,7 +1346,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "b13f32f277"
-            :file "armenia-pavilion-untitled-two-gold-shovel-b13f32f277"
+            :file "armenian-pavilion-untitled-two-gold-shovel-b13f32f277"
             :key "press/b13f32f277"
             :w 1927
             :h 3032
@@ -1357,7 +1359,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "57dd2b5fda"
-            :file "armenia-pavilion-untitled-gold-nails-57dd2b5fda"
+            :file "armenian-pavilion-untitled-gold-nails-57dd2b5fda"
             :key "press/57dd2b5fda"
             :w 1371
             :h 1467
@@ -1370,7 +1372,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "8b51916405"
-            :file "armenia-pavilion-with-tony-shafrazi-tehran-8b51916405"
+            :file "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405"
             :key "press/8b51916405"
             :w 4096
             :h 3007
@@ -1383,7 +1385,7 @@
             :credit "Photographer unknown"
             :artist "Zadik Zadikian"}
            {:uid "dbac198dd8"
-            :file "armenia-pavilion-one-thousand-gold-bricks-dbac198dd8"
+            :file "armenian-pavilion-one-thousand-gold-bricks-dbac198dd8"
             :key "press/dbac198dd8"
             :w 5626
             :h 4078
@@ -1396,7 +1398,7 @@
             :credit "Tony Shafrazi"
             :artist "Zadik Zadikian"}
            {:uid "52a0b99f06"
-            :file "armenia-pavilion-one-thousand-gold-bricks-single-stack-52a0b99f06"
+            :file "armenian-pavilion-one-thousand-gold-bricks-single-stack-52a0b99f06"
             :key "press/52a0b99f06"
             :w 3244
             :h 6438
@@ -1409,7 +1411,7 @@
             :credit ""
             :artist "Zadik Zadikian"}
            {:uid "e42e19d42e"
-            :file "armenia-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e"
+            :file "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e"
             :key "press/e42e19d42e"
             :w 4012
             :h 6888
@@ -1422,7 +1424,7 @@
             :credit ""
             :artist ""}
            {:uid "795ed73e3d"
-            :file "armenia-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d"
+            :file "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d"
             :key "press/795ed73e3d"
             :w 2948
             :h 3688

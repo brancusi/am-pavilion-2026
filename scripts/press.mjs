@@ -40,7 +40,7 @@ const slug = (s) => name(s).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').to
   .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48).replace(/-+$/, '');
 
 // The name a download is saved under (no extension).
-const saveAs = (r) => `armenia-pavilion-${slug(r.title || r.file.replace(/\.[^.]+$/, ''))}-${r.uid}`;
+const saveAs = (r) => `armenian-pavilion-${slug(r.title || r.file.replace(/\.[^.]+$/, ''))}-${r.uid}`;
 
 const project = JSON.parse(readFileSync(PROJECT, 'utf8'));
 const base = dirname(PROJECT);

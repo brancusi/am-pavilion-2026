@@ -427,7 +427,7 @@
              ($ sec {:id "release" :n (num "release") :label (t :release) :note (en-only :release)}
                 (d/div {:class "ap-kit__release"}
                        (d/div {:class "ap-kit__dl"}
-                              (when-let [d (:date release)] (d/p {:class "ap-label m-0"} d))
+                              (when-let [d (or (:date-text release) (:date release))] (d/p {:class "ap-label m-0"} d))
                               (for [[l url] (:pdfs release)]
                                 (d/a {:key l :class "ap-press__btn" :href url :download true}
                                      (str (t :pdf) " · " (str/upper-case (name l))))))

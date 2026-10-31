@@ -63,8 +63,9 @@ function read(name, lang) {
   let fm = {};
   const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
   if (m) { fm = YAML.parse(m[1]) || {}; src = src.slice(m[0].length); }
-  // A leading "# Heading" is the section's title.
-  const h = src.match(/^\s*#\s+(.+)\n/);
+  // A leading "# Heading" is the section's title, unless the frontmatter
+  // names one (the release's heading is the pavilion's official name).
+  const h = !fm.title && src.match(/^\s*#\s+(.+)\n/);
   if (h) src = src.slice(h[0].length);
   return { fm, title: fm.title || (h && h[1].trim()), body: src.trim() };
 }
@@ -76,6 +77,9 @@ const blocks = (s) => s.split(/^##\s+/m).slice(1).map((b) => {
 });
 
 const date = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : null);
+const longDate = (d, l) => (/^\d{4}-\d{2}-\d{2}$/.test(d || '')
+  ? new Intl.DateTimeFormat(l === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(d))
+  : d);
 
 const parsers = {
   page: (r) => ({ title: r.title, html: md(r.body), text: plain(r.body), date: date(r.fm.date),
@@ -125,6 +129,10 @@ function lang(l) {
   if (out.logos) out.logos.files = LOGOS;
   const pdfs = existsSync(PDFS) ? JSON.parse(readFileSync(PDFS, 'utf8')) : {};
   // The release in both languages, whichever page shows it.
+  if (out.release) {
+    out.release.date_text = longDate(out.release.date, l);
+    out.release.earlier = out.release.earlier.map((e) => ({ ...e, date: longDate(e.date, l) }));
+  }
   if (out.release) out.release.pdfs = Object.fromEntries(Object.entries(pdfs)
     .filter(([, v]) => v.date === out.release.date).map(([k, v]) => [k, v.url]));
   return out;

@@ -909,6 +909,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-kit__prose { max-width: 68ch; font: 400 clamp(17px, 1.7vw, 19px)/1.6 var(--font-text); }
 .ap-kit__prose > * { margin: 0; }
 .ap-kit__prose > * + * { margin-top: var(--space-4); }
+.ap-kit__prose h1 { font: 500 clamp(24px, 3vw, 34px)/1.15 var(--font-display); }
 .ap-kit__prose h2, .ap-kit__prose h3 { font: 500 clamp(20px, 2.4vw, 24px)/1.2 var(--font-display); margin-top: var(--space-8); }
 .ap-kit__prose ul, .ap-kit__prose ol { padding-left: 1.2em; }
 .ap-kit__prose li + li { margin-top: var(--space-2); }
