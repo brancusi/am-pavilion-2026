@@ -96,7 +96,7 @@
      :class  — extra classes on the row (e.g. ap-sharebar--night)"
   [{:keys [title url label class]}]
   (let [[copied? set-copied!] (hooks/use-state false)
-        share-title (or title "Armenia Pavilion 2026")
+        share-title (or title "Armenian Pavilion 2026")
         link (or url (current-url))
 
         handle-copy

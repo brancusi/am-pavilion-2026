@@ -127,7 +127,7 @@
                 "and chromatic rhythm\u2014an architectural test before the casting of plaster and the final "
                 "realization of form within "
                 (d/span {:class s/em-strong} "The Studio")
-                ", the Armenia Pavilion\u2019s living atelier.")
+                ", the Armenian Pavilion\u2019s living atelier.")
 
            (d/p {:class s/body-base}
                 "At its core, the work investigates reflection and repetition. A square side\u2014precise, "

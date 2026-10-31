@@ -19,7 +19,7 @@
              (d/div {:class "ap-article__body"}
                     (d/p {:class "ap-dropcap"}
                          "Over the entire six-month duration of the Biennale, the "
-                         (d/strong "Armenia Pavilion") " will operate as " (d/em "The Studio")
+                         (d/strong "Armenian Pavilion") " will operate as " (d/em "The Studio")
                          ", a functioning atelier where the artist " (d/strong "Zadik Zadikian")
                          ", with his son Aram and assistants, will be engaged in the process and the study of making things. Located in the "
                          (d/strong "Arsenale Militare")

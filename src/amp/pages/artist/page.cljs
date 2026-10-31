@@ -37,7 +37,7 @@
     :body "Turns his ten-thousand-square-foot home and studio into a continuous field of industrial gold."}
    {:dist "1978" :title "1,000 Bricks"
     :body "1,000 Bricks Gilded in 24-Karat Gold Leaf: the unit-based language that runs through all the work since."}
-   {:dist "2026" :title "Armenia Pavilion"
+   {:dist "2026" :title "Armenian Pavilion"
     :body "Represents Armenia at the 61st International Art Exhibition, La Biennale di Venezia, with The Studio in Tesa 41."}])
 
 (def works

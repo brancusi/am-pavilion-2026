@@ -31,7 +31,7 @@ const JOBS = 6;
 
 // The site's naming, whatever the captions say.
 const name = (s) => (s || '')
-  .replace(/Armenian Pavilion/g, 'Armenia Pavilion')
+  .replace(/Armenia Pavilion/g, 'Armenian Pavilion')
   .replace(/(61st )?Venice Biennale(, 2026)?/g, 'Biennale Arte 2026')
   .replace(/Biennale Arte 2026, 2026/g, 'Biennale Arte 2026')
   .trim();
@@ -40,12 +40,15 @@ const slug = (s) => name(s).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').to
   .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48).replace(/-+$/, '');
 
 // The name a download is saved under (no extension).
-const saveAs = (r) => `armenia-pavilion-${slug(r.title || r.file.replace(/\.[^.]+$/, ''))}-${r.uid}`;
+const saveAs = (r) => `armenian-pavilion-${slug(r.title || r.file.replace(/\.[^.]+$/, ''))}-${r.uid}`;
 
 const project = JSON.parse(readFileSync(PROJECT, 'utf8'));
 const base = dirname(PROJECT);
 const where = (p) => resolve(base, p.replace(/^~/, homedir()));
-const rows = project.images.filter((r) => r.include);
+// Never published, whatever the project says: 9461eefa9b's handwriting is
+// private (pulled from /press on 31 Oct 2026).
+const WITHHELD = new Set(['9461eefa9b']);
+const rows = project.images.filter((r) => r.include && !WITHHELD.has(r.uid));
 const seen = existsSync(SEEN) ? JSON.parse(readFileSync(SEEN, 'utf8')) : {};
 mkdirSync(dirname(OUT), { recursive: true });
 
@@ -62,10 +65,49 @@ async function upload(r) {
   console.log(`${++done}/${rows.length} ${r.file}`);
 }
 
+// The size and CRC-32 of each download as stored in R2, for the Worker's ZIPs
+// (cloudflare/site/zip.js writes every header before streaming a byte). Read
+// from the local copy media.mjs made when it matches the stored size, else
+// fetched once; kept in SEEN with the upload's stamp.
+const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
+  let c = n;
+  for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+  return c >>> 0;
+});
+const crc32 = (b) => {
+  let c = 0xffffffff;
+  for (let i = 0; i < b.length; i++) c = CRC_TABLE[(c ^ b[i]) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+};
+const HOST = 'https://media.armenianpavilion.org/';
+async function measure(key) {
+  const head = await fetch(HOST + key, { method: 'HEAD' });
+  if (!head.ok) throw new Error(`${key}: ${head.status}`);
+  const bytes = Number(head.headers.get('content-length'));
+  const local = `.media-out/${key}`;
+  const data = existsSync(local) && statSync(local).size === bytes
+    ? readFileSync(local)
+    : new Uint8Array(await (await fetch(HOST + key)).arrayBuffer());
+  if (data.length !== bytes) throw new Error(`${key}: read ${data.length} bytes, stored ${bytes}`);
+  return { bytes, crc: crc32(data) };
+}
+async function downloads(r) {
+  const s = seen[r.uid];
+  if (s.dl?.stamp === s.stamp) return;
+  s.dl = { stamp: s.stamp, jpg: await measure(`${s.key}.jpg`), full: await measure(`${s.key}-full.jpg`) };
+  writeFileSync(SEEN, JSON.stringify(seen, null, 1) + '\n');
+}
+
 const queue = [...rows];
 await Promise.all(Array.from({ length: JOBS }, async () => {
   for (let r; (r = queue.shift());) await upload(r);
 }));
+if (!process.env.DRY) {
+  const q = [...rows];
+  await Promise.all(Array.from({ length: JOBS }, async () => {
+    for (let r; (r = q.shift());) await downloads(r);
+  }));
+}
 
 const images = rows.map((r) => ({
   uid: r.uid,
@@ -81,6 +123,7 @@ const images = rows.map((r) => ({
   caption: name(r.caption),
   caption_short: name(r.caption_short),
   credit: name(r.credit),
+  ...(seen[r.uid].dl ? { dl: { jpg: seen[r.uid].dl.jpg, full: seen[r.uid].dl.full } } : {}),
 }));
 writeFileSync(OUT, JSON.stringify({ project: project.name, images }, null, 1) + '\n');
 const cell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;

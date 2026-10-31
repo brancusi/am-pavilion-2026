@@ -74,7 +74,7 @@
     {
       "type": "Feature",
       "properties": {
-        "label": "Armenia Pavilion", "label_it": "Padiglione Armenia"
+        "label": "Armenian Pavilion", "label_it": "Padiglione Armenia"
       },
       "geometry": {
         "coordinates": [12.350369, 45.436882],

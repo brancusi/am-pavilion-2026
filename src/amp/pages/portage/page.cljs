@@ -663,8 +663,8 @@
      [slug]
      (set! (.-title js/document)
            (if (and sheet (not= slug "home"))
-             (str (:long sheet) " · Portage · Armenia Pavilion")
-             "Portage · Armenia Pavilion")))
+             (str (:long sheet) " · Portage · Armenian Pavilion")
+             "Portage · Armenian Pavilion")))
     (d/div {:class "pt"}
            ($ sub-nav {:slug (if (by-slug route-slug) route-slug "home")})
            (if sheet

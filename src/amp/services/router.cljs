@@ -55,6 +55,11 @@
                 :title "Press"
                 :view (lazy-component amp.pages.press.page/press-view)}
 
+               {:id ::press-it
+                :path "it/press"
+                :title "Stampa"
+                :view (lazy-component amp.pages.press.page/press-it-view)}
+
                {:id ::delivery
                 :path "delivery"
                 :title "Consegne"
@@ -106,7 +111,7 @@
   ;;Keep from folding
   )
 
-(def ^:private site-title "Armenia Pavilion — Zadik Zadikian: The Studio · Biennale Arte 2026")
+(def ^:private site-title "Armenian Pavilion — Zadik Zadikian: The Studio · Biennale Arte 2026")
 
 (defn- not-found-route
   "A match-shaped value for paths with no route."
@@ -115,12 +120,12 @@
    :data {:name ::not-found :view not-found-view :title "Page not found"}})
 
 (defn- set-title!
-  "Page title: \"<Page> · Armenia Pavilion\", the full site title at home.
+  "Page title: \"<Page> · Armenian Pavilion\", the full site title at home.
    Blog posts set their own once their content has loaded."
   [route]
   (set! (.-title js/document)
         (if-let [t (-> route :data :title)]
-          (str t " · Armenia Pavilion")
+          (str t " · Armenian Pavilion")
           site-title)))
 
 (defn- scroll-to-anchor!

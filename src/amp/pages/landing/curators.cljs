@@ -14,7 +14,7 @@
    {:name "Tina Chakarian"
     :role "Curator"
     :img  "https://media.armenianpavilion.org/committee/tina.png"
-    :bio  "Tina Chakarian is a curator based in Boston and Yerevan. Born in Beirut, she studied Visual Arts at UCLA and Tufts University. Since 2015, she has served as Commissioner and Development Director of the Armenia Pavilion at La Biennale di Venezia, playing a central role in shaping Armenia’s sustained presence on the global stage."}])
+    :bio  "Tina Chakarian is a curator based in Boston and Yerevan. Born in Beirut, she studied Visual Arts at UCLA and Tufts University. Since 2015, she has served as Commissioner and Development Director of the Armenian Pavilion at La Biennale di Venezia, playing a central role in shaping Armenia’s sustained presence on the global stage."}])
 
 (defnc curators-section
   [{:keys [id]}]
@@ -22,7 +22,7 @@
              (d/div {:class "ap-wrap"}
                     (d/div {:class "ap-head-row"}
                            (d/div
-                            (d/p {:class "ap-label ap-muted m-0 mb-1"} "Armenia Pavilion")
+                            (d/p {:class "ap-label ap-muted m-0 mb-1"} "Armenian Pavilion")
                             (d/h2 {:class "ap-display-l"} "Curators")))
                     (d/ul {:class "ap-people"}
                           (for [{:keys [name role img bio]} curators]

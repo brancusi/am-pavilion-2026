@@ -1,6 +1,6 @@
 (ns amp.pages.venue.page
   "Visitor Guide — wayfinding, venue history, and space details.
-   Full dedicated page for the Armenia Pavilion location at the
+   Full dedicated page for the Armenian Pavilion location at the
    Biennale Arte 2026."
   (:require
    [amp.pages.venue.map-config :as mc]
@@ -56,12 +56,12 @@
 ;; since it is meant to be shown directly to the driver; English is opt-in.
 (def water-taxi-copy
   {:en {:title        "Water Taxi Instructions"
-        :subtitle     "Authorized access to the Arsenale – Armenia Pavilion"
-        :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenia Pavilion."
-                       "The Marine Office has approved access for water taxis bringing visitors to the Armenia Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
+        :subtitle     "Authorized access to the Arsenale – Armenian Pavilion"
+        :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenian Pavilion."
+                       "The Marine Office has approved access for water taxis bringing visitors to the Armenian Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
         :before-title "Before entering the Arsenale"
         :before-body  "Call Julda and say:"
-        :before-quote "“I am arriving with a visitor for the Armenia Pavilion.”"
+        :before-quote "“I am arriving with a visitor for the Armenian Pavilion.”"
         :contacts     [["Julda · primary contact" :julda] ["Luca · secondary contact" :luca]]
         :before-note  "If Julda does not answer, call Luca."
         :entrance-title "Only permitted entrance"
@@ -73,7 +73,7 @@
         :route-steps  ["Approach from the north side of the lagoon."
                        "Enter through the only permitted taxi entrance: Galeazze – Rio delle Galeazze."
                        "Continue south along Rio delle Galeazze, following the route shown on the map."
-                       "Proceed to the Armenia Pavilion landing."]
+                       "Proceed to the Armenian Pavilion landing."]
         :map-caption  "Water taxi route — enter from the North Lagoon via Rio delle Galeazze and continue south to the pavilion drop-off point"
         :address-title "Address"}
    :it {:title        "Istruzioni per il taxi acqueo"
@@ -140,7 +140,7 @@
          (d/li {:class "ap-step ap-step--end"}
                (d/span {:class "ap-step__dist"} "≈ 8 MIN")
                (d/h3 {:class "ap-step__title"} "Tesa 41")
-               (d/p {:class "ap-step__body"} "Armenia Pavilion, Arsenale Militare.")))))
+               (d/p {:class "ap-step__body"} "Armenian Pavilion, Arsenale Militare.")))))
 
 (defnc water-steps []
   (let [steps (get-in water-taxi-copy [:en :route-steps])
@@ -194,7 +194,7 @@
                                         (if (= mode :walk)
                                           (d/span (d/i {:class "walk"}) "Walking route")
                                           (d/span (d/i {:class "water"}) "Water taxi"))
-                                        (d/span (d/i {:class "pav"}) "Armenia Pavilion"))
+                                        (d/span (d/i {:class "pav"}) "Armenian Pavilion"))
                                  (d/div {:class "ap-map__actions"}
                                         (when (= mode :walk)
                                           (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
@@ -239,7 +239,7 @@
          ;; Lead copy — enticing, sets the two-site narrative
          (d/div {:class "space-y-6"}
                   (d/p {:class s/body-lg}
-                       "The Armenia Pavilion unfolds across "
+                       "The Armenian Pavilion unfolds across "
                        (d/span {:class s/em-strong} "two sites")
                        " within the historic Arsenale of Venice\u2014a "
                        (d/span {:class s/em-strong} "5,000-square-foot interior studio")
@@ -269,7 +269,7 @@
            (d/div {:class "px-4 space-y-6"}
                   (d/p {:class s/body-lg}
                        (d/span {:class s/em-strong} "Tesa 41")
-                       " is the primary studio and exhibition space for the Armenia Pavilion\u2014"
+                       " is the primary studio and exhibition space for the Armenian Pavilion\u2014"
                        (d/span {:class s/em-strong} "5,000 square feet")
                        " of expansive industrial volume within the Arsenale that functions as the "
                        (d/span {:class s/em-italic} "operational and conceptual heart")
@@ -341,7 +341,7 @@
 
                   (d/p {:class s/body-base}
                        "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
-                       "The Armenia Pavilion lies less than a ten-minute walk from this point, making the installation both a "
+                       "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
                        (d/span {:class s/em-strong} "threshold")
                        " and a "
                        (d/span {:class s/em-strong} "directional marker")
@@ -399,7 +399,7 @@
 
                 (d/p {:class (s/cx s/body-closing)}
                      "Tesa 41 sits within this historic matrix\u2014one of the original covered warehouses now given over to artistic production. "
-                     "The Armenia Pavilion's presence continues a tradition of nations "
+                     "The Armenian Pavilion's presence continues a tradition of nations "
                      (d/span {:class s/em-italic} "working within")
                      " the Arsenale's industrial grain, not against it."))))
 

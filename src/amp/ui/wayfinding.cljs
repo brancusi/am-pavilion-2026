@@ -167,5 +167,5 @@
                   ($ steps {:items (:steps c) :water? true})))
          ($ route-map {:map (assoc galeazze-map :lang lang) :caption (:map-caption c)
                        :legend [[:water (if (= lang :it) "Percorso in acqua" "Water route")]
-                                [:pav (if (= lang :it) "Padiglione Armenia" "Armenia Pavilion")]]})
+                                [:pav (if (= lang :it) "Padiglione Armenia" "Armenian Pavilion")]]})
          children))

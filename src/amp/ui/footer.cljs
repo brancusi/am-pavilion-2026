@@ -36,7 +36,7 @@
     :links (conj (mapv (fn [{:keys [slug title]}] {:label title :href (str "/blog/" slug)})
                        (take 2 journal/posts))
                  {:label "All journal posts" :href "/blog"}
-                 {:label "Press images" :href "/press"})}])
+                 {:label "Press" :href "/press"})}])
 
 (defnc site-footer
   [_props]
@@ -51,7 +51,7 @@
             (d/div {:class "ap-footer__lead"}
                    (d/a {:class "ap-footer__brand" :href "/"}
                         ($ studio-mark-3d {:variants #{:pigment} :label nil})
-                        (d/span {:class "ap-label"} "Armenia Pavilion · Biennale Arte 2026"))
+                        (d/span {:class "ap-label"} "Armenian Pavilion · Biennale Arte 2026"))
                    (d/p {:class "ap-display-l m-0"} "Zadik Zadikian: The Studio")
                    (d/p {:class "ap-footer__when ap-label m-0"}
                         (d/span "Arsenale Militare, Tesa 41, Venice")
@@ -87,7 +87,7 @@
                    ($ social-links)
                    (d/div
                     (d/h2 {:class "ap-footer__h"} "Share this site")
-                    ($ share-bar {:title "Zadik Zadikian: The Studio. Armenia Pavilion, Biennale Arte 2026"
+                    ($ share-bar {:title "Zadik Zadikian: The Studio. Armenian Pavilion, Biennale Arte 2026"
                                   :url   "https://armenianpavilion.org/"
                                   :label ""
                                   :class "ap-sharebar--night"})))
@@ -101,7 +101,7 @@
                                 :width 158 :height 146
                                 :alt "Biennale Arte 2026"}))
                    (d/p {:class "ap-footer__legal"}
-                        "Armenia Pavilion · 61st International Art Exhibition — La Biennale di Venezia"
+                        "Armenian Pavilion · 61st International Art Exhibition — La Biennale di Venezia"
                         (d/br)
                         "© 2026 AZ Studios Inc. · v" amp.config/git-hash)
                    (d/button {:type "button" :class "ap-footer__top ap-label"
