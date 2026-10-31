@@ -18,7 +18,7 @@
    {:path "/portage" :title "Portage"}
    {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
    {:path "/blog"   :title "Journal"}
-   {:path "/press"  :title "Press"}])
+   {:path "/press"  :title "Press" :also ["/it/press"]}])
 
 (defn- active?
   "A nav item is current when the path matches (or one of its `:also`
@@ -79,7 +79,7 @@
                (d/a {:class "ap-header__brand" :href "/" :on-click close!}
                     ($ studio-mark-3d {:variants #{:pigment} :label nil})
                     (d/span {:class "ap-header__name"}
-                            "Armenia Pavilion" (d/br)
+                            "Armenian Pavilion" (d/br)
                             (d/span {:class "ap-muted"} "Biennale Arte 2026")))
                (d/nav {:class "ap-header__nav" :aria-label "Main"}
                       (for [item nav-items]
