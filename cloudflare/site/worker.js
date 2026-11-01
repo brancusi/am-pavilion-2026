@@ -37,15 +37,18 @@ export default {
   },
 };
 
-// /press/zip/<name>.zip?i=<uid>,<uid>&s=jpg|full: the press images with those
-// uids (all of them without i), as 2400px JPEGs or at full size, with their
-// captions as captions.csv. Images come from press.json, the list the page reads.
+// /press/zip/<name>.zip?i=<uid>,<uid>&s=<sizes>: the press images with those
+// uids (all of them without i) in the sizes asked for (s, m, l, raw, comma
+// separated; Large without s), with their captions as captions.csv. Images and
+// their downloads come from press.json, the list the page reads.
+const TIERS = ["s", "m", "l", "raw"];
 async function zip(req, env, ctx) {
   if (req.method !== "GET" && req.method !== "HEAD") return new Response("Method not allowed", { status: 405 });
   const url = new URL(req.url);
   const file = decodeURIComponent(url.pathname.slice("/press/zip/".length));
-  const size = url.searchParams.get("s") || "jpg";
-  if (!/^[A-Za-z0-9._-]+\.zip$/.test(file) || !["jpg", "full"].includes(size)) return new Response("Not found", { status: 404 });
+  const OLD = { jpg: "m", full: "l" };   // links from pages opened before the sizes changed (1 Nov 2026)
+  const sizes = (url.searchParams.get("s") || "l").split(",").map((s) => OLD[s] || s);
+  if (!/^[A-Za-z0-9._-]+\.zip$/.test(file) || !sizes.every((s) => TIERS.includes(s))) return new Response("Not found", { status: 404 });
   const data = await (await env.ASSETS.fetch(new URL("/data/press/press.json", url))).json();
   const ids = url.searchParams.get("i") ? new Set(url.searchParams.get("i").split(",")) : null;
   const images = data.images.filter((im) => im.dl && (!ids || ids.has(im.uid)));
@@ -54,17 +57,18 @@ async function zip(req, env, ctx) {
     return new Response(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>Please reload</title><body style="font:16px/1.5 system-ui;max-width:32em;margin:15vh auto;padding:0 16px">
 <p>The press images were updated after this page was opened, so this download link is out of date.</p>
-<p><a href="/press#images">Reload the press page</a> and download again.</p>`,
+<p><a href="/press/images">Reload the press page</a> and download again.</p>`,
       { status: 409, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
 
   const root = file.slice(0, -4);
-  const entries = images.map((im) => ({
-    name: `${root}/${im.file}${size === "full" ? "-full" : ""}.jpg`,
-    key: `${im.key}${size === "full" ? "-full" : ""}.jpg`, size: im.dl[size].bytes, crc: im.dl[size].crc,
+  const picked = TIERS.filter((s) => sizes.includes(s));
+  const entries = images.flatMap((im) => picked.filter((s) => im.dl[s]).map((s) => {
+    const d = im.dl[s];
+    return { name: `${root}/${d.name}`, key: d.key, size: d.bytes, crc: d.crc };
   }));
   const cols = ["title", "date", "artist", "materials", "caption", "credit", "section"];
   const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-  const csv = [["file", ...cols], ...images.map((im) => [`${im.file}${size === "full" ? "-full" : ""}.jpg`, ...cols.map((c) => im[c])])]
+  const csv = [["files", ...cols], ...images.map((im) => [picked.filter((s) => im.dl[s]).map((s) => im.dl[s].name).join(" "), ...cols.map((c) => im[c])])]
     .map((r) => r.map(cell).join(",") + "\r\n").join("");
   const enc = new TextEncoder();
   entries.push({ name: `${root}/captions.csv`, data: enc.encode("\ufeff" + csv) });   // BOM so Excel reads the accents

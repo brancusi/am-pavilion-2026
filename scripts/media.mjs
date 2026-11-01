@@ -13,7 +13,8 @@
 // Then reference it in code as "https://media.armenianpavilion.org/<path>".
 // Set DRY=1 to write the files to ./.media-out without uploading.
 
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { promisify } from 'node:util';
 import { mkdirSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, dirname, extname } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -24,6 +25,7 @@ const BUCKET = 'armenia-pavilion-media';
 const ACCOUNT = 'badb2c07d9cd1effc4c60bc8b6e55826'; // owns the armenianpavilion.org zone
 const OUT = '.media-out';
 const IMAGE = /\.(jpe?g|png|tiff?|webp|heic)$/i;
+const run = promisify(execFile);
 
 export function imageKey(path) {
   return decodeURIComponent(path)
@@ -34,21 +36,41 @@ export function imageKey(path) {
     .join('/');
 }
 
-// `saveAs`: serve the file as a download under that name.
-function put(file, key, contentType, saveAs) {
+// `saveAs`: serve the file as a download under that name. Uploads run as
+// child processes, so several can go at once, but only two big ones (the API
+// answers 502 to a crowd of 200 MB bodies); a failed one is tried again.
+const BIG = 50e6;
+let bigGoing = 0;
+const bigWaiting = [];
+async function put(file, key, contentType, saveAs) {
   if (process.env.DRY) return;
-  execFileSync('npx', ['wrangler', 'r2', 'object', 'put', `${BUCKET}/${key}`, '--file', file,
-    '--content-type', contentType, '--cache-control', 'public, max-age=31536000, immutable',
-    ...(saveAs ? ['--content-disposition', `attachment; filename="${saveAs}"`] : []), '--remote'],
-    { stdio: ['ignore', 'ignore', 'inherit'], env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: ACCOUNT } });
+  const big = statSync(file).size > BIG;
+  if (big) {
+    if (bigGoing >= 2) await new Promise((go) => bigWaiting.push(go));
+    bigGoing++;
+  }
+  try {
+    for (let tries = 1; ; tries++) {
+      try {
+        await run('npx', ['wrangler', 'r2', 'object', 'put', `${BUCKET}/${key}`, '--file', file,
+          '--content-type', contentType, '--cache-control', 'public, max-age=31536000, immutable',
+          ...(saveAs ? ['--content-disposition', `attachment; filename="${saveAs}"`] : []), '--remote'],
+          { env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: ACCOUNT }, maxBuffer: 1 << 24 });
+        return;
+      } catch (e) {
+        if (tries >= 4) throw new Error(`${key}: upload failed ${tries} times: ${String(e.stderr || e).split('\n').find((l) => /ERROR/.test(l)) || e}`);
+        console.log(`${key}: upload failed, trying again (${tries})`);
+        await new Promise((r) => setTimeout(r, 5000 * tries));
+      }
+    }
+  } finally {
+    if (big) { bigGoing--; bigWaiting.shift()?.(); }
+  }
 }
 
-// `full`: also store `<key>-full.jpg` at up to 6000px, for press downloads.
-// `saveAs`: a file name (no extension); the JPEGs then download under it.
-// Returns the key and the image's size after rotation.
-export async function add(file, path, { full = false, saveAs } = {}) {
-  const key = imageKey(path);
-  let src = sharp(file, { failOn: 'none' }).rotate();
+// The image, upright, and its size after rotation.
+async function open(file, key) {
+  let src = sharp(file, { failOn: 'none', limitInputPixels: false }).rotate();
   let meta;
   try {
     meta = await src.metadata();
@@ -57,12 +79,18 @@ export async function add(file, path, { full = false, saveAs } = {}) {
     const tmp = join(OUT, `${key}.sips.tif`);
     mkdirSync(dirname(tmp), { recursive: true });
     execFileSync('sips', ['-s', 'format', 'tiff', file, '--out', tmp], { stdio: 'ignore' });
-    src = sharp(tmp, { failOn: 'none' }).rotate();
+    src = sharp(tmp, { failOn: 'none', limitInputPixels: false }).rotate();
     meta = await src.metadata();
   }
   const swap = (meta.orientation || 1) >= 5;
-  const width = swap ? meta.height : meta.width;
-  const height = swap ? meta.width : meta.height;
+  return { src, width: swap ? meta.height : meta.width, height: swap ? meta.width : meta.height };
+}
+
+// `saveAs`: a file name (no extension); the JPEG then downloads under it.
+// Returns the key and the image's size after rotation.
+export async function add(file, path, { saveAs } = {}) {
+  const key = imageKey(path);
+  const { src, width, height } = await open(file, key);
   const outs = [];
   for (const w of WIDTHS) {
     const out = join(OUT, `${key}-${w}.webp`);
@@ -76,15 +104,36 @@ export async function add(file, path, { full = false, saveAs } = {}) {
   await src.clone().resize({ width: 2400, withoutEnlargement: true }).flatten({ background: '#ffffff' })
     .jpeg({ quality: 78, mozjpeg: true }).toFile(jpg);
   outs.push([jpg, `${key}.jpg`, 'image/jpeg', saveAs && `${saveAs}.jpg`]);
-  if (full) {
-    const big = join(OUT, `${key}-full.jpg`);
-    await src.clone().resize({ width: 6000, height: 6000, fit: 'inside', withoutEnlargement: true })
-      .flatten({ background: '#ffffff' }).toColourspace('srgb').jpeg({ quality: 90, mozjpeg: true }).toFile(big);
-    outs.push([big, `${key}-full.jpg`, 'image/jpeg', saveAs && `${saveAs}-full.jpg`]);
-  }
-  for (const [f, k, t, d] of outs) put(f, k, t, d);
+  for (const [f, k, t, d] of outs) await put(f, k, t, d);
   console.log(`${process.env.DRY ? 'built' : 'uploaded'} ${key} (${outs.length} files, original ${width}px)`);
   return { key, width, height };
+}
+
+// Press downloads, as the media handoff had them: sRGB JPEGs by the long edge
+// (never upscaled) and the original file exactly as delivered.
+export const TIERS = [['s', 'small', 1200, 80], ['m', 'medium', 2400, 85], ['l', 'large', 4000, 90]];
+const RAW_TYPES = { tif: 'image/tiff', tiff: 'image/tiff', psd: 'image/vnd.adobe.photoshop',
+  png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg' };
+
+// Stores `<key>-s.jpg`, `-m.jpg`, `-l.jpg` and `<key>-raw.<ext>`, downloading as
+// `<saveAs>-small.jpg` … and `<saveAs>.<ext>`. Returns, per tier, its key, name,
+// pixels and the local file it was made as.
+export async function tiers(file, path, saveAs) {
+  const key = imageKey(path);
+  const { src, width, height } = await open(file, key);
+  const out = {};
+  for (const [t, word, edge, q] of TIERS) {
+    const f = join(OUT, `${key}-${t}.jpg`);
+    mkdirSync(dirname(f), { recursive: true });
+    const info = await src.clone().resize({ width: edge, height: edge, fit: 'inside', withoutEnlargement: true })
+      .flatten({ background: '#ffffff' }).toColourspace('srgb').jpeg({ quality: q, mozjpeg: true }).toFile(f);
+    out[t] = { key: `${key}-${t}.jpg`, name: `${saveAs}-${word}.jpg`, w: info.width, h: info.height, local: f };
+  }
+  const ext = extname(file).slice(1).toLowerCase();
+  out.raw = { key: `${key}-raw.${ext}`, name: `${saveAs}.${ext}`, w: width, h: height, ext, local: file };
+  for (const [t, o] of Object.entries(out))
+    await put(o.local, o.key, t === 'raw' ? RAW_TYPES[ext] || 'application/octet-stream' : 'image/jpeg', o.name);
+  return out;
 }
 
 function walk(dir) {
