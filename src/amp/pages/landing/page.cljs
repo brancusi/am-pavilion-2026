@@ -3,6 +3,7 @@
    Unit chapter, works gallery, the Hall, the film, a visit teaser and the
    latest journal posts, then the long-form exhibition texts."
   (:require
+   [amp.config :as config]
    [amp.data.films :as films]
    [amp.data.journal :as journal]
    [amp.hooks.use-in-view :refer [use-in-view]]
@@ -17,7 +18,7 @@
    [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture mux-poster]]
    [amp.ui.post-card :refer [post-card]]
-   [amp.ui.studio-mark :refer [studio-mark-3d]]
+   [amp.ui.studio-mark :refer [studio-mark-flat]]
    [amp.ui.temporary-closure :refer [closure-banner]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [clojure.string :as str]
@@ -181,12 +182,43 @@
    ["brick" "Stack" "One block on another: the oldest way to build."]
    ["ink" "Tune" "“You tune into simplicity, blocks of colour.” Zadik Zadikian"]])
 
+(defn- use-living-ground
+  "Fetches the living-grounds player (resources/data/grounds) once the
+   chapter comes near the screen, and hands it the section. Skipped under
+   reduced motion, where the ground holds still."
+  [section]
+  (hooks/use-effect
+   :once
+   (let [el @section]
+     (when (and el (not (.-matches (js/matchMedia "(prefers-reduced-motion: reduce)"))))
+       (let [start! (fn []
+                      (let [go #(some-> (.-GroundsPlayer js/window) (.start el))]
+                        (if (.-GroundsPlayer js/window)
+                          (go)
+                          (let [s (js/document.createElement "script")]
+                            (set! (.-src s) (str "/data/grounds/player.js?v=" config/git-hash))
+                            (set! (.-async s) true)
+                            (set! (.-onload s) go)
+                            (js/document.head.appendChild s)))))
+             io (js/IntersectionObserver.
+                 (fn [entries ^js obs]
+                   (when (some #(.-isIntersecting ^js %) (array-seq entries))
+                     (.disconnect obs)
+                     (start!)))
+                 #js {:rootMargin "400px"})]
+         (.observe io el)
+         (fn []
+           (.disconnect io)
+           (some-> (.-GroundsPlayer js/window) (.stop el))))))))
+
 (defnc unit-chapter []
   ;; The words follow the ground: each pigment's word shows while that colour
   ;; holds (CSS, in step with ap-ground). Hovering a letter (desktop) holds
   ;; the ground on its pigment, so that letter sinks into it and only its
   ;; tilted depth shows, and holds that colour's word.
-  (let [[ground set-ground!] (hooks/use-state nil)
+  (let [section (hooks/use-ref nil)
+        _ (use-living-ground section)
+        [ground set-ground!] (hooks/use-state nil)
         ;; Keep the last colour after the pointer leaves so the overlay
         ;; fades out in it instead of snapping to transparent.
         [last-ground set-last!] (hooks/use-state nil)
@@ -211,9 +243,29 @@
                                  ($ tag {:key pigment :class "m-0"
                                          :data-on (when (= pigment held) "")}
                                     (text w)))))))]
-    (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit"
+    (d/section {:class "ap-chapter ap-chapter--ephemeral" :id "unit" :ref section
                 :data-ground (when ground "")
                 :style (when (or ground last-ground) #js {"--ground" (str "var(" bg ")") "--ground-on" (str "var(" on ")")})}
+               (d/canvas {:class "ap-ground-canvas" :aria-hidden true})
+               ;; The grounds' controls; resources/data/grounds/player.js fills
+               ;; the picker and wires them, and shows them once one plays.
+               (d/div {:class "ap-ground-ui" :data-ground-ui ""}
+                      (d/div {:class "ap-ground-ui__row"}
+                             (d/button {:type "button" :class "ap-ground-ui__btn" :data-ground-pause "" :aria-pressed "false"}
+                                       "Pause")
+                             (d/button {:type "button" :class "ap-ground-ui__btn" :data-ground-next ""}
+                                       "Next" (d/span {:class "max-sm:hidden"} " ground"))
+                             ;; A select-only combobox (WAI-ARIA APG): focus stays
+                             ;; on it, the list opens upward over the chapter.
+                             (d/span {:id "ground-pick-label" :class "sr-only"} "Ground")
+                             (d/div {:class "ap-ground-ui__combo" :role "combobox" :tab-index 0
+                                     :aria-haspopup "listbox" :aria-expanded "false" :aria-controls "ground-list"
+                                     :aria-labelledby "ground-pick-label ground-pick-value" :data-ground-pick ""}
+                                    (d/span {:id "ground-pick-value" :class "ap-ground-ui__value" :data-ground-value ""})
+                                    (d/span {:class "ap-ground-ui__chev" :aria-hidden true}))
+                             (d/ul {:id "ground-list" :role "listbox" :class "ap-ground-ui__list" :tab-index -1
+                                    :aria-labelledby "ground-pick-label" :hidden true :data-ground-list ""}))
+                      (d/p {:class "ap-ground-ui__idea m-0" :data-ground-idea ""}))
                (d/div {:class "ap-wrap ap-ch-grid !px-0"}
                       (d/div {:class "flex flex-col gap-4"}
                              (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Chapter")
@@ -224,7 +276,7 @@
                              (d/p {:class "ap-ephemeral-note"}
                                   "Structures are assembled for a moment, then gone. Watch the ground: each color erases its own letters."))
                       (d/div {:class "ap-ch-mark"}
-                             ($ studio-mark-3d {:variants #{:stack :pigment} :on-hover set-ground!}))))))
+                             ($ studio-mark-flat {:variants #{:stack :pigment} :on-hover set-ground!}))))))
 
 ;; ── Works gallery ───────────────────────────────────────────────────────
 

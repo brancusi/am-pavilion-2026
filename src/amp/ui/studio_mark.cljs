@@ -183,3 +183,45 @@
                                           (d/path {:key j :d v})))
                                       shapes)))))))
           tiles))))
+
+;; ── Flat mark ──────────────────────────────────────────────────────────────
+
+(defnc studio-mark-flat
+  "The mark as nine flat tiles: each the tile with its letter cut through,
+   over a hairline outline of the same shape. A tile the chapter's grounds
+   player marks `data-hollow` (its colour is the ground's) shows only the
+   outline. `on-hover` as studio-mark-3d. Variants: :stack, :pigment."
+  [{:keys [variants class label on-hover] :or {label "The Studio"}}]
+  (d/div {:class (str/join " " (concat ["ap-mark ap-markflat"]
+                                       (map #(str "ap-mark--" (name %)) variants)
+                                       (when class [class])))
+          :role (when label "img")
+          :aria-label label
+          :aria-hidden (when-not label true)
+          :on-pointer-leave (when on-hover #(on-hover nil))}
+         (map-indexed
+          (fn [i {:keys [shapes]}]
+            (let [pigment (nth pigments i)
+                  draw (fn [cls]
+                         (d/svg {:class cls :viewBox (tile-box i)}
+                                (map-indexed
+                                 (fn [j [kind v]]
+                                   (if (= kind :polygon)
+                                     (d/polygon {:key j :points v})
+                                     (d/path {:key j :d v})))
+                                 shapes)))]
+              (d/div {:key i
+                      :class "ap-mark__tile ap-markflat__cell"
+                      :aria-hidden true
+                      :data-pigment pigment
+                      :style #js {"--i" i "--c" (mod i 3) "--r" (quot i 3)
+                                  ;; Ink is the night ground, so it vanishes into it too.
+                                  "--tc" (cond (not (contains? variants :pigment)) "var(--ink)"
+                                               (= pigment "ink") "var(--night)"
+                                               :else (str "var(--" pigment ")"))}
+                      :on-pointer-enter (when on-hover
+                                          #(when (and (= "mouse" (.-pointerType %)) (fine-pointer?))
+                                             (on-hover pigment)))}
+                     (draw "ap-markflat__face")
+                     (draw "ap-markflat__line"))))
+          tiles)))
