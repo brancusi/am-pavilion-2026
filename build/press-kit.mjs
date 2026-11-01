@@ -38,11 +38,9 @@ const LOGOS = [
   ['La Biennale · National Participations, black', 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
   ['La Biennale · National Participations, negative', 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
   ['The Studio', 'the-studio-square', ['png', 'pdf', 'eps']],
-  ['Pavilion wordmark', 'armenian-pavilion-wordmark', ['png', 'pdf', 'eps']],
-  ['Pavilion wordmark, expanded', 'armenian-pavilion-wordmark-expanded', ['png', 'pdf', 'eps']],
 ].map(([name, base, kinds, o = {}]) => ({
   name, preview: `${LOGO_HOST}${base}.png`, dark: !!o.dark,
-  files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? 'PDF (vector)' : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
+  files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? 'PDF vector' : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
           ...(o.cmyk ? [{ label: 'EPS CMYK', url: `${LOGO_HOST}biennale-61-national-participations-CMYK.eps` }] : [])],
 }));
 

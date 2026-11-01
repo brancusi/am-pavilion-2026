@@ -871,11 +871,14 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-press__sizes { display: flex; flex-wrap: nowrap; gap: var(--space-4); overflow: hidden; padding-top: 2px; font: 500 11px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .ap-press__sizes a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; white-space: nowrap; }
 .ap-press__sizes a:hover { text-decoration-color: currentColor; }
+.ap-press__sizes--wrap { flex-wrap: wrap; row-gap: var(--space-2); overflow: visible; }
+/* A row of download buttons (films). */
+.ap-press__dl { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 /* The viewer's downloads: a row per size with its pixels and file size. */
-.ap-press__dl { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.18); }
-.ap-press__dl li { border-bottom: 1px solid rgba(255,255,255,.18); }
-.ap-press__dl a { display: grid; gap: 2px; padding: 10px 0; color: inherit; text-decoration: none; }
-.ap-press__dl a:hover .ap-press__dl-name { text-decoration: underline; text-underline-offset: 3px; }
+.ap-press__tiers { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.18); }
+.ap-press__tiers li { border-bottom: 1px solid rgba(255,255,255,.18); }
+.ap-press__tiers a { display: grid; gap: 2px; padding: 10px 0; color: inherit; text-decoration: none; }
+.ap-press__tiers a:hover .ap-press__dl-name { text-decoration: underline; text-underline-offset: 3px; }
 .ap-press__dl-name { font: 500 12px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .ap-press__dl-name .ap-muted { text-transform: none; letter-spacing: 0; }
 .ap-press__dl-info { font: 400 12px/1.3 var(--font-mono); color: #a9a49b; }
