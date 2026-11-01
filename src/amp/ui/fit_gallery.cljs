@@ -7,7 +7,11 @@
      {:img-src url :aspect-ratio 0.75 :caption \"…\" :credit \"…\" :alt \"…\"}
      {:type :threejs :aspect-ratio 0.75 :caption … :credit … :scene-data … :camera …}
    A :threejs slide shows a cover until someone chooses to explore it; only
-   then is Three.js (its own lazy module) fetched."
+   then is Three.js (its own lazy module) fetched.
+
+   Long galleries stay light: every frame holds its size from the start, but
+   a slide's image is only put in once the track has come within two screens
+   of it, so dozens of slides cost no more than the few in view."
   (:require ["react" :as react]
             [amp.hooks.use-in-view :refer [watch-edges!]]
             [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
@@ -30,6 +34,24 @@
         ;; Acronyms stay upper case.
         (.replace (js/RegExp. "\\b(Cnc|3d|2d|Led|Pvc|Mdf)\\b" "g") #(.toUpperCase %)))
     s))
+
+(def ^:private ahead
+  "Slides past the furthest one seen whose images are put in."
+  2)
+
+(defn- watch-reach!
+  "Calls `on-reach` with the highest slide index (data-i) within two track
+   widths either side of the track's view. Returns the cleanup."
+  [^js track on-reach]
+  (let [io (js/IntersectionObserver.
+            (fn [entries]
+              (doseq [^js e entries]
+                (when (.-isIntersecting e)
+                  (on-reach (js/parseInt (.. e -target -dataset -i))))))
+            #js {:root track :rootMargin "0px 200% 0px 200%"})]
+    (doseq [el (array-seq (.querySelectorAll track ":scope > .ap-figure"))]
+      (.observe io el))
+    #(.disconnect io)))
 
 (def ^:private threejs-slide (lazy-component amp.ui.threejs-slide/threejs-slide))
 
@@ -65,6 +87,7 @@
   (let [track (hooks/use-ref nil)
         [at-start? set-at-start!] (hooks/use-state true)
         [at-end? set-at-end!] (hooks/use-state false)
+        [reach set-reach!] (hooks/use-state 0)
         scroll! (fn [dir]
                   (when-let [el @track]
                     (.scrollBy el #js {:left (* dir 0.8 (.-clientWidth el)) :behavior "smooth"})))
@@ -89,6 +112,10 @@
                      (fn [{:keys [start? end?]}]
                        (set-at-start! start?)
                        (set-at-end! end?)))))
+    (hooks/use-effect
+     [(count slides)]
+     (when-let [el @track]
+       (watch-reach! el (fn [i] (set-reach! #(max % i))))))
     (d/div {:class (str "ap-gallery" (when inset? " ap-gallery--inset"))}
            (if title
              (d/div {:class "ap-gallery__head"}
@@ -101,7 +128,7 @@
                    :aria-label (str (or title "Gallery") ", swipe for more")}
                   (map-indexed
                    (fn [i {:keys [type img-src aspect-ratio caption credit alt] :as slide}]
-                     (d/figure {:key (or img-src (str "slide-" i))
+                     (d/figure {:key (or img-src (str "slide-" i)) :data-i i
                                 :class (str "ap-figure" (when (= type :threejs) " ap-figure--3d"))
                                 :style #js {"--ar" (str (or aspect-ratio 1.5))}}
                                (when (zero? i) (d/span {:class "ap-edge ap-edge--start" :aria-hidden true}))
@@ -109,8 +136,9 @@
                                (d/div {:class "ap-figure__frame"}
                                       (if (= type :threejs)
                                         ($ model-frame {:& slide})
-                                        ($ picture {:src img-src :alt (or alt caption "") :on-load fit-frame!
-                                                    :sizes (str "(min-width: 720px) calc(58vh * " (or aspect-ratio 1.5) "), 86vw")})))
+                                        (when (<= i (+ reach ahead))
+                                          ($ picture {:src img-src :alt (or alt caption "") :on-load fit-frame!
+                                                      :sizes (str "(min-width: 720px) calc(58vh * " (or aspect-ratio 1.5) "), 86vw")}))))
                                (when (or caption credit)
                                  (d/figcaption {:class "ap-tomb"}
                                                (d/span {:class "ap-tomb__no"}

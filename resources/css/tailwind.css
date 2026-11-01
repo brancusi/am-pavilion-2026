@@ -617,7 +617,8 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-bench__cap { font: 400 12px/1.4 var(--font-mono); color: #b5ad9e; }
 .ap-bench__cap span { color: var(--on-night); }
 .ap-bench__foot { display: grid; gap: var(--space-6); padding-top: var(--space-6); border-top: 1px solid #4a453d; }
-.ap-bench__post { display: grid; gap: 4px; color: var(--on-night); text-decoration: none; }
+.ap-bench__post { display: grid; min-width: 0; gap: 4px; color: var(--on-night); text-decoration: none; }
+.ap-bench__post .ap-h2 { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .ap-bench__post:hover .ap-h2 { color: var(--yellow); }
 .ap-bench__foot .ap-btn { justify-self: start; }
 @media (min-width: 960px) {
