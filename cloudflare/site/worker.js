@@ -1,39 +1,82 @@
-// Site Worker: static assets from ./release, plus a link preview of its own
-// for each journal post, and the press images as ZIPs made on request.
-// Only /blog/* and /press/zip/* run through here (wrangler.jsonc
+// Gives journal posts and the press kit's films and images their own link
+// previews (title, description, picture), so a link texted or posted shows
+// what it points to rather than the site's card; and makes the press ZIPs.
+// Only /blog/*, /press/* and /it/press/* run through here (wrangler.jsonc
 // run_worker_first); everything else is served straight from the assets.
-// posts.json is written from the journal listing by build/og-posts.js.
+// posts.json and films.json are written by build/og-posts.js; the press
+// images come from press.json, the list the page reads.
 import posts from "./posts.json";
+import films from "./films.json";
 import { plan, send } from "./zip.js";
 
 const site = "https://armenianpavilion.org";
+const media = "https://media.armenianpavilion.org/";
 
 class Content {
   constructor(value) { this.value = value; }
   element(el) { el.setAttribute("content", this.value); }
 }
 
+// The page with its title, description and preview picture set.
+function preview(res, { path, title, description, image, width, height, type = "article" }) {
+  const url = site + path;
+  const meta = [
+    ["title", title], ["description", description],
+    ["og:type", type], ["og:url", url], ["og:title", title], ["og:description", description],
+    ["twitter:url", url], ["twitter:title", title], ["twitter:description", description],
+    ...(image ? [["og:image", image], ["twitter:image", image]] : []),
+  ];
+  let rw = new HTMLRewriter().on("title", { element(el) { el.setInnerContent(`${title} · Armenian Pavilion`); } });
+  for (const [k, v] of meta) rw = rw.on(`meta[name="${k}"], meta[property="${k}"]`, new Content(v));
+  if (image && width && height) {
+    rw = rw.on("head", { element(el) {
+      el.append(`<meta property="og:image:width" content="${width}"><meta property="og:image:height" content="${height}">`, { html: true });
+    } });
+  }
+  return rw.transform(res);
+}
+
+const PRESS_TEXT = {
+  en: { kit: "Press kit", desc: "Press kit for Zadik Zadikian: The Studio, Armenian Pavilion, Biennale Arte 2026: release, fact sheet, images, films and logos.", film: "Film" },
+  it: { kit: "Cartella stampa", desc: "Cartella stampa di Zadik Zadikian: The Studio, Padiglione della Repubblica di Armenia, Biennale Arte 2026: comunicato, scheda, immagini, video e loghi.", film: "Video" },
+};
+
+async function press(request, env, res, path, m) {
+  const [, it, section, item] = m;
+  const tx = PRESS_TEXT[it ? "it" : "en"];
+  if (section === "films" && item && films[item]) {
+    const f = films[item];
+    return preview(res, { path, title: f.title, description: `${tx.film} · ${f.summary}`, image: f.image, width: 1200, height: 630, type: "video.other" });
+  }
+  if (section === "images" && item) {
+    const data = await (await env.ASSETS.fetch(new URL("/data/press/press.json", request.url))).json();
+    const im = data.images.find((i) => i.uid === item);
+    if (im) {
+      // The Small download (1200 px long edge, ~100 KB): messaging apps skip
+      // preview pictures much bigger than that.
+      const s = im.dl?.s;
+      const title = [im.title, im.date].filter(Boolean).join(", ");
+      return preview(res, { path, title, description: im.caption_short || im.caption || tx.desc,
+                            image: s ? media + s.key : `${media}${im.key}.jpg`, width: s?.w, height: s?.h });
+    }
+  }
+  return preview(res, { path, title: tx.kit, description: tx.desc, type: "website" });
+}
+
 export default {
   async fetch(request, env, ctx) {
-    if (new URL(request.url).pathname.startsWith("/press/zip/")) return zip(request, env, ctx);
+    const path = new URL(request.url).pathname;
+    if (path.startsWith("/press/zip/")) return zip(request, env, ctx);
     const res = await env.ASSETS.fetch(request);
-    const slug = new URL(request.url).pathname.match(/^\/blog\/([a-z0-9-]+)\/?$/)?.[1];
-    const post = slug && posts[slug];
-    if (!post || !(res.headers.get("content-type") || "").includes("text/html")) return res;
+    if (!(res.headers.get("content-type") || "").includes("text/html")) return res;
 
-    const url = `${site}/blog/${slug}`;
-    const title = `${post.title} · Armenian Pavilion`;
-    const meta = [
-      ["title", title], ["description", post.summary],
-      ["og:type", "article"], ["og:url", url], ["og:title", post.title], ["og:description", post.summary],
-      ["twitter:url", url], ["twitter:title", post.title], ["twitter:description", post.summary],
-      ...(post.image ? [["og:image", post.image], ["twitter:image", post.image]] : []),
-    ];
-    let rw = new HTMLRewriter().on("title", { element(el) { el.setInnerContent(title); } });
-    for (const [k, v] of meta) {
-      rw = rw.on(`meta[name="${k}"], meta[property="${k}"]`, new Content(v));
-    }
-    return rw.transform(res);
+    const pm = path.match(/^(\/it)?\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
+    if (pm) return press(request, env, res, path, pm);
+
+    const slug = path.match(/^\/blog\/([a-z0-9-]+)\/?$/)?.[1];
+    const post = slug && posts[slug];
+    if (!post) return res;
+    return preview(res, { path: `/blog/${slug}`, title: post.title, description: post.summary, image: post.image });
   },
 };
 
