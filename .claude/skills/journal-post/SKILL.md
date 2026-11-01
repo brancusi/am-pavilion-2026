@@ -27,8 +27,8 @@ A post is a ClojureScript namespace with a hand-written body, plus a listing ent
   - A render is captioned "Rendering" and the text says it is not built.
   - Quotes from auto-captions are lightly cleaned; tell the user so they can check them. If the
     speaker can't be identified, quote without a name.
-  - Don't mention Portage, and skip `carry_rig` / `ai_renders` folders that show it, until the user
-    says it is announced.
+  - Portage is public (it has its own page, `/portage`, in the menu): link to it rather than retelling
+    it. `ai_renders` show work that isn't built, so caption them "Rendering" like any render.
   - Never use anything from `staffing/`, contracts or receipts (personal data).
 
 ## 2. Images

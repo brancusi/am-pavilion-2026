@@ -2,6 +2,35 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-01 — Pages fill before they show; supporters by tier; living grounds
+
+**Rationale:** On a slow first load the footer sat right at the fold under an empty page, and late font swaps nudged text on /artist and /visit. The supporters list needed an order that reflects what was given. The home Unit chapter wanted a living, generative ground in place of the 3D mark.
+**Summary:** Pages are held at their expected height and blur-fade in once filled, with the footer last. Supporters are shown by tier, with links. The Unit chapter has 20 generative "grounds", lazy-loaded, with Pause / Next / a picker. Notes rewritten for a fresh start (`CLAUDE.md`).
+
+### Changes
+
+- `section_transitioner.cljs`: remembers each page's height per path and width (localStorage `ap:h:*`), holds the page invisible at that height, reveals it after content and fonts are in (0.24 s blur-fade), then shows the footer once the height settles. Throttled /artist and /visit go from 0.0096 / 0.0178 CLS to 0.0000.
+- `supporters.cljs`: Diamond → Bronze tiers; the ministry's name split onto two lines; Armenia Fund and the ministry link to their official sites.
+- Footer Follow links to @zadikzadikian.
+- `resources/data/grounds/`: engine, player and 20 pieces drawn on a canvas under the Unit chapter; `?ground=<id>` locks one piece. The signatures and ideas in the manifest are placeholders.
+- The Unit chapter's mark is now flat (`studio-mark-flat`) with drafting-guide hover; the footer and menu keep the 3D mark.
+- Fit galleries: every slide the same height, images contained and centred.
+- Added `CLAUDE.md`; README routes and map brought up to date; `.github/copilot-instructions.md` now points to them; removed the unused `scripts/release.clj` and the stale `yarn.lock` (npm is the package manager).
+
+## 2026-10-31 — Press kit, film links, "Armenian Pavilion"
+
+**Rationale:** Journalists needed one place for the release, facts, images, logos and films, in English and Italian, with links that preview properly when shared.
+**Summary:** `/press` and `/it/press` carry the press kit (sections, fact table, logos, release PDFs, image downloads in four sizes). Films and press images have shareable URLs with their own link previews (site Worker). Running text says "Armenian Pavilion".
+
+### Changes
+
+- `build/press-kit.mjs` generates `src/amp/data/press_kit.cljs` from the press-kit Markdown in Dropbox; `build/press-release-pdf.mjs` makes the release PDFs.
+- `scripts/press.mjs` builds the image list from Caption Genius "Pavilion — Press", with Small / Medium / Large / Full downloads; one private image is always withheld.
+- `cloudflare/site/worker.js`: link previews for `/blog/*`, `/films/*`, `/press*`, and press ZIPs.
+- Home films: `/films/<slug>` opens the home page on that film.
+- Journal: "The Making of Seven Steps to Heaven"; "With the support of" section on the home page.
+
+
 ## 2026-10-30 — Repo tidy, journal-post skill, layout-shift check
 
 **Rationale:** Keep what was learnt writing the autumn journal posts, and make the repo easy to pick up from scratch.
