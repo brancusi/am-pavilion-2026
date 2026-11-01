@@ -9,9 +9,10 @@
    [helix.dom :as d]))
 
 (def ^:private social-profiles
-  "Armenian Pavilion 2026 social accounts."
+  "Where to follow: Zadik Zadikian's own Instagram."
   [{:platform "Instagram"
-    :href     "https://www.instagram.com/armenia.pavilion.2026/"
+    :label    "Zadik Zadikian on Instagram"
+    :href     "https://www.instagram.com/zadikzadikian/"
     :icon     InstagramIcon}
    #_{:platform "Facebook"
       :href     "https://www.facebook.com/armenianpavilion2026"
@@ -36,12 +37,12 @@
   (d/div
          (d/h2 {:class "ap-footer__h"} "Follow")
          (d/div {:class "flex items-center gap-1"}
-                (for [{:keys [platform href icon]} social-profiles]
+                (for [{:keys [platform label href icon]} social-profiles]
                   (d/a {:key      platform
                         :href     href
                         :target   "_blank"
                         :rel      "noopener noreferrer"
-                        :title    platform
-                        :aria-label platform
+                        :title    (or label platform)
+                        :aria-label (or label platform)
                         :class    icon-link-class}
                        ($ icon {:class "w-[18px] h-[18px]"}))))))
