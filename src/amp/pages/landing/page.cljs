@@ -259,32 +259,38 @@
 
 ;; ── Films ───────────────────────────────────────────────────────────────
 
-(defn- hash-film
-  "The film a #film-<slug> link names, if any."
+(defn- linked-film
+  "The film the address names: /films/<slug>, or the older /#film-<slug>."
   []
-  (let [h (.. js/location -hash)]
-    (when (str/starts-with? h "#film-")
-      (some #(when (= (:slug %) (subs h 6)) %) films/films))))
+  (let [slug (or (second (re-find #"^/films/([a-z0-9-]+)/?$" (.. js/location -pathname)))
+                 (let [h (.. js/location -hash)] (when (str/starts-with? h "#film-") (subs h 6))))]
+    (some #(when (= (:slug %) slug) %) films/films)))
+
+(defn- scroll-to-film!
+  "Bring the films section into view, again once the page above has settled."
+  [slug]
+  (doseq [ms [300 900]]
+    (js/setTimeout #(some-> (.getElementById js/document (str "film-" slug)) (.scrollIntoView #js {:block "start"})) ms)))
 
 (defnc films-section []
-  (let [[current set-current!] (hooks/use-state #(or (hash-film) (first films/films)))
-        ;; A #film-<slug> link (the press kit, a share) picks that film; the
-        ;; router scrolls to its anchor below.
+  (let [[current set-current!] (hooks/use-state #(or (linked-film) (first films/films)))
+        ;; A /films/<slug> link (a share) picks that film and scrolls to it; an
+        ;; older /#film-<slug> link too (the router scrolls to its anchor).
         _ (hooks/use-effect
            :once
-           (let [on-hash #(when-let [f (hash-film)] (set-current! f))]
+           (when (str/starts-with? (.. js/location -pathname) "/films/")
+             (some-> (linked-film) :slug scroll-to-film!))
+           (let [on-hash #(when-let [f (linked-film)] (set-current! f))]
              (.addEventListener js/window "hashchange" on-hash)
              #(.removeEventListener js/window "hashchange" on-hash)))
         [playing? set-playing!] (hooks/use-state false)
         {:keys [title playback-id poster summary where duration]} current
-        ;; Picking a film puts its link (/#film-<slug>) in the address bar,
-        ;; without a navigation, so it can be copied and shared.
+        ;; Picking a film puts its link (/films/<slug>) in the address bar,
+        ;; without a navigation, so it can be copied and shared with a preview.
         pick! (fn [f]
                 (set-current! f)
                 (set-playing! true)
-                (let [l js/location]
-                  (.replaceState js/history (.-state js/history) ""
-                                 (str (.-pathname l) (.-search l) "#film-" (:slug f)))))
+                (.replaceState js/history (.-state js/history) "" (str "/films/" (:slug f))))
         ;; Fetch the player's code before anyone presses play.
         [ref {near? :in?}] (use-in-view :root-margin "100% 0px")
         _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))

@@ -1,7 +1,8 @@
-// Gives journal posts and the press kit's films and images their own link
+// Gives journal posts, films (/films/<slug>, the home page with that film) and
+// the press kit's films and images their own link
 // previews (title, description, picture), so a link texted or posted shows
 // what it points to rather than the site's card; and makes the press ZIPs.
-// Only /blog/*, /press/* and /it/press/* run through here (wrangler.jsonc
+// Only /blog/*, /films/*, /press/* and /it/press/* run through here (wrangler.jsonc
 // run_worker_first); everything else is served straight from the assets.
 // posts.json and films.json are written by build/og-posts.js; the press
 // images come from press.json, the list the page reads.
@@ -69,6 +70,12 @@ export default {
     if (path.startsWith("/press/zip/")) return zip(request, env, ctx);
     const res = await env.ASSETS.fetch(request);
     if (!(res.headers.get("content-type") || "").includes("text/html")) return res;
+
+    const fm = path.match(/^\/films\/([a-z0-9-]+)\/?$/);
+    if (fm && films[fm[1]]) {
+      const f = films[fm[1]];
+      return preview(res, { path: `/films/${fm[1]}`, title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other" });
+    }
 
     const pm = path.match(/^(\/it)?\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
     if (pm) return press(request, env, res, path, pm);
