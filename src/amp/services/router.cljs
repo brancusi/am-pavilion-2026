@@ -85,6 +85,11 @@
   (into ["/"
          [""
           {:name :home
+           :view (lazy-component amp.pages.landing.page/landing-view)}]
+         ;; One film on the home page, picked and scrolled to: a link of its own,
+         ;; with its own preview (cloudflare/site/worker.js).
+         ["films/:slug"
+          {:name :home-film
            :view (lazy-component amp.pages.landing.page/landing-view)}]]
         (mapcat (fn [{:keys [id path view title]}]
                   (let [route-data {:name id
