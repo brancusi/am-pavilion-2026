@@ -20,7 +20,7 @@
    {:tier "Silver"
     :names [{:name "Ministry of Education, Science, Culture and Sport"
              :sub "Republic of Armenia"
-             :href "https://escs.am/en"}]}
+             :href "https://escs.gov.am/en"}]}
    {:tier "Bronze"
     :names [{:name "Andy and Hayde Torosyan and family"}]}])
 
