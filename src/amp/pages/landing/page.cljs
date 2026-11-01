@@ -277,7 +277,14 @@
              #(.removeEventListener js/window "hashchange" on-hash)))
         [playing? set-playing!] (hooks/use-state false)
         {:keys [title playback-id poster summary where duration]} current
-        pick! (fn [f] (set-current! f) (set-playing! true))
+        ;; Picking a film puts its link (/#film-<slug>) in the address bar,
+        ;; without a navigation, so it can be copied and shared.
+        pick! (fn [f]
+                (set-current! f)
+                (set-playing! true)
+                (let [l js/location]
+                  (.replaceState js/history (.-state js/history) ""
+                                 (str (.-pathname l) (.-search l) "#film-" (:slug f)))))
         ;; Fetch the player's code before anyone presses play.
         [ref {near? :in?}] (use-in-view :root-margin "100% 0px")
         _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))
