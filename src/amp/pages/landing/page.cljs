@@ -20,6 +20,7 @@
    [amp.ui.studio-mark :refer [studio-mark-3d]]
    [amp.ui.temporary-closure :refer [closure-banner]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
+   [clojure.string :as str]
    [helix.core :refer [$ <>]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
@@ -258,8 +259,22 @@
 
 ;; ── Films ───────────────────────────────────────────────────────────────
 
+(defn- hash-film
+  "The film a #film-<slug> link names, if any."
+  []
+  (let [h (.. js/location -hash)]
+    (when (str/starts-with? h "#film-")
+      (some #(when (= (:slug %) (subs h 6)) %) films/films))))
+
 (defnc films-section []
-  (let [[current set-current!] (hooks/use-state (first films/films))
+  (let [[current set-current!] (hooks/use-state #(or (hash-film) (first films/films)))
+        ;; A #film-<slug> link (the press kit, a share) picks that film; the
+        ;; router scrolls to its anchor below.
+        _ (hooks/use-effect
+           :once
+           (let [on-hash #(when-let [f (hash-film)] (set-current! f))]
+             (.addEventListener js/window "hashchange" on-hash)
+             #(.removeEventListener js/window "hashchange" on-hash)))
         [playing? set-playing!] (hooks/use-state false)
         {:keys [title playback-id poster summary where duration]} current
         pick! (fn [f] (set-current! f) (set-playing! true))
@@ -268,7 +283,11 @@
         _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))
         still (d/img {:src (mux-poster playback-id {:w 1600 :time poster})
                       :alt "" :loading "lazy"})]
-    (d/section {:ref ref :class "ap-sec ap-film" :id "film"}
+    (d/section {:ref ref :class "ap-sec ap-film relative" :id "film"}
+               ;; One anchor per film at the top of the section, for #film-<slug>.
+               (for [{:keys [slug]} films/films]
+                 (d/span {:key slug :id (str "film-" slug) :class "absolute top-0 left-0" :aria-hidden true
+                            :style #js {:scrollMarginTop "var(--header-h)"}}))
                (d/div {:class "ap-wrap flex flex-col gap-6"}
                       (d/div {:class "ap-head-row !m-0"}
                              (d/div

@@ -23,6 +23,7 @@
             [amp.lib.defnc :refer [defnc]]
             [amp.services.router :refer [flush-scroll!]]
             [amp.state.provider :refer [use-main-state]]
+            [amp.ui.lightbox :refer [film-lightbox]]
             [amp.ui.picture :refer [picture media-host]]
             [clojure.string :as str]
             [helix.core :refer [$ <>]]
@@ -58,7 +59,7 @@
         :n-selected #(str % (if (= % 1) " image selected" " images selected"))
         :section-zip "This section" :all-zip "All images"
         :sketch "Sketch" :rendering "Rendering" :maquette "Maquette"
-        :film-download "Download MP4" :held "Download on request" :short "Short bio"
+        :play "Play: " :film-download "Download MP4" :held "Download on request" :short "Short bio"
         :source "Source" :draft "Review build. Not public: the kit shows on armenianpavilion.org only once approved."
         :english-only "In English only." :later "To come." :prev "← Previous" :next "Next →"
         :close "Close" :photo "Photo: " :view "View: " :on-way "Press images are on their way."
@@ -78,7 +79,7 @@
         :n-selected #(str % (if (= % 1) " immagine selezionata" " immagini selezionate"))
         :section-zip "Questa sezione" :all-zip "Tutte le immagini"
         :sketch "Schizzo" :rendering "Rendering" :maquette "Modello"
-        :film-download "Scarica MP4" :held "Download su richiesta" :short "Biografia breve"
+        :play "Guarda: " :film-download "Scarica MP4" :held "Download su richiesta" :short "Biografia breve"
         :source "Fonte" :draft "Versione di revisione, non pubblica."
         :english-only "Solo in inglese." :later "In arrivo." :prev "← Precedente" :next "Successiva →"
         :close "Chiudi" :photo "Foto: " :view "Apri: " :on-way "Le immagini sono in arrivo."
@@ -376,14 +377,19 @@
 (defn- mmss [s] (str (quot s 60) ":" (pad2 (mod s 60))))
 
 (defnc film-row
-  [{:keys [film text t]}]
+  [{:keys [film text on-play t]}]
   (let [{:keys [slug title playback-id duration poster]} film
         tiers (if (= slug "murano") ["1080p"] ["2160p" "1440p" "1080p"])
         {:keys [date credit line held]} text]
     (d/li {:class "ap-kit__film" :id (str "film-" slug)}
-          (d/a {:class "ap-kit__poster" :href (str "/#film-" slug) :aria-label title}
-               (d/img {:src (str "https://image.mux.com/" playback-id "/thumbnail.webp?width=640&time=" poster)
-                       :alt "" :loading "lazy" :width 640 :height 360}))
+          ;; Plays here, in the film lightbox.
+          (d/button {:type "button" :class "ap-kit__poster" :on-click on-play
+                     :aria-label (str (t :play) (or (:title text) title))}
+                    (d/img {:src (str "https://image.mux.com/" playback-id "/thumbnail.webp?width=640&time=" poster)
+                            :alt "" :loading "lazy" :width 640 :height 360})
+                    (d/span {:class "ap-kit__play" :aria-hidden true}
+                            (d/svg {:width 20 :height 20 :viewBox "0 0 16 16" :fill "currentColor"}
+                                   (d/path {:d "M4 2l10 6-10 6z"}))))
           (d/div {:class "grid gap-2 content-start"}
                  (d/h2 {:class "ap-h3 m-0"} (or (:title text) title))
                  (d/p {:class "ap-label ap-muted m-0"}
@@ -399,6 +405,18 @@
                                   :href (str "https://stream.mux.com/" playback-id "/" r ".mp4?download="
                                              (js/encodeURIComponent (str "armenian-pavilion-" slug "-" r)))}
                                  (str "MP4 · " r)))))))))
+
+(defnc film-list
+  "The films, each playing in the lightbox from its poster."
+  [{:keys [video t]}]
+  (let [[playing set-playing!] (hooks/use-state nil)]
+    (<>
+     (d/ul {:class "ap-kit__films"}
+           (for [film films/films
+                 :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
+             ($ film-row {:key (:slug film) :film film :text text :t t
+                          :on-play #(set-playing! film)})))
+     ($ film-lightbox {:film playing :on-close #(set-playing! nil)}))))
 
 (defnc fact-table
   "Property: value rows, with a copy button for the whole sheet."
@@ -606,10 +624,7 @@
                            ($ library {:images images :lang lang :t t})
 
                            "films"
-                           (d/ul {:class "ap-kit__films"}
-                                 (for [film films/films
-                                       :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
-                                   ($ film-row {:key (:slug film) :film film :text text :t t})))
+                           ($ film-list {:video video :t t})
 
                            "people"
                            (<>
