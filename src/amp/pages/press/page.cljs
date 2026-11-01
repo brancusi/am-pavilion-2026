@@ -59,7 +59,7 @@
         :n-selected #(str % (if (= % 1) " image selected" " images selected"))
         :section-zip "This section" :all-zip "All images"
         :sketch "Sketch" :rendering "Rendering" :maquette "Maquette"
-        :play "Play: " :film-download "Download MP4" :held "Download on request" :short "Short bio"
+        :play "Play: " :copy-link "Copy link" :film-download "Download MP4" :held "Download on request" :short "Short bio"
         :source "Source" :draft "Review build. Not public: the kit shows on armenianpavilion.org only once approved."
         :english-only "In English only." :later "To come." :prev "← Previous" :next "Next →"
         :close "Close" :photo "Photo: " :view "View: " :on-way "Press images are on their way."
@@ -79,7 +79,7 @@
         :n-selected #(str % (if (= % 1) " immagine selezionata" " immagini selezionate"))
         :section-zip "Questa sezione" :all-zip "Tutte le immagini"
         :sketch "Schizzo" :rendering "Rendering" :maquette "Modello"
-        :play "Guarda: " :film-download "Scarica MP4" :held "Download su richiesta" :short "Biografia breve"
+        :play "Guarda: " :copy-link "Copia link" :film-download "Scarica MP4" :held "Download su richiesta" :short "Biografia breve"
         :source "Fonte" :draft "Versione di revisione, non pubblica."
         :english-only "Solo in inglese." :later "In arrivo." :prev "← Precedente" :next "Successiva →"
         :close "Chiudi" :photo "Foto: " :view "Apri: " :on-way "Le immagini sono in arrivo."
@@ -121,6 +121,40 @@
 
 (defn- zip-url [name uids size]
   (str "/press/zip/" name ".zip?" (when (seq uids) (str "i=" (str/join "," uids) "&")) "s=" size))
+
+(defn- page-hash [] (not-empty (subs (.. js/location -hash) 1)))
+
+;; A film or image has its own address, /press/films/carrying or
+;; /press/images/<uid> (/it/press/… in Italian): the site Worker gives it its
+;; own link preview (cloudflare/site/worker.js), which a #fragment can't have,
+;; since it never reaches the server. #carrying is still read.
+
+(defn- linked-item
+  "The film or image the address names: /press/<page>/<item>, else #<item>."
+  []
+  (or (second (re-find #"/press/[^/]+/([^/]+)/?$" (.. js/location -pathname)))
+      (page-hash)))
+
+(defn- item-path [lang page item]
+  (str (when (= lang :it) "/it") "/press/" page (when item (str "/" item))))
+
+(defn- show-item!
+  "Put the open film or image (or none) in the address bar, without a
+   navigation, so it can be copied as it is."
+  [lang page item]
+  (.replaceState js/history (.-state js/history) "" (item-path lang page item)))
+
+(defn- kit-link [lang page item] (str (.-origin js/location) (item-path lang page item)))
+
+(defn- use-hash
+  "Calls `f` with the #fragment when it changes (a link pasted into the
+   address bar of an open page)."
+  [f]
+  (hooks/use-effect
+   :once
+   (let [on-hash #(f (page-hash))]
+     (.addEventListener js/window "hashchange" on-hash)
+     #(.removeEventListener js/window "hashchange" on-hash))))
 
 (defn- show-kit? []
   (or (:live press-kit/kit) (not= (.. js/location -hostname) "armenianpavilion.org")))
@@ -248,8 +282,11 @@
                               (when (and (seq credit) (not (re-find #"Photo:" (or caption ""))))
                                 (d/p {:class "ap-label m-0"} (str (t :photo) credit)))
                               ($ downloads {:image image :t t})
-                              (when-let [c (copy-text image)]
-                                ($ copy-button {:text c :label (t :copy-caption) :done (t :copied)}))
+                              (d/div {:class "flex flex-wrap gap-2"}
+                                     (when-let [c (copy-text image)]
+                                       ($ copy-button {:text c :label (t :copy-caption) :done (t :copied)}))
+                                     ($ copy-button {:text (kit-link lang "images" (:uid image))
+                                                     :label (t :copy-link) :done (t :copied)}))
                               (d/div {:class "ap-press__nav"}
                                      (d/button {:type "button" :class "ap-press__btn"
                                                 :on-click #(on-go (mod (dec at) n))} (t :prev))
@@ -260,9 +297,9 @@
 ;; ── Image library ──────────────────────────────────────────────────────────
 
 (defnc press-card
-  [{:keys [image on-open picked? on-pick t]}]
+  [{:keys [id image on-open picked? on-pick t]}]
   (let [{:keys [w h date credit]} image]
-    (d/li {:class "ap-press__item" :data-picked (when picked? "")}
+    (d/li {:id id :class "ap-press__item" :data-picked (when picked? "")}
           (d/div {:class "relative"}
                  (d/button {:type "button" :class "ap-press__frame" :on-click on-open
                             :aria-label (str (t :view) (title-of image))}
@@ -304,7 +341,16 @@
         uids (set (map :uid images))
         picked (into #{} (filter uids) picked)
         chosen (filterv #(picked (:uid %)) images)
-        [at set-at!] (hooks/use-state nil)
+        ;; The open image, by uid: /press/images/<uid> opens it, and the address
+        ;; follows the viewer so it can be copied and shared.
+        [open set-open!] (hooks/use-state linked-item)
+        at (when open (let [i (.indexOf (to-array (map :uid shown)) open)] (when (>= i 0) i)))
+        set-at! (fn [i]
+                  (let [uid (when i (:uid (nth shown i nil)))]
+                    (set-open! uid)
+                    (show-item! lang "images" uid)))
+        _ (use-hash set-open!)
+        _ (hooks/use-effect :once (when open (js/setTimeout #(show-item! lang "images" open) 600)))
         all-shown? (and (seq shown) (every? #(picked (:uid %)) shown))]
     (<>
      (d/div {:class "ap-press__tools"}
@@ -334,7 +380,7 @@
              (map-indexed
               (fn [i image]
                 (let [uid (:uid image)]
-                  ($ press-card {:key uid :image image :t t
+                  ($ press-card {:key uid :id uid :image image :t t
                                  :picked? (picked uid)
                                  :on-pick #(set-picked! (if (picked uid) (disj picked uid) (conj picked uid)))
                                  :on-open #(set-at! i)})))
@@ -377,11 +423,11 @@
 (defn- mmss [s] (str (quot s 60) ":" (pad2 (mod s 60))))
 
 (defnc film-row
-  [{:keys [film text on-play t]}]
+  [{:keys [film text on-play lang t]}]
   (let [{:keys [slug title playback-id duration poster]} film
         tiers (if (= slug "murano") ["1080p"] ["2160p" "1440p" "1080p"])
         {:keys [date credit line held]} text]
-    (d/li {:class "ap-kit__film" :id (str "film-" slug)}
+    (d/li {:class "ap-kit__film" :id slug}
           ;; Plays here, in the film lightbox.
           (d/button {:type "button" :class "ap-kit__poster" :on-click on-play
                      :aria-label (str (t :play) (or (:title text) title))}
@@ -404,19 +450,27 @@
                             (d/a {:key r :class "ap-press__btn"
                                   :href (str "https://stream.mux.com/" playback-id "/" r ".mp4?download="
                                              (js/encodeURIComponent (str "armenian-pavilion-" slug "-" r)))}
-                                 (str "MP4 · " r)))))))))
+                                 (str "MP4 · " r))))
+                        ($ copy-button {:text (kit-link lang "films" slug) :label (t :copy-link) :done (t :copied)}))))))
 
 (defnc film-list
   "The films, each playing in the lightbox from its poster."
-  [{:keys [video t]}]
-  (let [[playing set-playing!] (hooks/use-state nil)]
+  [{:keys [video lang t]}]
+  ;; /press/films/carrying opens that film, and the address follows the
+  ;; lightbox so it can be copied and shared.
+  (let [by-slug (fn [h] (let [h (some-> h (str/replace #"^film-" ""))]   ; #film-<slug> was the old form
+                          (some #(when (= (:slug %) h) %) films/films)))
+        [playing set-playing!] (hooks/use-state #(by-slug (linked-item)))
+        play! (fn [film] (set-playing! film) (show-item! lang "films" (:slug film)))]
+    (use-hash #(set-playing! (by-slug %)))
+    (hooks/use-effect :once (when playing (js/setTimeout #(show-item! lang "films" (:slug playing)) 600)))
     (<>
      (d/ul {:class "ap-kit__films"}
            (for [film films/films
                  :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
-             ($ film-row {:key (:slug film) :film film :text text :t t
-                          :on-play #(set-playing! film)})))
-     ($ film-lightbox {:film playing :on-close #(set-playing! nil)}))))
+             ($ film-row {:key (:slug film) :film film :text text :lang lang :t t
+                          :on-play #(play! film)})))
+     ($ film-lightbox {:film playing :on-close #(play! nil)}))))
 
 (defnc fact-table
   "Property: value rows, with a copy button for the whole sheet."
@@ -624,7 +678,7 @@
                            ($ library {:images images :lang lang :t t})
 
                            "films"
-                           ($ film-list {:video video :t t})
+                           ($ film-list {:video video :lang lang :t t})
 
                            "people"
                            (<>

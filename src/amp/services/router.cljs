@@ -107,7 +107,10 @@
                       (let [route-data (assoc route-data :group id :inner-swap true)]
                         [[path route-data]
                          [(str path "/:section")
-                          (assoc route-data :name (keyword "amp.services.router" (str (name id) "-section")))]])
+                          (assoc route-data :name (keyword "amp.services.router" (str (name id) "-section")))]
+                         ;; A film or image: /press/films/carrying, /press/images/<uid>.
+                         [(str path "/:section/:item")
+                          (assoc route-data :name (keyword "amp.services.router" (str (name id) "-item")))]])
                       [[path route-data]])))
                 site-map)))
 

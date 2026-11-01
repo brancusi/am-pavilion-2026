@@ -31,3 +31,17 @@ for (const block of src.split(/\{:slug/).slice(1).map((b) => ":slug" + b)) {
 if (!Object.keys(posts).length) throw new Error("og-posts: no posts found in journal.cljs");
 fs.writeFileSync(path.join(__dirname, "../cloudflare/site/posts.json"), JSON.stringify(posts, null, 1) + "\n");
 console.log(`og-posts: ${Object.keys(posts).length} posts`);
+
+// And cloudflare/site/films.json from src/amp/data/films.cljs, for the press
+// kit's film links (/press/films/<slug>): title, summary and Mux poster.
+const filmSrc = fs.readFileSync(path.join(__dirname, "../src/amp/data/films.cljs"), "utf8");
+const films = {};
+for (const block of filmSrc.split(/\{:slug/).slice(1).map((b) => ":slug" + b)) {
+  const pid = field(block, "playback-id");
+  const poster = (block.match(/:poster\s+(\d+)/) || [])[1] || 0;
+  films[field(block, "slug")] = { title: field(block, "title"), summary: field(block, "summary"),
+    image: `https://image.mux.com/${pid}/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=${poster}` };
+}
+if (!Object.keys(films).length) throw new Error("og-posts: no films found in films.cljs");
+fs.writeFileSync(path.join(__dirname, "../cloudflare/site/films.json"), JSON.stringify(films, null, 1) + "\n");
+console.log(`og-posts: ${Object.keys(films).length} films`);
