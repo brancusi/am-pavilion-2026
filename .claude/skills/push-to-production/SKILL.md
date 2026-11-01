@@ -38,8 +38,9 @@ system reminder. Then capture the short hash: `H=$(git rev-parse --short HEAD)`.
 
 ## 2. Release build
 
-`npm run release` (about 20 s). If `clojure` fails with "No version is set for shim", prefix with
-`MISE_CLOJURE_VERSION=<installed> MISE_JAVA_VERSION=<installed>` (see `mise ls`). It cleans `release/js`, runs the advanced shadow-cljs build stamped with `$H`,
+`MISE_CLOJURE_VERSION=1.12.6.1673 MISE_JAVA_VERSION=temurin-21.0.12+8.0.LTS npm run release` (about
+20 s; without the prefix `clojure` fails with "No version is set for shim"; if those versions are gone,
+pick the installed ones from `mise ls`). It cleans `release/js`, runs the advanced shadow-cljs build stamped with `$H`,
 runs PostCSS, copies assets, and rewrites `release/index.html`.
 
 Expected, benign warnings: one `:redef` for `medley.core/abs` and one `:invalid-arithmetic`
@@ -83,6 +84,8 @@ For changes to layout, fonts or images, sweep live first:
 
 Lead with the live URL and what changed. List the source commit, release commit, Worker version id and PR link.
 Mention anything left dirty (dev-build output under `public/`, untracked files) and anything skipped.
+If the change was notable, add a dated entry to `CHANGELOG.md` (and `CLAUDE.md` if it changes how the
+site works) in the source commit.
 
 ## 8. Wind down (only when asked)
 

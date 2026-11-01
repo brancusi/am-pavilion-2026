@@ -40,3 +40,6 @@ cljs-runtime
 .local
 .wrangler/
 .media-out/
+
+# npm is the package manager (package-lock.json)
+/yarn.lock
