@@ -184,7 +184,7 @@
                (d/a {:key (name k) :href (str media-host (:key f)) :download (:name f)
                      :title (tier-info f t)}
                     (get (t :tiers) k))))
-      (d/ul {:class "ap-press__dl"}
+      (d/ul {:class "ap-press__tiers"}
             (for [k tiers :let [f (dl k)] :when f]
               (d/li {:key (name k)}
                     (d/a {:href (str media-host (:key f)) :download (:name f)}
@@ -666,9 +666,9 @@
                                             (d/div {:class (str "ap-kit__logo" (when dark " ap-kit__logo--dark"))}
                                                    (d/img {:src preview :alt name :loading "lazy"}))
                                             (d/p {:class "ap-label m-0"} name)
-                                            (d/div {:class "ap-press__dl"}
+                                            (d/div {:class "ap-press__sizes ap-press__sizes--wrap"}
                                                    (for [{:keys [label url]} files]
-                                                     (d/a {:key label :class "ap-press__btn" :href url :download true} label)))))))
+                                                     (d/a {:key label :href url :download true} label)))))))
                             ($ html {:of (:html logos)}))
 
                            nil)
