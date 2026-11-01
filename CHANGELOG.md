@@ -2,6 +2,19 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-01 — Home: the story, Portage, On the bench, getting to the pavilion
+
+**Rationale:** The two long reads (the story and Portage) had no way in from the home page; the Hall chapter said little now the studio is working; "Tesa 41" means nothing to most visitors; the October closure is over.
+**Summary:** Two visual teasers on the home page, a work-in-progress section in place of the Hall, a new blue "Getting to the pavilion" block, and the closure notice code removed.
+
+### Changes
+
+- `landing/teasers.cljs`: "Armenian as well." (1978 / 2025 photo pair, gold and red rails drawing the nine crossings to scale, the five movements linking to their chapters) and Portage (the Barbari woodcut with its rings, the 13 bridges of Route A rising as the walk is drawn, the walk's numbers, the six sheets). Both drawings play once in view; static under reduced motion.
+- `landing/bench.cljs`: On the bench replaces "41 · The Hall": the day of the run counted in Venice time (day 177 of 198 today), seven process photos from the press set, the making-of posts.
+- The visit block is its own blue plate, "Getting to the pavilion", with the two ways in as map toggles and the practical facts; `/visit` is titled "Getting to the pavilion" too.
+- Home order now alternates grounds: Unit → On the bench → works → story → Portage → films → visit → journal.
+- Removed `ui/temporary_closure.cljs` and its two call sites.
+
 ## 2026-11-01 — Pages fill before they show; supporters by tier; living grounds
 
 **Rationale:** On a slow first load the footer sat right at the fold under an empty page, and late font swaps nudged text on /artist and /visit. The supporters list needed an order that reflects what was given. The home Unit chapter wanted a living, generative ground in place of the 3D mark.

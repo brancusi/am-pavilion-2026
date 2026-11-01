@@ -8,7 +8,6 @@
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.ui.section-header :refer [section-eyebrow]]
    [amp.ui.directions :refer [julda-contact luca-contact]]
-   [amp.ui.temporary-closure :refer [closure-notice]]
    [amp.ui.wayfinding :as wf]
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
    [amp.hooks.use-media-query :refer [use-touch-enabled]]
@@ -106,7 +105,7 @@
               (d/div {:class "ap-wrap ap-vhead__grid"}
                      (d/div {:class "flex flex-col gap-5"}
                             (d/p {:class "ap-label m-0 text-yellow"} "Visit · Venice · Arsenale Militare")
-                            (d/h1 {:class "ap-display-xl"} "Getting to Tesa 41")
+                            (d/h1 {:class "ap-display-xl"} "Getting to the pavilion")
                             (d/p {:class "ap-lede max-w-[36ch]"}
                                  "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. "
                                  "Guests by water taxi enter from the North Lagoon."))
@@ -409,7 +408,6 @@
   [_props]
   (d/div
    ($ visit-head)
-   (d/div {:class "ap-wrap pt-8"} ($ closure-notice))
    ($ map-guide)
    ($ taxi-card)
    (d/div {:class (s/cx s/content-column-container "pt-16 lg:pt-24")}
