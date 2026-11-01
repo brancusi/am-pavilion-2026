@@ -8,6 +8,7 @@
    [amp.data.films :as films]
    [amp.data.journal :as journal]
    [amp.hooks.use-in-view :refer [use-in-view]]
+   [amp.hooks.use-press-home :as press-home :refer [use-press-home]]
    [amp.lib.defnc :refer [defnc]]
    [amp.pages.landing.bench :refer [on-the-bench]]
    [amp.pages.landing.curators :refer [curators-section]]
@@ -228,13 +229,15 @@
 ;; ── Works gallery ───────────────────────────────────────────────────────
 
 (defnc works-gallery []
-  (d/section {:class "ap-sec" :aria-label "Works"}
-             ($ fit-gallery {:label "Works · 2026"
-                             :title "The units, assembled"
-                             :slides (mapv #(cond-> % (:img-src %) (update :img-src (partial str media)))
-                                           works/slides)
-                             :action (d/a {:class "ap-btn ap-btn--ghost max-sm:!hidden" :href "/artist"}
-                                          "The artist")})))
+  (let [[ref {near? :in?}] (use-in-view :root-margin "150% 0px")
+        press (press-home/of (use-press-home near?) "works")]
+    (d/section {:ref ref :class "ap-sec" :aria-label "Works"}
+               ($ fit-gallery {:label "Works · 2026"
+                               :title "The units, assembled"
+                               :slides (mapv #(cond-> % (:img-src %) (update :img-src (partial str media)))
+                                             (works/slides press))
+                               :action (d/a {:class "ap-btn ap-btn--ghost max-sm:!hidden" :href "/artist"}
+                                            "The artist")}))))
 
 ;; ── Films ───────────────────────────────────────────────────────────────
 

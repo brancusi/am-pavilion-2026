@@ -5,9 +5,11 @@
 # URL, is where the result is.
 #
 # Uploads the included images (scripts/press.mjs), then publishes the list:
-# copies press.json and captions.csv into the built site (release/) and
-# deploys it as it is, without a rebuild. The two files are left changed in
-# the working tree for the next commit.
+# copies press.json, captions.csv and home.json (the home page's works
+# gallery and On the bench, scripts/press-home.mjs) into the built site
+# (release/) and deploys it as it is, without a rebuild. Those files and
+# src/amp/data/press_home.cljs are left changed in the working tree for the
+# next commit.
 set -e
 setopt pipefail
 export PATH="$HOME/.local/share/mise/installs/node/24/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
@@ -18,7 +20,7 @@ node scripts/press.mjs "${1:-$CG_SYNC_JOB}" | grep -v '^uploaded '
 
 echo "Publishing the list"
 mkdir -p release/data/press
-cp resources/data/press/press.json resources/data/press/captions.csv release/data/press/
+cp resources/data/press/press.json resources/data/press/captions.csv resources/data/press/home.json release/data/press/
 npx wrangler deploy --message "Press sync" >/dev/null 2>&1 || { echo "The deploy failed"; exit 1; }
 
 want=$(node -e "console.log(require('./resources/data/press/press.json').images.length)")
@@ -28,5 +30,5 @@ for i in 1 2 3 4 5; do
   sleep 2
 done
 [ "$got" = "$want" ] || { echo "The live list shows $got images, not $want"; exit 1; }
-echo "Synced $want images to the Press page"
+echo "Synced $want images to the Press page and the home page"
 echo "https://armenianpavilion.org/press"

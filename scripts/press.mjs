@@ -20,6 +20,7 @@ import { readFileSync, writeFileSync, mkdirSync, statSync, existsSync } from 'no
 import { dirname, resolve } from 'node:path';
 import { homedir } from 'node:os';
 import { add, tiers } from './media.mjs';
+import { writeHome } from './press-home.mjs';
 
 // A Sync job names the project as it was frozen when Sync was pressed.
 const arg = process.argv[2] || `${homedir()}/Documents/Caption Genius/Pavilion — Press.json`;
@@ -120,6 +121,10 @@ const images = rows.map((r) => ({
   caption: name(r.caption),
   caption_short: name(r.caption_short),
   credit: name(r.credit),
+  // The home page (scripts/press-home.mjs): works, bench or none (blank: by
+  // section), and the image's description for screen readers.
+  home: r.home || '',
+  alt: name(r.alt),
   // Per download: s, m, l, raw → {key, name, w, h, bytes, crc} (raw adds ext).
   ...(seen[r.uid].tiers ? { dl: Object.fromEntries(['s', 'm', 'l', 'raw'].map((t) => [t, seen[r.uid].tiers[t]])) } : {}),
 }));
@@ -129,3 +134,4 @@ const cols = ['title', 'date', 'artist', 'materials', 'caption', 'credit', 'sect
 writeFileSync(CSV, [['file', ...cols].join(','),
   ...images.map((i) => [i.file, ...cols.map((c) => i[c])].map(cell).join(','))].join('\n') + '\n');
 console.log(`Listed ${images.length} images`);
+writeHome(images);

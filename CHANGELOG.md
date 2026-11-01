@@ -2,6 +2,19 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-01 — Home gallery and On the bench follow Caption Genius
+
+**Rationale:** Images added to the press set should reach the home page without a code change or a build.
+**Summary:** The works gallery and On the bench now read the press set: Caption Genius decides what goes where, Sync publishes it.
+
+### Changes
+
+- Caption Genius "Pavilion — Press": new fields `home` (works / bench / none; blank goes by section) and `alt` (filled for the 30 installation views, drawings and renderings; the bench's 7 marked bench, the guest shots and a duplicate marked none).
+- `scripts/press-home.mjs` (run by `press.mjs`): the home list with each image's gallery lines and alt text → `resources/data/press/home.json` and the generated `src/amp/data/press_home.cljs`.
+- `hooks/use-press-home`: the page lays out from the build's copy, then fetches the live `home.json` once, as the bench or gallery comes near. `landing/works.cljs` keeps only the slides not in the press set.
+- `press-sync.sh` publishes `home.json` with the press list.
+- Bench captions stay on one line.
+
 ## 2026-11-01 — Works gallery: the whole press set of the making
 
 **Rationale:** The home works gallery showed 12 early renders; the press set holds the installed works, drawings, renderings and the studio at work.

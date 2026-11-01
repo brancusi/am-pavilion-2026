@@ -614,7 +614,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-bench__shot:first-child { grid-column: 1 / -1; }
 .ap-bench__frame { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #2a2723; }
 .ap-bench__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: ap-fade var(--dur-base) var(--ease-place) both; }
-.ap-bench__cap { font: 400 12px/1.4 var(--font-mono); color: #b5ad9e; }
+.ap-bench__cap { font: 400 12px/1.4 var(--font-mono); color: #b5ad9e; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .ap-bench__cap span { color: var(--on-night); }
 .ap-bench__foot { display: grid; gap: var(--space-6); padding-top: var(--space-6); border-top: 1px solid #4a453d; }
 .ap-bench__post { display: grid; min-width: 0; gap: 4px; color: var(--on-night); text-decoration: none; }

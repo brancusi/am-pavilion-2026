@@ -1,10 +1,13 @@
 (ns amp.pages.landing.bench
   "On the bench: the home page's work-in-progress section (design canvas
    \"Work in progress — home section\", direction B). A count of the day of the
-   run, a contact sheet of the studio at work (press set, section process)
-   and the making-of posts."
+   run, a contact sheet of the studio at work (the press images marked
+   bench in Caption Genius, amp.hooks.use-press-home) and the making-of
+   posts."
   (:require
    [amp.data.journal :as journal]
+   [amp.hooks.use-in-view :refer [use-in-view]]
+   [amp.hooks.use-press-home :as press-home :refer [use-press-home]]
    [amp.lib.defnc :refer [defnc]]
    [amp.ui.picture :as picture :refer [picture]]
    [helix.core :refer [$]]
@@ -23,23 +26,10 @@
     {:day (max 1 (min total (inc (js/Math.round (/ (- at opens) day-ms)))))
      :total total}))
 
-(def ^:private shots
-  "The contact sheet: press images (section process), in reading order. The
-   first is the lead."
-  [{:uid "0f7f296e78" :title "Painting the green" :note "Italian flag"
-    :alt "Zadik Zadikian bends over a white panel, brushing on a field of green."}
-   {:uid "8998ba35ae" :title "Pigmenting a unit" :note "yellow"
-    :alt "A gloved hand presses a yellow unit into pigment on a black mat."}
-   {:uid "c5f50cd69e" :title "Palettes in their sleeves" :note "inscribed Jasper Johns"
-    :alt "Colour palettes standing upright in white sleeves inscribed Jasper Johns."}
-   {:uid "3580e9b080" :title "Tony Shafrazi" :note "at the workbench"
-    :alt "Tony Shafrazi studies a palette sleeve with an assistant at the workbench."}
-   {:uid "66126f601c" :title "Carrying the flag" :note "across the studio"
-    :alt "Assistants carry white and red sections of the Italian flag across the hall."}
-   {:uid "81f39add05" :title "Foam forms" :note "photo Bibiana Juritz"
-    :alt "Zadik Zadikian among white foam forms on the workshop floor."}
-   {:uid "8919bfe877" :title "Brushing a coat" :note "on the workbench"
-    :alt "A brush draws a white coat across a black mat."}])
+(def ^:private slots
+  "Photos on the contact sheet: the first is the lead. The sheet's grid is
+   laid out for this many."
+  7)
 
 (def ^:private making-of
   "The posts on how the works are made, newest first."
@@ -49,17 +39,18 @@
   (.format (js/Intl.DateTimeFormat. "en-GB" #js {:day "numeric" :month "short" :year "numeric" :timeZone "UTC"})
            (js/Date. iso)))
 
-(defnc bench-shot [{:keys [n uid title note alt sizes]}]
+(defnc bench-shot [{:keys [n uid title photo alt sizes]}]
   (d/figure {:class "ap-bench__shot"}
             (d/div {:class "ap-bench__frame"}
                    ($ picture {:src (str picture/media-host "press/" uid) :alt alt :sizes sizes}))
-            (d/figcaption {:class "ap-bench__cap"}
-                          (d/span (str "FIG. " n " · " title)) (str " · " note))))
+            (d/figcaption {:class "ap-bench__cap" :title title}
+                          (d/span (str "FIG. " n " · " title)) (when photo (str " · photo " photo)))))
 
 (defnc on-the-bench []
   (let [{:keys [day total]} (run-day)
-        [lead & rest] shots]
-    (d/section {:class "ap-bench" :aria-labelledby "bench-title"}
+        [ref {near? :in?}] (use-in-view :root-margin "150% 0px")
+        [lead & rest] (take slots (press-home/of (use-press-home near?) "bench"))]
+    (d/section {:ref ref :class "ap-bench" :aria-labelledby "bench-title"}
                (d/div {:class "ap-wrap ap-bench__head"}
                       (d/div {:class "flex flex-col gap-4"}
                              (d/p {:class "ap-label m-0 ap-bench__eyebrow"} "Work in progress · Tesa 41")
