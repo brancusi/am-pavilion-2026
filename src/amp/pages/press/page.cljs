@@ -8,7 +8,8 @@
    The images are resources/data/press/press.json, built by `npm run press`
    from the Caption Genius project \"Pavilion — Press\" (the images marked
    Include, in its order); they are on R2 under press/<uid>, each with a
-   2400px JPEG and a full-size JPEG. The kit carries a copy of the list so the
+   Small, Medium and Large JPEG (1200, 2400, 4000 px on the long edge) and the
+   original file (:dl in each image). The kit carries a copy of the list so the
    page is laid out at once; the live list replaces it (a Sync changes it
    without a new build). Images can be picked one by one, by section or all,
    and download as one ZIP made by the site Worker (/press/zip/…), with the
@@ -50,13 +51,13 @@
         :book "Book a studio visit or interview" :book-subject "Studio visit or interview request"
         :earlier "Earlier releases" :pdf "PDF" :copy-facts "Copy fact sheet" :copy-bio "Copy bio"
         :copy-quote "Copy quote" :copied "Copied" :copy-caption "Copy caption"
-        :images-note "For press use with the caption and credit given. Renderings and maquettes are labelled as such: they show work proposed or in progress, not built."
+        :images-note "For press use with the caption and credit given. Sketches, renderings and maquettes are labelled as such: they show work proposed or in progress, not built."
         :csv "All captions (CSV)" :all "All" :select "Select" :selected "Selected"
-        :download "Download" :zip-jpeg "JPEGs, 2400 px · ZIP" :zip-full "Full size · ZIP"
-        :jpeg "JPEG · 2400 px" :full "Full size" :clear "Clear" :pick-all "Select all"
+        :download "Download" :zip "ZIP" :px " px"
+        :tiers {:s "Small" :m "Medium" :l "Large" :raw "Full"} :raw-note "original file" :clear "Clear" :pick-all "Select all"
         :n-selected #(str % (if (= % 1) " image selected" " images selected"))
         :section-zip "This section" :all-zip "All images"
-        :rendering "Rendering" :maquette "Maquette"
+        :sketch "Sketch" :rendering "Rendering" :maquette "Maquette"
         :film-download "Download MP4" :held "Download on request" :short "Short bio"
         :source "Source" :draft "Review build. Not public: the kit shows on armenianpavilion.org only once approved."
         :english-only "In English only." :later "To come." :prev "← Previous" :next "Next →"
@@ -70,13 +71,13 @@
         :book "Prenota una visita in studio o un’intervista" :book-subject "Richiesta di visita o intervista"
         :earlier "Comunicati precedenti" :pdf "PDF" :copy-facts "Copia la scheda" :copy-bio "Copia la biografia"
         :copy-quote "Copia la citazione" :copied "Copiato" :copy-caption "Copia la didascalia"
-        :images-note "Per uso stampa, con la didascalia e il credito indicati. Rendering e modelli sono indicati come tali: mostrano opere proposte o in lavorazione, non realizzate."
+        :images-note "Per uso stampa, con la didascalia e il credito indicati. Schizzi, rendering e modelli sono indicati come tali: mostrano opere proposte o in lavorazione, non realizzate."
         :csv "Tutte le didascalie (CSV)" :all "Tutte" :select "Seleziona" :selected "Selezionata"
-        :download "Scarica" :zip-jpeg "JPEG, 2400 px · ZIP" :zip-full "Dimensione piena · ZIP"
-        :jpeg "JPEG · 2400 px" :full "Dimensione piena" :clear "Annulla" :pick-all "Seleziona tutte"
+        :download "Scarica" :zip "ZIP" :px " px"
+        :tiers {:s "Piccola" :m "Media" :l "Grande" :raw "Originale"} :raw-note "file originale" :clear "Annulla" :pick-all "Seleziona tutte"
         :n-selected #(str % (if (= % 1) " immagine selezionata" " immagini selezionate"))
         :section-zip "Questa sezione" :all-zip "Tutte le immagini"
-        :rendering "Rendering" :maquette "Modello"
+        :sketch "Schizzo" :rendering "Rendering" :maquette "Modello"
         :film-download "Scarica MP4" :held "Download su richiesta" :short "Biografia breve"
         :source "Fonte" :draft "Versione di revisione, non pubblica."
         :english-only "Solo in inglese." :later "In arrivo." :prev "← Precedente" :next "Successiva →"
@@ -86,8 +87,19 @@
 (defn- pad2 [n] (.padStart (str n) 2 "0"))
 
 (defn- src [{:keys [key]}] (str media-host key))
-(defn- jpeg [{:keys [key]}] (str media-host key ".jpg"))
-(defn- full-jpeg [{:keys [key]}] (str media-host key "-full.jpg"))
+(def ^:private tiers [:s :m :l :raw])
+
+(defn- mb [bytes]
+  (let [m (/ bytes 1e6)]
+    (cond (>= m 1000) (str (.toFixed (/ m 1000) 1) " GB")
+          (< m 10) (str (.toFixed m 1) " MB")
+          :else (str (.toFixed m 0) " MB"))))
+
+(defn- tier-info
+  "\"1 200 × 953 px · JPEG · 0.6 MB\" for one download."
+  [{:keys [w h ext bytes]} t]
+  (str (.toLocaleString w "en-GB") " × " (.toLocaleString h "en-GB") (t :px)
+       " · " (str/upper-case (or ext "jpeg")) " · " (mb bytes)))
 
 (defn- title-of [{:keys [title caption_short caption]}]
   (or (not-empty title) (not-empty caption_short) caption))
@@ -96,10 +108,13 @@
   (or (not-empty caption) (not-empty caption_short) (when (seq credit) (str "Photo: " credit))))
 
 (defn- kind
-  "Renderings and maquettes are labelled: they show work proposed or in progress."
+  "Sketches, renderings and maquettes are labelled: they show work proposed or
+   in progress. A sketch is a drawing or study (\"…, drawing\", \"…, study\")."
   [{:keys [section title caption]}]
   (let [t (str title " " caption)]
     (cond
+      (or (re-find #"(?i),\s*(drawing|study|sketch)\b" (str title))
+          (re-find #"(?i)\bdigital sketch\b|^(drawing|study|sketch) for\b" (str caption))) :sketch
       (or (= section "renderings") (re-find #"(?i)\brender" t)) :rendering
       (re-find #"(?i)\bmaquette|\bmodel\b" t) :maquette)))
 
@@ -159,10 +174,24 @@
 ;; ── Viewer ─────────────────────────────────────────────────────────────────
 
 (defnc downloads
-  [{:keys [image t]}]
-  (d/div {:class "ap-press__dl"}
-         (d/a {:class "ap-press__btn" :href (jpeg image) :download true} (t :jpeg))
-         (d/a {:class "ap-press__btn" :href (full-jpeg image) :download true} (t :full))))
+  "Every size of one image. `compact?`: just the size names in one line (the
+   cards), each with its pixels and file size as a tooltip; else a row per size."
+  [{:keys [image compact? t]}]
+  (when-let [dl (:dl image)]
+    (if compact?
+      (d/div {:class "ap-press__sizes"}
+             (for [k tiers :let [f (dl k)] :when f]
+               (d/a {:key (name k) :href (str media-host (:key f)) :download (:name f)
+                     :title (tier-info f t)}
+                    (get (t :tiers) k))))
+      (d/ul {:class "ap-press__dl"}
+            (for [k tiers :let [f (dl k)] :when f]
+              (d/li {:key (name k)}
+                    (d/a {:href (str media-host (:key f)) :download (:name f)}
+                         (d/span {:class "ap-press__dl-name"}
+                                 (get (t :tiers) k)
+                                 (when (= k :raw) (d/span {:class "ap-muted"} (str " · " (t :raw-note)))))
+                         (d/span {:class "ap-press__dl-info"} (tier-info f t)))))))))
 
 (defnc viewer
   [{:keys [images at on-go on-close lang t]}]
@@ -243,17 +272,25 @@
                           (d/input {:type "checkbox" :checked (boolean picked?) :on-change on-pick})
                           (d/span (t (if picked? :selected :select))))
                  ($ badge {:image image :t t}))
+          ;; One line each, cut with an ellipsis, so every card is the same
+          ;; height; the viewer has the whole caption.
           (d/div {:class "ap-press__meta"}
-                 (d/p {:class "ap-press__title"}
+                 (d/p {:class "ap-press__title" :title (title-of image)}
                       (title-of image)
                       (when (seq date) (d/span {:class "ap-muted"} (str ", " date))))
-                 (when (seq credit) (d/p {:class "ap-label ap-muted m-0"} (str (t :photo) credit)))
-                 ($ downloads {:image image :t t})))))
+                 (d/p {:class "ap-press__credit" :title (when (seq credit) (str (t :photo) credit))}
+                      (if (seq credit) (str (t :photo) credit) "\u00a0"))
+                 ($ downloads {:image image :compact? true :t t})))))
 
-(defnc zip-links [{:keys [name uids t]}]
+(defnc zip-links
+  "A ZIP of these images per size, with its total size."
+  [{:keys [name images uids t]}]
   (<>
-   (d/a {:class "ap-press__btn" :href (zip-url name uids "jpg")} (t :zip-jpeg))
-   (d/a {:class "ap-press__btn" :href (zip-url name uids "full")} (t :zip-full))))
+   (for [k tiers
+         :let [bytes (reduce + (keep #(get-in % [:dl k :bytes]) images))]
+         :when (pos? bytes)]
+     (d/a {:key (cljs.core/name k) :class "ap-press__btn" :href (zip-url name uids (cljs.core/name k))}
+          (str (get (t :tiers) k) " · " (mb bytes))))))
 
 (defnc library
   [{:keys [images lang t heading?]}]
@@ -284,7 +321,7 @@
             (d/div {:class "ap-press__zips"}
                    (d/span {:class "ap-label ap-muted"} (str (t :download) " · " (if sec (t :section-zip) (t :all-zip)) " (" (count shown) ")"))
                    ($ zip-links {:name (str "armenian-pavilion-press-" (if sec (if (= sec "") "other" sec) "all"))
-                                 :uids (when sec (map :uid shown)) :t t})
+                                 :images shown :uids (when sec (map :uid shown)) :t t})
                    (d/button {:type "button" :class "ap-press__btn"
                               :on-click #(set-picked! (if all-shown?
                                                         (apply disj picked (map :uid shown))
@@ -309,7 +346,7 @@
                      ($ zip-links {:name (if (= 1 (count chosen))
                                            (:file (first chosen))
                                            (str "armenian-pavilion-press-selection-" (count chosen)))
-                                   :uids (map :uid chosen) :t t})
+                                   :images chosen :uids (map :uid chosen) :t t})
                      (d/button {:type "button" :class "ap-press__btn" :on-click #(set-picked! #{})} (t :clear)))))
      ($ viewer {:images shown :at at :on-go set-at! :on-close #(set-at! nil) :lang lang :t t}))))
 

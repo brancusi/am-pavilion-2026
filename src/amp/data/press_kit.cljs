@@ -444,7 +444,32 @@
             :caption "Zadik Zadikian, Who’s Afraid of Red, Yellow, and Blue? Remembering Barnett Newman!, 2026. Plaster, acrylic, pure pigment and EPS foam. Triptych, homage to Barnett Newman. Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/488ef42b59-s.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 142451
+                     :crc 3210541746}
+                 :m {:key "press/488ef42b59-m.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 695720
+                     :crc 3748071125}
+                 :l {:key "press/488ef42b59-l.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 2926749
+                     :crc 252997135}
+                 :raw {:key "press/488ef42b59-raw.tif"
+                       :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77902926
+                       :crc 2183438153}}}
            {:uid "e3f1da5d21"
             :file "armenian-pavilion-the-studio-installation-view-e3f1da5d21"
             :key "press/e3f1da5d21"
@@ -457,7 +482,32 @@
             :caption "Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Works by Zadik Zadikian, including Big Red Bed Where Dreams Come True, 2026, and Who’s Afraid of Red, Yellow, and Blue? Remembering Barnett Newman!, 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e3f1da5d21-s.jpg"
+                     :name "armenian-pavilion-the-studio-installation-view-e3f1da5d21-small.jpg"
+                     :w 1200
+                     :h 553
+                     :bytes 114071
+                     :crc 4217338104}
+                 :m {:key "press/e3f1da5d21-m.jpg"
+                     :name "armenian-pavilion-the-studio-installation-view-e3f1da5d21-medium.jpg"
+                     :w 2400
+                     :h 1105
+                     :bytes 508000
+                     :crc 3782593124}
+                 :l {:key "press/e3f1da5d21-l.jpg"
+                     :name "armenian-pavilion-the-studio-installation-view-e3f1da5d21-large.jpg"
+                     :w 4000
+                     :h 1842
+                     :bytes 1932987
+                     :crc 2042035658}
+                 :raw {:key "press/e3f1da5d21-raw.tif"
+                       :name "armenian-pavilion-the-studio-installation-view-e3f1da5d21.tif"
+                       :w 12243
+                       :h 5638
+                       :ext "tif"
+                       :bytes 207103562
+                       :crc 3050443315}}}
            {:uid "05bb6e78bc"
             :file "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc"
             :key "press/05bb6e78bc"
@@ -470,7 +520,32 @@
             :caption "Zadik Zadikian, Who’s Afraid of Red, Yellow, and Blue? Remembering Barnett Newman!, 2026. Plaster, acrylic, pure pigment and EPS foam. Triptych, homage to Barnett Newman. Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/05bb6e78bc-s.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc-small.jpg"
+                     :w 900
+                     :h 1200
+                     :bytes 166489
+                     :crc 791977703}
+                 :m {:key "press/05bb6e78bc-m.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc-medium.jpg"
+                     :w 1728
+                     :h 2304
+                     :bytes 743307
+                     :crc 628419034}
+                 :l {:key "press/05bb6e78bc-l.jpg"
+                     :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc-large.jpg"
+                     :w 1728
+                     :h 2304
+                     :bytes 999435
+                     :crc 2683213049}
+                 :raw {:key "press/05bb6e78bc-raw.tif"
+                       :name "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-05bb6e78bc.tif"
+                       :w 1728
+                       :h 2304
+                       :ext "tif"
+                       :bytes 7898670
+                       :crc 179248210}}}
            {:uid "c29e5dffe9"
             :file "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9"
             :key "press/c29e5dffe9"
@@ -483,7 +558,32 @@
             :caption "Zadik Zadikian, Big Red Bed Where Dreams Come True, 2026. Plaster, acrylic, pure pigment and EPS foam. Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/c29e5dffe9-s.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 148571
+                     :crc 3883957278}
+                 :m {:key "press/c29e5dffe9-m.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 647464
+                     :crc 190740395}
+                 :l {:key "press/c29e5dffe9-l.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 2435309
+                     :crc 976040152}
+                 :raw {:key "press/c29e5dffe9-raw.tif"
+                       :name "armenian-pavilion-big-red-bed-where-dreams-come-true-c29e5dffe9.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77902090
+                       :crc 1254248814}}}
            {:uid "a4f1411376"
             :file "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376"
             :key "press/a4f1411376"
@@ -496,7 +596,32 @@
             :caption "Zadik Zadikian, Big Red Bed Where Dreams Come True, 2026. Plaster, acrylic, pure pigment and EPS foam. Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/a4f1411376-s.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376-small.jpg"
+                     :w 1200
+                     :h 737
+                     :bytes 85032
+                     :crc 487965537}
+                 :m {:key "press/a4f1411376-m.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376-medium.jpg"
+                     :w 2400
+                     :h 1475
+                     :bytes 322610
+                     :crc 3000981011}
+                 :l {:key "press/a4f1411376-l.jpg"
+                     :name "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376-large.jpg"
+                     :w 4000
+                     :h 2458
+                     :bytes 960253
+                     :crc 3016055431}
+                 :raw {:key "press/a4f1411376-raw.tif"
+                       :name "armenian-pavilion-big-red-bed-where-dreams-come-true-a4f1411376.tif"
+                       :w 6146
+                       :h 3777
+                       :ext "tif"
+                       :bytes 69670038
+                       :crc 523953408}}}
            {:uid "e1b45df3f9"
             :file "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9"
             :key "press/e1b45df3f9"
@@ -509,7 +634,32 @@
             :caption "Zadik Zadikian, Untitled (large pink block with green, yellow and red units), 2026. Plaster, acrylic, pure pigment and EPS foam. The artist with the work in the studio, Los Angeles. Not in the exhibition. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e1b45df3f9-s.jpg"
+                     :name "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9-small.jpg"
+                     :w 997
+                     :h 1200
+                     :bytes 45713
+                     :crc 4079466533}
+                 :m {:key "press/e1b45df3f9-m.jpg"
+                     :name "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9-medium.jpg"
+                     :w 1994
+                     :h 2400
+                     :bytes 166862
+                     :crc 2927494614}
+                 :l {:key "press/e1b45df3f9-l.jpg"
+                     :name "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9-large.jpg"
+                     :w 3324
+                     :h 4000
+                     :bytes 573101
+                     :crc 2010372639}
+                 :raw {:key "press/e1b45df3f9-raw.tif"
+                       :name "armenian-pavilion-untitled-large-pink-block-with-green-yellow-and-e1b45df3f9.tif"
+                       :w 3564
+                       :h 4289
+                       :ext "tif"
+                       :bytes 66698856
+                       :crc 2069645426}}}
            {:uid "2dca28bc4a"
             :file "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a"
             :key "press/2dca28bc4a"
@@ -522,7 +672,32 @@
             :caption "Zadik Zadikian, Untitled (pink block with green, yellow and pink units), 2026. Plaster, acrylic, pure pigment and EPS foam. Installation view, The Studio, Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/2dca28bc4a-s.jpg"
+                     :name "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a-small.jpg"
+                     :w 1200
+                     :h 793
+                     :bytes 77268
+                     :crc 34769191}
+                 :m {:key "press/2dca28bc4a-m.jpg"
+                     :name "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a-medium.jpg"
+                     :w 2400
+                     :h 1587
+                     :bytes 329081
+                     :crc 4282840936}
+                 :l {:key "press/2dca28bc4a-l.jpg"
+                     :name "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a-large.jpg"
+                     :w 4000
+                     :h 2645
+                     :bytes 1666455
+                     :crc 2512548994}
+                 :raw {:key "press/2dca28bc4a-raw.tif"
+                       :name "armenian-pavilion-untitled-pink-block-with-green-yellow-and-pink-u-2dca28bc4a.tif"
+                       :w 12069
+                       :h 7980
+                       :ext "tif"
+                       :bytes 152660706
+                       :crc 2370422752}}}
            {:uid "69a51760b0"
             :file "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0"
             :key "press/69a51760b0"
@@ -535,7 +710,32 @@
             :caption "Zadik Zadikian, Untitled (green in front of leaning red), 2026. Plaster, acrylic, pure pigment and EPS foam. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/69a51760b0-s.jpg"
+                     :name "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0-small.jpg"
+                     :w 900
+                     :h 1200
+                     :bytes 42831
+                     :crc 2954853458}
+                 :m {:key "press/69a51760b0-m.jpg"
+                     :name "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0-medium.jpg"
+                     :w 1800
+                     :h 2400
+                     :bytes 160455
+                     :crc 1195993675}
+                 :l {:key "press/69a51760b0-l.jpg"
+                     :name "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0-large.jpg"
+                     :w 3000
+                     :h 4000
+                     :bytes 733728
+                     :crc 2278704548}
+                 :raw {:key "press/69a51760b0-raw.tif"
+                       :name "armenian-pavilion-untitled-green-in-front-of-leaning-red-69a51760b0.tif"
+                       :w 4320
+                       :h 5760
+                       :ext "tif"
+                       :bytes 74673252
+                       :crc 2318221448}}}
            {:uid "f169adfcb7"
             :file "armenian-pavilion-big-red-bed-rendering-f169adfcb7"
             :key "press/f169adfcb7"
@@ -548,7 +748,32 @@
             :caption "Zadik Zadikian, Big Red Bed Where Dreams Come True, 2026. Rendering of the work on the quay outside the Armenian Pavilion, Venice. Rendering: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f169adfcb7-s.jpg"
+                     :name "armenian-pavilion-big-red-bed-rendering-f169adfcb7-small.jpg"
+                     :w 670
+                     :h 1200
+                     :bytes 108668
+                     :crc 3495668767}
+                 :m {:key "press/f169adfcb7-m.jpg"
+                     :name "armenian-pavilion-big-red-bed-rendering-f169adfcb7-medium.jpg"
+                     :w 1340
+                     :h 2400
+                     :bytes 444467
+                     :crc 3960227098}
+                 :l {:key "press/f169adfcb7-l.jpg"
+                     :name "armenian-pavilion-big-red-bed-rendering-f169adfcb7-large.jpg"
+                     :w 2233
+                     :h 4000
+                     :bytes 1697207
+                     :crc 1005313199}
+                 :raw {:key "press/f169adfcb7-raw.tif"
+                       :name "armenian-pavilion-big-red-bed-rendering-f169adfcb7.tif"
+                       :w 6144
+                       :h 11008
+                       :ext "tif"
+                       :bytes 202928644
+                       :crc 4217454327}}}
            {:uid "3af3c2fa5f"
             :file "armenian-pavilion-the-studio-rendering-3af3c2fa5f"
             :key "press/3af3c2fa5f"
@@ -561,7 +786,32 @@
             :caption "Rendering of The Studio, Armenian Pavilion, Biennale Arte 2026. Rendering: Aram Zadikian."
             :caption-short "The Studio, 2026, rendering"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3af3c2fa5f-s.jpg"
+                     :name "armenian-pavilion-the-studio-rendering-3af3c2fa5f-small.jpg"
+                     :w 896
+                     :h 1200
+                     :bytes 181233
+                     :crc 282911149}
+                 :m {:key "press/3af3c2fa5f-m.jpg"
+                     :name "armenian-pavilion-the-studio-rendering-3af3c2fa5f-medium.jpg"
+                     :w 1792
+                     :h 2400
+                     :bytes 659929
+                     :crc 2234159487}
+                 :l {:key "press/3af3c2fa5f-l.jpg"
+                     :name "armenian-pavilion-the-studio-rendering-3af3c2fa5f-large.jpg"
+                     :w 2987
+                     :h 4000
+                     :bytes 2026475
+                     :crc 874243799}
+                 :raw {:key "press/3af3c2fa5f-raw.tif"
+                       :name "armenian-pavilion-the-studio-rendering-3af3c2fa5f.tif"
+                       :w 7168
+                       :h 9600
+                       :ext "tif"
+                       :bytes 206476398
+                       :crc 420853318}}}
            {:uid "b0b6fdec92"
             :file "armenian-pavilion-italian-flags-rendering-b0b6fdec92"
             :key "press/b0b6fdec92"
@@ -574,7 +824,32 @@
             :caption "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work on a hillside near Gubbio, Umbria."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/b0b6fdec92-s.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-b0b6fdec92-small.jpg"
+                     :w 896
+                     :h 1200
+                     :bytes 122784
+                     :crc 1953779949}
+                 :m {:key "press/b0b6fdec92-m.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-b0b6fdec92-medium.jpg"
+                     :w 1792
+                     :h 2400
+                     :bytes 474851
+                     :crc 2113304520}
+                 :l {:key "press/b0b6fdec92-l.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-b0b6fdec92-large.jpg"
+                     :w 2987
+                     :h 4000
+                     :bytes 1439582
+                     :crc 2072137474}
+                 :raw {:key "press/b0b6fdec92-raw.tif"
+                       :name "armenian-pavilion-italian-flags-rendering-b0b6fdec92.tif"
+                       :w 3584
+                       :h 4800
+                       :ext "tif"
+                       :bytes 43490916
+                       :crc 996639887}}}
            {:uid "f64bf7f0b6"
             :file "armenian-pavilion-italian-flags-rendering-f64bf7f0b6"
             :key "press/f64bf7f0b6"
@@ -587,7 +862,32 @@
             :caption "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work, three blades on the crest of a hillside near Gubbio, Umbria."
             :caption-short "Italian Flags, 2026, rendering"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f64bf7f0b6-s.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-f64bf7f0b6-small.jpg"
+                     :w 670
+                     :h 1200
+                     :bytes 101497
+                     :crc 1216031508}
+                 :m {:key "press/f64bf7f0b6-m.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-f64bf7f0b6-medium.jpg"
+                     :w 1340
+                     :h 2400
+                     :bytes 399561
+                     :crc 3694738954}
+                 :l {:key "press/f64bf7f0b6-l.jpg"
+                     :name "armenian-pavilion-italian-flags-rendering-f64bf7f0b6-large.jpg"
+                     :w 2233
+                     :h 4000
+                     :bytes 1188506
+                     :crc 130122457}
+                 :raw {:key "press/f64bf7f0b6-raw.jpg"
+                       :name "armenian-pavilion-italian-flags-rendering-f64bf7f0b6.jpg"
+                       :w 3072
+                       :h 5504
+                       :ext "jpg"
+                       :bytes 3952253
+                       :crc 2868569359}}}
            {:uid "d55d66ba78"
             :file "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78"
             :key "press/d55d66ba78"
@@ -600,7 +900,32 @@
             :caption "Zadik Zadikian, drawing for Armenian Flag Stack, 2026. Marker and ink on paper, with unit dimensions. Courtesy Zadik Zadikian Studio."
             :caption-short "Armenian Flag Stack, 2026, drawing"
             :credit ""
-            :artist ""}
+            :artist ""
+            :dl {:s {:key "press/d55d66ba78-s.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78-small.jpg"
+                     :w 967
+                     :h 1200
+                     :bytes 93071
+                     :crc 3648366917}
+                 :m {:key "press/d55d66ba78-m.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78-medium.jpg"
+                     :w 1933
+                     :h 2400
+                     :bytes 327327
+                     :crc 3628710915}
+                 :l {:key "press/d55d66ba78-l.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78-large.jpg"
+                     :w 3222
+                     :h 4000
+                     :bytes 1020457
+                     :crc 3126796757}
+                 :raw {:key "press/d55d66ba78-raw.tif"
+                       :name "armenian-pavilion-armenian-flag-stack-drawing-d55d66ba78.tif"
+                       :w 7424
+                       :h 9216
+                       :ext "tif"
+                       :bytes 205311461
+                       :crc 1112995705}}}
            {:uid "f35e171351"
             :file "armenian-pavilion-armenian-flag-stack-rendering-f35e171351"
             :key "press/f35e171351"
@@ -613,7 +938,32 @@
             :caption "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work, three-quarter view from the front left."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f35e171351-s.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-f35e171351-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 31297
+                     :crc 4186254927}
+                 :m {:key "press/f35e171351-m.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-f35e171351-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 90694
+                     :crc 2143838322}
+                 :l {:key "press/f35e171351-l.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-f35e171351-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 249081
+                     :crc 1909359}
+                 :raw {:key "press/f35e171351-raw.tif"
+                       :name "armenian-pavilion-armenian-flag-stack-rendering-f35e171351.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 50058962
+                       :crc 3851121489}}}
            {:uid "06087305db"
             :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db"
             :key "press/06087305db"
@@ -626,7 +976,32 @@
             :caption "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan."
             :caption-short "Armenian Flag Stack, 2026, rendering"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/06087305db-s.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 139855
+                     :crc 1517639910}
+                 :m {:key "press/06087305db-m.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 552977
+                     :crc 264098480}
+                 :l {:key "press/06087305db-l.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 1892707
+                     :crc 1819456480}
+                 :raw {:key "press/06087305db-raw.tif"
+                       :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-06087305db.tif"
+                       :w 10112
+                       :h 6784
+                       :ext "tif"
+                       :bytes 205857654
+                       :crc 3447246407}}}
            {:uid "9a6527c5e6"
             :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6"
             :key "press/9a6527c5e6"
@@ -639,7 +1014,32 @@
             :caption "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan."
             :caption-short "Armenian Flag Stack, 2026, rendering"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/9a6527c5e6-s.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6-small.jpg"
+                     :w 805
+                     :h 1200
+                     :bytes 126539
+                     :crc 2544567604}
+                 :m {:key "press/9a6527c5e6-m.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6-medium.jpg"
+                     :w 1610
+                     :h 2400
+                     :bytes 483652
+                     :crc 145663017}
+                 :l {:key "press/9a6527c5e6-l.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6-large.jpg"
+                     :w 2684
+                     :h 4000
+                     :bytes 1722136
+                     :crc 3075596998}
+                 :raw {:key "press/9a6527c5e6-raw.tif"
+                       :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-9a6527c5e6.tif"
+                       :w 6784
+                       :h 10112
+                       :ext "tif"
+                       :bytes 205857352
+                       :crc 4100843480}}}
            {:uid "88efa5c0f4"
             :file "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4"
             :key "press/88efa5c0f4"
@@ -652,7 +1052,32 @@
             :caption "Zadik Zadikian, Armenian Flag Stack, 2026. Pigmented plaster units. Rendering of the proposed work in Republic Square, Yerevan."
             :caption-short "Armenian Flag Stack, 2026, rendering"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/88efa5c0f4-s.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 125422
+                     :crc 2742885959}
+                 :m {:key "press/88efa5c0f4-m.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 490686
+                     :crc 1619894342}
+                 :l {:key "press/88efa5c0f4-l.jpg"
+                     :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 1779262
+                     :crc 2895794025}
+                 :raw {:key "press/88efa5c0f4-raw.tif"
+                       :name "armenian-pavilion-armenian-flag-stack-rendering-in-yerevan-88efa5c0f4.tif"
+                       :w 10112
+                       :h 6784
+                       :ext "tif"
+                       :bytes 205856098
+                       :crc 3085500015}}}
            {:uid "f272623d8e"
             :file "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e"
             :key "press/f272623d8e"
@@ -665,7 +1090,32 @@
             :caption "Zadik Zadikian, drawing for 7 Steps to Heaven, 2026. Pen and pencil on paper, with dimensions. Courtesy Zadik Zadikian Studio."
             :caption-short "7 Steps to Heaven, 2026, drawing"
             :credit ""
-            :artist ""}
+            :artist ""
+            :dl {:s {:key "press/f272623d8e-s.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e-small.jpg"
+                     :w 896
+                     :h 1200
+                     :bytes 74535
+                     :crc 32559440}
+                 :m {:key "press/f272623d8e-m.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e-medium.jpg"
+                     :w 1792
+                     :h 2400
+                     :bytes 250503
+                     :crc 1116337665}
+                 :l {:key "press/f272623d8e-l.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e-large.jpg"
+                     :w 2987
+                     :h 4000
+                     :bytes 779145
+                     :crc 518458636}
+                 :raw {:key "press/f272623d8e-raw.png"
+                       :name "armenian-pavilion-7-steps-to-heaven-drawing-f272623d8e.png"
+                       :w 3584
+                       :h 4800
+                       :ext "png"
+                       :bytes 18138799
+                       :crc 2652684678}}}
            {:uid "7aa979a667"
             :file "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667"
             :key "press/7aa979a667"
@@ -678,7 +1128,32 @@
             :caption "Zadik Zadikian, 7 Steps to Heaven, 2026. Plaster, pure pigment and acrylic. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice, three-quarter view from the front right."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/7aa979a667-s.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 71436
+                     :crc 2161916577}
+                 :m {:key "press/7aa979a667-m.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 280485
+                     :crc 14113077}
+                 :l {:key "press/7aa979a667-l.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 956299
+                     :crc 1287309256}
+                 :raw {:key "press/7aa979a667-raw.tif"
+                       :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-7aa979a667.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 36719030
+                       :crc 4089779874}}}
            {:uid "6720f32e7a"
             :file "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a"
             :key "press/6720f32e7a"
@@ -691,7 +1166,32 @@
             :caption "Zadik Zadikian, 7 Steps to Heaven, 2026. Plaster, pure pigment and acrylic. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice, front view."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6720f32e7a-s.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 68428
+                     :crc 1226420787}
+                 :m {:key "press/6720f32e7a-m.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 274880
+                     :crc 3873701964}
+                 :l {:key "press/6720f32e7a-l.jpg"
+                     :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 953557
+                     :crc 2942221361}
+                 :raw {:key "press/6720f32e7a-raw.tif"
+                       :name "armenian-pavilion-7-steps-to-heaven-rendering-in-the-pavilion-6720f32e7a.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 34531546
+                       :crc 1133926965}}}
            {:uid "827f88dbc0"
             :file "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0"
             :key "press/827f88dbc0"
@@ -704,7 +1204,32 @@
             :caption "Study for Zadik Zadikian, Leaning Slab Between Blocks, 2026. Digital sketch made with AI image software from the artist’s drawings."
             :caption-short "Leaning Slab Between Blocks, 2026, study"
             :credit ""
-            :artist ""}
+            :artist ""
+            :dl {:s {:key "press/827f88dbc0-s.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0-small.jpg"
+                     :w 896
+                     :h 1200
+                     :bytes 71955
+                     :crc 1293101869}
+                 :m {:key "press/827f88dbc0-m.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0-medium.jpg"
+                     :w 1792
+                     :h 2400
+                     :bytes 240187
+                     :crc 794751012}
+                 :l {:key "press/827f88dbc0-l.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0-large.jpg"
+                     :w 2987
+                     :h 4000
+                     :bytes 790767
+                     :crc 1644092887}
+                 :raw {:key "press/827f88dbc0-raw.png"
+                       :name "armenian-pavilion-leaning-slab-between-blocks-study-827f88dbc0.png"
+                       :w 3584
+                       :h 4800
+                       :ext "png"
+                       :bytes 18596912
+                       :crc 3627379491}}}
            {:uid "bf3353f55a"
             :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a"
             :key "press/bf3353f55a"
@@ -717,7 +1242,32 @@
             :caption "Zadik Zadikian, Leaning Slab Between Blocks, 2026. Pigmented plaster on EPS foam. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice, three-quarter view from the front left."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/bf3353f55a-s.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 72071
+                     :crc 2875529986}
+                 :m {:key "press/bf3353f55a-m.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 260700
+                     :crc 1349620766}
+                 :l {:key "press/bf3353f55a-l.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 874049
+                     :crc 1818517643}
+                 :raw {:key "press/bf3353f55a-raw.tif"
+                       :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-bf3353f55a.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 41283692
+                       :crc 3590703837}}}
            {:uid "6d50531860"
             :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860"
             :key "press/6d50531860"
@@ -730,7 +1280,32 @@
             :caption "Zadik Zadikian, Leaning Slab Between Blocks, 2026. Pigmented plaster on EPS foam. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice, side view, along the wall."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6d50531860-s.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 55917
+                     :crc 3358306364}
+                 :m {:key "press/6d50531860-m.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 197614
+                     :crc 758924551}
+                 :l {:key "press/6d50531860-l.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 707616
+                     :crc 2785900247}
+                 :raw {:key "press/6d50531860-raw.tif"
+                       :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-6d50531860.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 39007846
+                       :crc 1502214618}}}
            {:uid "13725fa570"
             :file "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570"
             :key "press/13725fa570"
@@ -743,7 +1318,32 @@
             :caption "Zadik Zadikian, Leaning Slab Between Blocks, 2026. Pigmented plaster on EPS foam. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice, view from above."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/13725fa570-s.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 53602
+                     :crc 732680846}
+                 :m {:key "press/13725fa570-m.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 199674
+                     :crc 2320463914}
+                 :l {:key "press/13725fa570-l.jpg"
+                     :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 716317
+                     :crc 1399184202}
+                 :raw {:key "press/13725fa570-raw.tif"
+                       :name "armenian-pavilion-leaning-slab-between-blocks-rendering-in-the-pav-13725fa570.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 36456672
+                       :crc 2733694412}}}
            {:uid "f29f48089f"
             :file "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f"
             :key "press/f29f48089f"
@@ -756,7 +1356,32 @@
             :caption "Zadik Zadikian, Study Reconfigurable Modular Configuration, 2026. Pigmented plaster. Rendering of the proposed work, three-quarter view from the front right."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f29f48089f-s.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 18138
+                     :crc 4044269774}
+                 :m {:key "press/f29f48089f-m.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 50825
+                     :crc 921902465}
+                 :l {:key "press/f29f48089f-l.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 143832
+                     :crc 3441393638}
+                 :raw {:key "press/f29f48089f-raw.tif"
+                       :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-f29f48089f.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 36417204
+                       :crc 4261289915}}}
            {:uid "05d81f0f74"
             :file "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74"
             :key "press/05d81f0f74"
@@ -769,7 +1394,32 @@
             :caption "Zadik Zadikian, Study Reconfigurable Modular Configuration, 2026. Pigmented plaster. Rendering of the proposed work, front elevation, orthographic."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/05d81f0f74-s.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 12471
+                     :crc 280742705}
+                 :m {:key "press/05d81f0f74-m.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 34987
+                     :crc 1673076245}
+                 :l {:key "press/05d81f0f74-l.jpg"
+                     :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 102332
+                     :crc 2549556482}
+                 :raw {:key "press/05d81f0f74-raw.tif"
+                       :name "armenian-pavilion-study-reconfigurable-modular-configuration-rende-05d81f0f74.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 28596956
+                       :crc 335309059}}}
            {:uid "6c0a6a5afc"
             :file "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc"
             :key "press/6c0a6a5afc"
@@ -782,7 +1432,32 @@
             :caption "Zadik Zadikian, Sketch Leaning Plane Modular Blocks, 2026. Pigmented plaster. Rendering of the proposed work, front view."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6c0a6a5afc-s.jpg"
+                     :name "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 15665
+                     :crc 406096303}
+                 :m {:key "press/6c0a6a5afc-m.jpg"
+                     :name "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 40727
+                     :crc 3294802199}
+                 :l {:key "press/6c0a6a5afc-l.jpg"
+                     :name "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 105635
+                     :crc 2605500517}
+                 :raw {:key "press/6c0a6a5afc-raw.tif"
+                       :name "armenian-pavilion-sketch-leaning-plane-modular-blocks-rendering-6c0a6a5afc.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 26683442
+                       :crc 2041176990}}}
            {:uid "44ad05c943"
             :file "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943"
             :key "press/44ad05c943"
@@ -795,7 +1470,32 @@
             :caption "Zadik Zadikian, Green Slab and Leaning Beam, 2026. Pigmented plaster and wood. Rendering of the proposed work in the hall of the Armenian Pavilion, Venice."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/44ad05c943-s.jpg"
+                     :name "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943-small.jpg"
+                     :w 1200
+                     :h 805
+                     :bytes 118363
+                     :crc 2818513941}
+                 :m {:key "press/44ad05c943-m.jpg"
+                     :name "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943-medium.jpg"
+                     :w 2400
+                     :h 1610
+                     :bytes 459187
+                     :crc 1018434050}
+                 :l {:key "press/44ad05c943-l.jpg"
+                     :name "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943-large.jpg"
+                     :w 4000
+                     :h 2684
+                     :bytes 1411802
+                     :crc 3710454763}
+                 :raw {:key "press/44ad05c943-raw.tif"
+                       :name "armenian-pavilion-green-slab-and-leaning-beam-rendering-44ad05c943.tif"
+                       :w 5056
+                       :h 3392
+                       :ext "tif"
+                       :bytes 45928130
+                       :crc 3618297617}}}
            {:uid "e584a0d978"
             :file "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978"
             :key "press/e584a0d978"
@@ -808,7 +1508,32 @@
             :caption "Zadik Zadikian, Structural Study Stacked Rectilinear Modules, 2026. Pigmented plaster. Rendering of the proposed work, front view."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e584a0d978-s.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 10787
+                     :crc 741963827}
+                 :m {:key "press/e584a0d978-m.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 29925
+                     :crc 13087578}
+                 :l {:key "press/e584a0d978-l.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 83739
+                     :crc 3723731714}
+                 :raw {:key "press/e584a0d978-raw.tif"
+                       :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-e584a0d978.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 27087620
+                       :crc 1585753727}}}
            {:uid "1b232048c8"
             :file "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8"
             :key "press/1b232048c8"
@@ -821,7 +1546,32 @@
             :caption "Zadik Zadikian, Structural Study Stacked Rectilinear Modules, 2026. Pigmented plaster. Rendering of the proposed work, three-quarter view from the front left."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/1b232048c8-s.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 11772
+                     :crc 3508445120}
+                 :m {:key "press/1b232048c8-m.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 32980
+                     :crc 1376611035}
+                 :l {:key "press/1b232048c8-l.jpg"
+                     :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 90328
+                     :crc 1436774686}
+                 :raw {:key "press/1b232048c8-raw.tif"
+                       :name "armenian-pavilion-structural-study-stacked-rectilinear-modules-ren-1b232048c8.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 28305160
+                       :crc 993920112}}}
            {:uid "a4383d9f8e"
             :file "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e"
             :key "press/a4383d9f8e"
@@ -834,7 +1584,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a pigmented plaster unit, 2025. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/a4383d9f8e-s.jpg"
+                     :name "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 58780
+                     :crc 95805231}
+                 :m {:key "press/a4383d9f8e-m.jpg"
+                     :name "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 364749
+                     :crc 672625979}
+                 :l {:key "press/a4383d9f8e-l.jpg"
+                     :name "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 2273598
+                     :crc 1667797629}
+                 :raw {:key "press/a4383d9f8e-raw.tif"
+                       :name "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e.tif"
+                       :w 4096
+                       :h 2731
+                       :ext "tif"
+                       :bytes 33585912
+                       :crc 1472988252}}}
            {:uid "c51b00e769"
             :file "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769"
             :key "press/c51b00e769"
@@ -847,7 +1622,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a plaster unit in its mold, 2025. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/c51b00e769-s.jpg"
+                     :name "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 148637
+                     :crc 3207408205}
+                 :m {:key "press/c51b00e769-m.jpg"
+                     :name "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 577423
+                     :crc 1292771847}
+                 :l {:key "press/c51b00e769-l.jpg"
+                     :name "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 1811691
+                     :crc 3211967441}
+                 :raw {:key "press/c51b00e769-raw.tif"
+                       :name "armenian-pavilion-plaster-unit-in-its-mold-c51b00e769.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77908460
+                       :crc 2077097017}}}
            {:uid "eff02ea41a"
             :file "armenian-pavilion-white-units-on-the-workbench-eff02ea41a"
             :key "press/eff02ea41a"
@@ -860,7 +1660,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: white units on the workbench. Photo: Aram Zadikian."
             :caption-short ""
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/eff02ea41a-s.jpg"
+                     :name "armenian-pavilion-white-units-on-the-workbench-eff02ea41a-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 74358
+                     :crc 1462575466}
+                 :m {:key "press/eff02ea41a-m.jpg"
+                     :name "armenian-pavilion-white-units-on-the-workbench-eff02ea41a-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 447638
+                     :crc 4005134886}
+                 :l {:key "press/eff02ea41a-l.jpg"
+                     :name "armenian-pavilion-white-units-on-the-workbench-eff02ea41a-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 2164989
+                     :crc 3947426150}
+                 :raw {:key "press/eff02ea41a-raw.tif"
+                       :name "armenian-pavilion-white-units-on-the-workbench-eff02ea41a.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77901066
+                       :crc 1099094317}}}
            {:uid "81f39add05"
             :file "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05"
             :key "press/81f39add05"
@@ -873,7 +1698,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: EPS foam forms in the fabrication workshop, 2026. Photo: Bibiana Juritz."
             :caption-short ""
             :credit "Bibiana Juritz"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/81f39add05-s.jpg"
+                     :name "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 88045
+                     :crc 139433916}
+                 :m {:key "press/81f39add05-m.jpg"
+                     :name "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 404056
+                     :crc 3551298749}
+                 :l {:key "press/81f39add05-l.jpg"
+                     :name "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 1508454
+                     :crc 3503267471}
+                 :raw {:key "press/81f39add05-raw.tif"
+                       :name "armenian-pavilion-eps-foam-forms-in-the-workshop-81f39add05.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 99560470
+                       :crc 782429281}}}
            {:uid "8a84f0295c"
             :file "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c"
             :key "press/8a84f0295c"
@@ -886,7 +1736,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes laid out on the workbench, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Colour palettes on the workbench, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8a84f0295c-s.jpg"
+                     :name "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 42740
+                     :crc 2499721393}
+                 :m {:key "press/8a84f0295c-m.jpg"
+                     :name "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 123197
+                     :crc 3055924395}
+                 :l {:key "press/8a84f0295c-l.jpg"
+                     :name "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 379200
+                     :crc 144676522}
+                 :raw {:key "press/8a84f0295c-raw.tif"
+                       :name "armenian-pavilion-colour-palettes-on-the-workbench-8a84f0295c.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 62348334
+                       :crc 506028954}}}
            {:uid "66126f601c"
             :file "armenian-pavilion-carrying-the-italian-flag-66126f601c"
             :key "press/66126f601c"
@@ -899,7 +1774,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: assistants carrying white and red sections of the Italian flag across the studio, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Carrying the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/66126f601c-s.jpg"
+                     :name "armenian-pavilion-carrying-the-italian-flag-66126f601c-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 77323
+                     :crc 142743070}
+                 :m {:key "press/66126f601c-m.jpg"
+                     :name "armenian-pavilion-carrying-the-italian-flag-66126f601c-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 246802
+                     :crc 256883211}
+                 :l {:key "press/66126f601c-l.jpg"
+                     :name "armenian-pavilion-carrying-the-italian-flag-66126f601c-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 665765
+                     :crc 316596135}
+                 :raw {:key "press/66126f601c-raw.tif"
+                       :name "armenian-pavilion-carrying-the-italian-flag-66126f601c.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 68078490
+                       :crc 1142289178}}}
            {:uid "444786d448"
             :file "armenian-pavilion-the-italian-flag-in-the-studio-444786d448"
             :key "press/444786d448"
@@ -912,7 +1812,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: the Italian flag in green, white and red, in the studio, 2026. Photo: Aram Zadikian."
             :caption-short "The Italian flag in the studio, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/444786d448-s.jpg"
+                     :name "armenian-pavilion-the-italian-flag-in-the-studio-444786d448-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 52501
+                     :crc 3894189191}
+                 :m {:key "press/444786d448-m.jpg"
+                     :name "armenian-pavilion-the-italian-flag-in-the-studio-444786d448-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 157398
+                     :crc 1835620622}
+                 :l {:key "press/444786d448-l.jpg"
+                     :name "armenian-pavilion-the-italian-flag-in-the-studio-444786d448-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 450768
+                     :crc 526014107}
+                 :raw {:key "press/444786d448-raw.tif"
+                       :name "armenian-pavilion-the-italian-flag-in-the-studio-444786d448.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 55482180
+                       :crc 2460327879}}}
            {:uid "6868e95922"
             :file "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922"
             :key "press/6868e95922"
@@ -925,7 +1850,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian with a guest in front of the Italian flag, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Zadik Zadikian with a guest, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6868e95922-s.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 96923
+                     :crc 2137676139}
+                 :m {:key "press/6868e95922-m.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 340156
+                     :crc 3174405868}
+                 :l {:key "press/6868e95922-l.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 928831
+                     :crc 2926949598}
+                 :raw {:key "press/6868e95922-raw.tif"
+                       :name "armenian-pavilion-zadik-zadikian-with-a-guest-6868e95922.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 76209496
+                       :crc 2059599821}}}
            {:uid "e93b6a1a17"
             :file "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17"
             :key "press/e93b6a1a17"
@@ -938,7 +1888,32 @@
             :caption "Zadik Zadikian, Maria Carmela Colaiacovo, Tony Shafrazi, and Gianni Scipione Rossi in the Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
             :caption-short "With Maria Carmela Colaiacovo, Tony Shafrazi and Gianni Scipione Rossi, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e93b6a1a17-s.jpg"
+                     :name "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 75892
+                     :crc 4224800085}
+                 :m {:key "press/e93b6a1a17-m.jpg"
+                     :name "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 251756
+                     :crc 314320979}
+                 :l {:key "press/e93b6a1a17-l.jpg"
+                     :name "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 714160
+                     :crc 818849379}
+                 :raw {:key "press/e93b6a1a17-raw.tif"
+                       :name "armenian-pavilion-with-maria-carmela-colaiacovo-tony-shafrazi-and-e93b6a1a17.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 81153330
+                       :crc 2344168091}}}
            {:uid "c41b5988cc"
             :file "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc"
             :key "press/c41b5988cc"
@@ -951,7 +1926,32 @@
             :caption "From left: Tony Shafrazi, a guest and Zadik Zadikian, 2026. Photo: Aram Zadikian."
             :caption-short "Tony Shafrazi and Zadik Zadikian, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/c41b5988cc-s.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 68291
+                     :crc 711307130}
+                 :m {:key "press/c41b5988cc-m.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 218637
+                     :crc 3820386238}
+                 :l {:key "press/c41b5988cc-l.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 630564
+                     :crc 3573896839}
+                 :raw {:key "press/c41b5988cc-raw.tif"
+                       :name "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 71776768
+                       :crc 1288311480}}}
            {:uid "3580e9b080"
             :file "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080"
             :key "press/3580e9b080"
@@ -964,7 +1964,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Tony Shafrazi looking at a palette sleeve with an assistant at the workbench, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Tony Shafrazi at the workbench, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3580e9b080-s.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 84656
+                     :crc 2770859809}
+                 :m {:key "press/3580e9b080-m.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 257485
+                     :crc 4287812161}
+                 :l {:key "press/3580e9b080-l.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 681120
+                     :crc 2423083828}
+                 :raw {:key "press/3580e9b080-raw.tif"
+                       :name "armenian-pavilion-tony-shafrazi-at-the-workbench-3580e9b080.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 80653882
+                       :crc 437976194}}}
            {:uid "cf203e22ed"
             :file "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed"
             :key "press/cf203e22ed"
@@ -977,7 +2002,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant carrying a red section of the Italian flag, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Carrying a section of the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/cf203e22ed-s.jpg"
+                     :name "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 92654
+                     :crc 687837091}
+                 :m {:key "press/cf203e22ed-m.jpg"
+                     :name "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 324157
+                     :crc 1420594314}
+                 :l {:key "press/cf203e22ed-l.jpg"
+                     :name "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 886090
+                     :crc 979954719}
+                 :raw {:key "press/cf203e22ed-raw.tif"
+                       :name "armenian-pavilion-carrying-a-section-of-the-italian-flag-cf203e22ed.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 74364306
+                       :crc 2378228406}}}
            {:uid "58b122556e"
             :file "armenian-pavilion-assembling-the-italian-flag-58b122556e"
             :key "press/58b122556e"
@@ -990,7 +2040,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant assembling the Italian flag, 2026. Photo: Aram Zadikian."
             :caption-short "Assembling the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/58b122556e-s.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-58b122556e-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 83949
+                     :crc 3772600590}
+                 :m {:key "press/58b122556e-m.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-58b122556e-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 273253
+                     :crc 4205380256}
+                 :l {:key "press/58b122556e-l.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-58b122556e-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 727226
+                     :crc 3888247882}
+                 :raw {:key "press/58b122556e-raw.tif"
+                       :name "armenian-pavilion-assembling-the-italian-flag-58b122556e.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 68148200
+                       :crc 3446710421}}}
            {:uid "4061cedbde"
             :file "armenian-pavilion-assembling-the-italian-flag-4061cedbde"
             :key "press/4061cedbde"
@@ -1003,7 +2078,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian and an assistant assembling the Italian flag, 2026. Photo: Aram Zadikian."
             :caption-short "Assembling the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/4061cedbde-s.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-4061cedbde-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 74817
+                     :crc 2612308413}
+                 :m {:key "press/4061cedbde-m.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-4061cedbde-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 235683
+                     :crc 127632253}
+                 :l {:key "press/4061cedbde-l.jpg"
+                     :name "armenian-pavilion-assembling-the-italian-flag-4061cedbde-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 634175
+                     :crc 2476717490}
+                 :raw {:key "press/4061cedbde-raw.tif"
+                       :name "armenian-pavilion-assembling-the-italian-flag-4061cedbde.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 64241148
+                       :crc 960539247}}}
            {:uid "82c998897e"
             :file "armenian-pavilion-setting-up-the-italian-flag-82c998897e"
             :key "press/82c998897e"
@@ -1016,7 +2116,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: setting the Italian flag on its feet in the studio, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Setting up the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/82c998897e-s.jpg"
+                     :name "armenian-pavilion-setting-up-the-italian-flag-82c998897e-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 65163
+                     :crc 1239382987}
+                 :m {:key "press/82c998897e-m.jpg"
+                     :name "armenian-pavilion-setting-up-the-italian-flag-82c998897e-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 206848
+                     :crc 204417925}
+                 :l {:key "press/82c998897e-l.jpg"
+                     :name "armenian-pavilion-setting-up-the-italian-flag-82c998897e-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 566515
+                     :crc 1366972374}
+                 :raw {:key "press/82c998897e-raw.tif"
+                       :name "armenian-pavilion-setting-up-the-italian-flag-82c998897e.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 67377720
+                       :crc 1336443541}}}
            {:uid "70dd92afbf"
             :file "armenian-pavilion-the-italian-flag-front-view-70dd92afbf"
             :key "press/70dd92afbf"
@@ -1029,7 +2154,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: the Italian flag in the studio, front view, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "The Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/70dd92afbf-s.jpg"
+                     :name "armenian-pavilion-the-italian-flag-front-view-70dd92afbf-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 28623
+                     :crc 925704999}
+                 :m {:key "press/70dd92afbf-m.jpg"
+                     :name "armenian-pavilion-the-italian-flag-front-view-70dd92afbf-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 86571
+                     :crc 2119937147}
+                 :l {:key "press/70dd92afbf-l.jpg"
+                     :name "armenian-pavilion-the-italian-flag-front-view-70dd92afbf-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 277162
+                     :crc 460963197}
+                 :raw {:key "press/70dd92afbf-raw.tif"
+                       :name "armenian-pavilion-the-italian-flag-front-view-70dd92afbf.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 43542014
+                       :crc 4053953664}}}
            {:uid "b6052edd36"
             :file "armenian-pavilion-the-italian-flag-its-feet-b6052edd36"
             :key "press/b6052edd36"
@@ -1042,7 +2192,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: detail of the Italian flag, showing the coloured feet the sections stand on, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "The Italian flag, detail, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/b6052edd36-s.jpg"
+                     :name "armenian-pavilion-the-italian-flag-its-feet-b6052edd36-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 30200
+                     :crc 3551485598}
+                 :m {:key "press/b6052edd36-m.jpg"
+                     :name "armenian-pavilion-the-italian-flag-its-feet-b6052edd36-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 98630
+                     :crc 49360361}
+                 :l {:key "press/b6052edd36-l.jpg"
+                     :name "armenian-pavilion-the-italian-flag-its-feet-b6052edd36-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 319770
+                     :crc 3110699899}
+                 :raw {:key "press/b6052edd36-raw.tif"
+                       :name "armenian-pavilion-the-italian-flag-its-feet-b6052edd36.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 55464860
+                       :crc 1161822276}}}
            {:uid "41bc72df87"
             :file "armenian-pavilion-adjusting-the-italian-flag-41bc72df87"
             :key "press/41bc72df87"
@@ -1055,7 +2230,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: adjusting a section of the Italian flag in the studio, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Adjusting the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/41bc72df87-s.jpg"
+                     :name "armenian-pavilion-adjusting-the-italian-flag-41bc72df87-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 78761
+                     :crc 486412354}
+                 :m {:key "press/41bc72df87-m.jpg"
+                     :name "armenian-pavilion-adjusting-the-italian-flag-41bc72df87-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 253001
+                     :crc 3732237474}
+                 :l {:key "press/41bc72df87-l.jpg"
+                     :name "armenian-pavilion-adjusting-the-italian-flag-41bc72df87-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 680342
+                     :crc 3795427973}
+                 :raw {:key "press/41bc72df87-raw.tif"
+                       :name "armenian-pavilion-adjusting-the-italian-flag-41bc72df87.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 71070578
+                       :crc 2963879389}}}
            {:uid "8b3ff68d3c"
             :file "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c"
             :key "press/8b3ff68d3c"
@@ -1068,7 +2268,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian in front of the Italian flag in the studio, 2026. Photo: Aram Zadikian."
             :caption-short "Zadik Zadikian with the Italian flag, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8b3ff68d3c-s.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 75783
+                     :crc 1881241185}
+                 :m {:key "press/8b3ff68d3c-m.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 234581
+                     :crc 3839218583}
+                 :l {:key "press/8b3ff68d3c-l.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 638608
+                     :crc 2500742231}
+                 :raw {:key "press/8b3ff68d3c-raw.tif"
+                       :name "armenian-pavilion-zadik-zadikian-with-the-italian-flag-8b3ff68d3c.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 71403616
+                       :crc 3192366656}}}
            {:uid "0f7f296e78"
             :file "armenian-pavilion-painting-the-green-0f7f296e78"
             :key "press/0f7f296e78"
@@ -1081,7 +2306,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian painting the green of the Italian flag, 2026. Photo: Aram Zadikian."
             :caption-short "Painting the green, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/0f7f296e78-s.jpg"
+                     :name "armenian-pavilion-painting-the-green-0f7f296e78-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 82104
+                     :crc 2851071023}
+                 :m {:key "press/0f7f296e78-m.jpg"
+                     :name "armenian-pavilion-painting-the-green-0f7f296e78-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 346508
+                     :crc 2420510170}
+                 :l {:key "press/0f7f296e78-l.jpg"
+                     :name "armenian-pavilion-painting-the-green-0f7f296e78-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 1439275
+                     :crc 2409838892}
+                 :raw {:key "press/0f7f296e78-raw.tif"
+                       :name "armenian-pavilion-painting-the-green-0f7f296e78.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 96851882
+                       :crc 2372764429}}}
            {:uid "2c3807ad70"
             :file "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70"
             :key "press/2c3807ad70"
@@ -1094,7 +2344,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a single unit painted in the three colours of the Italian flag, among coloured units on the workbench, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Italian flag unit, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/2c3807ad70-s.jpg"
+                     :name "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 42296
+                     :crc 4047942624}
+                 :m {:key "press/2c3807ad70-m.jpg"
+                     :name "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 128548
+                     :crc 2512988461}
+                 :l {:key "press/2c3807ad70-l.jpg"
+                     :name "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 385344
+                     :crc 4193407111}
+                 :raw {:key "press/2c3807ad70-raw.tif"
+                       :name "armenian-pavilion-italian-flag-unit-on-the-workbench-2c3807ad70.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 66974824
+                       :crc 3900359679}}}
            {:uid "bc12377c2d"
             :file "armenian-pavilion-works-in-the-studio-bc12377c2d"
             :key "press/bc12377c2d"
@@ -1107,7 +2382,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: works in the studio, including a stepped pink and teal stack and a small Italian flag, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Works in the studio, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/bc12377c2d-s.jpg"
+                     :name "armenian-pavilion-works-in-the-studio-bc12377c2d-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 78486
+                     :crc 3432108192}
+                 :m {:key "press/bc12377c2d-m.jpg"
+                     :name "armenian-pavilion-works-in-the-studio-bc12377c2d-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 264640
+                     :crc 4215806725}
+                 :l {:key "press/bc12377c2d-l.jpg"
+                     :name "armenian-pavilion-works-in-the-studio-bc12377c2d-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 716607
+                     :crc 3325426327}
+                 :raw {:key "press/bc12377c2d-raw.tif"
+                       :name "armenian-pavilion-works-in-the-studio-bc12377c2d.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 66419600
+                       :crc 300380287}}}
            {:uid "8a0cadcb1a"
             :file "armenian-pavilion-painting-the-red-8a0cadcb1a"
             :key "press/8a0cadcb1a"
@@ -1120,7 +2420,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: painting the red of the Italian flag in the studio, 2026. Photo: Aram Zadikian."
             :caption-short "Painting the red, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8a0cadcb1a-s.jpg"
+                     :name "armenian-pavilion-painting-the-red-8a0cadcb1a-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 95790
+                     :crc 1599029097}
+                 :m {:key "press/8a0cadcb1a-m.jpg"
+                     :name "armenian-pavilion-painting-the-red-8a0cadcb1a-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 292605
+                     :crc 3430359177}
+                 :l {:key "press/8a0cadcb1a-l.jpg"
+                     :name "armenian-pavilion-painting-the-red-8a0cadcb1a-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 753663
+                     :crc 1088982438}
+                 :raw {:key "press/8a0cadcb1a-raw.tif"
+                       :name "armenian-pavilion-painting-the-red-8a0cadcb1a.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 68599492
+                       :crc 2252195648}}}
            {:uid "876f5435df"
             :file "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df"
             :key "press/876f5435df"
@@ -1133,7 +2458,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Zadik Zadikian showing a guest around the studio, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Zadik Zadikian with a guest, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/876f5435df-s.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 81006
+                     :crc 840106969}
+                 :m {:key "press/876f5435df-m.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 253780
+                     :crc 1173854248}
+                 :l {:key "press/876f5435df-l.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 674895
+                     :crc 1216824672}
+                 :raw {:key "press/876f5435df-raw.tif"
+                       :name "armenian-pavilion-zadik-zadikian-with-a-guest-in-the-studio-876f5435df.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 75481832
+                       :crc 438560979}}}
            {:uid "78e5577dff"
             :file "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff"
             :key "press/78e5577dff"
@@ -1146,7 +2496,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: Tony Shafrazi looking at colour palettes in the studio, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Tony Shafrazi with the colour palettes, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/78e5577dff-s.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 52607
+                     :crc 3973849577}
+                 :m {:key "press/78e5577dff-m.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 149663
+                     :crc 1146916504}
+                 :l {:key "press/78e5577dff-l.jpg"
+                     :name "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 415817
+                     :crc 1429477228}
+                 :raw {:key "press/78e5577dff-raw.tif"
+                       :name "armenian-pavilion-tony-shafrazi-with-the-colour-palettes-78e5577dff.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 64506346
+                       :crc 3374632733}}}
            {:uid "c5f50cd69e"
             :file "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e"
             :key "press/c5f50cd69e"
@@ -1159,7 +2534,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes standing in their sleeves, inscribed Jasper Johns, 2026. Photo: Aram Zadikian."
             :caption-short "Palettes in their sleeves, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/c5f50cd69e-s.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 44381
+                     :crc 4147660520}
+                 :m {:key "press/c5f50cd69e-m.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 126189
+                     :crc 1251224868}
+                 :l {:key "press/c5f50cd69e-l.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 357737
+                     :crc 1551199831}
+                 :raw {:key "press/c5f50cd69e-raw.tif"
+                       :name "armenian-pavilion-palettes-in-their-sleeves-c5f50cd69e.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 65050990
+                       :crc 2019467657}}}
            {:uid "8998ba35ae"
             :file "armenian-pavilion-pigmenting-a-unit-8998ba35ae"
             :key "press/8998ba35ae"
@@ -1172,7 +2572,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: a yellow unit being pigmented, 2026. Photo: Aram Zadikian."
             :caption-short "Pigmenting a unit, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8998ba35ae-s.jpg"
+                     :name "armenian-pavilion-pigmenting-a-unit-8998ba35ae-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 37347
+                     :crc 3523643485}
+                 :m {:key "press/8998ba35ae-m.jpg"
+                     :name "armenian-pavilion-pigmenting-a-unit-8998ba35ae-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 112170
+                     :crc 85608141}
+                 :l {:key "press/8998ba35ae-l.jpg"
+                     :name "armenian-pavilion-pigmenting-a-unit-8998ba35ae-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 343175
+                     :crc 3486501861}
+                 :raw {:key "press/8998ba35ae-raw.tif"
+                       :name "armenian-pavilion-pigmenting-a-unit-8998ba35ae.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 60060582
+                       :crc 1151497536}}}
            {:uid "4b6de7dfcc"
             :file "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc"
             :key "press/4b6de7dfcc"
@@ -1185,7 +2610,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes standing in their sleeves, inscribed Jasper Johns, 2026. Photo: Aram Zadikian."
             :caption-short "Palettes in their sleeves, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/4b6de7dfcc-s.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 42301
+                     :crc 2328866442}
+                 :m {:key "press/4b6de7dfcc-m.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 120291
+                     :crc 4279626740}
+                 :l {:key "press/4b6de7dfcc-l.jpg"
+                     :name "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 344989
+                     :crc 3361977795}
+                 :raw {:key "press/4b6de7dfcc-raw.tif"
+                       :name "armenian-pavilion-palettes-in-their-sleeves-4b6de7dfcc.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 61276616
+                       :crc 2604850758}}}
            {:uid "cc3071f65e"
             :file "armenian-pavilion-colour-palettes-cc3071f65e"
             :key "press/cc3071f65e"
@@ -1198,7 +2648,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: colour palettes on the workbench, 2026. Photo: Aram Zadikian."
             :caption-short "Colour palettes, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/cc3071f65e-s.jpg"
+                     :name "armenian-pavilion-colour-palettes-cc3071f65e-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 39890
+                     :crc 3731145494}
+                 :m {:key "press/cc3071f65e-m.jpg"
+                     :name "armenian-pavilion-colour-palettes-cc3071f65e-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 115601
+                     :crc 775222317}
+                 :l {:key "press/cc3071f65e-l.jpg"
+                     :name "armenian-pavilion-colour-palettes-cc3071f65e-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 365636
+                     :crc 2880081374}
+                 :raw {:key "press/cc3071f65e-raw.tif"
+                       :name "armenian-pavilion-colour-palettes-cc3071f65e.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 66169276
+                       :crc 2579473248}}}
            {:uid "250cb528da"
             :file "armenian-pavilion-working-on-a-palette-sleeve-250cb528da"
             :key "press/250cb528da"
@@ -1211,7 +2686,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: working on a white palette sleeve at the workbench, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Working on a palette sleeve, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/250cb528da-s.jpg"
+                     :name "armenian-pavilion-working-on-a-palette-sleeve-250cb528da-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 39659
+                     :crc 4126069168}
+                 :m {:key "press/250cb528da-m.jpg"
+                     :name "armenian-pavilion-working-on-a-palette-sleeve-250cb528da-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 116780
+                     :crc 2214709170}
+                 :l {:key "press/250cb528da-l.jpg"
+                     :name "armenian-pavilion-working-on-a-palette-sleeve-250cb528da-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 348819
+                     :crc 2603231710}
+                 :raw {:key "press/250cb528da-raw.tif"
+                       :name "armenian-pavilion-working-on-a-palette-sleeve-250cb528da.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 65511564
+                       :crc 2300116172}}}
            {:uid "8919bfe877"
             :file "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877"
             :key "press/8919bfe877"
@@ -1224,7 +2724,32 @@
             :caption "Work in progress for The Studio, Armenian Pavilion, Biennale Arte 2026: brushing a white coat across a black mat on the workbench, Tesa 41, 2026. Photo: Aram Zadikian."
             :caption-short "Brushing a coat, 2026"
             :credit "Aram Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8919bfe877-s.jpg"
+                     :name "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877-small.jpg"
+                     :w 1200
+                     :h 675
+                     :bytes 48777
+                     :crc 4180193550}
+                 :m {:key "press/8919bfe877-m.jpg"
+                     :name "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877-medium.jpg"
+                     :w 2400
+                     :h 1350
+                     :bytes 141897
+                     :crc 1404892008}
+                 :l {:key "press/8919bfe877-l.jpg"
+                     :name "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877-large.jpg"
+                     :w 4000
+                     :h 2250
+                     :bytes 411409
+                     :crc 3418510694}
+                 :raw {:key "press/8919bfe877-raw.tif"
+                       :name "armenian-pavilion-brushing-a-coat-on-the-workbench-8919bfe877.tif"
+                       :w 7680
+                       :h 4320
+                       :ext "tif"
+                       :bytes 70821726
+                       :crc 3357497141}}}
            {:uid "8c28815040"
             :file "armenian-pavilion-yellow-space-8c28815040"
             :key "press/8c28815040"
@@ -1237,7 +2762,32 @@
             :caption "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Yellow Space, 1973–74"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8c28815040-s.jpg"
+                     :name "armenian-pavilion-yellow-space-8c28815040-small.jpg"
+                     :w 795
+                     :h 1200
+                     :bytes 109586
+                     :crc 4237147747}
+                 :m {:key "press/8c28815040-m.jpg"
+                     :name "armenian-pavilion-yellow-space-8c28815040-medium.jpg"
+                     :w 1591
+                     :h 2400
+                     :bytes 493832
+                     :crc 1110359552}
+                 :l {:key "press/8c28815040-l.jpg"
+                     :name "armenian-pavilion-yellow-space-8c28815040-large.jpg"
+                     :w 2652
+                     :h 4000
+                     :bytes 1859362
+                     :crc 1520387459}
+                 :raw {:key "press/8c28815040-raw.tif"
+                       :name "armenian-pavilion-yellow-space-8c28815040.tif"
+                       :w 4094
+                       :h 6176
+                       :ext "tif"
+                       :bytes 75883030
+                       :crc 374635249}}}
            {:uid "3df1b597cb"
             :file "armenian-pavilion-yellow-space-3df1b597cb"
             :key "press/3df1b597cb"
@@ -1250,7 +2800,32 @@
             :caption "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Exterior view, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Yellow Space, 1973–74"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3df1b597cb-s.jpg"
+                     :name "armenian-pavilion-yellow-space-3df1b597cb-small.jpg"
+                     :w 795
+                     :h 1200
+                     :bytes 167340
+                     :crc 1233087620}
+                 :m {:key "press/3df1b597cb-m.jpg"
+                     :name "armenian-pavilion-yellow-space-3df1b597cb-medium.jpg"
+                     :w 1591
+                     :h 2400
+                     :bytes 826356
+                     :crc 511490645}
+                 :l {:key "press/3df1b597cb-l.jpg"
+                     :name "armenian-pavilion-yellow-space-3df1b597cb-large.jpg"
+                     :w 2652
+                     :h 4000
+                     :bytes 3005924
+                     :crc 895256748}
+                 :raw {:key "press/3df1b597cb-raw.tif"
+                       :name "armenian-pavilion-yellow-space-3df1b597cb.tif"
+                       :w 4094
+                       :h 6176
+                       :ext "tif"
+                       :bytes 75888740
+                       :crc 2253685706}}}
            {:uid "6100c559fa"
             :file "armenian-pavilion-red-space-6100c559fa"
             :key "press/6100c559fa"
@@ -1263,7 +2838,32 @@
             :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Red Space, 1974"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6100c559fa-s.jpg"
+                     :name "armenian-pavilion-red-space-6100c559fa-small.jpg"
+                     :w 1200
+                     :h 797
+                     :bytes 141998
+                     :crc 3084344259}
+                 :m {:key "press/6100c559fa-m.jpg"
+                     :name "armenian-pavilion-red-space-6100c559fa-medium.jpg"
+                     :w 2400
+                     :h 1593
+                     :bytes 577028
+                     :crc 1690879744}
+                 :l {:key "press/6100c559fa-l.jpg"
+                     :name "armenian-pavilion-red-space-6100c559fa-large.jpg"
+                     :w 4000
+                     :h 2656
+                     :bytes 1820634
+                     :crc 8427307}
+                 :raw {:key "press/6100c559fa-raw.tif"
+                       :name "armenian-pavilion-red-space-6100c559fa.tif"
+                       :w 6142
+                       :h 4078
+                       :ext "tif"
+                       :bytes 75174644
+                       :crc 2459816873}}}
            {:uid "e40d510727"
             :file "armenian-pavilion-red-space-e40d510727"
             :key "press/e40d510727"
@@ -1276,7 +2876,32 @@
             :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Red Space, 1974"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e40d510727-s.jpg"
+                     :name "armenian-pavilion-red-space-e40d510727-small.jpg"
+                     :w 1200
+                     :h 791
+                     :bytes 105587
+                     :crc 2681080869}
+                 :m {:key "press/e40d510727-m.jpg"
+                     :name "armenian-pavilion-red-space-e40d510727-medium.jpg"
+                     :w 2400
+                     :h 1583
+                     :bytes 405449
+                     :crc 4245398093}
+                 :l {:key "press/e40d510727-l.jpg"
+                     :name "armenian-pavilion-red-space-e40d510727-large.jpg"
+                     :w 4000
+                     :h 2638
+                     :bytes 1296814
+                     :crc 971584665}
+                 :raw {:key "press/e40d510727-raw.tif"
+                       :name "armenian-pavilion-red-space-e40d510727.tif"
+                       :w 5176
+                       :h 3414
+                       :ext "tif"
+                       :bytes 53043742
+                       :crc 4226349904}}}
            {:uid "f4b244dc19"
             :file "armenian-pavilion-red-space-f4b244dc19"
             :key "press/f4b244dc19"
@@ -1289,7 +2914,32 @@
             :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Exterior view, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Red Space, 1974"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f4b244dc19-s.jpg"
+                     :name "armenian-pavilion-red-space-f4b244dc19-small.jpg"
+                     :w 816
+                     :h 1200
+                     :bytes 139794
+                     :crc 3713612467}
+                 :m {:key "press/f4b244dc19-m.jpg"
+                     :name "armenian-pavilion-red-space-f4b244dc19-medium.jpg"
+                     :w 1633
+                     :h 2400
+                     :bytes 590959
+                     :crc 195358908}
+                 :l {:key "press/f4b244dc19-l.jpg"
+                     :name "armenian-pavilion-red-space-f4b244dc19-large.jpg"
+                     :w 2722
+                     :h 4000
+                     :bytes 1984540
+                     :crc 4059129815}
+                 :raw {:key "press/f4b244dc19-raw.tif"
+                       :name "armenian-pavilion-red-space-f4b244dc19.tif"
+                       :w 4126
+                       :h 6064
+                       :ext "tif"
+                       :bytes 75093870
+                       :crc 1540422159}}}
            {:uid "77d6d25a98"
             :file "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98"
             :key "press/77d6d25a98"
@@ -1302,7 +2952,32 @@
             :caption "Zadik Zadikian, gilded stairs going down, c. 1977–78. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York. Courtesy Zadik Zadikian Studio."
             :caption-short "Gilded stairs, P.S. 1, c. 1977–78"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/77d6d25a98-s.jpg"
+                     :name "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98-small.jpg"
+                     :w 871
+                     :h 1200
+                     :bytes 166143
+                     :crc 922794947}
+                 :m {:key "press/77d6d25a98-m.jpg"
+                     :name "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98-medium.jpg"
+                     :w 1743
+                     :h 2400
+                     :bytes 624799
+                     :crc 2089742390}
+                 :l {:key "press/77d6d25a98-l.jpg"
+                     :name "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98-large.jpg"
+                     :w 2905
+                     :h 4000
+                     :bytes 1964840
+                     :crc 75883968}
+                 :raw {:key "press/77d6d25a98-raw.tif"
+                       :name "armenian-pavilion-gilded-stairs-going-down-p-s-1-77d6d25a98.tif"
+                       :w 4752
+                       :h 6544
+                       :ext "tif"
+                       :bytes 93320930
+                       :crc 505505866}}}
            {:uid "3b9aa96133"
             :file "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133"
             :key "press/3b9aa96133"
@@ -1315,7 +2990,32 @@
             :caption "Zadik Zadikian, gilded stairwell, c. 1977–78. Industrial gold foil. Entrance, P.S. 1 (now MoMA PS1), Long Island City, New York. Photo: Ivan Dalla Tana. Courtesy Zadik Zadikian Studio."
             :caption-short "Gilded stairwell, P.S. 1, c. 1977–78"
             :credit "Ivan Dalla Tana"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3b9aa96133-s.jpg"
+                     :name "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133-small.jpg"
+                     :w 1200
+                     :h 798
+                     :bytes 147508
+                     :crc 377143440}
+                 :m {:key "press/3b9aa96133-m.jpg"
+                     :name "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133-medium.jpg"
+                     :w 2400
+                     :h 1596
+                     :bytes 610610
+                     :crc 3779109758}
+                 :l {:key "press/3b9aa96133-l.jpg"
+                     :name "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133-large.jpg"
+                     :w 4000
+                     :h 2660
+                     :bytes 1990027
+                     :crc 4110613141}
+                 :raw {:key "press/3b9aa96133-raw.tif"
+                       :name "armenian-pavilion-gilded-stairwell-p-s-1-3b9aa96133.tif"
+                       :w 5990
+                       :h 3984
+                       :ext "tif"
+                       :bytes 71621594
+                       :crc 2124415079}}}
            {:uid "430e8e9073"
             :file "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073"
             :key "press/430e8e9073"
@@ -1328,7 +3028,32 @@
             :caption "Zadik Zadikian stacking gold bricks at 9 Jay Street, his eight-room apartment and studio, New York, 1975–76. Courtesy Zadik Zadikian Studio."
             :caption-short "Stacking gold bricks, 9 Jay Street, 1975–76"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/430e8e9073-s.jpg"
+                     :name "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073-small.jpg"
+                     :w 1200
+                     :h 807
+                     :bytes 124530
+                     :crc 1242151347}
+                 :m {:key "press/430e8e9073-m.jpg"
+                     :name "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073-medium.jpg"
+                     :w 2400
+                     :h 1614
+                     :bytes 486951
+                     :crc 2227467576}
+                 :l {:key "press/430e8e9073-l.jpg"
+                     :name "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073-large.jpg"
+                     :w 4000
+                     :h 2690
+                     :bytes 1451687
+                     :crc 3917021946}
+                 :raw {:key "press/430e8e9073-raw.tif"
+                       :name "armenian-pavilion-stacking-gold-bricks-9-jay-street-430e8e9073.tif"
+                       :w 6064
+                       :h 4078
+                       :ext "tif"
+                       :bytes 74211406
+                       :crc 278383339}}}
            {:uid "3800768b0a"
             :file "armenian-pavilion-9-jay-street-hallway-3800768b0a"
             :key "press/3800768b0a"
@@ -1341,7 +3066,32 @@
             :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the hallway. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3800768b0a-s.jpg"
+                     :name "armenian-pavilion-9-jay-street-hallway-3800768b0a-small.jpg"
+                     :w 1200
+                     :h 793
+                     :bytes 131771
+                     :crc 2168762336}
+                 :m {:key "press/3800768b0a-m.jpg"
+                     :name "armenian-pavilion-9-jay-street-hallway-3800768b0a-medium.jpg"
+                     :w 2400
+                     :h 1585
+                     :bytes 519981
+                     :crc 1026920350}
+                 :l {:key "press/3800768b0a-l.jpg"
+                     :name "armenian-pavilion-9-jay-street-hallway-3800768b0a-large.jpg"
+                     :w 4000
+                     :h 2642
+                     :bytes 1682736
+                     :crc 3747725859}
+                 :raw {:key "press/3800768b0a-raw.tif"
+                       :name "armenian-pavilion-9-jay-street-hallway-3800768b0a.tif"
+                       :w 6176
+                       :h 4080
+                       :ext "tif"
+                       :bytes 75620390
+                       :crc 4170811050}}}
            {:uid "65422250b8"
             :file "armenian-pavilion-9-jay-street-kitchen-65422250b8"
             :key "press/65422250b8"
@@ -1354,7 +3104,32 @@
             :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the kitchen. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/65422250b8-s.jpg"
+                     :name "armenian-pavilion-9-jay-street-kitchen-65422250b8-small.jpg"
+                     :w 1200
+                     :h 763
+                     :bytes 155032
+                     :crc 1575352111}
+                 :m {:key "press/65422250b8-m.jpg"
+                     :name "armenian-pavilion-9-jay-street-kitchen-65422250b8-medium.jpg"
+                     :w 2400
+                     :h 1525
+                     :bytes 642918
+                     :crc 2558454819}
+                 :l {:key "press/65422250b8-l.jpg"
+                     :name "armenian-pavilion-9-jay-street-kitchen-65422250b8-large.jpg"
+                     :w 4000
+                     :h 2542
+                     :bytes 2088393
+                     :crc 501977567}
+                 :raw {:key "press/65422250b8-raw.tif"
+                       :name "armenian-pavilion-9-jay-street-kitchen-65422250b8.tif"
+                       :w 5826
+                       :h 3702
+                       :ext "tif"
+                       :bytes 64734396
+                       :crc 239755028}}}
            {:uid "f4c0ffbcd5"
             :file "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5"
             :key "press/f4c0ffbcd5"
@@ -1367,7 +3142,32 @@
             :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of a radiator. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f4c0ffbcd5-s.jpg"
+                     :name "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5-small.jpg"
+                     :w 1200
+                     :h 779
+                     :bytes 173293
+                     :crc 248660466}
+                 :m {:key "press/f4c0ffbcd5-m.jpg"
+                     :name "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5-medium.jpg"
+                     :w 2400
+                     :h 1558
+                     :bytes 694158
+                     :crc 919557156}
+                 :l {:key "press/f4c0ffbcd5-l.jpg"
+                     :name "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5-large.jpg"
+                     :w 4000
+                     :h 2596
+                     :bytes 2145710
+                     :crc 3822056973}
+                 :raw {:key "press/f4c0ffbcd5-raw.tif"
+                       :name "armenian-pavilion-9-jay-street-radiator-f4c0ffbcd5.tif"
+                       :w 6064
+                       :h 3936
+                       :ext "tif"
+                       :bytes 71642042
+                       :crc 2572140219}}}
            {:uid "fbbf837d62"
             :file "armenian-pavilion-9-jay-street-water-heater-fbbf837d62"
             :key "press/fbbf837d62"
@@ -1380,7 +3180,32 @@
             :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of the water heater. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/fbbf837d62-s.jpg"
+                     :name "armenian-pavilion-9-jay-street-water-heater-fbbf837d62-small.jpg"
+                     :w 749
+                     :h 1200
+                     :bytes 113527
+                     :crc 988146009}
+                 :m {:key "press/fbbf837d62-m.jpg"
+                     :name "armenian-pavilion-9-jay-street-water-heater-fbbf837d62-medium.jpg"
+                     :w 1498
+                     :h 2400
+                     :bytes 412158
+                     :crc 1644582424}
+                 :l {:key "press/fbbf837d62-l.jpg"
+                     :name "armenian-pavilion-9-jay-street-water-heater-fbbf837d62-large.jpg"
+                     :w 2496
+                     :h 4000
+                     :bytes 1203949
+                     :crc 3277697463}
+                 :raw {:key "press/fbbf837d62-raw.tif"
+                       :name "armenian-pavilion-9-jay-street-water-heater-fbbf837d62.tif"
+                       :w 3854
+                       :h 6176
+                       :ext "tif"
+                       :bytes 121640522
+                       :crc 2259204229}}}
            {:uid "11d60e8063"
             :file "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063"
             :key "press/11d60e8063"
@@ -1393,7 +3218,32 @@
             :caption "Zadik Zadikian, gilded interior, 1977. Industrial gold foil. Commissioned work, residence of Ara Arslanian. Photo: Zadik Zadikian."
             :caption-short ""
             :credit "Zadik Zadikian"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/11d60e8063-s.jpg"
+                     :name "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063-small.jpg"
+                     :w 1200
+                     :h 763
+                     :bytes 157072
+                     :crc 1542649639}
+                 :m {:key "press/11d60e8063-m.jpg"
+                     :name "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063-medium.jpg"
+                     :w 2400
+                     :h 1526
+                     :bytes 604064
+                     :crc 1401480052}
+                 :l {:key "press/11d60e8063-l.jpg"
+                     :name "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063-large.jpg"
+                     :w 4000
+                     :h 2544
+                     :bytes 1936978
+                     :crc 1060384523}
+                 :raw {:key "press/11d60e8063-raw.tif"
+                       :name "armenian-pavilion-gilded-loft-residence-of-ara-arslanian-11d60e8063.tif"
+                       :w 6064
+                       :h 3856
+                       :ext "tif"
+                       :bytes 70183990
+                       :crc 737105922}}}
            {:uid "cd781307e6"
             :file "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6"
             :key "press/cd781307e6"
@@ -1406,7 +3256,32 @@
             :caption "Zadik Zadikian, Gold Bricks in Cart, 1975. Plaster and 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
             :caption-short "Gold Bricks in Cart, 1975"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/cd781307e6-s.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6-small.jpg"
+                     :w 1200
+                     :h 953
+                     :bytes 126049
+                     :crc 3737650372}
+                 :m {:key "press/cd781307e6-m.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6-medium.jpg"
+                     :w 2400
+                     :h 1907
+                     :bytes 566565
+                     :crc 453418640}
+                 :l {:key "press/cd781307e6-l.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6-large.jpg"
+                     :w 3607
+                     :h 2866
+                     :bytes 1655754
+                     :crc 2414857924}
+                 :raw {:key "press/cd781307e6-raw.psd"
+                       :name "armenian-pavilion-untitled-gold-bricks-in-cart-cd781307e6.psd"
+                       :w 3607
+                       :h 2866
+                       :ext "psd"
+                       :bytes 100840783
+                       :crc 962406804}}}
            {:uid "e2806f8fe6"
             :file "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6"
             :key "press/e2806f8fe6"
@@ -1419,7 +3294,32 @@
             :caption "Zadik Zadikian, Gold Stack, 1975. Plaster and 24-karat gold leaf. Installed on a New York sidewalk. Courtesy Zadik Zadikian Studio."
             :caption-short "Gold Stack, 1975"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e2806f8fe6-s.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6-small.jpg"
+                     :w 1200
+                     :h 751
+                     :bytes 152507
+                     :crc 2252527522}
+                 :m {:key "press/e2806f8fe6-m.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6-medium.jpg"
+                     :w 2400
+                     :h 1502
+                     :bytes 699041
+                     :crc 1651861649}
+                 :l {:key "press/e2806f8fe6-l.jpg"
+                     :name "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6-large.jpg"
+                     :w 3080
+                     :h 1928
+                     :bytes 1418898
+                     :crc 2329091513}
+                 :raw {:key "press/e2806f8fe6-raw.psd"
+                       :name "armenian-pavilion-untitled-gold-bricks-on-street-e2806f8fe6.psd"
+                       :w 3080
+                       :h 1928
+                       :ext "psd"
+                       :bytes 35611971
+                       :crc 108428992}}}
            {:uid "56861f0b66"
             :file "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66"
             :key "press/56861f0b66"
@@ -1432,7 +3332,32 @@
             :caption "Zadik Zadikian, gilded shovel and pickaxe with Golden Nails, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
             :caption-short "Gilded shovel, pickaxe and Golden Nails, 1975"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/56861f0b66-s.jpg"
+                     :name "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66-small.jpg"
+                     :w 953
+                     :h 1200
+                     :bytes 96346
+                     :crc 3934017376}
+                 :m {:key "press/56861f0b66-m.jpg"
+                     :name "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66-medium.jpg"
+                     :w 1907
+                     :h 2400
+                     :bytes 472826
+                     :crc 3325343481}
+                 :l {:key "press/56861f0b66-l.jpg"
+                     :name "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66-large.jpg"
+                     :w 3178
+                     :h 4000
+                     :bytes 2203421
+                     :crc 4078451049}
+                 :raw {:key "press/56861f0b66-raw.tif"
+                       :name "armenian-pavilion-untitled-gold-shovel-pickaxe-nails-56861f0b66.tif"
+                       :w 5732
+                       :h 7214
+                       :ext "tif"
+                       :bytes 124081510
+                       :crc 448608401}}}
            {:uid "b13f32f277"
             :file "armenian-pavilion-untitled-two-gold-shovel-b13f32f277"
             :key "press/b13f32f277"
@@ -1445,7 +3370,32 @@
             :caption "Zadik Zadikian, two gilded shovels, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
             :caption-short "Two gilded shovels, 1975"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/b13f32f277-s.jpg"
+                     :name "armenian-pavilion-untitled-two-gold-shovel-b13f32f277-small.jpg"
+                     :w 763
+                     :h 1200
+                     :bytes 139106
+                     :crc 2693689906}
+                 :m {:key "press/b13f32f277-m.jpg"
+                     :name "armenian-pavilion-untitled-two-gold-shovel-b13f32f277-medium.jpg"
+                     :w 1525
+                     :h 2400
+                     :bytes 575335
+                     :crc 1662973300}
+                 :l {:key "press/b13f32f277-l.jpg"
+                     :name "armenian-pavilion-untitled-two-gold-shovel-b13f32f277-large.jpg"
+                     :w 1927
+                     :h 3032
+                     :bytes 1116274
+                     :crc 2026138912}
+                 :raw {:key "press/b13f32f277-raw.psd"
+                       :name "armenian-pavilion-untitled-two-gold-shovel-b13f32f277.psd"
+                       :w 1927
+                       :h 3032
+                       :ext "psd"
+                       :bytes 51581120
+                       :crc 1210857844}}}
            {:uid "57dd2b5fda"
             :file "armenian-pavilion-untitled-gold-nails-57dd2b5fda"
             :key "press/57dd2b5fda"
@@ -1458,7 +3408,32 @@
             :caption "Zadik Zadikian, Golden Nails, 1975. 24-karat gold leaf on steel nails, in a cardboard box. Courtesy Zadik Zadikian Studio."
             :caption-short "Golden Nails, 1975"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/57dd2b5fda-s.jpg"
+                     :name "armenian-pavilion-untitled-gold-nails-57dd2b5fda-small.jpg"
+                     :w 1121
+                     :h 1200
+                     :bytes 98749
+                     :crc 2606165100}
+                 :m {:key "press/57dd2b5fda-m.jpg"
+                     :name "armenian-pavilion-untitled-gold-nails-57dd2b5fda-medium.jpg"
+                     :w 1371
+                     :h 1467
+                     :bytes 171308
+                     :crc 2119948274}
+                 :l {:key "press/57dd2b5fda-l.jpg"
+                     :name "armenian-pavilion-untitled-gold-nails-57dd2b5fda-large.jpg"
+                     :w 1371
+                     :h 1467
+                     :bytes 239805
+                     :crc 1191936895}
+                 :raw {:key "press/57dd2b5fda-raw.psd"
+                       :name "armenian-pavilion-untitled-gold-nails-57dd2b5fda.psd"
+                       :w 1371
+                       :h 1467
+                       :ext "psd"
+                       :bytes 19245211
+                       :crc 2959345749}}}
            {:uid "8b51916405"
             :file "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405"
             :key "press/8b51916405"
@@ -1471,7 +3446,32 @@
             :caption "Tony Shafrazi and Zadik Zadikian with Gold Bricks, getting ready for the opening, Tony Shafrazi Gallery, Tehran, 1978. Photographer unknown. Courtesy Zadik Zadikian Studio."
             :caption-short "With Tony Shafrazi, Tehran, 1978"
             :credit "Photographer unknown"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8b51916405-s.jpg"
+                     :name "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405-small.jpg"
+                     :w 1200
+                     :h 881
+                     :bytes 178143
+                     :crc 1468746617}
+                 :m {:key "press/8b51916405-m.jpg"
+                     :name "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405-medium.jpg"
+                     :w 2400
+                     :h 1762
+                     :bytes 658288
+                     :crc 4207876566}
+                 :l {:key "press/8b51916405-l.jpg"
+                     :name "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405-large.jpg"
+                     :w 4000
+                     :h 2937
+                     :bytes 1874596
+                     :crc 1658349552}
+                 :raw {:key "press/8b51916405-raw.tif"
+                       :name "armenian-pavilion-with-tony-shafrazi-tehran-8b51916405.tif"
+                       :w 4096
+                       :h 3007
+                       :ext "tif"
+                       :bytes 73926684
+                       :crc 4198725184}}}
            {:uid "dbac198dd8"
             :file "armenian-pavilion-gold-bricks-dbac198dd8"
             :key "press/dbac198dd8"
@@ -1484,7 +3484,32 @@
             :caption "Zadik Zadikian, Gold Bricks, 1978. Installation view, Tony Shafrazi Gallery, Tehran, the gallery’s first and only exhibition, which opened on 31 October 1978. About a thousand gilded bricks; the work was stolen from storage after the Revolution and is lost. Photo: Tony Shafrazi."
             :caption-short "Gold Bricks, 1978"
             :credit "Tony Shafrazi"
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/dbac198dd8-s.jpg"
+                     :name "armenian-pavilion-gold-bricks-dbac198dd8-small.jpg"
+                     :w 1200
+                     :h 870
+                     :bytes 137532
+                     :crc 3243150191}
+                 :m {:key "press/dbac198dd8-m.jpg"
+                     :name "armenian-pavilion-gold-bricks-dbac198dd8-medium.jpg"
+                     :w 2400
+                     :h 1740
+                     :bytes 501226
+                     :crc 1798301552}
+                 :l {:key "press/dbac198dd8-l.jpg"
+                     :name "armenian-pavilion-gold-bricks-dbac198dd8-large.jpg"
+                     :w 4000
+                     :h 2899
+                     :bytes 1646379
+                     :crc 2549815389}
+                 :raw {:key "press/dbac198dd8-raw.tif"
+                       :name "armenian-pavilion-gold-bricks-dbac198dd8.tif"
+                       :w 5626
+                       :h 4078
+                       :ext "tif"
+                       :bytes 68860506
+                       :crc 608137788}}}
            {:uid "52a0b99f06"
             :file "armenian-pavilion-gold-bricks-single-stack-52a0b99f06"
             :key "press/52a0b99f06"
@@ -1497,7 +3522,32 @@
             :caption "Zadik Zadikian, Gold Bricks (single stack), 1978. Tony Shafrazi Gallery, Tehran. Courtesy Zadik Zadikian Studio."
             :caption-short "Gold Bricks, 1978"
             :credit ""
-            :artist "Zadik Zadikian"}
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/52a0b99f06-s.jpg"
+                     :name "armenian-pavilion-gold-bricks-single-stack-52a0b99f06-small.jpg"
+                     :w 605
+                     :h 1200
+                     :bytes 103989
+                     :crc 2817087691}
+                 :m {:key "press/52a0b99f06-m.jpg"
+                     :name "armenian-pavilion-gold-bricks-single-stack-52a0b99f06-medium.jpg"
+                     :w 1209
+                     :h 2400
+                     :bytes 382601
+                     :crc 796687666}
+                 :l {:key "press/52a0b99f06-l.jpg"
+                     :name "armenian-pavilion-gold-bricks-single-stack-52a0b99f06-large.jpg"
+                     :w 2016
+                     :h 4000
+                     :bytes 1134722
+                     :crc 984870649}
+                 :raw {:key "press/52a0b99f06-raw.tif"
+                       :name "armenian-pavilion-gold-bricks-single-stack-52a0b99f06.tif"
+                       :w 3244
+                       :h 6438
+                       :ext "tif"
+                       :bytes 62679504
+                       :crc 1829443421}}}
            {:uid "e42e19d42e"
             :file "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e"
             :key "press/e42e19d42e"
@@ -1510,7 +3560,32 @@
             :caption "Zadik Zadikian and his son Aram Zadikian beside Made in USA (Aspet), 2025, Independent 20th Century, New York, 2025."
             :caption-short "Zadik and Aram Zadikian with Made in USA (Aspet), 2025"
             :credit ""
-            :artist ""}
+            :artist ""
+            :dl {:s {:key "press/e42e19d42e-s.jpg"
+                     :name "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e-small.jpg"
+                     :w 699
+                     :h 1200
+                     :bytes 130614
+                     :crc 3576710144}
+                 :m {:key "press/e42e19d42e-m.jpg"
+                     :name "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e-medium.jpg"
+                     :w 1398
+                     :h 2400
+                     :bytes 418373
+                     :crc 3126142839}
+                 :l {:key "press/e42e19d42e-l.jpg"
+                     :name "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e-large.jpg"
+                     :w 2330
+                     :h 4000
+                     :bytes 1096928
+                     :crc 2228456581}
+                 :raw {:key "press/e42e19d42e-raw.tif"
+                       :name "armenian-pavilion-zadik-aram-made-in-usa-aspet-e42e19d42e.tif"
+                       :w 4012
+                       :h 6888
+                       :ext "tif"
+                       :bytes 68564036
+                       :crc 1039194999}}}
            {:uid "795ed73e3d"
             :file "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d"
             :key "press/795ed73e3d"
@@ -1523,4 +3598,29 @@
             :caption "Zadik Zadikian with his column of white bricks, c. 1981. Reproduced from the Champions catalogue. Photographer unknown."
             :caption-short "Zadik Zadikian with a column of white bricks, c. 1981"
             :credit "Photographer unknown"
-            :artist "Zadik Zadikian"}]})
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/795ed73e3d-s.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d-small.jpg"
+                     :w 959
+                     :h 1200
+                     :bytes 130042
+                     :crc 2025962680}
+                 :m {:key "press/795ed73e3d-m.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d-medium.jpg"
+                     :w 1918
+                     :h 2400
+                     :bytes 680254
+                     :crc 874438676}
+                 :l {:key "press/795ed73e3d-l.jpg"
+                     :name "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d-large.jpg"
+                     :w 2948
+                     :h 3688
+                     :bytes 2334729
+                     :crc 3665410897}
+                 :raw {:key "press/795ed73e3d-raw.tif"
+                       :name "armenian-pavilion-zadik-zadikian-with-a-column-of-white-bricks-795ed73e3d.tif"
+                       :w 2948
+                       :h 3688
+                       :ext "tif"
+                       :bytes 24213690
+                       :crc 3924814102}}}]})

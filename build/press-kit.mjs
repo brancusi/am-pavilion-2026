@@ -175,8 +175,8 @@ function edn(v, ind = '') {
 // The press images as last built (npm run press), so the page lays them out
 // before its fresh copy of the list arrives.
 const press = JSON.parse(readFileSync('resources/data/press/press.json', 'utf8')).images
-  .map(({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist }) =>
-    ({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist }));
+  .map(({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist, dl }) =>
+    ({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist, dl }));
 
 const kit = { live: LIVE, en: lang('en'), it: lang('it'), images: press };
 writeFileSync(OUT, `(ns amp.data.press-kit

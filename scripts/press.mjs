@@ -1,7 +1,8 @@
 // The Press page's images, from the Caption Genius project "Pavilion — Press"
 // (a copy of the media handoff for Silvia). Every row marked Include is
-// uploaded to R2 under press/<uid> (WebP widths, a 2400px JPEG and a
-// full-size JPEG for download, see media.mjs) and listed, in the project's
+// uploaded to R2 under press/<uid> (WebP widths and a 2400px JPEG for the
+// page; Small, Medium and Large JPEGs and the original for download, see
+// media.mjs) and listed, in the project's
 // order, in resources/data/press/press.json, which the page reads, with
 // captions.csv beside it.
 //
@@ -18,7 +19,7 @@
 import { readFileSync, writeFileSync, mkdirSync, statSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { homedir } from 'node:os';
-import { add } from './media.mjs';
+import { add, tiers } from './media.mjs';
 
 // A Sync job names the project as it was frozen when Sync was pressed.
 const arg = process.argv[2] || `${homedir()}/Documents/Caption Genius/Pavilion — Press.json`;
@@ -58,16 +59,25 @@ async function upload(r) {
   const st = statSync(file);
   const stamp = `${st.size}:${Math.round(st.mtimeMs)}`;
   if (seen[r.uid]?.stamp !== stamp || process.env.FORCE) {
-    const { key, width, height } = await add(file, `press/${r.uid}`, { full: true, saveAs: saveAs(r) });
+    const { key, width, height } = await add(file, `press/${r.uid}`, { saveAs: saveAs(r) });
     seen[r.uid] = { key, w: width, h: height, stamp };
     if (!process.env.DRY) writeFileSync(SEEN, JSON.stringify(seen, null, 1) + '\n');
+  }
+  if (seen[r.uid].tiers?.stamp !== stamp || process.env.FORCE) {
+    const made = await tiers(file, `press/${r.uid}`, saveAs(r));
+    if (!process.env.DRY) {
+      const dl = {};
+      for (const [t, { local, ...o }] of Object.entries(made)) dl[t] = { ...o, ...await measure(o.key, local) };
+      seen[r.uid].tiers = { stamp, ...dl };
+      writeFileSync(SEEN, JSON.stringify(seen, null, 1) + '\n');
+    }
   }
   console.log(`${++done}/${rows.length} ${r.file}`);
 }
 
 // The size and CRC-32 of each download as stored in R2, for the Worker's ZIPs
 // (cloudflare/site/zip.js writes every header before streaming a byte). Read
-// from the local copy media.mjs made when it matches the stored size, else
+// from the file it was uploaded from when that matches the stored size, else
 // fetched once; kept in SEEN with the upload's stamp.
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
   let c = n;
@@ -80,34 +90,21 @@ const crc32 = (b) => {
   return (c ^ 0xffffffff) >>> 0;
 };
 const HOST = 'https://media.armenianpavilion.org/';
-async function measure(key) {
+async function measure(key, local = `.media-out/${key}`) {
   const head = await fetch(HOST + key, { method: 'HEAD' });
   if (!head.ok) throw new Error(`${key}: ${head.status}`);
   const bytes = Number(head.headers.get('content-length'));
-  const local = `.media-out/${key}`;
   const data = existsSync(local) && statSync(local).size === bytes
     ? readFileSync(local)
     : new Uint8Array(await (await fetch(HOST + key)).arrayBuffer());
   if (data.length !== bytes) throw new Error(`${key}: read ${data.length} bytes, stored ${bytes}`);
   return { bytes, crc: crc32(data) };
 }
-async function downloads(r) {
-  const s = seen[r.uid];
-  if (s.dl?.stamp === s.stamp) return;
-  s.dl = { stamp: s.stamp, jpg: await measure(`${s.key}.jpg`), full: await measure(`${s.key}-full.jpg`) };
-  writeFileSync(SEEN, JSON.stringify(seen, null, 1) + '\n');
-}
 
 const queue = [...rows];
 await Promise.all(Array.from({ length: JOBS }, async () => {
   for (let r; (r = queue.shift());) await upload(r);
 }));
-if (!process.env.DRY) {
-  const q = [...rows];
-  await Promise.all(Array.from({ length: JOBS }, async () => {
-    for (let r; (r = q.shift());) await downloads(r);
-  }));
-}
 
 const images = rows.map((r) => ({
   uid: r.uid,
@@ -123,11 +120,12 @@ const images = rows.map((r) => ({
   caption: name(r.caption),
   caption_short: name(r.caption_short),
   credit: name(r.credit),
-  ...(seen[r.uid].dl ? { dl: { jpg: seen[r.uid].dl.jpg, full: seen[r.uid].dl.full } } : {}),
+  // Per download: s, m, l, raw → {key, name, w, h, bytes, crc} (raw adds ext).
+  ...(seen[r.uid].tiers ? { dl: Object.fromEntries(['s', 'm', 'l', 'raw'].map((t) => [t, seen[r.uid].tiers[t]])) } : {}),
 }));
 writeFileSync(OUT, JSON.stringify({ project: project.name, images }, null, 1) + '\n');
 const cell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
 const cols = ['title', 'date', 'artist', 'materials', 'caption', 'credit', 'section'];
 writeFileSync(CSV, [['file', ...cols].join(','),
-  ...images.map((i) => [`${i.file}.jpg`, ...cols.map((c) => i[c])].map(cell).join(','))].join('\n') + '\n');
+  ...images.map((i) => [i.file, ...cols.map((c) => i[c])].map(cell).join(','))].join('\n') + '\n');
 console.log(`Listed ${images.length} images`);
