@@ -85,7 +85,7 @@
                       (d/div {:class "ap-bench__foot"}
                              (d/p {:class "ap-label m-0 ap-bench__muted"} "From the journal")
                              (for [{:keys [slug title date]} making-of]
-                               (d/a {:key slug :class "ap-bench__post" :href (str "/blog/" slug)}
+                               (d/a {:key slug :class "ap-bench__post" :href (str "/blog/" slug) :title title}
                                     (d/span {:class "ap-label ap-bench__muted"} (short-date date))
                                     (d/span {:class "ap-h2"} title)))
                              (d/a {:class "ap-btn ap-btn--yellow" :href "/blog"} "All notes →"))))))

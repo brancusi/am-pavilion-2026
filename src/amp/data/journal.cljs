@@ -19,7 +19,7 @@
 
    {:slug        "making-a-flag"
     :title       "Making a Flag"
-    :date        "2026-10-30"
+    :date        "2026-10-28"
     :author      "Armenian Pavilion Team"
     :kind        "Studio"
     :tone        :red

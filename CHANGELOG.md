@@ -2,6 +2,17 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-01 — Works gallery: the whole press set of the making
+
+**Rationale:** The home works gallery showed 12 early renders; the press set holds the installed works, drawings, renderings and the studio at work.
+**Summary:** The gallery now has 61 slides, and images are put in only as the track nears them.
+
+### Changes
+
+- `landing/works.cljs` (new): the gallery data, moved out of `page.cljs`, with the press set's installation views, drawings and renderings and studio process shots added (alt text written per image; On the bench's shots and a duplicate left out).
+- `ui/fit-gallery`: an IntersectionObserver on the track puts each slide's image in only once the track is within two widths of it; frames keep their size from the start, so nothing shifts.
+- On the bench: journal titles stay on one line with an ellipsis; "Making a Flag" dated 28 Oct so the two making-of posts no longer share a date.
+
 ## 2026-11-01 — Home: the story, Portage, On the bench, getting to the pavilion
 
 **Rationale:** The two long reads (the story and Portage) had no way in from the home page; the Hall chapter said little now the studio is working; "Tesa 41" means nothing to most visitors; the October closure is over.
