@@ -93,6 +93,7 @@
 (defn- mb [bytes]
   (let [m (/ bytes 1e6)]
     (cond (>= m 1000) (str (.toFixed (/ m 1000) 1) " GB")
+          (< m 1) (str (js/Math.round (/ bytes 1e3)) " KB")
           (< m 10) (str (.toFixed m 1) " MB")
           :else (str (.toFixed m 0) " MB"))))
 
@@ -272,6 +273,7 @@
                                         (d/path {:d "M3 3l10 10M13 3L3 13"}))))
                 (d/div {:class "ap-press__stage"}
                        (d/div {:class "ap-press__shot"
+                               :style (when (and (:w image) (:h image)) #js {"--hw" (/ (:h image) (:w image))})
                                :on-click #(when (= (.-target %) (.-currentTarget %)) (on-close))}
                               ($ picture {:key (:uid image) :src (src image) :alt (title-of image)
                                           :sizes "(min-width: 960px) 70vw, 100vw" :eager? true}))

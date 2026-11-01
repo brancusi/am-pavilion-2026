@@ -886,13 +886,16 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-press__btn:hover { background: var(--ink); color: var(--paper); }
 .ap-press__viewer .ap-press__btn:hover { background: var(--on-night); color: var(--night); }
 .ap-press__stage { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: var(--space-4); padding: 0 var(--space-4) var(--space-4); overflow-y: auto; }
-.ap-press__shot { min-height: 0; display: grid; place-items: center; }
-.ap-press__shot img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+/* The image fills the frame and is scaled to fit inside it, whatever its shape
+   (a percentage max-height has nothing to resolve against in a grid row). */
+.ap-press__shot { position: relative; min-height: 0; }
+.ap-press__shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .ap-press__info { display: grid; gap: var(--space-3); align-content: start; max-width: 64ch; }
 .ap-press__vtitle { margin: 0; font: 500 20px/1.25 var(--font-display); }
 .ap-press__cap { margin: 0; font: 400 15px/1.55 var(--font-text); color: #d6d2ca; }
 .ap-press__nav { display: flex; gap: var(--space-2); padding-top: var(--space-2); }
-@media (max-width: 959px) { .ap-press__shot { min-height: 50vh; } }
+/* Phones: the image takes most of the screen and the details scroll under it. */
+@media (max-width: 959px) { .ap-press__stage { grid-template-rows: auto auto; } .ap-press__shot { height: min(62vh, calc((100vw - 2 * var(--space-4)) * var(--hw, .75))); height: min(62svh, calc((100vw - 2 * var(--space-4)) * var(--hw, .75))); } }
 @media (min-width: 960px) {
   .ap-press__stage { grid-template-rows: none; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--space-8); padding: 0 var(--space-12) var(--space-12); overflow: hidden; }
   .ap-press__info { overflow-y: auto; align-self: stretch; }
