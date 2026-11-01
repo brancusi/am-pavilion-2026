@@ -386,6 +386,14 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
   .ap-footer__base { grid-template-columns: auto 1fr auto; gap: var(--space-8); }
 }
 
+/* Section transitioner: a page is held, invisible, at its expected height
+   until it has filled (data-shown), and the footer waits until the page's
+   height has settled (data-settled), so it never shows above unfilled space. */
+.ap-stage:not([data-shown]) { visibility: hidden; }
+.ap-foot { transition: opacity .24s ease, visibility 0s linear .24s; }
+.ap-stage:not([data-settled]) + .ap-foot { visibility: hidden; opacity: 0; }
+.ap-stage[data-settled] + .ap-foot { transition: opacity .3s ease, visibility 0s; }
+
 /* Ephemeral ground: steps through the StudioMark's pigments; the tile matching the ground vanishes, then returns */
 .ap-chapter--ephemeral { animation: ap-ground 49s linear infinite; }
 /* Living grounds (resources/data/grounds): a canvas under the chapter that
