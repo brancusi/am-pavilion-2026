@@ -43,3 +43,6 @@ cljs-runtime
 
 # npm is the package manager (package-lock.json)
 /yarn.lock
+
+# Walks: the OpenStreetMap download scripts/walks.mjs routes over
+/.cache/

@@ -1,5 +1,5 @@
 (ns amp.pages.landing.page
-  "Homepage (design canvas: Main). Video hero, intro + facts, the ephemeral
+  "Homepage (design canvas: Main). Video hero, the walks teaser, intro + facts, the ephemeral
    Unit chapter, On the bench (work in progress), works gallery, the story
    teaser, the Portage teaser, the films, getting to the pavilion and the
    latest journal posts, then the long-form exhibition texts."
@@ -15,7 +15,7 @@
    [amp.pages.landing.supporters :refer [supporters-section]]
    [amp.pages.landing.in-minor-keys :refer [in-minor-keys]]
    [amp.pages.landing.studio :refer [about-studio]]
-   [amp.pages.landing.teasers :refer [portage-teaser story-teaser]]
+   [amp.pages.landing.teasers :refer [portage-teaser story-teaser walks-teaser]]
    [amp.pages.landing.works :as works]
    [amp.pages.venue.map-config :as mc]
    [amp.ui.fit-gallery :refer [fit-gallery]]
@@ -413,6 +413,7 @@
 (defnc landing-view []
   (d/div {:class "overflow-x-hidden"}
          ($ hero)
+         ($ walks-teaser)
          ($ intro)
          ($ unit-chapter)
          ($ on-the-bench)
