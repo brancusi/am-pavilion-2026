@@ -77,6 +77,12 @@
         x (+ (* h 60) mm (js/Math.round m))]
     (str (quot x 60) ":" (.padStart (str (mod x 60)) 2 "0"))))
 
+(defn clock
+  "Minutes after leaving Tesa 41 at `t` (0–1) along `walk`: walking time at
+   3 km/h plus the stays at the stops already left behind."
+  [{:keys [km stops]} t]
+  (+ (* t km 20) (reduce + (keep #(when (< (:t %) (- t 1e-4)) (:stay % 8)) stops))))
+
 (defn duration [m] (str (quot m 60) " h " (.padStart (str (mod m 60)) 2 "0")))
 
 (defn with-status

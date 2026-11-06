@@ -9,7 +9,8 @@
 // width) cheaper and narrow ones (rami, sotoporteghi, corti) dearer. A street
 // one walk has used costs more for every later walk, and the way home avoids
 // the way out, so each walk finds new streets where the city allows.
-// Times assume 3 km/h carrying the works and 8 minutes at each stop.
+// Times assume 3 km/h carrying the works and 8 minutes at each stop, unless a
+// stop gives its own "stay" in minutes (and an optional "detail" line).
 //
 // Writes:
 //   resources/data/walks/routes.json            the lines, in the base map's pixels
@@ -125,10 +126,12 @@ plan.forEach((w, wi) => {
   const stops = w.stops.map(s => snap(s.at)), gate = snap(GATE);
   const seq = [gate, ...stops, gate], local = new Set();
   let path = [];
+  const stopAt = []; // index in path where each stop is reached, in order
   for (let i = 0; i < seq.length - 1; i++) {
     const p = route(seq[i], seq[i + 1], used, local);
     for (let j = 0; j < p.length - 1; j++) local.add(edgeKey(p[j], p[j + 1]));
     path = path.concat(i ? p.slice(1) : p);
+    if (i < stops.length) stopAt.push(path.length - 1);
   }
   const coords = [PAVILION, ...path.map(n => pos.get(n)), PAVILION];
   const cum = [0];
@@ -143,15 +146,16 @@ plan.forEach((w, wi) => {
     if (n && via[via.length - 1] !== n) via.push(n);
   }
   path.forEach((n, i) => i && used.add(edgeKey(path[i - 1], n)));
-  const at = s => { const p = pos.get(s); let j = 0, bd = Infinity; coords.forEach((c, i) => { const m = metres(c, p); if (m < bd) { bd = m; j = i; } }); return cum[j] / L; };
-  const minutes = Math.round((L / 1000 / KMH * 60 + STOP_MIN * w.stops.length) / 5) * 5;
+  const at = i => cum[stopAt[i] + 1] / L; // +1: coords starts with the pavilion
+  const stay = s => s.stay ?? STOP_MIN;
+  const minutes = Math.round((L / 1000 / KMH * 60 + w.stops.reduce((a, s) => a + stay(s), 0)) / 5) * 5;
   const px = coords.map(xy);
   lines.push({ id: w.id, d: 'M' + px.map(([x, y]) => `${r1(x)} ${r1(y)}`).join('L'),
     pts: px.map(([x, y]) => [r1(x), r1(y)]),
-    stops: stops.map(s => { const [x, y] = xy(pos.get(s)); return [r1(x), r1(y), Math.round(at(s) * 1e4) / 1e4]; }) });
+    stops: stops.map((s, i) => { const [x, y] = xy(pos.get(s)); return [r1(x), r1(y), Math.round(at(i) * 1e4) / 1e4]; }) });
   list.push({ id: w.id, n: wi + 1, date: w.date, works: w.works, depart: w.depart, title: w.title, note: w.note || null,
     km: Math.round(L / 10) / 100, minutes, wide: Math.round(wide / L * 100), fresh: Math.round((1 - reused / L) * 100),
-    via, stops: w.stops.map((s, i) => ({ name: s.name, t: lines[wi].stops[i][2] })) });
+    via, stops: w.stops.map((s, i) => ({ name: s.name, t: lines[wi].stops[i][2], stay: stay(s), detail: s.detail || null })) });
   console.log(`${w.date}  ${w.title.padEnd(38)} ${(L / 1000).toFixed(1)} km  ${minutes} min  wide ${Math.round(wide / L * 100)}%  new ${Math.round((1 - reused / L) * 100)}%`);
 });
 
@@ -188,7 +192,8 @@ writeFileSync(CLJS, `(ns amp.data.walks
    scripts/walks/plan.json: change the plan and run \`npm run walks\`, never
    this file. :km and :minutes are for the whole loop; :wide and :fresh are
    the % of it on wide passages and on streets no earlier walk used; each
-   stop's :t is how far along the loop it falls (0–1).")
+   stop's :t is how far along the loop it falls (0–1) and :stay its minutes
+   there. :works is a number, or a range such as 3–6 (a string) while it is unsettled.")
 
 (def walks
   [${list.map(edn).join('\n   ')}])
