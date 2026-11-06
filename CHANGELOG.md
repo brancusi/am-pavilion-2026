@@ -2,6 +2,17 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-06 — Walks: "The Weight of the Flag" film, stills full screen
+
+**Rationale:** The first finished film from the walks should lead the Walks page and the home films, and the walk photographs deserve to be seen large.
+**Summary:** "The Weight of the Flag" (2:52, walk 1, 5 November) is on Mux at 2160p with generated English captions. It heads the home films reel, sits under the /walks hero and in walk 1's detail, and plays with sound in the film lightbox. Walk photographs open full screen.
+
+### Changes
+
+- Mux asset `xb6isvfOkBrdefm4wUF9nxk2GdBtDm012UoCjRBkkTxI`, playback `MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo` (public, plus, 2160p), from `media/video/2026/11/italian_flag_3_edit_4k.mp4`; added first in `amp.data.films` (so also on /press).
+- `walk_media/walk-films` maps a walk to its film; `walk-film` and `film-band` on /walks.
+- `still-viewer`: the walk photographs in the Lightbox, with arrow keys, swipe, previous/next and Escape.
+
 ## 2026-11-06 — Walks: the Accademia walk on 18 November
 
 **Rationale:** Julda's exchange with the Accademia di Belle Arti (scheda of 5 November, Prof. Mazzoni's approval of 6 November) set the 18 November walk; the site still had a proposed afternoon walk to the Misericordia that day.

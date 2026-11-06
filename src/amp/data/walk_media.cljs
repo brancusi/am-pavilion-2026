@@ -54,6 +54,10 @@
   {"w01" ["walks/2026-11-05/portico.jpg" "walks/2026-11-05/church-front.jpg" "walks/2026-11-05/campo-canal.jpg"]
    "w02" ["walks/2026-11-06/dsc07975.tif" "walks/2026-11-06/dsc08090.tif" "walks/2026-11-06/dsc08135.tif"]})
 
+(def walk-films
+  "The finished film of a walk, by walk id: a :slug in amp.data.films."
+  {"w01" "the-weight-of-the-flag"})
+
 (def hero-photo "walks/2026-11-06/dsc07975.tif")
 
 ;; ── Dates and times ─────────────────────────────────────────────────────

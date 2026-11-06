@@ -12,8 +12,11 @@
                                        at-time duration short-date long-date
                                        weekday day-of status-label]]
    [amp.hooks.use-in-view :refer [use-in-view]]
+   [amp.data.films :as films-data]
    [amp.lib.defnc :refer [defnc]]
+   [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture]]
+   ["react-dom" :refer [createPortal]]
    [clojure.string :as str]
    [helix.core :refer [$ <>]]
    [helix.dom :as d]
@@ -207,6 +210,104 @@
                     (d/span {:class "ap-wk-player__clock ap-data"}
                             (str (at-time depart (wm/clock walk t)) " · " (.toFixed (* km t) 1) " of " (.toFixed km 1) " km")))))))
 
+(defn- fig-caption [date i title] (str "FIG. " (inc i) " · " title " · Venice, " (day-of date) " November 2026"))
+
+(defnc still-viewer
+  "A walk's photographs full screen (design system: Lightbox). Arrow keys,
+   swipe or the buttons step through them; Escape, × or the backdrop close."
+  [{:keys [photos date at on-go on-close]}]
+  (let [close-ref (hooks/use-ref nil)
+        touch (hooks/use-ref nil)
+        n (count photos)
+        {:keys [path title alt]} (when at (nth photos at nil))
+        go #(on-go (mod (+ at %) n))]
+    (hooks/use-effect
+     [(some? at)]
+     (when at
+       (let [body (.-body js/document)
+             prev-overflow (.. body -style -overflow)
+             prev-focus (.-activeElement js/document)]
+         (set! (.. body -style -overflow) "hidden")
+         (some-> @close-ref (.focus #js {:preventScroll true}))
+         (fn []
+           (set! (.. body -style -overflow) prev-overflow)
+           (some-> prev-focus (.focus #js {:preventScroll true}))))))
+    (hooks/use-effect
+     [at n]
+     (when at
+       (let [on-key (fn [^js e]
+                      (case (.-key e)
+                        "Escape" (on-close)
+                        "ArrowLeft" (on-go (mod (dec at) n))
+                        "ArrowRight" (on-go (mod (inc at) n))
+                        nil))]
+         (.addEventListener js/window "keydown" on-key)
+         #(.removeEventListener js/window "keydown" on-key))))
+    (when path
+      (createPortal
+       (d/div {:class "ap-lightbox ap-wk-viewer" :role "dialog" :aria-modal true :aria-label title}
+              (d/div {:class "ap-lightbox__bar"}
+                     (d/p {:class "ap-label m-0"}
+                          (d/span {:class "text-yellow"} (str (inc at) " / " n))
+                          (str " · " title)
+                          (d/span {:class "ap-lightbox__where"} (str " · Venice, " (day-of date) " November 2026")))
+                     (d/button {:ref close-ref :class "ap-iconbtn" :aria-label "Close photograph" :on-click on-close}
+                               (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor" :stroke-width 1.6 :aria-hidden true}
+                                      (d/path {:d "M3 3l10 10M13 3L3 13"}))))
+              (d/div {:class "ap-wk-viewer__stage"
+                      :on-click #(when (= (.-target %) (.-currentTarget %)) (on-close))
+                      :on-touch-start #(reset! touch (.. % -touches (item 0) -clientX))
+                      :on-touch-end (fn [e]
+                                      (when-let [x0 @touch]
+                                        (let [dx (- (.. e -changedTouches (item 0) -clientX) x0)]
+                                          (when (> (js/Math.abs dx) 48) (go (if (neg? dx) 1 -1))))
+                                        (reset! touch nil)))}
+                     ($ picture {:key path :src (str media path) :alt alt :sizes "100vw" :eager? true}))
+              (d/div {:class "ap-wk-viewer__foot"}
+                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Previous photograph" :on-click #(go -1)} "←")
+                     (d/p {:class "ap-caption m-0"} (fig-caption date at title))
+                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Next photograph" :on-click #(go 1)} "→")))
+       (.-body js/document)))))
+
+(defn- film-by-slug [slug] (some #(when (= slug (:slug %)) %) films-data/films))
+
+(defnc walk-film
+  "A walk's finished film: its poster with a play button; plays with sound
+   in the film lightbox."
+  [{:keys [film walk]}]
+  (let [[open? set-open!] (hooks/use-state false)
+        {:keys [title playback-id poster duration summary]} film]
+    (d/figure {:class "ap-wk-film m-0"}
+              (d/button {:type "button" :class "ap-wk-film__poster" :on-click #(set-open! true)
+                         :aria-label (str "Play the film: " title)}
+                        (d/img {:src (picture/mux-poster playback-id {:w 1600 :time poster})
+                                :srcSet (str (picture/mux-poster playback-id {:w 960 :time poster}) " 960w, "
+                                             (picture/mux-poster playback-id {:w 1600 :time poster}) " 1600w, "
+                                             (picture/mux-poster playback-id {:w 2400 :time poster}) " 2400w")
+                                :sizes "(min-width: 1100px) 66vw, 100vw"
+                                :alt "" :loading "lazy" :decoding "async"})
+                        (d/span {:class "ap-wk-film__play" :aria-hidden true}
+                                (d/svg {:viewBox "0 0 16 16" :fill "currentColor"} (d/path {:d "M4 2l10 6-10 6z"}))
+                                (str "Play · " (films-data/running-time duration))))
+              (d/figcaption {:class "ap-wk-film__cap"}
+                            (d/p {:class "ap-label ap-muted m-0"}
+                                 (str "The film · " (when walk (str "Walk " (:n walk) " · " (long-date (:date walk))))))
+                            (d/p {:class "ap-display-l m-0"} title)
+                            (d/p {:class "ap-body m-0"} summary)
+                            (d/button {:type "button" :class "ap-btn ap-btn--yellow self-start" :on-click #(set-open! true)}
+                                      "Watch with sound"))
+              ($ film-lightbox {:film (when open? film) :on-close #(set-open! false)}))))
+
+(defnc film-band
+  "The latest walk film, right under the hero."
+  [{:keys [walks]}]
+  (let [[id slug] (last (sort-by key wm/walk-films))
+        film (film-by-slug slug)
+        walk (some #(when (= id (:id %)) %) walks)]
+    (when film
+      (d/section {:class "ap-wrap ap-wk-filmband" :aria-label "The film"}
+                 ($ walk-film {:film film :walk walk})))))
+
 ;; ── Sections ────────────────────────────────────────────────────────────
 
 (defnc hero [{:keys [walks]}]
@@ -251,7 +352,9 @@
   (let [{:keys [id n date title works depart minutes km wide fresh via note stops status]} walk
         back (at-time depart minutes)
         fs (get films id)
-        ps (get photos id)]
+        ps (get photos id)
+        film (some-> (get wm/walk-films id) film-by-slug)
+        [viewing set-viewing!] (hooks/use-state nil)]
     (<>
      (d/section {:class "ap-wrap ap-wk-detail" :aria-labelledby "walk-title"}
                 (d/div {:class "ap-wk-detail__head"}
@@ -292,15 +395,19 @@
        (d/section {:class "ap-wrap ap-wk-media" :aria-label "From the walk"}
                   (d/div {:class "ap-wk-media__head"}
                          (d/h3 {:class "ap-h2 m-0"} "From the walk")
-                         (d/span {:class "ap-label ap-muted"} (str (count fs) " films · " (count ps) " photographs")))
+                         (d/span {:class "ap-label ap-muted"} (str (when film "The film, ") (count fs) " loops · " (count ps) " photographs")))
+                  (when film ($ walk-film {:film film :walk walk}))
                   (d/div {:class "ap-wk-films"}
                          (for [f fs] ($ loop-film {:key (:id f) :& f})))
                   (d/div {:class "ap-wk-photos"}
                          (for [[i {:keys [path title alt]}] (map-indexed vector ps)]
                            (d/figure {:key path :class "m-0"}
-                                     (d/div {:class "ap-wk-photos__frame"}
-                                            ($ picture {:src (str media path) :alt alt :sizes "(min-width: 960px) 25vw, 50vw"}))
-                                     (d/figcaption {:class "ap-caption"} (str "FIG. " (inc i) " · " title " · Venice, " (day-of date) " November 2026"))))))))))
+                                     (d/button {:type "button" :class "ap-wk-photos__frame"
+                                                :aria-label (str "View larger: " title)
+                                                :on-click #(set-viewing! i)}
+                                               ($ picture {:src (str media path) :alt alt :sizes "(min-width: 960px) 25vw, 50vw"}))
+                                     (d/figcaption {:class "ap-caption"} (fig-caption date i title)))))
+                  ($ still-viewer {:photos ps :date date :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)}))))))
 
 (defnc schedule [{:keys [walks walk on-pick]}]
   (let [by-date (into {} (map (juxt :date identity) walks))]
@@ -376,6 +483,7 @@
         shown (filter #(case show :walked (= :walked (:status %)) :coming (not= :walked (:status %)) true) walks)]
     (d/div {:class "ap-wk"}
            ($ hero {:walks walks})
+           ($ film-band {:walks walks})
            (d/section {:id "walks-map" :ref ref :class "ap-wrap ap-wk-app" :aria-labelledby "map-title"}
                       (d/div {:class "ap-wk-app__head"}
                              (d/div {:class "flex flex-col gap-3"}
