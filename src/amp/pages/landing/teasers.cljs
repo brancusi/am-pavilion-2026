@@ -1,12 +1,14 @@
 (ns amp.pages.landing.teasers
-  "Two teasers on the home page for the long reads: the story (\"Armenian as
-   well\", /armenian-as-well) and Portage (/portage). Each has one drawing
+  "Teasers on the home page: the walks (/walks), just below the hero, and
+   the long reads, the story (\"Armenian as well\", /armenian-as-well) and
+   Portage (/portage). Each has one drawing
    that plays once as it comes into view (the crossings of the two lives,
    the bridges of the walk); under reduced motion they stand drawn."
   (:require
+   [amp.data.walk-media :as wm]
    [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.ui.picture :as picture]
+   [amp.ui.picture :as picture :refer [picture]]
    [clojure.string :as str]
    [helix.core :refer [$]]
    [helix.dom :as d]
@@ -222,3 +224,37 @@
                                                          (d/a {:href (str "/portage/" slug)}
                                                               (d/i n) short)))))))))))
 
+
+;; ── The walks ───────────────────────────────────────────────────────────
+
+(defnc walks-teaser
+  "The walks out from Tesa 41: a photograph, a line, every walk day as a
+   square (walked, next, planned) and the way in."
+  []
+  (let [walks (hooks/use-memo :once (wm/with-status))
+        done (filter #(= :walked (:status %)) walks)
+        nxt (some #(when (:next? %) %) walks)]
+    (d/section {:class "ap-wt" :aria-labelledby "wt-title"}
+               (d/div {:class "ap-wrap ap-wt__grid"}
+                      (d/a {:class "ap-wt__media" :href "/walks" :tab-index -1 :aria-hidden true}
+                           ($ picture {:src (str media "walks/2026-11-06/dsc08011.tif")
+                                       :sizes "(min-width: 960px) 55vw, 100vw" :alt ""})
+                           (d/span {:class "ap-wt__tag ap-label"} "Arsenale wall · 6 November"))
+                      (d/div {:class "ap-wt__text"}
+                             (d/p {:class "ap-label ap-muted m-0"} "Walks · 5–22 November")
+                             (d/h2 {:id "wt-title" :class "ap-wt__title"} "The works go out walking")
+                             (d/p {:class "ap-lede m-0 max-w-[30ch]"}
+                                  "The studio carries the works out of Tesa 41 on its back and sets them down across the city: in campi, on fondamente, before churches. "
+                                  (str (count done) " walks so far, " (- (count walks) (count done)) " to come before the closing day."))
+                             (d/ol {:class "ap-wt__days" :aria-label "Walk days"}
+                                   (for [{:keys [id date status next?] :as w} walks]
+                                     (d/li {:key id :data-status (name status) :data-next (when next? "")
+                                            :aria-label (str (wm/short-date date) ": " (wm/status-label w))}
+                                           (d/b (wm/day-of date)) (subs (wm/weekday date) 0 2))))
+                             (when nxt
+                               (d/p {:class "ap-data m-0"}
+                                    (str "Next: " (wm/long-date (:date nxt)) ", leaving Tesa 41 at " (:depart nxt) " with " (:works nxt) " works")))
+                             (d/div {:class "flex flex-wrap gap-2"}
+                                    (d/a {:class "ap-btn ap-btn--yellow" :href "/walks"}
+                                         "See the walks" (d/span {:aria-hidden true} "→"))
+                                    (d/a {:class "ap-btn ap-btn--ghost" :href "/walks#schedule"} "Walk with us")))))))

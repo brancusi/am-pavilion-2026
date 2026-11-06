@@ -2,6 +2,19 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-06 — Walks: the works go out into the city
+
+**Rationale:** The studio has started carrying the works out of Tesa 41 on foot, ten walks through 22 November. They need a home on the site with the schedule, the route map, and what came back from each walk.
+**Summary:** New `/walks` page (top menu, footer) with an interactive map of all ten routes, a schedule, and graded films and photographs from the first two walks; a teaser just below the fold on the home page.
+
+### Changes
+
+- `scripts/walks.mjs` (`npm run walks`): routes each walk from the Pavilion over OSM footpaths, preferring wide passages (rive, fondamente, salizade, rii terà, campi) and streets no earlier walk used, out one way and back another. Times assume 3 km/h plus 8 min a stop. Writes `resources/data/walks/routes.json`, light and dark base maps, and the generated `src/amp/data/walks.cljs`. The plan (dates, stops, works, departures) is `scripts/walks/plan.json`.
+- `src/amp/data/walk_media.cljs`: each walk's films and photographs, and the date and status helpers shared by the page and the home teaser.
+- `pages/walks/page.cljs` (`:walks-view` module): hero, counts, the map with a Play the walk player (pauses at each stop with its photograph), the walk list and filters, the walk's detail and itinerary with ETAs, films and photographs, the schedule, and the walks so far.
+- Films: 15 eight-second silent loops from the FX3 and Osmo Pocket 3 originals, graded (Sony LC-709 LUT for S-Log3, white balance from the shot's neutrals, gentle S-curve), as mp4s on R2 at `walks/films/`, with posters as media images. They play only while on screen and start paused under reduced motion.
+- Home: `walks-teaser` just below the hero; router, menu, footer and the CLS sweep know `/walks`.
+
 ## 2026-11-01 — Home gallery and On the bench follow Caption Genius
 
 **Rationale:** Images added to the press set should reach the home page without a code change or a build.

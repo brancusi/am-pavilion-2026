@@ -75,6 +75,11 @@
                 :title "Portage"
                 :view (lazy-component amp.pages.portage.page/portage-view)}
 
+               {:id ::walks
+                :path "walks"
+                :title "Walks"
+                :view (lazy-component amp.pages.walks.page/walks-view)}
+
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
                 :title "Water Taxi"

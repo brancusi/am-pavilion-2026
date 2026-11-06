@@ -16,6 +16,7 @@
    {:path "/artist" :title "Artist"}
    {:path "/armenian-as-well" :title "Story"}
    {:path "/portage" :title "Portage"}
+   {:path "/walks"  :title "Walks"}
    {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
    {:path "/blog"   :title "Journal"}
    {:path "/press"  :title "Press" :also ["/it/press"]}])

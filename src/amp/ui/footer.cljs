@@ -27,7 +27,8 @@
     :links [{:label "Zadik Zadikian" :href "/artist"}
             {:label "Chronology" :href "/artist#chronology"}
             {:label "Armenian as well" :href "/armenian-as-well"}
-            {:label "Portage" :href "/portage"}]}
+            {:label "Portage" :href "/portage"}
+            {:label "Walks" :href "/walks"}]}
    {:title "Visit"
     :links [{:label "Plan your visit" :href "/visit"}
             {:label "By water taxi" :href "/visit#taxi"}

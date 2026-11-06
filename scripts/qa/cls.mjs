@@ -15,7 +15,7 @@ import { chromium } from 'playwright-core';
 
 const [base = 'http://localhost:4200', ...only] = process.argv.slice(2);
 const slugs = [...readFileSync('src/amp/data/journal.cljs', 'utf8').matchAll(/:slug\s+"([^"]+)"/g)].map((m) => m[1]);
-const pages = only.length ? only : ['/', '/artist', '/armenian-as-well', '/portage', '/visit', '/blog',
+const pages = only.length ? only : ['/', '/artist', '/armenian-as-well', '/portage', '/walks', '/visit', '/blog',
   ...slugs.map((s) => `/blog/${s}`), '/press', '/route-from-hotel-gabrielli', '/delivery'];
 
 const browser = await chromium.launch({

@@ -50,6 +50,11 @@ Review builds: `npx wrangler versions upload --preview-alias <name>` →
   `env.stage`, clear of `G.sheltered`). Loaded by `use-living-ground` in `pages/landing/page.cljs` only
   near the chapter. The signatures and ideas in the manifest are placeholders until the user supplies
   real ones. The chapter's colour clock is the CSS `ap-ground` animation (49 s, 7 s per pigment).
+- **Walks** (`/walks`, home teaser) — the plan is `scripts/walks/plan.json`; `npm run walks` routes it
+  (OSM cached in `.cache/`) and writes `resources/data/walks/` plus the generated `src/amp/data/walks.cljs`
+  (don't edit). Films and photos per walk are in `src/amp/data/walk_media.cljs`. Films are plain mp4 loops
+  on R2 `walks/films/<id>.mp4` (upload with `wrangler r2 object put … --remote`), graded from the NAS
+  originals, not Mux. Stops for walks 3–10 and departure times are proposals until the user confirms.
 - **Press** — two sources. The image list on `/press` comes from the Caption Genius project
   "Pavilion — Press" via `scripts/press.mjs` / `press-sync.sh` (don't hand-edit
   `resources/data/press/`). The home page's works gallery and On the bench follow the same project:

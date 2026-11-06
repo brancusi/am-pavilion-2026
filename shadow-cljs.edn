@@ -50,6 +50,9 @@
          :portage-view {:entries [amp.pages.portage.page]
                         :depends-on #{:main}}
 
+         :walks-view {:entries [amp.pages.walks.page]
+                      :depends-on #{:main}}
+
          :water-taxi-view {:entries [amp.pages.water-taxi.page]
 
                            :depends-on #{:main}}}
@@ -104,6 +107,9 @@
 
          :portage-view {:entries [amp.pages.portage.page]
                         :depends-on #{:main}}
+
+         :walks-view {:entries [amp.pages.walks.page]
+                      :depends-on #{:main}}
 
          :water-taxi-view {:entries [amp.pages.water-taxi.page]
 
