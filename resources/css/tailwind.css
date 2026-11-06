@@ -1386,6 +1386,16 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
   .ap-wk-itin__photo:empty { display: block; background: none; }
 }
 
+.ap-wk-filmband { padding-block: var(--space-16) 0; }
+.ap-wk-film { display: grid; gap: var(--space-6); align-items: end; }
+@media (min-width: 1100px) { .ap-wk-film { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); column-gap: 48px; } }
+.ap-wk-film__poster { position: relative; display: block; width: 100%; padding: 0; border: 0; aspect-ratio: 16 / 9; background: #141312; overflow: hidden; cursor: pointer; }
+.ap-wk-film__poster img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow, .6s) var(--ease-place); }
+@media (hover: hover) { .ap-wk-film__poster:hover img { transform: scale(1.02); } }
+@media (prefers-reduced-motion: reduce) { .ap-wk-film__poster img { transition: none; } }
+.ap-wk-film__play { position: absolute; left: var(--space-4); bottom: var(--space-4); display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap-min); padding: 0 var(--space-4); background: var(--yellow); color: var(--on-yellow); font: 500 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.ap-wk-film__play svg { width: 14px; height: 14px; }
+.ap-wk-film__cap { display: flex; flex-direction: column; gap: var(--space-3); }
 .ap-wk-media { display: grid; gap: var(--space-6); padding-block: var(--space-16) 0; }
 .ap-wk-media__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-4); }
 .ap-wk-films { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
@@ -1396,8 +1406,19 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-wk-photos { display: grid; gap: var(--space-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 960px) { .ap-wk-photos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .ap-wk-photos figure { display: grid; gap: var(--space-2); align-content: start; }
-.ap-wk-photos__frame { aspect-ratio: 4 / 3; background: var(--paper-sunk); overflow: hidden; }
-.ap-wk-photos__frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ap-wk-photos__frame { display: block; width: 100%; padding: 0; border: 0; aspect-ratio: 4 / 3; background: var(--paper-sunk); overflow: hidden; cursor: zoom-in; }
+.ap-wk-photos__frame img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-base) var(--ease-place); }
+@media (hover: hover) { .ap-wk-photos__frame:hover img { transform: scale(1.03); } }
+@media (prefers-reduced-motion: reduce) { .ap-wk-photos__frame img { transition: none; } }
+.ap-wk-viewer { grid-template-rows: auto minmax(0, 1fr) auto; }
+.ap-wk-viewer__stage { min-height: 0; display: grid; place-items: center; padding: 0 var(--space-4); touch-action: pan-y; }
+.ap-wk-viewer__stage picture, .ap-wk-viewer__stage img { display: block; max-width: 100%; max-height: 100%; min-height: 0; }
+.ap-wk-viewer__stage img { width: auto; height: auto; max-height: calc(100svh - 140px); object-fit: contain; }
+.ap-wk-viewer__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) var(--space-4) var(--space-4); }
+.ap-wk-viewer__foot .ap-caption { color: #b5ad9e; text-align: center; }
+.ap-wk-viewer__btn { flex: none; width: var(--tap-min); height: var(--tap-min); border: 1px solid currentColor; background: transparent; color: var(--on-night); font: 500 18px var(--font-mono); cursor: pointer; }
+.ap-wk-viewer__btn:hover { background: var(--on-night); color: var(--night); }
+@media (min-width: 960px) { .ap-wk-viewer__stage { padding: 0 var(--space-12); } .ap-wk-viewer__foot { padding: var(--space-4) var(--space-12) var(--space-8); } }
 
 .ap-wk-sched { margin-top: var(--space-24); background: var(--night); color: var(--on-night); scroll-margin-top: var(--header-h); }
 .ap-wk-sched__wrap { display: grid; gap: var(--space-12); padding-block: var(--space-16); }

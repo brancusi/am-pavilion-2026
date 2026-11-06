@@ -4,7 +4,12 @@
    Source edits live in Dropbox: Else Run/projects/the_studio/media/video.")
 
 (def films
-  [{:slug "seven-steps-to-heaven" :title "Seven Steps to Heaven" :when "October 2026" :where "Arsenale and Tesa 41, Venice"
+  [{:slug "the-weight-of-the-flag" :title "The Weight of the Flag" :when "November 2026" :where "Castello, Venice"
+    :duration 172 :poster 12
+    :playback-id "MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo"
+    :summary "The first walk: green, white and red carried on three backs from San Francesco della Vigna to Zanipolo. Heads turn, a passer-by calls it a tribute to Italy, and a conversation starts in a historic square."}
+
+   {:slug "seven-steps-to-heaven" :title "Seven Steps to Heaven" :when "October 2026" :where "Arsenale and Tesa 41, Venice"
     :duration 146 :poster 63
     :playback-id "uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM"
     :summary "A stair of seven steps that goes nowhere, carried by hand into Tesa 41 and painted white: on cubes, journeys, the present, and a climb to heaven in a small space."}
