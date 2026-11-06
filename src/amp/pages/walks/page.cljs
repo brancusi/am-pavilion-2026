@@ -205,7 +205,7 @@
                               :disabled (nil? line)
                               :on-change (fn [e] (stop!) (set-at! (/ (js/Number (.. e -target -value)) 1000)))})
                     (d/span {:class "ap-wk-player__clock ap-data"}
-                            (str (at-time depart (* minutes t)) " · " (.toFixed (* km t) 1) " of " (.toFixed km 1) " km")))))))
+                            (str (at-time depart (wm/clock walk t)) " · " (.toFixed (* km t) 1) " of " (.toFixed km 1) " km")))))))
 
 ;; ── Sections ────────────────────────────────────────────────────────────
 
@@ -218,9 +218,9 @@
                             :alt "Six works in red, white and green carried over the wooden bridge at the Arsenale gate"})
                 (d/div {:class "ap-wrap ap-wk-hero__body"}
                        (d/p {:class "ap-label m-0"} "Walks · out from Tesa 41 · November 2026")
-                       (d/h1 {:class "ap-display-xl m-0"} "The works go out walking")
+                       (d/h1 {:class "ap-display-xl m-0"} "Walking the Work Through Venice")
                        (d/p {:class "ap-lede m-0 max-w-[32ch]"}
-                            "The studio leaves Tesa 41 with the works strapped to its back. Each walk sets them down in a campo, on a fondamenta or before a church, then carries them home another way.")
+                            "The studio leaves Tesa 41 with the works strapped to its back, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. In the final week students of the Accademia di Belle Arti carry them, and on 18 November walk them into the Academy.")
                        (d/div {:class "flex flex-wrap gap-2"}
                               (d/a {:class "ap-btn ap-btn--yellow" :href "#walks-map"} "See the walks")
                               (d/a {:class "ap-btn ap-btn--ghost !text-white !border-white" :href "#schedule"} "Walk with us"))))
@@ -274,16 +274,16 @@
                 (d/ol {:class "ap-wk-itin"}
                       (d/li (d/span {:class "ap-data"} depart) (d/i {:class "is-ap"} "AP")
                             (d/span {:class "ap-wk-itin__name"} "Leave Tesa 41 by the Fondamenta Case Nuove door"))
-                      (for [[i {:keys [name t]}] (map-indexed vector stops)
+                      (for [[i {:keys [name t detail]}] (map-indexed vector stops)
                             :let [photo (get-in stop-photos [id i])]]
                         (d/li {:key name}
-                              (d/span {:class "ap-data"} (str "≈ " (at-time depart (* minutes t))))
+                              (d/span {:class "ap-data"} (str "≈ " (at-time depart (wm/clock walk t))))
                               (d/i (inc i))
                               (d/span {:class "ap-wk-itin__name"} name
                                       (d/span {:class "ap-caption block"}
-                                              (if (= status :walked)
-                                                (str works " works set down here")
-                                                (str works " works set down for ten minutes"))))
+                                              (cond detail detail
+                                                    (= status :walked) (str works " works set down here")
+                                                    :else (str works " works set down for a few minutes"))))
                               (d/span {:class "ap-wk-itin__photo"}
                                       (when photo ($ picture {:src (str media photo) :alt name :sizes "200px"})))))
                       (d/li (d/span {:class "ap-data"} (str "≈ " back)) (d/i {:class "is-ap"} "AP")
@@ -311,7 +311,7 @@
                                     (d/p {:class "ap-label m-0 ap-wk-sched__eyebrow"} "Schedule · November 2026")
                                     (d/h2 {:id "schedule-title" :class "ap-display-l m-0"} "Walk with us"))
                              (d/p {:class "ap-body m-0 max-w-[30em]"}
-                                  "Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time. Anyone may walk alongside. The last walk is on the closing day of the Biennale."))
+                                  "Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time. Anyone may walk alongside; the hour inside the Accademia on 18 November is for the Academy’s students and staff. The last walk is on the closing day of the Biennale."))
                       (d/div {:class "ap-wk-days" :role "group" :aria-label "Walk days"}
                              (for [dd (range 5 23)
                                    :let [iso (str "2026-11-" (.padStart (str dd) 2 "0"))
@@ -389,7 +389,7 @@
                              ($ walk-map {:walks walks :walk walk :routes routes})
                              ($ walk-list {:walks shown :walk walk :on-pick set-sel!}))
                       (d/p {:class "ap-caption m-0"}
-                           "Routes keep to wide passages (rive, fondamente, salizade, rii terà, campi) and find new streets each time, out and back. Times assume 3 km/h carrying the works and eight minutes at each stop. Map data © OpenStreetMap contributors."))
+                           "Routes keep to wide passages (rive, fondamente, salizade, rii terà, campi) and find new streets each time, out and back. Times assume 3 km/h carrying the works and a few minutes at each stop. Map data © OpenStreetMap contributors."))
            ($ walk-detail {:key sel :walk walk})
            ($ schedule {:walks walks :walk walk :on-pick set-sel!})
            ($ walked {:walks walks :on-pick set-sel!}))))

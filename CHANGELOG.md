@@ -2,6 +2,18 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-06 — Walks: the Accademia walk on 18 November
+
+**Rationale:** Julda's exchange with the Accademia di Belle Arti (scheda of 5 November, Prof. Mazzoni's approval of 6 November) set the 18 November walk; the site still had a proposed afternoon walk to the Misericordia that day.
+**Summary:** 18 November is now "Walking the Work to the Accademia": leave Tesa 41 at 10:00, about an hour at the Academy from about 11:00 with Prof. Mazzoni, 3–6 works carried by students. The page and home teaser take the project's title, "Walking the Work Through Venice".
+
+### Changes
+
+- `plan.json`: walk 6 goes to the Accademia di Belle Arti (Zattere), 10:00, works "3–6", one 60-minute stop; Misericordia/Orto/Ghetto moves to 19 November; 21 November becomes Santa Margherita, the Salute and the Dogana (the Zattere is now the Accademia walk's).
+- `walks.mjs`: stops can carry their own `stay` (minutes) and `detail`; stops are placed in route order (an ETA could come out before the one ahead of it); `:works` may be a range.
+- Stop times, the player clock and the back time are walking time at 3 km/h plus the stays already behind, not a share of the total.
+- Copy: hero and teaser titled "Walking the Work Through Venice", with the Academy students in the final week; the schedule notes that the hour inside the Accademia is for its students and staff.
+
 ## 2026-11-06 — Walks: the works go out into the city
 
 **Rationale:** The studio has started carrying the works out of Tesa 41 on foot, ten walks through 22 November. They need a home on the site with the schedule, the route map, and what came back from each walk.

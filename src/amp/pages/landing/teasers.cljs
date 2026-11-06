@@ -242,9 +242,9 @@
                            (d/span {:class "ap-wt__tag ap-label"} "Arsenale wall · 6 November"))
                       (d/div {:class "ap-wt__text"}
                              (d/p {:class "ap-label ap-muted m-0"} "Walks · 5–22 November")
-                             (d/h2 {:id "wt-title" :class "ap-wt__title"} "The works go out walking")
+                             (d/h2 {:id "wt-title" :class "ap-wt__title"} "Walking the Work Through Venice")
                              (d/p {:class "ap-lede m-0 max-w-[30ch]"}
-                                  "The studio carries the works out of Tesa 41 on its back and sets them down across the city: in campi, on fondamente, before churches. "
+                                  "The studio carries the works out of Tesa 41 on its back and sets them down across the city: in campi, on fondamente, before churches. In the final week, students of the Accademia di Belle Arti take them into the Academy. "
                                   (str (count done) " walks so far, " (- (count walks) (count done)) " to come before the closing day."))
                              (d/ol {:class "ap-wt__days" :aria-label "Walk days"}
                                    (for [{:keys [id date status next?] :as w} walks]
