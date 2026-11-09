@@ -48,6 +48,42 @@ const PAGES = {
     description: "The studio carries the works out of Tesa 41 and through Venice, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. The schedule, the routes and every walk so far.",
     image: `${media}share/walks.jpg`,
   },
+  "/visit": {
+    title: "Getting to the pavilion",
+    description: "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. Guests by water taxi enter from the North Lagoon. Tuesday to Sunday, 10:00–17:30, 9 May – 22 November 2026.",
+    image: `${media}share/visit.jpg`,
+  },
+  "/artist": {
+    title: "Zadik Zadikian",
+    description: "Sculptor. Representing Armenia at the 61st International Art Exhibition — La Biennale di Venezia.",
+    image: `${media}share/artist.jpg`,
+  },
+  "/portage": {
+    title: "Portage",
+    description: "In Venice everything arrives by water and leaves the quay on someone’s back. From Piazzale Roma on, whatever moves goes by boat or by hand; the studio goes one step further back, to a frame on the shoulders.",
+    image: `${media}share/portage.jpg`,
+  },
+  "/armenian-as-well": {
+    title: "Armenian as well: Zadikian and Shafrazi",
+    description: "Two Armenians met in Richard Serra’s studio in 1973. Serra introduced one to the other as “Armenian as well.” Fifty-three years later they are working side by side again, inside the Venice Arsenale.",
+    image: `${media}share/armenian-as-well.jpg`,
+  },
+  "/route-from-hotel-gabrielli": {
+    title: "By water taxi: Hotel Gabrielli to the pavilion",
+    description: "From the Hotel Gabrielli landing on Riva degli Schiavoni straight to the pavilion’s own landing inside the Arsenale Militare: through the canals of Castello, out into the North Lagoon and back in through Rio delle Galeazze, 15 to 20 minutes on the water.",
+    image: `${media}share/visit.jpg`,
+  },
+  "/delivery": {
+    title: "Consegne al Padiglione Armenia",
+    description: "Come consegnare materiali al Padiglione Armenia, Tesa 41, Arsenale Militare di Venezia: a piedi dalla Celestia o in barca.",
+    image: `${media}share/visit.jpg`,
+  },
+  // The journal index shows its newest post's cover (posts.json is newest first).
+  "/blog": {
+    title: "Journal: notes from the studio",
+    description: "Process, travel and the making of The Studio, from Los Angeles to Tesa 41.",
+    image: Object.values(posts)[0]?.image,
+  },
 };
 
 const PRESS_TEXT = {
@@ -91,8 +127,12 @@ export default {
       return preview(res, { path: `/films/${fm[1]}`, title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other" });
     }
 
-    const page = PAGES[path.replace(/\/+$/, "") || "/"];
-    if (page) return preview(res, { path: path.replace(/\/+$/, ""), ...page, width: 1200, height: 630, type: "website" });
+    const bare = path.replace(/\/+$/, "") || "/";   // /walks/ previews like /walks
+    const page = PAGES[bare];
+    if (page) {
+      const sized = page.image?.startsWith(`${media}share/`);   // the share cards are 1200×630
+      return preview(res, { path: bare, ...page, ...(sized && { width: 1200, height: 630 }), type: "website" });
+    }
 
     const pm = path.match(/^(\/it)?\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
     if (pm) return press(request, env, res, path, pm);
