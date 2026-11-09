@@ -44,7 +44,6 @@
   "The walks as planned on 5 November: [date works route]."
   [["Thu 5 Nov" "3" "San Francesco della Vigna, Zanipolo, Santa Maria Formosa"]
    ["Fri 6 Nov" "6" "The Arsenale gate to the Giardini"]
-   ["Sun 8 Nov" "6" "Along the Riva to San Marco"]
    ["Mon 16 Nov" "12" "Rialto by the salizade"]
    ["Tue 17 Nov" "12" "Fondamente Nove to the Ca’ d’Oro"]
    ["Wed 18 Nov" "3–6" "Walking the work to the Accademia di Belle Arti"]
@@ -173,7 +172,7 @@
    (d/p "The walks go on until the Biennale closes. Each one leaves Tesa 41 by the "
         "door on the Fondamenta Case Nuove, follows a different route out, sets the works "
         "down in two or three places, and comes home another way. The number of works "
-        "grows: three on the first day, six on the next walks, then twelve. On 18 November "
+        "grows: three on the first day, six on the next walk, then twelve. On 18 November "
         "students of the Accademia walk them to the Accademia itself, one work on each student’s back, into "
         "the Academy’s own courtyard, for an hour with its professors and students. "
         "The last walk is on the closing day.")

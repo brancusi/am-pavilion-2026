@@ -144,11 +144,13 @@ export default {
   },
 };
 
-// POST /api/subscribe {email, website, page}: the footer's News & events form.
-// Adds the address to Buttondown as unconfirmed; Buttondown sends the
+// POST /api/subscribe {email, website, page, tags}: the footer's News & events
+// form and the Walks page's walk alerts (tags ["walks"], so walk emails can go
+// to that tag alone). Adds the address to Buttondown as unconfirmed; Buttondown sends the
 // confirmation email (double opt-in) and handles unsubscribes. The key is the
 // BUTTONDOWN_API_KEY secret (npx wrangler secret put BUTTONDOWN_API_KEY).
 // `website` is a honeypot: a filled one is answered as a success and dropped.
+const SUBSCRIBE_TAGS = ["walks"];   // the only tags a form may set
 async function subscribe(req, env) {
   const json = (body, status = 200) => new Response(JSON.stringify(body), {
     status, headers: { "content-type": "application/json", "cache-control": "no-store" } });
@@ -159,6 +161,7 @@ async function subscribe(req, env) {
   const email = String(body?.email || "").trim();
   if (body?.website) return json({ ok: true });
   if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ error: "invalid" }, 400);
+  const tags = Array.isArray(body.tags) ? body.tags.filter((t) => SUBSCRIBE_TAGS.includes(t)) : [];
   const page = typeof body.page === "string" && body.page.startsWith("/") ? body.page.slice(0, 200) : "/";
   const res = await fetch("https://api.buttondown.com/v1/subscribers", {
     method: "POST",
@@ -173,6 +176,7 @@ async function subscribe(req, env) {
       type: "unactivated",
       ip_address: req.headers.get("cf-connecting-ip") || undefined,
       referrer_url: `https://armenianpavilion.org${page}`,
+      ...(tags.length && { tags }),
     }),
   });
   if (res.ok) return json({ ok: true });
