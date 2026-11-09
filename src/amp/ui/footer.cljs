@@ -40,17 +40,18 @@
                  {:label "All journal posts" :href "/blog"}
                  {:label "Press" :href "/press"})}])
 
-(def ^:private news-status
+(def news-status
   {:sent    "Thank you. Check your inbox for an email to confirm."
    :invalid "That address doesn't look right. Please check it."
    :error   "Something went wrong. Please try again in a moment."})
 
-(defnc newsletter
-  "Sign-up for news and events. Posts to the Worker (/api/subscribe), which
-   adds the address to Buttondown; Buttondown sends the confirmation email
-   (double opt-in) and handles unsubscribing. The status line keeps its
-   height whether or not it has text, so nothing moves."
-  [_props]
+(defn use-subscribe
+  "[state submit] for a sign-up form with `email` and `website` (honeypot)
+   fields. Posts to the Worker (/api/subscribe), which adds the address to
+   Buttondown with `tags` (e.g. [\"walks\"]); Buttondown sends the
+   confirmation email (double opt-in) and handles unsubscribing. state is
+   :idle, :sending, :sent, :invalid or :error."
+  [tags]
   (let [[state set-state!] (hooks/use-state :idle)
         submit (fn [e]
                  (.preventDefault e)
@@ -63,6 +64,7 @@
                                       :body (js/JSON.stringify
                                              #js {:email (.get data "email")
                                                   :website (.get data "website")
+                                                  :tags (clj->js (or tags []))
                                                   :page (.-pathname js/location)})})
                        (.then (fn [res] (.then (.json res) (fn [body] [(.-ok res) body]))))
                        (.then (fn [[ok body]]
@@ -70,6 +72,13 @@
                                   (do (.reset form) (set-state! :sent))
                                   (set-state! (if (= "invalid" (.-error body)) :invalid :error)))))
                        (.catch #(set-state! :error)))))]
+    [state submit]))
+
+(defnc newsletter
+  "Sign-up for news and events. The status line keeps its height whether or
+   not it has text, so nothing moves."
+  [_props]
+  (let [[state submit] (use-subscribe nil)]
     (d/section {:class "ap-footer__news" :aria-labelledby "ap-news-h"}
                (d/div
                 (d/h2 {:id "ap-news-h" :class "ap-footer__h"} "News & events")

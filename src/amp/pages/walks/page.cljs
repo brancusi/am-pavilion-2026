@@ -4,7 +4,8 @@
    them over OpenStreetMap, favouring wide passages and new streets), a
    player that carries the works along the chosen walk and stops where they
    were set down, the walk's itinerary, film and photographs, and the
-   schedule. The walk list is amp.data.walks (generated); the lines and the
+   schedule, then a gallery of one walk's photographs and a call to walk along
+   or sign up for walk alerts. The walk list is amp.data.walks (generated); the lines and the
    base map are fetched from /data/walks/ when the map comes near. Films are
    short silent loops on R2 (walks/films/), graded from the camera originals."
   (:require
@@ -14,6 +15,7 @@
    [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.data.films :as films-data]
    [amp.lib.defnc :refer [defnc]]
+   [amp.ui.footer :refer [use-subscribe news-status]]
    [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture]]
    ["react-dom" :refer [createPortal]]
@@ -446,8 +448,13 @@
                                        (d/td {:class "ap-data"} works)
                                        (d/td {:class "ap-data text-right"} (str km " km")))))))))))
 
-(defnc walked [{:keys [walks on-pick]}]
-  (let [done (filter #(= :walked (:status %)) walks)]
+(defnc walked
+  "The walks so far, newest first: only those with a film or photographs,
+   then the solo walk that came before them. Every card leads with a 16:9
+   picture so the cards line up."
+  [{:keys [walks on-pick]}]
+  (let [done (filter #(and (= :walked (:status %)) (or (seq (get films (:id %))) (seq (get photos (:id %))))) walks)
+        {solo-date :date :as solo} wm/solo-walk]
     (when (seq done)
       (d/section {:class "ap-wrap ap-sec ap-wk-done" :aria-labelledby "walked-title"}
                  (d/div {:class "flex flex-col gap-3"}
@@ -455,13 +462,114 @@
                         (d/h2 {:id "walked-title" :class "ap-display-l m-0"} "The walks so far"))
                  (d/div {:class "ap-wk-done__grid"}
                         (for [{:keys [id n date works km title stops]} (reverse done)
-                              :let [f (second (get films id))]]
+                              :let [f (or (second (get films id)) (first (get films id)))
+                                    ph (first (get photos id))]]
                           (d/article {:key id :class "ap-wk-done__card"}
-                                     (when f ($ loop-film {:& f}))
+                                     (d/div {:class "ap-wk-done__media"}
+                                            (if f ($ loop-film {:& f})
+                                                ($ picture {:src (str media (:path ph)) :alt (:alt ph) :sizes "(min-width: 960px) 33vw, 100vw"})))
                                      (d/span {:class "ap-label ap-muted"} (str "Walk " n " · " (short-date date) " · " works " works · " km " km"))
                                      (d/h3 {:class "ap-h2 m-0"} title)
                                      (d/p {:class "ap-body-s m-0"} (str (str/join ", then " (map :name stops)) ", and home by another way."))
-                                     (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick id)} "See it on the map"))))))))
+                                     (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick id)} "See it on the map")))
+                        (d/article {:class "ap-wk-done__card"}
+                                   (d/a {:class "ap-wk-done__media" :href (:film solo) :aria-label "Watch the film: Carrying"}
+                                        ($ picture {:src (str media (:photo solo)) :alt (:alt solo) :sizes "(min-width: 960px) 33vw, 100vw"}))
+                                   (d/span {:class "ap-label ap-muted"}
+                                           (str "Before the walks · " (subs (weekday solo-date) 0 3) " " (day-of solo-date) " Oct · 1 work · alone"))
+                                   (d/h3 {:class "ap-h2 m-0"} (:title solo))
+                                   (d/p {:class "ap-body-s m-0"} (:summary solo))
+                                   (d/div {:class "flex flex-wrap gap-2"}
+                                          (d/a {:class "ap-btn" :href (:film solo)} "Watch the film")
+                                          (d/a {:class "ap-btn ap-btn--ghost" :href (:post solo)} "Read the story"))))))))
+
+(defn- justify
+  "Splits photographs (in order) into rows whose summed aspect ratios come as
+   close as possible to `target` (least squares over all rows), so no row is
+   one lonely panorama blown up to the full width."
+  [ps target]
+  (let [n (count ps)
+        ars (mapv :ar ps)
+        cost (fn [i j] (let [d (- (reduce + (subvec ars i j)) target)] (* d d)))
+        ;; best[j] = [cost split] for the first j photographs
+        best (reduce (fn [best j]
+                       (conj best (apply min-key first
+                                         (for [i (range (max 0 (- j 5)) j)]
+                                           [(+ (first (best i)) (cost i j)) i]))))
+                     [[0 0]] (range 1 (inc n)))]
+    (loop [j n rows ()]
+      (if (zero? j) (vec rows)
+          (let [i (second (best j))] (recur i (cons (subvec (vec ps) i j) rows)))))))
+
+(defnc gallery
+  "One walk's photographs, large, in justified rows: each keeps its own
+   proportions (:ar), and every photograph in a row has the same height
+   (each grows in proportion to its :ar). One column on phones. Opens in the
+   still viewer."
+  [{:keys [walks]}]
+  (let [walk (some #(when (= wm/gallery-walk (:id %)) %) walks)
+        ps (get photos wm/gallery-walk)
+        [viewing set-viewing!] (hooks/use-state nil)]
+    (when (and walk (seq ps))
+      (d/section {:id "photographs" :class "ap-wrap ap-wk-gallery" :aria-labelledby "gallery-title"}
+                 (d/div {:class "ap-wk-gallery__head"}
+                        (d/div {:class "flex flex-col gap-3"}
+                               (d/p {:class "ap-label ap-muted m-0"}
+                                    (str "Photographs · Walk " (:n walk) " · " (long-date (:date walk))))
+                               (d/h2 {:id "gallery-title" :class "ap-display-l m-0"} (:title walk)))
+                        (d/p {:class "ap-body m-0 max-w-[30em]"}
+                             (str (get {3 "Three" 6 "Six" 12 "Twelve"} (:works walk) (:works walk)) " works out of Tesa 41, over the bridge at the Arsenale gate, set down between "
+                                  "the anchors of the Museo Storico Navale, and on along the lagoon: "
+                                  (count ps) " photographs from the afternoon.")))
+                 (d/div {:class "ap-wk-gallery__rows"}
+                        (for [row (justify (map-indexed #(assoc %2 :i %1) ps) 4.2)]
+                          (d/div {:key (:path (first row)) :class "ap-wk-gallery__row"}
+                                 (for [{:keys [i path title alt ar]} row]
+                                   (d/figure {:key path :class "m-0" :style #js {"--ar" ar}}
+                                             (d/button {:type "button" :class "ap-wk-gallery__frame"
+                                                        :aria-label (str "View larger: " title)
+                                                        :on-click #(set-viewing! i)}
+                                                       ($ picture {:src (str media path) :alt alt
+                                                                   :sizes (str "(min-width: 720px) " (js/Math.round (/ (* ar 100) 4.2)) "vw, 100vw")}))
+                                             (d/figcaption {:class "ap-caption"} title))))))
+                 ($ still-viewer {:photos ps :date (:date walk) :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)})))))
+
+(defnc join
+  "Walk with us, and walk alerts by email (Buttondown, tag \"walks\")."
+  [{:keys [walks]}]
+  (let [nxt (some #(when (:next? %) %) walks)
+        [state submit] (use-subscribe ["walks"])]
+    (d/section {:id "walk-with-us" :class "ap-wk-join" :aria-label "Walk with us"}
+               (d/div {:class "ap-wrap ap-wk-join__grid"}
+                      (d/div {:class "ap-wk-join__walk"}
+                             (d/p {:class "ap-label m-0"} "Walk with us")
+                             (d/h2 {:class "ap-display-l m-0"} "Join us along the way")
+                             (d/p {:class "ap-body m-0"}
+                                  "Anyone may walk alongside, for the whole way or a stretch of it. Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time, or find us at one of the stops.")
+                             (when nxt
+                               (d/p {:class "ap-wk-join__next m-0"}
+                                    (d/span {:class "ap-label block"} "Next walk")
+                                    (d/span {:class "ap-h2 block"} (str (long-date (:date nxt)) " · leaves " (:depart nxt)))
+                                    (d/span {:class "ap-body-s block"} (str (:title nxt) " · " (:works nxt) " works · " (:km nxt) " km"))))
+                             (d/div {:class "flex flex-wrap gap-2"}
+                                    (d/a {:class "ap-btn" :href "#schedule"} "See the schedule")
+                                    (d/a {:class "ap-btn ap-btn--ghost" :href "/visit"} "Getting to Tesa 41")))
+                      (d/div {:class "ap-wk-join__alerts"}
+                             (d/p {:class "ap-label m-0"} "Walk alerts")
+                             (d/h3 {:class "ap-h1 m-0"} "Know when we set out")
+                             (d/p {:class "ap-body m-0"}
+                                  "An email the day before each walk with the time and the route, and word as soon as a walk moves or changes. Occasional pavilion news too; leave any time.")
+                             (d/form {:class "ap-wk-join__form" :on-submit submit}
+                                     (d/label {:class "sr-only" :for "ap-walk-email"} "Email address")
+                                     (d/input {:id "ap-walk-email" :name "email" :type "email" :required true
+                                               :autocomplete "email" :placeholder "your@email.com"})
+                                     ;; Honeypot: hidden from people, filled by bots.
+                                     (d/input {:class "ap-footer__hp" :name "website" :type "text"
+                                               :tab-index -1 :autocomplete "off" :aria-hidden true})
+                                     (d/button {:class "ap-btn" :type "submit" :disabled (= state :sending)}
+                                               (if (= state :sending) "Sending…" "Get walk alerts"))
+                                     (d/p {:class "ap-wk-join__status" :role "status" :aria-live "polite"}
+                                          (get news-status state))))))))
 
 ;; ── Page ────────────────────────────────────────────────────────────────
 
@@ -500,4 +608,6 @@
                            "Routes keep to wide passages (rive, fondamente, salizade, rii terà, campi) and find new streets each time, out and back. Times assume 3 km/h carrying the works and a few minutes at each stop. Map data © OpenStreetMap contributors."))
            ($ walk-detail {:key sel :walk walk})
            ($ schedule {:walks walks :walk walk :on-pick set-sel!})
-           ($ walked {:walks walks :on-pick set-sel!}))))
+           ($ walked {:walks walks :on-pick set-sel!})
+           ($ gallery {:walks walks})
+           ($ join {:walks walks}))))
