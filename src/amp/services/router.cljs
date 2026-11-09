@@ -4,6 +4,7 @@
             [helix.hooks :as hooks]
             [reitit.frontend :as rf]
             [amp.pages.not-found :refer [not-found-view]]
+            [amp.pages.subscribed :refer [subscribed-view]]
             [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
@@ -79,6 +80,13 @@
                 :path "walks"
                 :title "Walks"
                 :view (lazy-component amp.pages.walks.page/walks-view)}
+
+               ;; Where Buttondown lands a new subscriber after they confirm.
+               ;; In the main bundle (small), so no lazy module.
+               {:id ::subscribed
+                :path "subscribed"
+                :title "Subscribed"
+                :view subscribed-view}
 
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
