@@ -9,7 +9,7 @@
 
 ### Changes
 
-- Caption Genius: source folder `media/photo/2026/11/06` (label `walk_2026-11-06`); title, caption ("Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: …, Castello, Venice, 6 November 2026."), short caption, alt, section `process`, home `none`, all included. No photo credit yet (to be set in Caption Genius).
+- Caption Genius: source folder `media/photo/2026/11/06` (label `walk_2026-11-06`); title, caption ("Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: …, Castello, Venice, 6 November 2026."), short caption, alt, section `process`, home `none`, all included. Photographs by Mina Biasutti (credit and "Photo: Mina Biasutti." added 9 Nov).
 - `cloudflare/site/films.json`: "The Weight of the Flag" link preview, generated with the last release and now committed.
 
 ## 2026-11-06 — Walks: "The Weight of the Flag" film, stills full screen
