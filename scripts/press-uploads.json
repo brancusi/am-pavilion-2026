@@ -4467,5 +4467,509 @@
     "crc": 3924814102
    }
   }
+ },
+ "a14e4f7ee8": {
+  "key": "press/a14e4f7ee8",
+  "w": 8772,
+  "h": 4117,
+  "stamp": "108376458:1793988793763",
+  "tiers": {
+   "stamp": "108376458:1793988793763",
+   "s": {
+    "key": "press/a14e4f7ee8-s.jpg",
+    "name": "armenian-pavilion-setting-off-again-a14e4f7ee8-small.jpg",
+    "w": 1200,
+    "h": 563,
+    "bytes": 103526,
+    "crc": 1547539874
+   },
+   "m": {
+    "key": "press/a14e4f7ee8-m.jpg",
+    "name": "armenian-pavilion-setting-off-again-a14e4f7ee8-medium.jpg",
+    "w": 2400,
+    "h": 1126,
+    "bytes": 378384,
+    "crc": 1355164857
+   },
+   "l": {
+    "key": "press/a14e4f7ee8-l.jpg",
+    "name": "armenian-pavilion-setting-off-again-a14e4f7ee8-large.jpg",
+    "w": 4000,
+    "h": 1877,
+    "bytes": 1305805,
+    "crc": 2987744737
+   },
+   "raw": {
+    "key": "press/a14e4f7ee8-raw.tif",
+    "name": "armenian-pavilion-setting-off-again-a14e4f7ee8.tif",
+    "w": 8772,
+    "h": 4117,
+    "ext": "tif",
+    "bytes": 108376458,
+    "crc": 1658460647
+   }
+  }
+ },
+ "29ed49bc55": {
+  "key": "press/29ed49bc55",
+  "w": 3388,
+  "h": 1641,
+  "stamp": "16711064:1793987272905",
+  "tiers": {
+   "stamp": "16711064:1793987272905",
+   "s": {
+    "key": "press/29ed49bc55-s.jpg",
+    "name": "armenian-pavilion-a-pause-29ed49bc55-small.jpg",
+    "w": 1200,
+    "h": 581,
+    "bytes": 108569,
+    "crc": 2545905686
+   },
+   "m": {
+    "key": "press/29ed49bc55-m.jpg",
+    "name": "armenian-pavilion-a-pause-29ed49bc55-medium.jpg",
+    "w": 2400,
+    "h": 1162,
+    "bytes": 461331,
+    "crc": 3580862166
+   },
+   "l": {
+    "key": "press/29ed49bc55-l.jpg",
+    "name": "armenian-pavilion-a-pause-29ed49bc55-large.jpg",
+    "w": 3388,
+    "h": 1641,
+    "bytes": 1118197,
+    "crc": 1393618344
+   },
+   "raw": {
+    "key": "press/29ed49bc55-raw.tif",
+    "name": "armenian-pavilion-a-pause-29ed49bc55.tif",
+    "w": 3388,
+    "h": 1641,
+    "ext": "tif",
+    "bytes": 16711064,
+    "crc": 350403759
+   }
+  }
+ },
+ "f684547416": {
+  "key": "press/f684547416",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77904878:1793987868839",
+  "tiers": {
+   "stamp": "77904878:1793987868839",
+   "s": {
+    "key": "press/f684547416-s.jpg",
+    "name": "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 148960,
+    "crc": 3879354117
+   },
+   "m": {
+    "key": "press/f684547416-m.jpg",
+    "name": "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 687147,
+    "crc": 1326210179
+   },
+   "l": {
+    "key": "press/f684547416-l.jpg",
+    "name": "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 2547735,
+    "crc": 2008327307
+   },
+   "raw": {
+    "key": "press/f684547416-raw.tif",
+    "name": "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77904878,
+    "crc": 367432905
+   }
+  }
+ },
+ "8992886415": {
+  "key": "press/8992886415",
+  "w": 4809,
+  "h": 1589,
+  "stamp": "22950746:1793987370455",
+  "tiers": {
+   "stamp": "22950746:1793987370455",
+   "s": {
+    "key": "press/8992886415-s.jpg",
+    "name": "armenian-pavilion-in-line-8992886415-small.jpg",
+    "w": 1200,
+    "h": 397,
+    "bytes": 63068,
+    "crc": 3934211191
+   },
+   "m": {
+    "key": "press/8992886415-m.jpg",
+    "name": "armenian-pavilion-in-line-8992886415-medium.jpg",
+    "w": 2400,
+    "h": 793,
+    "bytes": 248928,
+    "crc": 3796720785
+   },
+   "l": {
+    "key": "press/8992886415-l.jpg",
+    "name": "armenian-pavilion-in-line-8992886415-large.jpg",
+    "w": 4000,
+    "h": 1322,
+    "bytes": 916604,
+    "crc": 2555566866
+   },
+   "raw": {
+    "key": "press/8992886415-raw.tif",
+    "name": "armenian-pavilion-in-line-8992886415.tif",
+    "w": 4809,
+    "h": 1589,
+    "ext": "tif",
+    "bytes": 22950746,
+    "crc": 4140562512
+   }
+  }
+ },
+ "e7dbc4ebff": {
+  "key": "press/e7dbc4ebff",
+  "w": 6096,
+  "h": 4064,
+  "stamp": "74358936:1793987544872",
+  "tiers": {
+   "stamp": "74358936:1793987544872",
+   "s": {
+    "key": "press/e7dbc4ebff-s.jpg",
+    "name": "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 201631,
+    "crc": 647725178
+   },
+   "m": {
+    "key": "press/e7dbc4ebff-m.jpg",
+    "name": "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 892258,
+    "crc": 1468141372
+   },
+   "l": {
+    "key": "press/e7dbc4ebff-l.jpg",
+    "name": "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 3000696,
+    "crc": 2814550472
+   },
+   "raw": {
+    "key": "press/e7dbc4ebff-raw.tif",
+    "name": "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff.tif",
+    "w": 6096,
+    "h": 4064,
+    "ext": "tif",
+    "bytes": 74358936,
+    "crc": 768237633
+   }
+  }
+ },
+ "3caee17013": {
+  "key": "press/3caee17013",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77911472:1793987467382",
+  "tiers": {
+   "stamp": "77911472:1793987467382",
+   "s": {
+    "key": "press/3caee17013-s.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-3caee17013-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 221214,
+    "crc": 906731811
+   },
+   "m": {
+    "key": "press/3caee17013-m.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-3caee17013-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 1011494,
+    "crc": 3125364345
+   },
+   "l": {
+    "key": "press/3caee17013-l.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-3caee17013-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 3409677,
+    "crc": 3153312588
+   },
+   "raw": {
+    "key": "press/3caee17013-raw.tif",
+    "name": "armenian-pavilion-along-the-arsenale-canal-3caee17013.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77911472,
+    "crc": 2219743976
+   }
+  }
+ },
+ "3570ca56f6": {
+  "key": "press/3570ca56f6",
+  "w": 5966,
+  "h": 2541,
+  "stamp": "45510516:1793988651692",
+  "tiers": {
+   "stamp": "45510516:1793988651692",
+   "s": {
+    "key": "press/3570ca56f6-s.jpg",
+    "name": "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-small.jpg",
+    "w": 1200,
+    "h": 511,
+    "bytes": 106317,
+    "crc": 2808796003
+   },
+   "m": {
+    "key": "press/3570ca56f6-m.jpg",
+    "name": "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-medium.jpg",
+    "w": 2400,
+    "h": 1022,
+    "bytes": 459760,
+    "crc": 1455000728
+   },
+   "l": {
+    "key": "press/3570ca56f6-l.jpg",
+    "name": "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-large.jpg",
+    "w": 4000,
+    "h": 1704,
+    "bytes": 1606874,
+    "crc": 2133327401
+   },
+   "raw": {
+    "key": "press/3570ca56f6-raw.tif",
+    "name": "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6.tif",
+    "w": 5966,
+    "h": 2541,
+    "ext": "tif",
+    "bytes": 45510516,
+    "crc": 1042560322
+   }
+  }
+ },
+ "de9e309363": {
+  "key": "press/de9e309363",
+  "w": 4703,
+  "h": 2362,
+  "stamp": "33353000:1793988526414",
+  "tiers": {
+   "stamp": "33353000:1793988526414",
+   "s": {
+    "key": "press/de9e309363-s.jpg",
+    "name": "armenian-pavilion-between-the-anchors-de9e309363-small.jpg",
+    "w": 1200,
+    "h": 603,
+    "bytes": 119450,
+    "crc": 802692873
+   },
+   "m": {
+    "key": "press/de9e309363-m.jpg",
+    "name": "armenian-pavilion-between-the-anchors-de9e309363-medium.jpg",
+    "w": 2400,
+    "h": 1205,
+    "bytes": 532256,
+    "crc": 3650588156
+   },
+   "l": {
+    "key": "press/de9e309363-l.jpg",
+    "name": "armenian-pavilion-between-the-anchors-de9e309363-large.jpg",
+    "w": 4000,
+    "h": 2009,
+    "bytes": 1772210,
+    "crc": 2048284745
+   },
+   "raw": {
+    "key": "press/de9e309363-raw.tif",
+    "name": "armenian-pavilion-between-the-anchors-de9e309363.tif",
+    "w": 4703,
+    "h": 2362,
+    "ext": "tif",
+    "bytes": 33353000,
+    "crc": 718269499
+   }
+  }
+ },
+ "d84fa5d9f6": {
+  "key": "press/d84fa5d9f6",
+  "w": 3510,
+  "h": 4160,
+  "stamp": "43835846:1793988458061",
+  "tiers": {
+   "stamp": "43835846:1793988458061",
+   "s": {
+    "key": "press/d84fa5d9f6-s.jpg",
+    "name": "armenian-pavilion-unbuckling-d84fa5d9f6-small.jpg",
+    "w": 1013,
+    "h": 1200,
+    "bytes": 123082,
+    "crc": 3062502012
+   },
+   "m": {
+    "key": "press/d84fa5d9f6-m.jpg",
+    "name": "armenian-pavilion-unbuckling-d84fa5d9f6-medium.jpg",
+    "w": 2025,
+    "h": 2400,
+    "bytes": 532477,
+    "crc": 3972322583
+   },
+   "l": {
+    "key": "press/d84fa5d9f6-l.jpg",
+    "name": "armenian-pavilion-unbuckling-d84fa5d9f6-large.jpg",
+    "w": 3375,
+    "h": 4000,
+    "bytes": 2247562,
+    "crc": 712500226
+   },
+   "raw": {
+    "key": "press/d84fa5d9f6-raw.tif",
+    "name": "armenian-pavilion-unbuckling-d84fa5d9f6.tif",
+    "w": 3510,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 43835846,
+    "crc": 4216281320
+   }
+  }
+ },
+ "0c830c8419": {
+  "key": "press/0c830c8419",
+  "w": 3978,
+  "h": 2128,
+  "stamp": "5802102:1793987167664",
+  "tiers": {
+   "stamp": "5802102:1793987167664",
+   "s": {
+    "key": "press/0c830c8419-s.jpg",
+    "name": "armenian-pavilion-carriers-0c830c8419-small.jpg",
+    "w": 1200,
+    "h": 642,
+    "bytes": 89529,
+    "crc": 4110231761
+   },
+   "m": {
+    "key": "press/0c830c8419-m.jpg",
+    "name": "armenian-pavilion-carriers-0c830c8419-medium.jpg",
+    "w": 2400,
+    "h": 1284,
+    "bytes": 428119,
+    "crc": 4244961033
+   },
+   "l": {
+    "key": "press/0c830c8419-l.jpg",
+    "name": "armenian-pavilion-carriers-0c830c8419-large.jpg",
+    "w": 3978,
+    "h": 2128,
+    "bytes": 1561521,
+    "crc": 498043148
+   },
+   "raw": {
+    "key": "press/0c830c8419-raw.jpg",
+    "name": "armenian-pavilion-carriers-0c830c8419.jpg",
+    "w": 3978,
+    "h": 2128,
+    "ext": "jpg",
+    "bytes": 5802102,
+    "crc": 954518001
+   }
+  }
+ },
+ "6e21fd7328": {
+  "key": "press/6e21fd7328",
+  "w": 3808,
+  "h": 3665,
+  "stamp": "41897210:1793988376905",
+  "tiers": {
+   "stamp": "41897210:1793988376905",
+   "s": {
+    "key": "press/6e21fd7328-s.jpg",
+    "name": "armenian-pavilion-along-the-lagoon-6e21fd7328-small.jpg",
+    "w": 1200,
+    "h": 1155,
+    "bytes": 54592,
+    "crc": 2106724020
+   },
+   "m": {
+    "key": "press/6e21fd7328-m.jpg",
+    "name": "armenian-pavilion-along-the-lagoon-6e21fd7328-medium.jpg",
+    "w": 2400,
+    "h": 2310,
+    "bytes": 366888,
+    "crc": 2875381411
+   },
+   "l": {
+    "key": "press/6e21fd7328-l.jpg",
+    "name": "armenian-pavilion-along-the-lagoon-6e21fd7328-large.jpg",
+    "w": 3808,
+    "h": 3665,
+    "bytes": 1763769,
+    "crc": 1621213792
+   },
+   "raw": {
+    "key": "press/6e21fd7328-raw.tif",
+    "name": "armenian-pavilion-along-the-lagoon-6e21fd7328.tif",
+    "w": 3808,
+    "h": 3665,
+    "ext": "tif",
+    "bytes": 41897210,
+    "crc": 607551146
+   }
+  }
+ },
+ "c6d41176a2": {
+  "key": "press/c6d41176a2",
+  "w": 5788,
+  "h": 3859,
+  "stamp": "67038236:1793988138789",
+  "tiers": {
+   "stamp": "67038236:1793988138789",
+   "s": {
+    "key": "press/c6d41176a2-s.jpg",
+    "name": "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 125570,
+    "crc": 4207332677
+   },
+   "m": {
+    "key": "press/c6d41176a2-m.jpg",
+    "name": "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 482076,
+    "crc": 3689888545
+   },
+   "l": {
+    "key": "press/c6d41176a2-l.jpg",
+    "name": "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1666725,
+    "crc": 310796978
+   },
+   "raw": {
+    "key": "press/c6d41176a2-raw.tif",
+    "name": "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2.tif",
+    "w": 5788,
+    "h": 3859,
+    "ext": "tif",
+    "bytes": 67038236,
+    "crc": 1038348572
+   }
+  }
  }
 }

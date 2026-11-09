@@ -2,6 +2,16 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-09 — Press: the 6 November walk photographs
+
+**Rationale:** The walk with the Italian flag should be in the press set, captioned, for anyone writing about it.
+**Summary:** Twelve photographs of the 6 November walk (Arsenale gate to the Museo Storico Navale and the lagoon) were added to Caption Genius "Pavilion — Press" and synced to /press, at the top of the process section.
+
+### Changes
+
+- Caption Genius: source folder `media/photo/2026/11/06` (label `walk_2026-11-06`); title, caption ("Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: …, Castello, Venice, 6 November 2026."), short caption, alt, section `process`, home `none`, all included. No photo credit yet (to be set in Caption Genius).
+- `cloudflare/site/films.json`: "The Weight of the Flag" link preview, generated with the last release and now committed.
+
 ## 2026-11-06 — Walks: "The Weight of the Flag" film, stills full screen
 
 **Rationale:** The first finished film from the walks should lead the Walks page and the home films, and the walk photographs deserve to be seen large.
