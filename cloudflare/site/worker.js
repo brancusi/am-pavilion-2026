@@ -68,6 +68,7 @@ export default {
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
     if (path.startsWith("/press/zip/")) return zip(request, env, ctx);
+    if (path === "/api/subscribe") return subscribe(request, env);
     const res = await env.ASSETS.fetch(request);
     if (!(res.headers.get("content-type") || "").includes("text/html")) return res;
 
@@ -86,6 +87,48 @@ export default {
     return preview(res, { path: `/blog/${slug}`, title: post.title, description: post.summary, image: post.image });
   },
 };
+
+// POST /api/subscribe {email, website, page}: the footer's News & events form.
+// Adds the address to Buttondown as unconfirmed; Buttondown sends the
+// confirmation email (double opt-in) and handles unsubscribes. The key is the
+// BUTTONDOWN_API_KEY secret (npx wrangler secret put BUTTONDOWN_API_KEY).
+// `website` is a honeypot: a filled one is answered as a success and dropped.
+async function subscribe(req, env) {
+  const json = (body, status = 200) => new Response(JSON.stringify(body), {
+    status, headers: { "content-type": "application/json", "cache-control": "no-store" } });
+  if (req.method !== "POST") return json({ error: "method" }, 405);
+  if (!env.BUTTONDOWN_API_KEY) return json({ error: "unavailable" }, 503);
+  let body;
+  try { body = await req.json(); } catch { return json({ error: "invalid" }, 400); }
+  const email = String(body?.email || "").trim();
+  if (body?.website) return json({ ok: true });
+  if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ error: "invalid" }, 400);
+  const page = typeof body.page === "string" && body.page.startsWith("/") ? body.page.slice(0, 200) : "/";
+  const res = await fetch("https://api.buttondown.com/v1/subscribers", {
+    method: "POST",
+    headers: {
+      authorization: `Token ${env.BUTTONDOWN_API_KEY}`,
+      "content-type": "application/json",
+      // Signing up again re-sends the confirmation (or resubscribes) instead of failing.
+      "x-buttondown-collision-behavior": "add",
+    },
+    body: JSON.stringify({
+      email_address: email,
+      type: "unactivated",
+      ip_address: req.headers.get("cf-connecting-ip") || undefined,
+      referrer_url: `https://armenianpavilion.org${page}`,
+    }),
+  });
+  if (res.ok) return json({ ok: true });
+  const detail = await res.text();
+  console.log("buttondown", res.status, detail.slice(0, 300));
+  if (res.status === 400 || res.status === 422) {
+    // Already confirmed or suppressed: nothing to do, and no need to tell anyone who is on the list.
+    if (/already|suppressed|exists/i.test(detail)) return json({ ok: true });
+    if (/email/i.test(detail)) return json({ error: "invalid" }, 400);
+  }
+  return json({ error: "upstream" }, 502);
+}
 
 // /press/zip/<name>.zip?i=<uid>,<uid>&s=<sizes>: the press images with those
 // uids (all of them without i) in the sizes asked for (s, m, l, raw, comma
