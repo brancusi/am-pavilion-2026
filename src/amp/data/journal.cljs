@@ -7,7 +7,17 @@
 (def posts
   "Newest first. :kind is the filter tag; :tone picks its pigment; :cover-ar
    is the cover's width / height, so its space is held before it loads."
-  [{:slug        "seven-steps-to-heaven"
+  [{:slug        "the-weight-of-the-flag"
+    :title       "The Weight of the Flag"
+    :date        "2026-11-05"
+    :author      "Armenian Pavilion Team"
+    :kind        "Venice"
+    :tone        :red
+    :summary     "The first walk: green, white and red on three backs, from San Francesco della Vigna to Zanipolo. How one carried unit became a flag that walks, what Venice said to it, and the plan for the walks until the Biennale closes."
+    :cover-image "https://media.armenianpavilion.org/journal/26-11-05/scuola-grande.jpg"
+    :cover-ar    1.7778}
+
+   {:slug        "seven-steps-to-heaven"
     :title       "The Making of Seven Steps to Heaven"
     :date        "2026-10-30"
     :author      "Armenian Pavilion Team"
@@ -25,6 +35,16 @@
     :tone        :red
     :summary     "Why would the Armenian Pavilion make an Italian flag? On Jasper Johns and things the mind already knows, three colours with no official meaning, an Armenian anthem that began with an Italian girl sewing a flag, and a flag that stands on its own feet."
     :cover-image "https://media.armenianpavilion.org/press/444786d448"
+    :cover-ar    1.7778}
+
+   {:slug        "carrying"
+    :title       "Carrying"
+    :date        "2026-10-22"
+    :author      "Armenian Pavilion Team"
+    :kind        "Venice"
+    :tone        :blue
+    :summary     "One red unit on a back frame, carried out of Tesa 41, through the Arsenale gate and into Castello. On a city where everything moves by hand or by boat, the weight of representing a country, and the first time a work went out walking."
+    :cover-image "https://media.armenianpavilion.org/journal/26-10-22/arsenale-gate.jpg"
     :cover-ar    1.7778}
 
    {:slug        "carried-by-hand"

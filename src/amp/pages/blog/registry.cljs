@@ -9,13 +9,17 @@
    [amp.data.journal :as journal]
    [amp.pages.blog.posts.blue-yellow-maquette :as post-byby]
    [amp.pages.blog.posts.carried-by-hand :as post-carried]
+   [amp.pages.blog.posts.carrying :as post-carrying]
    [amp.pages.blog.posts.making-a-flag :as post-flag]
    [amp.pages.blog.posts.seven-steps-to-heaven :as post-steps]
-   [amp.pages.blog.posts.the-studio-play-balance :as post-studio]))
+   [amp.pages.blog.posts.the-studio-play-balance :as post-studio]
+   [amp.pages.blog.posts.the-weight-of-the-flag :as post-weight]))
 
 (def ^:private components
-  {"seven-steps-to-heaven"   post-steps/post-content
+  {"the-weight-of-the-flag"  post-weight/post-content
+   "seven-steps-to-heaven"   post-steps/post-content
    "making-a-flag"           post-flag/post-content
+   "carrying"                post-carrying/post-content
    "carried-by-hand"         post-carried/post-content
    "the-studio-play-balance" post-studio/post-content
    "blue-yellow-maquette"    post-byby/post-content})
