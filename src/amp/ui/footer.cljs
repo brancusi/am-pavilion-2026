@@ -12,7 +12,8 @@
    [amp.ui.social-links :refer [social-links]]
    [amp.ui.studio-mark :refer [studio-mark-3d]]
    [helix.core :refer [$]]
-   [helix.dom :as d]))
+   [helix.dom :as d]
+   [helix.hooks :as hooks]))
 
 (def ^:private columns
   [{:title "The exhibition"
@@ -38,6 +39,54 @@
                        (take 2 journal/posts))
                  {:label "All journal posts" :href "/blog"}
                  {:label "Press" :href "/press"})}])
+
+(def ^:private news-status
+  {:sent    "Thank you. Check your inbox for an email to confirm."
+   :invalid "That address doesn't look right. Please check it."
+   :error   "Something went wrong. Please try again in a moment."})
+
+(defnc newsletter
+  "Sign-up for news and events. Posts to the Worker (/api/subscribe), which
+   adds the address to Buttondown; Buttondown sends the confirmation email
+   (double opt-in) and handles unsubscribing. The status line keeps its
+   height whether or not it has text, so nothing moves."
+  [_props]
+  (let [[state set-state!] (hooks/use-state :idle)
+        submit (fn [e]
+                 (.preventDefault e)
+                 (let [form (.-currentTarget e)
+                       data (js/FormData. form)]
+                   (set-state! :sending)
+                   (-> (js/fetch "/api/subscribe"
+                                 #js {:method "POST"
+                                      :headers #js {"content-type" "application/json"}
+                                      :body (js/JSON.stringify
+                                             #js {:email (.get data "email")
+                                                  :website (.get data "website")
+                                                  :page (.-pathname js/location)})})
+                       (.then (fn [res] (.then (.json res) (fn [body] [(.-ok res) body]))))
+                       (.then (fn [[ok body]]
+                                (if ok
+                                  (do (.reset form) (set-state! :sent))
+                                  (set-state! (if (= "invalid" (.-error body)) :invalid :error)))))
+                       (.catch #(set-state! :error)))))]
+    (d/section {:class "ap-footer__news" :aria-labelledby "ap-news-h"}
+               (d/div
+                (d/h2 {:id "ap-news-h" :class "ap-footer__h"} "News & events")
+                (d/p {:class "ap-body-s m-0"}
+                     "Exhibition news, events and what comes next for the studio. Occasional emails; leave any time."))
+               (d/form {:class "ap-footer__form" :on-submit submit}
+                       (d/label {:class "sr-only" :for "ap-news-email"} "Email address")
+                       (d/input {:id "ap-news-email" :name "email" :type "email" :required true
+                                 :autocomplete "email" :placeholder "your@email.com"})
+                       ;; Honeypot: hidden from people, filled by bots.
+                       (d/input {:class "ap-footer__hp" :name "website" :type "text"
+                                 :tab-index -1 :autocomplete "off" :aria-hidden true})
+                       (d/button {:class "ap-btn ap-btn--yellow" :type "submit"
+                                  :disabled (= state :sending)}
+                                 (if (= state :sending) "Sending…" "Subscribe"))
+                       (d/p {:class "ap-footer__status" :role "status" :aria-live "polite"}
+                            (get news-status state))))))
 
 (defnc site-footer
   [_props]
@@ -74,17 +123,18 @@
                                            :aria-current (when (= href path) "page")}
                                           label)))))))
 
+            ($ newsletter)
+
             (d/div {:class "ap-footer__info"}
                    (d/div
                     (d/h2 {:class "ap-footer__h"} "Get in touch")
                     (d/ul
                      (d/li (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"}
-                                "hello@armenianpavilion2026.org"))
-                     (d/li (d/a {:href "tel:+13234041152"} "+1 323-404-1152"))))
+                                "hello@armenianpavilion2026.org"))))
                    (d/div
                     (d/h2 {:class "ap-footer__h"} "501(c)(3) non-profit")
                     (d/p {:class "ap-body-s m-0"} "Fallen Angels Inc.")
-                    (d/p {:class "ap-body-s m-0 opacity-70"} "EIN 92-2395513 · Los Angeles, CA"))
+                    (d/p {:class "ap-body-s m-0 opacity-70"} "Los Angeles, CA"))
                    ($ social-links)
                    (d/div
                     (d/h2 {:class "ap-footer__h"} "Share this site")
