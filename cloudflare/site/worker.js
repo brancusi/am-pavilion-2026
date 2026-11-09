@@ -2,7 +2,8 @@
 // the press kit's films and images their own link
 // previews (title, description, picture), so a link texted or posted shows
 // what it points to rather than the site's card; and makes the press ZIPs.
-// Only /blog/*, /films/*, /press/* and /it/press/* run through here (wrangler.jsonc
+// Sections listed in PAGES (/walks, …) get their own preview too.
+// Only /blog/*, /films/*, /press/*, /it/press/* and the PAGES paths run through here (wrangler.jsonc
 // run_worker_first); everything else is served straight from the assets.
 // posts.json and films.json are written by build/og-posts.js; the press
 // images come from press.json, the list the page reads.
@@ -36,6 +37,18 @@ function preview(res, { path, title, description, image, width, height, type = "
   }
   return rw.transform(res);
 }
+
+// Sections with their own link preview instead of the site's card. Each image
+// is a 1200×630 JPEG under ~150 KB on R2 at share/<section>.jpg (messaging
+// apps skip bigger ones); upload a new key to change one. A path added here
+// must also be in run_worker_first (wrangler.jsonc).
+const PAGES = {
+  "/walks": {
+    title: "Walks",
+    description: "The studio carries the works out of Tesa 41 and through Venice, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. The schedule, the routes and every walk so far.",
+    image: `${media}share/walks.jpg`,
+  },
+};
 
 const PRESS_TEXT = {
   en: { kit: "Press kit", desc: "Press kit for Zadik Zadikian: The Studio, Armenian Pavilion, Biennale Arte 2026: release, fact sheet, images, films and logos.", film: "Film" },
@@ -77,6 +90,9 @@ export default {
       const f = films[fm[1]];
       return preview(res, { path: `/films/${fm[1]}`, title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other" });
     }
+
+    const page = PAGES[path.replace(/\/+$/, "") || "/"];
+    if (page) return preview(res, { path: path.replace(/\/+$/, ""), ...page, width: 1200, height: 630, type: "website" });
 
     const pm = path.match(/^(\/it)?\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
     if (pm) return press(request, env, res, path, pm);

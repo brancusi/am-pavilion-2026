@@ -13,7 +13,7 @@
   "assets": {
     "directory": "./release",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/blog/*", "/films/*", "/press", "/press/*", "/it/press", "/it/press/*"],
+    "run_worker_first": ["/api/*", "/blog/*", "/films/*", "/walks", "/press", "/press/*", "/it/press", "/it/press/*"],
     // Client-side routes (/visit, /blog/:slug, …) fall back to index.html
     "not_found_handling": "single-page-application"
   },
