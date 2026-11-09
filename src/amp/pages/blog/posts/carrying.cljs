@@ -16,31 +16,38 @@
 
 (def ^:private film-id "El6mWAaeWtIxqHERgu7fYE00pcLH7szuH8EG16lbn7CE")
 
-(def ^:private journal (str media-host "journal/26-10-22/"))
+(def ^:private journal (str media-host "journal/"))
 
 (def ^:private credit "Still from Carrying · Venice, 22 October 2026")
 
+(def ^:private day-credit
+  "Stills from the camera originals, graded (blackbox, filmic)."
+  "Venice, 22 October 2026")
+
 (def ^:private out-and-about
-  "Through the Arsenale and Castello: the landscape frames."
-  (let [slide (fn [file caption] {:img-src (str journal file ".jpg") :aspect-ratio 1.7778
-                                  :caption caption :credit credit})]
-    [(slide "bridge" "Over the wooden bridge by the Arsenale towers")
-     (slide "campo" "Into a campo in Castello, Zadik Zadikian a step ahead")
-     (slide "calle" "Down a calle; heads turn")
-     (slide "fondamenta" "Along a fondamenta")
-     (slide "bridge-low" "Crossing back at golden hour")]))
+  "Through the Arsenale and Castello: the landscape frames, from the camera
+   originals (26-10-22-orig) and the film (26-10-22)."
+  (let [slide (fn [file caption cr] {:img-src (str journal file ".jpg") :aspect-ratio 1.7778
+                                     :caption caption :credit cr})]
+    [(slide "26-10-22-orig/along-the-wall" "Along the Arsenale wall, Zadik Zadikian alongside" day-credit)
+     (slide "26-10-22-orig/campo-facing" "Stopping in a campo in Castello" day-credit)
+     (slide "26-10-22-orig/calle-with-zadik" "Down to the water" day-credit)
+     (slide "26-10-22/bridge" "Over the wooden bridge by the Arsenale towers" credit)
+     (slide "26-10-22/calle" "Down a calle; heads turn" credit)
+     (slide "26-10-22/fondamenta" "Along a fondamenta" credit)
+     (slide "26-10-22/bridge-low" "Crossing back at golden hour" credit)]))
 
 (defn- figure
   "One captioned still, in the post's reading measure. `ar` is width /
    height, so the frame holds its space before it loads."
-  [{:keys [file ar caption]}]
+  [{:keys [file ar caption by]}]
   (d/figure {:class "ap-figure"}
             (d/div {:class "ap-figure__frame" :style #js {"--ar" (str ar)}}
                    ($ picture {:src (str journal file ".jpg") :alt caption
                                :sizes "(min-width: 720px) 680px, 100vw"}))
             (d/figcaption {:class "ap-tomb"}
                           (d/span {:class "ap-tomb__title" :style #js {:gridColumn "1 / -1"}} caption)
-                          (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}} credit))))
+                          (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}} (or by credit)))))
 
 (defnc film
   "The Carrying film: a still until someone presses play."
@@ -81,8 +88,8 @@
         "Venice the way everything else in Venice is carried? It turned out to be the "
         "beginning of something larger.")
 
-   (figure {:file "fitted-in-tesa-41" :ar 1.7778
-            :caption "Aram Zadikian in the back frame, before the unit goes on. Tesa 41"})
+   (figure {:file "26-10-22-orig/tesa-41-fitted" :ar 1.7778 :by day-credit
+            :caption "Aram Zadikian in Tesa 41 with the unit on his back, before setting out"})
 
    (d/h2 "Fitting the frame")
 
@@ -90,14 +97,18 @@
         "shoulders, with a band of green at its foot. It is light enough for one person and "
         "big enough that the person all but disappears behind it. The afternoon began on "
         "the studio floor, tightening straps, kneeling to take the weight, standing up, "
-        "walking a lap of the hall and adjusting again.")
+        "walking a lap of the hall and adjusting again. The frame had had its first try in "
+        "the hall eleven days before.")
 
-   (figure {:file "strapping" :ar 1.7778
-            :caption "Zadik Zadikian tightening the straps"})
+   (figure {:file "26-10-22-orig/first-fitting" :ar 1.7778 :by "Tesa 41, 11 October 2026"
+            :caption "11 October: a first try of the back frame"})
+
+   (figure {:file "26-10-22-orig/strapping" :ar 1.7778 :by day-credit
+            :caption "Zadik Zadikian checks the frame by the door of Tesa 41"})
 
    (d/p "Then the door, and the quay, and the water.")
 
-   (figure {:file "arsenale-quay" :ar 1.7778
+   (figure {:file "26-10-22-orig/arsenale-quay" :ar 1.7778 :by day-credit
             :caption "On the quay in front of the old boat sheds of the Arsenale"})
 
    (d/h2 "Everything by hand, or by boat")
@@ -135,7 +146,7 @@
     (d/p "It’s coming from a certain tradition, carrying. And yet in Venice it makes "
          "total sense, because there is no other way."))
 
-   (figure {:file "portrait" :ar 1.7778
+   (figure {:file "26-10-22/portrait" :ar 1.7778
             :caption "Aram Zadikian in a campo in Castello, the unit on his back"})
 
    (d/p "There was the wind, too. On the open quay a tall flat form becomes a sail, and "
@@ -144,7 +155,7 @@
 
    ($ film)
 
-   (figure {:file "setting-down" :ar 1.7778
+   (figure {:file "26-10-22/setting-down" :ar 1.7778
             :caption "Setting the unit down on the quay, Zadik Zadikian watching"})
 
    (d/h2 "One, for now")
@@ -163,7 +174,7 @@
         "Units that can be carried one at a time can also be carried together. A flag "
         "could walk.")
 
-   (figure {:file "back-in-tesa-41" :ar 1.7778
+   (figure {:file "26-10-22/back-in-tesa-41" :ar 1.7778
             :caption "Back in Tesa 41: Zadik and Aram Zadikian after the walk"})
 
    (d/p "Zadik, at the end of the day, on a year of learning a new city: "

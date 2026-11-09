@@ -18,15 +18,22 @@
 
 (def ^:private film-id "MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo")
 
-(def ^:private journal (str media-host "journal/26-11-05/"))
+(def ^:private journal (str media-host "journal/"))
 
 (def ^:private credit "Still from The Weight of the Flag · Castello, 5 November 2026")
 
+(def ^:private day-credit
+  "Stills from the camera originals, graded (blackbox, filmic)."
+  "Castello, 5 November 2026")
+
 (def ^:private on-the-way
-  "Between the stops: landscape frames from the film."
-  (let [slide (fn [file caption] {:img-src (str journal file ".jpg") :aspect-ratio 1.7778
+  "Between the stops: landscape frames from the camera originals
+   (26-11-05-orig) and the film (26-11-05)."
+  (let [slide (fn [file caption] {:img-src (str journal "26-11-05/" file ".jpg") :aspect-ratio 1.7778
                                   :caption caption :credit credit})]
-    [(slide "garden" "Green, white and red under the pines")
+    [{:img-src (str journal "26-11-05-orig/campo-crossing.jpg") :aspect-ratio 1.7778
+      :caption "Red and white crossing a campo" :credit day-credit}
+     (slide "garden" "Green, white and red under the pines")
      (slide "portico" "Through a sottoportego")
      (slide "low-red" "Under a stone arch")
      (slide "green-low" "Against a white church front")
@@ -49,14 +56,14 @@
 (defn- figure
   "One captioned still, in the post's reading measure. `ar` is width /
    height, so the frame holds its space before it loads."
-  [{:keys [file ar caption]}]
+  [{:keys [file ar caption by]}]
   (d/figure {:class "ap-figure"}
             (d/div {:class "ap-figure__frame" :style #js {"--ar" (str ar)}}
                    ($ picture {:src (str journal file ".jpg") :alt caption
                                :sizes "(min-width: 720px) 680px, 100vw"}))
             (d/figcaption {:class "ap-tomb"}
                           (d/span {:class "ap-tomb__title" :style #js {:gridColumn "1 / -1"}} caption)
-                          (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}} credit))))
+                          (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}} (or by credit)))))
 
 (defnc film
   "The Weight of the Flag: a still until someone presses play."
@@ -95,8 +102,8 @@
         "another way. About two and a half kilometres, an hour and a quarter. It was the "
         "first of the walks.")
 
-   (figure {:file "vigna-campo" :ar 1.7778
-            :caption "Three units in a campo in Castello, long afternoon shadows"})
+   (figure {:file "26-11-05-orig/vigna-campo" :ar 1.7778 :by day-credit
+            :caption "Setting out: three units across a campo in Castello"})
 
    (d/h2 "From one to three")
 
@@ -119,14 +126,14 @@
         (d/em "“They’re over there, the students.")
         (d/em " They’re helping me, from the Venice Academy of Arts.”"))
 
-   (figure {:file "church-front" :ar 1.7778
-            :caption "Green, white and red leaving a church front"})
+   (figure {:file "26-11-05-orig/church-front" :ar 1.7778 :by day-credit
+            :caption "Set down before a church door"})
 
    (d/h2 "The first walk")
 
    (d/p "The route went by the wide ways, rive, fondamente and campi, where three tall "
         "forms can pass and be set down without blocking anyone. At each stop the "
-        "carriers stood in a row, the flag read from left to right, and the city did "
+        "carriers stood in a row, and the city did "
         "what cities do: it looked.")
 
    ($ film)
@@ -141,7 +148,10 @@
         (d/em "“Thank you for what your people have been doing through history, because "
               "that’s very important.”"))
 
-   (figure {:file "zanipolo-wide" :ar 1.7778
+   (figure {:file "26-11-05-orig/zanipolo-colleoni" :ar 1.7778 :by day-credit
+            :caption "In Campo Santi Giovanni e Paolo, under Verrocchio’s Colleoni"})
+
+   (figure {:file "26-11-05/zanipolo-wide" :ar 1.7778
             :caption "Campo Santi Giovanni e Paolo, before the Scuola Grande di San Marco"})
 
    (d/p "Another passer-by found the words we had been looking for: "
@@ -179,7 +189,7 @@
         " page. Anyone may walk alongside: meet at the door of Tesa 41 ten minutes before "
         "the time.")
 
-   (figure {:file "backlit-campo" :ar 1.7778
+   (figure {:file "26-11-05/backlit-campo" :ar 1.7778
             :caption "Late sun in a campo"})
 
    (d/h2 "The weight of it")
@@ -190,7 +200,7 @@
         "One unit was a test. Three is a flag. Twelve, we hope, will be something else "
         "again.")
 
-   (figure {:file "three-in-a-row" :ar 1.7778
-            :caption "Three in a row, the flag read left to right"})
+   (figure {:file "26-11-05-orig/three-in-a-row" :ar 1.7778 :by day-credit
+            :caption "Three in a row"})
 
    (d/p (d/em "The next walk leaves Tesa 41 tomorrow, with six. Come and walk with us."))))
