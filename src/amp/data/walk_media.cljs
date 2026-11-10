@@ -74,6 +74,17 @@
    :film "/films/carrying"
    :post "/blog/carrying"})
 
+(def accademia
+  "The walk to the Accademia di Belle Arti, 18 November, as the Academy
+   confirmed it on 10 November: its event page, its Instagram post, and the
+   posters (Dropbox the_studio/marketing/accademia_walk_2026-11-18)."
+  {:walk "w06"
+   :poster "walks/accademia/poster-2026-11-10.jpg"
+   :poster-ar 0.7076
+   :pdf "walks/accademia/locandina-2026-11-10-A3.pdf"
+   :event-url "https://www.accademiavenezia.it/eventi/zadik-zadikian-performance-e-incontro-con-l-artista-905.html"
+   :instagram "https://www.instagram.com/p/DfjyUypoaud/"})
+
 (def hero-photo "walks/2026-11-06/dsc07975.tif")
 
 ;; ── Dates and times ─────────────────────────────────────────────────────

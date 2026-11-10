@@ -174,7 +174,7 @@
         "down in two or three places, and comes home another way. The number of works "
         "grows: three on the first day, six on the next walk, then twelve. On 18 November "
         "students of the Accademia walk them to the Accademia itself, one work on each student’s back, into "
-        "the Academy’s own courtyard, for an hour with its professors and students. "
+        "its cloister at 11:00, for an hour with its professors and students. "
         "The last walk is on the closing day.")
 
    (d/ul

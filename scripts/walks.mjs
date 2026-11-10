@@ -10,7 +10,8 @@
 // one walk has used costs more for every later walk, and the way home avoids
 // the way out, so each walk finds new streets where the city allows.
 // Times assume 3 km/h carrying the works and 8 minutes at each stop, unless a
-// stop gives its own "stay" in minutes (and an optional "detail" line).
+// stop gives its own "stay" in minutes (and an optional "detail" line, and
+// "arrive", a confirmed arrival time shown instead of the estimate).
 //
 // Writes:
 //   resources/data/walks/routes.json            the lines, in the base map's pixels
@@ -155,7 +156,7 @@ plan.forEach((w, wi) => {
     stops: stops.map((s, i) => { const [x, y] = xy(pos.get(s)); return [r1(x), r1(y), Math.round(at(i) * 1e4) / 1e4]; }) });
   list.push({ id: w.id, n: wi + 1, date: w.date, works: w.works, depart: w.depart, title: w.title, note: w.note || null,
     km: Math.round(L / 10) / 100, minutes, wide: Math.round(wide / L * 100), fresh: Math.round((1 - reused / L) * 100),
-    via, stops: w.stops.map((s, i) => ({ name: s.name, t: lines[wi].stops[i][2], stay: stay(s), detail: s.detail || null })) });
+    via, stops: w.stops.map((s, i) => ({ name: s.name, t: lines[wi].stops[i][2], stay: stay(s), detail: s.detail || null, arrive: s.arrive || null })) });
   console.log(`${w.date}  ${w.title.padEnd(38)} ${(L / 1000).toFixed(1)} km  ${minutes} min  wide ${Math.round(wide / L * 100)}%  new ${Math.round((1 - reused / L) * 100)}%`);
 });
 
