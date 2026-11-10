@@ -212,12 +212,13 @@
                     (d/span {:class "ap-wk-player__clock ap-data"}
                             (str (at-time depart (wm/clock walk t)) " · " (.toFixed (* km t) 1) " of " (.toFixed km 1) " km")))))))
 
-(defn- fig-caption [date i title] (str "FIG. " (inc i) " · " title " · Venice, " (day-of date) " November 2026"))
+(defn- fig-caption [date i title by]
+  (str "FIG. " (inc i) " · " title " · Venice, " (day-of date) " November 2026" (when by (str " · Photo: " by))))
 
 (defnc still-viewer
   "A walk's photographs full screen (design system: Lightbox). Arrow keys,
    swipe or the buttons step through them; Escape, × or the backdrop close."
-  [{:keys [photos date at on-go on-close]}]
+  [{:keys [photos date by at on-go on-close]}]
   (let [close-ref (hooks/use-ref nil)
         touch (hooks/use-ref nil)
         n (count photos)
@@ -267,7 +268,7 @@
                      ($ picture {:key path :src (str media path) :alt alt :sizes "100vw" :eager? true}))
               (d/div {:class "ap-wk-viewer__foot"}
                      (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Previous photograph" :on-click #(go -1)} "←")
-                     (d/p {:class "ap-caption m-0"} (fig-caption date at title))
+                     (d/p {:class "ap-caption m-0"} (fig-caption date at title by))
                      (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Next photograph" :on-click #(go 1)} "→")))
        (.-body js/document)))))
 
@@ -360,7 +361,7 @@
                                  :aria-label "Open the poster full size"}
                                 ($ picture {:src (str media poster) :sizes "(min-width: 960px) 30vw, 100vw"
                                             :alt "Poster: Zadik Zadikian, Walking the Work Through Venice. Performance e incontro in Accademia. 18 novembre 2026, ore 11:00–12:00, Chiostro dell’Accademia di Belle Arti di Venezia; in caso di maltempo, Aula 1"}))
-                           (d/figcaption {:class "ap-caption"} "The poster for 18 November"))
+                           (d/figcaption {:class "ap-caption"} "Poster: Accademia di Belle Arti di Venezia"))
                  (d/div {:class "ap-wk-acc__text"}
                         (d/p {:class "ap-label m-0"} (str "Confirmed · Walk " n " · " (long-date date)))
                         (d/h2 {:id "acc-title" :class "ap-display-l m-0"} "Walking the Work to the Accademia")
@@ -453,8 +454,8 @@
                                                 :aria-label (str "View larger: " title)
                                                 :on-click #(set-viewing! i)}
                                                ($ picture {:src (str media path) :alt alt :sizes "(min-width: 960px) 25vw, 50vw"}))
-                                     (d/figcaption {:class "ap-caption"} (fig-caption date i title)))))
-                  ($ still-viewer {:photos ps :date date :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)}))))))
+                                     (d/figcaption {:class "ap-caption"} (fig-caption date i title (get wm/photographers id))))))
+                  ($ still-viewer {:photos ps :date date :by (get wm/photographers id) :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)}))))))
 
 (defnc schedule [{:keys [walks walk on-pick]}]
   (let [by-date (into {} (map (juxt :date identity) walks))]
@@ -554,6 +555,7 @@
   [{:keys [walks]}]
   (let [walk (some #(when (= wm/gallery-walk (:id %)) %) walks)
         ps (get photos wm/gallery-walk)
+        by (get wm/photographers wm/gallery-walk)
         [viewing set-viewing!] (hooks/use-state nil)]
     (when (and walk (seq ps))
       (d/section {:id "photographs" :class "ap-wrap ap-wk-gallery" :aria-labelledby "gallery-title"}
@@ -565,7 +567,7 @@
                         (d/p {:class "ap-body m-0 max-w-[30em]"}
                              (str (get {3 "Three" 6 "Six" 12 "Twelve"} (:works walk) (:works walk)) " works out of Tesa 41, over the bridge at the Arsenale gate, set down between "
                                   "the anchors of the Museo Storico Navale, and on along the lagoon: "
-                                  (count ps) " photographs from the afternoon.")))
+                                  (count ps) " photographs from the afternoon" (if by (str ", by " by ".") "."))))
                  (d/div {:class "ap-wk-gallery__rows"}
                         (for [row (justify (map-indexed #(assoc %2 :i %1) ps) 4.2)]
                           (d/div {:key (:path (first row)) :class "ap-wk-gallery__row"}
@@ -577,7 +579,7 @@
                                                        ($ picture {:src (str media path) :alt alt
                                                                    :sizes (str "(min-width: 720px) " (js/Math.round (/ (* ar 100) 4.2)) "vw, 100vw")}))
                                              (d/figcaption {:class "ap-caption"} title))))))
-                 ($ still-viewer {:photos ps :date (:date walk) :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)})))))
+                 ($ still-viewer {:photos ps :date (:date walk) :by by :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)})))))
 
 (defnc join
   "Walk with us, and walk alerts by email (Buttondown, tag \"walks\")."

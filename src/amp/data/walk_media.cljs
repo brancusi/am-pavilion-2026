@@ -50,6 +50,11 @@
           {:path "walks/2026-11-06/dsc08135.tif" :ar 1.0390 :title "To the lagoon" :alt "A walker carries the green work along the lagoon"}
           {:path "walks/2026-11-06/dsc08205.tif" :ar 1.4999 :title "Back by the gate" :alt "The works crossing the Arsenale bridge at dusk"}]})
 
+(def photographers
+  "Who took each walk's photographs (as credited in the press set). Walks
+   without an entry show film stills."
+  {"w02" "Mina Biasutti"})
+
 (def gallery-walk
   "The walk whose photographs fill the Walks page's gallery."
   "w02")
