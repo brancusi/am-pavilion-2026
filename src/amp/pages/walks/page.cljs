@@ -337,6 +337,49 @@
                                (d/dt {:class "ap-label"} (str "Next walk · leaves " (:depart nxt) " · " (:works nxt) " works"))
                                (d/dd (long-date (:date nxt))))))))))
 
+(defnc accademia-links
+  "The Academy's own announcements of the 18 November walk."
+  [_props]
+  (let [{:keys [event-url instagram pdf]} wm/accademia]
+    (d/ul {:class "ap-wk-acc__links"}
+          (d/li (d/a {:href event-url :target "_blank" :rel "noopener"} "The event on the Accademia’s website ↗"))
+          (d/li (d/a {:href instagram :target "_blank" :rel "noopener"} "The Accademia’s post on Instagram ↗"))
+          (d/li (d/a {:href (str media pdf) :target "_blank" :rel "noopener"} "The poster, A3 (PDF)")))))
+
+(defnc accademia
+  "The walk to the Accademia di Belle Arti, as the Academy confirmed it: the
+   poster, the time and place, and links to its own announcements."
+  [{:keys [walks on-pick]}]
+  (let [{:keys [poster poster-ar] wid :walk} wm/accademia
+        {:keys [n date depart minutes] :as w} (some #(when (= wid (:id %)) %) walks)]
+    (when (and w (not= :walked (:status w)))
+      (d/section {:id "accademia" :class "ap-wrap ap-wk-acc" :aria-labelledby "acc-title"}
+                 (d/figure {:class "ap-wk-acc__poster m-0"}
+                           (d/a {:class "ap-wk-acc__frame" :style #js {"--ar" poster-ar}
+                                 :href (str media poster) :target "_blank" :rel "noopener"
+                                 :aria-label "Open the poster full size"}
+                                ($ picture {:src (str media poster) :sizes "(min-width: 960px) 30vw, 100vw"
+                                            :alt "Poster: Zadik Zadikian, Walking the Work Through Venice. Performance e incontro in Accademia. 18 novembre 2026, ore 11:00–12:00, Chiostro dell’Accademia di Belle Arti di Venezia; in caso di maltempo, Aula 1"}))
+                           (d/figcaption {:class "ap-caption"} "The poster for 18 November"))
+                 (d/div {:class "ap-wk-acc__text"}
+                        (d/p {:class "ap-label m-0"} (str "Confirmed · Walk " n " · " (long-date date)))
+                        (d/h2 {:id "acc-title" :class "ap-display-l m-0"} "Walking the Work to the Accademia")
+                        (d/p {:class "ap-lede m-0"}
+                             "The Accademia di Belle Arti di Venezia hosts "
+                             (d/em "Walking the Work Through Venice")
+                             ", a performance of "
+                             (d/em "Zadik Zadikian: The Studio")
+                             ". Students of Prof. Gianpaolo Mazzoni’s sculpture course, who helped make the works in Tesa 41, carry them on their backs from the pavilion to the Academy, for an hour with its professors and students.")
+                        (d/dl {:class "ap-wk-facts"}
+                              (d/div (d/dt {:class "ap-label"} "In the cloister") (d/dd {:class "ap-data"} "11:00–12:00"))
+                              (d/div (d/dt {:class "ap-label"} "If it rains") (d/dd {:class "ap-data"} "Aula 1"))
+                              (d/div (d/dt {:class "ap-label"} "Leaves Tesa 41") (d/dd {:class "ap-data"} depart))
+                              (d/div (d/dt {:class "ap-label"} "Back") (d/dd {:class "ap-data"} (str "≈ " (at-time depart minutes)))))
+                        (d/p {:class "ap-body-s m-0"}
+                             "The meeting in the cloister is for the Academy’s students and staff. Anyone may walk alongside on the way there and back.")
+                        ($ accademia-links {})
+                        (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick wid)} "See the route"))))))
+
 (defnc walk-list [{:keys [walks walk on-pick]}]
   (d/ul {:class "ap-wk-list" :aria-label "The walks"}
         (for [{:keys [id n date title works km minutes status next?] :as w} walks
@@ -375,14 +418,16 @@
                                     (d/dd {:class "ap-data"} (str wide "% of the way · " fresh "% on streets no earlier walk took"))))
                        (when (seq via)
                          (d/p {:class "ap-body-s m-0"} (d/span {:class "ap-label ap-muted block mb-2"} "By way of") (str/join " · " via)))
-                       (when note (d/p {:class "ap-caption m-0"} (str note "."))))
+                       (when note (d/p {:class "ap-caption m-0"} (str note ".")))
+                       (when (= id (:walk wm/accademia))
+                         ($ accademia-links {})))
                 (d/ol {:class "ap-wk-itin"}
                       (d/li (d/span {:class "ap-data"} depart) (d/i {:class "is-ap"} "AP")
                             (d/span {:class "ap-wk-itin__name"} "Leave Tesa 41 by the Fondamenta Case Nuove door"))
-                      (for [[i {:keys [name t detail]}] (map-indexed vector stops)
+                      (for [[i {:keys [name t detail arrive]}] (map-indexed vector stops)
                             :let [photo (get-in stop-photos [id i])]]
                         (d/li {:key name}
-                              (d/span {:class "ap-data"} (str "≈ " (at-time depart (wm/clock walk t))))
+                              (d/span {:class "ap-data"} (or arrive (str "≈ " (at-time depart (wm/clock walk t)))))
                               (d/i (inc i))
                               (d/span {:class "ap-wk-itin__name"} name
                                       (d/span {:class "ap-caption block"}
@@ -420,7 +465,7 @@
                                     (d/p {:class "ap-label m-0 ap-wk-sched__eyebrow"} "Schedule · November 2026")
                                     (d/h2 {:id "schedule-title" :class "ap-display-l m-0"} "Walk with us"))
                              (d/p {:class "ap-body m-0 max-w-[30em]"}
-                                  "Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time. Anyone may walk alongside; the hour inside the Accademia on 18 November is for the Academy’s students and staff. The last walk is on the closing day of the Biennale."))
+                                  "Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time. Anyone may walk alongside; the hour in the Accademia’s cloister on 18 November (11:00–12:00) is for the Academy’s students and staff. The last walk is on the closing day of the Biennale."))
                       (d/div {:class "ap-wk-days" :role "group" :aria-label "Walk days"}
                              (for [dd (range 5 23)
                                    :let [iso (str "2026-11-" (.padStart (str dd) 2 "0"))
@@ -592,6 +637,7 @@
     (d/div {:class "ap-wk"}
            ($ hero {:walks walks})
            ($ film-band {:walks walks})
+           ($ accademia {:walks walks :on-pick set-sel!})
            (d/section {:id "walks-map" :ref ref :class "ap-wrap ap-wk-app" :aria-labelledby "map-title"}
                       (d/div {:class "ap-wk-app__head"}
                              (d/div {:class "flex flex-col gap-3"}
