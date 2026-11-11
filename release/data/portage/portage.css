@@ -23,3 +23,10 @@
 /* The drawings name Portage's fonts in SVG attributes. */
 .pt svg [font-family^="DM Mono"]{font-family:"IBM Plex Mono",ui-monospace,monospace}
 .pt svg [font-family^="EB Garamond"]{font-family:Newsreader,Georgia,serif}
+/* Armenian: the Latin faces carry no Armenian; Noto Sans Armenian (the Ayb identity's web face) sits next in each stack. */
+:root[lang="hy"] .pt .pg{--serif:Newsreader,"Noto Sans Armenian",Georgia,serif;--mono:"IBM Plex Mono","Noto Sans Armenian",ui-monospace,Menlo,monospace;--disp:Jost,"Noto Sans Armenian",Futura,system-ui,sans-serif}
+:root[lang="hy"] .pt svg [font-family^="DM Mono"]{font-family:"IBM Plex Mono","Noto Sans Armenian",ui-monospace,monospace}
+:root[lang="hy"] .pt svg [font-family^="EB Garamond"]{font-family:Newsreader,"Noto Sans Armenian",Georgia,serif}
+:root[lang="hy"] .pt .sc{font-variant-caps:normal;font-feature-settings:normal;letter-spacing:.02em}
+
+@media (width>=1100px){.pt .odo-b{min-height:30px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
