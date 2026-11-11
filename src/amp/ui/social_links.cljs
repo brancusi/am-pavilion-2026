@@ -2,6 +2,7 @@
   "Row of social-media profile links for the global footer.
    Renders as a horizontal icon row + heading label."
   (:require
+   [amp.i18n :refer [t ts]]
    [amp.ui.social-icons :refer [InstagramIcon FacebookIcon XTwitterIcon YouTubeIcon]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
@@ -11,7 +12,7 @@
 (def ^:private social-profiles
   "Where to follow: Zadik Zadikian's own Instagram."
   [{:platform "Instagram"
-    :label    "Zadik Zadikian on Instagram"
+    :label    :footer/instagram
     :href     "https://www.instagram.com/zadikzadikian/"
     :icon     InstagramIcon}
    #_{:platform "Facebook"
@@ -35,14 +36,14 @@
   "Social profile icons for the footer. Renders a heading + icon row."
   [_props]
   (d/div
-         (d/h2 {:class "ap-footer__h"} "Follow")
+         (d/h2 {:class "ap-footer__h"} (t :footer/follow))
          (d/div {:class "flex items-center gap-1"}
                 (for [{:keys [platform label href icon]} social-profiles]
                   (d/a {:key      platform
                         :href     href
                         :target   "_blank"
                         :rel      "noopener noreferrer"
-                        :title    (or label platform)
-                        :aria-label (or label platform)
+                        :title    (if label (ts label) platform)
+                        :aria-label (if label (ts label) platform)
                         :class    icon-link-class}
                        ($ icon {:class "w-[18px] h-[18px]"}))))))

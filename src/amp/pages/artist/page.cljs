@@ -5,6 +5,7 @@
   (:require
    [amp.data.films :as films]
    [amp.hooks.use-in-view :refer [use-in-view]]
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
    [amp.ui.fit-gallery :refer [fit-gallery]]
    [amp.ui.picture :refer [picture mux-poster]]
@@ -14,49 +15,50 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(defcatalog "artist")
+
 (def ^:private lazy-film (lazy-component amp.ui.video-background/film-player))
 
 ;; ── Data ───────────────────────────────────────────────────────────────────
 
 (def portrait-src "https://media.armenianpavilion.org/portraits/zz-portrait-2.jpg")
 
-(def facts
-  [["Born" "Yerevan, Armenia"]
-   ["Studio" "Los Angeles"]
-   ["Practice" "Unit-based sculpture"]
-   ["Pavilion" "Tesa 41, Arsenale"]])
+(def ^:private facts
+  [[:artist/facts.born :artist/facts.born-value]
+   [:artist/facts.studio :artist/facts.studio-value]
+   [:artist/facts.practice :artist/facts.practice-value]
+   [:artist/facts.pavilion :artist/facts.pavilion-value]])
 
-(def chronology
-  [{:dist "Age 19" :title "The Arax River"
-    :body "Escapes Soviet Armenia by swimming across the Arax under machine-gun fire, and reaches America with nothing."}
-   {:dist "San Francisco" :title "Assistant to Bufano"
-    :body "Works as an assistant to the sculptor Beniamino Bufano and learns scale, color and the physical intelligence of large-form making."}
-   {:dist "1973" :title "New York and Serra"
-    :body "Moves east into the Minimalist circle and assists Richard Serra on the black oil-stick wall drawings, one of which Serra titles Zadikians."}
-   {:dist "1976" :title "A field of gold"
-    :body "Turns his ten-thousand-square-foot home and studio into a continuous field of industrial gold."}
-   {:dist "1978" :title "1,000 Bricks"
-    :body "1,000 Bricks Gilded in 24-Karat Gold Leaf: the unit-based language that runs through all the work since."}
-   {:dist "2026" :title "Armenian Pavilion"
-    :body "Represents Armenia at the 61st International Art Exhibition, La Biennale di Venezia, with The Studio in Tesa 41."}])
+(defn- chronology
+  "The chronology steps, in the current locale."
+  []
+  (for [id ["arax" "bufano" "serra" "gold" "bricks" "pavilion"]
+        :let [k #(keyword "artist" (str "chron." id "." %))]]
+    {:dist (t (k "dist")) :title (t (k "title")) :body (t (k "body"))}))
 
-(def works
-  [{:img-src "https://media.armenianpavilion.org/artwork/1.jpeg"
-    :aspect-ratio 0.75 :caption "Gilded block composition" :credit "Zadik Zadikian"}
-   {:img-src "https://media.armenianpavilion.org/blue_yellow/top_view.jpg"
-    :aspect-ratio 0.75 :caption "Blue Yellow Blue Yellow" :credit "Studio 2026"}
-   {:img-src "https://media.armenianpavilion.org/blue_yellow/side-2.jpg"
-    :aspect-ratio 0.75 :caption "Blue Yellow Blue Yellow" :credit "Studio 2026"}
-   {:img-src "https://media.armenianpavilion.org/big_red/master.jpg"
-    :aspect-ratio 1.78 :caption "The Big Red" :credit "Render 2026"}
-   {:img-src "https://media.armenianpavilion.org/big_red/corner_low.jpg"
-    :aspect-ratio 0.75 :caption "The Big Red" :credit "Render 2026"}
-   {:img-src "https://media.armenianpavilion.org/photos/blue_unit_with_hand.jpg"
-    :aspect-ratio 1.50 :caption "Blue block" :credit "Los Angeles 2026"}
-   {:img-src "https://media.armenianpavilion.org/big_red/flag.jpg"
-    :aspect-ratio 1.38 :caption "The Big Red" :credit "Render 2026"}])
+(defn- works
+  "The gallery slides, captions in the current locale."
+  []
+  (mapv #(-> % (update :caption ts) (update :credit ts))
+    [{:img-src "https://media.armenianpavilion.org/artwork/1.jpeg"
+      :aspect-ratio 0.75 :caption :artist/works.gilded-block :credit :artist/works.credit-zadikian}
+     {:img-src "https://media.armenianpavilion.org/blue_yellow/top_view.jpg"
+      :aspect-ratio 0.75 :caption :artist/works.blue-yellow :credit :artist/works.credit-studio}
+     {:img-src "https://media.armenianpavilion.org/blue_yellow/side-2.jpg"
+      :aspect-ratio 0.75 :caption :artist/works.blue-yellow :credit :artist/works.credit-studio}
+     {:img-src "https://media.armenianpavilion.org/big_red/master.jpg"
+      :aspect-ratio 1.78 :caption :artist/works.big-red :credit :artist/works.credit-render}
+     {:img-src "https://media.armenianpavilion.org/big_red/corner_low.jpg"
+      :aspect-ratio 0.75 :caption :artist/works.big-red :credit :artist/works.credit-render}
+     {:img-src "https://media.armenianpavilion.org/photos/blue_unit_with_hand.jpg"
+      :aspect-ratio 1.50 :caption :artist/works.blue-block :credit :artist/works.credit-la}
+     {:img-src "https://media.armenianpavilion.org/big_red/flag.jpg"
+      :aspect-ratio 1.38 :caption :artist/works.big-red :credit :artist/works.credit-render}]))
 
-(def film (first (filter #(= "maquette" (:slug %)) films/films)))
+(defn- film
+  "The studio film, localised: read while rendering."
+  []
+  (first (filter #(= "maquette" (:slug %)) (films/films))))
 
 ;; ── Sections ───────────────────────────────────────────────────────────────
 
@@ -65,16 +67,15 @@
    (d/section {:class "ap-vhead"}
               (d/div {:class "ap-wrap ap-vhead__grid ap-artist-head"}
                      (d/div {:class "flex flex-col gap-5"}
-                            (d/p {:class "ap-label m-0 text-yellow"} "The Artist")
-                            (d/h1 {:class "ap-display-xl"} "Zadik Zadikian")
-                            (d/p {:class "ap-lede max-w-[36ch] m-0"}
-                                 "Sculptor. Representing Armenia at the 61st International Art Exhibition — La Biennale di Venezia.")
+                            (d/p {:class "ap-label m-0 text-yellow"} (t :artist/head.label))
+                            (d/h1 {:class "ap-display-xl"} (t :artist/head.name))
+                            (d/p {:class "ap-lede max-w-[36ch] m-0"} (t :artist/head.lede))
                             (d/dl {:class "ap-keyfacts mt-4"}
                                   (for [[k v] facts]
-                                    (d/div {:key k} (d/dt k) (d/dd v)))))
+                                    (d/div {:key (name k)} (d/dt (t k)) (d/dd (t v))))))
                      (d/figure {:class "ap-figure ap-artist-head__portrait"}
                                (d/div {:class "ap-figure__frame" :style #js {"--ar" "4/5"}}
-                                      ($ picture {:src portrait-src :alt "Zadik Zadikian" :eager? true
+                                      ($ picture {:src portrait-src :alt (ts :artist/head.portrait-alt) :eager? true
                                                   :sizes "(min-width: 960px) 40vw, 100vw"})))))
    (d/div {:class "ap-hero__strip" :aria-hidden true}
           (for [i (range 9)] (d/i {:key i})))))
@@ -82,46 +83,41 @@
 (defnc epigraph []
   (d/section {:class "ap-sec"}
              (d/div {:class "ap-wrap"}
-                    (d/blockquote {:class "ap-quote max-w-[32ch] !m-0"}
-                                  (d/p "If you want to learn about something, become that thing and then study yourself.")
-                                  (d/cite "Zadik Zadikian")))))
+                    (d/blockquote {:class "ap-quote ap-artist-epigraph max-w-[32ch] !m-0"}
+                                  (d/p (t :artist/epigraph.quote))
+                                  (d/cite (t :artist/epigraph.cite))))))
 
 (defnc biography []
   (d/section {:class "ap-article pb-12 lg:pb-24" :id "biography"}
              (d/header {:class "ap-article__head !pt-0"}
-                       (d/p {:class "ap-label ap-muted m-0"} "Biography")
-                       (d/h2 {:class "ap-display-l"} "A studio forged through touch")
-                       (d/p {:class "ap-article__byline m-0"} (d/span "Written by Carlo McCormick")))
+                       (d/p {:class "ap-label ap-muted m-0"} (t :artist/bio.label))
+                       (d/h2 {:class "ap-display-l"} (t :artist/bio.title))
+                       (d/p {:class "ap-article__byline m-0"} (d/span (t :artist/bio.byline))))
              (d/div {:class "ap-article__body"}
-                    (d/p {:class "ap-dropcap"}
-                         "Born in Yerevan, " (d/strong "Zadik Zadikian")
-                         "’s life began in extremes. At nineteen—armed only with conviction—he escaped Soviet Armenia by swimming across the Arax River under machine-gun fire. He arrived in America with nothing but the instincts that had guided him since childhood: to build, to shape matter, to seek form through discipline and elemental materials.")
-                    (d/p "In San Francisco, he worked as an assistant to the sculptor " (d/strong "Beniamino Bufano")
-                         ", absorbing a lifelong sense of scale, color, and the physical intelligence of large-form making. Drawn to the heat and velocity of New York, he moved east in 1973 and quickly found himself inside the crucible of the Minimalist movement, assisting "
-                         (d/strong "Richard Serra") " on the monumental black oil-stick wall drawings—one of which Serra titled "
-                         (d/em "Zadikians") ".")
-                    (d/p "This immersion into New York’s severity and possibility forged an artist who has always moved toward intensity: toward weight, clarity, touch. The son of a builder, he grew up with materials—clay, plaster, stone, the raw grammar of structure. In New York, these instincts crystallized. In 1976 he transformed his ten-thousand-square-foot home and studio into a continuous field of industrial gold, an act of totalizing vision that set the tone for everything that followed."))
+                    (d/p {:class "ap-dropcap"} (t :artist/bio.p1))
+                    (d/p (t :artist/bio.p2))
+                    (d/p (t :artist/bio.p3)))
              (d/blockquote {:class "ap-quote ap-quote--block ap-wide !my-4"}
-                           (d/p "The block remembers two things—the wall it was taken from and the wall it will become.")
-                           (d/cite "Zadik Zadikian"))
+                           (d/p (t :artist/bio.quote))
+                           (d/cite (t :artist/bio.quote-cite)))
              (d/div {:class "ap-article__body"}
-                    (d/p "His 1978 project " (d/em "1,000 Bricks Gilded in 24-Karat Gold Leaf")
-                         " marked the emergence of his now-signature language: unit-based sculptural forms—bricklike, essential, endlessly recombinable—through which gold becomes not decoration but ontology. For decades, Zadikian has pushed this vocabulary to distill the elemental. His works hover between the geological and the luminous, between ancient memory and future speculation, always returning to the fundamental question: What is born when matter is reduced to its clearest form?")
-                    (d/p "Zadikian’s practice is defined by extremes—of material, of discipline, of vision—and by a lifelong commitment to the structures that underlie both art and the world itself. His is a studio forged through touch, labor, repetition, and the pursuit of a form so essential it borders on the eternal."))))
+                    (d/p (t :artist/bio.p4))
+                    (d/p (t :artist/bio.p5)))))
 
 (defnc chronology-section []
   (d/section {:class "ap-sec bg-paper-sunk" :id "chronology"}
              (d/div {:class "ap-wrap ap-guide lg:!grid-cols-[1fr_1.4fr] items-start"}
-                    ($ wf/section-head {:label "Chronology" :title "From the Arax to the Arsenale"
-                                        :lede "Fifty years of a single question, asked in clay, plaster, gold and pigment."})
-                    ($ wf/steps {:items chronology}))))
+                    ($ wf/section-head {:label (t :artist/chron.label) :title (t :artist/chron.title)
+                                        :lede (t :artist/chron.lede)})
+                    ($ wf/steps {:items (chronology)}))))
 
 (defnc works-section []
   (d/section {:class "ap-sec" :id "works"}
-             ($ fit-gallery {:slides works :label "Selected works" :title "The Work"})))
+             ($ fit-gallery {:slides (works) :label (t :artist/works.label) :title (t :artist/works.title)})))
 
 (defnc film-section []
   (let [[playing? set-playing!] (hooks/use-state false)
+        film (film)
         {:keys [title playback-id poster summary where duration]} film
         [ref {near? :in?}] (use-in-view :root-margin "100% 0px")
         _ (hooks/use-effect [near?] (when near? (.preload lazy-film)))
@@ -130,7 +126,7 @@
     (d/section {:ref ref :class "ap-sec ap-film" :id "film"}
                (d/div {:class "ap-wrap flex flex-col gap-6"}
                       (d/div
-                       (d/p {:class "ap-label m-0 mb-1 text-yellow"} "In the studio")
+                       (d/p {:class "ap-label m-0 mb-1 text-yellow"} (t :artist/film.label))
                        (d/h2 {:class "ap-h1"} title))
                       (d/figure {:class "ap-figure"}
                                 (d/div {:class "ap-figure__frame" :style #js {"--ar" "16/9"}}
@@ -140,7 +136,7 @@
                                                        :poster (mux-poster playback-id {:w 1600 :time poster})})
                                          (<>
                                           still
-                                          (d/button {:class "ap-play" :aria-label (str "Play " title)
+                                          (d/button {:class "ap-play" :aria-label (ts :artist/film.play {:title title})
                                                      :on-click #(set-playing! true)}
                                                     (d/svg {:width 28 :height 28 :viewBox "0 0 16 16"
                                                             :fill "currentColor" :aria-hidden true}
@@ -154,27 +150,25 @@
 (defnc story-link []
   (d/section {:class "ap-sec" :id "story"}
              (d/div {:class "ap-wrap"}
-                    (d/a {:class "ap-article__next ap-story-link" :href "/armenian-as-well"}
-                         (d/span {:class "ap-label text-yellow"} "A story · 1973–2026")
-                         (d/span {:class "ap-display-l"} "Armenian as well")
-                         (d/span {:class "ap-body m-0 max-w-[52ch]"}
-                                 "Zadik Zadikian and Tony Shafrazi: from a meeting in Richard Serra’s studio, through a Tehran gallery lost to a revolution, to The Studio in Venice.")
-                         (d/span {:class "ap-link self-start mt-2"} "Read the story →")))))
+                    (d/a {:class "ap-article__next ap-story-link" :href (i18n/href "/armenian-as-well")}
+                         (d/span {:class "ap-label text-yellow"} (t :artist/story.label))
+                         (d/span {:class "ap-display-l"} (t :artist/story.title))
+                         (d/span {:class "ap-body m-0 max-w-[52ch]"} (t :artist/story.body))
+                         (d/span {:class "ap-link self-start mt-2"} (t :artist/story.cta))))))
 
 (defnc return-section []
   (d/section {:class "ap-chapter ap-chapter--red" :id "return"}
              (d/div {:class "ap-wrap !px-0 grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-24"}
                     (d/div {:class "flex flex-col gap-4"}
-                           (d/p {:class "ap-label ap-chapter__eyebrow m-0"} "Full circle")
-                           (d/h2 {:class "ap-display-l ap-chapter__title"} "Return to Armenia")
-                           (d/p {:class "ap-artist-aphorism"}
-                                "“The block is the smallest homeland. Wherever you stack it, you are building Armenia.”"))
+                           (d/p {:class "ap-label ap-chapter__eyebrow m-0"} (t :artist/return.eyebrow))
+                           (d/h2 {:class "ap-display-l ap-chapter__title"} (t :artist/return.title))
+                           (d/p {:class "ap-artist-aphorism"} (t :artist/return.aphorism)))
                     (d/div {:class "ap-artist-cols"}
-                           (d/p "After decades in the United States, Zadik Zadikian began a gradual return—not only to the country he had fled, but to the questions of identity, belonging, and cultural memory that had shaped his work from the very beginning.")
-                           (d/p "Armenia in the post-Soviet era was a country in transformation. The independence of 1991 had opened new possibilities but also revealed old wounds. For Zadikian, returning was not a simple homecoming; it was an encounter with a nation remaking itself from the same elemental materials—stone, earth, will—that he had been working with in his studio for half a century.")
-                           (d/p "The invitation to represent Armenia at the 61st Biennale Arte carries a particular resonance. Venice and Armenia share a deep historical connection: the island of San Lazzaro degli Armeni has housed an Armenian monastery since 1717, preserving manuscripts, language, and culture through centuries of upheaval. To bring Armenian art to the Biennale is to continue a conversation that has been unfolding in this lagoon for over three hundred years.")
-                           (d/p "For Zadikian, the Biennale is not a stage for national spectacle but a place where the quiet persistence of making—the studio as sanctuary—can speak across borders. The pavilion will operate as a living workshop, echoing the Armenian tradition of the " (d/em "arvestanots") " (workshop), where art is inseparable from the daily labor of its creation.")
-                           (d/p "In representing Armenia at Venice, Zadikian closes a circle that began with his escape. The young man who left a culture behind in order to make art freely now returns that art to the world stage under the flag of the nation he never stopped carrying with him.")))))
+                           (d/p (t :artist/return.p1))
+                           (d/p (t :artist/return.p2))
+                           (d/p (t :artist/return.p3))
+                           (d/p (t :artist/return.p4))
+                           (d/p (t :artist/return.p5))))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 

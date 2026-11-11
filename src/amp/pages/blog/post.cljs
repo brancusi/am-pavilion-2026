@@ -4,6 +4,7 @@
    share links and the next post."
   (:require
    [amp.data.journal :as journal]
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.pages.blog.registry :refer [posts posts-by-slug]]
    [amp.ui.picture :refer [picture]]
    [amp.ui.share-bar :refer [share-bar]]
@@ -11,6 +12,8 @@
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
+
+(defcatalog "blog")
 
 (def ^:private scrub?
   (and (exists? js/CSS) (.supports js/CSS "animation-timeline: view()")))
@@ -43,7 +46,8 @@
 (defn- next-post
   "The post after `slug` in the listing, wrapping to the first."
   [slug]
-  (let [i (first (keep-indexed #(when (= slug (:slug %2)) %1) posts))]
+  (let [posts (posts)
+        i (first (keep-indexed #(when (= slug (:slug %2)) %1) posts))]
     (when (> (count posts) 1)
       (nth posts (mod (inc i) (count posts))))))
 
@@ -51,27 +55,29 @@
   "Renders a single post by slug, or a not-found message."
   [{:keys [slug]}]
   (let [article (hooks/use-ref nil)
-        post (get posts-by-slug slug)]
+        post (get (posts-by-slug) slug)
+        doc-title (if post
+                    (ts :blog/post.doc-title {:title (:title post)})
+                    (ts :blog/not-found.doc-title))]
     (hooks/use-effect
-     [post]
-     (set! (.-title js/document)
-           (str (if post (:title post) "Post not found") " · Armenian Pavilion")))
+     [doc-title]
+     (set! (.-title js/document) doc-title))
     (if post
-      (let [{:keys [title date author kind tone cover-image cover-ar component]} post
+      (let [{:keys [title date author kind kind-label tone cover-image cover-ar component]} post
             nxt (next-post slug)]
         (d/div {:class "ap-post"}
          ($ progress-bar {:target article})
          (d/article {:ref article :class "ap-article pb-16 lg:pb-24"}
                     (d/header {:class "ap-article__head"}
                               (d/a {:class "ap-label ap-muted justify-self-start no-underline hover:text-red-text py-3 -my-3"
-                                    :href "/blog"}
-                                   "← Journal")
+                                    :href (i18n/href "/blog")}
+                                   (t :blog/post.back))
                               (when kind
-                                (d/span {:class (str "ap-tag justify-self-start ap-tag--" (name (or tone :red)))} kind))
+                                (d/span {:class (str "ap-tag justify-self-start ap-tag--" (name (or tone :red)))} (or kind-label kind)))
                               (d/h1 {:class "ap-display-l"} title)
                               (d/div {:class "ap-article__byline"}
                                      (d/span (journal/display-date date))
-                                     (when author (d/span (str "By " author)))))
+                                     (when author (d/span (t :blog/post.byline {:author author})))))
                     (when cover-image
                       ;; Whole image, never cropped: portrait covers are capped in height.
                       (d/figure {:class "ap-figure ap-full ap-wide"}
@@ -82,16 +88,16 @@
                            ($ component))
                     (d/div {:class "pt-6 border-t border-rule"}
                            ($ share-bar {:title title
-                                        :url   (str "https://armenianpavilion.org/blog/" slug)}))
+                                        :url   (str "https://armenianpavilion.org" (i18n/href (str "/blog/" slug)))}))
                     (when nxt
-                      (d/a {:class "ap-article__next" :href (str "/blog/" (:slug nxt))}
-                           (d/span {:class "ap-label text-yellow"} "Next in the journal")
+                      (d/a {:class "ap-article__next" :href (i18n/href (str "/blog/" (:slug nxt)))}
+                           (d/span {:class "ap-label text-yellow"} (t :blog/post.next))
                            (d/span {:class "ap-h2"} (:title nxt))
                            (d/span {:class "ap-caption !text-on-night opacity-70"}
                                    (journal/display-date (:date nxt))))))))
 
       (d/div {:class "ap-wrap py-24 flex flex-col gap-6 items-start"}
              (d/p {:class "ap-label ap-muted m-0"} "404")
-             (d/h1 {:class "ap-display-l"} "Post not found")
-             (d/p {:class "ap-body ap-muted m-0"} "The post you’re looking for doesn’t exist.")
-             (d/a {:class "ap-btn ap-btn--ghost" :href "/blog"} "Back to the journal")))))
+             (d/h1 {:class "ap-display-l"} (t :blog/not-found.title))
+             (d/p {:class "ap-body ap-muted m-0"} (t :blog/not-found.text))
+             (d/a {:class "ap-btn ap-btn--ghost" :href (i18n/href "/blog")} (t :blog/not-found.back))))))

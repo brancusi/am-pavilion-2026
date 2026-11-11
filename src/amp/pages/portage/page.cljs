@@ -7,6 +7,7 @@
    Portage sub-nav, loads a sheet and ports the original page scripts:
    strip galleries, credit popovers, the lightbox and the Walk's route."
   (:require [amp.hooks.use-in-view :refer [observe! watch-edges!]]
+            [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
             [amp.lib.defnc :refer [defnc]]
             [amp.services.router :refer [flush-scroll!]]
             [amp.state.provider :refer [use-main-state]]
@@ -16,42 +17,80 @@
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
-(def ^:private css-url "/data/portage/portage.css")
-(defn- html-url [slug] (str "/data/portage/" slug ".html"))
+(defcatalog "portage")
 
-;; slug → sheet HTML once fetched, so a sheet renders at once on its swap.
+(def ^:private css-url "/data/portage/portage.css")
+
+(defn- html-url
+  "The sheet's HTML: English at /data/portage/<sheet>.html, a translation
+   at /data/portage/<locale>/<sheet>.html."
+  [l slug]
+  (if (= l i18n/default-locale)
+    (str "/data/portage/" slug ".html")
+    (str "/data/portage/" l "/" slug ".html")))
+
+;; [locale slug] → sheet HTML once fetched, so a sheet renders at once on its swap.
 (defonce ^:private loaded (atom {}))
 
+(defn- get-text
+  "A promise of the text at url, or \"\" if it can't be had."
+  [url]
+  (-> (js/fetch url)
+      (.then #(if (.-ok %) (.text %) ""))
+      (.catch (fn [_] ""))))
+
 (defn- fetch-sheet
-  "A promise of the sheet's HTML (\"\" if it can't be had)."
+  "A promise of the sheet's HTML in the current locale (\"\" if it can't be
+   had). A sheet not yet translated falls back to the English one."
   [slug]
-  (if-let [html (get @loaded slug)]
-    (js/Promise.resolve html)
-    (-> (js/fetch (html-url slug))
-        (.then #(if (.-ok %) (.text %) ""))
-        (.then (fn [html] (when (seq html) (swap! loaded assoc slug html)) html))
-        (.catch (fn [_] "")))))
+  (let [l (i18n/locale)
+        k [l slug]]
+    (if-let [html (get @loaded k)]
+      (js/Promise.resolve html)
+      (-> (get-text (html-url l slug))
+          (.then (fn [html]
+                   (if (or (seq html) (= l i18n/default-locale))
+                     html
+                     (get-text (html-url i18n/default-locale slug)))))
+          (.then (fn [html] (when (seq html) (swap! loaded assoc k html)) html))))))
 
 (def sheets
   "Every sheet in reading order. :n is the number shown in red; the five
    movements and the Studio are the stations on the sub-nav's route."
-  [{:slug "home"     :n "0"   :short "Portage"  :long "Portage"}
-   {:slug "shoulder" :n "I"   :short "Shoulder" :long "The Shoulder" :station? true}
-   {:slug "guild"    :n "II"  :short "Guild"    :long "The Guild"    :station? true}
-   {:slug "world"    :n "III" :short "World"    :long "The World"    :station? true}
-   {:slug "machine"  :n "IV"  :short "Machine"  :long "The Machine"  :station? true}
-   {:slug "walk"     :n "V"   :short "Walk"     :long "The Walk"     :station? true}
-   {:slug "studio"   :n "VI"  :short "Studio"   :long "The Studio"   :station? true}
-   {:slug "map"      :n "·"   :short "Map"      :long "The Map"}
-   {:slug "weight"   :n "·"   :short "Weight"   :long "The Weight"}
-   {:slug "burden"   :n "·"   :short "Burden"   :long "The Burden"}
-   {:slug "arsenale" :n "·"   :short "Arsenale" :long "The Arsenale"}
-   {:slug "sources"  :n "·"   :short "Sources"  :long "Sources and credits"}])
+  [{:slug "home"     :n "0"}
+   {:slug "shoulder" :n "I"   :station? true}
+   {:slug "guild"    :n "II"  :station? true}
+   {:slug "world"    :n "III" :station? true}
+   {:slug "machine"  :n "IV"  :station? true}
+   {:slug "walk"     :n "V"   :station? true}
+   {:slug "studio"   :n "VI"  :station? true}
+   {:slug "map"      :n "·"}
+   {:slug "weight"   :n "·"}
+   {:slug "burden"   :n "·"}
+   {:slug "arsenale" :n "·"}
+   {:slug "sources"  :n "·"}])
+
+(defn- short-name [slug] (ts (keyword "portage" (str "sheet." slug ".short"))))
+(defn- long-name [slug] (ts (keyword "portage" (str "sheet." slug ".long"))))
 
 (def ^:private by-slug (into {} (map (juxt :slug identity)) sheets))
 (def ^:private stations (filterv :station? sheets))
 
-(defn- href [slug] (if (= slug "home") "/portage" (str "/portage/" slug)))
+(defn- href [slug] (i18n/href (if (= slug "home") "/portage" (str "/portage/" slug))))
+
+(def ^:private file-path?
+  "Site paths that are files, not pages (they keep no locale prefix)."
+  #"^/(?:data|images|js|css|fonts|financial-reports)/|\.[a-z0-9]{2,5}(?:[?#]|$)")
+
+(defn- localise-links!
+  "Sheets keep the English site paths (href=\"/portage/map\"); on /it/ and
+   /hy/ they lead to the same locale."
+  [^js root]
+  (when (not= (i18n/locale) i18n/default-locale)
+    (doseq [^js a (array-seq (.querySelectorAll root "a[href^='/']"))
+            :let [h (.getAttribute a "href")]
+            :when (and (not (str/starts-with? h "//")) (not (re-find file-path? h)))]
+      (.setAttribute a "href" (i18n/href h)))))
 
 (defn- reduced-motion? []
   (.-matches (js/matchMedia "(prefers-reduced-motion: reduce)")))
@@ -62,9 +101,6 @@
   ([el ev f opts]
    (.addEventListener el ev f opts)
    #(.removeEventListener el ev f opts)))
-
-(defn- esc [s]
-  (-> (str s) (str/replace "&" "&amp;") (str/replace "<" "&lt;") (str/replace "\"" "&quot;")))
 
 ;; ── Strip galleries ────────────────────────────────────────────────────────
 
@@ -106,8 +142,8 @@
                              nil))))]]
     (set! (.-tabIndex track) 0)
     (.setAttribute track "aria-label"
-                   (str (or (some-> (.querySelector g ".h3") .-textContent) "Gallery")
-                        ": scroll with the arrow keys"))
+                   (ts :portage/gallery-keys
+                       {:name (or (some-> (.querySelector g ".h3") .-textContent) (ts :portage/gallery))}))
     #(do (stop-edges) (some-> start .remove) (some-> end .remove)
          (doseq [off offs :when off] (off)))))
 
@@ -148,19 +184,22 @@
 
 ;; ── Lightbox ───────────────────────────────────────────────────────────────
 
-(def ^:private lightbox-html
-  "<dialog class=\"lb\" aria-label=\"Image viewer\" aria-describedby=\"lb-cap\">
+(defn- esc [s]
+  (-> (str s) (str/replace "&" "&amp;") (str/replace "<" "&lt;") (str/replace "\"" "&quot;")))
+
+(defn- lightbox-html []
+  (str "<dialog class=\"lb\" aria-label=\"" (esc (ts :portage/lb.label)) "\" aria-describedby=\"lb-cap\">
     <div class=\"lb-stage\">
       <img class=\"lb-img\" alt=\"\" decoding=\"async\"><img class=\"lb-img\" alt=\"\" decoding=\"async\">
-      <button type=\"button\" class=\"lb-btn lb-prev\" aria-label=\"Previous image\">←</button>
-      <button type=\"button\" class=\"lb-btn lb-next\" aria-label=\"Next image\">→</button>
+      <button type=\"button\" class=\"lb-btn lb-prev\" aria-label=\"" (esc (ts :portage/lb.prev)) "\">←</button>
+      <button type=\"button\" class=\"lb-btn lb-next\" aria-label=\"" (esc (ts :portage/lb.next)) "\">→</button>
     </div>
     <div class=\"lb-bar\">
       <div class=\"lb-cap\" id=\"lb-cap\"></div>
       <p class=\"lb-count\" aria-live=\"polite\"></p>
-      <button type=\"button\" class=\"lb-btn lb-close\" aria-label=\"Close the viewer\">Close ✕</button>
+      <button type=\"button\" class=\"lb-btn lb-close\" aria-label=\"" (esc (ts :portage/lb.close-label)) "\">" (esc (ts :portage/lb.close)) "</button>
     </div>
-  </dialog>")
+  </dialog>"))
 
 (defn- caption-for [^js el]
   (if-let [cap (some-> (.closest el "figure, .gal-item, .stop, .media, .key > div")
@@ -210,7 +249,7 @@
                              "<span class=\"c\">" (if (seq caption) caption (str "<span>" (.-credit r) "</span>")) "</span>"
                              "<span class=\"cr\">" (.-credit r)
                              (when (seq (.-url r))
-                               (str " <a href=\"" (esc (.-url r)) "\" target=\"_blank\" rel=\"noopener\">Source ↗</a>"))
+                               (str " <a href=\"" (esc (.-url r)) "\" target=\"_blank\" rel=\"noopener\">" (esc (ts :portage/lb.source)) "</a>"))
                              "</span>"))
                   (set! (.-hidden ($ ".lb-prev")) (not many?))
                   (set! (.-hidden ($ ".lb-next")) (not many?))
@@ -299,7 +338,7 @@
             :when r]
       (set! (.-tabIndex im) 0)
       (.setAttribute im "role" "button")
-      (.setAttribute im "aria-label" (str "Enlarge: " (or (not-empty (.getAttribute im "alt")) (.-alt r) (.-title r)))))
+      (.setAttribute im "aria-label" (ts :portage/lb.enlarge {:name (or (not-empty (.getAttribute im "alt")) (.-alt r) (.-title r) "")})))
     (fn []
       (when (.-open dlg) (.close dlg))
       (doseq [off offs] (off)))))
@@ -319,14 +358,19 @@
                            :let [name (or (some-> (.querySelector el "b") .-textContent) "")
                                  t (.-textContent el)
                                  [_ n nm] (re-find #"^(\d+)\s*·\s*(.+)$" name)
-                                 [_ km] (re-find #"km\s*([\d.]+)" t)
-                                 [_ c] (re-find #"↑\s*(\d+)\s*of" t)]]
-                       {:n (or n "") :name (str/trim (or nm name)) :km (js/parseFloat (or km "0"))
+                                 ;; The rail reads "km 0.09 · 24 ↑ 12 of 182" in
+                                 ;; any language: the first decimal after the name,
+                                 ;; and the number after the arrow.
+                                 [_ km] (re-find #"(\d+[.,]\d+)" (subs t (min (count t) (count name))))
+                                 [_ c] (re-find #"↑\s*(\d+)" t)]]
+                       {:n (or n "") :name (str/trim (or nm name)) :km (js/parseFloat (str/replace (or km "0") "," "."))
                         :climb (or c "0") :el el}))
         odo (doto (js/document.createElement "div")
               (-> .-className (set! "odo"))
               (.setAttribute "aria-hidden" "true")
-              (-> .-innerHTML (set! "<span class=\"odo-km\">KM 0.00</span><span class=\"odo-b\">Piazzale Roma</span><span class=\"odo-c\">↑ 0 of 182 steps</span>")))
+              (-> .-innerHTML (set! (str "<span class=\"odo-km\">" (esc (ts :portage/odo.km {:km "0.00"})) "</span>"
+                                         "<span class=\"odo-b\">" (esc (ts :portage/odo.start)) "</span>"
+                                         "<span class=\"odo-c\">" (esc (ts :portage/odo.climb {:n 0 :total 182})) "</span>"))))
         _ (.append (.querySelector root ".pg") odo)
         okm (.querySelector odo ".odo-km") ob (.querySelector odo ".odo-b") oc (.querySelector odo ".odo-c")
         lines (vec (for [^js r (array-seq (.querySelectorAll root (str "main svg rect[fill=\"" red "\"]")))
@@ -335,9 +379,9 @@
                          :when (and (> h 40) (> h (* 10 w)))]
                      (let [svg (.-ownerSVGElement r)
                            ticks (keep (fn [^js t]
-                                         (when-let [[_ m] (re-find #"^([\d,]+) m$" (.-textContent t))]
+                                         (when-let [[_ m] (re-find #"^(\d[\d,.\s]*)\s*(?:m|մ)\.?$" (str/trim (.-textContent t)))]
                                            {:y (- (js/parseFloat (.getAttribute t "y")) 4)
-                                            :m (js/parseFloat (str/replace m "," ""))}))
+                                            :m (js/parseFloat (str/replace m #"[,.\s]" ""))}))
                                        (array-seq (.querySelectorAll svg "text")))
                            [t0 t1] [(first ticks) (last ticks)]
                            dy (when t0 (- (:y t1) (:y t0)))
@@ -367,9 +411,9 @@
                                [-1 js/Infinity (- js/Infinity)] lines)
                        m (max 0 (min route-m metres))
                        cur (last (filter #(<= (* 1000 (:km %)) (inc m)) bridges))]
-                   (set! (.-textContent okm) (str "KM " (.toFixed (/ m 1000) 2)))
-                   (set! (.-textContent ob) (if cur (str "Bridge " (:n cur) " · " (:name cur)) "Piazzale Roma"))
-                   (set! (.-textContent oc) (str "↑ " (if cur (:climb cur) 0) " of 182 steps"))
+                   (set! (.-textContent okm) (ts :portage/odo.km {:km (.toFixed (/ m 1000) 2)}))
+                   (set! (.-textContent ob) (if cur (ts :portage/odo.bridge {:n (:n cur) :name (:name cur)}) (ts :portage/odo.start)))
+                   (set! (.-textContent oc) (ts :portage/odo.climb {:n (if cur (:climb cur) 0) :total 182}))
                    (.toggle (.-classList odo) "on" (and (seq lines) (> eye first-top) (< eye (+ last-bottom 240))))
                    (when (not= (:el cur) @last-on)
                      (some-> ^js @last-on .-classList (.remove "on"))
@@ -501,38 +545,38 @@
     (d/div {:class "pt-menu" :ref root}
            (d/button {:type "button" :class "pt-menu__btn" :aria-expanded open?
                       :on-click #(set-open! not)}
-                     "Sheets" (d/span {:aria-hidden true} (if open? " −" " +")))
+                     (t :portage/menu.button) (d/span {:aria-hidden true} (if open? " −" " +")))
            (when open?
              (d/div {:class "pt-menu__panel"}
-                    (for [[label group] [["The walk" (filter :station? sheets)]
-                                         ["Also" (remove #(or (:station? %) (#{"home" "sources"} (:slug %))) sheets)]
+                    (for [[label group] [[(ts :portage/menu.walk) (filter :station? sheets)]
+                                         [(ts :portage/menu.also) (remove #(or (:station? %) (#{"home" "sources"} (:slug %))) sheets)]
                                          ["" (filter #(#{"home" "sources"} (:slug %)) sheets)]]]
                       (d/div {:key (str label (count group)) :class "pt-menu__group"}
                              (when (seq label) (d/p {:class "pt-menu__label"} label))
-                             (for [{s :slug :keys [n long]} group]
+                             (for [{s :slug :keys [n]} group]
                                (d/a {:key s :href (href s) :aria-current (when (= s slug) "page")}
                                     (when (and (seq n) (not= n "·") (not= n "0")) (d/i n))
-                                    long)))))))))
+                                    (long-name s))))))))))
 
 (defnc sub-nav
   [{:keys [slug]}]
   (let [stations-ref (hooks/use-ref nil)
         fill-ref (hooks/use-ref nil)
         [from to] (use-route-fill! stations-ref fill-ref slug)
-        {:keys [n long]} (by-slug slug)
+        {:keys [n]} (by-slug slug)
         cur-i (first (keep-indexed #(when (= slug (:slug %2)) %1) stations))]
-    (d/nav {:class "pt-nav" :aria-label "Portage"}
+    (d/nav {:class "pt-nav" :aria-label (ts :portage/nav-label)}
            (d/div {:class "pt-nav__bar"}
-                  (d/a {:class "pt-nav__brand" :href "/portage"} "Portage")
+                  (d/a {:class "pt-nav__brand" :href (href "home")} (t :portage/brand))
                   (d/span {:class "pt-nav__here"}
                           (when (and (seq n) (not= n "·") (not= n "0")) (d/i n))
-                          (when (not= slug "home") long))
+                          (when (not= slug "home") (long-name slug)))
                   (d/div {:class "pt-nav__stations" :ref stations-ref}
-                         (for [[i {s :slug :keys [n short]}] (map-indexed vector stations)]
+                         (for [[i {s :slug :keys [n]}] (map-indexed vector stations)]
                            (d/a {:key s :href (href s)
                                  :class (cond (= i cur-i) "is-here" (and cur-i (< i cur-i)) "is-past")
                                  :aria-current (when (= s slug) "page")}
-                                (d/i n) short))
+                                (d/i n) (short-name s)))
                          (d/span {:class "pt-nav__route" :aria-hidden true}
                                  (d/span {:ref fill-ref :class "pt-nav__fill"
                                           :style #js {"--from" (str from "px") "--to" (str to "px")}})))
@@ -543,15 +587,15 @@
   (let [i (first (keep-indexed #(when (= slug (:slug %2)) %1) sheets))
         prev (when (pos? i) (sheets (dec i)))
         nxt (get sheets (inc i))]
-    (d/nav {:class "pt-next" :aria-label "Next sheet"}
+    (d/nav {:class "pt-next" :aria-label (ts :portage/next.label)}
            (when prev
              (d/a {:class "pt-next__prev" :href (href (:slug prev))}
-                  (d/span {:class "ap-label"} "← Back")
-                  (d/span {:class "pt-next__t"} (:long prev))))
+                  (d/span {:class "ap-label"} (t :portage/next.back))
+                  (d/span {:class "pt-next__t"} (long-name (:slug prev)))))
            (when nxt
              (d/a {:class "pt-next__next" :href (href (:slug nxt))}
-                  (d/span {:class "ap-label"} "Next →")
-                  (d/span {:class "pt-next__t"} (:long nxt)))))))
+                  (d/span {:class "ap-label"} (t :portage/next.next))
+                  (d/span {:class "pt-next__t"} (long-name (:slug nxt))))))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 
@@ -571,7 +615,7 @@
   [{:keys [slug css?]}]
   (let [root (hooks/use-ref nil)
         born (hooks/use-ref (js/performance.now))
-        [html set-html!] (hooks/use-state #(get @loaded slug))]
+        [html set-html!] (hooks/use-state #(get @loaded [(i18n/locale) slug]))]
     (hooks/use-effect
      :once
      (when-not html (.then (fetch-sheet slug) set-html!)))
@@ -580,7 +624,8 @@
     (hooks/use-layout-effect
      [html css?]
      (when-let [el (and html css? @root)]
-       (set! (.-innerHTML el) (str html lightbox-html))
+       (set! (.-innerHTML el) (str html (lightbox-html)))
+       (localise-links! el)
        ;; Arrived after the page was already showing (first visit, while
        ;; the stylesheet or sheet loaded): fade in rather than pop.
        (when (and (> (- (js/performance.now) @born) 50) (not (reduced-motion?)))
@@ -595,9 +640,9 @@
          #(doseq [off offs :when off] (off)))))
     (d/div {:aria-busy (not (and html css?))}
            (when-not (and html css?)
-             (d/p {:class "pt-loading ap-label ap-muted px-4 py-24 text-center m-0"} "Loading…"))
+             (d/p {:class "pt-loading ap-label ap-muted px-4 py-24 text-center m-0"} (t :portage/loading)))
            (when (= html "")
-             (d/p {:class "ap-body px-4 py-24 text-center m-0"} "This sheet could not be loaded."))
+             (d/p {:class "ap-body px-4 py-24 text-center m-0"} (t :portage/load-failed)))
            ;; Filled with innerHTML above; React renders no children here.
            (d/div {:ref root})
            ;; Only under a filled sheet, so it never sits up top and jumps.
@@ -651,23 +696,25 @@
         ;; While another page's route is fading this one out, stay on the
         ;; sheet that's showing instead of reading it as the home sheet.
         last-slug (hooks/use-ref "home")
-        route-slug (if (= :amp.services.router/portage (-> route :data :group))
+        ;; Groups are per locale: ::portage, ::portage.it, ::portage.hy.
+        route-slug (if (some-> (-> route :data :group) name (str/split #"\.") first (= "portage"))
                      (set! (.-current last-slug) (or (-> route :path-params :sheet) "home"))
                      @last-slug)
         body-ref (hooks/use-ref nil)
         slug (use-sheet-swap! route-slug body-ref)
         sheet (by-slug slug)
+        l (i18n/locale)
         [css? set-css!] (hooks/use-state false)]
     (use-css! #(set-css! true))
     (hooks/use-effect
-     [slug]
+     [slug l]
      (set! (.-title js/document)
            (if (and sheet (not= slug "home"))
-             (str (:long sheet) " · Portage · Armenian Pavilion")
-             "Portage · Armenian Pavilion")))
+             (ts :portage/title-sheet {:sheet (long-name slug)})
+             (ts :portage/title))))
     (d/div {:class "pt"}
            ($ sub-nav {:slug (if (by-slug route-slug) route-slug "home")})
            (if sheet
              (d/div {:ref body-ref}
-              ($ sheet-body {:key slug :slug slug :css? css?}))
-             (d/p {:class "ap-body px-4 py-24 text-center m-0"} "There is no such sheet.")))))
+              ($ sheet-body {:key (str l "/" slug) :slug slug :css? css?}))
+             (d/p {:class "ap-body px-4 py-24 text-center m-0"} (t :portage/no-sheet))))))

@@ -7,15 +7,19 @@
    schedule, then a gallery of one walk's photographs and a call to walk along
    or sign up for walk alerts. The walk list is amp.data.walks (generated); the lines and the
    base map are fetched from /data/walks/ when the map comes near. Films are
-   short silent loops on R2 (walks/films/), graded from the camera originals."
+   short silent loops on R2 (walks/films/), graded from the camera originals.
+   Text: the walks catalog (resources/i18n/<locale>/walks.json) for the page,
+   data-walks (source-keyed, written by scripts/walks.mjs) for the plan's
+   titles, notes and stops."
   (:require
    [amp.data.walk-media :as wm :refer [films photos stop-photos hero-photo
                                        at-time duration short-date long-date
-                                       weekday day-of status-label]]
+                                       weekday weekday-abbr day-of status-label]]
    [amp.hooks.use-in-view :refer [use-in-view]]
    [amp.data.films :as films-data]
+   [amp.i18n :as i18n :refer [t ts tx] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
-   [amp.ui.footer :refer [use-subscribe news-status]]
+   [amp.ui.footer :refer [use-subscribe]]
    [amp.ui.lightbox :refer [film-lightbox]]
    [amp.ui.picture :as picture :refer [picture]]
    ["react-dom" :refer [createPortal]]
@@ -24,8 +28,45 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(defcatalog "walks")
+(defcatalog "data-walks")
+
 (def ^:private media picture/media-host)
 (def ^:private routes-url "/data/walks/routes.json")
+
+;; ── Text ────────────────────────────────────────────────────────────────
+
+(defn- localize
+  "A walk with its plan text (title, note, stop names and details) in the
+   current locale. Call while rendering."
+  [w]
+  (-> w
+      (update :title #(tx :data-walks %))
+      (update :note #(tx :data-walks %))
+      (update :stops (fn [ss] (mapv #(-> % (update :name (fn [x] (tx :data-walks x)))
+                                         (update :detail (fn [x] (tx :data-walks x))))
+                                    ss)))))
+
+(defn- dec1 "One decimal: 6.3 / 6,3." [x]
+  (i18n/number x {:minimumFractionDigits 1 :maximumFractionDigits 1}))
+
+(defn- km-n "A walk's length as given (2.66 / 2,66)." [x]
+  (i18n/number x {:maximumFractionDigits 2}))
+
+(defn- works-n "A count of works: a number, or a range such as 3–6." [w]
+  (if (number? w) (i18n/number w {}) (str w)))
+
+(defn- loop-title [id] (ts (keyword "walks" (str "loop." id))))
+
+(defn- photo-key [path] (str/replace (last (str/split path #"/")) #"\.\w+$" ""))
+
+(defn- photo-text
+  "A photograph with its :title and :alt in the current locale."
+  [{:keys [path] :as ph}]
+  (let [k (photo-key path)]
+    (assoc ph
+           :title (ts (keyword "walks" (str "photo." k ".title")))
+           :alt (ts (keyword "walks" (str "photo." k ".alt"))))))
 
 (defn- film-src [id] (str media "walks/films/" id ".mp4"))
 (defn- film-poster [id w] (picture/image-url (str media "walks/films/" id ".jpg") {:w w}))
@@ -38,8 +79,9 @@
 (defnc loop-film
   "A silent loop: plays while on screen, with a pause control; under
    reduced motion it holds its poster until played."
-  [{:keys [id title]}]
-  (let [[ref {in? :in?}] (use-in-view :root-margin "100px 0px")
+  [{:keys [id]}]
+  (let [title (loop-title id)
+        [ref {in? :in?}] (use-in-view :root-margin "100px 0px")
         video (hooks/use-ref nil)
         [paused? set-paused!] (hooks/use-state (reduced-motion?))]
     (hooks/use-effect
@@ -54,14 +96,14 @@
                                :muted true :loop true :playsInline true :preload "none"
                                :aria-label title})
                      (d/button {:type "button" :class "ap-iconbtn ap-wk-film__btn"
-                                :aria-label (if paused? (str "Play: " title) (str "Pause: " title))
+                                :aria-label (if paused? (ts :walks/film.play {:title title}) (ts :walks/film.pause {:title title}))
                                 :on-click #(set-paused! (not paused?))}
                                (d/svg {:viewBox "0 0 16 16" :fill "currentColor" :aria-hidden true}
                                       (if paused?
                                         (d/path {:d "M4 2l10 6-10 6z"})
                                         (<> (d/rect {:x 3 :y 2 :width 3.5 :height 12})
                                             (d/rect {:x 9.5 :y 2 :width 3.5 :height 12}))))))
-              (d/figcaption {:class "ap-caption"} (str "Film · " title)))))
+              (d/figcaption {:class "ap-caption"} (t :walks/film.caption {:title title})))))
 
 (defn- use-routes
   "The lines, fetched once `near?`: {walk-id {:d :pts :cum :len :stops}} plus
@@ -155,8 +197,7 @@
                     (d/img {:class "ap-wk-map__base ap-wk-map__base--dark" :src "/data/walks/basemap-dark.svg" :alt "" :loading "lazy" :decoding "async"})
                     (when routes
                       (d/svg {:viewBox "0 0 1600 1082" :class "ap-wk-map__svg" :role "img"
-                              :aria-label (str "Map of Venice with every walk from the Armenian Pavilion; walk "
-                                               (:n walk) ", " (:title walk) ", drawn in yellow")}
+                              :aria-label (i18n/ts :walks/map.aria {:n (:n walk) :title (:title walk)})}
                              (d/path {:class "ap-wk-map__others is-planned"
                                       :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (not= :walked (:status w)))]
                                                      (get-in routes [:walks (:id w) :d])))})
@@ -180,18 +221,18 @@
                                     (d/rect {:x -6 :y -30 :width 12 :height 20 :fill "#fff"})
                                     (d/rect {:x 9 :y -30 :width 12 :height 20 :fill "var(--red)"})
                                     (d/circle {:r 6})
-                                    (d/text {:x 28 :y -12} (if here (str (inc here) " · " (stop-name here)) "Leaving Tesa 41"))))
+                                    (d/text {:x 28 :y -12} (if here (str (inc here) " · " (stop-name here)) (i18n/t :walks/map.leaving)))))
                              (d/g {:class "ap-wk-map__north" :transform "translate(1530 70)" :aria-hidden true}
                                   (d/path {:d "M0 -26 L9 0 L0 -6 L-9 0 Z"})
-                                  (d/text {:y 22 :text-anchor "middle"} "N"))
+                                  (d/text {:y 22 :text-anchor "middle"} (i18n/t :walks/map.north)))
                              (d/g {:class "ap-wk-map__scale" :transform "translate(60 1040)" :aria-hidden true}
                                   (d/rect {:y -6 :width (/ 500 (:m-per-px routes)) :height 6})
-                                  (d/text {:y -14} "500 m"))))
-                    (d/ul {:class "ap-wk-map__key ap-label" :aria-label "Key"}
-                          (d/li (d/i {:class "is-this"}) "This walk")
-                          (d/li (d/i {:class "is-walked"}) "Walked")
-                          (d/li (d/i {:class "is-planned"}) "Planned")
-                          (d/li (d/i {:class "is-ap"}) "Armenian Pavilion"))
+                                  (d/text {:y -14} (i18n/t :walks/map.scale {:m 500})))))
+                    (d/ul {:class "ap-wk-map__key ap-label" :aria-label (i18n/ts :walks/map.key)}
+                          (d/li (d/i {:class "is-this"}) (i18n/t :walks/map.key-this))
+                          (d/li (d/i {:class "is-walked"}) (i18n/t :walks/walked))
+                          (d/li (d/i {:class "is-planned"}) (i18n/t :walks/map.key-planned))
+                          (d/li (d/i {:class "is-ap"}) (i18n/t :walks/map.key-ap)))
                     (when photo
                       (d/figure {:key photo :class "ap-wk-map__here m-0"}
                                 ($ picture {:src (str media photo) :alt (stop-name here) :sizes "240px"})
@@ -204,16 +245,16 @@
                                      (if playing?
                                        (<> (d/rect {:x 3 :y 2 :width 3.5 :height 12}) (d/rect {:x 9.5 :y 2 :width 3.5 :height 12}))
                                        (d/path {:d "M4 2l10 6-10 6z"})))
-                              (cond playing? "Pause" (< t 1) "Carry on" :else "Play the walk"))
+                              (cond playing? (i18n/t :walks/player.pause) (< t 1) (i18n/t :walks/player.carry-on) :else (i18n/t :walks/player.play)))
                     (d/input {:type "range" :min 0 :max 1000 :step 1 :value (js/Math.round (* t 1000))
-                              :class "ap-wk-player__range" :aria-label "Position along the walk"
+                              :class "ap-wk-player__range" :aria-label (i18n/ts :walks/player.position)
                               :disabled (nil? line)
                               :on-change (fn [e] (stop!) (set-at! (/ (js/Number (.. e -target -value)) 1000)))})
                     (d/span {:class "ap-wk-player__clock ap-data"}
-                            (str (at-time depart (wm/clock walk t)) " · " (.toFixed (* km t) 1) " of " (.toFixed km 1) " km")))))))
+                            (i18n/t :walks/player.clock {:time (at-time depart (wm/clock walk t)) :done (dec1 (* km t)) :total (dec1 km)})))))))
 
 (defn- fig-caption [date i title by]
-  (str "FIG. " (inc i) " · " title " · Venice, " (day-of date) " November 2026" (when by (str " · Photo: " by))))
+  (ts :walks/fig.caption {:n (inc i) :title title :date (i18n/date date) :by (or by "none")}))
 
 (defnc still-viewer
   "A walk's photographs full screen (design system: Lightbox). Arrow keys,
@@ -253,8 +294,8 @@
                      (d/p {:class "ap-label m-0"}
                           (d/span {:class "text-yellow"} (str (inc at) " / " n))
                           (str " · " title)
-                          (d/span {:class "ap-lightbox__where"} (str " · Venice, " (day-of date) " November 2026")))
-                     (d/button {:ref close-ref :class "ap-iconbtn" :aria-label "Close photograph" :on-click on-close}
+                          (d/span {:class "ap-lightbox__where"} (str " · " (ts :walks/viewer.where {:date (i18n/date date)}))))
+                     (d/button {:ref close-ref :class "ap-iconbtn" :aria-label (ts :walks/viewer.close) :on-click on-close}
                                (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor" :stroke-width 1.6 :aria-hidden true}
                                       (d/path {:d "M3 3l10 10M13 3L3 13"}))))
               (d/div {:class "ap-wk-viewer__stage"
@@ -267,12 +308,12 @@
                                         (reset! touch nil)))}
                      ($ picture {:key path :src (str media path) :alt alt :sizes "100vw" :eager? true}))
               (d/div {:class "ap-wk-viewer__foot"}
-                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Previous photograph" :on-click #(go -1)} "←")
+                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label (ts :walks/viewer.prev) :on-click #(go -1)} "←")
                      (d/p {:class "ap-caption m-0"} (fig-caption date at title by))
-                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label "Next photograph" :on-click #(go 1)} "→")))
+                     (d/button {:type "button" :class "ap-wk-viewer__btn" :aria-label (ts :walks/viewer.next) :on-click #(go 1)} "→")))
        (.-body js/document)))))
 
-(defn- film-by-slug [slug] (some #(when (= slug (:slug %)) %) films-data/films))
+(defn- film-by-slug [slug] (some #(when (= slug (:slug %)) %) (films-data/films)))
 
 (defnc walk-film
   "A walk's finished film: its poster with a play button; plays with sound
@@ -282,7 +323,7 @@
         {:keys [title playback-id poster duration summary]} film]
     (d/figure {:class "ap-wk-film m-0"}
               (d/button {:type "button" :class "ap-wk-film__poster" :on-click #(set-open! true)
-                         :aria-label (str "Play the film: " title)}
+                         :aria-label (ts :walks/wfilm.play-aria {:title title})}
                         (d/img {:src (picture/mux-poster playback-id {:w 1600 :time poster})
                                 :srcSet (str (picture/mux-poster playback-id {:w 960 :time poster}) " 960w, "
                                              (picture/mux-poster playback-id {:w 1600 :time poster}) " 1600w, "
@@ -291,14 +332,14 @@
                                 :alt "" :loading "lazy" :decoding "async"})
                         (d/span {:class "ap-wk-film__play" :aria-hidden true}
                                 (d/svg {:viewBox "0 0 16 16" :fill "currentColor"} (d/path {:d "M4 2l10 6-10 6z"}))
-                                (str "Play · " (films-data/running-time duration))))
+                                (t :walks/wfilm.play {:time (films-data/running-time duration)})))
               (d/figcaption {:class "ap-wk-film__cap"}
                             (d/p {:class "ap-label ap-muted m-0"}
-                                 (str "The film · " (when walk (str "Walk " (:n walk) " · " (long-date (:date walk))))))
+                                 (if walk (t :walks/wfilm.label {:n (:n walk) :date (long-date (:date walk))}) (t :walks/wfilm.film)))
                             (d/p {:class "ap-display-l m-0"} title)
                             (d/p {:class "ap-body m-0"} summary)
                             (d/button {:type "button" :class "ap-btn ap-btn--yellow self-start" :on-click #(set-open! true)}
-                                      "Watch with sound"))
+                                      (t :walks/wfilm.watch)))
               ($ film-lightbox {:film (when open? film) :on-close #(set-open! false)}))))
 
 (defnc film-band
@@ -308,7 +349,7 @@
         film (film-by-slug slug)
         walk (some #(when (= id (:id %)) %) walks)]
     (when film
-      (d/section {:class "ap-wrap ap-wk-filmband" :aria-label "The film"}
+      (d/section {:class "ap-wrap ap-wk-filmband" :aria-label (ts :walks/wfilm.film)}
                  ($ walk-film {:film film :walk walk})))))
 
 ;; ── Sections ────────────────────────────────────────────────────────────
@@ -319,23 +360,23 @@
     (<>
      (d/section {:class "ap-wk-hero"}
                 ($ picture {:src (str media hero-photo) :eager? true :class "ap-wk-hero__img" :sizes "(orientation: portrait) 150vh, 100vw"
-                            :alt "Six works in red, white and green carried over the wooden bridge at the Arsenale gate"})
+                            :alt (ts :walks/hero.alt)})
                 (d/div {:class "ap-wrap ap-wk-hero__body"}
-                       (d/p {:class "ap-label m-0"} "Walks · out from Tesa 41 · November 2026")
-                       (d/h1 {:class "ap-display-xl m-0"} "Walking the Work Through Venice")
+                       (d/p {:class "ap-label m-0"} (t :walks/hero.eyebrow))
+                       (d/h1 {:class "ap-display-xl m-0"} (t :walks/hero.title))
                        (d/p {:class "ap-lede m-0 max-w-[32ch]"}
-                            "The studio leaves Tesa 41 with the works strapped to its back, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. In the final week students of the Accademia di Belle Arti carry them, and on 18 November walk them into the Academy.")
+                            (t :walks/hero.lede))
                        (d/div {:class "flex flex-wrap gap-2"}
-                              (d/a {:class "ap-btn ap-btn--yellow" :href "#walks-map"} "See the walks")
-                              (d/a {:class "ap-btn ap-btn--ghost !text-white !border-white" :href "#schedule"} "Walk with us"))))
-     (d/section {:class "ap-wk-counts" :aria-label "The walks so far"}
+                              (d/a {:class "ap-btn ap-btn--yellow" :href "#walks-map"} (t :walks/hero.see))
+                              (d/a {:class "ap-btn ap-btn--ghost !text-white !border-white" :href "#schedule"} (t :walks/walk-with-us)))))
+     (d/section {:class "ap-wk-counts" :aria-label (ts :walks/counts.aria)}
                 (d/dl {:class "ap-wrap ap-wk-counts__row"}
-                      (d/div (d/dt {:class "ap-label"} "Walks so far") (d/dd (count done)))
-                      (d/div (d/dt {:class "ap-label"} "Works carried") (d/dd (reduce + (map :works done))))
-                      (d/div (d/dt {:class "ap-label"} "Kilometres under load") (d/dd (.toFixed (reduce + (map :km done)) 1)))
+                      (d/div (d/dt {:class "ap-label"} (t :walks/counts.walks)) (d/dd (count done)))
+                      (d/div (d/dt {:class "ap-label"} (t :walks/works-carried)) (d/dd (reduce + (map :works done))))
+                      (d/div (d/dt {:class "ap-label"} (t :walks/counts.km)) (d/dd (dec1 (reduce + (map :km done)))))
                       (when nxt
                         (d/div {:class "is-next"}
-                               (d/dt {:class "ap-label"} (str "Next walk · leaves " (:depart nxt) " · " (:works nxt) " works"))
+                               (d/dt {:class "ap-label"} (t :walks/counts.next {:time (:depart nxt) :works (works-n (:works nxt))}))
                                (d/dd (long-date (:date nxt))))))))))
 
 (defnc accademia-links
@@ -343,9 +384,9 @@
   [_props]
   (let [{:keys [event-url instagram pdf]} wm/accademia]
     (d/ul {:class "ap-wk-acc__links"}
-          (d/li (d/a {:href event-url :target "_blank" :rel "noopener"} "The event on the Accademia’s website ↗"))
-          (d/li (d/a {:href instagram :target "_blank" :rel "noopener"} "The Accademia’s post on Instagram ↗"))
-          (d/li (d/a {:href (str media pdf) :target "_blank" :rel "noopener"} "The poster, A3 (PDF)")))))
+          (d/li (d/a {:href event-url :target "_blank" :rel "noopener"} (t :walks/acc.event)))
+          (d/li (d/a {:href instagram :target "_blank" :rel "noopener"} (t :walks/acc.instagram)))
+          (d/li (d/a {:href (str media pdf) :target "_blank" :rel "noopener"} (t :walks/acc.pdf))))))
 
 (defnc accademia
   "The walk to the Accademia di Belle Arti, as the Academy confirmed it: the
@@ -358,31 +399,26 @@
                  (d/figure {:class "ap-wk-acc__poster m-0"}
                            (d/a {:class "ap-wk-acc__frame" :style #js {"--ar" poster-ar}
                                  :href (str media poster) :target "_blank" :rel "noopener"
-                                 :aria-label "Open the poster full size"}
+                                 :aria-label (ts :walks/acc.open-poster)}
                                 ($ picture {:src (str media poster) :sizes "(min-width: 960px) 30vw, 100vw"
-                                            :alt "Poster: Zadik Zadikian, Walking the Work Through Venice. Performance e incontro in Accademia. 18 novembre 2026, ore 11:00–12:00, Chiostro dell’Accademia di Belle Arti di Venezia; in caso di maltempo, Aula 1"}))
-                           (d/figcaption {:class "ap-caption"} "Poster: Accademia di Belle Arti di Venezia"))
+                                            :alt (ts :walks/acc.poster-alt)}))
+                           (d/figcaption {:class "ap-caption"} (t :walks/acc.poster-caption)))
                  (d/div {:class "ap-wk-acc__text"}
-                        (d/p {:class "ap-label m-0"} (str "Confirmed · Walk " n " · " (long-date date)))
-                        (d/h2 {:id "acc-title" :class "ap-display-l m-0"} "Walking the Work to the Accademia")
-                        (d/p {:class "ap-lede m-0"}
-                             "The Accademia di Belle Arti di Venezia hosts "
-                             (d/em "Walking the Work Through Venice")
-                             ", a performance of "
-                             (d/em "Zadik Zadikian: The Studio")
-                             ". Students of Prof. Gianpaolo Mazzoni’s sculpture course, who helped make the works in Tesa 41, carry them on their backs from the pavilion to the Academy, for an hour with its professors and students.")
+                        (d/p {:class "ap-label m-0"} (t :walks/acc.eyebrow {:n n :date (long-date date)}))
+                        (d/h2 {:id "acc-title" :class "ap-display-l m-0"} (t :walks/acc.title))
+                        (d/p {:class "ap-lede m-0"} (t :walks/acc.lede))
                         (d/dl {:class "ap-wk-facts"}
-                              (d/div (d/dt {:class "ap-label"} "In the cloister") (d/dd {:class "ap-data"} "11:00–12:00"))
-                              (d/div (d/dt {:class "ap-label"} "If it rains") (d/dd {:class "ap-data"} "Aula 1"))
-                              (d/div (d/dt {:class "ap-label"} "Leaves Tesa 41") (d/dd {:class "ap-data"} depart))
-                              (d/div (d/dt {:class "ap-label"} "Back") (d/dd {:class "ap-data"} (str "≈ " (at-time depart minutes)))))
+                              (d/div (d/dt {:class "ap-label"} (t :walks/acc.cloister)) (d/dd {:class "ap-data"} "11:00–12:00"))
+                              (d/div (d/dt {:class "ap-label"} (t :walks/acc.rain)) (d/dd {:class "ap-data"} "Aula 1"))
+                              (d/div (d/dt {:class "ap-label"} (t :walks/leaves)) (d/dd {:class "ap-data"} depart))
+                              (d/div (d/dt {:class "ap-label"} (t :walks/back)) (d/dd {:class "ap-data"} (str "≈ " (at-time depart minutes)))))
                         (d/p {:class "ap-body-s m-0"}
-                             "The meeting in the cloister is for the Academy’s students and staff. Anyone may walk alongside on the way there and back.")
+                             (t :walks/acc.note))
                         ($ accademia-links {})
-                        (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick wid)} "See the route"))))))
+                        (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick wid)} (t :walks/acc.route)))))))
 
 (defnc walk-list [{:keys [walks walk on-pick]}]
-  (d/ul {:class "ap-wk-list" :aria-label "The walks"}
+  (d/ul {:class "ap-wk-list" :aria-label (ts :walks/list.aria)}
         (for [{:keys [id n date title works km minutes status next?] :as w} walks
               :let [on? (= id (:id walk))]]
           (d/li {:key id}
@@ -392,13 +428,13 @@
                           (d/span {:class "ap-wk-list__text"}
                                   (d/span {:class "ap-label"} (str (short-date date) " · " (status-label w)))
                                   (d/span {:class "ap-wk-list__title"} title)
-                                  (d/span {:class "ap-caption"} (str works " works · " km " km · " (duration minutes)))))))))
+                                  (d/span {:class "ap-caption"} (t :walks/list.meta {:works (works-n works) :km (km-n km) :duration (duration minutes)}))))))))
 
 (defnc walk-detail [{:keys [walk]}]
   (let [{:keys [id n date title works depart minutes km wide fresh via note stops status]} walk
         back (at-time depart minutes)
         fs (get films id)
-        ps (get photos id)
+        ps (mapv photo-text (get photos id))
         film (some-> (get wm/walk-films id) film-by-slug)
         [viewing set-viewing!] (hooks/use-state nil)]
     (<>
@@ -406,25 +442,25 @@
                 (d/div {:class "ap-wk-detail__head"}
                        (d/div {:class "ap-wk-detail__date"}
                               (d/span {:class "ap-numeral"} (day-of date))
-                              (d/span (d/span {:class "ap-label ap-muted"} (str "Walk " n " · " (weekday date)))
-                                      (d/span {:class "ap-h2 block"} "November 2026")))
+                              (d/span (d/span {:class "ap-label ap-muted"} (t :walks/detail.walk {:n n :weekday (weekday date)}))
+                                      (d/span {:class "ap-h2 block"} (i18n/date date {:month "long" :year "numeric"}))))
                        (d/h2 {:id "walk-title" :class "ap-h1 m-0"} title)
                        (d/p {:class "ap-wk-tag ap-label m-0" :data-status (name status)} (status-label walk))
                        (d/dl {:class "ap-wk-facts"}
-                             (d/div (d/dt {:class "ap-label"} "Leaves Tesa 41") (d/dd {:class "ap-data"} depart))
-                             (d/div (d/dt {:class "ap-label"} "Back") (d/dd {:class "ap-data"} (str "≈ " back)))
-                             (d/div (d/dt {:class "ap-label"} "Works carried") (d/dd {:class "ap-data"} works))
-                             (d/div (d/dt {:class "ap-label"} "Distance · time") (d/dd {:class "ap-data"} (str km " km · " (duration minutes))))
-                             (d/div {:class "col-span-2"} (d/dt {:class "ap-label"} "On wide passages")
-                                    (d/dd {:class "ap-data"} (str wide "% of the way · " fresh "% on streets no earlier walk took"))))
+                             (d/div (d/dt {:class "ap-label"} (t :walks/leaves)) (d/dd {:class "ap-data"} depart))
+                             (d/div (d/dt {:class "ap-label"} (t :walks/back)) (d/dd {:class "ap-data"} (str "≈ " back)))
+                             (d/div (d/dt {:class "ap-label"} (t :walks/works-carried)) (d/dd {:class "ap-data"} (works-n works)))
+                             (d/div (d/dt {:class "ap-label"} (t :walks/detail.dist)) (d/dd {:class "ap-data"} (str (t :walks/km {:km (km-n km)}) " · " (duration minutes))))
+                             (d/div {:class "col-span-2"} (d/dt {:class "ap-label"} (t :walks/detail.wide))
+                                    (d/dd {:class "ap-data"} (t :walks/detail.wide-val {:wide wide :fresh fresh}))))
                        (when (seq via)
-                         (d/p {:class "ap-body-s m-0"} (d/span {:class "ap-label ap-muted block mb-2"} "By way of") (str/join " · " via)))
-                       (when note (d/p {:class "ap-caption m-0"} (str note ".")))
+                         (d/p {:class "ap-body-s m-0"} (d/span {:class "ap-label ap-muted block mb-2"} (t :walks/detail.via)) (str/join " · " via)))
+                       (when note (d/p {:class "ap-caption m-0"} (t :walks/detail.note {:note note})))
                        (when (= id (:walk wm/accademia))
                          ($ accademia-links {})))
                 (d/ol {:class "ap-wk-itin"}
                       (d/li (d/span {:class "ap-data"} depart) (d/i {:class "is-ap"} "AP")
-                            (d/span {:class "ap-wk-itin__name"} "Leave Tesa 41 by the Fondamenta Case Nuove door"))
+                            (d/span {:class "ap-wk-itin__name"} (t :walks/itin.leave)))
                       (for [[i {:keys [name t detail arrive]}] (map-indexed vector stops)
                             :let [photo (get-in stop-photos [id i])]]
                         (d/li {:key name}
@@ -433,17 +469,17 @@
                               (d/span {:class "ap-wk-itin__name"} name
                                       (d/span {:class "ap-caption block"}
                                               (cond detail detail
-                                                    (= status :walked) (str works " works set down here")
-                                                    :else (str works " works set down for a few minutes"))))
+                                                    (= status :walked) (i18n/t :walks/itin.set-down-walked {:works (works-n works)})
+                                                    :else (i18n/t :walks/itin.set-down {:works (works-n works)}))))
                               (d/span {:class "ap-wk-itin__photo"}
                                       (when photo ($ picture {:src (str media photo) :alt name :sizes "200px"})))))
                       (d/li (d/span {:class "ap-data"} (str "≈ " back)) (d/i {:class "is-ap"} "AP")
-                            (d/span {:class "ap-wk-itin__name"} "Home to Tesa 41 by another way"))))
+                            (d/span {:class "ap-wk-itin__name"} (i18n/t :walks/itin.home)))))
      (when (or (seq fs) (seq ps))
-       (d/section {:class "ap-wrap ap-wk-media" :aria-label "From the walk"}
+       (d/section {:class "ap-wrap ap-wk-media" :aria-label (i18n/ts :walks/media.title)}
                   (d/div {:class "ap-wk-media__head"}
-                         (d/h3 {:class "ap-h2 m-0"} "From the walk")
-                         (d/span {:class "ap-label ap-muted"} (str (when film "The film, ") (count fs) " loops · " (count ps) " photographs")))
+                         (d/h3 {:class "ap-h2 m-0"} (t :walks/media.title))
+                         (d/span {:class "ap-label ap-muted"} (t :walks/media.count {:film (if film "yes" "no") :loops (count fs) :photos (count ps)})))
                   (when film ($ walk-film {:film film :walk walk}))
                   (d/div {:class "ap-wk-films"}
                          (for [f fs] ($ loop-film {:key (:id f) :& f})))
@@ -451,7 +487,7 @@
                          (for [[i {:keys [path title alt]}] (map-indexed vector ps)]
                            (d/figure {:key path :class "m-0"}
                                      (d/button {:type "button" :class "ap-wk-photos__frame"
-                                                :aria-label (str "View larger: " title)
+                                                :aria-label (ts :walks/photo.view {:title title})
                                                 :on-click #(set-viewing! i)}
                                                ($ picture {:src (str media path) :alt alt :sizes "(min-width: 960px) 25vw, 50vw"}))
                                      (d/figcaption {:class "ap-caption"} (fig-caption date i title (get wm/photographers id))))))
@@ -463,26 +499,26 @@
                (d/div {:class "ap-wrap ap-wk-sched__wrap"}
                       (d/div {:class "ap-wk-sched__head"}
                              (d/div {:class "flex flex-col gap-3"}
-                                    (d/p {:class "ap-label m-0 ap-wk-sched__eyebrow"} "Schedule · November 2026")
-                                    (d/h2 {:id "schedule-title" :class "ap-display-l m-0"} "Walk with us"))
+                                    (d/p {:class "ap-label m-0 ap-wk-sched__eyebrow"} (t :walks/sched.eyebrow))
+                                    (d/h2 {:id "schedule-title" :class "ap-display-l m-0"} (t :walks/walk-with-us)))
                              (d/p {:class "ap-body m-0 max-w-[30em]"}
-                                  "Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time. Anyone may walk alongside; the hour in the Accademia’s cloister on 18 November (11:00–12:00) is for the Academy’s students and staff. The last walk is on the closing day of the Biennale."))
-                      (d/div {:class "ap-wk-days" :role "group" :aria-label "Walk days"}
+                                  (t :walks/sched.text)))
+                      (d/div {:class "ap-wk-days" :role "group" :aria-label (ts :walks/sched.days)}
                              (for [dd (range 5 23)
                                    :let [iso (str "2026-11-" (.padStart (str dd) 2 "0"))
                                          w (by-date iso)]]
                                (d/button {:key dd :type "button" :disabled (nil? w)
                                           :aria-pressed (= (:id w) (:id walk))
-                                          :aria-label (if w (str (short-date iso) ": " (:title w)) (str (short-date iso) ": no walk"))
+                                          :aria-label (if w (ts :walks/sched.day {:date (short-date iso) :title (:title w)}) (ts :walks/sched.no-walk {:date (short-date iso)}))
                                           :data-status (when w (name (:status w)))
                                           :on-click #(when w (on-pick (:id w)))}
-                                         (d/span {:class "ap-label"} (subs (weekday iso) 0 2))
+                                         (d/span {:class "ap-label"} (weekday-abbr iso))
                                          (d/span {:class "ap-wk-days__d"} dd)
-                                         (d/span {:class "ap-caption"} (when w (str (:works w)))))))
+                                         (d/span {:class "ap-caption"} (when w (works-n (:works w)))))))
                       (d/div {:class "ap-wk-table"}
                              (d/table
                               (d/thead (d/tr {:class "ap-label"}
-                                             (d/th "Date") (d/th "Leaves") (d/th "Back ≈") (d/th "Route") (d/th "Works") (d/th {:class "text-right"} "Distance")))
+                                             (d/th (t :walks/th.date)) (d/th (t :walks/th.leaves)) (d/th (t :walks/th.back)) (d/th (t :walks/th.route)) (d/th (t :walks/th.works)) (d/th {:class "text-right"} (t :walks/th.distance))))
                               (d/tbody
                                (for [{:keys [id date depart minutes title works km] :as w} walks
                                      :when (not= :walked (:status w))]
@@ -491,8 +527,8 @@
                                        (d/td {:class "ap-data"} depart)
                                        (d/td {:class "ap-data"} (at-time depart minutes))
                                        (d/td (d/a {:href "#walks-map" :on-click #(on-pick id)} title))
-                                       (d/td {:class "ap-data"} works)
-                                       (d/td {:class "ap-data text-right"} (str km " km")))))))))))
+                                       (d/td {:class "ap-data"} (works-n works))
+                                       (d/td {:class "ap-data text-right"} (t :walks/km {:km (km-n km)})))))))))))
 
 (defnc walked
   "The walks so far, newest first: only those with a film or photographs,
@@ -504,30 +540,30 @@
     (when (seq done)
       (d/section {:class "ap-wrap ap-sec ap-wk-done" :aria-labelledby "walked-title"}
                  (d/div {:class "flex flex-col gap-3"}
-                        (d/p {:class "ap-label ap-muted m-0"} "Walked")
-                        (d/h2 {:id "walked-title" :class "ap-display-l m-0"} "The walks so far"))
+                        (d/p {:class "ap-label ap-muted m-0"} (t :walks/walked))
+                        (d/h2 {:id "walked-title" :class "ap-display-l m-0"} (t :walks/done.title)))
                  (d/div {:class "ap-wk-done__grid"}
                         (for [{:keys [id n date works km title stops]} (reverse done)
                               :let [f (or (second (get films id)) (first (get films id)))
-                                    ph (first (get photos id))]]
+                                    ph (some-> (first (get photos id)) photo-text)]]
                           (d/article {:key id :class "ap-wk-done__card"}
                                      (d/div {:class "ap-wk-done__media"}
                                             (if f ($ loop-film {:& f})
                                                 ($ picture {:src (str media (:path ph)) :alt (:alt ph) :sizes "(min-width: 960px) 33vw, 100vw"})))
-                                     (d/span {:class "ap-label ap-muted"} (str "Walk " n " · " (short-date date) " · " works " works · " km " km"))
+                                     (d/span {:class "ap-label ap-muted"} (t :walks/done.meta {:n n :date (short-date date) :works (works-n works) :km (km-n km)}))
                                      (d/h3 {:class "ap-h2 m-0"} title)
-                                     (d/p {:class "ap-body-s m-0"} (str (str/join ", then " (map :name stops)) ", and home by another way."))
-                                     (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick id)} "See it on the map")))
+                                     (d/p {:class "ap-body-s m-0"} (t :walks/done.stops {:stops (str/join (ts :walks/done.then) (map :name stops))}))
+                                     (d/a {:class "ap-btn self-start" :href "#walks-map" :on-click #(on-pick id)} (t :walks/done.see))))
                         (d/article {:class "ap-wk-done__card"}
-                                   (d/a {:class "ap-wk-done__media" :href (:film solo) :aria-label "Watch the film: Carrying"}
-                                        ($ picture {:src (str media (:photo solo)) :alt (:alt solo) :sizes "(min-width: 960px) 33vw, 100vw"}))
+                                   (d/a {:class "ap-wk-done__media" :href (i18n/href (:film solo)) :aria-label (ts :walks/solo.aria {:title (:title solo)})}
+                                        ($ picture {:src (str media (:photo solo)) :alt (ts :walks/solo.alt) :sizes "(min-width: 960px) 33vw, 100vw"}))
                                    (d/span {:class "ap-label ap-muted"}
-                                           (str "Before the walks · " (subs (weekday solo-date) 0 3) " " (day-of solo-date) " Oct · 1 work · alone"))
+                                           (t :walks/solo.meta {:date (short-date solo-date)}))
                                    (d/h3 {:class "ap-h2 m-0"} (:title solo))
-                                   (d/p {:class "ap-body-s m-0"} (:summary solo))
+                                   (d/p {:class "ap-body-s m-0"} (t :walks/solo.summary))
                                    (d/div {:class "flex flex-wrap gap-2"}
-                                          (d/a {:class "ap-btn" :href (:film solo)} "Watch the film")
-                                          (d/a {:class "ap-btn ap-btn--ghost" :href (:post solo)} "Read the story"))))))))
+                                          (d/a {:class "ap-btn" :href (i18n/href (:film solo))} (t :walks/solo.watch))
+                                          (d/a {:class "ap-btn ap-btn--ghost" :href (i18n/href (:post solo))} (t :walks/solo.read)))))))))
 
 (defn- justify
   "Splits photographs (in order) into rows whose summed aspect ratios come as
@@ -554,7 +590,7 @@
    still viewer."
   [{:keys [walks]}]
   (let [walk (some #(when (= wm/gallery-walk (:id %)) %) walks)
-        ps (get photos wm/gallery-walk)
+        ps (mapv photo-text (get photos wm/gallery-walk))
         by (get wm/photographers wm/gallery-walk)
         [viewing set-viewing!] (hooks/use-state nil)]
     (when (and walk (seq ps))
@@ -562,19 +598,17 @@
                  (d/div {:class "ap-wk-gallery__head"}
                         (d/div {:class "flex flex-col gap-3"}
                                (d/p {:class "ap-label ap-muted m-0"}
-                                    (str "Photographs · Walk " (:n walk) " · " (long-date (:date walk))))
+                                    (t :walks/gallery.eyebrow {:n (:n walk) :date (long-date (:date walk))}))
                                (d/h2 {:id "gallery-title" :class "ap-display-l m-0"} (:title walk)))
                         (d/p {:class "ap-body m-0 max-w-[30em]"}
-                             (str (get {3 "Three" 6 "Six" 12 "Twelve"} (:works walk) (:works walk)) " works out of Tesa 41, over the bridge at the Arsenale gate, set down between "
-                                  "the anchors of the Museo Storico Navale, and on along the lagoon: "
-                                  (count ps) " photographs from the afternoon" (if by (str ", by " by ".") "."))))
+                             (t :walks/gallery.text {:works (:works walk) :photos (count ps) :by (or by "none")})))
                  (d/div {:class "ap-wk-gallery__rows"}
                         (for [row (justify (map-indexed #(assoc %2 :i %1) ps) 4.2)]
                           (d/div {:key (:path (first row)) :class "ap-wk-gallery__row"}
                                  (for [{:keys [i path title alt ar]} row]
                                    (d/figure {:key path :class "m-0" :style #js {"--ar" ar}}
                                              (d/button {:type "button" :class "ap-wk-gallery__frame"
-                                                        :aria-label (str "View larger: " title)
+                                                        :aria-label (ts :walks/photo.view {:title title})
                                                         :on-click #(set-viewing! i)}
                                                        ($ picture {:src (str media path) :alt alt
                                                                    :sizes (str "(min-width: 720px) " (js/Math.round (/ (* ar 100) 4.2)) "vw, 100vw")}))
@@ -586,37 +620,41 @@
   [{:keys [walks]}]
   (let [nxt (some #(when (:next? %) %) walks)
         [state submit] (use-subscribe ["walks"])]
-    (d/section {:id "walk-with-us" :class "ap-wk-join" :aria-label "Walk with us"}
+    (d/section {:id "walk-with-us" :class "ap-wk-join" :aria-label (ts :walks/walk-with-us)}
                (d/div {:class "ap-wrap ap-wk-join__grid"}
                       (d/div {:class "ap-wk-join__walk"}
-                             (d/p {:class "ap-label m-0"} "Walk with us")
-                             (d/h2 {:class "ap-display-l m-0"} "Join us along the way")
+                             (d/p {:class "ap-label m-0"} (t :walks/walk-with-us))
+                             (d/h2 {:class "ap-display-l m-0"} (t :walks/join.title))
                              (d/p {:class "ap-body m-0"}
-                                  "Anyone may walk alongside, for the whole way or a stretch of it. Meet at the door of Tesa 41 on the Fondamenta Case Nuove ten minutes before the time, or find us at one of the stops.")
+                                  (t :walks/join.text))
                              (when nxt
                                (d/p {:class "ap-wk-join__next m-0"}
-                                    (d/span {:class "ap-label block"} "Next walk")
-                                    (d/span {:class "ap-h2 block"} (str (long-date (:date nxt)) " · leaves " (:depart nxt)))
-                                    (d/span {:class "ap-body-s block"} (str (:title nxt) " · " (:works nxt) " works · " (:km nxt) " km"))))
+                                    (d/span {:class "ap-label block"} (t :walks/join.next))
+                                    (d/span {:class "ap-h2 block"} (t :walks/join.next-when {:date (long-date (:date nxt)) :time (:depart nxt)}))
+                                    (d/span {:class "ap-body-s block"} (t :walks/join.next-meta {:title (:title nxt) :works (works-n (:works nxt)) :km (km-n (:km nxt))}))))
                              (d/div {:class "flex flex-wrap gap-2"}
-                                    (d/a {:class "ap-btn" :href "#schedule"} "See the schedule")
-                                    (d/a {:class "ap-btn ap-btn--ghost" :href "/visit"} "Getting to Tesa 41")))
+                                    (d/a {:class "ap-btn" :href "#schedule"} (t :walks/join.see))
+                                    (d/a {:class "ap-btn ap-btn--ghost" :href (i18n/href "/visit")} (t :walks/join.getting))))
                       (d/div {:class "ap-wk-join__alerts"}
-                             (d/p {:class "ap-label m-0"} "Walk alerts")
-                             (d/h3 {:class "ap-h1 m-0"} "Know when we set out")
+                             (d/p {:class "ap-label m-0"} (t :walks/alerts.eyebrow))
+                             (d/h3 {:class "ap-h1 m-0"} (t :walks/alerts.title))
                              (d/p {:class "ap-body m-0"}
-                                  "An email the day before each walk with the time and the route, and word as soon as a walk moves or changes. Occasional pavilion news too; leave any time.")
+                                  (t :walks/alerts.text))
                              (d/form {:class "ap-wk-join__form" :on-submit submit}
-                                     (d/label {:class "sr-only" :for "ap-walk-email"} "Email address")
+                                     (d/label {:class "sr-only" :for "ap-walk-email"} (t :walks/alerts.email))
                                      (d/input {:id "ap-walk-email" :name "email" :type "email" :required true
-                                               :autocomplete "email" :placeholder "your@email.com"})
+                                               :auto-complete "email" :placeholder (ts :walks/alerts.placeholder)})
                                      ;; Honeypot: hidden from people, filled by bots.
                                      (d/input {:class "ap-footer__hp" :name "website" :type "text"
-                                               :tab-index -1 :autocomplete "off" :aria-hidden true})
+                                               :tab-index -1 :auto-complete "off" :aria-hidden true})
                                      (d/button {:class "ap-btn" :type "submit" :disabled (= state :sending)}
-                                               (if (= state :sending) "Sending…" "Get walk alerts"))
+                                               (if (= state :sending) (t :walks/alerts.sending) (t :walks/alerts.submit)))
                                      (d/p {:class "ap-wk-join__status" :role "status" :aria-live "polite"}
-                                          (get news-status state))))))))
+                                          (case state
+                                            :sent (t :walks/alerts.sent)
+                                            :invalid (t :walks/alerts.invalid)
+                                            :error (t :walks/alerts.error)
+                                            nil))))))))
 
 ;; ── Page ────────────────────────────────────────────────────────────────
 
@@ -629,7 +667,7 @@
            (first walks))))
 
 (defnc walks-view []
-  (let [walks (hooks/use-memo :once (wm/with-status))
+  (let [walks (mapv localize (hooks/use-memo :once (wm/with-status)))
         [sel set-sel!] (hooks/use-state (first-pick walks))
         [show set-show!] (hooks/use-state :all)
         walk (some #(when (= sel (:id %)) %) walks)
@@ -643,17 +681,17 @@
            (d/section {:id "walks-map" :ref ref :class "ap-wrap ap-wk-app" :aria-labelledby "map-title"}
                       (d/div {:class "ap-wk-app__head"}
                              (d/div {:class "flex flex-col gap-3"}
-                                    (d/p {:class "ap-label ap-muted m-0"} "The map")
-                                    (d/h2 {:id "map-title" :class "ap-display-l m-0"} "Every walk, out and back"))
-                             (d/div {:class "ap-wk-filters" :role "group" :aria-label "Show walks"}
-                                    (for [[k label] [[:all "All walks"] [:walked "Walked"] [:coming "Coming"]]]
+                                    (d/p {:class "ap-label ap-muted m-0"} (t :walks/map.eyebrow))
+                                    (d/h2 {:id "map-title" :class "ap-display-l m-0"} (t :walks/map.title)))
+                             (d/div {:class "ap-wk-filters" :role "group" :aria-label (ts :walks/filters.aria)}
+                                    (for [[k label] [[:all (t :walks/filters.all)] [:walked (t :walks/walked)] [:coming (t :walks/filters.coming)]]]
                                       (d/button {:key (name k) :type "button" :class "ap-label" :aria-pressed (= show k)
                                                  :on-click #(set-show! k)} label))))
                       (d/div {:class "ap-wk-app__grid"}
                              ($ walk-map {:walks walks :walk walk :routes routes})
                              ($ walk-list {:walks shown :walk walk :on-pick set-sel!}))
                       (d/p {:class "ap-caption m-0"}
-                           "Routes keep to wide passages (rive, fondamente, salizade, rii terà, campi) and find new streets each time, out and back. Times assume 3 km/h carrying the works and a few minutes at each stop. Map data © OpenStreetMap contributors."))
+                           (t :walks/map.caption)))
            ($ walk-detail {:key sel :walk walk})
            ($ schedule {:walks walks :walk walk :on-pick set-sel!})
            ($ walked {:walks walks :on-pick set-sel!})

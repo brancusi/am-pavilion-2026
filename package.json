@@ -32,7 +32,9 @@
     "qa:cls": "node scripts/qa/cls.mjs",
     "press:kit": "node build/press-kit.mjs",
     "walks": "node scripts/walks.mjs",
-    "press:pdf": "node build/press-release-pdf.mjs"
+    "press:pdf": "node build/press-release-pdf.mjs",
+    "i18n:check": "node scripts/i18n-check.mjs",
+    "qa:i18n": "node scripts/qa/i18n-snap.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -45,6 +47,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "gsap": "^3.13.0",
+    "intl-messageformat": "12.1.4",
     "mapbox-gl": "^3.18.1",
     "netlify-cli": "^23.11.0",
     "platform": "1.3.5",

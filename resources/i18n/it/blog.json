@@ -1,0 +1,17 @@
+{
+  "index.label": "Diario",
+  "index.title": "Appunti dallo studio",
+  "index.count-aria": "{n, plural, one {# articolo} other {# articoli}}",
+  "index.count-label": "{n, plural, one {Articolo} other {Articoli}}",
+  "index.lede": "Il processo, i viaggi e la nascita di The Studio, da Los Angeles alla Tesa 41.",
+  "index.filter-aria": "Filtra per categoria",
+  "index.empty": "Ancora nessun articolo in questa categoria.",
+  "post.back": "← Diario",
+  "post.byline": "Testo: {author}",
+  "post.next": "Il prossimo nel diario",
+  "post.doc-title": "{title} · Padiglione Armenia",
+  "not-found.doc-title": "Articolo non trovato · Padiglione Armenia",
+  "not-found.title": "Articolo non trovato",
+  "not-found.text": "L’articolo che cerchi non esiste.",
+  "not-found.back": "Torna al diario"
+}

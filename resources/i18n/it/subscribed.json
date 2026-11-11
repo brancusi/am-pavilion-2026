@@ -1,0 +1,15 @@
+{
+  "label": "Notizie ed eventi",
+  "title": "Sei nella lista.",
+  "lede": "Grazie per la conferma. Ti scriveremo quando ci sarà qualcosa da raccontare: dallo studio, da Venezia e da ovunque il lavoro andrà dopo. Una email di benvenuto è in arrivo.",
+  "studio-h": "Dallo studio",
+  "studio-p": "Che cosa viene colato, impilato e portato nella Tesa 41, e che cosa viene dopo Venezia.",
+  "events-h": "Eventi e passeggiate",
+  "events-p": "Incontri, passeggiate per la città e giornate in studio, con il preavviso necessario per venire.",
+  "films-h": "Nuovi video e testi",
+  "films-p": "Articoli del diario e video quando escono, al massimo qualche volta al mese.",
+  "replies": "Ogni email contiene un link per cancellarsi. Le risposte arrivano a noi: <a>{email}</a>.",
+  "meanwhile": "Intanto, dal diario",
+  "all-posts": "Tutti gli articoli",
+  "plan": "Pianifica la visita"
+}

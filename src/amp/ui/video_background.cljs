@@ -2,11 +2,14 @@
   (:require
    ["@mux/mux-player-react$default" :as MuxPlayer]
 
+   [amp.i18n :refer [ts] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
    [applied-science.js-interop :as j]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
+
+(defcatalog "ui")
 
 (defnc video-background
   [{:keys [should-play? allow-audio? playback-id]
@@ -77,7 +80,7 @@
 
            (when allow-audio?
              (d/button {:class "ap-iconbtn absolute right-4 bottom-4"
-                        :aria-label (if audio-muted? "Turn sound on" "Turn sound off")
+                        :aria-label (ts (if audio-muted? :ui/video.sound-on :ui/video.sound-off))
                         :aria-pressed (not audio-muted?)
                         :on-click toggle-audio}
                        (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"

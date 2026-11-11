@@ -6,6 +6,8 @@
   (:require
    [amp.config]
    [amp.data.journal :as journal]
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
+   [amp.ui.lang-switch :refer [lang-switch]]
    [amp.lib.defnc :refer [defnc]]
    [amp.state.provider :refer [use-main-state]]
    [amp.ui.share-bar :refer [share-bar]]
@@ -15,35 +17,39 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
-(def ^:private columns
-  [{:title "The exhibition"
-    :links [{:label "The Studio" :href "/"}
-            {:label "The Unit" :href "/#unit"}
-            {:label "Films" :href "/#film"}
-            {:label "The essay" :href "/#about-studio"}
-            {:label "In Minor Keys" :href "/#in-minor-keys"}
-            {:label "Curators" :href "/#curators"}
-            {:label "Supporters" :href "/#supporters"}]}
-   {:title "The artist"
-    :links [{:label "Zadik Zadikian" :href "/artist"}
-            {:label "Chronology" :href "/artist#chronology"}
-            {:label "Armenian as well" :href "/armenian-as-well"}
-            {:label "Portage" :href "/portage"}
-            {:label "Walks" :href "/walks"}]}
-   {:title "Visit"
-    :links [{:label "Plan your visit" :href "/visit"}
-            {:label "By water taxi" :href "/visit#taxi"}
-            {:label "Water taxi card" :href "/route-from-hotel-gabrielli"}]}
-   {:title "Journal & press"
-    :links (conj (mapv (fn [{:keys [slug title]}] {:label title :href (str "/blog/" slug)})
-                       (take 2 journal/posts))
-                 {:label "All journal posts" :href "/blog"}
-                 {:label "Press" :href "/press"})}])
+(defcatalog "footer")
+
+(defn- columns
+  "The site map, in the current locale (hrefs without the locale prefix)."
+  []
+  [{:title :footer/col-exhibition
+    :links [{:label :footer/studio :href "/"}
+            {:label :footer/unit :href "/#unit"}
+            {:label :footer/films :href "/#film"}
+            {:label :footer/essay :href "/#about-studio"}
+            {:label :footer/in-minor-keys :href "/#in-minor-keys"}
+            {:label :footer/curators :href "/#curators"}
+            {:label :footer/supporters :href "/#supporters"}]}
+   {:title :footer/col-artist
+    :links [{:label :footer/zadikian :href "/artist"}
+            {:label :footer/chronology :href "/artist#chronology"}
+            {:label :footer/armenian-as-well :href "/armenian-as-well"}
+            {:label :footer/portage :href "/portage"}
+            {:label :footer/walks :href "/walks"}]}
+   {:title :footer/col-visit
+    :links [{:label :footer/plan :href "/visit"}
+            {:label :footer/by-taxi :href "/visit#taxi"}
+            {:label :footer/taxi-card :href "/route-from-hotel-gabrielli"}]}
+   {:title :footer/col-journal
+    :links (conj (mapv (fn [{:keys [slug title]}] {:text title :href (str "/blog/" slug)})
+                       (take 2 (journal/posts)))
+                 {:label :footer/all-posts :href "/blog"}
+                 {:label :footer/press :href "/press"})}])
 
 (def news-status
-  {:sent    "Thank you. Check your inbox for an email to confirm."
-   :invalid "That address doesn't look right. Please check it."
-   :error   "Something went wrong. Please try again in a moment."})
+  {:sent    :footer/news-sent
+   :invalid :footer/news-invalid
+   :error   :footer/news-error})
 
 (defn use-subscribe
   "[state submit] for a sign-up form with `email` and `website` (honeypot)
@@ -81,21 +87,20 @@
   (let [[state submit] (use-subscribe nil)]
     (d/section {:class "ap-footer__news" :aria-labelledby "ap-news-h"}
                (d/div
-                (d/h2 {:id "ap-news-h" :class "ap-footer__h"} "News & events")
-                (d/p {:class "ap-body-s m-0"}
-                     "Exhibition news, events and what comes next for the studio. Occasional emails; leave any time."))
+                (d/h2 {:id "ap-news-h" :class "ap-footer__h"} (t :footer/news-title))
+                (d/p {:class "ap-body-s m-0"} (t :footer/news-text)))
                (d/form {:class "ap-footer__form" :on-submit submit}
-                       (d/label {:class "sr-only" :for "ap-news-email"} "Email address")
+                       (d/label {:class "sr-only" :for "ap-news-email"} (t :footer/news-email))
                        (d/input {:id "ap-news-email" :name "email" :type "email" :required true
-                                 :autocomplete "email" :placeholder "your@email.com"})
+                                 :auto-complete "email" :placeholder (ts :footer/news-placeholder)})
                        ;; Honeypot: hidden from people, filled by bots.
                        (d/input {:class "ap-footer__hp" :name "website" :type "text"
-                                 :tab-index -1 :autocomplete "off" :aria-hidden true})
+                                 :tab-index -1 :auto-complete "off" :aria-hidden true})
                        (d/button {:class "ap-btn ap-btn--yellow" :type "submit"
                                   :disabled (= state :sending)}
-                                 (if (= state :sending) "Sending…" "Subscribe"))
+                                 (t (if (= state :sending) :footer/news-sending :footer/news-subscribe)))
                        (d/p {:class "ap-footer__status" :role "status" :aria-live "polite"}
-                            (get news-status state))))))
+                            (some-> (get news-status state) t))))))
 
 (defnc site-footer
   [_props]
@@ -108,62 +113,66 @@
 
      (d/div {:class "ap-footer__in"}
             (d/div {:class "ap-footer__lead"}
-                   (d/a {:class "ap-footer__brand" :href "/"}
+                   (d/a {:class "ap-footer__brand" :href (i18n/href "/")}
                         ($ studio-mark-3d {:variants #{:pigment} :label nil})
-                        (d/span {:class "ap-label"} "Armenian Pavilion · Biennale Arte 2026"))
+                        (d/span {:class "ap-label"} (t :footer/brand)))
                    (d/p {:class "ap-display-l m-0"} "Zadik Zadikian: The Studio")
                    (d/p {:class "ap-footer__when ap-label m-0"}
-                        (d/span "Arsenale Militare, Tesa 41, Venice")
-                        (d/span "9 May – 22 November 2026"))
+                        (d/span (t :footer/where))
+                        (d/span (t :footer/dates)))
                    (d/div {:class "flex flex-wrap gap-2 mt-2"}
-                          (d/a {:class "ap-btn ap-btn--yellow" :href "/visit"} "Plan your visit")
+                          (d/a {:class "ap-btn ap-btn--yellow" :href (i18n/href "/visit")} (t :footer/plan))
                           (d/a {:class "ap-btn ap-btn--ghost !text-on-night !border-on-night"
-                                :href "/route-from-hotel-gabrielli"}
-                               "Water taxi card")))
+                                :href (i18n/href "/route-from-hotel-gabrielli")}
+                               (t :footer/taxi-card))))
 
-            (d/nav {:class "ap-footer__map" :aria-label "Site"}
-                   (for [{:keys [title links]} columns]
+            (d/nav {:class "ap-footer__map" :aria-label (ts :footer/site)}
+                   (for [{:keys [title links]} (columns)]
                      (d/div {:key title}
-                            (d/h2 {:class "ap-footer__h"} title)
+                            (d/h2 {:class "ap-footer__h"} (t title))
                             (d/ul
-                             (for [{:keys [label href]} links]
+                             (for [{:keys [label text href]} links
+                                   :let [href (i18n/href href)]]
                                (d/li {:key href}
                                      (d/a {:href href
                                            :aria-current (when (= href path) "page")}
-                                          label)))))))
+                                          (or text (t label)))))))))
 
             ($ newsletter)
 
             (d/div {:class "ap-footer__info"}
                    (d/div
-                    (d/h2 {:class "ap-footer__h"} "Get in touch")
+                    (d/h2 {:class "ap-footer__h"} (t :footer/contact))
                     (d/ul
                      (d/li (d/a {:href "mailto:hello@armenianpavilion2026.org?subject=Let's%20connect"}
                                 "hello@armenianpavilion2026.org"))))
                    (d/div
-                    (d/h2 {:class "ap-footer__h"} "501(c)(3) non-profit")
+                    (d/h2 {:class "ap-footer__h"} (t :footer/nonprofit))
                     (d/p {:class "ap-body-s m-0"} "Fallen Angels Inc.")
-                    (d/p {:class "ap-body-s m-0 opacity-70"} "Los Angeles, CA"))
+                    (d/p {:class "ap-body-s m-0 opacity-70"} (t :footer/los-angeles)))
                    ($ social-links)
                    (d/div
-                    (d/h2 {:class "ap-footer__h"} "Share this site")
-                    ($ share-bar {:title "Zadik Zadikian: The Studio. Armenian Pavilion, Biennale Arte 2026"
-                                  :url   "https://armenianpavilion.org/"
+                    (d/h2 {:class "ap-footer__h"} (t :footer/language))
+                    ($ lang-switch {:class "ap-lang--night"}))
+                   (d/div
+                    (d/h2 {:class "ap-footer__h"} (t :footer/share))
+                    ($ share-bar {:title (ts :footer/share-title)
+                                  :url   (str "https://armenianpavilion.org" (i18n/href "/"))
                                   :label ""
                                   :class "ap-sharebar--night"})))
 
             (d/div {:class "ap-footer__base"}
                    (d/a {:href "https://www.labiennale.org/en/art/2026" :target "_blank" :rel "noopener"
                          :class "ap-footer__biennale"
-                         :aria-label "La Biennale di Venezia — Biennale Arte 2026"}
+                         :aria-label (ts :footer/biennale-label)}
                         ;; Sized up front, so the legal line beside it never moves.
                         (d/img {:src "/images/graphics/61_biennale_logo_line.svg"
                                 :width 158 :height 146
                                 :alt "Biennale Arte 2026"}))
                    (d/p {:class "ap-footer__legal"}
-                        "Armenian Pavilion · 61st International Art Exhibition — La Biennale di Venezia"
+                        (t :footer/legal)
                         (d/br)
                         "© 2026 AZ Studios Inc. · v" amp.config/git-hash)
                    (d/button {:type "button" :class "ap-footer__top ap-label"
                               :on-click #(.scrollTo js/window #js {:top 0 :behavior "smooth"})}
-                             "Back to top ↑"))))))
+                             (t :footer/top)))))))

@@ -1,0 +1,5 @@
+{
+  "loading": "Caricamento della storia…",
+  "last-chapter": "Ultimo capitolo",
+  "ahead": "{n, plural, one {Ne manca # di {total}} other {Ne mancano # di {total}}}"
+}

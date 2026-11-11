@@ -1,7 +1,9 @@
 (ns amp.pages.blog.posts.blue-yellow-maquette
-  "Blog post: Blue Yellow Blue Yellow — the full-scale maquette as prelude to Venice."
+  "Blog post: Blue Yellow Blue Yellow — the full-scale maquette as prelude to Venice.
+   Text in resources/i18n/<locale>/post-blue-yellow-maquette.json."
   (:require
    [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
    [amp.utils.lazy-loading :refer-macros [lazy-component]]
    [amp.lib.defnc :refer [defnc]]
@@ -10,48 +12,51 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(defcatalog "post-blue-yellow-maquette")
+
 (def lazy-video (lazy-component amp.ui.video-background/video-background))
 
 ;; ---------------------------------------------------------------------------
 ;; Gallery slides — CNC milling process + interactive 3D mockup
 ;; ---------------------------------------------------------------------------
 
-(def ^:private gallery-slides
+(def ^:private gallery-data
+  "Captions and credits are catalog keys, looked up when the gallery renders."
   [{:img-src      "https://media.armenianpavilion.org/photos/02-13-26/Screenshot%202026-02-27%20at%209.02.01%E2%80%AFAM.png"
     :aspect-ratio 1.77
-    :caption      "CNC FOAM MILLING"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.cnc-milling
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00117198.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — MILLED UNIT"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.milled-unit
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116841.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — DETAIL"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.detail
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116751.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — CNC EDGE"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.cnc-edge
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00116035.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — STACKING TEST"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.stacking-test
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00115488.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — ALIGNMENT"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.alignment
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    ;; Interactive 3D mockup (mockup-007 from the archived mockup viewer)
    {:type         :threejs
     :aspect-ratio 0.75
-    :caption      "Maquette — interactive 3D"
-    :credit       "Zadik Zadikian 2026"
+    :caption      :post-blue-yellow-maquette/gallery.model
+    :credit       :post-blue-yellow-maquette/gallery.model-credit
     :camera       {:position [150 150 150]
                    :target   [0 50 0]}
     :scene-data   {:lighting [[:ambient-light {:intensity 0.7}]
@@ -70,23 +75,26 @@
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00091415.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — ASSEMBLY"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.assembly
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00088317.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — STRUCTURE"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.structure
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00086751.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — PROFILE"
-    :credit       "Los Angeles 2026"}
+    :caption      :post-blue-yellow-maquette/gallery.profile
+    :credit       :post-blue-yellow-maquette/gallery.credit}
 
    {:img-src      "https://media.armenianpavilion.org/photos/02-13-26/foam_00091886.jpg"
     :aspect-ratio 1.77
-    :caption      "FOAM CORE — COMPLETED UNIT"
-    :credit       "Los Angeles 2026"}])
+    :caption      :post-blue-yellow-maquette/gallery.completed-unit
+    :credit       :post-blue-yellow-maquette/gallery.credit}])
+
+(defn- gallery-slides []
+  (mapv #(-> % (update :caption ts) (update :credit ts)) gallery-data))
 
 ;; ---------------------------------------------------------------------------
 ;; Section divider
@@ -101,6 +109,15 @@
 ;; Post content component
 ;; ---------------------------------------------------------------------------
 
+(def ^:private hl
+  "Rich-text handlers: <hl> for names and titles, <it> for the quotation."
+  {:hl (i18n/tag "span" {:className s/em-strong})
+   :it (i18n/tag "span" {:className s/em-italic})})
+
+(defn- p
+  ([k] (p k s/body-base))
+  ([k cls] (d/p {:class cls} (t (keyword "post-blue-yellow-maquette" (name k)) hl))))
+
 (defnc post-content
   "Body of the Blue Yellow Blue Yellow maquette post."
   [_props]
@@ -111,33 +128,16 @@
     (d/div {:class "space-y-6 pb-8"}
 
            ;; Subtitle
-           (d/p {:class (s/cx s/font-display s/weight-medium s/text-muted
-                              "text-lg sm:text-xl italic mb-2")}
-                "The Full-Scale Maquette as Prelude to Venice")
+           (p :subtitle (s/cx s/font-display s/weight-medium s/text-muted
+                              "text-lg sm:text-xl italic mb-2"))
 
-           (d/p {:class s/body-lg}
-                "In preparation for Biennale Arte 2026, "
-                (d/span {:class s/em-strong} "Zadik Zadikian")
-                " is developing a full-scale maquette of a new sculptural variation titled "
-                (d/span {:class s/em-strong} "Blue Yellow Blue Yellow")
-                ".")
+           (p :lede s/body-lg)
 
-           (d/p {:class s/body-base}
-                "This is not a miniature study. It is a one-to-one rehearsal of structure, proportion, "
-                "and chromatic rhythm\u2014an architectural test before the casting of plaster and the final "
-                "realization of form within "
-                (d/span {:class s/em-strong} "The Studio")
-                ", the Armenian Pavilion\u2019s living atelier.")
+           (p :p1)
 
-           (d/p {:class s/body-base}
-                "At its core, the work investigates reflection and repetition. A square side\u2014precise, "
-                "disciplined, elemental\u2014is mirrored at each successive step upward along the chain of "
-                "units. The geometry does not simply stack; it responds. Each level echoes the one beneath "
-                "it, producing a visual cadence: blue, yellow, blue, yellow. Structure becomes rhythm. "
-                "Form becomes sequence.")
+           (p :p2)
 
-           (d/p {:class (s/cx s/body-base s/em-italic)}
-                "Like a musical phrase in a minor key, it advances through modulation rather than spectacle.")
+           (p :p3 (s/cx s/body-base s/em-italic))
 
            ;; Video
            (d/div {:ref ref :class "my-8"}
@@ -151,100 +151,65 @@
 
            ;; CNC section
            (d/h2 {:class (s/cx s/heading-section "mb-4")}
-                 "Precision as Foundation: CNC Milling the Foam Core")
+                 (t :post-blue-yellow-maquette/h2-cnc))
 
-           (d/p {:class s/body-base}
-                "The maquette begins not with plaster, but with foam. Each unit is CNC-milled to exact "
-                "dimensions, ensuring structural integrity and repeatability. Precision at this stage is critical.")
+           (p :p4)
 
-           (d/p {:class s/body-base}
-                "The foam core will ultimately live inside the plaster shell, reducing weight while "
-                "maintaining mass and stability\u2014an approach central to "
-                (d/span {:class s/em-strong} "The Studio\u2019s")
-                " material language.")
+           (p :p5)
 
-           (d/p {:class s/body-base}
-                "This method allows the sculptures to appear monumental while remaining "
-                "maneuverable\u2014an essential condition for a Pavilion that will assemble, disassemble, "
-                "and reassemble structures continuously over seven months.")
+           (p :p6)
 
-           (d/p {:class (s/cx s/body-base s/em-strong)}
-                "Repetition demands accuracy. Without mathematical rigor, rhythm collapses.")
+           (p :p7 (s/cx s/body-base s/em-strong))
 
            ;; Image gallery — CNC process photos + interactive 3D mockup
            (d/div {:ref gallery-ref
                    :class "my-8 relative"}
                   ($ lazy-image-gallery {:enabled? gallery-visible?
-                                         :slides   gallery-slides}))
+                                         :slides   (gallery-slides)}))
 
            (section-break)
 
            ;; Color section
            (d/h2 {:class (s/cx s/heading-section "mb-4")}
-                 "Color as Incarnation")
+                 (t :post-blue-yellow-maquette/h2-color))
 
-           (d/p {:class s/body-base}
-                "The next phase will flesh out the chromatic body of the work. Blue and yellow are not "
-                "surface decoration; they are structural forces.")
+           (p :p8)
 
-           (d/p {:class s/body-base}
-                "In Zadikian\u2019s practice, pigment is conceived as something incarnated within material "
-                "rather than applied externally. Even in this maquette stage, color testing is essential. "
-                "Saturation, edge clarity, and the dialogue between planes must be resolved before casting begins.")
+           (p :p9)
 
            (d/div {:class "my-6 space-y-1"}
-                  (d/p {:class s/body-base}
-                       "Blue carries depth and receding space.")
-                  (d/p {:class s/body-base}
-                       "Yellow advances\u2014radiant, assertive, luminous."))
+                  (p :blue)
+                  (p :yellow))
 
-           (d/p {:class s/body-base}
-                "Together, they generate tension. The repetition of the pair stabilizes that tension into pattern.")
+           (p :p10)
 
            (section-break)
 
            ;; Laboratory section
            (d/h2 {:class (s/cx s/heading-section "mb-4")}
-                 "The Maquette as Laboratory")
+                 (t :post-blue-yellow-maquette/h2-laboratory))
 
-           (d/p {:class s/body-base}
-                "For decades, Zadikian\u2019s work has operated at the intersection of Minimalist discipline "
-                "and metaphysical resonance. As Carlo McCormick writes, his practice rises "
-                (d/span {:class s/em-italic}
-                        "\u201Clike a visual song\u2026 to that which remains immutable in the seas of change.\u201D"))
+           (p :p11)
 
-           (d/p {:class s/body-base}
-                "The full-scale maquette is part of that discipline. It is a laboratory of proportion, "
-                "a site where reflection, stacking logic, and chromatic sequencing are tested under real "
-                "conditions. Nothing is simulated. Every edge matters. Every angle carries consequence.")
+           (p :p12)
 
-           (d/p {:class s/body-base}
-                "Only after this stage will full plaster casting begin.")
+           (p :p13)
 
            (section-break)
 
            ;; Toward Venice section
            (d/h2 {:class (s/cx s/heading-section "mb-4")}
-                 "Toward Venice")
+                 (t :post-blue-yellow-maquette/h2-venice))
 
-           (d/p {:class s/body-base}
-                "This work will eventually enter the ecosystem of "
-                (d/span {:class s/em-strong} "The Studio")
-                "\u2014a space conceived as an active site of fabrication, touch, arrangement, "
-                "and re-arrangement.")
+           (p :p14)
 
-           (d/p {:class s/body-base}
-                "There, units will not remain fixed. They will shift, recombine, and evolve over time. "
-                "The square reflected upward in "
-                (d/span {:class s/em-strong} "Blue Yellow Blue Yellow")
-                " anticipates that larger logic: continuity through repetition, variation through structure.")
+           (p :p15)
 
            (d/div {:class "my-8 space-y-1"}
-                  (d/p {:class s/body-base} "The maquette is preparation.")
-                  (d/p {:class s/body-base} "The casting will be commitment.")
-                  (d/p {:class s/body-base} "The Pavilion will be transformation."))
+                  (p :coda-1)
+                  (p :coda-2)
+                  (p :coda-3))
 
            (d/p {:class (s/cx s/body-closing)}
                 (d/span {:class s/em-italic}
-                        "In the discipline of repetition, change begins.")))))
-
+                        (t :post-blue-yellow-maquette/closing))))))

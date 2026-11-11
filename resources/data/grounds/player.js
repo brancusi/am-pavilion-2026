@@ -123,7 +123,7 @@
       li.id = 'ground-opt-' + i; li.setAttribute('role', 'option'); li.setAttribute('aria-selected', 'false');
       li.className = 'ap-ground-ui__opt'; li.dataset.i = i;
       [String(i + 1).padStart(2, '0'), e.title, e.by].forEach(function (t) { var sp = document.createElement('span'); sp.textContent = t; li.appendChild(sp); });
-      li.setAttribute('aria-label', e.title + ', idea ' + e.by);
+      li.setAttribute('aria-label', e.title + ', ' + e.by);
       list.appendChild(li);
     });
     var opts = Array.prototype.slice.call(list.children), active = -1, typed = '', typedAt = 0;
@@ -192,7 +192,7 @@
   Player.prototype.setPaused = function (p) {
     this.paused = p;
     this.section.toggleAttribute('data-paused', p);
-    if (this.pause) { this.pause.textContent = p ? 'Play' : 'Pause'; this.pause.setAttribute('aria-pressed', String(p)); }
+    if (this.pause) { this.pause.textContent = p ? (this.pause.dataset.play || 'Play') : (this.pause.dataset.pause || 'Pause'); this.pause.setAttribute('aria-pressed', String(p)); }
   };
   Player.prototype.stop = function () {
     this.dead = true; cancelAnimationFrame(this.raf);

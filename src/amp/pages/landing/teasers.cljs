@@ -7,12 +7,15 @@
   (:require
    [amp.data.walk-media :as wm]
    [amp.hooks.use-in-view :refer [use-in-view]]
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
    [amp.ui.picture :as picture :refer [picture]]
    [clojure.string :as str]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
+
+(defcatalog "landing")
 
 (def ^:private media picture/media-host)
 
@@ -42,13 +45,14 @@
   [year]
   (* 100 (/ (- year 1973) (- 2026.6 1973))))
 
-(def ^:private movements
+(defn- movements
   "The story's five movements and the colour of each opener."
-  [{:id "i"   :n "I"   :title "The River"  :years "to 1972"     :tone "blue"}
-   {:id "ii"  :n "II"  :title "The Door"   :years "1973–1974"   :tone "ink"}
-   {:id "iii" :n "III" :title "The Room"   :years "1973–1978"   :tone "yellow"}
-   {:id "iv"  :n "IV"  :title "The Unit"   :years "1978–1987"   :tone "gold"}
-   {:id "v"   :n "V"   :title "The Studio" :years "2024–2026"   :tone "red"}])
+  []
+  [{:id "i"   :n "I"   :title (t :landing/story.m1) :years (t :landing/story.to-1972) :tone "blue"}
+   {:id "ii"  :n "II"  :title (t :landing/story.m2) :years "1973–1974"   :tone "ink"}
+   {:id "iii" :n "III" :title (t :landing/story.m3) :years "1973–1978"   :tone "yellow"}
+   {:id "iv"  :n "IV"  :title (t :landing/story.m4) :years "1978–1987"   :tone "gold"}
+   {:id "v"   :n "V"   :title (t :landing/story.m5) :years "2024–2026"   :tone "red"}])
 
 (def ^:private story-href "/armenian-as-well")
 
@@ -70,23 +74,21 @@
                    (d/span {:class "max-sm:!hidden" :style #js {:left (str (spine-at 1986.92) "%")}} "1986")
                    (d/span "2026"))
             (d/figcaption {:class "ap-tz-spine__cap ap-label"}
-                          (d/span (d/i {:class "ap-tz-key ap-tz-key--z"}) "Zadikian")
-                          (d/span (d/i {:class "ap-tz-key ap-tz-key--t"}) "Shafrazi")
-                          (d/span {:class "ap-tz-spine__count"} "Nine crossings"))))
+                          (d/span (d/i {:class "ap-tz-key ap-tz-key--z"}) (t :landing/story.zadikian))
+                          (d/span (d/i {:class "ap-tz-key ap-tz-key--t"}) (t :landing/story.shafrazi))
+                          (d/span {:class "ap-tz-spine__count"} (t :landing/story.crossings)))))
 
 (defnc story-teaser []
   (let [[ref played?] (use-played)]
     (d/section {:class "ap-tz-story" :aria-labelledby "tz-story-title"}
                (d/div {:class "ap-wrap ap-tz-story__grid"}
                       (d/div {:class "ap-tz-story__text"}
-                             (d/p {:class "ap-label m-0 ap-tz-story__eyebrow"} "A story · Zadikian and Shafrazi")
+                             (d/p {:class "ap-label m-0 ap-tz-story__eyebrow"} (t :landing/story.eyebrow))
                              (d/h2 {:id "tz-story-title" :class "ap-tz-story__title"}
-                                   (d/span "Armenian") (d/span "as well."))
-                             (d/p {:class "ap-lede m-0 max-w-[36ch]"}
-                                  "In 1973 Richard Serra introduced his young assistant to Tony Shafrazi: “Armenian as well.” "
-                                  "Fifty-three years later they are side by side again, in the Arsenale.")
-                             (d/a {:class "ap-btn ap-btn--yellow self-start" :href story-href}
-                                  "Read the story"
+                                   (d/span (t :landing/story.title-1)) (d/span (t :landing/story.title-2)))
+                             (d/p {:class "ap-lede m-0 max-w-[36ch]"} (t :landing/story.lede))
+                             (d/a {:class "ap-btn ap-btn--yellow self-start" :href (i18n/href story-href)}
+                                  (t :landing/story.read)
                                   (d/span {:aria-hidden true} "→")))
                       (d/div {:class "ap-tz-pair"}
                              (d/figure {:class "ap-tz-pair__a m-0"}
@@ -94,30 +96,30 @@
                                               (d/img {:src (str media "zz-story/tehran-1978-800.webp")
                                                       :srcSet (srcset "zz-story/tehran-1978" [480 800 1200 1600])
                                                       :sizes "(min-width: 960px) 34vw, 82vw"
-                                                      :alt "Tony Shafrazi and Zadik Zadikian behind Gold Bricks, Tony Shafrazi Gallery, Tehran, 1978."
+                                                      :alt (ts :landing/story.alt-1978)
                                                       :loading "lazy" :decoding "async"}))
                                        (d/figcaption {:class "ap-tz-pair__cap"}
-                                                     (d/b "1978") (d/span "Tehran · Gold Bricks")))
+                                                     (d/b "1978") (d/span (t :landing/story.cap-1978))))
                              (d/figure {:class "ap-tz-pair__b m-0"}
                                        (d/div {:class "ap-figure__frame" :style #js {"--ar" "4/3"}}
                                               (d/img {:src (str media "zz-story/independent-2025-800.webp")
                                                       :srcSet (srcset "zz-story/independent-2025" [480 800 1200])
                                                       :sizes "(min-width: 960px) 26vw, 64vw"
-                                                      :alt "Zadikian and Shafrazi in front of Made in USA, a tall stack of gold units, New York, 2025."
+                                                      :alt (ts :landing/story.alt-2025)
                                                       :loading "lazy" :decoding "async"}))
                                        (d/figcaption {:class "ap-tz-pair__cap"}
-                                                     (d/b "2025") (d/span "New York · Made in USA")))))
+                                                     (d/b "2025") (d/span (t :landing/story.cap-2025))))))
                (d/div {:class "ap-wrap" :ref ref}
                       ($ story-spine {:played? played?}))
-               (d/nav {:class "ap-wrap" :aria-label "The story's movements"}
+               (d/nav {:class "ap-wrap" :aria-label (ts :landing/story.movements)}
                       (d/ol {:class "ap-tz-moves"}
-                            (for [{:keys [id n title years tone]} movements]
+                            (for [{:keys [id n title years tone]} (movements)]
                               (d/li {:key id}
                                     (d/a {:class (str "ap-tz-move ap-tz-move--" tone)
-                                          :href (str story-href "#" id)}
+                                          :href (i18n/href (str story-href "#" id))}
                                          (d/span {:class "ap-tz-move__n" :aria-hidden true} n)
                                          (d/span {:class "ap-tz-move__t"}
-                                                 (d/span {:class "sr-only"} (str "Movement " n ": "))
+                                                 (d/span {:class "sr-only"} (t :landing/story.movement {:n n}))
                                                  title)
                                          (d/span {:class "ap-tz-move__y"} years)))))))))
 
@@ -143,86 +145,85 @@
    {:n 13 :x 1144.8 :y 121.4 :d "M1129.8 160.0V158.3H1130.6V156.6H1131.3V154.9H1132.1V153.2H1132.8V151.5H1133.6V149.8H1134.3V148.1H1135.1V146.4H1135.8V144.7H1136.6H1138.1V143.0H1138.8V141.3H1139.6V139.6H1140.3V137.9H1141.1V136.2H1141.8V134.5H1142.6V132.8H1143.3V131.1H1144.1V129.4H1144.8H1146.3H1147.1V131.1H1147.8V132.8H1148.6V134.5H1149.3V136.2H1150.1V137.9H1150.8V139.6H1151.6V141.3H1152.3V143.0H1153.8H1154.6V144.7H1155.3V146.4H1156.1V148.1H1156.8V149.8H1157.6V151.5H1158.3V153.2H1159.1V154.9H1159.8V156.6V160.0Z"}])
 
 (def ^:private stations
-  [["shoulder" "I" "Shoulder"] ["guild" "II" "Guild"] ["world" "III" "World"]
-   ["machine" "IV" "Machine"] ["walk" "V" "Walk"] ["studio" "VI" "Studio"]])
+  "Portage sheets: slug and numeral (the short name is portage.st.<slug>)."
+  [["shoulder" "I"] ["guild" "II"] ["world" "III"]
+   ["machine" "IV"] ["walk" "V"] ["studio" "VI"]])
 
 (def ^:private walk-facts
-  [["3.0" "km" "Piazzale Roma to La Celestia"]
-   ["13" "bridges" "crossed on the way"]
-   ["378" "steps" "182 of them up"]
-   ["24–29" "m" "climbed, a step at a time"]])
+  "Value, unit and note of each, in landing.json portage.<id>.v/.u/.note."
+  ["km" "bridges" "steps" "m"])
 
 (defnc walk-section
   "The thirteen bridges rise one by one as the red line walks the route."
   [{:keys [played?]}]
   (d/figure {:class "ap-tz-walk m-0" :data-played (when played? "")}
             (d/svg {:viewBox "0 36 1344 128" :class "ap-tz-walk__svg" :role "img"
-                    :aria-label "Route A in section: 3 km from Piazzale Roma to La Celestia over thirteen bridges; the Rialto, bridge 8, is the highest."}
+                    :aria-label (ts :landing/portage.section-aria)}
                    (for [{:keys [n x y d anchor]} bridges
                          :let [t (/ (- x 16) 1312)]]
                      (d/g {:key n :class (str "ap-tz-walk__bridge" (when (= n 8) " is-rialto"))
                            :style #js {"--t" t}}
                           (when (seq d) (d/path {:d d}))
                           (d/text {:x x :y y :text-anchor (or anchor "middle")} n)))
-                   (d/text {:class "ap-tz-walk__rialto" :x 742 :y 50} "Rialto")
+                   (d/text {:class "ap-tz-walk__rialto" :x 742 :y 50} (t :landing/portage.tag-rialto))
                    (d/line {:class "ap-tz-walk__base" :x1 16 :y1 160 :x2 1328 :y2 160})
                    (d/line {:class "ap-tz-walk__route" :x1 16 :y1 160 :x2 1328 :y2 160 :pathLength 1}))
             (d/figcaption {:class "ap-tz-walk__km ap-label"}
-                          (d/span "Piazzale Roma · km 0")
-                          (d/span {:class "ap-tz-walk__title max-sm:!hidden"} "The walk in section")
-                          (d/span "La Celestia · km 3.0"))))
+                          (d/span (t :landing/portage.section-start))
+                          (d/span {:class "ap-tz-walk__title max-sm:!hidden"} (t :landing/portage.section-title))
+                          (d/span (t :landing/portage.section-end)))))
 
 (defnc portage-teaser []
   (let [[ref played?] (use-played)]
     (d/section {:class "ap-sec ap-tz-portage" :aria-labelledby "tz-portage-title"}
                (d/div {:class "ap-wrap ap-tz-portage__head"}
-                      (d/p {:class "ap-label ap-muted m-0"} "Portage · Venice, 2025–2026")
+                      (d/p {:class "ap-label ap-muted m-0"} (t :landing/portage.eyebrow))
                       (d/h2 {:id "tz-portage-title" :class "ap-tz-portage__title"}
-                            "In Venice everything arrives by water and leaves the quay on someone’s back. "
-                            (d/span {:class "text-red-text"} "In 2026 the studio carries its own work over the bridges.")))
+                            (t :landing/portage.title {:red (i18n/tag "span" {:className "text-red-text"})})))
                (d/figure {:class "ap-tz-map m-0" :data-played (when played? "")}
                          (d/div {:class "ap-tz-map__frame"}
                                 (d/img {:src (str media "portage/barbari-1440.webp")
                                         :srcSet (srcset "portage/barbari" [640 960 1440 2000])
                                         :sizes "100vw"
-                                        :alt "Jacopo de' Barbari's bird's-eye woodcut of Venice in 1500, with red rings at S. Andrea, the Rialto and La Celestia."
+                                        :alt (ts :landing/portage.map-alt)
                                         :loading "lazy" :decoding "async"})
                                 (d/svg {:viewBox "0 0 2000 964" :preserveAspectRatio "none" :aria-hidden true}
                                        (for [[i [cx cy r]] (map-indexed vector [[119 386 37.4] [735 373 45.9] [1299 445 28.9]])]
                                          (d/circle {:key i :class "ap-tz-map__ring" :cx cx :cy cy :r r
                                                     :style #js {"--i" i}})))
-                                (d/span {:class "ap-tz-map__tag" :style #js {:left "2%" :top "35%" "--i" 0 "--x" "0%"}} "km 0 · S. Andrea")
-                                (d/span {:class "ap-tz-map__tag" :style #js {:left "36.75%" :top "33%" "--i" 1}} "Rialto")
-                                (d/span {:class "ap-tz-map__tag" :style #js {:left "64.95%" :top "42.2%" "--i" 2}} "La Celestia · km 3.0"))
+                                (d/span {:class "ap-tz-map__tag" :style #js {:left "2%" :top "35%" "--i" 0 "--x" "0%"}} (t :landing/portage.tag-start))
+                                (d/span {:class "ap-tz-map__tag" :style #js {:left "36.75%" :top "33%" "--i" 1}} (t :landing/portage.tag-rialto))
+                                (d/span {:class "ap-tz-map__tag" :style #js {:left "64.95%" :top "42.2%" "--i" 2}} (t :landing/portage.tag-end)))
                          (d/figcaption {:class "ap-wrap ap-caption ap-muted mt-2"}
-                                       "Venetie MD, Jacopo de' Barbari, woodcut, 1500. Minneapolis Institute of Art · Public domain."))
+                                       (t :landing/portage.map-cap)))
                (d/div {:class "ap-wrap ap-tz-portage__grid"}
                       (d/figure {:class "ap-tz-porter m-0"}
                                 (d/div {:class "ap-figure__frame" :style #js {"--ar" "1045/1504"}}
                                        (d/img {:src (str media "portage/vecellio__pool-640.webp")
                                                :srcSet (srcset "portage/vecellio__pool" [320 640 960 1045])
                                                :sizes "(min-width: 960px) 22vw, 40vw"
-                                               :alt "A woodcut of a Venetian porter carrying a long chest on his shoulder, a sack worn as a hood under the load."
+                                               :alt (ts :landing/portage.porter-alt)
                                                :loading "lazy" :decoding "async"}))
                                 (d/figcaption {:class "ap-caption ap-muted"}
-                                              "Facchino, Cesare Vecellio, 1598."))
+                                              (t :landing/portage.porter-cap)))
                       (d/div {:class "ap-tz-portage__body"}
                              (d/dl {:class "ap-tz-facts"}
-                                   (for [[v unit note] walk-facts]
-                                     (d/div {:key unit}
-                                            (d/dt (d/span {:class "ap-tz-facts__v"} v) (d/span {:class "ap-tz-facts__u"} unit))
-                                            (d/dd note))))
+                                   (for [k walk-facts
+                                         :let [f #(t (keyword "landing" (str "portage." k "." %)))]]
+                                     (d/div {:key k}
+                                            (d/dt (d/span {:class "ap-tz-facts__v"} (f "v")) (d/span {:class "ap-tz-facts__u"} (f "u")))
+                                            (d/dd (f "note")))))
                              (d/div {:ref ref}
                                     ($ walk-section {:played? played?}))
                              (d/div {:class "ap-tz-portage__go"}
-                                    (d/a {:class "ap-btn ap-btn--red" :href "/portage"}
-                                         "Follow the walk" (d/span {:aria-hidden true} "→"))
-                                    (d/nav {:aria-label "Portage sheets"}
+                                    (d/a {:class "ap-btn ap-btn--red" :href (i18n/href "/portage")}
+                                         (t :landing/portage.follow) (d/span {:aria-hidden true} "→"))
+                                    (d/nav {:aria-label (ts :landing/portage.sheets)}
                                            (d/ul {:class "ap-tz-stations"}
-                                                 (for [[slug n short] stations]
+                                                 (for [[slug n] stations]
                                                    (d/li {:key slug}
-                                                         (d/a {:href (str "/portage/" slug)}
-                                                              (d/i n) short)))))))))))
+                                                         (d/a {:href (i18n/href (str "/portage/" slug))}
+                                                              (d/i n) (t (keyword "landing" (str "portage.st." slug))))))))))))))
 
 
 ;; ── The walks ───────────────────────────────────────────────────────────
@@ -236,25 +237,25 @@
         nxt (some #(when (:next? %) %) walks)]
     (d/section {:class "ap-wt" :aria-labelledby "wt-title"}
                (d/div {:class "ap-wrap ap-wt__grid"}
-                      (d/a {:class "ap-wt__media" :href "/walks" :tab-index -1 :aria-hidden true}
+                      (d/a {:class "ap-wt__media" :href (i18n/href "/walks") :tab-index -1 :aria-hidden true}
                            ($ picture {:src (str media "walks/2026-11-06/dsc08011.tif")
                                        :sizes "(min-width: 960px) 55vw, 100vw" :alt ""})
-                           (d/span {:class "ap-wt__tag ap-label"} "Arsenale wall · 6 November"))
+                           (d/span {:class "ap-wt__tag ap-label"} (t :landing/walks.tag)))
                       (d/div {:class "ap-wt__text"}
-                             (d/p {:class "ap-label ap-muted m-0"} "Walks · 5–22 November")
-                             (d/h2 {:id "wt-title" :class "ap-wt__title"} "Walking the Work Through Venice")
+                             (d/p {:class "ap-label ap-muted m-0"} (t :landing/walks.eyebrow))
+                             (d/h2 {:id "wt-title" :class "ap-wt__title"} (t :landing/walks.title))
                              (d/p {:class "ap-lede m-0 max-w-[30ch]"}
-                                  "The studio carries the works out of Tesa 41 on its back and sets them down across the city: in campi, on fondamente, before churches. In the final week, students of the Accademia di Belle Arti take them into the Academy. "
-                                  (str (count done) " walks so far, " (- (count walks) (count done)) " to come before the closing day."))
-                             (d/ol {:class "ap-wt__days" :aria-label "Walk days"}
+                                  (t :landing/walks.lede)
+                                  (t :landing/walks.count {:done (count done) :left (- (count walks) (count done))}))
+                             (d/ol {:class "ap-wt__days" :aria-label (ts :landing/walks.days)}
                                    (for [{:keys [id date status next?] :as w} walks]
                                      (d/li {:key id :data-status (name status) :data-next (when next? "")
-                                            :aria-label (str (wm/short-date date) ": " (wm/status-label w))}
-                                           (d/b (wm/day-of date)) (subs (wm/weekday date) 0 2))))
+                                            :aria-label (ts :landing/walks.day {:date (wm/short-date date) :status (wm/status-label w)})}
+                                           (d/b (wm/day-of date)) (wm/weekday-abbr date))))
                              (when nxt
                                (d/p {:class "ap-data m-0"}
-                                    (str "Next: " (wm/long-date (:date nxt)) ", leaving Tesa 41 at " (:depart nxt) " with " (:works nxt) " works")))
+                                    (t :landing/walks.next {:date (wm/long-date (:date nxt)) :time (:depart nxt) :n (:works nxt)})))
                              (d/div {:class "flex flex-wrap gap-2"}
-                                    (d/a {:class "ap-btn ap-btn--yellow" :href "/walks"}
-                                         "See the walks" (d/span {:aria-hidden true} "→"))
-                                    (d/a {:class "ap-btn ap-btn--ghost" :href "/walks#schedule"} "Walk with us")))))))
+                                    (d/a {:class "ap-btn ap-btn--yellow" :href (i18n/href "/walks")}
+                                         (t :landing/walks.see) (d/span {:aria-hidden true} "→"))
+                                    (d/a {:class "ap-btn ap-btn--ghost" :href (i18n/href "/walks#schedule")} (t :landing/walks.join))))))))

@@ -5,12 +5,15 @@
    while it is open."
   (:require ["react-dom" :refer [createPortal]]
             [amp.data.films :as films]
+            [amp.i18n :refer [ts] :refer-macros [defcatalog]]
             [amp.lib.defnc :refer [defnc]]
             [amp.ui.picture :refer [mux-poster]]
             [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [helix.core :refer [$]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
+
+(defcatalog "ui")
 
 (def lazy-film (lazy-component amp.ui.video-background/film-player))
 
@@ -42,7 +45,7 @@
                             (d/span {:class "text-yellow"} (films/running-time duration))
                             " · " title
                             (d/span {:class "ap-lightbox__where"} (str " · " where " · " (:when film))))
-                       (d/button {:ref close-ref :class "ap-iconbtn" :aria-label "Close film"
+                       (d/button {:ref close-ref :class "ap-iconbtn" :aria-label (ts :ui/lightbox.close)
                                   :on-click on-close}
                                  (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"
                                          :stroke-width 1.6 :aria-hidden true}

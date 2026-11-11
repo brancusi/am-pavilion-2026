@@ -3,12 +3,19 @@
 // previews (title, description, picture), so a link texted or posted shows
 // what it points to rather than the site's card; and makes the press ZIPs.
 // Sections listed in PAGES (/walks, …) get their own preview too.
-// Only /blog/*, /films/*, /press/*, /it/press/* and the PAGES paths run through here (wrangler.jsonc
-// run_worker_first); everything else is served straight from the assets.
-// posts.json and films.json are written by build/og-posts.js; the press
-// images come from press.json, the list the page reads.
+// Every page has an Italian (/it/…) and an Armenian (/hy/…) version; their
+// previews are in that language, and every page served through here gets
+// <html lang>, og:locale and hreflang links to its other versions.
+// Only /, /blog/*, /films/*, /press/*, the PAGES paths and everything under
+// /it and /hy run through here (wrangler.jsonc run_worker_first); everything
+// else is served straight from the assets.
+// posts.json, films.json and meta.json (section texts per locale, from
+// resources/i18n/<locale>/meta.json) are written by build/og-posts.js; the
+// press images come from press.json, the list the page reads.
 import posts from "./posts.json";
 import films from "./films.json";
+import meta from "./meta.json";
+import mediaText from "./media.json";
 import { plan, send } from "./zip.js";
 
 const site = "https://armenianpavilion.org";
@@ -19,17 +26,22 @@ class Content {
   element(el) { el.setAttribute("content", this.value); }
 }
 
+const LOCALES = ["en", "it", "hy"];
+const OG_LOCALE = { en: "en_GB", it: "it_IT", hy: "hy_AM" };
+const at = (locale, bare) => (locale === "en" ? bare : `/${locale}${bare === "/" ? "" : bare}`);
+
 // The page with its title, description and preview picture set.
-function preview(res, { path, title, description, image, width, height, type = "article" }) {
+function preview(res, { path, title, description, image, width, height, type = "article", locale = "en" }) {
   const url = site + path;
-  const meta = [
+  const name = meta[locale]["site-name"];
+  const tags = [
     ["title", title], ["description", description],
     ["og:type", type], ["og:url", url], ["og:title", title], ["og:description", description],
     ["twitter:url", url], ["twitter:title", title], ["twitter:description", description],
     ...(image ? [["og:image", image], ["twitter:image", image]] : []),
   ];
-  let rw = new HTMLRewriter().on("title", { element(el) { el.setInnerContent(`${title} · Armenian Pavilion`); } });
-  for (const [k, v] of meta) rw = rw.on(`meta[name="${k}"], meta[property="${k}"]`, new Content(v));
+  let rw = new HTMLRewriter().on("title", { element(el) { el.setInnerContent(title.startsWith(name) ? title : `${title} · ${name}`); } });
+  for (const [k, v] of tags) rw = rw.on(`meta[name="${k}"], meta[property="${k}"]`, new Content(v));
   if (image && width && height) {
     rw = rw.on("head", { element(el) {
       el.append(`<meta property="og:image:width" content="${width}"><meta property="og:image:height" content="${height}">`, { html: true });
@@ -42,81 +54,44 @@ function preview(res, { path, title, description, image, width, height, type = "
 // is a 1200×630 JPEG under ~150 KB on R2 at share/<section>.jpg (messaging
 // apps skip bigger ones); upload a new key to change one. A path added here
 // must also be in run_worker_first (wrangler.jsonc).
+// Their title and description are <key>.title / <key>.description in meta.json.
 const PAGES = {
-  "/walks": {
-    title: "Walks",
-    description: "The studio carries the works out of Tesa 41 and through Venice, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. The schedule, the routes and every walk so far.",
-    image: `${media}share/walks.jpg`,
-  },
-  "/visit": {
-    title: "Getting to the pavilion",
-    description: "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. Guests by water taxi enter from the North Lagoon. Tuesday to Sunday, 10:00–17:30, 9 May – 22 November 2026.",
-    image: `${media}share/visit.jpg`,
-  },
-  "/artist": {
-    title: "Zadik Zadikian",
-    description: "Sculptor. Representing Armenia at the 61st International Art Exhibition — La Biennale di Venezia.",
-    image: `${media}share/artist.jpg`,
-  },
-  "/portage": {
-    title: "Portage",
-    description: "In Venice everything arrives by water and leaves the quay on someone’s back. From Piazzale Roma on, whatever moves goes by boat or by hand; the studio goes one step further back, to a frame on the shoulders.",
-    image: `${media}share/portage.jpg`,
-  },
-  "/armenian-as-well": {
-    title: "Armenian as well: Zadikian and Shafrazi",
-    description: "Two Armenians met in Richard Serra’s studio in 1973. Serra introduced one to the other as “Armenian as well.” Fifty-three years later they are working side by side again, inside the Venice Arsenale.",
-    image: `${media}share/armenian-as-well.jpg`,
-  },
-  "/route-from-hotel-gabrielli": {
-    title: "By water taxi: Hotel Gabrielli to the pavilion",
-    description: "From the Hotel Gabrielli landing on Riva degli Schiavoni straight to the pavilion’s own landing inside the Arsenale Militare: through the canals of Castello, out into the North Lagoon and back in through Rio delle Galeazze, 15 to 20 minutes on the water.",
-    image: `${media}share/visit.jpg`,
-  },
-  "/delivery": {
-    title: "Consegne al Padiglione Armenia",
-    description: "Come consegnare materiali al Padiglione Armenia, Tesa 41, Arsenale Militare di Venezia: a piedi dalla Celestia o in barca.",
-    image: `${media}share/visit.jpg`,
-  },
+  "/": { key: "home", image: `${media}share/home.jpg` },
+  "/walks": { key: "walks", image: `${media}share/walks.jpg` },
+  "/visit": { key: "visit", image: `${media}share/visit.jpg` },
+  "/artist": { key: "artist", image: `${media}share/artist.jpg` },
+  "/portage": { key: "portage", image: `${media}share/portage.jpg` },
+  "/armenian-as-well": { key: "story", image: `${media}share/armenian-as-well.jpg` },
+  "/route-from-hotel-gabrielli": { key: "taxi", image: `${media}share/visit.jpg` },
+  "/delivery": { key: "delivery", image: `${media}share/visit.jpg` },
+  "/subscribed": { key: "subscribed", image: `${media}share/home.jpg` },
   // The journal index shows its newest post's cover (posts.json is newest first).
-  "/blog": {
-    title: "Journal: notes from the studio",
-    description: "Process, travel and the making of The Studio, from Los Angeles to Tesa 41.",
-    image: Object.values(posts)[0]?.image,
-  },
-};
-
-const PRESS_TEXT = {
-  en: { kit: "Press kit", desc: "Press kit for Zadik Zadikian: The Studio, Armenian Pavilion, Biennale Arte 2026: release, fact sheet, images, films and logos.", film: "Film" },
-  it: { kit: "Cartella stampa", desc: "Cartella stampa di Zadik Zadikian: The Studio, Padiglione della Repubblica di Armenia, Biennale Arte 2026: comunicato, scheda, immagini, video e loghi.", film: "Video" },
+  "/blog": { key: "blog", image: Object.values(posts)[0]?.image },
 };
 
 // Releases on /press/release/<name> and /it/press/release/<name>: their own preview, in
 // the page's language (the Italian link is the one sent to Italian press).
 // The picture is its share card (build/press-share-card.mjs): the photograph
 // with La Biennale's National Participations logo, 1200 × 630, on R2 share/.
+// Their texts are pitch.<name>.title / .description in meta.json.
 const PITCHES = {
-  tricolore: {
-    image: `${media}share/tricolore.jpg`, width: 1200, height: 630,
-    en: { title: "The Italian flag walks through Venice", description: "Armenian Pavilion, Biennale Arte 2026: the studio carries an Italian flag through Venice on foot. Saturday 14 November to Piazza San Marco, Wednesday 18 November to the Accademia di Belle Arti. Release, films and images." },
-    it: { title: "Il Tricolore cammina per Venezia", description: "Padiglione Armenia, Biennale Arte 2026: lo studio porta a piedi un Tricolore per Venezia. Sabato 14 novembre verso Piazza San Marco, mercoledì 18 novembre all’Accademia di Belle Arti. Comunicato, video e immagini." },
-  },
+  tricolore: { image: `${media}share/tricolore.jpg`, width: 1200, height: 630 },
 };
 
-async function press(request, env, res, path, m) {
-  const [, it, section, item] = m;
-  const tx = PRESS_TEXT[it ? "it" : "en"];
+// Text of a post or film in the locale, English where it has none.
+const inLocale = (entry, locale) => ({ ...entry, ...Object.fromEntries(Object.entries(entry[locale] || {}).filter(([, v]) => v)) });
+
+async function press(request, env, res, path, m, locale) {
+  const [, section, item] = m;
+  const T = meta[locale];
   const pitch = section === "release" && item && PITCHES[item];
-  if (pitch) {
-    const t = pitch[it ? "it" : "en"];
-    const out = preview(res, { path: path.replace(/\/+$/, ""), ...t, image: pitch.image, width: pitch.width, height: pitch.height, type: "article" });
-    return new HTMLRewriter().on("head", { element(el) {
-      el.append(`<meta property="og:locale" content="${it ? "it_IT" : "en_GB"}">`, { html: true });
-    } }).on("html", { element(el) { el.setAttribute("lang", it ? "it" : "en"); } }).transform(out);
+  if (pitch && T[`pitch.${item}.title`]) {
+    return preview(res, { path: path.replace(/\/+$/, ""), title: T[`pitch.${item}.title`], description: T[`pitch.${item}.description`],
+                          image: pitch.image, width: pitch.width, height: pitch.height, type: "article", locale });
   }
   if (section === "films" && item && films[item]) {
-    const f = films[item];
-    return preview(res, { path, title: f.title, description: `${tx.film} · ${f.summary}`, image: f.image, width: 1200, height: 630, type: "video.other" });
+    const f = inLocale(films[item], locale);
+    return preview(res, { path, title: f.title, description: `${T["press.film"]} · ${f.summary}`, image: f.image, width: 1200, height: 630, type: "video.other", locale });
   }
   if (section === "images" && item) {
     const data = await (await env.ASSETS.fetch(new URL("/data/press/press.json", request.url))).json();
@@ -125,12 +100,54 @@ async function press(request, env, res, path, m) {
       // The Small download (1200 px long edge, ~100 KB): messaging apps skip
       // preview pictures much bigger than that.
       const s = im.dl?.s;
-      const title = [im.title, im.date].filter(Boolean).join(", ");
-      return preview(res, { path, title, description: im.caption_short || im.caption || tx.desc,
-                            image: s ? media + s.key : `${media}${im.key}.jpg`, width: s?.w, height: s?.h });
+      const tr = (s) => (s && mediaText[locale]?.[s]) || s;
+      const title = [tr(im.title), tr(im.date)].filter(Boolean).join(", ");
+      return preview(res, { path, title, description: tr(im.caption_short) || tr(im.caption) || T["press.description"],
+                            image: s ? media + s.key : `${media}${im.key}.jpg`, width: s?.w, height: s?.h, locale });
     }
   }
-  return preview(res, { path, title: tx.kit, description: tx.desc, type: "website" });
+  return preview(res, { path, title: T["press.kit"], description: T["press.description"], type: "website", locale });
+}
+
+// <html lang>, og:locale and the page's other languages (hreflang) on every
+// page served through here.
+function localize(res, locale, bare) {
+  const links = LOCALES.map((l) => `<link rel="alternate" hreflang="${l}" href="${site}${at(l, bare)}">`).join("")
+    + `<link rel="alternate" hreflang="x-default" href="${site}${bare}">`
+    + `<meta property="og:locale" content="${OG_LOCALE[locale]}">`
+    + LOCALES.filter((l) => l !== locale).map((l) => `<meta property="og:locale:alternate" content="${OG_LOCALE[l]}">`).join("");
+  return new HTMLRewriter()
+    .on("html", { element(el) { el.setAttribute("lang", locale); } })
+    .on("head", { element(el) { el.append(links, { html: true }); } })
+    .transform(res);
+}
+
+// The preview for a page: bare is the path without its locale prefix.
+async function route(request, env, res, path, bare, locale) {
+  const T = meta[locale];
+  const fm = bare.match(/^\/films\/([a-z0-9-]+)\/?$/);
+  if (fm && films[fm[1]]) {
+    const f = inLocale(films[fm[1]], locale);
+    return preview(res, { path: at(locale, `/films/${fm[1]}`), title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other", locale });
+  }
+
+  const trimmed = bare.replace(/\/+$/, "") || "/";   // /walks/ previews like /walks
+  const page = PAGES[trimmed];
+  if (page) {
+    // The home page keeps the site's own card in English (index.html); the others get their texts.
+    if (trimmed === "/" && locale === "en") return res;
+    const sized = page.image?.startsWith(`${media}share/`);   // the share cards are 1200×630
+    return preview(res, { path: at(locale, trimmed), title: T[`${page.key}.title`], description: T[`${page.key}.description`],
+                          image: page.image, ...(sized && { width: 1200, height: 630 }), type: "website", locale });
+  }
+
+  const pm = bare.match(/^\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
+  if (pm) return press(request, env, res, path, pm, locale);
+
+  const slug = bare.match(/^\/blog\/([a-z0-9-]+)\/?$/)?.[1];
+  const post = slug && posts[slug] && inLocale(posts[slug], locale);
+  if (!post) return res;
+  return preview(res, { path: at(locale, `/blog/${slug}`), title: post.title, description: post.summary, image: post.image, locale });
 }
 
 export default {
@@ -141,26 +158,11 @@ export default {
     const res = await env.ASSETS.fetch(request);
     if (!(res.headers.get("content-type") || "").includes("text/html")) return res;
 
-    const fm = path.match(/^\/films\/([a-z0-9-]+)\/?$/);
-    if (fm && films[fm[1]]) {
-      const f = films[fm[1]];
-      return preview(res, { path: `/films/${fm[1]}`, title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other" });
-    }
-
-    const bare = path.replace(/\/+$/, "") || "/";   // /walks/ previews like /walks
-    const page = PAGES[bare];
-    if (page) {
-      const sized = page.image?.startsWith(`${media}share/`);   // the share cards are 1200×630
-      return preview(res, { path: bare, ...page, ...(sized && { width: 1200, height: 630 }), type: "website" });
-    }
-
-    const pm = path.match(/^(\/it)?\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);
-    if (pm) return press(request, env, res, path, pm);
-
-    const slug = path.match(/^\/blog\/([a-z0-9-]+)\/?$/)?.[1];
-    const post = slug && posts[slug];
-    if (!post) return res;
-    return preview(res, { path: `/blog/${slug}`, title: post.title, description: post.summary, image: post.image });
+    const lm = path.match(/^\/(it|hy)(?=\/|$)/);
+    const locale = lm ? lm[1] : "en";
+    const bare = lm ? path.slice(3) || "/" : path;
+    const out = await route(request, env, res, path, bare, locale);
+    return localize(out, locale, bare.replace(/\/+$/, "") || "/");
   },
 };
 

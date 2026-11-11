@@ -4,13 +4,31 @@
    content (resources/data/zz-story/story.html, its stylesheet scoped under
    .zz in story.css; images on R2 under zz_story/). This namespace loads it
    and ports the original page script: swipe galleries, the chapter index,
-   and reading progress."
+   and reading progress. Italian and Armenian are whole translated copies,
+   resources/data/zz-story/<locale>/story.html, with the English as fallback."
   (:require [amp.hooks.use-in-view :refer [observe!]]
+            [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
             [amp.lib.defnc :refer [defnc]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
+(defcatalog "story")
+
 (def ^:private html-url "/data/zz-story/story.html")
+
+(defn- html-url-for
+  "The story's HTML in locale l (English at the folder root)."
+  [l]
+  (if (= l i18n/default-locale) html-url (str "/data/zz-story/" l "/story.html")))
+
+(defn- fetch-html
+  "The story's HTML for locale l, falling back to the English file."
+  [l]
+  (let [get! #(-> (js/fetch %)
+                  (.then (fn [^js r] (if (.-ok r) (.text r) (js/Promise.reject (.-status r))))))]
+    (if (= l i18n/default-locale)
+      (get! html-url)
+      (.catch (get! (html-url-for l)) #(get! html-url)))))
 (def ^:private css-url "/data/zz-story/story.css")
 
 (defn- pad2 [n] (.padStart (str n) 2 "0"))
@@ -127,7 +145,9 @@
                            (set! (.-textContent num) number)
                            (set! (.-textContent title-el) title))
                          (set! (.-textContent ahead)
-                               (if (= i (dec n)) "Last chapter" (str (- n 1 i) " of " (dec n) " ahead")))
+                               (if (= i (dec n))
+                                 (ts :story/last-chapter)
+                                 (ts :story/ahead {:n (- n 1 i) :total (dec n)})))
                          (doseq [[j {:keys [row]}] (map-indexed vector chapters)]
                            (.toggle (.-classList row) "is-done" (< j i))
                            (.toggle (.-classList row) "is-cur" (= j i))
@@ -217,14 +237,16 @@
   [_props]
   (let [root (hooks/use-ref nil)
         [html set-html!] (hooks/use-state nil)
-        [css? set-css!] (hooks/use-state false)]
+        [css? set-css!] (hooks/use-state false)
+        locale (i18n/locale)]
     (use-head! #(set-css! true))
     (hooks/use-effect
-     :once
-     (-> (js/fetch html-url)
-         (.then #(.text %))
-         (.then set-html!)
-         (.catch (fn [_] (set-html! "")))))
+     [locale]
+     (let [live? (atom true)]
+       (-> (fetch-html locale)
+           (.then #(when @live? (set-html! %)))
+           (.catch (fn [_] (when @live? (set-html! "")))))
+       #(reset! live? false)))
     (hooks/use-effect
      [html css?]
      (when-let [el (and html css? @root)]
@@ -237,6 +259,6 @@
          #(doseq [off offs] (off)))))
     (d/div {:class "zz" :aria-busy (not (and html css?))}
            (when-not (and html css?)
-             (d/p {:class "ap-label ap-muted px-4 py-24 text-center m-0"} "Loading the story…"))
+             (d/p {:class "ap-label ap-muted px-4 py-24 text-center m-0"} (t :story/loading)))
            ;; Filled with innerHTML above; React renders no children here.
            (d/div {:ref root}))))

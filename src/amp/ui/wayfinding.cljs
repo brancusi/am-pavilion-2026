@@ -4,7 +4,8 @@
    facts, section heads, the live route map panel, numbered steps, the
    driver card and tap-to-call contacts. Data (addresses, phone numbers)
    lives in amp.ui.directions."
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.i18n :as i18n]
+            [amp.lib.defnc :refer [defnc]]
             [amp.pages.venue.map-config :as mc]
             [amp.ui.directions :refer [pavilion-address]]
             [amp.ui.lazy-map :refer [mapbox-map]]
@@ -12,40 +13,37 @@
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 
-(defn use-doc-lang
-  "Sets <html lang> while a page shows content in `lang` (so screen readers
-   pronounce the Italian correctly); back to English on leaving."
-  [lang]
-  (hooks/use-effect
-   [lang]
-   (set! (.. js/document -documentElement -lang) (name lang))
-   #(set! (.. js/document -documentElement -lang) "en")))
+(defn use-card-locale
+  "The locale a driver card shows in: the page's, or Italian once the guest
+   taps the toggle (the card is meant to be handed to an Italian-speaking
+   driver). Returns [locale italian? set-italian!]. With `italian-first?`
+   (the card page, /route-from-hotel-gabrielli, made to be handed over as
+   it is) it opens in Italian and the toggle goes back to the page language."
+  ([] (use-card-locale false))
+  ([italian-first?]
+  (let [[italian? set-italian!] (hooks/use-state (boolean italian-first?))
+        l (if italian? "it" (i18n/locale))]
+    [l italian? set-italian!])))
 
-(defn rich
-  "Inline prose from plain strings and [:em \"text\"] segments."
-  [segments]
-  (map-indexed (fn [i seg]
-                 (if (vector? seg)
-                   (d/strong {:key i :class "font-medium"} (second seg))
-                   seg))
-               segments))
-
-(defnc lang-switch
-  "IT / EN segmented control."
-  [{:keys [lang on-change]}]
-  (d/div {:class "ap-lang" :role "group" :aria-label "Lingua / Language"}
-         (for [[k label] [[:it "IT"] [:en "EN"]]]
-           (d/button {:key label :type "button" :aria-pressed (= k lang)
-                      :lang (name k) :on-click #(on-change k)}
-                     label))))
+(defnc card-lang-toggle
+  "One tap to show a driver card in Italian and back. Nothing on Italian
+   pages. `to-italian` is the label in Italian (\"Mostra in italiano\"),
+   `back` in the page's language (\"Show in English\")."
+  [{:keys [italian? on-change to-italian back]}]
+  (when-not (= "it" (i18n/locale))
+    (d/button {:type "button"
+               :class "ap-btn ap-btn--ghost ap-cardlang"
+               :lang (if italian? (i18n/locale) "it")
+               :aria-pressed italian?
+               :on-click #(on-change (not italian?))}
+              (if italian? back to-italian))))
 
 (defnc page-head
   "Night band at the top of a directions page: eyebrow, title, lede and a
-   grid of key facts ([label value] pairs). `aside` sits top right (the
-   language switch)."
+   grid of key facts ([label value] pairs). `aside` sits top right."
   [{:keys [eyebrow title lede facts aside]}]
   (<>
-   (d/section {:class "ap-vhead"}
+   (d/section {:class "ap-vhead ap-vhead--wf"}
               (d/div {:class "ap-wrap ap-vhead__grid"}
                      (d/div {:class "flex flex-col gap-5"}
                             (d/div {:class "flex items-start justify-between gap-4"}
@@ -54,7 +52,7 @@
                             (d/h1 {:class "ap-display-xl"} title)
                             (when lede (d/p {:class "ap-lede max-w-[40ch] m-0"} lede)))
                      (when (seq facts)
-                       (d/dl {:class "ap-keyfacts"}
+                       (d/dl {:class "ap-keyfacts ap-keyfacts--wf"}
                              (for [[k v] facts]
                                (d/div {:key k} (d/dt k) (d/dd v)))))))
    (d/div {:class "ap-hero__strip" :aria-hidden true}
@@ -141,9 +139,10 @@
    :subtitle :authorized [..] :before-title :before-body :before-quote
    :contacts [[label contact] ..] :before-note :entrance-title
    :entrance-name :entrance-body :entrance-warn, optional :steps-title
-   :steps [..] and :map-caption. `lang` sets the card's language."
+   :steps [..], :map-caption and :legend [[kind label] ..]. `lang` is the
+   card's locale (\"it\" when shown to the driver on another page)."
   [{:keys [c lang children]}]
-  (d/div {:class "ap-taxicard" :lang (name lang)}
+  (d/div {:class "ap-taxicard" :lang lang}
          (d/p {:class "ap-label m-0 text-blue-text"} (:subtitle c))
          (for [para (:authorized c)]
            (d/p {:key para :class "ap-body m-0"} para))
@@ -166,6 +165,5 @@
                   (d/p {:class "ap-label ap-muted m-0"} (:steps-title c))
                   ($ steps {:items (:steps c) :water? true})))
          ($ route-map {:map (assoc galeazze-map :lang lang) :caption (:map-caption c)
-                       :legend [[:water (if (= lang :it) "Percorso in acqua" "Water route")]
-                                [:pav (if (= lang :it) "Padiglione Armenia" "Armenian Pavilion")]]})
+                       :legend (:legend c)})
          children))

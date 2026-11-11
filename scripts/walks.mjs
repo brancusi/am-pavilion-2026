@@ -17,6 +17,7 @@
 //   resources/data/walks/routes.json            the lines, in the base map's pixels
 //   resources/data/walks/basemap{,-dark}.svg    the streets, drawn as the map
 //   src/amp/data/walks.cljs                     the walk list (generated; don't edit)
+//   resources/i18n/en/data-walks.json           the plan's text, for translation
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
@@ -24,6 +25,7 @@ const PLAN = 'scripts/walks/plan.json';
 const OSM = '.cache/walks-osm.json';
 const OUT = 'resources/data/walks';
 const CLJS = 'src/amp/data/walks.cljs';
+const I18N = 'resources/i18n/en';
 
 const GATE = [12.349929, 45.438023];     // the public door of Tesa 41
 const PAVILION = [12.350369, 45.436882];
@@ -199,4 +201,18 @@ writeFileSync(CLJS, `(ns amp.data.walks
 (def walks
   [${list.map(edn).join('\n   ')}])
 `);
-console.log(`Wrote ${OUT}/routes.json, ${OUT}/basemap.svg, ${OUT}/basemap-dark.svg and ${CLJS}`);
+
+// ── The plan's text, for translation ─────────────────────────────────────
+// A source-keyed catalog (amp.i18n/tx): each English string mapped to itself.
+// The Italian and Armenian files (resources/i18n/{it,hy}/data-walks.json) are
+// written by hand; `npm run i18n:check` lists any string they lack. The "via"
+// passages are Italian street names and stay as they are.
+const texts = new Set();
+for (const w of plan) {
+  [w.title, w.note].forEach(s => s && texts.add(s));
+  for (const s of w.stops) [s.name, s.detail].forEach(x => x && texts.add(x));
+}
+mkdirSync(I18N, { recursive: true });
+writeFileSync(`${I18N}/data-walks.json`,
+  JSON.stringify(Object.fromEntries([...texts].map(s => [s, s])), null, 2) + '\n');
+console.log(`Wrote ${OUT}/routes.json, ${OUT}/basemap.svg, ${OUT}/basemap-dark.svg, ${CLJS} and ${I18N}/data-walks.json`);

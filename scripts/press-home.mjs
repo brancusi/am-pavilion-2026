@@ -10,12 +10,16 @@
 // (the work, then what the picture is and its year) and its alt text: the
 // `alt` field, else one made from the caption.
 //
+// Also writes the English of every image text for translation
+// (resources/i18n/en/data-media.json, scripts/press-i18n.mjs).
+//
 // Writes resources/data/press/home.json, which the home page fetches (so a
 // Sync shows at once), and src/amp/data/press_home.cljs, the same list built
 // into the page so it lays out before the fetch. Don't edit either by hand.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { writeMediaCatalog } from './press-i18n.mjs';
 
 const JSON_OUT = 'resources/data/press/home.json';
 const CLJS_OUT = 'src/amp/data/press_home.cljs';
@@ -88,6 +92,7 @@ export function writeHome(images) {
 (def images
   [${list.map(edn).join('\n   ')}])
 `);
+  writeMediaCatalog(images, list);
   console.log(`Home: ${list.filter((e) => e.home === 'works').length} in the gallery, ${list.filter((e) => e.home === 'bench').length} on the bench`);
 }
 

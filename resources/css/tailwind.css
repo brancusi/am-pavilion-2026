@@ -10,7 +10,7 @@
    ========================================================================== */
 :root {--paper:#f5f0e4;--paper-raised:#fffcf5;--paper-sunk:#ebe4d4;--ink:#1b1a17;--ink-muted:#5a544a;--rule:#d8cfbd;--rule-strong:var(--ink);--red:#bf3b2f;--on-red:#fffcf5;--red-text:#a8322a;--blue:#2d5287;--on-blue:#fffcf5;--blue-text:#2d5287;--yellow:#eac54f;--on-yellow:#1b1a17;--turquoise:#4aaab0;--on-turquoise:#1b1a17;--pink:#ec8e9a;--on-pink:#1b1a17;--lilac:#e3a7d6;--brick:#a28670;--focus:#2d5287;--night:#1b1a17;--on-night:#f5f0e4;--scrim:rgba(27, 26, 23, 0.55);--on-media:#ffffff;}
 .dark {--paper:#171512;--paper-raised:#221f1b;--paper-sunk:#0f0e0c;--ink:#f3ecdd;--ink-muted:#b5ad9e;--rule:#38332c;--rule-strong:var(--ink);--red:#bf3b2f;--on-red:#fffcf5;--red-text:#ef7466;--blue:#2d5287;--on-blue:#fffcf5;--blue-text:#93acde;--yellow:#eac54f;--on-yellow:#1b1a17;--turquoise:#4aaab0;--on-turquoise:#1b1a17;--pink:#ec8e9a;--on-pink:#1b1a17;--lilac:#e3a7d6;--brick:#a28670;--focus:#eac54f;--night:#0f0e0c;--on-night:#f3ecdd;--scrim:rgba(15, 14, 12, 0.6);--on-media:#ffffff;}
-:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-40:160px;--radius-0:0;--radius-pin:50%;--measure:68ch;--content-max:1440px;--tap-min:44px;--header-h:56px;--dur-fast:160ms;--dur-base:420ms;--dur-slow:900ms;--ease-place:cubic-bezier(0.2, 0.9, 0.1, 1);--ease-lift:cubic-bezier(0.6, 0, 0.8, 0.2);--font-display:Jost, Futura, "Century Gothic", system-ui, sans-serif;--font-text:Newsreader, Georgia, "Times New Roman", serif;--font-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;}
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-40:160px;--radius-0:0;--radius-pin:50%;--measure:68ch;--content-max:1440px;--tap-min:44px;--header-h:56px;--dur-fast:160ms;--dur-base:420ms;--dur-slow:900ms;--ease-place:cubic-bezier(0.2, 0.9, 0.1, 1);--ease-lift:cubic-bezier(0.6, 0, 0.8, 0.2);--font-display:Jost, "Noto Sans Armenian", Futura, "Century Gothic", system-ui, sans-serif;--font-text:Newsreader, "Noto Sans Armenian", Georgia, "Times New Roman", serif;--font-mono:"IBM Plex Mono", "Noto Sans Armenian", ui-monospace, Menlo, monospace;}
 
 /* Armenian Pavilion 2026 — component styles. Values come from tokens.css; prefix ap-. */
 
@@ -789,6 +789,11 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-vhead .ap-lang button { color: var(--on-night); min-height: var(--tap-min); }
 .ap-vhead .ap-lang button[aria-pressed="true"] { background: var(--on-night); color: var(--night); }
 .ap-taxicard__quote { font: italic 400 20px/1.35 var(--font-text); }
+/* One tap to show a driver card in Italian (amp.ui.wayfinding/card-lang-toggle). */
+.ap-cardlang { flex: none; align-self: flex-start; }
+/* Directions pages: Italian and Armenian key facts are longer; two columns while the head is split in two. */
+@media (min-width: 960px) and (max-width: 1279.98px) { .ap-keyfacts--wf { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ap-vhead--wf .ap-display-xl { font-size: clamp(56px, 10.5vw, 120px); }
 .ap-contacts { display: grid; gap: var(--space-3); padding: var(--space-6); background: var(--paper-raised); border-top: 4px solid var(--ink); align-content: start; }
 .ap-contacts__list { display: grid; gap: 0; }
 .ap-contacts__list .ap-telrow { border-top: 1px solid var(--rule); padding-block: var(--space-3); }
@@ -826,6 +831,18 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-theme__btn + .ap-theme__btn { border-left: 1px solid var(--rule); }
 .ap-theme__btn:hover { color: var(--ink); }
 .ap-theme__btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* ── LangSwitch: EN · IT · ՀԱՅ, a segmented control like the theme toggle ── */
+.ap-lang { display: inline-flex; border: 1px solid var(--rule-strong); }
+.ap-lang .ap-lang__a { display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 var(--space-2); font: 500 12px/1 var(--font-mono); letter-spacing: .08em; color: var(--ink-muted); text-decoration: none; border: 0; transition: background-color var(--dur-fast), color var(--dur-fast); }
+.ap-lang .ap-lang__a + .ap-lang__a { border-left: 1px solid var(--rule); }
+.ap-lang .ap-lang__a:hover { color: var(--ink); }
+.ap-lang .ap-lang__a[aria-current="true"] { background: var(--ink); color: var(--paper); }
+.ap-lang--night { border-color: color-mix(in srgb, var(--on-night) 40%, transparent); }
+.ap-lang--night .ap-lang__a { color: var(--on-night); opacity: .8; }
+.ap-lang--night .ap-lang__a + .ap-lang__a { border-left-color: color-mix(in srgb, var(--on-night) 25%, transparent); }
+.ap-lang--night .ap-lang__a:hover { opacity: 1; color: var(--yellow); }
+.ap-lang--night .ap-lang__a[aria-current="true"] { background: var(--yellow); color: var(--on-yellow); opacity: 1; }
 .ap-theme__btn svg { width: 16px; height: 16px; }
 .ap-theme__btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; position: relative; z-index: 1; }
 .ap-sheet .ap-theme__btn { width: var(--tap-min); height: var(--tap-min); }
@@ -1579,3 +1596,47 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-letter__kind { margin: 0; font: 500 11px/1.3 var(--font-mono, monospace); letter-spacing: .08em; text-transform: uppercase; }
 .ap-letter__kind b { color: var(--red); font-weight: 500; }
 .ap-letter__name { margin: 0; font: 500 15px/1.3 var(--font-display); color: var(--ink-muted); max-width: 52ch; }
+
+/* ── Armenian (/hy/) ─────────────────────────────────────────────────────
+   Armenian capitals tracked wide read poorly at label sizes, and Noto Sans
+   Armenian stands in for the mono: labels, nav and buttons stay in normal
+   case with a little tracking. Long words may break rather than overflow. */
+:root[lang="hy"] { --font-mono: "Noto Sans Armenian", "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+:root[lang="hy"] body * { text-transform: none !important; }
+:root[lang="hy"] .ap-label, :root[lang="hy"] .ap-header__nav a, :root[lang="hy"] .ap-header__name,
+:root[lang="hy"] .ap-btn, :root[lang="hy"] .ap-tag, :root[lang="hy"] .ap-footer__h { letter-spacing: .02em; }
+:root[lang="hy"] h1, :root[lang="hy"] h2, :root[lang="hy"] h3 { overflow-wrap: break-word; }
+/* The Armenian nav labels are long: below 1280 the header keeps the menu sheet. */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+  :root[lang="hy"] .ap-header__nav, :root[lang="hy"] .ap-header > .lg\:flex { display: none; }
+  :root[lang="hy"] .ap-header__menu { display: inline-flex; }
+  :root[lang="hy"] .ap-sheet.lg\:hidden { display: flex; }
+}
+
+/* Artist page, Armenian: long words in the epigraph and key facts. */
+:root[lang="hy"] .ap-artist-epigraph p { font-size: clamp(24px, 3.2vw, 34px); }
+@media (max-width: 1279px) { :root[lang="hy"] .ap-artist-head .ap-keyfacts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Journal, Armenian: long words in post titles, the index title and its filters. */
+:root[lang="hy"] .ap-article__head .ap-display-l { font-size: clamp(30px, 5.6vw, 56px); line-height: 1.05; }
+:root[lang="hy"] .ap-jhead .ap-display-xl { font-size: clamp(40px, 9vw, 104px); line-height: 1; }
+:root[lang="hy"] .ap-article__next .ap-h2 { overflow-wrap: break-word; }
+
+/* Walks, Armenian: a wider hero lede (Armenian letters are wider than the ch
+   unit) and schedule headings on one line (the table scrolls on phones). */
+:root[lang="hy"] .ap-wk-hero__body .ap-lede { max-width: 40ch; }
+:root[lang="hy"] .ap-wk-table th { white-space: nowrap; }
+
+/* Home, Armenian: the story teaser's two-line title and On the bench's
+   one-word heading are long single words; set them smaller so they fit
+   their column instead of breaking or pushing the page wide. */
+:root[lang="hy"] .ap-tz-story__title { font-size: clamp(48px, 7vw, 100px); }
+:root[lang="hy"] .ap-bench__head > div { min-width: 0; }
+:root[lang="hy"] .ap-bench__head .ap-display-l { font-size: clamp(32px, 8.4vw, 64px); }
+/* Portage sub-nav: the brand's wide tracking reads poorly in Armenian and crowds the sheet name on phones. */
+:root[lang="hy"] .pt-nav__brand { letter-spacing: .02em; }
+/* Press kit: long Armenian titles ("Մամուլի հաղորդագրություններ") fit a phone. */
+:root[lang="hy"] .ap-kit__top .ap-display-l { font-size: clamp(30px, 7vw, 64px); line-height: 1.02; }
+
+/* Footer link columns on phones: long Armenian words (Ժամանակագրություն) fit half a 390 px screen. */
+@media (max-width: 479.98px) { :root[lang="hy"] .ap-footer__map a { font-size: 15px; } }

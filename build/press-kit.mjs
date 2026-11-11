@@ -1,8 +1,12 @@
-// The press kit on /press and /it/press, from the Markdown files written for it
-// (Dropbox `the_studio/public_relations/press_kit/`, one file per section, named
-// after its anchor; `<name>.it.md` is the Italian; files starting with "_" are
-// notes and are skipped). Writes src/amp/data/press_kit.cljs, so the kit ships
-// inside the press page's bundle and nothing on the page moves when it loads.
+// The press kit on /press, /it/press and /hy/press, from the Markdown files
+// written for it (Dropbox `the_studio/public_relations/press_kit/`, one file per
+// section, named after its anchor; `<name>.it.md` is the Italian, `<name>.hy.md`
+// the Armenian; files starting with "_" are notes and are skipped). Writes the
+// structured catalog resources/i18n/<locale>/doc-press-kit.json per locale
+// (read with (i18n/doc :doc-press-kit), see docs/i18n.md): a section without a
+// translation is the English one marked "en-only", which the page notes. Also
+// writes src/amp/data/press_images.cljs, the image list as last built. Both
+// ship inside the press page's bundle, so nothing on the page moves when it loads.
 //
 //   npm run press:kit                    the default folder
 //   PRESS_KIT=<dir> npm run press:kit    another one
@@ -20,7 +24,9 @@ import { publishable } from './press-kit-clean.mjs';
 
 const DIR = process.env.PRESS_KIT ||
   join(homedir(), 'Library/CloudStorage/Dropbox-AZStudios/Else Run/projects/the_studio/public_relations/press_kit');
-const OUT = 'src/amp/data/press_kit.cljs';
+const LOCALES = ['en', 'it', 'hy'];
+const OUT = (l) => `resources/i18n/${l}/doc-press-kit.json`;
+const IMAGES_OUT = 'src/amp/data/press_images.cljs';
 const PDFS = 'build/press-release-pdfs.json';   // written by build/press-release-pdf.mjs
 
 // Shown on armenianpavilion.org: Aram said go live on 31 Oct 2026. Set false to
@@ -33,22 +39,31 @@ const HELD = ['tesa-41-september'];
 // Logo files on R2 (exported 31 Oct 2026 from Dropbox the_studio/marketing/identity;
 // new files go under a new folder, keys are cached for a year).
 const LOGO_HOST = 'https://media.armenianpavilion.org/press/kit/logos-261031/';
-const LOGOS = [
-  ['La Biennale · National Participations, colour', 'biennale-61-national-participations-RGB', ['png', 'pdf', 'eps'], { cmyk: true }],
-  ['La Biennale · National Participations, black', 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
-  ['La Biennale · National Participations, negative', 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
-  ['The Studio', 'the-studio-square', ['png', 'pdf', 'eps']],
-].map(([name, base, kinds, o = {}]) => ({
-  name, preview: `${LOGO_HOST}${base}.png`, dark: !!o.dark,
-  files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? 'PDF vector' : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
-          ...(o.cmyk ? [{ label: 'EPS CMYK', url: `${LOGO_HOST}biennale-61-national-participations-CMYK.eps` }] : [])],
-}));
+// Their names and file labels per locale.
+const LOGO_TEXT = {
+  en: { colour: 'colour', black: 'black', negative: 'negative', np: 'National Participations', pdf: 'PDF vector' },
+  it: { colour: 'colori', black: 'nero', negative: 'negativo', np: 'Partecipazioni Nazionali', pdf: 'PDF vettoriale' },
+  hy: { colour: 'գունավոր', black: 'սև', negative: 'նեգատիվ', np: 'Ազգային մասնակցություններ', pdf: 'PDF վեկտորային' },
+};
+const LOGOS = (l) => {
+  const x = LOGO_TEXT[l];
+  return [
+    [`La Biennale · ${x.np}, ${x.colour}`, 'biennale-61-national-participations-RGB', ['png', 'pdf', 'eps'], { cmyk: true }],
+    [`La Biennale · ${x.np}, ${x.black}`, 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
+    [`La Biennale · ${x.np}, ${x.negative}`, 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
+    ['The Studio', 'the-studio-square', ['png', 'pdf', 'eps']],
+  ].map(([name, base, kinds, o = {}]) => ({
+    name, preview: `${LOGO_HOST}${base}.png`, dark: !!o.dark,
+    files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? x.pdf : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
+            ...(o.cmyk ? [{ label: 'EPS CMYK', url: `${LOGO_HOST}biennale-61-national-participations-CMYK.eps` }] : [])],
+  }));
+};
 
 const NOTES = ['studio', 'serra', 'tehran', 'downtown', 'accademia', 'armenia'];
 const PAGES = ['essentials', 'release', 'facts', 'visit', 'logos'];
 // Story pitches: a release of their own with its PDFs, images (press library
 // uids), films (amp.data.films slugs) and walk loops (R2 walks/films/<id>).
-// Each has a sub-page, /press/<name> and /it/press/<name>.
+// Each has a sub-page, /press/release/<name> (and /it/…, /hy/…).
 const PITCHES = ['tricolore'];
 
 marked.use({ gfm: true });
@@ -61,7 +76,7 @@ const plain = (s) => s.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g,
   .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/^#+\s*/gm, '').replace(/\n{3,}/g, '\n\n').trim();
 
 function read(name, lang) {
-  const f = join(DIR, lang === 'it' ? `${name}.it.md` : `${name}.md`);
+  const f = join(DIR, lang === 'en' ? `${name}.md` : `${name}.${lang}.md`);
   if (!existsSync(f)) return null;
   let src = publishable(readFileSync(f, 'utf8').replace(/<!--[\s\S]*?-->/g, ''));
   let fm = {};
@@ -81,9 +96,15 @@ const blocks = (s) => s.split(/^##\s+/m).slice(1).map((b) => {
 });
 
 const date = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : null);
-const longDate = (d, l) => (/^\d{4}-\d{2}-\d{2}$/.test(d || '')
-  ? new Intl.DateTimeFormat(l === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(d))
-  : d);
+// 31 October 2026 / 31 ottobre 2026 / 2026 թ. հոկտեմբերի 31
+const HY_MONTHS = ['հունվարի', 'փետրվարի', 'մարտի', 'ապրիլի', 'մայիսի', 'հունիսի', 'հուլիսի', 'օգոստոսի',
+  'սեպտեմբերի', 'հոկտեմբերի', 'նոյեմբերի', 'դեկտեմբերի'];
+const longDate = (d, l) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d || '')) return d;
+  const [y, m, day] = d.split('-').map(Number);
+  if (l === 'hy') return `${y} թ. ${HY_MONTHS[m - 1]} ${day}`;
+  return new Intl.DateTimeFormat(l === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(d));
+};
 
 // "**Key:** value" paragraphs and "- **Key:** value" items become table rows
 // (a value can carry its own list on the following lines); the first plain
@@ -152,7 +173,7 @@ function lang(l) {
   for (const n of PITCHES) put(n, 'pitch');
   put('people', 'people'); put('chronology', 'chronology'); put('quotes', 'quotes');
   put('coverage', 'coverage'); put('video', 'video');
-  if (out.logos) out.logos.files = LOGOS;
+  if (out.logos) out.logos.files = LOGOS(l);
   const pdfs = existsSync(PDFS) ? JSON.parse(readFileSync(PDFS, 'utf8')) : {};
   // The release in both languages, whichever page shows it.
   if (out.release) {
@@ -172,7 +193,43 @@ function lang(l) {
   return out;
 }
 
-// ── EDN out ──
+// ── Out ──
+// Keys as the page reads them (kebab-case keywords: date_text → :date-text).
+const kebab = (v) => Array.isArray(v) ? v.map(kebab)
+  : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k.replace(/_/g, '-'), kebab(x)]))
+  : v;
+
+// Links to the site's own pages in a locale's text go to that locale's pages
+// (href="/visit" or "https://armenianpavilion.org/visit" → "…/it/visit"); files (/data, /images, /press/zip) don't move.
+const localLinks = (v, l) => l === 'en' ? v
+  : typeof v === 'string' ? v.replace(/href="((?:https:\/\/armenianpavilion\.org)?)\/(?!(?:it|hy)(?:\/|")|data\/|images\/|press\/zip|\/)([^"]*)"/g,
+    (_, host, p) => `href="${host}/${l}${p ? '/' + p : ''}"`)
+  : Array.isArray(v) ? v.map((x) => localLinks(x, l))
+  : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, localLinks(x, l)]))
+  : v;
+
+// Each locale has every English section: its own where its file exists, else
+// the English one marked en-only (the page says "In English only").
+const en = lang('en');
+const missing = {};
+for (const l of LOCALES) {
+  const own = l === 'en' ? en : lang(l);
+  // The essentials row that books a visit (the overview has a button for it
+  // instead): the row at the English one's place.
+  const bookAt = (en.essentials?.rows || []).findIndex((r) => /^Book\b/.test(r.k));
+  if (own.essentials && bookAt >= 0 && own.essentials.rows[bookAt]) own.essentials.rows[bookAt].book = true;
+  const out = { live: LIVE };
+  for (const k of Object.keys(en)) {
+    if (own[k]) out[k] = own[k];
+    else { out[k] = { ...en[k], en_only: true }; (missing[l] ||= []).push(k); }
+  }
+  // Armenian: a word joiner after the hyphen before a case ending (Tesa 41-ում),
+  // so lines never break between a Latin name and its ending.
+  const json = JSON.stringify(kebab(localLinks(out, l)), null, 1);
+  writeFileSync(OUT(l), (l === 'hy' ? json.replace(/([A-Za-z0-9.)»’])-(?!\u2060)(?=[\u0531-\u0587])/g, '$1-\u2060') : json) + '\n');
+}
+
+// ── The image list, EDN ──
 const str = (s) => JSON.stringify(s);   // JSON string escapes are valid in ClojureScript strings
 const kw = (k) => ':' + k.replace(/_/g, '-').replace(/[^A-Za-z0-9?-]/g, '-');
 function edn(v, ind = '') {
@@ -186,18 +243,22 @@ function edn(v, ind = '') {
 }
 
 // The press images as last built (npm run press), so the page lays them out
-// before its fresh copy of the list arrives.
+// before its fresh copy of the list arrives. Keys as in press.json (the live
+// list has the same), so :caption_short stays snake_case.
 const press = JSON.parse(readFileSync('resources/data/press/press.json', 'utf8')).images
   .map(({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist, dl }) =>
     ({ uid, file, key, w, h, section, title, date, materials, caption, caption_short, credit, artist, dl }));
+const ednKeep = (v, ind = '') => edn(v, ind).replace(/:caption-short /g, ':caption_short ');
+writeFileSync(IMAGES_OUT, `(ns amp.data.press-images
+  "The press images as last built, generated by build/press-kit.mjs from
+   resources/data/press/press.json. Don't edit by hand: npm run press:kit.
+   The press page lays out from this, then takes the live list.")
 
-const kit = { live: LIVE, en: lang('en'), it: lang('it'), images: press };
-writeFileSync(OUT, `(ns amp.data.press-kit
-  "The press kit, generated by build/press-kit.mjs from the press_kit Markdown
-   files. Don't edit by hand: change the Markdown and run npm run press:kit.")
-
-(def kit
- ${edn(kit, ' ')})
+(def images
+ ${ednKeep(press, ' ')})
 `);
-const count = (o) => Object.keys(o).length;
-console.log(`Wrote ${OUT}: ${count(kit.en)} English sections, ${count(kit.it)} Italian`);
+
+console.log(`Wrote ${LOCALES.map(OUT).join(', ')}: ${Object.keys(en).length} sections`);
+for (const l of LOCALES.slice(1)) {
+  console.log(`  ${l}: ${missing[l] ? 'English only: ' + missing[l].join(', ') : 'all translated'}`);
+}

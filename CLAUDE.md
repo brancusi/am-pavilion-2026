@@ -16,6 +16,11 @@ The map of the repo is in `README.md`; recent history in `CHANGELOG.md`. This fi
 - **Ship with the `push-to-production` skill**, after each round of fixes, not only at the end.
   Never stage dev output under `public/` (js, css, data, images, fonts, financial-reports); commit
   `release/` on its own as "Release build <hash>".
+- **Three languages.** English at `/`, Italian at `/it/…`, Armenian (Eastern) at `/hy/…`. No words in
+  code: every string lives in `resources/i18n/<locale>/<domain>.json` (ICU MessageFormat, FormatJS), looked
+  up with `(t :domain/key)`; internal links go through `i18n/href`. New or changed copy is written in all
+  three languages in the same change, and `npm run i18n:check` passes before shipping. How it works and
+  the translation style guide: `docs/i18n.md`. Armenian copy is for native review before it is final.
 - Running text says **"Armenian Pavilion"** (the official name stays "Pavilion of the Republic of Armenia…").
 - **Identity: Ayb (Ա), adopted 11 Nov 2026.** Logos, tokens, letterhead and press-release templates
   and the rules are in Dropbox `the_studio/marketing/identity/amp/` (start with its `README.md`, then
@@ -37,6 +42,12 @@ Review builds: `npx wrangler versions upload --preview-alias <name>` →
 
 ## How the site behaves (read before changing these)
 
+- **Languages** — `src/amp/i18n.cljs` (lookups, `defcatalog` inlines a page's catalogs into its module),
+  `amp.services.router` (every route per locale; sets the locale before rendering), `amp.ui.lang-switch`.
+  Long fetched content (Portage sheets, the story) has per-locale files beside the English
+  (`resources/data/portage/<locale>/<sheet>.html`). The Worker gives `/it` and `/hy` pages their
+  language, previews (`resources/i18n/<locale>/meta.json`) and hreflang links. Armenian uses Noto Sans
+  Armenian; `:root[lang="hy"]` rules at the end of tailwind.css keep labels in normal case.
 - **Page transitions and first paint** — `src/amp/ui/section_transitioner.cljs`. One page on screen at a
   time. A new page is held invisible (`.ap-stage:not([data-shown])`) at the height it had last time
   (localStorage `ap:h:<path>:<width/40>`), shown with a 0.24 s blur-fade once its content and fonts are

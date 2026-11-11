@@ -1,0 +1,16 @@
+{
+  "gallery.loading-model": "Մոդելը բեռնվում է…",
+  "gallery.close-3d": "Փակել 3D-⁠ն",
+  "gallery.hint-3d": "Քաշեք՝ պտտելու համար · երկու մատով՝ մեծացնելու",
+  "gallery.explore-aria": "Ուսումնասիրել {name}-ը 3D-⁠ով",
+  "gallery.the-model": "մոդել",
+  "gallery.interactive": "Ինտերակտիվ 3D",
+  "gallery.explore": "Ուսումնասիրել մոդելը",
+  "gallery.previous": "Նախորդը",
+  "gallery.next": "Հաջորդը",
+  "gallery.track": "{title}, սահեցրեք՝ ավելին տեսնելու",
+  "gallery.default-title": "Պատկերասրահ",
+  "video.sound-on": "Միացնել ձայնը",
+  "video.sound-off": "Անջատել ձայնը",
+  "lightbox.close": "Փակել ֆիլմը"
+}

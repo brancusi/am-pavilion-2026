@@ -4,6 +4,7 @@
    Reads & persists preference in localStorage.
    Toggles the `dark` class on <html>."
   (:require
+   [amp.i18n :refer [ts]]
    [amp.lib.defnc :refer [defnc]]
    [amp.styles :as s]
    [helix.dom :as d]
@@ -43,10 +44,10 @@
       (.remove cl "dark"))))
 
 (def ^:private modes
-  [[:system "System theme" (d/path {:d "M8 1.5a6.5 6.5 0 1 0 0 13zM8 1.5a6.5 6.5 0 0 1 0 13" :fill "none"})]
-   [:light  "Light theme"  (d/g (d/circle {:cx 8 :cy 8 :r 3})
+  [[:system :site/theme-system (d/path {:d "M8 1.5a6.5 6.5 0 1 0 0 13zM8 1.5a6.5 6.5 0 0 1 0 13" :fill "none"})]
+   [:light  :site/theme-light  (d/g (d/circle {:cx 8 :cy 8 :r 3})
                                 (d/path {:d "M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"}))]
-   [:dark   "Dark theme"   (d/path {:d "M13 9.5A5.5 5.5 0 0 1 6.5 3a5.5 5.5 0 1 0 6.5 6.5z"})]])
+   [:dark   :site/theme-dark   (d/path {:d "M13 9.5A5.5 5.5 0 0 1 6.5 3a5.5 5.5 0 1 0 6.5 6.5z"})]])
 
 (defnc theme-toggle
   "Segmented control (design system: ThemeToggle): system | light | dark."
@@ -75,13 +76,13 @@
          (apply-theme! :system)
          (fn [] (.removeEventListener mql "change" handler)))))
 
-    (d/div {:class (s/cx "ap-theme" class) :role "group" :aria-label "Color theme"}
+    (d/div {:class (s/cx "ap-theme" class) :role "group" :aria-label (ts :site/theme-label)}
            (for [[m label icon] modes]
              (d/button {:key (name m)
                         :class "ap-theme__btn"
-                        :aria-label label
+                        :aria-label (ts label)
                         :aria-pressed (= mode m)
-                        :title label
+                        :title (ts label)
                         :on-click #(select! m)}
                        (d/svg {:viewBox "0 0 16 16" :fill "currentColor" :stroke "currentColor"
                                :stroke-width 1.3 :stroke-linecap "round" :aria-hidden true}

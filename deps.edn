@@ -1,5 +1,5 @@
 {:paths
- ["src" "build"]
+ ["src" "build" "resources/i18n"]
  :deps {lilactown/helix {:mvn/version "0.2.2"}
         reagent/reagent {:mvn/version "2.0.1"}
         doughamil/threeagent {:mvn/version "1.0.1"}
