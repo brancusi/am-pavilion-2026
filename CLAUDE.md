@@ -17,6 +17,9 @@ The map of the repo is in `README.md`; recent history in `CHANGELOG.md`. This fi
   Never stage dev output under `public/` (js, css, data, images, fonts, financial-reports); commit
   `release/` on its own as "Release build <hash>".
 - Running text says **"Armenian Pavilion"** (the official name stays "Pavilion of the Republic of Armenia…").
+- **Identity: Ayb (Ա), adopted 11 Nov 2026.** Logos, tokens, letterhead and press-release templates
+  and the rules are in Dropbox `the_studio/marketing/identity/amp/` (start with its `README.md`, then
+  `BRAND.md`). Anything printed or designed for the pavilion follows it; the blue "P R A" wordmark is retired.
 - Copy the user has flagged as undecided stays as it is until they decide. Supporter names, tiers and
   order (`src/amp/pages/landing/supporters.cljs`) are theirs to set; the press kit lists supporters too.
 
