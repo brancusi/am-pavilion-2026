@@ -13,14 +13,14 @@
                            {:k "Hours"
                             :html "Tuesday to Sunday, 10:00–17:30; closed Mondays"}
                            {:k "Press contact"
-                            :html "Aram Zadikian, Director, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)"}
+                            :html "Aram Zadikian, Director, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)"}
                            {:k "Book a studio visit or interview"
-                            :html "write to <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> or send a WhatsApp message to +1 323 404 1152 with your outlet and preferred day (Tuesday to Sunday)."}]
+                            :html "write to <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> or send a WhatsApp message to +1 323 404 1152 with your outlet and preferred day (Tuesday to Sunday)."}]
                     :html nil
-                    :text "Zadik Zadikian: The Studio, the National Participation of the Republic of Armenia at Biennale Arte 2026, is a working sculpture studio in Tesa 41, Arsenale Militare, where Zadik Zadikian and his team cast and stack pigmented plaster units in public until 22 November 2026.\n\n- Dates: 9 May – 22 November 2026\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n- Press contact: Aram Zadikian, Director, Zadik Zadikian Studio · pressoffice@armenianpavilion2026.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\n\nBook a studio visit or interview: write to pressoffice@armenianpavilion2026.org or send a WhatsApp message to +1 323 404 1152 with your outlet and preferred day (Tuesday to Sunday)."}
+                    :text "Zadik Zadikian: The Studio, the National Participation of the Republic of Armenia at Biennale Arte 2026, is a working sculpture studio in Tesa 41, Arsenale Militare, where Zadik Zadikian and his team cast and stack pigmented plaster units in public until 22 November 2026.\n\n- Dates: 9 May – 22 November 2026\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n- Press contact: Aram Zadikian, Director, Zadik Zadikian Studio · pressoffice@armenianpavilion.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\n\nBook a studio visit or interview: write to pressoffice@armenianpavilion.org or send a WhatsApp message to +1 323 404 1152 with your outlet and preferred day (Tuesday to Sunday)."}
        :release {:title "The Studio: the final weeks"
-                 :html "<h1>Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. The final weeks</h2>\n<p>Venice, 31 October 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.</p>\n<p>In 1974 Richard Serra titled one of his first installation drawings <em>Zadikians</em>, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra&#39;s studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion&#39;s curator.</p>\n<p>Zadikian went on to open both of Shafrazi&#39;s galleries. On 31 October 1978, <em>Gold Bricks</em> opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery&#39;s first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, <em>Zadik Zadikian: Sculptures</em> opened Tony Shafrazi Gallery in New York.</p>\n<p>In Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.</p>\n<p>&quot;I leave spaces between my blocks, my units, so that they can breathe,&quot; Zadikian says.</p>\n<p>The Venice project follows <em>Path to Nine</em> (2024), 999 gilded plaster ingots in eighteen stacks, shown in <em>Solid Gold</em> at the Brooklyn Museum (16 November 2024 – 6 July 2025).</p>\n<p><em>In Minor Keys</em>, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as &quot;seeing and studying art in the making.&quot;</p>\n<p><strong>Closing.</strong> The exhibition&#39;s last day is Sunday 22 November.</p>\n<h3>Visiting</h3>\n<ul>\n<li><strong>Venue:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Dates:</strong> until 22 November 2026</li>\n<li><strong>Hours:</strong> Tuesday to Sunday, 10:00–17:30; closed Mondays</li>\n<li><strong>On foot:</strong> about eight minutes from the crossing at the Piraeus Lion, through the Arsenale</li>\n<li><strong>By water taxi:</strong> from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)</li>\n</ul>\n<p>Journalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.</p>\n<h3>Credits</h3>\n<ul>\n<li><strong>Artist:</strong> Zadik Zadikian</li>\n<li><strong>Curators:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissioner:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist&#39;s assistants from the Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>With the support of</strong> The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family</p>\n<h3>Press contact</h3>\n<p>Aram Zadikian, Director, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\narmenianpavilion.org/press</p>\n<h3>Notes to editors</h3>\n<ul>\n<li>Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.</li>\n<li>The 61st International Art Exhibition, <em>In Minor Keys</em>, runs from 9 May to 22 November 2026.</li>\n<li>Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
-                 :text "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia\n\nZadik Zadikian: The Studio. The final weeks\n\nVenice, 31 October 2026\n\nZadik Zadikian: The Studio, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.\n\nIn 1974 Richard Serra titled one of his first installation drawings Zadikians, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra's studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion's curator.\n\nZadikian went on to open both of Shafrazi's galleries. On 31 October 1978, Gold Bricks opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery's first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, Zadik Zadikian: Sculptures opened Tony Shafrazi Gallery in New York.\n\nIn Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.\n\n\"I leave spaces between my blocks, my units, so that they can breathe,\" Zadikian says.\n\nThe Venice project follows Path to Nine (2024), 999 gilded plaster ingots in eighteen stacks, shown in Solid Gold at the Brooklyn Museum (16 November 2024 – 6 July 2025).\n\nIn Minor Keys, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as \"seeing and studying art in the making.\"\n\nClosing. The exhibition's last day is Sunday 22 November.\n\nVisiting\n\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Dates: until 22 November 2026\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)\n\nJournalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.\n\nCredits\n\n- Artist: Zadik Zadikian\n- Curators: Tony Shafrazi, Tina Chakarian\n- Commissioner: Svetlana Sahakyan\n- Studio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nWith the support of The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family\n\nPress contact\n\nAram Zadikian, Director, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\narmenianpavilion.org/press\n\nNotes to editors\n\n- Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.\n- The 61st International Art Exhibition, In Minor Keys, runs from 9 May to 22 November 2026.\n- Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
+                 :html "<h1>Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. The final weeks</h2>\n<p>Venice, 31 October 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.</p>\n<p>In 1974 Richard Serra titled one of his first installation drawings <em>Zadikians</em>, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra&#39;s studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion&#39;s curator.</p>\n<p>Zadikian went on to open both of Shafrazi&#39;s galleries. On 31 October 1978, <em>Gold Bricks</em> opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery&#39;s first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, <em>Zadik Zadikian: Sculptures</em> opened Tony Shafrazi Gallery in New York.</p>\n<p>In Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.</p>\n<p>&quot;I leave spaces between my blocks, my units, so that they can breathe,&quot; Zadikian says.</p>\n<p>The Venice project follows <em>Path to Nine</em> (2024), 999 gilded plaster ingots in eighteen stacks, shown in <em>Solid Gold</em> at the Brooklyn Museum (16 November 2024 – 6 July 2025).</p>\n<p><em>In Minor Keys</em>, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as &quot;seeing and studying art in the making.&quot;</p>\n<p><strong>Closing.</strong> The exhibition&#39;s last day is Sunday 22 November.</p>\n<h3>Visiting</h3>\n<ul>\n<li><strong>Venue:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Dates:</strong> until 22 November 2026</li>\n<li><strong>Hours:</strong> Tuesday to Sunday, 10:00–17:30; closed Mondays</li>\n<li><strong>On foot:</strong> about eight minutes from the crossing at the Piraeus Lion, through the Arsenale</li>\n<li><strong>By water taxi:</strong> from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)</li>\n</ul>\n<p>Journalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.</p>\n<h3>Credits</h3>\n<ul>\n<li><strong>Artist:</strong> Zadik Zadikian</li>\n<li><strong>Curators:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissioner:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist&#39;s assistants from the Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>With the support of</strong> The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family</p>\n<h3>Press contact</h3>\n<p>Aram Zadikian, Director, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\narmenianpavilion.org/press</p>\n<h3>Notes to editors</h3>\n<ul>\n<li>Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.</li>\n<li>The 61st International Art Exhibition, <em>In Minor Keys</em>, runs from 9 May to 22 November 2026.</li>\n<li>Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                 :text "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia\n\nZadik Zadikian: The Studio. The final weeks\n\nVenice, 31 October 2026\n\nZadik Zadikian: The Studio, the National Participation of the Republic of Armenia, closes on Sunday 22 November 2026. Until then the Armenian Pavilion stays what it has been since May: a working sculpture studio in Tesa 41, Arsenale Militare, open Tuesday to Sunday.\n\nIn 1974 Richard Serra titled one of his first installation drawings Zadikians, after the young artist then working in his studio. The drawing is in the collection of the Solomon R. Guggenheim Museum. It was in Serra's studio, in 1973, that Zadik Zadikian met Tony Shafrazi, now the Pavilion's curator.\n\nZadikian went on to open both of Shafrazi's galleries. On 31 October 1978, Gold Bricks opened at Tony Shafrazi Gallery in Tehran. It was about a thousand gilded bricks, and it was the gallery's first and only exhibition. After the Revolution the bricks were stolen from storage. A year later, from 16 October to 5 November 1979, Zadik Zadikian: Sculptures opened Tony Shafrazi Gallery in New York.\n\nIn Venice he has spent six months making his work in public. With his son Aram Zadikian, who runs the studio, and seven students of the Accademia di Belle Arti di Venezia as his assistants, Zadikian casts plaster units with the pigment mixed through the material. The units are stacked, taken apart and stacked again, and they stay separate and movable. Hundreds have been cast since the opening. A visitor sees the work at whatever stage it has reached that day: plaster poured, pigment mixed, surfaces sanded, a stack rebuilt.\n\n\"I leave spaces between my blocks, my units, so that they can breathe,\" Zadikian says.\n\nThe Venice project follows Path to Nine (2024), 999 gilded plaster ingots in eighteen stacks, shown in Solid Gold at the Brooklyn Museum (16 November 2024 – 6 July 2025).\n\nIn Minor Keys, the 61st International Art Exhibition, was conceived by Koyo Kouoh around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit. The making is on view on every open day, and the room has changed week by week since May. Shafrazi describes it as \"seeing and studying art in the making.\"\n\nClosing. The exhibition's last day is Sunday 22 November.\n\nVisiting\n\n- Venue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Dates: until 22 November 2026\n- Hours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead (armenianpavilion.org/visit)\n\nJournalists can book a studio visit or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.\n\nCredits\n\n- Artist: Zadik Zadikian\n- Curators: Tony Shafrazi, Tina Chakarian\n- Commissioner: Svetlana Sahakyan\n- Studio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nWith the support of The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family\n\nPress contact\n\nAram Zadikian, Director, Zadik Zadikian Studio\npressoffice@armenianpavilion.org\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\narmenianpavilion.org/press\n\nNotes to editors\n\n- Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.\n- The 61st International Art Exhibition, In Minor Keys, runs from 9 May to 22 November 2026.\n- Press images with captions and credits, a fact sheet and logos are at armenianpavilion.org/press. Please credit every image as given in its caption.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
                  :date "2026-10-31"
                  :pdf-title "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Zadik Zadikian: The Studio, the final weeks"
                  :earlier [{:title "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia to be represented by Zadik Zadikian"
@@ -62,7 +62,7 @@
                       {:k "Social"
                        :html "#BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale"}
                       {:k "Press contact"
-                       :html "Aram Zadikian, Director, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)"}
+                       :html "Aram Zadikian, Director, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)"}
                       {:k "Web"
                        :html "armenianpavilion.org · press kit: armenianpavilion.org/press"}
                       {:k "Image credits"
@@ -70,10 +70,10 @@
                       {:k "With the support of"
                        :html "The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family"}]
                :html nil
-               :text "Title: Zadik Zadikian: The Studio\n\nOfficial name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia\n\nShort form: Armenian Pavilion, Biennale Arte 2026\n\nParticipation: National Participation of the Republic of Armenia\n\nExhibition: 61st International Art Exhibition – La Biennale di Venezia, In Minor Keys, conceived by Koyo Kouoh\n\nArtist: Zadik Zadikian\n\nCurators: Tony Shafrazi, Tina Chakarian\n\nCommissioner: Svetlana Sahakyan\n\nStudio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nVenue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nGetting there:\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead. Driver card: armenianpavilion.org/visit\n\nDates: 9 May – 22 November 2026 (previews 6–8 May)\n\nHours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n\nClosing: Sunday 22 November 2026.\n\nSocial: #BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale\n\nPress contact: Aram Zadikian, Director, Zadik Zadikian Studio · pressoffice@armenianpavilion2026.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\n\nWeb: armenianpavilion.org · press kit: armenianpavilion.org/press\n\nImage credits: Zadik Zadikian, Title, year. Materials. View. Photo Name Surname. Courtesy the Artist; Zadik Zadikian Studio (use the exact caption supplied with each image)\n\nWith the support of: The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family"}
+               :text "Title: Zadik Zadikian: The Studio\n\nOfficial name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia\n\nShort form: Armenian Pavilion, Biennale Arte 2026\n\nParticipation: National Participation of the Republic of Armenia\n\nExhibition: 61st International Art Exhibition – La Biennale di Venezia, In Minor Keys, conceived by Koyo Kouoh\n\nArtist: Zadik Zadikian\n\nCurators: Tony Shafrazi, Tina Chakarian\n\nCommissioner: Svetlana Sahakyan\n\nStudio: Aram Zadikian, Director, Zadik Zadikian Studio, with seven artist's assistants from the Accademia di Belle Arti di Venezia\n\nVenue: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nGetting there:\n- On foot: about eight minutes from the crossing at the Piraeus Lion, through the Arsenale\n- By water taxi: from the North Lagoon through Rio delle Galeazze only, calling ahead. Driver card: armenianpavilion.org/visit\n\nDates: 9 May – 22 November 2026 (previews 6–8 May)\n\nHours: Tuesday to Sunday, 10:00–17:30; closed Mondays\n\nClosing: Sunday 22 November 2026.\n\nSocial: #BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale\n\nPress contact: Aram Zadikian, Director, Zadik Zadikian Studio · pressoffice@armenianpavilion.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\n\nWeb: armenianpavilion.org · press kit: armenianpavilion.org/press\n\nImage credits: Zadik Zadikian, Title, year. Materials. View. Photo Name Surname. Courtesy the Artist; Zadik Zadikian Studio (use the exact caption supplied with each image)\n\nWith the support of: The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family"}
        :visit {:title "Studio visits and interviews"
-               :html "<h2>Booking</h2>\n<p>Write to <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> or send a WhatsApp message to +1 323 404 1152. Please include:</p>\n<ul>\n<li>your name and outlet;</li>\n<li>the day you would like to come (Tuesday to Sunday) and a rough time;</li>\n<li>who you would like to speak with: Zadik Zadikian, Aram Zadikian, or both;</li>\n<li>whether you are bringing a photographer, a camera crew or sound equipment;</li>\n<li>how you are arriving: on foot or by water taxi.</li>\n</ul>\n<p>Visits take place during opening hours, Tuesday to Sunday, 10:00–17:30. The studio is closed on Mondays. Calls and video interviews can be arranged on other days.</p>\n<h2>What you will see</h2>\n<p>On a typical working day:</p>\n<ul>\n<li>plaster is mixed and poured into moulds, with the pigment mixed through the material;</li>\n<li>cast units are sanded and finished at the workbenches;</li>\n<li>stacks are built, taken apart and built again; the units are never fixed to each other;</li>\n<li>Zadik Zadikian works alongside his assistants, seven students of the Accademia di Belle Arti di Venezia, with Aram Zadikian running the studio.</li>\n</ul>\n<p>What is on the floor changes from week to week. In October the studio made an Italian flag and carried a stair of seven steps into Tesa 41. Ask us what is in progress when you book.</p>\n<h2>Interviews</h2>\n<ul>\n<li><strong>Zadik Zadikian, artist:</strong> English</li>\n<li><strong>Aram Zadikian, Director, Zadik Zadikian Studio:</strong> English</li>\n</ul>\n<h2>Closing</h2>\n<p>The exhibition closes on Sunday 22 November 2026.</p>\n<h2>Getting in</h2>\n<p><strong>Address:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</p>\n<p><strong>On foot:</strong> start at the crossing by the Piraeus Lion and follow the route through the Arsenale to Tesa 41, about eight minutes. Map: armenianpavilion.org/visit</p>\n<p><strong>By water taxi:</strong> the taxi must come from the North Lagoon and enter through Rio delle Galeazze; no other entrance is allowed. Tell us when you book, and the driver must call ahead before entering the Arsenale. The driver card is on armenianpavilion.org/visit.</p>\n"
-               :text "Booking\n\nWrite to pressoffice@armenianpavilion2026.org or send a WhatsApp message to +1 323 404 1152. Please include:\n\n- your name and outlet;\n- the day you would like to come (Tuesday to Sunday) and a rough time;\n- who you would like to speak with: Zadik Zadikian, Aram Zadikian, or both;\n- whether you are bringing a photographer, a camera crew or sound equipment;\n- how you are arriving: on foot or by water taxi.\n\nVisits take place during opening hours, Tuesday to Sunday, 10:00–17:30. The studio is closed on Mondays. Calls and video interviews can be arranged on other days.\n\nWhat you will see\n\nOn a typical working day:\n\n- plaster is mixed and poured into moulds, with the pigment mixed through the material;\n- cast units are sanded and finished at the workbenches;\n- stacks are built, taken apart and built again; the units are never fixed to each other;\n- Zadik Zadikian works alongside his assistants, seven students of the Accademia di Belle Arti di Venezia, with Aram Zadikian running the studio.\n\nWhat is on the floor changes from week to week. In October the studio made an Italian flag and carried a stair of seven steps into Tesa 41. Ask us what is in progress when you book.\n\nInterviews\n\n- Zadik Zadikian, artist: English\n- Aram Zadikian, Director, Zadik Zadikian Studio: English\n\nClosing\n\nThe exhibition closes on Sunday 22 November 2026.\n\nGetting in\n\nAddress: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nOn foot: start at the crossing by the Piraeus Lion and follow the route through the Arsenale to Tesa 41, about eight minutes. Map: armenianpavilion.org/visit\n\nBy water taxi: the taxi must come from the North Lagoon and enter through Rio delle Galeazze; no other entrance is allowed. Tell us when you book, and the driver must call ahead before entering the Arsenale. The driver card is on armenianpavilion.org/visit."
+               :html "<h2>Booking</h2>\n<p>Write to <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> or send a WhatsApp message to +1 323 404 1152. Please include:</p>\n<ul>\n<li>your name and outlet;</li>\n<li>the day you would like to come (Tuesday to Sunday) and a rough time;</li>\n<li>who you would like to speak with: Zadik Zadikian, Aram Zadikian, or both;</li>\n<li>whether you are bringing a photographer, a camera crew or sound equipment;</li>\n<li>how you are arriving: on foot or by water taxi.</li>\n</ul>\n<p>Visits take place during opening hours, Tuesday to Sunday, 10:00–17:30. The studio is closed on Mondays. Calls and video interviews can be arranged on other days.</p>\n<h2>What you will see</h2>\n<p>On a typical working day:</p>\n<ul>\n<li>plaster is mixed and poured into moulds, with the pigment mixed through the material;</li>\n<li>cast units are sanded and finished at the workbenches;</li>\n<li>stacks are built, taken apart and built again; the units are never fixed to each other;</li>\n<li>Zadik Zadikian works alongside his assistants, seven students of the Accademia di Belle Arti di Venezia, with Aram Zadikian running the studio.</li>\n</ul>\n<p>What is on the floor changes from week to week. In October the studio made an Italian flag and carried a stair of seven steps into Tesa 41. Ask us what is in progress when you book.</p>\n<h2>Interviews</h2>\n<ul>\n<li><strong>Zadik Zadikian, artist:</strong> English</li>\n<li><strong>Aram Zadikian, Director, Zadik Zadikian Studio:</strong> English</li>\n</ul>\n<h2>Closing</h2>\n<p>The exhibition closes on Sunday 22 November 2026.</p>\n<h2>Getting in</h2>\n<p><strong>Address:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</p>\n<p><strong>On foot:</strong> start at the crossing by the Piraeus Lion and follow the route through the Arsenale to Tesa 41, about eight minutes. Map: armenianpavilion.org/visit</p>\n<p><strong>By water taxi:</strong> the taxi must come from the North Lagoon and enter through Rio delle Galeazze; no other entrance is allowed. Tell us when you book, and the driver must call ahead before entering the Arsenale. The driver card is on armenianpavilion.org/visit.</p>\n"
+               :text "Booking\n\nWrite to pressoffice@armenianpavilion.org or send a WhatsApp message to +1 323 404 1152. Please include:\n\n- your name and outlet;\n- the day you would like to come (Tuesday to Sunday) and a rough time;\n- who you would like to speak with: Zadik Zadikian, Aram Zadikian, or both;\n- whether you are bringing a photographer, a camera crew or sound equipment;\n- how you are arriving: on foot or by water taxi.\n\nVisits take place during opening hours, Tuesday to Sunday, 10:00–17:30. The studio is closed on Mondays. Calls and video interviews can be arranged on other days.\n\nWhat you will see\n\nOn a typical working day:\n\n- plaster is mixed and poured into moulds, with the pigment mixed through the material;\n- cast units are sanded and finished at the workbenches;\n- stacks are built, taken apart and built again; the units are never fixed to each other;\n- Zadik Zadikian works alongside his assistants, seven students of the Accademia di Belle Arti di Venezia, with Aram Zadikian running the studio.\n\nWhat is on the floor changes from week to week. In October the studio made an Italian flag and carried a stair of seven steps into Tesa 41. Ask us what is in progress when you book.\n\nInterviews\n\n- Zadik Zadikian, artist: English\n- Aram Zadikian, Director, Zadik Zadikian Studio: English\n\nClosing\n\nThe exhibition closes on Sunday 22 November 2026.\n\nGetting in\n\nAddress: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nOn foot: start at the crossing by the Piraeus Lion and follow the route through the Arsenale to Tesa 41, about eight minutes. Map: armenianpavilion.org/visit\n\nBy water taxi: the taxi must come from the North Lagoon and enter through Rio delle Galeazze; no other entrance is allowed. Tell us when you book, and the driver must call ahead before entering the Arsenale. The driver card is on armenianpavilion.org/visit."
                :date nil
                :pdf-title nil
                :earlier []}
@@ -154,6 +154,26 @@
                           "06087305db"
                           "e42e19d42e"]
                  :html "<p>Zadik Zadikian left Soviet Armenia in 1965. Sixty years later, <em>RETURN</em> (5 May – 1 December 2025) at the Cafesjian Center for the Arts in Yerevan showed his <em>Foreigners</em> series (2015–17), gilded clay figures. The Center describes it as his first exhibition in Armenia.</p>\n<p>In October 2025 a national jury chose his project, from seven submissions, to represent the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. It was first announced as <em>Ode to Lord Byron</em>, after the poet who studied Armenian with the monks of San Lazzaro degli Armeni, the island monastery in the Venetian lagoon. By March 2026 the title was <em>The Studio</em>. The commissioner is Svetlana Sahakyan of the Ministry of Education, Science, Culture and Sport. The curators are Tony Shafrazi and Tina Chakarian.</p>\n<p>Armenia has taken part in La Biennale as a nation since 1995. In 2015 its pavilion, <em>Armenity</em>, on San Lazzaro, received the Golden Lion for best national participation.</p>\n<p>Armenia has run through Zadikian&#39;s work for decades. In the 1980s he made gilded heads and reliefs after Armenian kings, including <em>Tigran the Great</em> (1980). &quot;Maybe because I was missing Armenia a great deal… or I was looking for identity,&quot; he says of those years.</p>\n<p>In Venice the units carry no national symbols. A proposed work, <em>Armenian Flag Stack</em> (2026), would stack pigmented plaster units in the colours of the Armenian flag. One rendering places it in Republic Square, Yerevan.</p>\n"}
+       :tricolore {:title "The Italian flag walks through Venice"
+                   :html "<h1>Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. The Italian flag walks through Venice</h2>\n<p>Venice, 11 November 2026</p>\n<p>Since 5 November the Armenian Pavilion has been taking its work out into the city on foot. Sections of an Italian flag in green, white and red, made in the studio at Tesa 41, Arsenale Militare, are strapped to frames and carried on people’s backs through the campi, fondamente and rive of Venice. Set down side by side, they make the flag.</p>\n<p><em>Zadik Zadikian: The Studio</em>, the National Participation of the Republic of Armenia, has been a working sculpture studio open to the public since May. Zadik Zadikian and his team built the flag there from separate units that stand on their own feet and that two people can lift. In Venice everything is carried by hand or by boat. The walks take the flag where the city carries everything else: on people’s backs.</p>\n<p><strong>The walks so far.</strong> On 22 October Aram Zadikian, who runs the studio, carried a single red unit out of Tesa 41 as a test. On Thursday 5 November students of the Accademia di Belle Arti di Venezia carried the flag, one green unit, one white and one red, to San Francesco della Vigna, Campo Santi Giovanni e Paolo and Campo Santa Maria Formosa. A passer-by called it “a travelling flag”. “It’s a journey,” Zadikian said. “We are taking a journey in Venice.” On Friday 6 November six sections went out through the Arsenale gate to the Museo Storico Navale and the Giardini.</p>\n<p><strong>Saturday 14 November: to Piazza San Marco.</strong> The flag leaves Tesa 41 at 11:00, walks along the Riva degli Schiavoni to Piazza San Marco and comes home another way. Anyone may walk alongside: meet at the door of Tesa 41 on the Fondamenta Case Nuove at 10:50.</p>\n<p><strong>Wednesday 18 November: to the Accademia.</strong> The Accademia di Belle Arti di Venezia hosts <em>Walking the Work Through Venice</em>, a performance and meeting with the artist, promoted by Prof. Gianpaolo Mazzoni, Professor of Sculpture. Students of his sculpture course, who helped make the works in the studio, carry them on their backs from the pavilion to the Academy. They leave Tesa 41 at 10:00. From 11:00 to 12:00 the works are presented in the cloister (Aula 1 if it rains), in a meeting with professors and students, and then walk back to the pavilion. The hour in the cloister is for the Academy’s students and staff; journalists who wish to attend can write to the press office.</p>\n<p>The walks go on until the closing day, Sunday 22 November. Each one leaves Tesa 41, sets the works down in a campo, on a fondamenta or before a church, and comes home another way. “We are turning people’s heads around,” Zadikian says. The schedule and routes are at <a href=\"https://armenianpavilion.org/walks\">armenianpavilion.org/walks</a>.</p>\n<p><em>In Minor Keys</em>, the 61st International Art Exhibition conceived by Koyo Kouoh, is built around listening, slowness and work made in common. The curators of the Armenian Pavilion, Tony Shafrazi and Tina Chakarian, treat the studio itself as the exhibit: plaster is cast, pigmented, sanded and stacked in front of visitors on every open day. The walks take that public making out of the door.</p>\n<p>Zadikian was born in Yerevan and left Soviet Armenia in 1965. In New York from 1973 he was Richard Serra’s assistant, and Serra titled the installation drawing <em>Zadikians</em> (1974, Solomon R. Guggenheim Museum) after him. Sixty years after leaving, he represents Armenia in Venice.</p>\n<h3>Films and images</h3>\n<ul>\n<li><strong>The Weight of the Flag</strong> (2:52), the first walk, 5 November: <a href=\"https://armenianpavilion.org/films/the-weight-of-the-flag\">armenianpavilion.org/films/the-weight-of-the-flag</a></li>\n<li><strong>The Italian Flag</strong> (2:57), building the flag in Tesa 41: <a href=\"https://armenianpavilion.org/films/italian-flag\">armenianpavilion.org/films/italian-flag</a></li>\n<li>Photographs of the walks with captions and credits, and films to download up to 4K: <a href=\"https://armenianpavilion.org/press/release/tricolore\">armenianpavilion.org/press/release/tricolore</a></li>\n</ul>\n<h3>Visiting</h3>\n<ul>\n<li><strong>Venue:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Dates:</strong> until 22 November 2026</li>\n<li><strong>Hours:</strong> Tuesday to Sunday, 10:00–17:30; closed Mondays</li>\n<li><strong>On foot:</strong> about eight minutes from the crossing at the Piraeus Lion, through the Arsenale</li>\n</ul>\n<p>Journalists can book a studio visit, a place on a walk, or an interview with Zadik Zadikian or Aram Zadikian through the press contact below.</p>\n<h3>Credits</h3>\n<ul>\n<li><strong>Artist:</strong> Zadik Zadikian</li>\n<li><strong>Curators:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissioner:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Director, Zadik Zadikian Studio, with artist’s assistants from the Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>With the support of</strong> The Shafrazian Foundation; Armenia Fund; Ministry of Education, Science, Culture and Sport of the Republic of Armenia; Andy and Hayde Torosyan and family; Rafi Ourfalian and family; Khachik Khudikyan and family</p>\n<h3>Press contact</h3>\n<p>Aram Zadikian, Director, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italy)\n<a href=\"https://armenianpavilion.org/press\">armenianpavilion.org/press</a></p>\n<h3>Notes to editors</h3>\n<ul>\n<li>Official name: Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia. Short form: Armenian Pavilion, Biennale Arte 2026.</li>\n<li>The 61st International Art Exhibition, <em>In Minor Keys</em>, runs from 9 May to 22 November 2026.</li>\n<li>Please credit every image as given in its caption.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                   :date "2026-11-11"
+                   :blurb "The Italian flag, carried on foot through Venice. Saturday to San Marco, Wednesday to the Accademia. Release, films and images."
+                   :images ["f684547416"
+                            "3570ca56f6"
+                            "8992886415"
+                            "6e21fd7328"
+                            "c6d41176a2"
+                            "66126f601c"]
+                   :films ["the-weight-of-the-flag"
+                           "italian-flag"
+                           "carrying"]
+                   :loops ["w01-flag"
+                           "w01-bridges"
+                           "w02-door"
+                           "w02-bridge"]
+                   :date-text "11 November 2026"
+                   :pdfs {:en "https://media.armenianpavilion.org/press/kit/armenian-pavilion-tricolore-2026-11-11-en-cd90c8a6.pdf"
+                          :it "https://media.armenianpavilion.org/press/kit/armenian-pavilion-tricolore-2026-11-11-it-bac9aa01.pdf"}}
        :people {:title "People"
                 :people [{:name "Zadik Zadikian"
                           :role "Artist"
@@ -344,14 +364,14 @@
                            {:k "Orari"
                             :html "da martedì a domenica, 10:00–17:30; lunedì chiuso"}
                            {:k "Contatto stampa"
-                            :html "Aram Zadikian, Direttore, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)"}
+                            :html "Aram Zadikian, Direttore, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)"}
                            {:k "Prenotare una visita allo studio o un'intervista"
-                            :html "scrivere a <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> o inviare un messaggio WhatsApp al +1 323 404 1152 indicando testata e giorno preferito (da martedì a domenica)."}]
+                            :html "scrivere a <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> o inviare un messaggio WhatsApp al +1 323 404 1152 indicando testata e giorno preferito (da martedì a domenica)."}]
                     :html nil
-                    :text "Zadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia alla Biennale Arte 2026, è uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, dove Zadik Zadikian e la sua squadra colano e impilano elementi in gesso pigmentato davanti al pubblico fino al 22 novembre 2026.\n\n- Date: 9 maggio – 22 novembre 2026\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n- Contatto stampa: Aram Zadikian, Direttore, Zadik Zadikian Studio · pressoffice@armenianpavilion2026.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\n\nPrenotare una visita allo studio o un'intervista: scrivere a pressoffice@armenianpavilion2026.org o inviare un messaggio WhatsApp al +1 323 404 1152 indicando testata e giorno preferito (da martedì a domenica)."}
+                    :text "Zadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia alla Biennale Arte 2026, è uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, dove Zadik Zadikian e la sua squadra colano e impilano elementi in gesso pigmentato davanti al pubblico fino al 22 novembre 2026.\n\n- Date: 9 maggio – 22 novembre 2026\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n- Contatto stampa: Aram Zadikian, Direttore, Zadik Zadikian Studio · pressoffice@armenianpavilion.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\n\nPrenotare una visita allo studio o un'intervista: scrivere a pressoffice@armenianpavilion.org o inviare un messaggio WhatsApp al +1 323 404 1152 indicando testata e giorno preferito (da martedì a domenica)."}
        :release {:title "The Studio: le ultime settimane"
-                 :html "<h1>Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. Le ultime settimane</h2>\n<p>Venezia, 31 ottobre 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell&#39;Arsenale Militare, aperto da martedì a domenica.</p>\n<p>Nel 1974 Richard Serra intitolò <em>Zadikians</em> uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L&#39;opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.</p>\n<p>Fu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran <em>Gold Bricks</em>: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L&#39;anno seguente, dal 16 ottobre al 5 novembre 1979, <em>Zadik Zadikian: Sculptures</em> inaugurò la Tony Shafrazi Gallery di New York.</p>\n<p>A Venezia l&#39;artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell&#39;Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall&#39;inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.</p>\n<p>«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.</p>\n<p>Il progetto veneziano segue <em>Path to Nine</em> (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra <em>Solid Gold</em> al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).</p>\n<p><em>In Minor Keys</em>, la 61. Esposizione Internazionale d&#39;Arte ideata da Koyo Kouoh, mette al centro l&#39;ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l&#39;arte nel suo farsi».</p>\n<p><strong>Chiusura.</strong> L&#39;ultimo giorno di apertura è domenica 22 novembre.</p>\n<h3>Informazioni per la visita</h3>\n<ul>\n<li><strong>Sede:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Date:</strong> fino al 22 novembre 2026</li>\n<li><strong>Orari:</strong> da martedì a domenica, 10:00–17:30; lunedì chiuso</li>\n<li><strong>A piedi:</strong> circa otto minuti dal Leone del Pireo, attraverso l&#39;Arsenale</li>\n<li><strong>In taxi acqueo:</strong> dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)</li>\n</ul>\n<p>I giornalisti possono prenotare una visita allo studio o un&#39;intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.</p>\n<h3>Crediti</h3>\n<ul>\n<li><strong>Artista:</strong> Zadik Zadikian</li>\n<li><strong>Curatori:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissaria:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell&#39;Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>Con il sostegno di</strong> The Shafrazian Foundation; Armenia Fund; Ministero dell&#39;Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia</p>\n<h3>Contatto stampa</h3>\n<p>Aram Zadikian, Direttore, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\narmenianpavilion.org/press</p>\n<h3>Note per la redazione</h3>\n<ul>\n<li>Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.</li>\n<li>La 61. Esposizione Internazionale d&#39;Arte, <em>In Minor Keys</em>, è aperta dal 9 maggio al 22 novembre 2026.</li>\n<li>Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
-                 :text "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia\n\nZadik Zadikian: The Studio. Le ultime settimane\n\nVenezia, 31 ottobre 2026\n\nZadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, aperto da martedì a domenica.\n\nNel 1974 Richard Serra intitolò Zadikians uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L'opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.\n\nFu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran Gold Bricks: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L'anno seguente, dal 16 ottobre al 5 novembre 1979, Zadik Zadikian: Sculptures inaugurò la Tony Shafrazi Gallery di New York.\n\nA Venezia l'artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell'Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall'inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.\n\n«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.\n\nIl progetto veneziano segue Path to Nine (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra Solid Gold al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).\n\nIn Minor Keys, la 61. Esposizione Internazionale d'Arte ideata da Koyo Kouoh, mette al centro l'ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l'arte nel suo farsi».\n\nChiusura. L'ultimo giorno di apertura è domenica 22 novembre.\n\nInformazioni per la visita\n\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Date: fino al 22 novembre 2026\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)\n\nI giornalisti possono prenotare una visita allo studio o un'intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.\n\nCrediti\n\n- Artista: Zadik Zadikian\n- Curatori: Tony Shafrazi, Tina Chakarian\n- Commissaria: Svetlana Sahakyan\n- Studio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nCon il sostegno di The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia\n\nContatto stampa\n\nAram Zadikian, Direttore, Zadik Zadikian Studio\npressoffice@armenianpavilion2026.org\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\narmenianpavilion.org/press\n\nNote per la redazione\n\n- Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.\n- La 61. Esposizione Internazionale d'Arte, In Minor Keys, è aperta dal 9 maggio al 22 novembre 2026.\n- Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
+                 :html "<h1>Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. Le ultime settimane</h2>\n<p>Venezia, 31 ottobre 2026</p>\n<p><em>Zadik Zadikian: The Studio</em>, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell&#39;Arsenale Militare, aperto da martedì a domenica.</p>\n<p>Nel 1974 Richard Serra intitolò <em>Zadikians</em> uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L&#39;opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.</p>\n<p>Fu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran <em>Gold Bricks</em>: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L&#39;anno seguente, dal 16 ottobre al 5 novembre 1979, <em>Zadik Zadikian: Sculptures</em> inaugurò la Tony Shafrazi Gallery di New York.</p>\n<p>A Venezia l&#39;artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell&#39;Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall&#39;inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.</p>\n<p>«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.</p>\n<p>Il progetto veneziano segue <em>Path to Nine</em> (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra <em>Solid Gold</em> al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).</p>\n<p><em>In Minor Keys</em>, la 61. Esposizione Internazionale d&#39;Arte ideata da Koyo Kouoh, mette al centro l&#39;ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l&#39;arte nel suo farsi».</p>\n<p><strong>Chiusura.</strong> L&#39;ultimo giorno di apertura è domenica 22 novembre.</p>\n<h3>Informazioni per la visita</h3>\n<ul>\n<li><strong>Sede:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Date:</strong> fino al 22 novembre 2026</li>\n<li><strong>Orari:</strong> da martedì a domenica, 10:00–17:30; lunedì chiuso</li>\n<li><strong>A piedi:</strong> circa otto minuti dal Leone del Pireo, attraverso l&#39;Arsenale</li>\n<li><strong>In taxi acqueo:</strong> dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)</li>\n</ul>\n<p>I giornalisti possono prenotare una visita allo studio o un&#39;intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.</p>\n<h3>Crediti</h3>\n<ul>\n<li><strong>Artista:</strong> Zadik Zadikian</li>\n<li><strong>Curatori:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissaria:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell&#39;Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>Con il sostegno di</strong> The Shafrazian Foundation; Armenia Fund; Ministero dell&#39;Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia</p>\n<h3>Contatto stampa</h3>\n<p>Aram Zadikian, Direttore, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\narmenianpavilion.org/press</p>\n<h3>Note per la redazione</h3>\n<ul>\n<li>Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d&#39;Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.</li>\n<li>La 61. Esposizione Internazionale d&#39;Arte, <em>In Minor Keys</em>, è aperta dal 9 maggio al 22 novembre 2026.</li>\n<li>Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                 :text "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia\n\nZadik Zadikian: The Studio. Le ultime settimane\n\nVenezia, 31 ottobre 2026\n\nZadik Zadikian: The Studio, Partecipazione Nazionale della Repubblica di Armenia, chiude domenica 22 novembre 2026. Fino ad allora il Padiglione Armenia resta quello che è stato da maggio: uno studio di scultura in piena attività alla Tesa 41 dell'Arsenale Militare, aperto da martedì a domenica.\n\nNel 1974 Richard Serra intitolò Zadikians uno dei suoi primi disegni-installazione, dal nome del giovane artista che allora lavorava nel suo studio. L'opera fa parte della collezione del Solomon R. Guggenheim Museum. Proprio nello studio di Serra, nel 1973, Zadik Zadikian conobbe Tony Shafrazi, oggi curatore del Padiglione.\n\nFu poi Zadikian a inaugurare entrambe le gallerie di Shafrazi. Il 31 ottobre 1978 apriva alla Tony Shafrazi Gallery di Teheran Gold Bricks: circa mille mattoni dorati, prima e unica mostra della galleria. Dopo la Rivoluzione i mattoni furono rubati dal deposito in cui erano custoditi. L'anno seguente, dal 16 ottobre al 5 novembre 1979, Zadik Zadikian: Sculptures inaugurò la Tony Shafrazi Gallery di New York.\n\nA Venezia l'artista lavora da sei mesi davanti al pubblico. Con il figlio Aram Zadikian, che dirige lo studio, e sette studenti dell'Accademia di Belle Arti di Venezia come assistenti, Zadikian cola in gesso elementi modulari pigmentati nella massa. Gli elementi vengono impilati, smontati e di nuovo impilati, e restano sempre separati e mobili. Dall'inaugurazione ne sono stati colati centinaia. Chi entra trova il lavoro nel punto in cui è arrivato quel giorno: il gesso appena colato, il pigmento da miscelare, le superfici da carteggiare, una pila da ricomporre.\n\n«Lascio degli spazi tra i miei blocchi, le mie unità, perché possano respirare», racconta Zadikian.\n\nIl progetto veneziano segue Path to Nine (2024), 999 lingotti in gesso dorato disposti in diciotto pile, esposto nella mostra Solid Gold al Brooklyn Museum (16 novembre 2024 – 6 luglio 2025).\n\nIn Minor Keys, la 61. Esposizione Internazionale d'Arte ideata da Koyo Kouoh, mette al centro l'ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il lavoro si svolge sotto gli occhi dei visitatori in ogni giorno di apertura, e la sala è cambiata di settimana in settimana. Shafrazi lo descrive come un modo di «vedere e studiare l'arte nel suo farsi».\n\nChiusura. L'ultimo giorno di apertura è domenica 22 novembre.\n\nInformazioni per la visita\n\n- Sede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n- Date: fino al 22 novembre 2026\n- Orari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva (armenianpavilion.org/visit)\n\nI giornalisti possono prenotare una visita allo studio o un'intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.\n\nCrediti\n\n- Artista: Zadik Zadikian\n- Curatori: Tony Shafrazi, Tina Chakarian\n- Commissaria: Svetlana Sahakyan\n- Studio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nCon il sostegno di The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia\n\nContatto stampa\n\nAram Zadikian, Direttore, Zadik Zadikian Studio\npressoffice@armenianpavilion.org\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\narmenianpavilion.org/press\n\nNote per la redazione\n\n- Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.\n- La 61. Esposizione Internazionale d'Arte, In Minor Keys, è aperta dal 9 maggio al 22 novembre 2026.\n- Immagini per la stampa con didascalie e crediti, scheda informativa e loghi sono disponibili su armenianpavilion.org/press. Si prega di riportare per ogni immagine il credito indicato in didascalia.\n- #BiennaleArte2026 #InMinorKeys @labiennale"
                  :date "2026-10-31"
                  :pdf-title "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Zadik Zadikian: The Studio, le ultime settimane"
                  :earlier [{:title "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia. Zadik Zadikian rappresenterà la Repubblica di Armenia"
@@ -393,7 +413,7 @@
                       {:k "Social"
                        :html "#BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale"}
                       {:k "Contatto stampa"
-                       :html "Aram Zadikian, Direttore, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)"}
+                       :html "Aram Zadikian, Direttore, Zadik Zadikian Studio · <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)"}
                       {:k "Web"
                        :html "armenianpavilion.org · cartella stampa: armenianpavilion.org/press"}
                       {:k "Crediti fotografici"
@@ -401,10 +421,10 @@
                       {:k "Con il sostegno di"
                        :html "The Shafrazian Foundation; Armenia Fund; Ministero dell&#39;Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia"}]
                :html nil
-               :text "Titolo: Zadik Zadikian: The Studio\n\nDenominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia\n\nForma breve: Padiglione Armenia, Biennale Arte 2026\n\nPartecipazione: Partecipazione Nazionale della Repubblica di Armenia\n\nEsposizione: 61. Esposizione Internazionale d'Arte – La Biennale di Venezia, In Minor Keys, ideata da Koyo Kouoh\n\nArtista: Zadik Zadikian\n\nCuratori: Tony Shafrazi, Tina Chakarian\n\nCommissaria: Svetlana Sahakyan\n\nStudio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nSede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nCome arrivare:\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva. Istruzioni per il conducente: armenianpavilion.org/visit\n\nDate: 9 maggio – 22 novembre 2026 (preapertura 6–8 maggio)\n\nOrari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n\nChiusura: domenica 22 novembre 2026.\n\nSocial: #BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale\n\nContatto stampa: Aram Zadikian, Direttore, Zadik Zadikian Studio · pressoffice@armenianpavilion2026.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\n\nWeb: armenianpavilion.org · cartella stampa: armenianpavilion.org/press\n\nCrediti fotografici: Zadik Zadikian, Titolo, anno. Materiali. Veduta. Foto Nome Cognome. Courtesy l'Artista; Zadik Zadikian Studio (riportare la didascalia esatta fornita con ogni immagine)\n\nCon il sostegno di: The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia"}
+               :text "Titolo: Zadik Zadikian: The Studio\n\nDenominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d'Arte – La Biennale di Venezia\n\nForma breve: Padiglione Armenia, Biennale Arte 2026\n\nPartecipazione: Partecipazione Nazionale della Repubblica di Armenia\n\nEsposizione: 61. Esposizione Internazionale d'Arte – La Biennale di Venezia, In Minor Keys, ideata da Koyo Kouoh\n\nArtista: Zadik Zadikian\n\nCuratori: Tony Shafrazi, Tina Chakarian\n\nCommissaria: Svetlana Sahakyan\n\nStudio: Aram Zadikian, Direttore, Zadik Zadikian Studio, con sette assistenti dell'Accademia di Belle Arti di Venezia\n\nSede: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nCome arrivare:\n- A piedi: circa otto minuti dal Leone del Pireo, attraverso l'Arsenale\n- In taxi acqueo: dalla Laguna Nord, esclusivamente attraverso il Rio delle Galeazze, con chiamata preventiva. Istruzioni per il conducente: armenianpavilion.org/visit\n\nDate: 9 maggio – 22 novembre 2026 (preapertura 6–8 maggio)\n\nOrari: da martedì a domenica, 10:00–17:30; lunedì chiuso\n\nChiusura: domenica 22 novembre 2026.\n\nSocial: #BiennaleArte2026 #InMinorKeys · Instagram @labiennale · X @la_Biennale\n\nContatto stampa: Aram Zadikian, Direttore, Zadik Zadikian Studio · pressoffice@armenianpavilion.org · +1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\n\nWeb: armenianpavilion.org · cartella stampa: armenianpavilion.org/press\n\nCrediti fotografici: Zadik Zadikian, Titolo, anno. Materiali. Veduta. Foto Nome Cognome. Courtesy l'Artista; Zadik Zadikian Studio (riportare la didascalia esatta fornita con ogni immagine)\n\nCon il sostegno di: The Shafrazian Foundation; Armenia Fund; Ministero dell'Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia"}
        :visit {:title "Visite allo studio e interviste"
-               :html "<h2>Prenotazione</h2>\n<p>Scrivere a <a href=\"mailto:pressoffice@armenianpavilion2026.org\">pressoffice@armenianpavilion2026.org</a> o inviare un messaggio WhatsApp al +1 323 404 1152, indicando:</p>\n<ul>\n<li>nome e testata;</li>\n<li>il giorno della visita (da martedì a domenica) e un orario indicativo;</li>\n<li>con chi si desidera parlare: Zadik Zadikian, Aram Zadikian o entrambi;</li>\n<li>l&#39;eventuale presenza di fotografo, troupe o attrezzatura audio;</li>\n<li>il mezzo di arrivo: a piedi o in taxi acqueo.</li>\n</ul>\n<p>Le visite si svolgono negli orari di apertura, da martedì a domenica, 10:00–17:30. Il lunedì lo studio è chiuso. Interviste telefoniche o in videochiamata sono possibili anche in altri giorni.</p>\n<h2>Che cosa si vede</h2>\n<p>In una giornata di lavoro tipo:</p>\n<ul>\n<li>il gesso viene impastato e colato negli stampi, con il pigmento miscelato nella massa;</li>\n<li>gli elementi colati vengono carteggiati e rifiniti ai banchi di lavoro;</li>\n<li>le pile vengono composte, smontate e ricomposte; gli elementi non sono mai fissati tra loro;</li>\n<li>Zadik Zadikian lavora accanto ai suoi assistenti, sette studenti dell&#39;Accademia di Belle Arti di Venezia, mentre Aram Zadikian dirige lo studio.</li>\n</ul>\n<p>Quello che si trova in sala cambia di settimana in settimana. In ottobre lo studio ha realizzato una bandiera italiana e ha portato a mano nella Tesa 41 una scala di sette gradini. Al momento della prenotazione possiamo indicare i lavori in corso.</p>\n<h2>Interviste</h2>\n<ul>\n<li><strong>Zadik Zadikian, artista:</strong> in inglese</li>\n<li><strong>Aram Zadikian, Direttore, Zadik Zadikian Studio:</strong> in inglese</li>\n</ul>\n<h2>Chiusura</h2>\n<p>La mostra chiude domenica 22 novembre 2026.</p>\n<h2>Come arrivare</h2>\n<p><strong>Indirizzo:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</p>\n<p><strong>A piedi:</strong> dal Leone del Pireo seguire il percorso attraverso l&#39;Arsenale fino alla Tesa 41, circa otto minuti. Mappa: armenianpavilion.org/visit</p>\n<p><strong>In taxi acqueo:</strong> il taxi deve arrivare dalla Laguna Nord ed entrare esclusivamente dal Rio delle Galeazze; non è consentito alcun altro ingresso. Segnalatelo al momento della prenotazione: il conducente deve telefonare prima di entrare in Arsenale. Le istruzioni per il conducente sono su armenianpavilion.org/visit.</p>\n"
-               :text "Prenotazione\n\nScrivere a pressoffice@armenianpavilion2026.org o inviare un messaggio WhatsApp al +1 323 404 1152, indicando:\n\n- nome e testata;\n- il giorno della visita (da martedì a domenica) e un orario indicativo;\n- con chi si desidera parlare: Zadik Zadikian, Aram Zadikian o entrambi;\n- l'eventuale presenza di fotografo, troupe o attrezzatura audio;\n- il mezzo di arrivo: a piedi o in taxi acqueo.\n\nLe visite si svolgono negli orari di apertura, da martedì a domenica, 10:00–17:30. Il lunedì lo studio è chiuso. Interviste telefoniche o in videochiamata sono possibili anche in altri giorni.\n\nChe cosa si vede\n\nIn una giornata di lavoro tipo:\n\n- il gesso viene impastato e colato negli stampi, con il pigmento miscelato nella massa;\n- gli elementi colati vengono carteggiati e rifiniti ai banchi di lavoro;\n- le pile vengono composte, smontate e ricomposte; gli elementi non sono mai fissati tra loro;\n- Zadik Zadikian lavora accanto ai suoi assistenti, sette studenti dell'Accademia di Belle Arti di Venezia, mentre Aram Zadikian dirige lo studio.\n\nQuello che si trova in sala cambia di settimana in settimana. In ottobre lo studio ha realizzato una bandiera italiana e ha portato a mano nella Tesa 41 una scala di sette gradini. Al momento della prenotazione possiamo indicare i lavori in corso.\n\nInterviste\n\n- Zadik Zadikian, artista: in inglese\n- Aram Zadikian, Direttore, Zadik Zadikian Studio: in inglese\n\nChiusura\n\nLa mostra chiude domenica 22 novembre 2026.\n\nCome arrivare\n\nIndirizzo: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nA piedi: dal Leone del Pireo seguire il percorso attraverso l'Arsenale fino alla Tesa 41, circa otto minuti. Mappa: armenianpavilion.org/visit\n\nIn taxi acqueo: il taxi deve arrivare dalla Laguna Nord ed entrare esclusivamente dal Rio delle Galeazze; non è consentito alcun altro ingresso. Segnalatelo al momento della prenotazione: il conducente deve telefonare prima di entrare in Arsenale. Le istruzioni per il conducente sono su armenianpavilion.org/visit."
+               :html "<h2>Prenotazione</h2>\n<p>Scrivere a <a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a> o inviare un messaggio WhatsApp al +1 323 404 1152, indicando:</p>\n<ul>\n<li>nome e testata;</li>\n<li>il giorno della visita (da martedì a domenica) e un orario indicativo;</li>\n<li>con chi si desidera parlare: Zadik Zadikian, Aram Zadikian o entrambi;</li>\n<li>l&#39;eventuale presenza di fotografo, troupe o attrezzatura audio;</li>\n<li>il mezzo di arrivo: a piedi o in taxi acqueo.</li>\n</ul>\n<p>Le visite si svolgono negli orari di apertura, da martedì a domenica, 10:00–17:30. Il lunedì lo studio è chiuso. Interviste telefoniche o in videochiamata sono possibili anche in altri giorni.</p>\n<h2>Che cosa si vede</h2>\n<p>In una giornata di lavoro tipo:</p>\n<ul>\n<li>il gesso viene impastato e colato negli stampi, con il pigmento miscelato nella massa;</li>\n<li>gli elementi colati vengono carteggiati e rifiniti ai banchi di lavoro;</li>\n<li>le pile vengono composte, smontate e ricomposte; gli elementi non sono mai fissati tra loro;</li>\n<li>Zadik Zadikian lavora accanto ai suoi assistenti, sette studenti dell&#39;Accademia di Belle Arti di Venezia, mentre Aram Zadikian dirige lo studio.</li>\n</ul>\n<p>Quello che si trova in sala cambia di settimana in settimana. In ottobre lo studio ha realizzato una bandiera italiana e ha portato a mano nella Tesa 41 una scala di sette gradini. Al momento della prenotazione possiamo indicare i lavori in corso.</p>\n<h2>Interviste</h2>\n<ul>\n<li><strong>Zadik Zadikian, artista:</strong> in inglese</li>\n<li><strong>Aram Zadikian, Direttore, Zadik Zadikian Studio:</strong> in inglese</li>\n</ul>\n<h2>Chiusura</h2>\n<p>La mostra chiude domenica 22 novembre 2026.</p>\n<h2>Come arrivare</h2>\n<p><strong>Indirizzo:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</p>\n<p><strong>A piedi:</strong> dal Leone del Pireo seguire il percorso attraverso l&#39;Arsenale fino alla Tesa 41, circa otto minuti. Mappa: armenianpavilion.org/visit</p>\n<p><strong>In taxi acqueo:</strong> il taxi deve arrivare dalla Laguna Nord ed entrare esclusivamente dal Rio delle Galeazze; non è consentito alcun altro ingresso. Segnalatelo al momento della prenotazione: il conducente deve telefonare prima di entrare in Arsenale. Le istruzioni per il conducente sono su armenianpavilion.org/visit.</p>\n"
+               :text "Prenotazione\n\nScrivere a pressoffice@armenianpavilion.org o inviare un messaggio WhatsApp al +1 323 404 1152, indicando:\n\n- nome e testata;\n- il giorno della visita (da martedì a domenica) e un orario indicativo;\n- con chi si desidera parlare: Zadik Zadikian, Aram Zadikian o entrambi;\n- l'eventuale presenza di fotografo, troupe o attrezzatura audio;\n- il mezzo di arrivo: a piedi o in taxi acqueo.\n\nLe visite si svolgono negli orari di apertura, da martedì a domenica, 10:00–17:30. Il lunedì lo studio è chiuso. Interviste telefoniche o in videochiamata sono possibili anche in altri giorni.\n\nChe cosa si vede\n\nIn una giornata di lavoro tipo:\n\n- il gesso viene impastato e colato negli stampi, con il pigmento miscelato nella massa;\n- gli elementi colati vengono carteggiati e rifiniti ai banchi di lavoro;\n- le pile vengono composte, smontate e ricomposte; gli elementi non sono mai fissati tra loro;\n- Zadik Zadikian lavora accanto ai suoi assistenti, sette studenti dell'Accademia di Belle Arti di Venezia, mentre Aram Zadikian dirige lo studio.\n\nQuello che si trova in sala cambia di settimana in settimana. In ottobre lo studio ha realizzato una bandiera italiana e ha portato a mano nella Tesa 41 una scala di sette gradini. Al momento della prenotazione possiamo indicare i lavori in corso.\n\nInterviste\n\n- Zadik Zadikian, artista: in inglese\n- Aram Zadikian, Direttore, Zadik Zadikian Studio: in inglese\n\nChiusura\n\nLa mostra chiude domenica 22 novembre 2026.\n\nCome arrivare\n\nIndirizzo: Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia\n\nA piedi: dal Leone del Pireo seguire il percorso attraverso l'Arsenale fino alla Tesa 41, circa otto minuti. Mappa: armenianpavilion.org/visit\n\nIn taxi acqueo: il taxi deve arrivare dalla Laguna Nord ed entrare esclusivamente dal Rio delle Galeazze; non è consentito alcun altro ingresso. Segnalatelo al momento della prenotazione: il conducente deve telefonare prima di entrare in Arsenale. Le istruzioni per il conducente sono su armenianpavilion.org/visit."
                :date nil
                :pdf-title nil
                :earlier []}
@@ -413,7 +433,27 @@
                             "4061cedbde"
                             "81f39add05"
                             "eff02ea41a"]
-                   :html "<p>Negli anni Settanta Zadik Zadikian è stato assistente di Richard Serra. A Venezia gli assistenti sono suoi: sette studenti dell&#39;Accademia di Belle Arti di Venezia, che lavorano nel Padiglione della Repubblica di Armenia in base a una convenzione con l&#39;Accademia.</p>\n<p>Sono loro a svolgere il lavoro quotidiano dello studio, davanti al pubblico, dal martedì alla domenica. Preparano e colano il gesso, pigmentano le unità e le carteggiano. Tagliano le forme in EPS, stampano in resina alcuni elementi e lavorano il legno. Ogni pezzo deve poi entrare nella Tesa 41 a mano. A ottobre la squadra ha trasportato lungo la fondamenta, un segmento alla volta, <em>Seven Steps to Heaven</em>, una scala di sette gradini che non porta da nessuna parte; in studio l&#39;ha poi rasata, carteggiata e dipinta di bianco.</p>\n<p>La squadra parla anche di ciò che sta facendo, e lo studio riprende queste conversazioni. Davanti alla scala un membro della squadra ha osservato che una scultura così, priva di punti di riferimento, si riempie di chi la guarda. Per un altro è un viaggio: &quot;C&#39;è un inizio, c&#39;è una fine, ma la fine non è così chiara.&quot;</p>\n<p>Zadikian conosce questo lavoro dall&#39;altra parte. Nel 1974 Serra intitolò uno dei suoi disegni installativi <em>Zadikians</em>, dal nome dell&#39;assistente che aveva contribuito a realizzarlo. Cinquant&#39;anni dopo, la domanda su chi faccia l&#39;opera fa parte della vita quotidiana del Padiglione.</p>\n<p>È possibile intervistare gli studenti, in italiano o in inglese, fino alla chiusura del Padiglione, domenica 22 novembre.</p>\n"}}
+                   :html "<p>Negli anni Settanta Zadik Zadikian è stato assistente di Richard Serra. A Venezia gli assistenti sono suoi: sette studenti dell&#39;Accademia di Belle Arti di Venezia, che lavorano nel Padiglione della Repubblica di Armenia in base a una convenzione con l&#39;Accademia.</p>\n<p>Sono loro a svolgere il lavoro quotidiano dello studio, davanti al pubblico, dal martedì alla domenica. Preparano e colano il gesso, pigmentano le unità e le carteggiano. Tagliano le forme in EPS, stampano in resina alcuni elementi e lavorano il legno. Ogni pezzo deve poi entrare nella Tesa 41 a mano. A ottobre la squadra ha trasportato lungo la fondamenta, un segmento alla volta, <em>Seven Steps to Heaven</em>, una scala di sette gradini che non porta da nessuna parte; in studio l&#39;ha poi rasata, carteggiata e dipinta di bianco.</p>\n<p>La squadra parla anche di ciò che sta facendo, e lo studio riprende queste conversazioni. Davanti alla scala un membro della squadra ha osservato che una scultura così, priva di punti di riferimento, si riempie di chi la guarda. Per un altro è un viaggio: &quot;C&#39;è un inizio, c&#39;è una fine, ma la fine non è così chiara.&quot;</p>\n<p>Zadikian conosce questo lavoro dall&#39;altra parte. Nel 1974 Serra intitolò uno dei suoi disegni installativi <em>Zadikians</em>, dal nome dell&#39;assistente che aveva contribuito a realizzarlo. Cinquant&#39;anni dopo, la domanda su chi faccia l&#39;opera fa parte della vita quotidiana del Padiglione.</p>\n<p>È possibile intervistare gli studenti, in italiano o in inglese, fino alla chiusura del Padiglione, domenica 22 novembre.</p>\n"}
+       :tricolore {:title "Il Tricolore cammina per Venezia"
+                   :html "<h1>Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d’Arte – La Biennale di Venezia</h1>\n<h2>Zadik Zadikian: The Studio. Il Tricolore cammina per Venezia</h2>\n<p>Venezia, 11 novembre 2026</p>\n<p>Dal 5 novembre il Padiglione Armenia porta il proprio lavoro in città, a piedi. Le sezioni di una bandiera italiana verde, bianca e rossa, realizzate nello studio della Tesa 41 all’Arsenale Militare, vengono fissate a telai da spalla e portate a braccia attraverso i campi, le fondamente e le rive di Venezia. Posate una accanto all’altra, compongono il Tricolore.</p>\n<p><em>Zadik Zadikian: The Studio</em>, Partecipazione Nazionale della Repubblica di Armenia, è da maggio uno studio di scultura in piena attività, aperto al pubblico. Qui Zadik Zadikian e la sua squadra hanno costruito la bandiera con elementi separati che stanno in piedi da soli e che due persone possono sollevare. A Venezia tutto si sposta a mano o in barca. Le passeggiate portano la bandiera dove la città porta ogni cosa: sulle spalle delle persone.</p>\n<p><strong>Le passeggiate finora.</strong> Il 22 ottobre Aram Zadikian, che dirige lo studio, ha portato fuori dalla Tesa 41 un solo elemento rosso, per prova. Giovedì 5 novembre alcuni studenti dell’Accademia di Belle Arti di Venezia hanno portato la bandiera, un elemento verde, uno bianco e uno rosso, fino a San Francesco della Vigna, in Campo Santi Giovanni e Paolo e in Campo Santa Maria Formosa. Un passante l’ha chiamata «una bandiera che viaggia». «È un viaggio», ha risposto Zadikian. «Stiamo facendo un viaggio dentro Venezia.» Venerdì 6 novembre sei sezioni sono uscite dalla porta dell’Arsenale verso il Museo Storico Navale e i Giardini.</p>\n<p><strong>Sabato 14 novembre: verso Piazza San Marco.</strong> La bandiera lascia la Tesa 41 alle 11:00, percorre la Riva degli Schiavoni fino a Piazza San Marco e rientra per un’altra strada. Chiunque può camminare con noi: appuntamento alle 10:50 alla porta della Tesa 41 sulla Fondamenta Case Nuove.</p>\n<p><strong>Mercoledì 18 novembre: all’Accademia.</strong> L’Accademia di Belle Arti di Venezia ospita <em>Walking the Work Through Venice</em>, performance e incontro con l’artista, promossi dal prof. Gianpaolo Mazzoni, docente di Scultura. Gli studenti del suo corso, che hanno contribuito a realizzare le opere nello studio, le portano sulle spalle dal Padiglione all’Accademia. La partenza dalla Tesa 41 è alle 10:00. Dalle 11:00 alle 12:00 le opere vengono presentate nel Chiostro (in caso di maltempo, Aula 1), in un incontro con docenti e studenti, e poi tornano a piedi al Padiglione. L’incontro nel Chiostro è riservato a studenti e personale dell’Accademia; i giornalisti che desiderano partecipare possono scrivere all’ufficio stampa.</p>\n<p>Le passeggiate continuano fino all’ultimo giorno, domenica 22 novembre. Ognuna parte dalla Tesa 41, posa le opere in un campo, su una fondamenta o davanti a una chiesa e rientra per un’altra strada. «La gente si gira a guardare», dice Zadikian. Calendario e percorsi su <a href=\"https://armenianpavilion.org/walks\">armenianpavilion.org/walks</a>.</p>\n<p><em>In Minor Keys</em>, la 61. Esposizione Internazionale d’Arte ideata da Koyo Kouoh, mette al centro l’ascolto, la lentezza e il lavoro condiviso. I curatori del Padiglione Armenia, Tony Shafrazi e Tina Chakarian, presentano lo studio stesso come opera: il gesso viene colato, pigmentato, carteggiato e impilato davanti ai visitatori in ogni giorno di apertura. Con le passeggiate, questo lavoro fatto in pubblico esce dalla porta.</p>\n<p>Zadikian è nato a Erevan e ha lasciato l’Armenia sovietica nel 1965. A New York, dal 1973, è stato assistente di Richard Serra, che dal suo nome intitolò il disegno-installazione <em>Zadikians</em> (1974, Solomon R. Guggenheim Museum). Sessant’anni dopo la partenza, rappresenta l’Armenia a Venezia.</p>\n<h3>Video e immagini</h3>\n<ul>\n<li><strong>The Weight of the Flag</strong> (2:52), la prima passeggiata, 5 novembre: <a href=\"https://armenianpavilion.org/films/the-weight-of-the-flag\">armenianpavilion.org/films/the-weight-of-the-flag</a></li>\n<li><strong>The Italian Flag</strong> (2:57), la costruzione della bandiera nella Tesa 41: <a href=\"https://armenianpavilion.org/films/italian-flag\">armenianpavilion.org/films/italian-flag</a></li>\n<li>Fotografie delle passeggiate con didascalie e crediti, e video da scaricare fino al 4K: <a href=\"https://armenianpavilion.org/it/press/release/tricolore\">armenianpavilion.org/it/press/release/tricolore</a></li>\n</ul>\n<h3>Informazioni per la visita</h3>\n<ul>\n<li><strong>Sede:</strong> Tesa 41, Arsenale Militare, Fondamenta Case Nuove, Castello 2737, 30122 Venezia</li>\n<li><strong>Date:</strong> fino al 22 novembre 2026</li>\n<li><strong>Orari:</strong> da martedì a domenica, 10:00–17:30; lunedì chiuso</li>\n<li><strong>A piedi:</strong> circa otto minuti dal Leone del Pireo, attraverso l’Arsenale</li>\n</ul>\n<p>I giornalisti possono prenotare una visita allo studio, un posto in una delle passeggiate o un’intervista con Zadik Zadikian o Aram Zadikian tramite il contatto stampa indicato di seguito.</p>\n<h3>Crediti</h3>\n<ul>\n<li><strong>Artista:</strong> Zadik Zadikian</li>\n<li><strong>Curatori:</strong> Tony Shafrazi, Tina Chakarian</li>\n<li><strong>Commissaria:</strong> Svetlana Sahakyan</li>\n<li><strong>Studio:</strong> Aram Zadikian, Direttore, Zadik Zadikian Studio, con assistenti dell’Accademia di Belle Arti di Venezia</li>\n</ul>\n<p><strong>Con il sostegno di</strong> The Shafrazian Foundation; Armenia Fund; Ministero dell’Istruzione, della Scienza, della Cultura e dello Sport della Repubblica di Armenia; Andy e Hayde Torosyan e famiglia; Rafi Ourfalian e famiglia; Khachik Khudikyan e famiglia</p>\n<h3>Contatto stampa</h3>\n<p>Aram Zadikian, Direttore, Zadik Zadikian Studio\n<a href=\"mailto:pressoffice@armenianpavilion.org\">pressoffice@armenianpavilion.org</a>\n+1 323 404 1152 (WhatsApp) · +39 344 5697130 (Italia)\n<a href=\"https://armenianpavilion.org/it/press\">armenianpavilion.org/it/press</a></p>\n<h3>Note per la redazione</h3>\n<ul>\n<li>Denominazione ufficiale: Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d’Arte – La Biennale di Venezia. Forma breve: Padiglione Armenia, Biennale Arte 2026.</li>\n<li>La 61. Esposizione Internazionale d’Arte, <em>In Minor Keys</em>, è aperta dal 9 maggio al 22 novembre 2026.</li>\n<li>Si prega di riportare per ogni immagine il credito indicato in didascalia.</li>\n<li>#BiennaleArte2026 #InMinorKeys @labiennale</li>\n</ul>\n"
+                   :date "2026-11-11"
+                   :blurb "Il Tricolore portato a piedi per Venezia. Sabato verso San Marco, mercoledì all’Accademia. Comunicato, video e immagini."
+                   :images ["f684547416"
+                            "3570ca56f6"
+                            "8992886415"
+                            "6e21fd7328"
+                            "c6d41176a2"
+                            "66126f601c"]
+                   :films ["the-weight-of-the-flag"
+                           "italian-flag"
+                           "carrying"]
+                   :loops ["w01-flag"
+                           "w01-bridges"
+                           "w02-door"
+                           "w02-bridge"]
+                   :date-text "11 novembre 2026"
+                   :pdfs {:en "https://media.armenianpavilion.org/press/kit/armenian-pavilion-tricolore-2026-11-11-en-cd90c8a6.pdf"
+                          :it "https://media.armenianpavilion.org/press/kit/armenian-pavilion-tricolore-2026-11-11-it-bac9aa01.pdf"}}}
   :images [{:uid "488ef42b59"
             :file "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-488ef42b59"
             :key "press/488ef42b59"
@@ -841,7 +881,7 @@
             :title "Italian Flags, rendering"
             :date "2026"
             :materials "Pigmented cement"
-            :caption "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work, three blades on the crest of a hillside near Gubbio, Umbria."
+            :caption "Zadik Zadikian, Italian Flags, 2026. Pigmented cement. Rendering of the proposed work in a landscape."
             :caption-short "Italian Flags, 2026, rendering"
             :credit ""
             :artist "Zadik Zadikian"
@@ -879,7 +919,7 @@
             :title "Armenian Flag Stack, drawing"
             :date "2026"
             :materials "Marker and ink on paper"
-            :caption "Zadik Zadikian, drawing for Armenian Flag Stack, 2026. Marker and ink on paper, with unit dimensions. Courtesy Zadik Zadikian Studio."
+            :caption "Drawing for Armenian Flag Stack, 2026."
             :caption-short "Armenian Flag Stack, 2026, drawing"
             :credit ""
             :artist ""
@@ -1069,7 +1109,7 @@
             :title "7 Steps to Heaven, drawing"
             :date "2026"
             :materials "Pen and pencil on paper"
-            :caption "Zadik Zadikian, drawing for 7 Steps to Heaven, 2026. Pen and pencil on paper, with dimensions. Courtesy Zadik Zadikian Studio."
+            :caption "Drawing for 7 Steps to Heaven, 2026."
             :caption-short "7 Steps to Heaven, 2026, drawing"
             :credit ""
             :artist ""
@@ -1554,6 +1594,462 @@
                        :ext "tif"
                        :bytes 28305160
                        :crc 993920112}}}
+           {:uid "f684547416"
+            :file "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416"
+            :key "press/f684547416"
+            :w 6240
+            :h 4160
+            :section "process"
+            :title "Crossing at the Arsenale gate"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: six sections of Zadik Zadikian’s Italian flag, carried on the walkers’ backs, crossing the wooden bridge at the Arsenale gate, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Crossing at the Arsenale gate, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/f684547416-s.jpg"
+                     :name "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 148960
+                     :crc 3879354117}
+                 :m {:key "press/f684547416-m.jpg"
+                     :name "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 687147
+                     :crc 1326210179}
+                 :l {:key "press/f684547416-l.jpg"
+                     :name "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 2547735
+                     :crc 2008327307}
+                 :raw {:key "press/f684547416-raw.tif"
+                       :name "armenian-pavilion-crossing-at-the-arsenale-gate-f684547416.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77904878
+                       :crc 367432905}}}
+           {:uid "e7dbc4ebff"
+            :file "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff"
+            :key "press/e7dbc4ebff"
+            :w 6096
+            :h 4064
+            :section "process"
+            :title "Against the Arsenale wall"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the six sections of the Italian flag stood in a row against the brick wall of the Arsenale while the walkers rest, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Against the Arsenale wall, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/e7dbc4ebff-s.jpg"
+                     :name "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 201631
+                     :crc 647725178}
+                 :m {:key "press/e7dbc4ebff-m.jpg"
+                     :name "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 892258
+                     :crc 1468141372}
+                 :l {:key "press/e7dbc4ebff-l.jpg"
+                     :name "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 3000696
+                     :crc 2814550472}
+                 :raw {:key "press/e7dbc4ebff-raw.tif"
+                       :name "armenian-pavilion-against-the-arsenale-wall-e7dbc4ebff.tif"
+                       :w 6096
+                       :h 4064
+                       :ext "tif"
+                       :bytes 74358936
+                       :crc 768237633}}}
+           {:uid "3caee17013"
+            :file "armenian-pavilion-along-the-arsenale-canal-3caee17013"
+            :key "press/3caee17013"
+            :w 6240
+            :h 4160
+            :section "process"
+            :title "Along the Arsenale canal"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the Italian flag carried along the fondamenta beside the Arsenale canal, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Along the Arsenale canal, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3caee17013-s.jpg"
+                     :name "armenian-pavilion-along-the-arsenale-canal-3caee17013-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 221214
+                     :crc 906731811}
+                 :m {:key "press/3caee17013-m.jpg"
+                     :name "armenian-pavilion-along-the-arsenale-canal-3caee17013-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 1011494
+                     :crc 3125364345}
+                 :l {:key "press/3caee17013-l.jpg"
+                     :name "armenian-pavilion-along-the-arsenale-canal-3caee17013-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 3409677
+                     :crc 3153312588}
+                 :raw {:key "press/3caee17013-raw.tif"
+                       :name "armenian-pavilion-along-the-arsenale-canal-3caee17013.tif"
+                       :w 6240
+                       :h 4160
+                       :ext "tif"
+                       :bytes 77911472
+                       :crc 2219743976}}}
+           {:uid "a14e4f7ee8"
+            :file "armenian-pavilion-setting-off-again-a14e4f7ee8"
+            :key "press/a14e4f7ee8"
+            :w 8772
+            :h 4117
+            :section "process"
+            :title "Setting off again"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: walkers with the green, white and red sections of the Italian flag setting off again across a campo, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Setting off again, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/a14e4f7ee8-s.jpg"
+                     :name "armenian-pavilion-setting-off-again-a14e4f7ee8-small.jpg"
+                     :w 1200
+                     :h 563
+                     :bytes 103526
+                     :crc 1547539874}
+                 :m {:key "press/a14e4f7ee8-m.jpg"
+                     :name "armenian-pavilion-setting-off-again-a14e4f7ee8-medium.jpg"
+                     :w 2400
+                     :h 1126
+                     :bytes 378384
+                     :crc 1355164857}
+                 :l {:key "press/a14e4f7ee8-l.jpg"
+                     :name "armenian-pavilion-setting-off-again-a14e4f7ee8-large.jpg"
+                     :w 4000
+                     :h 1877
+                     :bytes 1305805
+                     :crc 2987744737}
+                 :raw {:key "press/a14e4f7ee8-raw.tif"
+                       :name "armenian-pavilion-setting-off-again-a14e4f7ee8.tif"
+                       :w 8772
+                       :h 4117
+                       :ext "tif"
+                       :bytes 108376458
+                       :crc 1658460647}}}
+           {:uid "8992886415"
+            :file "armenian-pavilion-in-line-8992886415"
+            :key "press/8992886415"
+            :w 4809
+            :h 1589
+            :section "process"
+            :title "In line"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the six sections of the Italian flag carried side by side through Castello, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "In line, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/8992886415-s.jpg"
+                     :name "armenian-pavilion-in-line-8992886415-small.jpg"
+                     :w 1200
+                     :h 397
+                     :bytes 63068
+                     :crc 3934211191}
+                 :m {:key "press/8992886415-m.jpg"
+                     :name "armenian-pavilion-in-line-8992886415-medium.jpg"
+                     :w 2400
+                     :h 793
+                     :bytes 248928
+                     :crc 3796720785}
+                 :l {:key "press/8992886415-l.jpg"
+                     :name "armenian-pavilion-in-line-8992886415-large.jpg"
+                     :w 4000
+                     :h 1322
+                     :bytes 916604
+                     :crc 2555566866}
+                 :raw {:key "press/8992886415-raw.tif"
+                       :name "armenian-pavilion-in-line-8992886415.tif"
+                       :w 4809
+                       :h 1589
+                       :ext "tif"
+                       :bytes 22950746
+                       :crc 4140562512}}}
+           {:uid "29ed49bc55"
+            :file "armenian-pavilion-a-pause-29ed49bc55"
+            :key "press/29ed49bc55"
+            :w 3388
+            :h 1641
+            :section "process"
+            :title "A pause"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the walkers stop to talk, the sections of the Italian flag still on their backs, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "A pause, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/29ed49bc55-s.jpg"
+                     :name "armenian-pavilion-a-pause-29ed49bc55-small.jpg"
+                     :w 1200
+                     :h 581
+                     :bytes 108569
+                     :crc 2545905686}
+                 :m {:key "press/29ed49bc55-m.jpg"
+                     :name "armenian-pavilion-a-pause-29ed49bc55-medium.jpg"
+                     :w 2400
+                     :h 1162
+                     :bytes 461331
+                     :crc 3580862166}
+                 :l {:key "press/29ed49bc55-l.jpg"
+                     :name "armenian-pavilion-a-pause-29ed49bc55-large.jpg"
+                     :w 3388
+                     :h 1641
+                     :bytes 1118197
+                     :crc 1393618344}
+                 :raw {:key "press/29ed49bc55-raw.tif"
+                       :name "armenian-pavilion-a-pause-29ed49bc55.tif"
+                       :w 3388
+                       :h 1641
+                       :ext "tif"
+                       :bytes 16711064
+                       :crc 350403759}}}
+           {:uid "3570ca56f6"
+            :file "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6"
+            :key "press/3570ca56f6"
+            :w 5966
+            :h 2541
+            :section "process"
+            :title "At the Museo Storico Navale"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the six sections of the Italian flag set down between the anchors in front of the Museo Storico Navale, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "At the Museo Storico Navale, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/3570ca56f6-s.jpg"
+                     :name "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-small.jpg"
+                     :w 1200
+                     :h 511
+                     :bytes 106317
+                     :crc 2808796003}
+                 :m {:key "press/3570ca56f6-m.jpg"
+                     :name "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-medium.jpg"
+                     :w 2400
+                     :h 1022
+                     :bytes 459760
+                     :crc 1455000728}
+                 :l {:key "press/3570ca56f6-l.jpg"
+                     :name "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6-large.jpg"
+                     :w 4000
+                     :h 1704
+                     :bytes 1606874
+                     :crc 2133327401}
+                 :raw {:key "press/3570ca56f6-raw.tif"
+                       :name "armenian-pavilion-at-the-museo-storico-navale-3570ca56f6.tif"
+                       :w 5966
+                       :h 2541
+                       :ext "tif"
+                       :bytes 45510516
+                       :crc 1042560322}}}
+           {:uid "de9e309363"
+            :file "armenian-pavilion-between-the-anchors-de9e309363"
+            :key "press/de9e309363"
+            :w 4703
+            :h 2362
+            :section "process"
+            :title "Between the anchors"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: a walker sets a section of the Italian flag down beside an iron anchor at the Museo Storico Navale, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Between the anchors, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/de9e309363-s.jpg"
+                     :name "armenian-pavilion-between-the-anchors-de9e309363-small.jpg"
+                     :w 1200
+                     :h 603
+                     :bytes 119450
+                     :crc 802692873}
+                 :m {:key "press/de9e309363-m.jpg"
+                     :name "armenian-pavilion-between-the-anchors-de9e309363-medium.jpg"
+                     :w 2400
+                     :h 1205
+                     :bytes 532256
+                     :crc 3650588156}
+                 :l {:key "press/de9e309363-l.jpg"
+                     :name "armenian-pavilion-between-the-anchors-de9e309363-large.jpg"
+                     :w 4000
+                     :h 2009
+                     :bytes 1772210
+                     :crc 2048284745}
+                 :raw {:key "press/de9e309363-raw.tif"
+                       :name "armenian-pavilion-between-the-anchors-de9e309363.tif"
+                       :w 4703
+                       :h 2362
+                       :ext "tif"
+                       :bytes 33353000
+                       :crc 718269499}}}
+           {:uid "d84fa5d9f6"
+            :file "armenian-pavilion-unbuckling-d84fa5d9f6"
+            :key "press/d84fa5d9f6"
+            :w 3510
+            :h 4160
+            :section "process"
+            :title "Unbuckling"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: a walker undoes the harness of a white section of the Italian flag, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Unbuckling, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/d84fa5d9f6-s.jpg"
+                     :name "armenian-pavilion-unbuckling-d84fa5d9f6-small.jpg"
+                     :w 1013
+                     :h 1200
+                     :bytes 123082
+                     :crc 3062502012}
+                 :m {:key "press/d84fa5d9f6-m.jpg"
+                     :name "armenian-pavilion-unbuckling-d84fa5d9f6-medium.jpg"
+                     :w 2025
+                     :h 2400
+                     :bytes 532477
+                     :crc 3972322583}
+                 :l {:key "press/d84fa5d9f6-l.jpg"
+                     :name "armenian-pavilion-unbuckling-d84fa5d9f6-large.jpg"
+                     :w 3375
+                     :h 4000
+                     :bytes 2247562
+                     :crc 712500226}
+                 :raw {:key "press/d84fa5d9f6-raw.tif"
+                       :name "armenian-pavilion-unbuckling-d84fa5d9f6.tif"
+                       :w 3510
+                       :h 4160
+                       :ext "tif"
+                       :bytes 43835846
+                       :crc 4216281320}}}
+           {:uid "0c830c8419"
+            :file "armenian-pavilion-carriers-0c830c8419"
+            :key "press/0c830c8419"
+            :w 3978
+            :h 2128
+            :section "process"
+            :title "Carriers"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: walkers rest with a green section of the Italian flag, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Carriers, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/0c830c8419-s.jpg"
+                     :name "armenian-pavilion-carriers-0c830c8419-small.jpg"
+                     :w 1200
+                     :h 642
+                     :bytes 89529
+                     :crc 4110231761}
+                 :m {:key "press/0c830c8419-m.jpg"
+                     :name "armenian-pavilion-carriers-0c830c8419-medium.jpg"
+                     :w 2400
+                     :h 1284
+                     :bytes 428119
+                     :crc 4244961033}
+                 :l {:key "press/0c830c8419-l.jpg"
+                     :name "armenian-pavilion-carriers-0c830c8419-large.jpg"
+                     :w 3978
+                     :h 2128
+                     :bytes 1561521
+                     :crc 498043148}
+                 :raw {:key "press/0c830c8419-raw.jpg"
+                       :name "armenian-pavilion-carriers-0c830c8419.jpg"
+                       :w 3978
+                       :h 2128
+                       :ext "jpg"
+                       :bytes 5802102
+                       :crc 954518001}}}
+           {:uid "6e21fd7328"
+            :file "armenian-pavilion-along-the-lagoon-6e21fd7328"
+            :key "press/6e21fd7328"
+            :w 3808
+            :h 3665
+            :section "process"
+            :title "Along the lagoon"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: a walker carries a green section of the Italian flag along the lagoon, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Along the lagoon, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/6e21fd7328-s.jpg"
+                     :name "armenian-pavilion-along-the-lagoon-6e21fd7328-small.jpg"
+                     :w 1200
+                     :h 1155
+                     :bytes 54592
+                     :crc 2106724020}
+                 :m {:key "press/6e21fd7328-m.jpg"
+                     :name "armenian-pavilion-along-the-lagoon-6e21fd7328-medium.jpg"
+                     :w 2400
+                     :h 2310
+                     :bytes 366888
+                     :crc 2875381411}
+                 :l {:key "press/6e21fd7328-l.jpg"
+                     :name "armenian-pavilion-along-the-lagoon-6e21fd7328-large.jpg"
+                     :w 3808
+                     :h 3665
+                     :bytes 1763769
+                     :crc 1621213792}
+                 :raw {:key "press/6e21fd7328-raw.tif"
+                       :name "armenian-pavilion-along-the-lagoon-6e21fd7328.tif"
+                       :w 3808
+                       :h 3665
+                       :ext "tif"
+                       :bytes 41897210
+                       :crc 607551146}}}
+           {:uid "c6d41176a2"
+            :file "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2"
+            :key "press/c6d41176a2"
+            :w 5788
+            :h 3859
+            :section "process"
+            :title "Back over the Arsenale bridge"
+            :date "6 November 2026"
+            :materials "EPS foam and paint"
+            :caption "Walking the Work Through Venice, Armenian Pavilion, Biennale Arte 2026: the sections of the Italian flag crossing back over the Arsenale bridge at dusk, Castello, Venice, 6 November 2026. Photo: Mina Biasutti."
+            :caption-short "Back over the Arsenale bridge, 6 November 2026"
+            :credit "Mina Biasutti"
+            :artist "Zadik Zadikian"
+            :dl {:s {:key "press/c6d41176a2-s.jpg"
+                     :name "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-small.jpg"
+                     :w 1200
+                     :h 800
+                     :bytes 125570
+                     :crc 4207332677}
+                 :m {:key "press/c6d41176a2-m.jpg"
+                     :name "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-medium.jpg"
+                     :w 2400
+                     :h 1600
+                     :bytes 482076
+                     :crc 3689888545}
+                 :l {:key "press/c6d41176a2-l.jpg"
+                     :name "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2-large.jpg"
+                     :w 4000
+                     :h 2667
+                     :bytes 1666725
+                     :crc 310796978}
+                 :raw {:key "press/c6d41176a2-raw.tif"
+                       :name "armenian-pavilion-back-over-the-arsenale-bridge-c6d41176a2.tif"
+                       :w 5788
+                       :h 3859
+                       :ext "tif"
+                       :bytes 67038236
+                       :crc 1038348572}}}
            {:uid "a4383d9f8e"
             :file "armenian-pavilion-pigmented-plaster-unit-a4383d9f8e"
             :key "press/a4383d9f8e"
@@ -1868,7 +2364,7 @@
             :date "2026"
             :materials ""
             :caption "Zadik Zadikian, Maria Carmela Colaiacovo, Tony Shafrazi, and Gianni Scipione Rossi in the Armenian Pavilion, Biennale Arte 2026. Photo: Aram Zadikian."
-            :caption-short "With Maria Carmela Colaiacovo, Tony Shafrazi and Gianni Scipione Rossi, 2026"
+            :caption-short "Zadik Zadikian, Maria Carmela Colaiacovo and Tony Shafrazi in the Armenian Pavilion, 2026. Photo: Aram Zadikian."
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"
             :dl {:s {:key "press/e93b6a1a17-s.jpg"
@@ -1897,16 +2393,16 @@
                        :bytes 81153330
                        :crc 2344168091}}}
            {:uid "c41b5988cc"
-            :file "armenian-pavilion-tony-shafrazi-and-zadik-zadikian-with-a-guest-c41b5988cc"
+            :file "armenian-pavilion-process-stills-2026-10-027-c41b5988cc"
             :key "press/c41b5988cc"
             :w 7680
             :h 4320
             :section "people"
-            :title "Tony Shafrazi and Zadik Zadikian with a guest"
+            :title ""
             :date "2026"
             :materials ""
-            :caption "From left: Tony Shafrazi, a guest and Zadik Zadikian, 2026. Photo: Aram Zadikian."
-            :caption-short "Tony Shafrazi and Zadik Zadikian, 2026"
+            :caption ""
+            :caption-short ""
             :credit "Aram Zadikian"
             :artist "Zadik Zadikian"
             :dl {:s {:key "press/c41b5988cc-s.jpg"
@@ -2741,7 +3237,7 @@
             :title "Yellow Space"
             :date "1974"
             :materials "Pearlescent traffic-yellow paint"
-            :caption "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Yellow Space, 1974. Pearlescent traffic-yellow paint. Interior view, New York."
             :caption-short "Yellow Space, 1973–74"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2779,7 +3275,7 @@
             :title "Yellow Space"
             :date "1974"
             :materials "Pearlescent traffic-yellow paint"
-            :caption "Zadik Zadikian, Yellow Space, 1973–74. Pearlescent traffic-yellow paint. Exterior view, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Yellow Space, 1974. Pearlescent traffic-yellow paint. Exterior view, New York."
             :caption-short "Yellow Space, 1973–74"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2817,7 +3313,7 @@
             :title "Red Space"
             :date "1974"
             :materials "Traffic-red paint"
-            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York."
             :caption-short "Red Space, 1974"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2855,7 +3351,7 @@
             :title "Red Space"
             :date "1974"
             :materials "Traffic-red paint"
-            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Interior view, New York."
             :caption-short "Red Space, 1974"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2893,7 +3389,7 @@
             :title "Red Space"
             :date "1974"
             :materials "Traffic-red paint"
-            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Exterior view, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Red Space, 1974. Traffic-red paint. Exterior view, New York."
             :caption-short "Red Space, 1974"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2931,7 +3427,7 @@
             :title "Gilded stairs going down, P.S. 1"
             :date "1974"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, gilded stairs going down, c. 1977–78. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, gilded stairs going down, 1974. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York."
             :caption-short "Gilded stairs, P.S. 1, c. 1977–78"
             :credit ""
             :artist "Zadik Zadikian"
@@ -2969,7 +3465,7 @@
             :title "Gilded stairwell, P.S. 1"
             :date "1974"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, gilded stairwell, c. 1977–78. Industrial gold foil. Entrance, P.S. 1 (now MoMA PS1), Long Island City, New York. Photo: Ivan Dalla Tana. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, gilded stairwell, 1974. Industrial gold foil. P.S. 1 (now MoMA PS1), Long Island City, New York."
             :caption-short "Gilded stairwell, P.S. 1, c. 1977–78"
             :credit "Ivan Dalla Tana"
             :artist "Zadik Zadikian"
@@ -3007,7 +3503,7 @@
             :title "Stacking gold bricks, 9 Jay Street"
             :date "1975"
             :materials ""
-            :caption "Zadik Zadikian stacking gold bricks at 9 Jay Street, his eight-room apartment and studio, New York, 1975–76. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian stacking gold bricks at 9 Jay Street, eight-room apartment, studio, 1975."
             :caption-short "Stacking gold bricks, 9 Jay Street, 1975–76"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3045,7 +3541,7 @@
             :title "9 Jay Street: hallway"
             :date "1975"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the hallway. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. View of the hallway. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3083,7 +3579,7 @@
             :title "9 Jay Street: kitchen"
             :date "1975"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. View of the kitchen. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. View of the kitchen. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3121,7 +3617,7 @@
             :title "9 Jay Street: radiator"
             :date "1975"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of a radiator. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. Detail of a radiator. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3159,7 +3655,7 @@
             :title "9 Jay Street: water heater"
             :date "1975"
             :materials "Industrial gold foil"
-            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975–76. Industrial gold foil. Detail of the water heater. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, 9 Jay Street, eight-room apartment, studio, 1975. Industrial gold foil. Detail of the water heater. The artist’s New York apartment and studio, its walls, ceilings and fixtures covered entirely in industrial gold foil."
             :caption-short "9 Jay Street, 1975–76"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3235,7 +3731,7 @@
             :title "(Untitled) gold Bricks in Cart"
             :date "1975"
             :materials "Plaster and 24-karat gold leaf"
-            :caption "Zadik Zadikian, Gold Bricks in Cart, 1975. Plaster and 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Gold Bricks in Cart, 1975. Plaster and 24-karat gold leaf."
             :caption-short "Gold Bricks in Cart, 1975"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3273,7 +3769,7 @@
             :title "(Untitled) gold bricks on street"
             :date "1975"
             :materials "Plaster and 24-karat gold leaf"
-            :caption "Zadik Zadikian, Gold Stack, 1975. Plaster and 24-karat gold leaf. Installed on a New York sidewalk. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Gold Stack, 1975. Plaster and 24-karat gold leaf. Installed on a New York sidewalk."
             :caption-short "Gold Stack, 1975"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3311,7 +3807,7 @@
             :title "(Untitled) gold shovel, pickaxe, nails"
             :date "1975"
             :materials "24-karat gold leaf"
-            :caption "Zadik Zadikian, gilded shovel and pickaxe with Golden Nails, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, gilded shovel and pickaxe with Golden Nails, 1975. 24-karat gold leaf."
             :caption-short "Gilded shovel, pickaxe and Golden Nails, 1975"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3349,7 +3845,7 @@
             :title "(Untitled) two gold shovel"
             :date "1975"
             :materials "24-karat gold leaf"
-            :caption "Zadik Zadikian, two gilded shovels, 1975. 24-karat gold leaf. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, two gilded shovels, 1975. 24-karat gold leaf."
             :caption-short "Two gilded shovels, 1975"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3387,7 +3883,7 @@
             :title "(Untitled) gold nails"
             :date "1975"
             :materials "24-karat gold leaf, steel and cardboard"
-            :caption "Zadik Zadikian, Golden Nails, 1975. 24-karat gold leaf on steel nails, in a cardboard box. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, Golden Nails, 1975. 24-karat gold leaf on steel nails, in a cardboard box."
             :caption-short "Golden Nails, 1975"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3424,8 +3920,8 @@
             :section "archive"
             :title "With Tony Shafrazi, Tehran"
             :date "1978"
-            :materials ""
-            :caption "Tony Shafrazi and Zadik Zadikian with Gold Bricks, getting ready for the opening, Tony Shafrazi Gallery, Tehran, 1978. Photographer unknown. Courtesy Zadik Zadikian Studio."
+            :materials "Plaster and 24-karat gold leaf"
+            :caption "Tony Shafrazi and Zadik Zadikian with One Thousand Gold Bricks, getting ready for the opening, Tony Shafrazi Gallery, Tehran, 1978. Photographer unknown."
             :caption-short "With Tony Shafrazi, Tehran, 1978"
             :credit "Photographer unknown"
             :artist "Zadik Zadikian"
@@ -3455,15 +3951,15 @@
                        :bytes 73926684
                        :crc 4198725184}}}
            {:uid "dbac198dd8"
-            :file "armenian-pavilion-gold-bricks-dbac198dd8"
+            :file "armenian-pavilion-one-thousand-gold-bricks-dbac198dd8"
             :key "press/dbac198dd8"
             :w 5626
             :h 4078
             :section "archive"
-            :title "Gold Bricks"
+            :title "One Thousand Gold Bricks"
             :date "1978"
-            :materials ""
-            :caption "Zadik Zadikian, Gold Bricks, 1978. Installation view, Tony Shafrazi Gallery, Tehran, the gallery’s first and only exhibition, which opened on 31 October 1978. About a thousand gilded bricks; the work was stolen from storage after the Revolution and is lost. Photo: Tony Shafrazi."
+            :materials "Plaster and 24-karat gold leaf"
+            :caption "Zadik Zadikian, One Thousand Gold Bricks, 1978. Plaster and 24-karat gold leaf. Installation view, Tony Shafrazi Gallery, Tehran, 1978, the gallery’s first and only exhibition, which opened on the eve of the Iranian Revolution. The thousand gilded bricks were later looted and lost. Photo: Tony Shafrazi."
             :caption-short "Gold Bricks, 1978"
             :credit "Tony Shafrazi"
             :artist "Zadik Zadikian"
@@ -3493,15 +3989,15 @@
                        :bytes 68860506
                        :crc 608137788}}}
            {:uid "52a0b99f06"
-            :file "armenian-pavilion-gold-bricks-single-stack-52a0b99f06"
+            :file "armenian-pavilion-one-thousand-gold-bricks-single-stack-52a0b99f06"
             :key "press/52a0b99f06"
             :w 3244
             :h 6438
             :section "archive"
-            :title "Gold Bricks, single stack"
+            :title "One Thousand Gold Bricks, single stack"
             :date "1978"
             :materials "Plaster and 24-karat gold leaf"
-            :caption "Zadik Zadikian, Gold Bricks (single stack), 1978. Tony Shafrazi Gallery, Tehran. Courtesy Zadik Zadikian Studio."
+            :caption "Zadik Zadikian, One Thousand Gold Bricks (single stack), 1978. Plaster and 24-karat gold leaf. Tony Shafrazi Gallery, Tehran."
             :caption-short "Gold Bricks, 1978"
             :credit ""
             :artist "Zadik Zadikian"
@@ -3539,7 +4035,7 @@
             :title "Zadik, Aram, Made in USA (Aspet)"
             :date "2025"
             :materials "Plaster and gold leaf"
-            :caption "Zadik Zadikian and his son Aram Zadikian beside Made in USA (Aspet), 2025, Independent 20th Century, New York, 2025."
+            :caption "Zadik Zadikian and son Aram Zadikian beside Made in USA (Aspet), Independent Art Fair, NY, 2025"
             :caption-short "Zadik and Aram Zadikian with Made in USA (Aspet), 2025"
             :credit ""
             :artist ""

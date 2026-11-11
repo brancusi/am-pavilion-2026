@@ -31,7 +31,8 @@
     "clean:release": "rm -f release/js/*.js release/css/main*.css release/_redirects",
     "qa:cls": "node scripts/qa/cls.mjs",
     "press:kit": "node build/press-kit.mjs",
-    "walks": "node scripts/walks.mjs"
+    "walks": "node scripts/walks.mjs",
+    "press:pdf": "node build/press-release-pdf.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

@@ -91,9 +91,29 @@ const PRESS_TEXT = {
   it: { kit: "Cartella stampa", desc: "Cartella stampa di Zadik Zadikian: The Studio, Padiglione della Repubblica di Armenia, Biennale Arte 2026: comunicato, scheda, immagini, video e loghi.", film: "Video" },
 };
 
+// Releases on /press/release/<name> and /it/press/release/<name>: their own preview, in
+// the page's language (the Italian link is the one sent to Italian press).
+// The picture is its share card (build/press-share-card.mjs): the photograph
+// with La Biennale's National Participations logo, 1200 × 630, on R2 share/.
+const PITCHES = {
+  tricolore: {
+    image: `${media}share/tricolore.jpg`, width: 1200, height: 630,
+    en: { title: "The Italian flag walks through Venice", description: "Armenian Pavilion, Biennale Arte 2026: the studio carries an Italian flag through Venice on foot. Saturday 14 November to Piazza San Marco, Wednesday 18 November to the Accademia di Belle Arti. Release, films and images." },
+    it: { title: "Il Tricolore cammina per Venezia", description: "Padiglione Armenia, Biennale Arte 2026: lo studio porta a piedi un Tricolore per Venezia. Sabato 14 novembre verso Piazza San Marco, mercoledì 18 novembre all’Accademia di Belle Arti. Comunicato, video e immagini." },
+  },
+};
+
 async function press(request, env, res, path, m) {
   const [, it, section, item] = m;
   const tx = PRESS_TEXT[it ? "it" : "en"];
+  const pitch = section === "release" && item && PITCHES[item];
+  if (pitch) {
+    const t = pitch[it ? "it" : "en"];
+    const out = preview(res, { path: path.replace(/\/+$/, ""), ...t, image: pitch.image, width: pitch.width, height: pitch.height, type: "article" });
+    return new HTMLRewriter().on("head", { element(el) {
+      el.append(`<meta property="og:locale" content="${it ? "it_IT" : "en_GB"}">`, { html: true });
+    } }).on("html", { element(el) { el.setAttribute("lang", it ? "it" : "en"); } }).transform(out);
+  }
   if (section === "films" && item && films[item]) {
     const f = films[item];
     return preview(res, { path, title: f.title, description: `${tx.film} · ${f.summary}`, image: f.image, width: 1200, height: 630, type: "video.other" });

@@ -1,3 +1,10 @@
 # Pages removed from the site (October 2026): send old links home.
 /budget / 301
 /donate / 301
+
+# Story pitch short links (November 2026): the Italian one is sent to Italian press.
+/tricolore /it/press/release/tricolore 302
+/flag-walk /press/release/tricolore 302
+# The flag-walk release moved under the releases section (11 Nov 2026).
+/press/tricolore /press/release/tricolore 301
+/it/press/tricolore /it/press/release/tricolore 301

@@ -46,6 +46,10 @@ const LOGOS = [
 
 const NOTES = ['studio', 'serra', 'tehran', 'downtown', 'accademia', 'armenia'];
 const PAGES = ['essentials', 'release', 'facts', 'visit', 'logos'];
+// Story pitches: a release of their own with its PDFs, images (press library
+// uids), films (amp.data.films slugs) and walk loops (R2 walks/films/<id>).
+// Each has a sub-page, /press/<name> and /it/press/<name>.
+const PITCHES = ['tricolore'];
 
 marked.use({ gfm: true });
 
@@ -105,6 +109,8 @@ const parsers = {
                   pdf_title: r.fm.pdf_title || null,
                   earlier: (r.fm.earlier || []).map((e) => ({ title: e.title, date: date(e.date), url: e.url || null })) }),
   note: (r) => ({ title: r.title, images: (r.fm.images || []).map(String), html: md(r.body) }),
+  pitch: (r) => ({ title: r.title, html: md(r.body), date: date(r.fm.date), blurb: r.fm.blurb || null,
+                   images: (r.fm.images || []).map(String), films: r.fm.films || [], loops: r.fm.loops || [] }),
   people: (r) => ({ title: r.title, people: blocks(r.body).map(({ head, body }) => {
     const [name, ...role] = head.split(',');
     const [long, short] = body.split(/^\*\*Short:\*\*\s*/m);
@@ -143,6 +149,7 @@ function lang(l) {
   const put = (name, kind) => { const r = read(name, l); if (r) out[name] = parsers[kind](r); };
   for (const p of PAGES) put(p, ['facts', 'essentials'].includes(p) ? 'table' : 'page');
   for (const n of NOTES) put(n, 'note');
+  for (const n of PITCHES) put(n, 'pitch');
   put('people', 'people'); put('chronology', 'chronology'); put('quotes', 'quotes');
   put('coverage', 'coverage'); put('video', 'video');
   if (out.logos) out.logos.files = LOGOS;
@@ -154,6 +161,14 @@ function lang(l) {
   }
   if (out.release) out.release.pdfs = Object.fromEntries(Object.entries(pdfs)
     .filter(([, v]) => v.date === out.release.date).map(([k, v]) => [k, v.url]));
+  // A pitch's PDFs are recorded under its name: { tricolore: { en: {…}, it: {…} } }.
+  for (const n of PITCHES) {
+    const p = out[n];
+    if (!p) continue;
+    p.date_text = longDate(p.date, l);
+    p.pdfs = Object.fromEntries(Object.entries(pdfs[n] || {})
+      .filter(([, v]) => v.date === p.date).map(([k, v]) => [k, v.url]));
+  }
   return out;
 }
 

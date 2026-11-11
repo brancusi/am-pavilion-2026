@@ -25,6 +25,7 @@
             [amp.state.provider :refer [use-main-state]]
             [amp.ui.lightbox :refer [film-lightbox]]
             [amp.ui.picture :refer [picture media-host]]
+            [amp.ui.studio-mark :refer [studio-mark]]
             [clojure.string :as str]
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
@@ -32,7 +33,7 @@
 
 (def ^:private data-url "/data/press/press.json")
 (def ^:private csv-url "/data/press/captions.csv")
-(def ^:private press-email "pressoffice@armenianpavilion2026.org")
+(def ^:private press-email "pressoffice@armenianpavilion.org")
 
 (def ^:private sections
   "Image sections in the order the filter shows them; images with none are Other."
@@ -46,7 +47,7 @@
 (def ^:private copy
   {:en {:eyebrow "Press" :title "Press kit" :images-title "Press images"
         :lede "The Studio, Zadik Zadikian’s Armenian Pavilion at Biennale Arte 2026: the work, its making, the people and the archive behind it."
-        :essentials "Essentials" :release "Press release" :facts "Fact sheet" :notes "Story notes"
+        :essentials "Essentials" :release "Press release" :releases "Press releases" :facts "Fact sheet" :notes "Story notes"
         :images "Images" :video "Films" :people "People" :chronology "Chronology" :quotes "Quotes"
         :visit "Studio visits" :coverage "Coverage" :logos "Logos and credits"
         :book "Book a studio visit or interview" :book-subject "Studio visit or interview request"
@@ -63,10 +64,14 @@
         :source "Source" :draft "Review build. Not public: the kit shows on armenianpavilion.org only once approved."
         :english-only "In English only." :later "To come." :prev "← Previous" :next "Next →"
         :close "Close" :photo "Photo: " :view "View: " :on-way "Press images are on their way."
-        :filter "Filter by section" :contents "On this page"}
+        :filter "Filter by section" :contents "On this page"
+        :tricolore "The flag walks" :pitch "Story pitch" :pitch-films "Films" :pitch-loops "From the walks"
+        :pitch-images "Images" :pitch-walks "Schedule and routes of every walk" :pitch-acc "The 18 November event on the Accademia’s website"
+        :copy-it "Copy Italian link" :kit-link "Full press kit →" :official "Pavilion of the Republic of Armenia at the 61st International Art Exhibition – La Biennale di Venezia" :loops-note "Silent clips from the walks of 5 and 6 November."
+        :pitch-card "Press release: the Italian flag, carried through Venice on foot. In English and Italian, with films and images."}
    :it {:eyebrow "Stampa" :title "Cartella stampa" :images-title "Immagini per la stampa"
         :lede "The Studio, il Padiglione della Repubblica di Armenia alla Biennale Arte 2026 con Zadik Zadikian: l’opera, la sua lavorazione, le persone e l’archivio."
-        :essentials "In breve" :release "Comunicato stampa" :facts "Scheda" :notes "Approfondimenti"
+        :essentials "In breve" :release "Comunicato stampa" :releases "Comunicati stampa" :facts "Scheda" :notes "Approfondimenti"
         :images "Immagini" :video "Video" :people "Biografie" :chronology "Cronologia" :quotes "Citazioni"
         :visit "Visite in studio" :coverage "Rassegna stampa" :logos "Loghi e crediti"
         :book "Prenota una visita in studio o un’intervista" :book-subject "Richiesta di visita o intervista"
@@ -83,7 +88,11 @@
         :source "Fonte" :draft "Versione di revisione, non pubblica."
         :english-only "Solo in inglese." :later "In arrivo." :prev "← Precedente" :next "Successiva →"
         :close "Chiudi" :photo "Foto: " :view "Apri: " :on-way "Le immagini sono in arrivo."
-        :filter "Filtra per sezione" :contents "In questa pagina"}})
+        :filter "Filtra per sezione" :contents "In questa pagina"
+        :tricolore "Il Tricolore a piedi" :pitch "Proposta di servizio" :pitch-films "Video" :pitch-loops "Dalle passeggiate"
+        :pitch-images "Immagini" :pitch-walks "Calendario e percorsi di ogni passeggiata" :pitch-acc "L’evento del 18 novembre sul sito dell’Accademia"
+        :copy-it "Copia il link in italiano" :kit-link "Cartella stampa completa →" :official "Padiglione della Repubblica di Armenia alla 61. Esposizione Internazionale d’Arte – La Biennale di Venezia" :loops-note "Brevi riprese mute dalle passeggiate del 5 e 6 novembre."
+        :pitch-card "Comunicato stampa: il Tricolore portato a piedi per Venezia. In italiano e in inglese, con video e immagini."}})
 
 (defn- pad2 [n] (.padStart (str n) 2 "0"))
 
@@ -456,8 +465,9 @@
                         ($ copy-button {:text (kit-link lang "films" slug) :label (t :copy-link) :done (t :copied)}))))))
 
 (defnc film-list
-  "The films, each playing in the lightbox from its poster."
-  [{:keys [video lang t]}]
+  "The films, each playing in the lightbox from its poster; `only`: just
+   these slugs, in that order."
+  [{:keys [video lang t only]}]
   ;; /press/films/carrying opens that film, and the address follows the
   ;; lightbox so it can be copied and shared.
   (let [by-slug (fn [h] (let [h (some-> h (str/replace #"^film-" ""))]   ; #film-<slug> was the old form
@@ -468,7 +478,9 @@
     (hooks/use-effect :once (when playing (js/setTimeout #(show-item! lang "films" (:slug playing)) 600)))
     (<>
      (d/ul {:class "ap-kit__films"}
-           (for [film films/films
+           (for [film (if only
+                        (keep (fn [s] (some #(when (= (:slug %) s) %) films/films)) only)
+                        films/films)
                  :let [text (some #(when (= (:slug %) (:slug film)) %) (:films video))]]
              ($ film-row {:key (:slug film) :film film :text text :lang lang :t t
                           :on-play #(play! film)})))
@@ -483,13 +495,93 @@
                  (d/dt k)
                  (d/dd {:dangerouslySetInnerHTML #js {:__html html}})))))
 
+;; ── Story pitches ──────────────────────────────────────────────────────────
+
+(def ^:private walk-loop-host (str media-host "walks/films/"))
+
+(defnc pitch-loops
+  "Silent clips from the walks (R2 walks/films/<id>.mp4, poster <id>.jpg):
+   each plays on click, and downloads as MP4."
+  [{:keys [ids t]}]
+  (d/ul {:class "ap-pitch__loops"}
+        (for [id ids]
+          (d/li {:key id}
+                (d/video {:src (str walk-loop-host id ".mp4")
+                          :poster (str media-host "walks/films/" id "-800.webp")
+                          :muted true :loop true :playsInline true :controls true :preload "none"
+                          :width 800 :height 450})
+                (d/a {:class "ap-label" :href (str walk-loop-host id ".mp4")
+                      :download (str "armenian-pavilion-" id ".mp4")}
+                     (str (t :film-download) " · " id))))))
+
+(declare page-href)
+
+(defnc letterhead
+  "The release's head, as on its PDF: The Studio's mark in black with the
+   pavilion's name (as in the site header) and La
+   Biennale's National Participations logo (the official RGB file, placed by
+   the 2026 logo guide for a horizontal support; see .ap-letter in the CSS),
+   so a journalist sees at once that the mail comes from a national pavilion."
+  [{:keys [label t]}]
+  (d/header {:class "ap-letter"}
+            (d/div {:class "ap-letter__brand"}
+                   ($ studio-mark {:variants #{} :label nil})
+                   (d/p "Armenian Pavilion" (d/br) (d/span "Biennale Arte 2026")))
+            (d/div {:class "ap-letter__text"}
+                   (d/p {:class "ap-letter__kind"} label))
+            (d/img {:class "ap-letter__bie" :src "/images/press/biennale-61-PartNaz-RGB.png"
+                    :alt "La Biennale di Venezia · 61. Esposizione Internazionale d’Arte · Partecipazioni Nazionali"
+                    :width 640 :height 595})))
+
+(defnc pitch
+  "A press release with its own page (/press/release/tricolore): the release
+   itself, its PDFs in both languages, images from the library, films and
+   walk clips."
+  [{:keys [id p by-uid lang t]}]
+  (let [{body :html :keys [date-text pdfs images films loops]} p
+        it-link (str (.-origin js/location) "/it/press/release/" id)]
+    (<>
+     ($ letterhead {:label (<> (d/b (t :release)) " · " date-text) :t t})
+     (d/div {:class "ap-kit__dl"}
+            (for [l [:it :en] :let [url (get pdfs l)] :when url]
+              (d/a {:key (name l) :class "ap-press__btn" :href url :download true}
+                   (str (t :pdf) " · " (str/upper-case (name l)))))
+            ($ copy-button {:text (kit-link lang "release" id) :label (t :copy-link) :done (t :copied)})
+            (when (not= lang :it)
+              ($ copy-button {:text it-link :label (t :copy-it) :done (t :copied)}))
+            (d/a {:class "ap-press__btn" :href (page-href lang "")} (t :kit-link)))
+     ($ html {:of body})
+     (d/ul {:class "ap-pitch__links"}
+           (d/li (d/a {:href "/walks"} (str (t :pitch-walks) " →")))
+           (d/li (d/a {:href "https://www.accademiavenezia.it/eventi/zadik-zadikian-performance-e-incontro-con-l-artista-905.html"
+                       :target "_blank" :rel "noopener"} (str (t :pitch-acc) " ↗"))))
+     (when (seq images)
+       (d/section {:class "ap-pitch__sec"}
+                  (d/h2 {:class "ap-h1 m-0"} (t :pitch-images))
+                  ($ note-images {:uids images :by-uid by-uid :lang lang :t t})))
+     (when (seq films)
+       (d/section {:class "ap-pitch__sec"}
+                  (d/h2 {:class "ap-h1 m-0"} (t :pitch-films))
+                  ($ film-list {:only films :lang lang :t t})))
+     (when (seq loops)
+       (d/section {:class "ap-pitch__sec"}
+                  (d/h2 {:class "ap-h1 m-0"} (t :pitch-loops))
+                  (d/p {:class "ap-label ap-muted m-0"} (t :loops-note))
+                  ($ pitch-loops {:ids loops :t t}))))))
+
+(def ^:private release-slugs
+  "Releases with their own page under /press/release/<slug>, newest first:
+   [slug kit-key]. The general release (release.md) is the last of them."
+  [["tricolore" :tricolore]
+   ["final-weeks" :release]])
+
 ;; ── Sections and the menu ──────────────────────────────────────────────────
 
 (def ^:private pages
   "The press kit's sub-pages, in menu order: [path label-key blurb-key needs]
    (needs: the kit sections that must exist for the page to be listed)."
   [["" :overview nil nil]
-   ["release" :release :release-blurb [:release]]
+   ["release" :releases :release-blurb [:release :tricolore]]
    ["facts" :facts :facts-blurb [:facts]]
    ["stories" :notes :notes-blurb (mapv keyword notes)]
    ["images" :images :images-blurb nil]
@@ -501,7 +593,8 @@
    ["logos" :logos :logos-blurb [:logos]]])
 
 (def ^:private blurbs
-  {:en {:release-blurb "The current release, on the page and as PDF, with earlier releases."
+  {:en {:tricolore-blurb "Story pitch: the Italian flag carried through Venice. Saturday to San Marco, 18 November to the Accademia."
+        :release-blurb "Every release, newest first, on the page and as PDF in English and Italian."
         :facts-blurb "Names, dates, venue, hours and contacts, ready to copy."
         :notes-blurb "Six story notes for features, each with images to use."
         :images-blurb "Captioned images by section: single files or ZIPs."
@@ -512,7 +605,8 @@
         :coverage-blurb "Coverage published so far."
         :logos-blurb "Logos for print and web, and how to credit images."
         :overview "Overview" :sections "Sections" :language "Language"}
-   :it {:release-blurb "Il comunicato attuale, sulla pagina e in PDF, e quelli precedenti."
+   :it {:tricolore-blurb "Proposta di servizio: il Tricolore portato a piedi per Venezia. Sabato verso San Marco, il 18 novembre all’Accademia."
+        :release-blurb "Tutti i comunicati, dal più recente, sulla pagina e in PDF in italiano e in inglese."
         :facts-blurb "Nomi, date, sede, orari e contatti, pronti da copiare."
         :notes-blurb "Sei approfondimenti per articoli, ognuno con immagini."
         :images-blurb "Immagini con didascalia per sezione: singole o in ZIP."
@@ -526,7 +620,7 @@
 
 (def ^:private old-anchors
   "Anchors of the single-page kit (pitches link to them): where they live now."
-  (merge {"essentials" "" "release" "release" "facts" "facts" "notes" "stories"
+  (merge {"essentials" "" "release" "release" "tricolore" "release/tricolore" "facts" "facts" "notes" "stories"
           "images" "images" "video" "films" "people" "people" "chronology" "people"
           "quotes" "quotes" "visit" "visit" "coverage" "coverage" "logos" "logos"}
          (zipmap notes (repeat "stories"))))
@@ -587,12 +681,20 @@
         listed (if kit?
                  (filter (fn [[_ _ _ needs]] (or (nil? needs) (some k needs))) pages)
                  [["images" :images]])
+        raw-here here
         here (if (some #(= here (first %)) listed) here (if kit? "" "images"))
+        ;; /press/release/<slug>: one release on its own page.
+        item (when (= here "release") (-> route :path-params :item))
+        rel (when item (some (fn [[slug kk]] (when (= slug item) (get k kk))) release-slugs))
         data (use-press)
         images (:images data)
         by-uid (into {} (map (juxt :uid identity)) images)
         {:keys [essentials release facts people chronology quotes visit coverage logos video]} k
-        title (some (fn [[p l]] (when (= p here) (t l))) listed)]
+        title (if rel (:title rel) (some (fn [[p l]] (when (= p here) (t l))) listed))]
+    ;; The flag-walk release lived at /press/tricolore before the releases had a section.
+    (hooks/use-layout-effect
+     [raw-here]
+     (when (and kit? (= raw-here "tricolore")) (go! (page-href lang "release/tricolore"))))
     ;; Old single-page anchors (/press#serra) go to their sub-page.
     (hooks/use-layout-effect
      :once
@@ -604,12 +706,15 @@
      (flush-scroll!)
      (set! (.-title js/document)
            (str (if (= here "") (t (if kit? :title :images-title)) title) " · " (t :eyebrow) " · Armenian Pavilion")))
+    (hooks/use-effect [item] (flush-scroll!))
     (d/div {:class "ap-wrap"}
            (d/div {:class "ap-kit__top"}
                   (d/p {:class "ap-label ap-muted m-0"}
                        (if (= here "")
                          (t :eyebrow)
-                         (d/a {:href (page-href lang "") :class "ap-kit__crumb"} (t (if kit? :title :eyebrow)))))
+                         (if rel
+                           (d/a {:href (page-href lang "release") :class "ap-kit__crumb"} (t :releases))
+                           (d/a {:href (page-href lang "") :class "ap-kit__crumb"} (t (if kit? :title :eyebrow))))))
                   (d/h1 {:class "ap-display-l m-0"}
                         (cond (not kit?) (t :images-title)
                               (= here "") (t :title)
@@ -644,21 +749,38 @@
                                                (d/span {:class "ap-kit__arrow" :aria-hidden true} "→"))))))
 
                            "release"
-                           (<>
-                            (d/div {:class "ap-kit__dl"}
-                                   (when-let [d (or (:date-text release) (:date release))] (d/span {:class "ap-label"} d))
-                                   (for [[l url] (:pdfs release)]
-                                     (d/a {:key l :class "ap-press__btn" :href url :download true}
-                                          (str (t :pdf) " · " (str/upper-case (name l))))))
-                            ($ html {:of (:html release)})
-                            (when (seq (:earlier release))
-                              (d/div {:class "ap-kit__earlier"}
-                                     (d/p {:class "ap-label ap-muted m-0"} (t :earlier))
-                                     (d/ul
-                                      (for [{:keys [title date url]} (:earlier release)]
-                                        (d/li {:key title}
-                                              (d/span {:class "ap-label ap-muted"} date)
-                                              (if url (d/a {:href url} title) (d/span title))))))))
+                           (cond
+                             (and rel (= item "tricolore"))
+                             ($ pitch {:id "tricolore" :p rel :by-uid by-uid :lang lang :t t})
+
+                             rel
+                             (<>
+                              ($ letterhead {:label (<> (d/b (t :release)) " · " (or (:date-text rel) (:date rel))) :t t})
+                              (d/div {:class "ap-kit__dl"}
+                                     (for [[l url] (:pdfs rel)]
+                                       (d/a {:key l :class "ap-press__btn" :href url :download true}
+                                            (str (t :pdf) " · " (str/upper-case (name l)))))
+                                     ($ copy-button {:text (kit-link lang "release" item) :label (t :copy-link) :done (t :copied)}))
+                              ($ html {:of (:html rel)}))
+
+                             :else
+                             (<>
+                              (d/ul {:class "ap-kit__releases"}
+                                    (for [[slug kk] release-slugs :let [r (get k kk)] :when r]
+                                      (d/li {:key slug}
+                                            (d/a {:href (page-href lang (str "release/" slug))}
+                                                 (d/span {:class "ap-label ap-muted"} (or (:date-text r) (:date r)))
+                                                 (d/span {:class "ap-h3"} (:title r))
+                                                 (when-let [b (:blurb r)] (d/span {:class "ap-kit__blurb"} b))
+                                                 (d/span {:class "ap-kit__arrow" :aria-hidden true} "→")))))
+                              (when (seq (:earlier release))
+                                (d/div {:class "ap-kit__earlier"}
+                                       (d/p {:class "ap-label ap-muted m-0"} (t :earlier))
+                                       (d/ul
+                                        (for [{:keys [title date url]} (:earlier release)]
+                                          (d/li {:key title}
+                                                (d/span {:class "ap-label ap-muted"} date)
+                                                (if url (d/a {:href url} title) (d/span title)))))))))
 
                            "facts"
                            (<>
@@ -667,6 +789,13 @@
                             (when (seq (:html facts)) ($ html {:of (:html facts)})))
 
                            "stories"
+                           (<>
+                           (when (:tricolore k)
+                             (d/ul {:class "ap-kit__cards"}
+                                   (d/li (d/a {:href (page-href lang "release/tricolore")}
+                                              (d/span {:class "ap-h3"} (:title (:tricolore k)))
+                                              (d/span {:class "ap-kit__blurb"} (t :pitch-card))
+                                              (d/span {:class "ap-kit__arrow" :aria-hidden true} "→")))))
                            (for [id notes
                                  :let [note (get k (keyword id))]
                                  :when note]
@@ -674,7 +803,7 @@
                                         (d/h2 {:class "ap-h1 m-0"} (:title note))
                                         (when-let [n (en-only (keyword id))] (d/p {:class "ap-label ap-muted m-0"} n))
                                         ($ html {:of (:html note)})
-                                        ($ note-images {:uids (:images note) :by-uid by-uid :lang lang :t t})))
+                                        ($ note-images {:uids (:images note) :by-uid by-uid :lang lang :t t}))))
 
                            "images"
                            ($ library {:images images :lang lang :t t})
