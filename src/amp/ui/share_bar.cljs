@@ -7,10 +7,13 @@
                                 BlueskyIcon ThreadsIcon RedditIcon
                                 WhatsAppIcon TelegramIcon PinterestIcon
                                 EmailIcon ShareIcon LinkIcon CheckIcon]]
+   [amp.i18n :refer [ts] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
+
+(defcatalog "share")
 
 ;; ---------------------------------------------------------------------------
 ;; Share URL builders
@@ -92,11 +95,11 @@
    Props:
      :title  — share text (the post title, or the site's name)
      :url    — the link to share; the current page when absent
-     :label  — the label before the icons (default \"Share\"; \"\" for none)
+     :label  — the label before the icons (default \"Share\", localised; \"\" for none)
      :class  — extra classes on the row (e.g. ap-sharebar--night)"
   [{:keys [title url label class]}]
   (let [[copied? set-copied!] (hooks/use-state false)
-        share-title (or title "Armenian Pavilion 2026")
+        share-title (or title (ts :share/default-title))
         link (or url (current-url))
 
         handle-copy
@@ -121,7 +124,7 @@
     (d/div {:class (str "ap-sharebar " class)}
            ;; Label
            (when (not= label "")
-             (d/span {:class "ap-label ap-muted select-none"} (or label "Share")))
+             (d/span {:class "ap-label ap-muted select-none"} (or label (ts :share/label))))
 
            ;; Action icons
            (d/div {:class "ap-sharebar__icons"}
@@ -130,23 +133,23 @@
                   (for [{:keys [key label icon href-fn self?]} share-actions]
                     (d/a {:key        key
                           :href       (href-fn link share-title)
-                          :title      (str (if self? "Share by " "Share on ") label)
-                          :aria-label (str (if self? "Share by " "Share on ") label)
+                          :title      (if self? (ts :share/by-email) (ts :share/on {:network label}))
+                          :aria-label (if self? (ts :share/by-email) (ts :share/on {:network label}))
                           :class      icon-btn-class
                           & (when-not self? {:target "_blank" :rel "noopener noreferrer"})}
                          ($ icon {:class "w-[16px] h-[16px]"})))
 
                   ;; Native share button (opens OS share sheet — Instagram, Messages, etc.)
                   (when (can-share?)
-                    (d/button {:title    "Share via…"
-                               :aria-label "Share via…"
+                    (d/button {:title    (ts :share/via)
+                               :aria-label (ts :share/via)
                                :class    icon-btn-class
                                :on-click handle-native-share}
                               ($ ShareIcon {:class "w-[16px] h-[16px]"})))
 
                   ;; Copy link button
-                  (d/button {:title    (if copied? "Copied!" "Copy link")
-                             :aria-label (if copied? "Link copied" "Copy link")
+                  (d/button {:title    (ts (if copied? :share/copied :share/copy))
+                             :aria-label (ts (if copied? :share/link-copied :share/copy))
                              :aria-live "polite"
                              :class    icon-btn-class
                              :data-copied (when copied? "")

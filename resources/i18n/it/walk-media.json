@@ -1,0 +1,7 @@
+{
+  "status.walked": "Fatta",
+  "status.today": "Oggi",
+  "status.next": "Prossima passeggiata",
+  "status.planned": "In programma",
+  "duration": "{h} h {mm}"
+}

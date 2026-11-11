@@ -1,0 +1,16 @@
+{
+  "gallery.loading-model": "Caricamento del modello…",
+  "gallery.close-3d": "Chiudi 3D",
+  "gallery.hint-3d": "Trascina per ruotare · pizzica per ingrandire",
+  "gallery.explore-aria": "Esplora {name} in 3D",
+  "gallery.the-model": "il modello",
+  "gallery.interactive": "3D interattivo",
+  "gallery.explore": "Esplora il modello",
+  "gallery.previous": "Precedente",
+  "gallery.next": "Successiva",
+  "gallery.track": "{title}, scorri per vederne altre",
+  "gallery.default-title": "Galleria",
+  "video.sound-on": "Attiva l’audio",
+  "video.sound-off": "Disattiva l’audio",
+  "lightbox.close": "Chiudi il film"
+}

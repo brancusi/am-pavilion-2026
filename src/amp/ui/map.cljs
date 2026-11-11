@@ -5,7 +5,19 @@
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
             [helix.hooks :as hooks]
+            [amp.i18n :as i18n :refer-macros [defcatalog]]
             [amp.lib.defnc :refer [defnc]]))
+
+;; Map labels are source-keyed: the English `label` of each GeoJSON point.
+(defcatalog "data-map")
+
+(defn- label-in
+  "The translation of a map label in locale `l` (English when missing)."
+  [l english]
+  (if (= l (i18n/locale))
+    (i18n/tx :data-map english)
+    (let [s (i18n/t-in l (keyword "data-map" english))]
+      (if (string? s) s english))))
 
 ;; Mapbox's stylesheet is only needed once this module loads, so inject it
 ;; here rather than render-blocking every page from index.html.
@@ -69,7 +81,8 @@
   "Point labels from the GeoJSON at `url` (features with a `label`
    property, optional `anchor`: top/left/right/bottom), drawn as HTML so
    they use the site's type and theme colours; the pavilion's label is red.
-   With `lang` :it a feature's `label_it` is shown when it has one."
+   Labels are translated through the data-map catalog, in the page's
+   locale or in `lang` (Italian for the driver card on another page)."
   [{:keys [url lang]}]
   (let [[features set-features!] (hooks/use-state [])]
     (hooks/use-effect
@@ -89,7 +102,7 @@
      (for [^js f features
            :let [props (.-properties f)
                  [lng lat] (.. f -geometry -coordinates)
-                 text (or (when (= lang :it) (.-label_it props)) (.-label props))
+                 text (label-in (or lang (i18n/locale)) (.-label props))
                  anchor (or (.-anchor props) "bottom")
                  ;; Marker anchor is the side of the label touching the point.
                  marker-anchor ({"top" "top" "bottom" "bottom" "left" "left" "right" "right"} anchor "bottom")]]

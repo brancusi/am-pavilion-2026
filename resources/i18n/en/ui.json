@@ -1,0 +1,16 @@
+{
+  "gallery.loading-model": "Loading model…",
+  "gallery.close-3d": "Close 3D",
+  "gallery.hint-3d": "Drag to turn · pinch to zoom",
+  "gallery.explore-aria": "Explore {name} in 3D",
+  "gallery.the-model": "the model",
+  "gallery.interactive": "Interactive 3D",
+  "gallery.explore": "Explore the model",
+  "gallery.previous": "Previous",
+  "gallery.next": "Next",
+  "gallery.track": "{title}, swipe for more",
+  "gallery.default-title": "Gallery",
+  "video.sound-on": "Turn sound on",
+  "video.sound-off": "Turn sound off",
+  "lightbox.close": "Close film"
+}

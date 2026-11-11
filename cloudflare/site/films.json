@@ -2,46 +2,118 @@
  "the-weight-of-the-flag": {
   "title": "The Weight of the Flag",
   "summary": "The first walk: green, white and red carried on three backs from San Francesco della Vigna to Zanipolo. Heads turn, a passer-by calls it a tribute to Italy, and a conversation starts in a historic square.",
+  "it": {
+   "title": "The Weight of the Flag",
+   "summary": "La prima passeggiata: verde, bianco e rosso portati su tre schiene da San Francesco della Vigna a Zanipolo. La gente si gira, un passante la chiama un omaggio all’Italia e in un campo storico comincia una conversazione."
+  },
+  "hy": {
+   "title": "The Weight of the Flag",
+   "summary": "Առաջին զբոսանքը՝ կանաչ, սպիտակ և կարմիր, երեք մեջքի վրա Սան Ֆրանչեսկո դելլա Վինյայից մինչև Զանիպոլո։ Գլուխներ են շրջվում, մի անցորդ այն անվանում է հարգանքի տուրք Իտալիային, և պատմական հրապարակում զրույց է սկսվում։"
+  },
   "image": "https://image.mux.com/MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=12"
  },
  "seven-steps-to-heaven": {
   "title": "Seven Steps to Heaven",
   "summary": "A stair of seven steps that goes nowhere, carried by hand into Tesa 41 and painted white: on cubes, journeys, the present, and a climb to heaven in a small space.",
+  "it": {
+   "title": "Seven Steps to Heaven",
+   "summary": "Una scala di sette gradini che non porta da nessuna parte, portata a mano nella Tesa 41 e dipinta di bianco: su cubi, viaggi, il presente e una salita al cielo in uno spazio piccolo."
+  },
+  "hy": {
+   "title": "Seven Steps to Heaven",
+   "summary": "Յոթ աստիճանով սանդուղք, որ ոչ մի տեղ չի տանում, ձեռքով բերված Tesa 41 և սպիտակ ներկված՝ խորանարդների, ճամփորդությունների, ներկայի և փոքր տարածության մեջ դեպի երկինք բարձրանալու մասին։"
+  },
   "image": "https://image.mux.com/uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=63"
  },
  "italian-flag": {
   "title": "The Italian Flag",
   "summary": "Green, white and red panels on their own feet: a flag made from the pavilion’s units, and a conversation about play, roots and carrying the flag to San Marco.",
+  "it": {
+   "title": "The Italian Flag",
+   "summary": "Pannelli verdi, bianchi e rossi in piedi da soli: una bandiera fatta con gli elementi del padiglione, e una conversazione sul gioco, sulle radici e sul portare la bandiera fino a San Marco."
+  },
+  "hy": {
+   "title": "The Italian Flag",
+   "summary": "Կանաչ, սպիտակ և կարմիր վահանակներ՝ իրենց ոտքերի վրա. տաղավարի միավորներից պատրաստված դրոշ և զրույց խաղի, արմատների և դրոշը մինչև Սան Մարկո տանելու մասին։"
+  },
   "image": "https://image.mux.com/CR1rPwf1QHVhvNMICOawghM2g5QnylGxbMs0201QQxlLM/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=44"
  },
  "carrying": {
   "title": "Carrying",
   "summary": "A red unit strapped to a back frame and carried through the Arsenale and the streets of Castello. In Venice everything moves by hand or by boat.",
+  "it": {
+   "title": "Carrying",
+   "summary": "Un elemento rosso fissato a un telaio da spalla e portato attraverso l’Arsenale e le calli di Castello. A Venezia tutto si muove a mano o in barca."
+  },
+  "hy": {
+   "title": "Carrying",
+   "summary": "Մեջքի շրջանակին ամրացված կարմիր միավոր՝ տարված Արսենալեով և Կաստելլոյի փողոցներով։ Վենետիկում ամեն ինչ շարժվում է ձեռքով կամ նավակով։"
+  },
   "image": "https://image.mux.com/El6mWAaeWtIxqHERgu7fYE00pcLH7szuH8EG16lbn7CE/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=100"
  },
  "murano": {
   "title": "Murano",
   "summary": "Furnaces, glassblowers and a conversation at the table: on Murano’s glass and on keeping a studio alive rather than a showroom.",
+  "it": {
+   "title": "Murano",
+   "summary": "Fornaci, soffiatori e una conversazione a tavola: sul vetro di Murano e sul tenere in vita uno studio invece di uno showroom."
+  },
+  "hy": {
+   "title": "Murano",
+   "summary": "Հնոցներ, ապակեփչողներ և զրույց սեղանի շուրջ՝ Մուրանոյի ապակու և արվեստանոցը ցուցասրահի փոխարեն կենդանի պահելու մասին։"
+  },
   "image": "https://image.mux.com/dTuGRlujrWzZyjgD4CK00NH4Mg8MJbheTS00WSvUJ9n2Y/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=35"
  },
  "before-the-flag": {
   "title": "Before the Flag",
   "summary": "A white crenellated form in the hall: vertigo, scale, the roof beams of the Arsenale, and how a simple unit becomes an assembly.",
+  "it": {
+   "title": "Before the Flag",
+   "summary": "Una forma bianca merlata nella sala: la vertigine, la scala, le travi del tetto dell’Arsenale e come un elemento semplice diventa un assemblaggio."
+  },
+  "hy": {
+   "title": "Before the Flag",
+   "summary": "Սպիտակ ատամնավոր ձև դահլիճում՝ գլխապտույտ, մասշտաբ, Արսենալեի տանիքի գերաններ, և թե ինչպես է պարզ միավորը դառնում հավաքածու։"
+  },
   "image": "https://image.mux.com/pCmY1ytCqjjMR02kjX6W7xSUySEGV00Kp01GqZyFloiQZk/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=13"
  },
  "tesa-41-september": {
   "title": "In Tesa 41",
   "summary": "The Italian flag in its foam state, interlocking parts, pigments and brushes as the studio fills with color.",
+  "it": {
+   "title": "In Tesa 41",
+   "summary": "La bandiera italiana allo stato di schiuma, parti a incastro, pigmenti e pennelli, mentre lo studio si riempie di colore."
+  },
+  "hy": {
+   "title": "In Tesa 41",
+   "summary": "Իտալական դրոշը փրփրանյութի վիճակում, իրար մեջ մտնող մասեր, պիգմենտներ և վրձիններ, մինչ արվեստանոցը լցվում է գույնով։"
+  },
   "image": "https://image.mux.com/Z2iSmsgAN1ECHGEZzV1OkuHPmWRmLGuHHqOZYcjDn200/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=59"
  },
  "maquette": {
   "title": "The Maquette",
   "summary": "From sketch to 3D model to full-scale foam: squares, rectangles and proportion, tested by standing next to the form.",
+  "it": {
+   "title": "The Maquette",
+   "summary": "Dallo schizzo al modello 3D alla schiuma in scala reale: quadrati, rettangoli e proporzioni, messi alla prova stando accanto alla forma."
+  },
+  "hy": {
+   "title": "The Maquette",
+   "summary": "Էսքիզից եռաչափ մոդել, ապա բնական չափի փրփրանյութ՝ քառակուսիներ, ուղղանկյուններ և համամասնություն, որոնք ստուգվում են ձևի կողքին կանգնելով։"
+  },
   "image": "https://image.mux.com/ay2rRkV3PxHTy92Gfi00SibKfEDjDLqGqxmiTzbrz3sQ/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=45"
  },
  "leaning-red": {
   "title": "Leaning Red",
   "summary": "Building a tall form by hand in the garden studio, from cardboard and tape to a panel standing in the room. Music only.",
+  "it": {
+   "title": "Leaning Red",
+   "summary": "Costruire a mano una forma alta nello studio in giardino, dal cartone e dal nastro adesivo a un pannello in piedi nella stanza. Solo musica."
+  },
+  "hy": {
+   "title": "Leaning Red",
+   "summary": "Բարձր ձևի ձեռքով կառուցում այգու արվեստանոցում՝ ստվարաթղթից և ժապավենից մինչև սենյակում կանգնած վահանակ։ Միայն երաժշտություն։"
+  },
   "image": "https://image.mux.com/R5DOAByQGMLDzg9CvLxz6Dgl7ZSWnW2LgwZNWrTX9Xg/thumbnail.jpg?width=1200&height=630&fit_mode=smartcrop&time=102"
  }
 }

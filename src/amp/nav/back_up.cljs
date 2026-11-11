@@ -3,6 +3,7 @@
    page; shown once the reader is two screens down and hidden again while the
    footer is on screen, so it never sits over the legal line."
   (:require [amp.hooks.use-scroll-to :refer [use-scroll-to-top]]
+            [amp.i18n :refer [t ts]]
             [amp.lib.defnc :refer [defnc]]
             [helix.dom :as d]))
 
@@ -14,11 +15,11 @@
     (d/button {:class "ap-totop"
                :data-hidden (when-not active? "")
                :aria-hidden (not active?)
-               :aria-label "Back to top"
+               :aria-label (ts :site/back-up)
                :tab-index (if active? 0 -1)
                ;; Drop focus so it doesn't stay on the button once it hides.
                :on-click (fn [e] (.blur (.-currentTarget e)) (scroll-to-top))}
               (d/svg {:viewBox "0 0 16 16" :fill "none" :stroke "currentColor"
                       :stroke-width 1.6 :aria-hidden true}
                      (d/path {:d "M8 13V3M3.5 7.5L8 3l4.5 4.5"}))
-              (d/span {:class "ap-totop__label"} "Top"))))
+              (d/span {:class "ap-totop__label"} (t :site/back-top)))))

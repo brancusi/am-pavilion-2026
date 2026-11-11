@@ -2,7 +2,9 @@
   "Site header (design system: SiteHeader). Sticky paper bar with the
    StudioMark and name; inline links from 960px, a full-screen numbered
    menu sheet below that."
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.i18n :as i18n :refer [t ts]]
+            [amp.lib.defnc :refer [defnc]]
+            [amp.ui.lang-switch :refer [lang-switch]]
             [amp.state.provider :refer [use-main-state]]
             [amp.ui.studio-mark :refer [studio-mark-3d]]
             [amp.ui.theme-toggle :refer [theme-toggle]]
@@ -12,20 +14,20 @@
 
 (def nav-items
   "The pages in the main menu, in order."
-  [{:path "/"       :title "Exhibition"}
-   {:path "/artist" :title "Artist"}
-   {:path "/armenian-as-well" :title "Story"}
-   {:path "/portage" :title "Portage"}
-   {:path "/walks"  :title "Walks"}
-   {:path "/visit"  :title "Visit" :also ["/route-from-hotel-gabrielli" "/delivery"]}
-   {:path "/blog"   :title "Journal"}
-   {:path "/press"  :title "Press" :also ["/it/press"]}])
+  [{:path "/"       :title :site/nav-exhibition}
+   {:path "/artist" :title :site/nav-artist}
+   {:path "/armenian-as-well" :title :site/nav-story}
+   {:path "/portage" :title :site/nav-portage}
+   {:path "/walks"  :title :site/nav-walks}
+   {:path "/visit"  :title :site/nav-visit :also ["/route-from-hotel-gabrielli" "/delivery"]}
+   {:path "/blog"   :title :site/nav-journal}
+   {:path "/press"  :title :site/nav-press}])
 
 (defn- active?
   "A nav item is current when the path matches (or one of its `:also`
    pages, e.g. the directions pages under Visit), or for the Journal, any post."
   [item current-path]
-  (let [p (or current-path "/")]
+  (let [p (second (i18n/split-path (or current-path "/")))]
     (if (= (:path item) "/")
       (= p "/")
       (some #(.startsWith p %) (cons (:path item) (:also item))))))
@@ -77,23 +79,25 @@
 
     (<>
      (d/header {:class "ap-header" :data-scrolled (when scrolled? "")}
-               (d/a {:class "ap-header__brand" :href "/" :on-click close!}
+               (d/a {:class "ap-header__brand" :href (i18n/href "/") :on-click close!}
                     ($ studio-mark-3d {:variants #{:pigment} :label nil})
                     (d/span {:class "ap-header__name"}
-                            "Armenian Pavilion" (d/br)
-                            (d/span {:class "ap-muted"} "Biennale Arte 2026")))
-               (d/nav {:class "ap-header__nav" :aria-label "Main"}
+                            (t :site/brand-name) (d/br)
+                            (d/span {:class "ap-muted"} (t :site/brand-sub))))
+               (d/nav {:class "ap-header__nav" :aria-label (ts :site/nav-main)}
                       (for [item nav-items]
                         (d/a {:key (:path item)
-                              :href (:path item)
+                              :href (i18n/href (:path item))
                               :aria-current (when (active? item current-path) "page")}
-                             (:title item))))
-               (d/div {:class "hidden lg:flex items-center"} ($ theme-toggle))
+                             (t (:title item)))))
+               (d/div {:class "hidden lg:flex items-center gap-3"}
+                      ($ lang-switch)
+                      ($ theme-toggle))
                (d/button {:ref toggle-ref
                           :class "ap-header__menu"
                           :aria-expanded open?
                           :aria-controls "site-menu"
-                          :aria-label (if open? "Close menu" "Open menu")
+                          :aria-label (ts (if open? :site/menu-close :site/menu-open))
                           :on-click #(set-open! (not open?))}
                          ($ menu-icon {:open? open?})))
 
@@ -101,20 +105,20 @@
              :id "site-menu"
              :class "ap-sheet lg:hidden"
              :data-open (str open?)
-             :aria-label "Menu"
+             :aria-label (ts :site/nav-menu)
              :aria-hidden (not open?)}
             (map-indexed
              (fn [i item]
                (d/a {:key (:path item)
-                     :href (:path item)
+                     :href (i18n/href (:path item))
                      :tab-index (if open? 0 -1)
                      :aria-current (when (active? item current-path) "page")
                      :on-click close!}
                     (d/span (str "0" (inc i)))
-                    (:title item)))
+                    (t (:title item))))
              nav-items)
             (d/div {:class "ap-sheet__foot"}
                    (d/div {:class "flex items-center justify-between"}
-                          (d/p {:class "ap-caption m-0"}
-                               "Arsenale Militare, Tesa 41 · 9 May – 22 November 2026")
-                          ($ theme-toggle)))))))
+                          ($ lang-switch {:tab-index (if open? 0 -1) :on-click close!})
+                          ($ theme-toggle))
+                   (d/p {:class "ap-caption m-0"} (t :site/menu-foot)))))))

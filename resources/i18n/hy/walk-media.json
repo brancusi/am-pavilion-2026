@@ -1,0 +1,7 @@
+{
+  "status.walked": "Կայացել է",
+  "status.today": "Այսօր",
+  "status.next": "Հաջորդ զբոսանքը",
+  "status.planned": "Նախատեսված",
+  "duration": "{h} ժ {mm} ր"
+}

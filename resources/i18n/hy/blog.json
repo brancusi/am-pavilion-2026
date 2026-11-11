@@ -1,0 +1,17 @@
+{
+  "index.label": "Օրագիր",
+  "index.title": "Նշումներ արվեստանոցից",
+  "index.count-aria": "{n, plural, one {# գրառում} other {# գրառում}}",
+  "index.count-label": "{n, plural, one {Գրառում} other {Գրառում}}",
+  "index.lede": "Ընթացքը, ճամփորդությունները և The Studio-⁠ի ստեղծումը՝ Լոս Անջելեսից մինչև Tesa 41։",
+  "index.filter-aria": "Զտել ըստ կատեգորիայի",
+  "index.empty": "Այս կատեգորիայում դեռ գրառումներ չկան։",
+  "post.back": "← Օրագիր",
+  "post.byline": "Հեղինակ՝ {author}",
+  "post.next": "Օրագրում հաջորդը",
+  "post.doc-title": "{title} · Հայաստանի տաղավար",
+  "not-found.doc-title": "Գրառումը չի գտնվել · Հայաստանի տաղավար",
+  "not-found.title": "Գրառումը չի գտնվել",
+  "not-found.text": "Ձեր փնտրած գրառումը գոյություն չունի։",
+  "not-found.back": "Վերադառնալ օրագիր"
+}

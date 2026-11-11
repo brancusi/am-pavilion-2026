@@ -2,6 +2,22 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-11 — The site in English, Italian and Armenian
+
+**Rationale:** Venetian and Armenian visitors and press should be able to read the whole site in their own language.
+**Summary:** Every page is now in English (`/`), Italian (`/it/…`) and Eastern Armenian (`/hy/…`), with a language switch in the header, menu and footer. All copy lives in FormatJS (ICU) catalogs; the Press page's partial Italian was replaced by the same system. Link previews, `hreflang` and `<html lang>` follow the language.
+
+### Changes
+
+- `src/amp/i18n.cljs` (lookups, dates, numbers, links in messages); catalogs in `resources/i18n/{en,it,hy}/` (30 per language); `npm run i18n:check`; browser check `scripts/qa/i18n-snap.mjs`. Rules and style guide in `docs/i18n.md`.
+- Routes generated per locale in `amp.services.router`; `amp.ui.lang-switch`.
+- Portage sheets and the "Armenian as well" story translated as whole HTML files per language (`resources/data/portage/<locale>/`, `resources/data/zz-story/<locale>/`).
+- Press kit generated per language from the Dropbox Markdown (`build/press-kit.mjs` → `doc-press-kit.json`); `src/amp/data/press_kit.cljs` removed. Image titles and captions translated through `data-media.json`.
+- Worker: localized titles and descriptions (`cloudflare/site/meta.json`, `media.json`), `og:locale`, `hreflang`.
+- Armenian: Noto Sans Armenian, normal case for labels, word joiner after the hyphen of case endings (`Tesa 41-⁠ում`), smaller display sizes where long words overflowed.
+- Fixes found on the way: /delivery heading overflow at 1024 (all languages), Portage walk odometer layout shift, home Play/Pause label, footer "Follow", trilingual noscript notice.
+- Armenian awaits a native speaker's review.
+
 ## 2026-11-11 — Press: releases section and the flag-walk release
 
 **Rationale:** Venetian press asked for a release they can use; Italian outlets get one link that opens the Italian page.

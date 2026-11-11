@@ -1,8 +1,9 @@
 (ns amp.pages.venue.page
   "Visitor Guide — wayfinding, venue history, and space details.
    Full dedicated page for the Armenian Pavilion location at the
-   Biennale Arte 2026."
+   Biennale Arte 2026. Copy: resources/i18n/<locale>/visit.json."
   (:require
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.pages.venue.map-config :as mc]
    [amp.ui.lazy-map :refer [mapbox-map]]
    [amp.ui.image-gallery :refer [lazy-image-gallery]]
@@ -18,6 +19,8 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(defcatalog "visit")
+
 (def lazy-video (lazy-component amp.ui.video-background/video-background))
 
 ;; Section headings on this page (design system: display L).
@@ -25,6 +28,17 @@
 
 ;; Eyebrow above section headings (amp.ui.section-header).
 (def venue-eyebrow section-eyebrow)
+
+(defn- prose
+  "A prose message with <b> (strong emphasis) and <i> (italic) spans."
+  [k]
+  (t k {:b (i18n/tag "span" {:className s/em-strong})
+        :i (i18n/tag "span" {:className s/em-italic})}))
+
+(defn- caps
+  "Step labels are set in capitals, except on Armenian pages."
+  [s]
+  (if (= "hy" (i18n/locale)) s (.toUpperCase s)))
 
 ;; ── Gallery slides ─────────────────────────────────────────────────────────
 
@@ -39,122 +53,95 @@
     :aspect-ratio 1.34
     :active? true}])
 
-(def crossing-slides
-  [{:img-src "https://media.armenianpavilion.org/big_red_walkway/5.jpg"
-    :aspect-ratio 1.82
-    :caption "Crossing at the Arsenale"
-    :credit "Render 2026"}
-   {:img-src "https://media.armenianpavilion.org/big_red_walkway/1.jpg"
-    :aspect-ratio 1.82
-    :caption "Crossing at the Arsenale"
-    :credit "Render 2026"}])
+(defn- crossing-slides []
+  (mapv (fn [src]
+          {:img-src src
+           :aspect-ratio 1.82
+           :caption (ts :visit/outdoor.slide-caption)
+           :credit (ts :visit/outdoor.slide-credit)})
+        ["https://media.armenianpavilion.org/big_red_walkway/5.jpg"
+         "https://media.armenianpavilion.org/big_red_walkway/1.jpg"]))
 
 ;; ── Directions — shared data ───────────────────────────────────────────────
 
-;; Bilingual copy for the water-taxi instructions. Italian is the default
-;; since it is meant to be shown directly to the driver; English is opt-in.
-(def water-taxi-copy
-  {:en {:title        "Water Taxi Instructions"
-        :subtitle     "Authorized access to the Arsenale – Armenian Pavilion"
-        :authorized   ["This water taxi is authorized to enter the military Arsenale area because it is carrying guests visiting the Armenian Pavilion."
-                       "The Marine Office has approved access for water taxis bringing visitors to the Armenian Pavilion. Access is coordinated by Julda: do not contact the Marine Office directly."]
-        :before-title "Before entering the Arsenale"
-        :before-body  "Call Julda and say:"
-        :before-quote "“I am arriving with a visitor for the Armenian Pavilion.”"
-        :contacts     [["Julda · primary contact" :julda] ["Luca · secondary contact" :luca]]
-        :before-note  "If Julda does not answer, call Luca."
-        :entrance-title "Only permitted entrance"
-        :entrance-lead  "There is only one entrance for water taxis:"
-        :entrance-name  "Galeazze – North Lagoon side – Rio delle Galeazze"
-        :entrance-body  "The taxi must approach from the north side of the lagoon and enter through Rio delle Galeazze."
-        :entrance-warn  "Do not use any other entrance to the Arsenale."
-        :route-title  "Route"
-        :route-steps  ["Approach from the north side of the lagoon."
-                       "Enter through the only permitted taxi entrance: Galeazze – Rio delle Galeazze."
-                       "Continue south along Rio delle Galeazze, following the route shown on the map."
-                       "Proceed to the Armenian Pavilion landing."]
-        :map-caption  "Water taxi route — enter from the North Lagoon via Rio delle Galeazze and continue south to the pavilion drop-off point"
-        :address-title "Address"}
-   :it {:title        "Istruzioni per il taxi acqueo"
-        :subtitle     "Accesso autorizzato all’Arsenale – Padiglione Armenia"
-        :authorized   ["Questo taxi è autorizzato a entrare nell’area dell’Arsenale Militare perché trasporta ospiti diretti al Padiglione Armenia."
-                       "L’Ufficio della Marina ha autorizzato l’accesso dei taxi acquei che accompagnano visitatori al Padiglione Armenia. L’accesso è coordinato da Julda: non contattare direttamente l’Ufficio della Marina."]
-        :before-title "Prima di entrare nell’Arsenale"
-        :before-body  "Chiamare Julda e comunicare:"
-        :before-quote "«Sto arrivando con un visitatore diretto al Padiglione Armenia.»"
-        :contacts     [["Julda · contatto principale" :julda] ["Luca · contatto secondario" :luca]]
-        :before-note  "Se Julda non risponde, chiamare Luca."
-        :entrance-title "Unico ingresso consentito"
-        :entrance-lead  "Esiste un solo ingresso per i taxi acquei:"
-        :entrance-name  "Galeazze – lato Laguna Nord – Rio delle Galeazze"
-        :entrance-body  "Il taxi deve obbligatoriamente arrivare dalla Laguna Nord ed entrare attraverso il Rio delle Galeazze."
-        :entrance-warn  "NON è consentito utilizzare nessun altro ingresso dell’Arsenale."
-        :route-title  "Percorso"
-        :route-steps  ["Arrivare dal lato della Laguna Nord."
-                       "Entrare dall’unico ingresso consentito ai taxi: Galeazze – Rio delle Galeazze."
-                       "Proseguire verso sud lungo il Rio delle Galeazze, seguendo il percorso indicato sulla mappa."
-                       "Raggiungere l’approdo del Padiglione Armenia."]
-        :map-caption  "Percorso del taxi acqueo — entrare dalla Laguna Nord tramite il Rio delle Galeazze e proseguire verso sud fino all’approdo del padiglione"
-        :address-title "Indirizzo"}})
+(defn- water-taxi-copy
+  "The driver card's copy in locale `l` (Italian when it is shown to the
+   driver on another page)."
+  [l]
+  (let [c #(i18n/t-in l (keyword "visit" (str "card." %)))]
+    {:title          (c "title")
+     :subtitle       (c "subtitle")
+     :authorized     [(c "authorized-1") (c "authorized-2")]
+     :before-title   (c "before-title")
+     :before-body    (c "before-body")
+     :before-quote   (c "before-quote")
+     :contacts       [[(c "julda") julda-contact] [(c "luca") luca-contact]]
+     :before-note    (c "before-note")
+     :entrance-title (c "entrance-title")
+     :entrance-name  (c "entrance-name")
+     :entrance-body  (c "entrance-body")
+     :entrance-warn  (c "entrance-warn")
+     :map-caption    (c "map-caption")
+     :legend         [[:water (c "legend-water")] [:pav (c "legend-pav")]]}))
 
 ;; ── Header ─────────────────────────────────────────────────────────────────
 
 (defnc visit-head []
   (<>
-   (d/section {:class "ap-vhead"}
+   (d/section {:class "ap-vhead ap-vhead--wf"}
               (d/div {:class "ap-wrap ap-vhead__grid"}
                      (d/div {:class "flex flex-col gap-5"}
-                            (d/p {:class "ap-label m-0 text-yellow"} "Visit · Venice · Arsenale Militare")
-                            (d/h1 {:class "ap-display-xl"} "Getting to the pavilion")
-                            (d/p {:class "ap-lede max-w-[36ch]"}
-                                 "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. "
-                                 "Guests by water taxi enter from the North Lagoon."))
-                     (d/dl {:class "ap-keyfacts"}
-                           (for [[k v] [["Dates" "9 May – 22 Nov 2026"]
-                                        ["Hours" "Tue – Sun, 10:00–17:30"]
-                                        ["Hall" "Tesa 41"]
-                                        ["On foot" "≈ 8 min from the Lion"]]]
-                             (d/div {:key k} (d/dt k) (d/dd v))))))
+                            (d/p {:class "ap-label m-0 text-yellow"} (t :visit/head.eyebrow))
+                            (d/h1 {:class "ap-display-xl"} (t :visit/head.title))
+                            (d/p {:class "ap-lede max-w-[36ch]"} (t :visit/head.lede)))
+                     (d/dl {:class "ap-keyfacts ap-keyfacts--wf"}
+                           (for [[k v] [[:visit/facts.dates :visit/facts.dates-v]
+                                        [:visit/facts.hours :visit/facts.hours-v]
+                                        [:visit/facts.hall :visit/facts.hall-v]
+                                        [:visit/facts.foot :visit/facts.foot-v]]]
+                             (d/div {:key (name k)} (d/dt (t k)) (d/dd (t v)))))))
    (d/div {:class "ap-hero__strip" :aria-hidden true}
           (for [i (range 9)] (d/i {:key i})))))
 
 ;; ── Map guide ──────────────────────────────────────────────────────────────
 
 (def ^:private modes
-  {:walk  {:no "01" :title "On foot from the Piraeus Lion" :meta "About 8 minutes through the Arsenale"}
-   :water {:no "02" :title "By water taxi" :meta "North Lagoon → Rio delle Galeazze → pavilion landing"}})
+  {:walk  {:no "01" :title :visit/guide.walk-title :meta :visit/guide.walk-meta}
+   :water {:no "02" :title :visit/guide.water-title :meta :visit/guide.water-meta}})
 
 (defnc walk-steps []
   (<>
-   (d/p {:class "ap-label ap-muted m-0"} "On foot · about 8 min")
+   (d/p {:class "ap-label ap-muted m-0"} (t :visit/walk.label))
    (d/ol {:class "ap-steps"}
          (d/li {:class "ap-step"}
-               (d/span {:class "ap-step__dist"} "START")
-               (d/h3 {:class "ap-step__title"} "The Piraeus Lion")
-               (d/p {:class "ap-step__body"} "Begin at the crossing by the lion, the landmark at the Arsenale approach."))
+               (d/span {:class "ap-step__dist"} (t :visit/walk.start-dist))
+               (d/h3 {:class "ap-step__title"} (t :visit/walk.start-title))
+               (d/p {:class "ap-step__body"} (t :visit/walk.start-body)))
          (d/li {:class "ap-step"}
-               (d/span {:class "ap-step__dist"} "ROUTE")
-               (d/h3 {:class "ap-step__title"} "Follow the yellow line")
-               (d/p {:class "ap-step__body"} "The highlighted route on the map leads through the Arsenale to Tesa 41."))
+               (d/span {:class "ap-step__dist"} (t :visit/walk.route-dist))
+               (d/h3 {:class "ap-step__title"} (t :visit/walk.route-title))
+               (d/p {:class "ap-step__body"} (t :visit/walk.route-body)))
          (d/li {:class "ap-step ap-step--end"}
-               (d/span {:class "ap-step__dist"} "≈ 8 MIN")
-               (d/h3 {:class "ap-step__title"} "Tesa 41")
-               (d/p {:class "ap-step__body"} "Armenian Pavilion, Arsenale Militare.")))))
+               (d/span {:class "ap-step__dist"} (t :visit/walk.end-dist))
+               (d/h3 {:class "ap-step__title"} (t :visit/walk.end-title))
+               (d/p {:class "ap-step__body"} (t :visit/walk.end-body))))))
 
 (defnc water-steps []
-  (let [steps (get-in water-taxi-copy [:en :route-steps])
-        heads ["North Lagoon" "Only entrance" "South" "Landing"]]
+  (let [steps [[:visit/water.head-1 :visit/water.step-1]
+               [:visit/water.head-2 :visit/water.step-2]
+               [:visit/water.head-3 :visit/water.step-3]
+               [:visit/water.head-4 :visit/water.step-4]]]
     (<>
-     (d/p {:class "ap-label ap-muted m-0"} "Water taxi · authorised access")
+     (d/p {:class "ap-label ap-muted m-0"} (t :visit/water.label))
      (d/ol {:class "ap-steps ap-steps--water"}
            (map-indexed
-            (fn [i step]
+            (fn [i [head step]]
               (d/li {:key i :class (str "ap-step" (when (= i (dec (count steps))) " ap-step--end"))}
-                    (d/span {:class "ap-step__dist"} (.toUpperCase (nth heads i)))
-                    (d/p {:class "ap-step__body"} step)))
+                    (d/span {:class "ap-step__dist"} (caps (ts head)))
+                    (d/p {:class "ap-step__body"} (t step))))
             steps))
-     (d/a {:class "ap-link ap-body-s self-start" :href "/route-from-hotel-gabrielli"}
-          "Full route from Hotel Gabrielli"))))
+     (d/a {:class "ap-link ap-body-s self-start" :href (i18n/href "/route-from-hotel-gabrielli")}
+          (t :visit/water.gabrielli)))))
 
 (defnc map-guide []
   (let [[mode set-mode!] (hooks/use-state :walk)
@@ -164,14 +151,14 @@
                (d/div {:class "ap-wrap ap-guide"}
                       (d/section {:class "ap-map ap-map--stack" :aria-labelledby "guide-title"}
                                  (d/div {:class "ap-map__head"}
-                                        (d/p {:class "ap-label ap-muted m-0"} (str "Guide · " no))
-                                        (d/h2 {:class "ap-h2" :id "guide-title"} title)
-                                        (d/p {:class "ap-caption m-0"} meta))
-                                 (d/div {:class "ap-map__modes" :role "group" :aria-label "Route"}
+                                        (d/p {:class "ap-label ap-muted m-0"} (t :visit/guide.label {:no no}))
+                                        (d/h2 {:class "ap-h2" :id "guide-title"} (t title))
+                                        (d/p {:class "ap-caption m-0"} (t meta)))
+                                 (d/div {:class "ap-map__modes" :role "group" :aria-label (ts :visit/guide.modes)}
                                         (d/button {:aria-pressed (= mode :walk) :on-click #(set-mode! :walk)}
-                                                  (d/i {:class "bg-yellow outline outline-1 outline-ink"}) "On foot")
+                                                  (d/i {:class "bg-yellow outline outline-1 outline-ink"}) (t :visit/guide.mode-walk))
                                         (d/button {:aria-pressed (= mode :water) :on-click #(set-mode! :water)}
-                                                  (d/i {:class "bg-blue"}) "Water taxi"))
+                                                  (d/i {:class "bg-blue"}) (t :visit/guide.mode-water)))
                                  (d/div {:class "ap-map__live"}
                                         (if (= mode :walk)
                                           ($ mapbox-map {:key "walk"
@@ -191,40 +178,36 @@
                                                          :layers mc/water-taxi-layers :labels-url mc/water-taxi-data-url})))
                                  (d/div {:class "ap-legend"}
                                         (if (= mode :walk)
-                                          (d/span (d/i {:class "walk"}) "Walking route")
-                                          (d/span (d/i {:class "water"}) "Water taxi"))
-                                        (d/span (d/i {:class "pav"}) "Armenian Pavilion"))
+                                          (d/span (d/i {:class "walk"}) (t :visit/guide.legend-walk))
+                                          (d/span (d/i {:class "water"}) (t :visit/guide.legend-water)))
+                                        (d/span (d/i {:class "pav"}) (t :visit/guide.legend-pav)))
                                  (d/div {:class "ap-map__actions"}
                                         (when (= mode :walk)
                                           (d/a {:class "ap-btn" :href mc/maps-url :target "_blank" :rel "noopener"}
-                                               "Open in Maps"))
-                                        (d/a {:class "ap-btn ap-btn--ghost" :href "#taxi"} "Driver card")))
+                                               (t :visit/guide.open-maps)))
+                                        (d/a {:class "ap-btn ap-btn--ghost" :href "#taxi"} (t :visit/guide.driver-card))))
                       (d/div {:class "flex flex-col gap-6"}
                              (if (= mode :walk) ($ walk-steps) ($ water-steps))
-                             ($ wf/address {:title "Address"}))))))
+                             ($ wf/address {:title (t :visit/guide.address)}))))))
 
 ;; ── Water taxi driver card ────────────────────────────────────────────────
 
 (defnc taxi-card []
-  (let [[lang set-lang!] (hooks/use-state :it)
-        c (get water-taxi-copy lang)]
+  (let [[l italian? set-italian!] (wf/use-card-locale)
+        c (water-taxi-copy l)]
     (d/section {:class "ap-sec bg-paper-sunk" :id "taxi"}
                (d/div {:class "ap-wrap flex flex-col gap-6 !max-w-[880px]"}
                       (d/div {:class "ap-head-row !m-0"}
                              (d/div
-                              (d/p {:class "ap-label ap-muted m-0 mb-1"}
-                                   (if (= lang :it) "Mostrare al conducente" "Show this to your driver"))
-                              (d/h2 {:class "ap-h1"} (:title c)))
-                             ($ wf/lang-switch {:lang lang :on-change set-lang!}))
-                      ($ wf/driver-card
-                         {:lang lang
-                          :c (assoc c :contacts (for [[label who] (:contacts c)]
-                                                  [label ({:julda julda-contact :luca luca-contact} who)]))})
+                              (d/p {:class "ap-label ap-muted m-0 mb-1"} (t :visit/card.label))
+                              (d/h2 {:class "ap-h1" :lang l} (:title c)))
+                             ($ wf/card-lang-toggle {:italian? italian? :on-change set-italian!
+                                                     :to-italian (i18n/t-in "it" :visit/card.show-it)
+                                                     :back (t :visit/card.show-own)}))
+                      ($ wf/driver-card {:lang l :c c})
                       (d/a {:class "ap-link ap-body-s self-start py-3"
-                            :href "/route-from-hotel-gabrielli"}
-                           (if (= lang :it)
-                             "Percorso completo dall’Hotel Gabrielli"
-                             "Full route from Hotel Gabrielli"))))))
+                            :href (i18n/href "/route-from-hotel-gabrielli")}
+                           (t :visit/water.gabrielli))))))
 
 ;; ── About ──────────────────────────────────────────────────────────────────
 
@@ -233,24 +216,12 @@
   (d/div {:class (s/cx s/section-pb "px-4")}
          ;; Display title
          (d/h2 {:class (s/cx venue-display "mb-8")}
-               "About")
+               (t :visit/about.title))
 
          ;; Lead copy — enticing, sets the two-site narrative
          (d/div {:class "space-y-6"}
-                  (d/p {:class s/body-lg}
-                       "The Armenian Pavilion unfolds across "
-                       (d/span {:class s/em-strong} "two sites")
-                       " within the historic Arsenale of Venice\u2014a "
-                       (d/span {:class s/em-strong} "5,000-square-foot interior studio")
-                       " and a monumental "
-                       (d/span {:class s/em-strong} "outdoor sculpture")
-                       " at the gates of the complex.")
-
-                  (d/p {:class s/body-base}
-                       "Together they form a single constellation: "
-                       (d/span {:class s/em-italic} "a place for study, for work, to create, share, and exhibit")
-                       ". Over six months the Pavilion operates not as a static exhibition "
-                       "but as a living workshop\u2014open, evolving, and built in real time."))))
+                (d/p {:class s/body-lg} (prose :visit/about.p1))
+                (d/p {:class s/body-base} (prose :visit/about.p2)))))
 
 ;; ── The Studio (Tesa 41) ──────────────────────────────────────────────────
 
@@ -260,52 +231,18 @@
     (d/div {:class s/section-pb}
            ;; Eyebrow + display heading
            (d/div {:class "px-4"}
-                  ($ venue-eyebrow {:text "Interior \u00B7 Tesa 41"})
+                  ($ venue-eyebrow {:text (t :visit/studio.eyebrow)})
                   (d/h2 {:class (s/cx venue-display "mb-8")}
-                        "The Studio"))
+                        (t :visit/studio.title)))
 
            ;; Prose
            (d/div {:class "px-4 space-y-6"}
-                  (d/p {:class s/body-lg}
-                       (d/span {:class s/em-strong} "Tesa 41")
-                       " is the primary studio and exhibition space for the Armenian Pavilion\u2014"
-                       (d/span {:class s/em-strong} "5,000 square feet")
-                       " of expansive industrial volume within the Arsenale that functions as the "
-                       (d/span {:class s/em-italic} "operational and conceptual heart")
-                       " of the project.")
+                  (d/p {:class s/body-lg} (prose :visit/studio.p1))
+                  (d/p {:class s/body-base} (prose :visit/studio.p2))
+                  (d/p {:class s/body-base} (prose :visit/studio.p3))
+                  (d/p {:class (s/cx s/body-closing)} (prose :visit/studio.p4)))
 
-                  (d/p {:class s/body-base}
-                       "Here, the Pavilion operates as a "
-                       (d/span {:class s/em-strong} "working studio")
-                       " rather than a static exhibition\u2014a place of continuous "
-                       (d/span {:class s/em-strong} "making")
-                       ", "
-                       (d/span {:class s/em-strong} "stacking")
-                       ", "
-                       (d/span {:class s/em-strong} "dismantling")
-                       ", and "
-                       (d/span {:class s/em-strong} "rebuilding")
-                       ". The interior volume allows the work to expand "
-                       (d/span {:class s/em-strong} "horizontally")
-                       " and "
-                       (d/span {:class s/em-strong} "vertically")
-                       ", accommodating both monumental arrangements and intimate moments of material attention.")
-
-                  (d/p {:class s/body-base}
-                       "Defined by scale, clarity, and architectural restraint, the space is built for sustained "
-                       (d/span {:class s/em-strong} "fabrication")
-                       ", "
-                       (d/span {:class s/em-strong} "assembly")
-                       ", and "
-                       (d/span {:class s/em-strong} "reconfiguration")
-                       " across the full duration of the Biennale.")
-
-                  (d/p {:class (s/cx s/body-closing)}
-                       "Tesa 41 anchors the Pavilion physically and philosophically\u2014establishing "
-                       (d/span {:class s/em-italic} "the studio as the artwork itself")
-                       "."))
-
-           ;; Media \u2014 video + gallery
+           ;; Media — video + gallery
            (d/div {:class "w-full flex flex-col gap-4 mt-8" :ref ref}
                   (d/div {:class "w-full aspect-[16/9]"}
                          ($ lazy-video {:playback-id "KaA1Jf2AusJZ966KPeZrdwJ5S53kboLO4E4fGLrgTLk"
@@ -324,37 +261,20 @@
     (d/div {:class s/section-pb}
            ;; Eyebrow + display heading
            (d/div {:class "px-4"}
-                  ($ venue-eyebrow {:text "Exterior \u00B7 Arsenale Crossing"})
+                  ($ venue-eyebrow {:text (t :visit/outdoor.eyebrow)})
                   (d/h2 {:class (s/cx venue-display "mb-8")}
-                        "The Outdoor Piece"))
+                        (t :visit/outdoor.title)))
 
            ;; Prose
            (d/div {:class "px-4 space-y-6"}
-                  (d/p {:class s/body-lg}
-                       "The outdoor artwork will be installed at the historic crossing grounds near the "
-                       (d/span {:class s/em-strong} "Piraeus Lion")
-                       ", one of the most recognized landmarks marking the approach to the Arsenale. "
-                       "Positioned at a critical pedestrian junction, this site receives "
-                       (d/span {:class s/em-strong} "exceptionally high foot traffic")
-                       " throughout the six-month exhibition period.")
+                  (d/p {:class s/body-lg} (prose :visit/outdoor.p1))
+                  (d/p {:class s/body-base} (prose :visit/outdoor.p2))
+                  (d/p {:class (s/cx s/body-closing)} (prose :visit/outdoor.p3)))
 
-                  (d/p {:class s/body-base}
-                       "Visitors moving between venues, crossing the bridge into the Arsenale, and navigating the surrounding waterfront naturally converge here. "
-                       "The Armenian Pavilion lies less than a ten-minute walk from this point, making the installation both a "
-                       (d/span {:class s/em-strong} "threshold")
-                       " and a "
-                       (d/span {:class s/em-strong} "directional marker")
-                       "\u2014an early encounter that orients audiences toward the Pavilion.")
-
-                  (d/p {:class (s/cx s/body-closing)}
-                       "A freestanding, architecturally scaled form\u2014functioning simultaneously as "
-                       (d/span {:class s/em-italic} "sculpture, signal, and prelude")
-                       "."))
-
-           ;; Media \u2014 image gallery
+           ;; Media — image gallery
            (d/div {:class "w-full flex flex-col gap-4 mt-8" :ref ref}
                   ($ lazy-image-gallery {:enabled? is-visible?
-                                         :slides crossing-slides})))))
+                                         :slides (crossing-slides)})))))
 
 ;; ── About the Arsenale Militare ───────────────────────────────────────────
 
@@ -362,45 +282,16 @@
   (d/div {:class s/section-pb}
          ;; Eyebrow + display heading
          (d/div {:class "px-4"}
-                ($ venue-eyebrow {:text "History"})
+                ($ venue-eyebrow {:text (t :visit/arsenale.eyebrow)})
                 (d/h2 {:class (s/cx venue-display "mb-8")}
-                      "Arsenale Militare"))
+                      (t :visit/arsenale.title)))
 
          ;; Prose
          (d/div {:class "px-4 space-y-6"}
-                (d/p {:class s/body-lg}
-                     "The "
-                     (d/span {:class s/em-strong} "Arsenale di Venezia")
-                     " is one of the largest and oldest shipbuilding complexes in the world. "
-                     "Founded in the "
-                     (d/span {:class s/em-strong} "12th century")
-                     ", it served as the engine of Venetian naval power for over "
-                     (d/span {:class s/em-strong} "seven centuries")
-                     "\u2014at its peak employing 16,000 workers and capable of producing a fully outfitted warship in a single day.")
-
-                (d/p {:class s/body-base}
-                     "Spanning roughly "
-                     (d/span {:class s/em-strong} "45 hectares")
-                     " of covered halls, dry docks, and open yards, the Arsenale is a monumental index of "
-                     (d/span {:class s/em-italic} "industrial ingenuity")
-                     ". Its massive brick walls, timber-roofed warehouses ("
-                     (d/span {:class s/em-italic} "tese")
-                     "), and water-accessed basins represent a proto-industrial system that anticipated modern assembly-line production by centuries.")
-
-                (d/p {:class s/body-base}
-                     "Since "
-                     (d/span {:class s/em-strong} "1980")
-                     ", the Arsenale has served as a primary exhibition site for the "
-                     (d/span {:class s/em-strong} "La Biennale di Venezia")
-                     "\u2014its raw, monumental spaces providing a counterpoint to the refined galleries of the Giardini. "
-                     "National pavilions, large-scale installations, and the central International Exhibition share this vast industrial landscape, "
-                     "transforming shipbuilding halls into some of the most powerful exhibition spaces in the world.")
-
-                (d/p {:class (s/cx s/body-closing)}
-                     "Tesa 41 sits within this historic matrix\u2014one of the original covered warehouses now given over to artistic production. "
-                     "The Armenian Pavilion's presence continues a tradition of nations "
-                     (d/span {:class s/em-italic} "working within")
-                     " the Arsenale's industrial grain, not against it."))))
+                (d/p {:class s/body-lg} (prose :visit/arsenale.p1))
+                (d/p {:class s/body-base} (prose :visit/arsenale.p2))
+                (d/p {:class s/body-base} (prose :visit/arsenale.p3))
+                (d/p {:class (s/cx s/body-closing)} (prose :visit/arsenale.p4)))))
 
 ;; ── Page ───────────────────────────────────────────────────────────────────
 

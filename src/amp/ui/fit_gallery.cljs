@@ -14,6 +14,7 @@
    of it, so dozens of slides cost no more than the few in view."
   (:require ["react" :as react]
             [amp.hooks.use-in-view :refer [watch-edges!]]
+            [amp.i18n :refer [t ts] :refer-macros [defcatalog]]
             [amp.hooks.use-intersection-observer :refer [use-intersection-observer]]
             [amp.lib.defnc :refer [defnc]]
             [amp.ui.icons :refer [CubeIcon]]
@@ -22,6 +23,8 @@
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
+
+(defcatalog "ui")
 
 (defn- title-case
   "Older slide data has ALL-CAPS captions; show them in title case to match
@@ -68,17 +71,17 @@
            (if open?
              (<>
               ($ react/Suspense {:fallback (d/p {:class "ap-label ap-muted absolute inset-0 grid place-content-center m-0"}
-                                                "Loading model…")}
+                                                (t :ui/gallery.loading-model))}
                  ($ threejs-slide {:scene-data scene-data :camera camera}))
               (d/button {:class "ap-btn ap-btn--ghost ap-3d__close !bg-paper"
                          :on-click #(set-open! false)}
-                        "Close 3D")
-              (d/p {:class "ap-label ap-muted ap-3d__hint m-0"} "Drag to turn · pinch to zoom"))
+                        (t :ui/gallery.close-3d))
+              (d/p {:class "ap-label ap-muted ap-3d__hint m-0"} (t :ui/gallery.hint-3d)))
              (d/button {:class "ap-3d__cover" :on-click #(set-open! true)
-                        :aria-label (str "Explore " (or caption "the model") " in 3D")}
+                        :aria-label (ts :ui/gallery.explore-aria {:name (or caption (ts :ui/gallery.the-model))})}
                        ($ CubeIcon {})
-                       (d/span {:class "ap-label"} "Interactive 3D")
-                       (d/span {:class "ap-btn"} "Explore the model"))))))
+                       (d/span {:class "ap-label"} (t :ui/gallery.interactive))
+                       (d/span {:class "ap-btn"} (t :ui/gallery.explore)))))))
 
 (defnc fit-gallery
   "`label`/`title` add a heading row; `action` is an optional element shown
@@ -93,8 +96,8 @@
                     (.scrollBy el #js {:left (* dir 0.8 (.-clientWidth el)) :behavior "smooth"})))
         nav (when (and (> (count slides) 1) (not (and at-start? at-end?)))
               (d/div {:class "ap-gallery__nav max-md:!hidden"}
-                     (d/button {:aria-label "Previous" :disabled at-start? :on-click #(scroll! -1)} "←")
-                     (d/button {:aria-label "Next" :disabled at-end? :on-click #(scroll! 1)} "→")))
+                     (d/button {:aria-label (ts :ui/gallery.previous) :disabled at-start? :on-click #(scroll! -1)} "←")
+                     (d/button {:aria-label (ts :ui/gallery.next) :disabled at-end? :on-click #(scroll! 1)} "→")))
         ;; Frames start from the slide's :aspect-ratio and correct to the
         ;; image's real shape once it has loaded.
         fit-frame! (fn [e]
@@ -125,7 +128,7 @@
                     (d/div {:class "flex items-center gap-4"} nav action))
              (when nav (d/div {:class "flex justify-end px-4"} nav)))
            (d/div {:ref track :class "ap-gallery__track ap-gallery__track--fit" :tab-index 0
-                   :aria-label (str (or title "Gallery") ", swipe for more")}
+                   :aria-label (ts :ui/gallery.track {:title (if (string? title) title (ts :ui/gallery.default-title))})}
                   (map-indexed
                    (fn [i {:keys [type img-src aspect-ratio caption credit alt] :as slide}]
                      (d/figure {:key (or img-src (str "slide-" i)) :data-i i

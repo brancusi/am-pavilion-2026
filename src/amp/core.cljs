@@ -33,6 +33,16 @@
    render, so text never swaps from a fallback font and reflows."
   ["500 1em Jost" "400 1em Newsreader" "italic 400 1em Newsreader" "400 1em 'IBM Plex Mono'"])
 
+(def ^:private armenian-faces
+  "Noto Sans Armenian, which Google serves only for Armenian text (unicode-range):
+   the language switch (ՀԱՅ) needs its medium on every page. Armenian pages
+   set labels in it too (Latin included), and text in the regular. Loaded
+   with a sample so the right subsets (Armenian, Latin) are fetched."
+  (fn []
+    (if (.startsWith (.. js/location -pathname) "/hy")
+      [["500 1em 'Noto Sans Armenian'" "ՀԱՅ Biennale 2026"] ["400 1em 'Noto Sans Armenian'" "Ա Biennale 2026"]]
+      [["500 1em 'Noto Sans Armenian'" "ՀԱՅ"]])))
+
 (defn- sheet-ready
   "Resolves once the Google Fonts stylesheet has arrived: until then the
    browser doesn't know the faces, and loading them resolves at once."
@@ -51,7 +61,9 @@
   (js/Promise.race
    #js [(if-let [fonts (.-fonts js/document)]
           (.then (sheet-ready)
-                 #(js/Promise.allSettled (into-array (map (fn [f] (.load fonts f)) faces))))
+                 #(js/Promise.allSettled
+                   (into-array (concat (map (fn [f] (.load fonts f)) faces)
+                                       (map (fn [[f text]] (.load fonts f text)) (armenian-faces))))))
           (js/Promise.resolve))
         (js/Promise. (fn [resolve] (js/setTimeout resolve ms)))]))
 

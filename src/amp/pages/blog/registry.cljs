@@ -24,12 +24,15 @@
    "the-studio-play-balance" post-studio/post-content
    "blue-yellow-maquette"    post-byby/post-content})
 
-(def posts
-  "Journal listings joined with their render component. Newest first.
+(defn posts
+  "Journal listings joined with their render component, in the current
+   locale. Newest first.
    Each entry: {:slug :title :date :summary :cover-image :kind :component}"
-  (mapv #(assoc % :component (components (:slug %))) journal/posts))
+  []
+  (mapv #(assoc % :component (components (:slug %))) (journal/posts)))
 
-(def posts-by-slug
+(defn posts-by-slug
   "Lookup map: slug string → post map."
-  (into {} (map (juxt :slug identity) posts)))
+  []
+  (into {} (map (juxt :slug identity) (posts))))
 

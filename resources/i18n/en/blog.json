@@ -1,0 +1,17 @@
+{
+  "index.label": "Journal",
+  "index.title": "Notes from the studio",
+  "index.count-aria": "{n, plural, one {# post} other {# posts}}",
+  "index.count-label": "{n, plural, one {Post} other {Posts}}",
+  "index.lede": "Process, travel and the making of The Studio, from Los Angeles to Tesa 41.",
+  "index.filter-aria": "Filter by category",
+  "index.empty": "No posts in this category yet.",
+  "post.back": "← Journal",
+  "post.byline": "By {author}",
+  "post.next": "Next in the journal",
+  "post.doc-title": "{title} · Armenian Pavilion",
+  "not-found.doc-title": "Post not found · Armenian Pavilion",
+  "not-found.title": "Post not found",
+  "not-found.text": "The post you’re looking for doesn’t exist.",
+  "not-found.back": "Back to the journal"
+}

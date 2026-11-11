@@ -1,5 +1,6 @@
 (ns amp.services.router
-  (:require [amp.lib.defnc :refer [defnc]]
+  (:require [amp.i18n :as i18n :refer [t] :refer-macros [defcatalog]]
+            [amp.lib.defnc :refer [defnc]]
             [amp.state.provider :refer [use-main-state]]
             [helix.hooks :as hooks]
             [reitit.frontend :as rf]
@@ -36,74 +37,83 @@
     (reset! pending-scroll nil)
     (f)))
 
+;; Route titles, the site title and other strings every page shares.
+(defcatalog "site")
+
 (def site-map [{:id ::venue
                 :path "visit"
-                :title "Visit"
+                :title :site/title-visit
                 :view (lazy-component amp.pages.venue.page/venue-view)}
 
                {:id ::artist
                 :path "artist"
-                :title "Artist"
+                :title :site/title-artist
                 :view (lazy-component amp.pages.artist.page/artist-view)}
 
                {:id ::blog
                 :path "blog"
-                :title "Journal"
+                :title :site/title-journal
                 :view (lazy-component amp.pages.blog.page/blog-view)}
 
                {:id ::press
                 :path "press"
-                :title "Press"
+                :title :site/title-press
                 :view (lazy-component amp.pages.press.page/press-view)}
-
-               {:id ::press-it
-                :path "it/press"
-                :title "Stampa"
-                :view (lazy-component amp.pages.press.page/press-it-view)}
 
                {:id ::delivery
                 :path "delivery"
-                :title "Consegne"
+                :title :site/title-delivery
                 :view (lazy-component amp.pages.delivery.page/delivery-view)}
 
                {:id ::story
                 :path "armenian-as-well"
-                :title "Armenian as well: Zadikian and Shafrazi"
+                :title :site/title-story
                 :view (lazy-component amp.pages.story.page/story-view)}
 
                {:id ::portage
                 :path "portage"
-                :title "Portage"
+                :title :site/title-portage
                 :view (lazy-component amp.pages.portage.page/portage-view)}
 
                {:id ::walks
                 :path "walks"
-                :title "Walks"
+                :title :site/title-walks
                 :view (lazy-component amp.pages.walks.page/walks-view)}
 
                ;; Where Buttondown lands a new subscriber after they confirm.
                ;; In the main bundle (small), so no lazy module.
                {:id ::subscribed
                 :path "subscribed"
-                :title "Subscribed"
+                :title :site/title-subscribed
                 :view subscribed-view}
 
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
-                :title "Water Taxi"
+                :title :site/title-water-taxi
                 :view (lazy-component amp.pages.water-taxi.page/water-taxi-view)}])
 
-(defn routes
+(def ^:private landing (lazy-component amp.pages.landing.page/landing-view))
+
+(defn- localize
+  "Route name or group for a locale: English keeps the plain name (:home,
+   ::blog); the others get a suffix (::blog.it), so switching language is a
+   page change for the transitioner."
+  [k l]
+  (if (or (nil? k) (= l i18n/default-locale))
+    k
+    (keyword (namespace k) (str (name k) "." l))))
+
+(defn- locale-routes
+  "The site's routes for one locale, without its prefix."
   []
-  (into ["/"
-         [""
+  (into [[""
           {:name :home
-           :view (lazy-component amp.pages.landing.page/landing-view)}]
+           :view landing}]
          ;; One film on the home page, picked and scrolled to: a link of its own,
          ;; with its own preview (cloudflare/site/worker.js).
          ["films/:slug"
           {:name :home-film
-           :view (lazy-component amp.pages.landing.page/landing-view)}]]
+           :view landing}]]
         (mapcat (fn [{:keys [id path view title]}]
                   (let [route-data {:name id
                                     :view view
@@ -121,7 +131,7 @@
                                     (assoc route-data :name ::portage-sheet)]])
                       ;; Press: the overview + one route per section, one page
                       ;; (:group) that swaps its sections itself (:inner-swap).
-                      (::press ::press-it)
+                      ::press
                       (let [route-data (assoc route-data :group id :inner-swap true)]
                         [[path route-data]
                          [(str path "/:section")
@@ -132,6 +142,21 @@
                       [[path route-data]])))
                 site-map)))
 
+(defn routes
+  "Every route in every locale: English at /, the others under /<locale>/.
+   Route data carries :locale; names and groups are suffixed per locale."
+  []
+  (into ["/"]
+        (mapcat (fn [l]
+                  (let [prefix (if (= l i18n/default-locale) "" (str l "/"))]
+                    (for [[path data] (locale-routes)
+                          :let [data (cond-> (assoc data :locale l :base-name (:name data)
+                                                    :name (localize (:name data) l))
+                                       (:group data) (update :group localize l))
+                                path (if (and (= path "") (not= prefix "")) l (str prefix path))]]
+                      [path data]))))
+        i18n/locales))
+
 (comment
 
   (routes)
@@ -139,22 +164,23 @@
   ;;Keep from folding
   )
 
-(def ^:private site-title "Armenian Pavilion — Zadik Zadikian: The Studio · Biennale Arte 2026")
-
 (defn- not-found-route
   "A match-shaped value for paths with no route."
   []
-  {:path (.. js/location -pathname)
-   :data {:name ::not-found :view not-found-view :title "Page not found"}})
+  (let [path (.. js/location -pathname)
+        l (first (i18n/split-path path))]
+    {:path path
+     :data {:name (localize ::not-found l) :view not-found-view :title :site/title-not-found
+            :locale l}}))
 
 (defn- set-title!
   "Page title: \"<Page> · Armenian Pavilion\", the full site title at home.
    Blog posts set their own once their content has loaded."
   [route]
   (set! (.-title js/document)
-        (if-let [t (-> route :data :title)]
-          (str t " · Armenian Pavilion")
-          site-title)))
+        (if-let [k (-> route :data :title)]
+          (t :site/page-title {:page (t k)})
+          (t :site/site-title))))
 
 (defn- scroll-to-anchor!
   "Scroll to element `id`, retrying for a moment while a lazy page loads."
@@ -197,6 +223,8 @@
                                      (swap! scroll-positions assoc old-path (.-scrollY js/window)))
                                    (reset! current-path (:path new-route))
 
+                                   ;; The locale first: everything that renders reads it.
+                                   (i18n/set-locale! (-> new-route :data :locale))
                                    (rfc/apply-controllers old-route new-route)
                                    (dispatch! [:enter-route! new-route])
                                    (set-title! new-route)

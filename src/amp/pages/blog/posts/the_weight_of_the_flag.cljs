@@ -4,8 +4,10 @@
    Zanipolo; how one carried unit (amp.pages.blog.posts.carrying) became
    three; and the plan for the walks (scripts/walks/plan.json, /walks).
    Stills are frames of the graded film (amp.data.films); quotes are from its
-   captions and the day's recorders."
+   captions and the day's recorders. Text: the post-the-weight-of-the-flag
+   catalog."
   (:require
+   [amp.i18n :as i18n :refer [t ts] :refer-macros [defcatalog]]
    [amp.lib.defnc :refer [defnc]]
    [amp.ui.fit-gallery :refer [fit-gallery]]
    [amp.ui.picture :refer [picture media-host mux-poster]]
@@ -14,55 +16,64 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]))
 
+(defcatalog "post-the-weight-of-the-flag")
+
 (def ^:private lazy-film (lazy-component amp.ui.video-background/film-player))
 
 (def ^:private film-id "MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo")
 
 (def ^:private journal (str media-host "journal/"))
 
-(def ^:private credit "Still from The Weight of the Flag · Castello, 5 November 2026")
+(defn- a
+  "Rich-text handler for an internal link in the post's prose."
+  [path]
+  (i18n/tag "a" {:href (i18n/href path)}))
 
-(def ^:private day-credit
-  "Stills from the camera originals, graded (blackbox, filmic)."
-  "Castello, 5 November 2026")
-
-(def ^:private on-the-way
+(defn- on-the-way
   "Between the stops: landscape frames from the camera originals
    (26-11-05-orig) and the film (26-11-05)."
-  (let [slide (fn [file caption] {:img-src (str journal "26-11-05/" file ".jpg") :aspect-ratio 1.7778
-                                  :caption caption :credit credit})]
+  []
+  (let [credit (ts :post-the-weight-of-the-flag/credit)
+        slide (fn [file caption] {:img-src (str journal "26-11-05/" file ".jpg") :aspect-ratio 1.7778
+                                  :caption (ts caption) :credit credit})]
     [{:img-src (str journal "26-11-05-orig/campo-crossing.jpg") :aspect-ratio 1.7778
-      :caption "Red and white crossing a campo" :credit day-credit}
-     (slide "garden" "Green, white and red under the pines")
-     (slide "portico" "Through a sottoportego")
-     (slide "low-red" "Under a stone arch")
-     (slide "green-low" "Against a white church front")
-     (slide "bridge" "Over a canal bridge, single file")
-     (slide "basilica" "Set down by the Basilica of Santi Giovanni e Paolo")]))
+      :caption (ts :post-the-weight-of-the-flag/way.campo-crossing)
+      :credit (ts :post-the-weight-of-the-flag/day-credit)}
+     (slide "garden" :post-the-weight-of-the-flag/way.garden)
+     (slide "portico" :post-the-weight-of-the-flag/way.portico)
+     (slide "low-red" :post-the-weight-of-the-flag/way.low-red)
+     (slide "green-low" :post-the-weight-of-the-flag/way.green-low)
+     (slide "bridge" :post-the-weight-of-the-flag/way.bridge)
+     (slide "basilica" :post-the-weight-of-the-flag/way.basilica)]))
 
 (def ^:private schedule
   "The walks as planned on 5 November: [date works route]."
-  [["Thu 5 Nov" "3" "San Francesco della Vigna, Zanipolo, Santa Maria Formosa"]
-   ["Fri 6 Nov" "6" "The Arsenale gate to the Giardini"]
-   ["Mon 16 Nov" "12" "Rialto by the salizade"]
-   ["Tue 17 Nov" "12" "Fondamente Nove to the Ca’ d’Oro"]
-   ["Wed 18 Nov" "3–6" "Walking the work to the Accademia di Belle Arti"]
-   ["Thu 19 Nov" "12" "Misericordia, the Orto and the Ghetto"]
-   ["Fri 20 Nov" "12" "San Polo and the Frari"]
-   ["Sat 21 Nov" "12" "Santa Margherita, the Salute and the Dogana"]
-   ["Sun 22 Nov" "12" "Closing day: Via Garibaldi to Sant’Elena"]])
+  [["2026-11-05" "3" :post-the-weight-of-the-flag/sched.r1]
+   ["2026-11-06" "6" :post-the-weight-of-the-flag/sched.r2]
+   ["2026-11-16" "12" :post-the-weight-of-the-flag/sched.r3]
+   ["2026-11-17" "12" :post-the-weight-of-the-flag/sched.r4]
+   ["2026-11-18" "3–6" :post-the-weight-of-the-flag/sched.r5]
+   ["2026-11-19" "12" :post-the-weight-of-the-flag/sched.r6]
+   ["2026-11-20" "12" :post-the-weight-of-the-flag/sched.r7]
+   ["2026-11-21" "12" :post-the-weight-of-the-flag/sched.r8]
+   ["2026-11-22" "12" :post-the-weight-of-the-flag/sched.r9]])
 
 (defn- figure
   "One captioned still, in the post's reading measure. `ar` is width /
-   height, so the frame holds its space before it loads."
-  [{:keys [file ar caption by]}]
-  (d/figure {:class "ap-figure"}
-            (d/div {:class "ap-figure__frame" :style #js {"--ar" (str ar)}}
-                   ($ picture {:src (str journal file ".jpg") :alt caption
-                               :sizes "(min-width: 720px) 680px, 100vw"}))
-            (d/figcaption {:class "ap-tomb"}
-                          (d/span {:class "ap-tomb__title" :style #js {:gridColumn "1 / -1"}} caption)
-                          (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}} (or by credit)))))
+   height, so the frame holds its space before it loads. `caption` is a
+   catalog key; `day?` credits the camera originals instead of the film."
+  [{:keys [file ar caption day?]}]
+  (let [caption (ts caption)]
+    (d/figure {:class "ap-figure"}
+              (d/div {:class "ap-figure__frame" :style #js {"--ar" (str ar)}}
+                     ($ picture {:src (str journal file ".jpg") :alt caption
+                                 :sizes "(min-width: 720px) 680px, 100vw"}))
+              (d/figcaption {:class "ap-tomb"}
+                            (d/span {:class "ap-tomb__title" :style #js {:gridColumn "1 / -1"}} caption)
+                            (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}}
+                                    (ts (if day?
+                                          :post-the-weight-of-the-flag/day-credit
+                                          :post-the-weight-of-the-flag/credit)))))))
 
 (defnc film
   "The Weight of the Flag: a still until someone presses play."
@@ -77,7 +88,7 @@
                                      :fallback still :poster poster})
                        (<>
                         still
-                        (d/button {:class "ap-play" :aria-label "Play The Weight of the Flag"
+                        (d/button {:class "ap-play" :aria-label (ts :post-the-weight-of-the-flag/film.play)
                                    :on-mouse-enter #(.preload lazy-film)
                                    :on-click #(set-playing! true)}
                                   (d/svg {:width 28 :height 28 :viewBox "0 0 16 16"
@@ -85,121 +96,70 @@
                                          (d/path {:d "M4 2l10 6-10 6z"}))))))
               (d/figcaption {:class "ap-tomb"}
                             (d/span {:class "ap-tomb__title" :style #js {:gridColumn "1 / -1"}}
-                                    "The Weight of the Flag, 2:52. Castello, 5 November 2026")
+                                    (t :post-the-weight-of-the-flag/film.caption))
                             (d/span {:class "ap-tomb__credit" :style #js {:gridColumn "1 / -1"}}
-                                    "Sound on; captions in the player menu")))))
+                                    (t :post-the-weight-of-the-flag/film.credit))))))
 
 (defnc post-content
   [_props]
   ;; A fragment, so the body's own spacing applies between the blocks.
   (<>
-   (d/p {:class "ap-dropcap"}
-        "At twenty to three on Thursday 5 November three people left Tesa 41 with the "
-        "Italian flag on their backs: one green unit, one white, one red, each strapped to "
-        "a frame. They walked to San Francesco della Vigna, on to the great campo of Santi "
-        "Giovanni e Paolo, Zanipolo to Venetians, then to Santa Maria Formosa, and home "
-        "another way. About two and a half kilometres, an hour and a quarter. It was the "
-        "first of the walks.")
+   (d/p {:class "ap-dropcap"} (t :post-the-weight-of-the-flag/p1))
 
-   (figure {:file "26-11-05-orig/vigna-campo" :ar 1.7778 :by day-credit
-            :caption "Setting out: three units across a campo in Castello"})
+   (figure {:file "26-11-05-orig/vigna-campo" :ar 1.7778 :day? true
+            :caption :post-the-weight-of-the-flag/fig.vigna-campo})
 
-   (d/h2 "From one to three")
+   (d/h2 (t :post-the-weight-of-the-flag/h2.one-to-three))
 
-   (d/p "Two weeks earlier, on 22 October, a single red unit had gone out the same door "
-        "on Aram Zadikian’s back. We wrote about that afternoon in "
-        (d/a {:href "/blog/carrying"} "Carrying")
-        ". It was a test: of the frame, of the straps, of the wind on the quay, and of "
-        "what Venice would make of it. Even then the talk on the way was of more. "
-        "“At least six,” Aram said. Zadik agreed.")
+   (d/p (t :post-the-weight-of-the-flag/p2 {:a (a "/blog/carrying")}))
 
-   (d/p "Three is the smallest number that makes a flag. One red unit on a back is a "
-        "form in the street; green, white and red walking side by side is something "
-        "everybody recognises before they have really looked. The flag the studio "
-        (d/a {:href "/blog/making-a-flag"} "built in Tesa 41")
-        " stands on its own feet. On 5 November it walked on other people’s.")
+   (d/p (t :post-the-weight-of-the-flag/p3 {:a (a "/blog/making-a-flag")}))
 
-   (d/p "Those people were students of the Accademia di Belle Arti di Venezia, the "
-        "city’s academy of fine arts. When a passer-by asked who was carrying, Zadik "
-        "pointed: "
-        (d/em "“They’re over there, the students.")
-        (d/em " They’re helping me, from the Venice Academy of Arts.”"))
+   (d/p (t :post-the-weight-of-the-flag/p4))
 
-   (figure {:file "26-11-05-orig/church-front" :ar 1.7778 :by day-credit
-            :caption "Set down before a church door"})
+   (figure {:file "26-11-05-orig/church-front" :ar 1.7778 :day? true
+            :caption :post-the-weight-of-the-flag/fig.church-front})
 
-   (d/h2 "The first walk")
+   (d/h2 (t :post-the-weight-of-the-flag/h2.first-walk))
 
-   (d/p "The route went by the wide ways, rive, fondamente and campi, where three tall "
-        "forms can pass and be set down without blocking anyone. At each stop the "
-        "carriers stood in a row, and the city did "
-        "what cities do: it looked.")
+   (d/p (t :post-the-weight-of-the-flag/p5))
 
    ($ film)
 
-   (d/p "The film keeps some of what was said. Introducing the work to people in a "
-        "campo: "
-        (d/em "“This is the Armenian Pavilion, and the Armenian artist is right here, and "
-              "he created a tribute to the country of Italy, which is their flag.”")
-        " Someone answered: "
-        (d/em "“Thank you for the tribute.”")
-        " And, a moment later: "
-        (d/em "“Thank you for what your people have been doing through history, because "
-              "that’s very important.”"))
+   (d/p (t :post-the-weight-of-the-flag/p6))
 
-   (figure {:file "26-11-05-orig/zanipolo-colleoni" :ar 1.7778 :by day-credit
-            :caption "In Campo Santi Giovanni e Paolo, under Verrocchio’s Colleoni"})
+   (figure {:file "26-11-05-orig/zanipolo-colleoni" :ar 1.7778 :day? true
+            :caption :post-the-weight-of-the-flag/fig.zanipolo-colleoni})
 
    (figure {:file "26-11-05/zanipolo-wide" :ar 1.7778
-            :caption "Campo Santi Giovanni e Paolo, before the Scuola Grande di San Marco"})
+            :caption :post-the-weight-of-the-flag/fig.zanipolo-wide})
 
-   (d/p "Another passer-by found the words we had been looking for: "
-        (d/em "“It’s a travelling flag.”")
-        " Zadik: "
-        (d/em "“It’s a journey. We are taking a journey in Venice.”"))
+   (d/p (t :post-the-weight-of-the-flag/p7))
 
-   ($ fit-gallery {:slides on-the-way :inset? true})
+   ($ fit-gallery {:slides (on-the-way) :inset? true})
 
-   (d/p "And heads turned, all afternoon. "
-        (d/em "“We are turning people’s heads around,”")
-        " Zadik said. "
-        (d/em "“Anytime they see it, they’re just looking: what the hell is this?”")
-        " And later, sitting down: "
-        (d/em "“We’re sitting in this historic square. We’re making history again.”"))
+   (d/p (t :post-the-weight-of-the-flag/p8))
 
-   (d/h2 "The plan: out and back, every few days")
+   (d/h2 (t :post-the-weight-of-the-flag/h2.plan))
 
-   (d/p "The walks go on until the Biennale closes. Each one leaves Tesa 41 by the "
-        "door on the Fondamenta Case Nuove, follows a different route out, sets the works "
-        "down in two or three places, and comes home another way. The number of works "
-        "grows: three on the first day, six on the next walk, then twelve. On 18 November "
-        "students of the Accademia walk them to the Accademia itself, one work on each student’s back, into "
-        "its cloister at 11:00, for an hour with its professors and students. "
-        "The last walk is on the closing day.")
+   (d/p (t :post-the-weight-of-the-flag/p9))
 
    (d/ul
     (for [[date works route] schedule]
-      (d/li {:key date} (d/strong date) (str " · " works " works · " route))))
+      (d/li {:key date}
+            (d/strong (i18n/date date {:weekday "short" :day "numeric" :month "short"}))
+            (ts :post-the-weight-of-the-flag/sched.line {:works works :route (ts route)}))))
 
-   (d/p "This is the plan as it stood on 5 November. Routes and times may still move: "
-        "the up-to-date schedule, the map of every route and the photographs of each walk "
-        "are on the "
-        (d/a {:href "/walks"} "Walks")
-        " page. Anyone may walk alongside: meet at the door of Tesa 41 ten minutes before "
-        "the time.")
+   (d/p (t :post-the-weight-of-the-flag/p10 {:a (a "/walks")}))
 
    (figure {:file "26-11-05/backlit-campo" :ar 1.7778
-            :caption "Late sun in a campo"})
+            :caption :post-the-weight-of-the-flag/fig.backlit-campo})
 
-   (d/h2 "The weight of it")
+   (d/h2 (t :post-the-weight-of-the-flag/h2.weight))
 
-   (d/p "The weight is not only in the units. It is in the carrying: in "
-        "kilometres of stone underfoot, in being looked "
-        "at, and in carrying another country’s colours through its own city, as guests. "
-        "One unit was a test. Three is a flag. Twelve, we hope, will be something else "
-        "again.")
+   (d/p (t :post-the-weight-of-the-flag/p11))
 
-   (figure {:file "26-11-05-orig/three-in-a-row" :ar 1.7778 :by day-credit
-            :caption "Three in a row"})
+   (figure {:file "26-11-05-orig/three-in-a-row" :ar 1.7778 :day? true
+            :caption :post-the-weight-of-the-flag/fig.three-in-a-row})
 
-   (d/p (d/em "The next walk leaves Tesa 41 tomorrow, with six. Come and walk with us."))))
+   (d/p (t :post-the-weight-of-the-flag/p12))))
