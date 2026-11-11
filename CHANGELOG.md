@@ -2,6 +2,18 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-11 — Press: releases section and the flag-walk release
+
+**Rationale:** Venetian press asked for a release they can use; Italian outlets get one link that opens the Italian page.
+**Summary:** New release "The Italian flag walks through Venice / Il Tricolore cammina per Venezia" on /press/release/tricolore and /it/press/release/tricolore, with PDFs in both languages, images, films and walk clips. The press kit's "Press releases" section now lists every release with its own deep link. Walk on Saturday 14 November (11:00, Riva to San Marco) added to /walks.
+
+### Changes
+
+- `/press/release` lists releases newest first (`release-slugs` in `src/amp/pages/press/page.cljs`); the general release moved to `/press/release/final-weeks`. `/press/tricolore` redirects; short links `/tricolore` (Italian) and `/flag-walk`.
+- PDF template (`build/press-release-pdf.mjs`) restyled to the site: Jost / Newsreader / IBM Plex Mono, The Studio's mark in black, La Biennale's official RGB logo placed by its 2026 guide, two pages. Share card builder `build/press-share-card.mjs`; Worker previews with `og:locale` for the release pages.
+- Press contact is pressoffice@armenianpavilion.org everywhere.
+
+
 ## 2026-11-09 — Press: the 6 November walk photographs
 
 **Rationale:** The walk with the Italian flag should be in the press set, captioned, for anyone writing about it.
