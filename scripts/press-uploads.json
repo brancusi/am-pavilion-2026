@@ -4971,5 +4971,1265 @@
     "crc": 1038348572
    }
   }
+ },
+ "d4600f7410": {
+  "key": "press/d4600f7410",
+  "w": 2318,
+  "h": 2522,
+  "stamp": "17646212:1794445151920",
+  "tiers": {
+   "stamp": "17646212:1794445151920",
+   "s": {
+    "key": "press/d4600f7410-s.jpg",
+    "name": "armenian-pavilion-leaning-slab-between-blocks-d4600f7410-small.jpg",
+    "w": 1103,
+    "h": 1200,
+    "bytes": 201197,
+    "crc": 1794233104
+   },
+   "m": {
+    "key": "press/d4600f7410-m.jpg",
+    "name": "armenian-pavilion-leaning-slab-between-blocks-d4600f7410-medium.jpg",
+    "w": 2206,
+    "h": 2400,
+    "bytes": 737416,
+    "crc": 301241626
+   },
+   "l": {
+    "key": "press/d4600f7410-l.jpg",
+    "name": "armenian-pavilion-leaning-slab-between-blocks-d4600f7410-large.jpg",
+    "w": 2318,
+    "h": 2522,
+    "bytes": 1079895,
+    "crc": 2340018951
+   },
+   "raw": {
+    "key": "press/d4600f7410-raw.tif",
+    "name": "armenian-pavilion-leaning-slab-between-blocks-d4600f7410.tif",
+    "w": 2318,
+    "h": 2522,
+    "ext": "tif",
+    "bytes": 17646212,
+    "crc": 893454346
+   }
+  }
+ },
+ "4998251a16": {
+  "key": "press/4998251a16",
+  "w": 4096,
+  "h": 3968,
+  "stamp": "29919274:1793780692683",
+  "tiers": {
+   "stamp": "29919274:1793780692683",
+   "s": {
+    "key": "press/4998251a16-s.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-4998251a16-small.jpg",
+    "w": 1200,
+    "h": 1163,
+    "bytes": 93348,
+    "crc": 955232990
+   },
+   "m": {
+    "key": "press/4998251a16-m.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-4998251a16-medium.jpg",
+    "w": 2400,
+    "h": 2325,
+    "bytes": 819328,
+    "crc": 702085379
+   },
+   "l": {
+    "key": "press/4998251a16-l.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-4998251a16-large.jpg",
+    "w": 4000,
+    "h": 3875,
+    "bytes": 3417146,
+    "crc": 1915940547
+   },
+   "raw": {
+    "key": "press/4998251a16-raw.tif",
+    "name": "armenian-pavilion-blue-pink-red-yellow-4998251a16.tif",
+    "w": 4096,
+    "h": 3968,
+    "ext": "tif",
+    "bytes": 29919274,
+    "crc": 1429387987
+   }
+  }
+ },
+ "2b92cf70ed": {
+  "key": "press/2b92cf70ed",
+  "w": 2400,
+  "h": 3200,
+  "stamp": "21284182:1794445152698",
+  "tiers": {
+   "stamp": "21284182:1794445152698",
+   "s": {
+    "key": "press/2b92cf70ed-s.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-2b92cf70ed-small.jpg",
+    "w": 900,
+    "h": 1200,
+    "bytes": 109300,
+    "crc": 3739108611
+   },
+   "m": {
+    "key": "press/2b92cf70ed-m.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-2b92cf70ed-medium.jpg",
+    "w": 1800,
+    "h": 2400,
+    "bytes": 423841,
+    "crc": 2332816775
+   },
+   "l": {
+    "key": "press/2b92cf70ed-l.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-2b92cf70ed-large.jpg",
+    "w": 2400,
+    "h": 3200,
+    "bytes": 1068325,
+    "crc": 757262664
+   },
+   "raw": {
+    "key": "press/2b92cf70ed-raw.tif",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-2b92cf70ed.tif",
+    "w": 2400,
+    "h": 3200,
+    "ext": "tif",
+    "bytes": 21284182,
+    "crc": 3581647989
+   }
+  }
+ },
+ "6a0dd163b4": {
+  "key": "press/6a0dd163b4",
+  "w": 3456,
+  "h": 4608,
+  "stamp": "52501770:1794445126648",
+  "tiers": {
+   "stamp": "52501770:1794445126648",
+   "s": {
+    "key": "press/6a0dd163b4-s.jpg",
+    "name": "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-6a0dd163b4-small.jpg",
+    "w": 900,
+    "h": 1200,
+    "bytes": 155484,
+    "crc": 3583421788
+   },
+   "m": {
+    "key": "press/6a0dd163b4-m.jpg",
+    "name": "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-6a0dd163b4-medium.jpg",
+    "w": 1800,
+    "h": 2400,
+    "bytes": 946663,
+    "crc": 2426845615
+   },
+   "l": {
+    "key": "press/6a0dd163b4-l.jpg",
+    "name": "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-6a0dd163b4-large.jpg",
+    "w": 3000,
+    "h": 4000,
+    "bytes": 4142108,
+    "crc": 4228444467
+   },
+   "raw": {
+    "key": "press/6a0dd163b4-raw.tif",
+    "name": "armenian-pavilion-who-s-afraid-of-red-yellow-and-blue-remembering-6a0dd163b4.tif",
+    "w": 3456,
+    "h": 4608,
+    "ext": "tif",
+    "bytes": 52501770,
+    "crc": 431009177
+   }
+  }
+ },
+ "2d2f3ecce3": {
+  "key": "press/2d2f3ecce3",
+  "w": 3170,
+  "h": 4357,
+  "stamp": "82905510:1794414044856",
+  "tiers": {
+   "stamp": "82905510:1794414044856",
+   "s": {
+    "key": "press/2d2f3ecce3-s.jpg",
+    "name": "armenian-pavilion-untitled-study-2d2f3ecce3-small.jpg",
+    "w": 873,
+    "h": 1200,
+    "bytes": 130759,
+    "crc": 512168362
+   },
+   "m": {
+    "key": "press/2d2f3ecce3-m.jpg",
+    "name": "armenian-pavilion-untitled-study-2d2f3ecce3-medium.jpg",
+    "w": 1746,
+    "h": 2400,
+    "bytes": 556307,
+    "crc": 273453549
+   },
+   "l": {
+    "key": "press/2d2f3ecce3-l.jpg",
+    "name": "armenian-pavilion-untitled-study-2d2f3ecce3-large.jpg",
+    "w": 2910,
+    "h": 4000,
+    "bytes": 1885371,
+    "crc": 780554134
+   },
+   "raw": {
+    "key": "press/2d2f3ecce3-raw.tif",
+    "name": "armenian-pavilion-untitled-study-2d2f3ecce3.tif",
+    "w": 3170,
+    "h": 4357,
+    "ext": "tif",
+    "bytes": 82905510,
+    "crc": 1289910611
+   }
+  }
+ },
+ "1158a691c9": {
+  "key": "press/1158a691c9",
+  "w": 4284,
+  "h": 5716,
+  "stamp": "70973498:1794445127930",
+  "tiers": {
+   "stamp": "70973498:1794445127930",
+   "s": {
+    "key": "press/1158a691c9-s.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-1158a691c9-small.jpg",
+    "w": 899,
+    "h": 1200,
+    "bytes": 175921,
+    "crc": 1043130033
+   },
+   "m": {
+    "key": "press/1158a691c9-m.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-1158a691c9-medium.jpg",
+    "w": 1799,
+    "h": 2400,
+    "bytes": 760699,
+    "crc": 2334962290
+   },
+   "l": {
+    "key": "press/1158a691c9-l.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-1158a691c9-large.jpg",
+    "w": 2998,
+    "h": 4000,
+    "bytes": 2368284,
+    "crc": 3947586239
+   },
+   "raw": {
+    "key": "press/1158a691c9-raw.tif",
+    "name": "armenian-pavilion-two-blocks-on-beams-1158a691c9.tif",
+    "w": 4284,
+    "h": 5716,
+    "ext": "tif",
+    "bytes": 70973498,
+    "crc": 1206414283
+   }
+  }
+ },
+ "404f5eb613": {
+  "key": "press/404f5eb613",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77905684:1794448124821",
+  "tiers": {
+   "stamp": "77905684:1794448124821",
+   "s": {
+    "key": "press/404f5eb613-s.jpg",
+    "name": "armenian-pavilion-seven-steps-to-heaven-in-memory-of-robert-smiths-404f5eb613-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 100638,
+    "crc": 2376117683
+   },
+   "m": {
+    "key": "press/404f5eb613-m.jpg",
+    "name": "armenian-pavilion-seven-steps-to-heaven-in-memory-of-robert-smiths-404f5eb613-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 409945,
+    "crc": 1885873279
+   },
+   "l": {
+    "key": "press/404f5eb613-l.jpg",
+    "name": "armenian-pavilion-seven-steps-to-heaven-in-memory-of-robert-smiths-404f5eb613-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1637155,
+    "crc": 1827226909
+   },
+   "raw": {
+    "key": "press/404f5eb613-raw.tif",
+    "name": "armenian-pavilion-seven-steps-to-heaven-in-memory-of-robert-smiths-404f5eb613.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77905684,
+    "crc": 1227163959
+   }
+  }
+ },
+ "51b7562a1e": {
+  "key": "press/51b7562a1e",
+  "w": 1586,
+  "h": 1832,
+  "stamp": "2859584:1794445129141",
+  "tiers": {
+   "stamp": "2859584:1794445129141",
+   "s": {
+    "key": "press/51b7562a1e-s.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-51b7562a1e-small.jpg",
+    "w": 1039,
+    "h": 1200,
+    "bytes": 91276,
+    "crc": 2081117161
+   },
+   "m": {
+    "key": "press/51b7562a1e-m.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-51b7562a1e-medium.jpg",
+    "w": 1586,
+    "h": 1832,
+    "bytes": 195767,
+    "crc": 3679762401
+   },
+   "l": {
+    "key": "press/51b7562a1e-l.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-51b7562a1e-large.jpg",
+    "w": 1586,
+    "h": 1832,
+    "bytes": 252957,
+    "crc": 3943372077
+   },
+   "raw": {
+    "key": "press/51b7562a1e-raw.tif",
+    "name": "armenian-pavilion-italian-flag-drawing-51b7562a1e.tif",
+    "w": 1586,
+    "h": 1832,
+    "ext": "tif",
+    "bytes": 2859584,
+    "crc": 2629495634
+   }
+  }
+ },
+ "8b42e943f9": {
+  "key": "press/8b42e943f9",
+  "w": 2396,
+  "h": 3370,
+  "stamp": "13543240:1794445129507",
+  "tiers": {
+   "stamp": "13543240:1794445129507",
+   "s": {
+    "key": "press/8b42e943f9-s.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-8b42e943f9-small.jpg",
+    "w": 853,
+    "h": 1200,
+    "bytes": 118281,
+    "crc": 3597099001
+   },
+   "m": {
+    "key": "press/8b42e943f9-m.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-8b42e943f9-medium.jpg",
+    "w": 1706,
+    "h": 2400,
+    "bytes": 417358,
+    "crc": 3024840537
+   },
+   "l": {
+    "key": "press/8b42e943f9-l.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-8b42e943f9-large.jpg",
+    "w": 2396,
+    "h": 3370,
+    "bytes": 857527,
+    "crc": 1432511589
+   },
+   "raw": {
+    "key": "press/8b42e943f9-raw.tif",
+    "name": "armenian-pavilion-italian-flag-drawing-8b42e943f9.tif",
+    "w": 2396,
+    "h": 3370,
+    "ext": "tif",
+    "bytes": 13543240,
+    "crc": 2967800658
+   }
+  }
+ },
+ "a399a446fe": {
+  "key": "press/a399a446fe",
+  "w": 3593,
+  "h": 2222,
+  "stamp": "4486414:1794445218761",
+  "tiers": {
+   "stamp": "4486414:1794445218761",
+   "s": {
+    "key": "press/a399a446fe-s.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-a399a446fe-small.jpg",
+    "w": 1200,
+    "h": 742,
+    "bytes": 74534,
+    "crc": 1815137048
+   },
+   "m": {
+    "key": "press/a399a446fe-m.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-a399a446fe-medium.jpg",
+    "w": 2400,
+    "h": 1484,
+    "bytes": 236568,
+    "crc": 1812538506
+   },
+   "l": {
+    "key": "press/a399a446fe-l.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-a399a446fe-large.jpg",
+    "w": 3593,
+    "h": 2222,
+    "bytes": 519961,
+    "crc": 133873872
+   },
+   "raw": {
+    "key": "press/a399a446fe-raw.tif",
+    "name": "armenian-pavilion-italian-flag-drawing-a399a446fe.tif",
+    "w": 3593,
+    "h": 2222,
+    "ext": "tif",
+    "bytes": 4486414,
+    "crc": 3340826055
+   }
+  }
+ },
+ "06412a92ab": {
+  "key": "press/06412a92ab",
+  "w": 3713,
+  "h": 2180,
+  "stamp": "11329770:1794445218930",
+  "tiers": {
+   "stamp": "11329770:1794445218930",
+   "s": {
+    "key": "press/06412a92ab-s.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-06412a92ab-small.jpg",
+    "w": 1200,
+    "h": 705,
+    "bytes": 110006,
+    "crc": 3103551961
+   },
+   "m": {
+    "key": "press/06412a92ab-m.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-06412a92ab-medium.jpg",
+    "w": 2400,
+    "h": 1409,
+    "bytes": 409479,
+    "crc": 1717455680
+   },
+   "l": {
+    "key": "press/06412a92ab-l.jpg",
+    "name": "armenian-pavilion-italian-flag-drawing-06412a92ab-large.jpg",
+    "w": 3713,
+    "h": 2180,
+    "bytes": 959552,
+    "crc": 1483325299
+   },
+   "raw": {
+    "key": "press/06412a92ab-raw.tif",
+    "name": "armenian-pavilion-italian-flag-drawing-06412a92ab.tif",
+    "w": 3713,
+    "h": 2180,
+    "ext": "tif",
+    "bytes": 11329770,
+    "crc": 3300163727
+   }
+  }
+ },
+ "badd1b1d01": {
+  "key": "press/badd1b1d01",
+  "w": 6836,
+  "h": 9413,
+  "stamp": "193073912:1794445902174",
+  "tiers": {
+   "stamp": "193073912:1794445902174",
+   "s": {
+    "key": "press/badd1b1d01-s.jpg",
+    "name": "armenian-pavilion-italian-flag-rendering-badd1b1d01-small.jpg",
+    "w": 871,
+    "h": 1200,
+    "bytes": 142641,
+    "crc": 779506559
+   },
+   "m": {
+    "key": "press/badd1b1d01-m.jpg",
+    "name": "armenian-pavilion-italian-flag-rendering-badd1b1d01-medium.jpg",
+    "w": 1743,
+    "h": 2400,
+    "bytes": 555208,
+    "crc": 1072619187
+   },
+   "l": {
+    "key": "press/badd1b1d01-l.jpg",
+    "name": "armenian-pavilion-italian-flag-rendering-badd1b1d01-large.jpg",
+    "w": 2905,
+    "h": 4000,
+    "bytes": 1715319,
+    "crc": 3465988493
+   },
+   "raw": {
+    "key": "press/badd1b1d01-raw.tif",
+    "name": "armenian-pavilion-italian-flag-rendering-badd1b1d01.tif",
+    "w": 6836,
+    "h": 9413,
+    "ext": "tif",
+    "bytes": 193073912,
+    "crc": 1147829044
+   }
+  }
+ },
+ "5abb7594fa": {
+  "key": "press/5abb7594fa",
+  "w": 3349,
+  "h": 4515,
+  "stamp": "45433106:1794447348113",
+  "tiers": {
+   "stamp": "45433106:1794447348113",
+   "s": {
+    "key": "press/5abb7594fa-s.jpg",
+    "name": "armenian-pavilion-our-armenian-flag-rendering-5abb7594fa-small.jpg",
+    "w": 890,
+    "h": 1200,
+    "bytes": 132964,
+    "crc": 769146611
+   },
+   "m": {
+    "key": "press/5abb7594fa-m.jpg",
+    "name": "armenian-pavilion-our-armenian-flag-rendering-5abb7594fa-medium.jpg",
+    "w": 1780,
+    "h": 2400,
+    "bytes": 622719,
+    "crc": 726506316
+   },
+   "l": {
+    "key": "press/5abb7594fa-l.jpg",
+    "name": "armenian-pavilion-our-armenian-flag-rendering-5abb7594fa-large.jpg",
+    "w": 2967,
+    "h": 4000,
+    "bytes": 2598104,
+    "crc": 1036549031
+   },
+   "raw": {
+    "key": "press/5abb7594fa-raw.tif",
+    "name": "armenian-pavilion-our-armenian-flag-rendering-5abb7594fa.tif",
+    "w": 3349,
+    "h": 4515,
+    "ext": "tif",
+    "bytes": 45433106,
+    "crc": 7683573
+   }
+  }
+ },
+ "c2ab31ede9": {
+  "key": "press/c2ab31ede9",
+  "w": 2048,
+  "h": 1152,
+  "stamp": "1986036:1792241026298",
+  "tiers": {
+   "stamp": "1986036:1792241026298",
+   "s": {
+    "key": "press/c2ab31ede9-s.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-rendering-c2ab31ede9-small.jpg",
+    "w": 1200,
+    "h": 675,
+    "bytes": 15893,
+    "crc": 3867888030
+   },
+   "m": {
+    "key": "press/c2ab31ede9-m.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-rendering-c2ab31ede9-medium.jpg",
+    "w": 2048,
+    "h": 1152,
+    "bytes": 33777,
+    "crc": 3376888760
+   },
+   "l": {
+    "key": "press/c2ab31ede9-l.jpg",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-rendering-c2ab31ede9-large.jpg",
+    "w": 2048,
+    "h": 1152,
+    "bytes": 45896,
+    "crc": 2751254932
+   },
+   "raw": {
+    "key": "press/c2ab31ede9-raw.png",
+    "name": "armenian-pavilion-leaning-panels-on-blocks-rendering-c2ab31ede9.png",
+    "w": 2048,
+    "h": 1152,
+    "ext": "png",
+    "bytes": 1986036,
+    "crc": 1347311373
+   }
+  }
+ },
+ "f5f6e88a75": {
+  "key": "press/f5f6e88a75",
+  "w": 12288,
+  "h": 6912,
+  "stamp": "254824402:1794449032309",
+  "tiers": {
+   "stamp": "254824402:1794449032309",
+   "s": {
+    "key": "press/f5f6e88a75-s.jpg",
+    "name": "armenian-pavilion-leaning-book-rendering-f5f6e88a75-small.jpg",
+    "w": 1200,
+    "h": 675,
+    "bytes": 17422,
+    "crc": 3324402025
+   },
+   "m": {
+    "key": "press/f5f6e88a75-m.jpg",
+    "name": "armenian-pavilion-leaning-book-rendering-f5f6e88a75-medium.jpg",
+    "w": 2400,
+    "h": 1350,
+    "bytes": 63534,
+    "crc": 3125417667
+   },
+   "l": {
+    "key": "press/f5f6e88a75-l.jpg",
+    "name": "armenian-pavilion-leaning-book-rendering-f5f6e88a75-large.jpg",
+    "w": 4000,
+    "h": 2250,
+    "bytes": 504717,
+    "crc": 3097587402
+   },
+   "raw": {
+    "key": "press/f5f6e88a75-raw.tif",
+    "name": "armenian-pavilion-leaning-book-rendering-f5f6e88a75.tif",
+    "w": 12288,
+    "h": 6912,
+    "ext": "tif",
+    "bytes": 254824402,
+    "crc": 1913746921
+   }
+  }
+ },
+ "25cf1540eb": {
+  "key": "press/25cf1540eb",
+  "w": 3456,
+  "h": 4928,
+  "stamp": "13664857:1792665326696",
+  "tiers": {
+   "stamp": "13664857:1792665326696",
+   "s": {
+    "key": "press/25cf1540eb-s.jpg",
+    "name": "armenian-pavilion-study-for-jasper-johns-the-seven-rendering-25cf1540eb-small.jpg",
+    "w": 842,
+    "h": 1200,
+    "bytes": 41602,
+    "crc": 144065012
+   },
+   "m": {
+    "key": "press/25cf1540eb-m.jpg",
+    "name": "armenian-pavilion-study-for-jasper-johns-the-seven-rendering-25cf1540eb-medium.jpg",
+    "w": 1683,
+    "h": 2400,
+    "bytes": 119554,
+    "crc": 764202796
+   },
+   "l": {
+    "key": "press/25cf1540eb-l.jpg",
+    "name": "armenian-pavilion-study-for-jasper-johns-the-seven-rendering-25cf1540eb-large.jpg",
+    "w": 2805,
+    "h": 4000,
+    "bytes": 343111,
+    "crc": 4138509450
+   },
+   "raw": {
+    "key": "press/25cf1540eb-raw.png",
+    "name": "armenian-pavilion-study-for-jasper-johns-the-seven-rendering-25cf1540eb.png",
+    "w": 3456,
+    "h": 4928,
+    "ext": "png",
+    "bytes": 13664857,
+    "crc": 2344728298
+   }
+  }
+ },
+ "d41af24eeb": {
+  "key": "press/d41af24eeb",
+  "w": 1770,
+  "h": 2360,
+  "stamp": "3766992:1794445129039",
+  "tiers": {
+   "stamp": "3766992:1794445129039",
+   "s": {
+    "key": "press/d41af24eeb-s.jpg",
+    "name": "armenian-pavilion-for-sol-lewitt-drawing-d41af24eeb-small.jpg",
+    "w": 900,
+    "h": 1200,
+    "bytes": 98962,
+    "crc": 3160401202
+   },
+   "m": {
+    "key": "press/d41af24eeb-m.jpg",
+    "name": "armenian-pavilion-for-sol-lewitt-drawing-d41af24eeb-medium.jpg",
+    "w": 1770,
+    "h": 2360,
+    "bytes": 348664,
+    "crc": 3359752081
+   },
+   "l": {
+    "key": "press/d41af24eeb-l.jpg",
+    "name": "armenian-pavilion-for-sol-lewitt-drawing-d41af24eeb-large.jpg",
+    "w": 1770,
+    "h": 2360,
+    "bytes": 448436,
+    "crc": 2444916363
+   },
+   "raw": {
+    "key": "press/d41af24eeb-raw.tif",
+    "name": "armenian-pavilion-for-sol-lewitt-drawing-d41af24eeb.tif",
+    "w": 1770,
+    "h": 2360,
+    "ext": "tif",
+    "bytes": 3766992,
+    "crc": 3649083089
+   }
+  }
+ },
+ "4f6cfd6f0f": {
+  "key": "press/4f6cfd6f0f",
+  "w": 2365,
+  "h": 3155,
+  "stamp": "5320258:1794445128372",
+  "tiers": {
+   "stamp": "5320258:1794445128372",
+   "s": {
+    "key": "press/4f6cfd6f0f-s.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-drawing-4f6cfd6f0f-small.jpg",
+    "w": 900,
+    "h": 1200,
+    "bytes": 84802,
+    "crc": 1260149597
+   },
+   "m": {
+    "key": "press/4f6cfd6f0f-m.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-drawing-4f6cfd6f0f-medium.jpg",
+    "w": 1799,
+    "h": 2400,
+    "bytes": 312764,
+    "crc": 2709921272
+   },
+   "l": {
+    "key": "press/4f6cfd6f0f-l.jpg",
+    "name": "armenian-pavilion-two-blocks-on-beams-drawing-4f6cfd6f0f-large.jpg",
+    "w": 2365,
+    "h": 3155,
+    "bytes": 622140,
+    "crc": 59174790
+   },
+   "raw": {
+    "key": "press/4f6cfd6f0f-raw.tif",
+    "name": "armenian-pavilion-two-blocks-on-beams-drawing-4f6cfd6f0f.tif",
+    "w": 2365,
+    "h": 3155,
+    "ext": "tif",
+    "bytes": 5320258,
+    "crc": 1543841124
+   }
+  }
+ },
+ "bbfda8422d": {
+  "key": "press/bbfda8422d",
+  "w": 1650,
+  "h": 1890,
+  "stamp": "4954281:1777366149000",
+  "tiers": {
+   "stamp": "4954281:1777366149000",
+   "s": {
+    "key": "press/bbfda8422d-s.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-drawing-bbfda8422d-small.jpg",
+    "w": 1048,
+    "h": 1200,
+    "bytes": 70254,
+    "crc": 1345155895
+   },
+   "m": {
+    "key": "press/bbfda8422d-m.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-drawing-bbfda8422d-medium.jpg",
+    "w": 1650,
+    "h": 1890,
+    "bytes": 143168,
+    "crc": 1020117134
+   },
+   "l": {
+    "key": "press/bbfda8422d-l.jpg",
+    "name": "armenian-pavilion-blue-pink-red-yellow-drawing-bbfda8422d-large.jpg",
+    "w": 1650,
+    "h": 1890,
+    "bytes": 172866,
+    "crc": 4051949254
+   },
+   "raw": {
+    "key": "press/bbfda8422d-raw.psd",
+    "name": "armenian-pavilion-blue-pink-red-yellow-drawing-bbfda8422d.psd",
+    "w": 1650,
+    "h": 1890,
+    "ext": "psd",
+    "bytes": 4954281,
+    "crc": 1766149791
+   }
+  }
+ },
+ "9e51b0e9f1": {
+  "key": "press/9e51b0e9f1",
+  "w": 3496,
+  "h": 4720,
+  "stamp": "5882424:1794445128878",
+  "tiers": {
+   "stamp": "5882424:1794445128878",
+   "s": {
+    "key": "press/9e51b0e9f1-s.jpg",
+    "name": "armenian-pavilion-drawing-9e51b0e9f1-small.jpg",
+    "w": 889,
+    "h": 1200,
+    "bytes": 77167,
+    "crc": 2507815663
+   },
+   "m": {
+    "key": "press/9e51b0e9f1-m.jpg",
+    "name": "armenian-pavilion-drawing-9e51b0e9f1-medium.jpg",
+    "w": 1778,
+    "h": 2400,
+    "bytes": 221347,
+    "crc": 2308009585
+   },
+   "l": {
+    "key": "press/9e51b0e9f1-l.jpg",
+    "name": "armenian-pavilion-drawing-9e51b0e9f1-large.jpg",
+    "w": 2963,
+    "h": 4000,
+    "bytes": 551131,
+    "crc": 3952516058
+   },
+   "raw": {
+    "key": "press/9e51b0e9f1-raw.tif",
+    "name": "armenian-pavilion-drawing-9e51b0e9f1.tif",
+    "w": 3496,
+    "h": 4720,
+    "ext": "tif",
+    "bytes": 5882424,
+    "crc": 1266029778
+   }
+  }
+ },
+ "be399a1819": {
+  "key": "press/be399a1819",
+  "w": 6912,
+  "h": 9216,
+  "stamp": "191127342:1794442456638",
+  "tiers": {
+   "stamp": "191127342:1794442456638",
+   "s": {
+    "key": "press/be399a1819-s.jpg",
+    "name": "armenian-pavilion-in-memory-of-richard-serra-and-abstract-slavery-be399a1819-small.jpg",
+    "w": 900,
+    "h": 1200,
+    "bytes": 81282,
+    "crc": 99869459
+   },
+   "m": {
+    "key": "press/be399a1819-m.jpg",
+    "name": "armenian-pavilion-in-memory-of-richard-serra-and-abstract-slavery-be399a1819-medium.jpg",
+    "w": 1800,
+    "h": 2400,
+    "bytes": 506848,
+    "crc": 4231232900
+   },
+   "l": {
+    "key": "press/be399a1819-l.jpg",
+    "name": "armenian-pavilion-in-memory-of-richard-serra-and-abstract-slavery-be399a1819-large.jpg",
+    "w": 3000,
+    "h": 4000,
+    "bytes": 2519101,
+    "crc": 3132914018
+   },
+   "raw": {
+    "key": "press/be399a1819-raw.tif",
+    "name": "armenian-pavilion-in-memory-of-richard-serra-and-abstract-slavery-be399a1819.tif",
+    "w": 6912,
+    "h": 9216,
+    "ext": "tif",
+    "bytes": 191127342,
+    "crc": 2943170307
+   }
+  }
+ },
+ "b0b3cb4926": {
+  "key": "press/b0b3cb4926",
+  "w": 8747,
+  "h": 5122,
+  "stamp": "66277516:1794480178480",
+  "tiers": {
+   "stamp": "66277516:1794480178480",
+   "s": {
+    "key": "press/b0b3cb4926-s.jpg",
+    "name": "armenian-pavilion-jasper-johns-the-seven-in-progress-b0b3cb4926-small.jpg",
+    "w": 1200,
+    "h": 703,
+    "bytes": 81813,
+    "crc": 599278972
+   },
+   "m": {
+    "key": "press/b0b3cb4926-m.jpg",
+    "name": "armenian-pavilion-jasper-johns-the-seven-in-progress-b0b3cb4926-medium.jpg",
+    "w": 2400,
+    "h": 1405,
+    "bytes": 281184,
+    "crc": 2555954860
+   },
+   "l": {
+    "key": "press/b0b3cb4926-l.jpg",
+    "name": "armenian-pavilion-jasper-johns-the-seven-in-progress-b0b3cb4926-large.jpg",
+    "w": 4000,
+    "h": 2342,
+    "bytes": 1173368,
+    "crc": 2135724611
+   },
+   "raw": {
+    "key": "press/b0b3cb4926-raw.tif",
+    "name": "armenian-pavilion-jasper-johns-the-seven-in-progress-b0b3cb4926.tif",
+    "w": 8747,
+    "h": 5122,
+    "ext": "tif",
+    "bytes": 66277516,
+    "crc": 3835481914
+   }
+  }
+ },
+ "e6f53eaedb": {
+  "key": "press/e6f53eaedb",
+  "w": 7680,
+  "h": 4320,
+  "stamp": "99556856:1794442874447",
+  "tiers": {
+   "stamp": "99556856:1794442874447",
+   "s": {
+    "key": "press/e6f53eaedb-s.jpg",
+    "name": "armenian-pavilion-casting-jasper-johns-the-seven-e6f53eaedb-small.jpg",
+    "w": 1200,
+    "h": 675,
+    "bytes": 45834,
+    "crc": 362795037
+   },
+   "m": {
+    "key": "press/e6f53eaedb-m.jpg",
+    "name": "armenian-pavilion-casting-jasper-johns-the-seven-e6f53eaedb-medium.jpg",
+    "w": 2400,
+    "h": 1350,
+    "bytes": 170898,
+    "crc": 2768962712
+   },
+   "l": {
+    "key": "press/e6f53eaedb-l.jpg",
+    "name": "armenian-pavilion-casting-jasper-johns-the-seven-e6f53eaedb-large.jpg",
+    "w": 4000,
+    "h": 2250,
+    "bytes": 612559,
+    "crc": 1190703675
+   },
+   "raw": {
+    "key": "press/e6f53eaedb-raw.tif",
+    "name": "armenian-pavilion-casting-jasper-johns-the-seven-e6f53eaedb.tif",
+    "w": 7680,
+    "h": 4320,
+    "ext": "tif",
+    "bytes": 99556856,
+    "crc": 3370119549
+   }
+  }
+ },
+ "fd838ae6c9": {
+  "key": "press/fd838ae6c9",
+  "w": 7680,
+  "h": 4320,
+  "stamp": "99560188:1794442874228",
+  "tiers": {
+   "stamp": "99560188:1794442874228",
+   "s": {
+    "key": "press/fd838ae6c9-s.jpg",
+    "name": "armenian-pavilion-assembling-a-work-fd838ae6c9-small.jpg",
+    "w": 1200,
+    "h": 675,
+    "bytes": 100819,
+    "crc": 3795623535
+   },
+   "m": {
+    "key": "press/fd838ae6c9-m.jpg",
+    "name": "armenian-pavilion-assembling-a-work-fd838ae6c9-medium.jpg",
+    "w": 2400,
+    "h": 1350,
+    "bytes": 396025,
+    "crc": 287846574
+   },
+   "l": {
+    "key": "press/fd838ae6c9-l.jpg",
+    "name": "armenian-pavilion-assembling-a-work-fd838ae6c9-large.jpg",
+    "w": 4000,
+    "h": 2250,
+    "bytes": 1213253,
+    "crc": 2761200707
+   },
+   "raw": {
+    "key": "press/fd838ae6c9-raw.tif",
+    "name": "armenian-pavilion-assembling-a-work-fd838ae6c9.tif",
+    "w": 7680,
+    "h": 4320,
+    "ext": "tif",
+    "bytes": 99560188,
+    "crc": 2004400253
+   }
+  }
+ },
+ "709579604b": {
+  "key": "press/709579604b",
+  "w": 12480,
+  "h": 7171,
+  "stamp": "136654362:1794480168653",
+  "tiers": {
+   "stamp": "136654362:1794480168653",
+   "s": {
+    "key": "press/709579604b-s.jpg",
+    "name": "armenian-pavilion-works-in-progress-on-the-worktable-709579604b-small.jpg",
+    "w": 1200,
+    "h": 690,
+    "bytes": 146846,
+    "crc": 2863304033
+   },
+   "m": {
+    "key": "press/709579604b-m.jpg",
+    "name": "armenian-pavilion-works-in-progress-on-the-worktable-709579604b-medium.jpg",
+    "w": 2400,
+    "h": 1379,
+    "bytes": 616821,
+    "crc": 652612176
+   },
+   "l": {
+    "key": "press/709579604b-l.jpg",
+    "name": "armenian-pavilion-works-in-progress-on-the-worktable-709579604b-large.jpg",
+    "w": 4000,
+    "h": 2298,
+    "bytes": 2111841,
+    "crc": 664587242
+   },
+   "raw": {
+    "key": "press/709579604b-raw.tif",
+    "name": "armenian-pavilion-works-in-progress-on-the-worktable-709579604b.tif",
+    "w": 12480,
+    "h": 7171,
+    "ext": "tif",
+    "bytes": 136654362,
+    "crc": 2662435132
+   }
+  }
+ },
+ "6916f7c7db": {
+  "key": "press/6916f7c7db",
+  "w": 7680,
+  "h": 4320,
+  "stamp": "99560082:1794442873943",
+  "tiers": {
+   "stamp": "99560082:1794442873943",
+   "s": {
+    "key": "press/6916f7c7db-s.jpg",
+    "name": "armenian-pavilion-arranging-the-panels-of-jasper-johns-the-seven-6916f7c7db-small.jpg",
+    "w": 1200,
+    "h": 675,
+    "bytes": 87183,
+    "crc": 3847773615
+   },
+   "m": {
+    "key": "press/6916f7c7db-m.jpg",
+    "name": "armenian-pavilion-arranging-the-panels-of-jasper-johns-the-seven-6916f7c7db-medium.jpg",
+    "w": 2400,
+    "h": 1350,
+    "bytes": 321210,
+    "crc": 2788245977
+   },
+   "l": {
+    "key": "press/6916f7c7db-l.jpg",
+    "name": "armenian-pavilion-arranging-the-panels-of-jasper-johns-the-seven-6916f7c7db-large.jpg",
+    "w": 4000,
+    "h": 2250,
+    "bytes": 1006587,
+    "crc": 2105121029
+   },
+   "raw": {
+    "key": "press/6916f7c7db-raw.tif",
+    "name": "armenian-pavilion-arranging-the-panels-of-jasper-johns-the-seven-6916f7c7db.tif",
+    "w": 7680,
+    "h": 4320,
+    "ext": "tif",
+    "bytes": 99560082,
+    "crc": 3047493542
+   }
+  }
+ },
+ "de6a244ee7": {
+  "key": "press/de6a244ee7",
+  "w": 2228,
+  "h": 1504,
+  "stamp": "8395680:1794445128103",
+  "tiers": {
+   "stamp": "8395680:1794445128103",
+   "s": {
+    "key": "press/de6a244ee7-s.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-and-tony-shafrazi-in-the-studio-de6a244ee7-small.jpg",
+    "w": 1200,
+    "h": 810,
+    "bytes": 107362,
+    "crc": 1481504967
+   },
+   "m": {
+    "key": "press/de6a244ee7-m.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-and-tony-shafrazi-in-the-studio-de6a244ee7-medium.jpg",
+    "w": 2228,
+    "h": 1504,
+    "bytes": 429202,
+    "crc": 346894455
+   },
+   "l": {
+    "key": "press/de6a244ee7-l.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-and-tony-shafrazi-in-the-studio-de6a244ee7-large.jpg",
+    "w": 2228,
+    "h": 1504,
+    "bytes": 586622,
+    "crc": 1371637215
+   },
+   "raw": {
+    "key": "press/de6a244ee7-raw.tif",
+    "name": "armenian-pavilion-zadik-zadikian-and-tony-shafrazi-in-the-studio-de6a244ee7.tif",
+    "w": 2228,
+    "h": 1504,
+    "ext": "tif",
+    "bytes": 8395680,
+    "crc": 776447746
+   }
+  }
+ },
+ "34afbd2325": {
+  "key": "press/34afbd2325",
+  "w": 6064,
+  "h": 4078,
+  "stamp": "148383726:1792493381393",
+  "tiers": {
+   "stamp": "148383726:1792493381393",
+   "s": {
+    "key": "press/34afbd2325-s.jpg",
+    "name": "armenian-pavilion-stacking-gold-bricks-9-jay-street-34afbd2325-small.jpg",
+    "w": 1200,
+    "h": 807,
+    "bytes": 120798,
+    "crc": 2286081689
+   },
+   "m": {
+    "key": "press/34afbd2325-m.jpg",
+    "name": "armenian-pavilion-stacking-gold-bricks-9-jay-street-34afbd2325-medium.jpg",
+    "w": 2400,
+    "h": 1614,
+    "bytes": 472455,
+    "crc": 3140258480
+   },
+   "l": {
+    "key": "press/34afbd2325-l.jpg",
+    "name": "armenian-pavilion-stacking-gold-bricks-9-jay-street-34afbd2325-large.jpg",
+    "w": 4000,
+    "h": 2690,
+    "bytes": 1407087,
+    "crc": 1162498246
+   },
+   "raw": {
+    "key": "press/34afbd2325-raw.tif",
+    "name": "armenian-pavilion-stacking-gold-bricks-9-jay-street-34afbd2325.tif",
+    "w": 6064,
+    "h": 4078,
+    "ext": "tif",
+    "bytes": 148383726,
+    "crc": 1120605248
+   }
+  }
+ },
+ "950594935a": {
+  "key": "press/950594935a",
+  "w": 5626,
+  "h": 4078,
+  "stamp": "137105108:1794153848425",
+  "tiers": {
+   "stamp": "137105108:1794153848425",
+   "s": {
+    "key": "press/950594935a-s.jpg",
+    "name": "armenian-pavilion-one-thousand-gold-bricks-950594935a-small.jpg",
+    "w": 1200,
+    "h": 870,
+    "bytes": 150331,
+    "crc": 380839567
+   },
+   "m": {
+    "key": "press/950594935a-m.jpg",
+    "name": "armenian-pavilion-one-thousand-gold-bricks-950594935a-medium.jpg",
+    "w": 2400,
+    "h": 1740,
+    "bytes": 548556,
+    "crc": 3787004586
+   },
+   "l": {
+    "key": "press/950594935a-l.jpg",
+    "name": "armenian-pavilion-one-thousand-gold-bricks-950594935a-large.jpg",
+    "w": 4000,
+    "h": 2899,
+    "bytes": 1798534,
+    "crc": 966674910
+   },
+   "raw": {
+    "key": "press/950594935a-raw.tif",
+    "name": "armenian-pavilion-one-thousand-gold-bricks-950594935a.tif",
+    "w": 5626,
+    "h": 4078,
+    "ext": "tif",
+    "bytes": 137105108,
+    "crc": 3803991622
+   }
+  }
+ },
+ "85f0271cf9": {
+  "key": "press/85f0271cf9",
+  "w": 4210,
+  "h": 2762,
+  "stamp": "33045425:1792487566307",
+  "tiers": {
+   "stamp": "33045425:1792487566307",
+   "s": {
+    "key": "press/85f0271cf9-s.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-gilding-five-85f0271cf9-small.jpg",
+    "w": 1200,
+    "h": 787,
+    "bytes": 131432,
+    "crc": 4119702714
+   },
+   "m": {
+    "key": "press/85f0271cf9-m.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-gilding-five-85f0271cf9-medium.jpg",
+    "w": 2400,
+    "h": 1575,
+    "bytes": 842972,
+    "crc": 409271450
+   },
+   "l": {
+    "key": "press/85f0271cf9-l.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-gilding-five-85f0271cf9-large.jpg",
+    "w": 4000,
+    "h": 2624,
+    "bytes": 3580790,
+    "crc": 3150277742
+   },
+   "raw": {
+    "key": "press/85f0271cf9-raw.tif",
+    "name": "armenian-pavilion-zadik-zadikian-gilding-five-85f0271cf9.tif",
+    "w": 4210,
+    "h": 2762,
+    "ext": "tif",
+    "bytes": 33045425,
+    "crc": 2962111295
+   }
+  }
  }
 }

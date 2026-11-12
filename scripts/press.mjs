@@ -29,7 +29,7 @@ const PROJECT = job.frozen || arg;
 const OUT = 'resources/data/press/press.json';
 const CSV = 'resources/data/press/captions.csv';
 const SEEN = 'scripts/press-uploads.json';  // what's been uploaded, so a Sync skips it
-const JOBS = 6;
+const JOBS = Number(process.env.PRESS_JOBS) || 6;   // PRESS_JOBS=2 when big TIFFs run the machine out of memory
 
 // The site's naming, whatever the captions say.
 const name = (s) => (s || '')
