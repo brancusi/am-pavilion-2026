@@ -602,12 +602,7 @@
                        (when (and (= path "stories") (= here "stories"))
                          (d/ol {:class "ap-kit__menu-sub"}
                                (for [id notes :let [note (get k (keyword id))] :when note]
-                                 (d/li {:key id} (d/a {:href (str (page-href "stories") "#" id)} (:title note)))))))))
-         (d/div {:class "ap-kit__lang" :role "group" :aria-label (ts :press/language)}
-                (for [l i18n/locales]
-                  (d/a {:key l :href (page-href here l) :lang l :hrefLang l
-                        :aria-current (when (= l (i18n/locale)) "true")}
-                       (i18n/short-names l)))))))
+                                 (d/li {:key id} (d/a {:href (str (page-href "stories") "#" id)} (:title note))))))))))))
 
 (defnc press-page
   []
