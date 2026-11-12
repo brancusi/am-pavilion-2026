@@ -84,7 +84,13 @@
   [{:keys [title caption_short caption]}]
   (m (or (not-empty title) (not-empty caption_short) caption)))
 
-(defn- photo [credit] (ts :press/photo {:name (m credit)}))
+(defn- photo
+  "The credit line. A credit that already says what it is (\"Photo Silvia Motta\", \"Rendering Aram Zadikian\",
+  the caption house style since 12 Nov 2026) shows as written; a bare name gets \"Photo: name\"."
+  [credit]
+  (if (re-find #"^(Photo|Rendering|Drawing|Video still) " credit)
+    (m credit)
+    (ts :press/photo {:name (m credit)})))
 
 (defn- copy-text [{:keys [caption caption_short credit]}]
   (or (m (not-empty caption)) (m (not-empty caption_short)) (when (seq credit) (photo credit))))
