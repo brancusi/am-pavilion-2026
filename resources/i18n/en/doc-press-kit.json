@@ -545,6 +545,15 @@
   "title": null,
   "films": [
    {
+    "slug": "jasper-johns",
+    "held": false,
+    "title": "Jasper Johns",
+    "date": "October 2026",
+    "credit": "Film: Bibiana Juritz and Aram Zadikian. Edit: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "Twelve plaster slabs, each a different colour, slot upright into a long base engraved with the name Jasper Johns: on fitting, the handshake, and an arrangement that is never the same twice.",
+    "html": "<p>In Tesa 41, Zadik Zadikian and Aram Zadikian stand behind a row of white plaster bases engraved &quot;Jasper Johns&quot;, each with a slot along its top, into which slabs of plaster cast with acrylic and pure pigment stand upright. Hands lift slabs out and set them back in another order. Zadik compares the joint to a handshake; Aram speaks of a sword in a sheath, of repetition, and of an arrangement that will not come again. English subtitles are burned in.</p>\n"
+   },
+   {
     "slug": "seven-steps-to-heaven",
     "held": false,
     "title": "Seven Steps to Heaven",

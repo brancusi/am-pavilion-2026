@@ -2,6 +2,17 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-13 — Film "Jasper Johns" and the journal post "This Fits This"
+
+**Rationale:** The new film, posted on Instagram today, belongs with the other films, in the press kit and in the journal.
+**Summary:** "Jasper Johns" (2:16, filmed in Tesa 41 on 25 October, edited by Bibiana Juritz) is on Mux at 2160p with generated English captions and MP4 downloads. It leads the home films reel and the press kit's films, and has its own journal post, "This Fits This", with stills from the camera originals. All in English, Italian and Armenian.
+
+### Changes
+
+- Mux asset `pDfjrIn83qZhz8VAQp4021I8bkmEV9NB63uCYX8ATo4c`, playback `C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4`; `src/amp/data/films.cljs`, `films.json` catalogs, `docs/films.md`.
+- Press kit: `jasper-johns` block in Dropbox `press_kit/video{,.it,.hy}.md`, regenerated with `npm run press:kit`.
+- Post `src/amp/pages/blog/posts/this_fits_this.cljs`, catalogs `post-this-fits-this.json`; stills on R2 `journal/26-10-25/` (blackbox, neutral look). Quotes from the 25 October recorder (`DJI_09_20261025_170622.WAV`), lightly cleaned; the handshake line is Zadik's (the Instagram caption gives it to Aram).
+
 ## 2026-11-11 — The site in English, Italian and Armenian
 
 **Rationale:** Venetian and Armenian visitors and press should be able to read the whole site in their own language.

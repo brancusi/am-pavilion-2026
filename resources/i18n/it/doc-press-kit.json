@@ -545,6 +545,15 @@
   "title": null,
   "films": [
    {
+    "slug": "jasper-johns",
+    "held": false,
+    "title": "Jasper Johns",
+    "date": "ottobre 2026",
+    "credit": "Film: Bibiana Juritz e Aram Zadikian. Montaggio: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "Dodici lastre di gesso, ognuna di un colore diverso, si incastrano in piedi in una lunga base su cui è inciso il nome Jasper Johns: sul combaciare, sulla stretta di mano e su una disposizione che non è mai la stessa.",
+    "html": "<p>Nella Tesa 41 Zadik Zadikian e Aram Zadikian stanno dietro una fila di basi bianche di gesso con incisa la scritta «Jasper Johns», ciascuna con una scanalatura sul lato superiore in cui stanno in piedi lastre di gesso colato con acrilico e pigmento puro. Le mani sfilano le lastre e le rimettono in un altro ordine. Zadik paragona l’incastro a una stretta di mano; Aram parla di una spada nel fodero, della ripetizione e di una disposizione che non tornerà più. Sottotitoli in inglese impressi nell’immagine.</p>\n"
+   },
+   {
     "slug": "seven-steps-to-heaven",
     "held": false,
     "title": "Seven Steps to Heaven",
