@@ -70,7 +70,8 @@ async function put(file, key, contentType, saveAs) {
 
 // The image, upright, and its size after rotation.
 async function open(file, key) {
-  let src = sharp(file, { failOn: 'none', limitInputPixels: false }).rotate();
+  // unlimited: our own files; Photoshop TIFFs carry layer data over libtiff's 50 MB tag limit.
+  let src = sharp(file, { failOn: 'none', limitInputPixels: false, unlimited: true }).rotate();
   let meta;
   try {
     meta = await src.metadata();
@@ -79,7 +80,7 @@ async function open(file, key) {
     const tmp = join(OUT, `${key}.sips.tif`);
     mkdirSync(dirname(tmp), { recursive: true });
     execFileSync('sips', ['-s', 'format', 'tiff', file, '--out', tmp], { stdio: 'ignore' });
-    src = sharp(tmp, { failOn: 'none', limitInputPixels: false }).rotate();
+    src = sharp(tmp, { failOn: 'none', limitInputPixels: false, unlimited: true }).rotate();
     meta = await src.metadata();
   }
   const swap = (meta.orientation || 1) >= 5;
