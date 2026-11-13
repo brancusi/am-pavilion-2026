@@ -84,7 +84,13 @@
   [{:keys [title caption_short caption]}]
   (m (or (not-empty title) (not-empty caption_short) caption)))
 
-(defn- photo [credit] (ts :press/photo {:name (m credit)}))
+(defn- photo
+  "The credit line. A credit that already says what it is (\"Photo Silvia Motta\", \"Rendering Aram Zadikian\",
+  the caption house style since 12 Nov 2026) shows as written; a bare name gets \"Photo: name\"."
+  [credit]
+  (if (re-find #"^(Photo|Rendering|Drawing|Video still) " credit)
+    (m credit)
+    (ts :press/photo {:name (m credit)})))
 
 (defn- copy-text [{:keys [caption caption_short credit]}]
   (or (m (not-empty caption)) (m (not-empty caption_short)) (when (seq credit) (photo credit))))
@@ -602,12 +608,7 @@
                        (when (and (= path "stories") (= here "stories"))
                          (d/ol {:class "ap-kit__menu-sub"}
                                (for [id notes :let [note (get k (keyword id))] :when note]
-                                 (d/li {:key id} (d/a {:href (str (page-href "stories") "#" id)} (:title note)))))))))
-         (d/div {:class "ap-kit__lang" :role "group" :aria-label (ts :press/language)}
-                (for [l i18n/locales]
-                  (d/a {:key l :href (page-href here l) :lang l :hrefLang l
-                        :aria-current (when (= l (i18n/locale)) "true")}
-                       (i18n/short-names l)))))))
+                                 (d/li {:key id} (d/a {:href (str (page-href "stories") "#" id)} (:title note))))))))))))
 
 (defnc press-page
   []
