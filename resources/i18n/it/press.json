@@ -98,6 +98,7 @@
   "group-other": "Altre immagini",
   "zips-group": "Scarica · Questo gruppo ({n})",
   "pick-group": "Seleziona queste",
+  "groups-n": "{n, plural, one {# gruppo} other {# gruppi}}",
   "groups-open": "Apri tutti",
   "groups-close": "Chiudi tutti"
 }

@@ -296,7 +296,7 @@
                             :aria-label (ts :press/view {:title (title-of image)})}
                            ($ picture {:src (src image) :alt (title-of image)
                                        :ar (when (and w h) (/ w h))
-                                       :sizes "(min-width: 1440px) 25vw, (min-width: 1100px) 33vw, (min-width: 720px) 50vw, 100vw"}))
+                                       :sizes "(min-width: 1440px) 25vw, (min-width: 1100px) 33vw, 50vw"}))
                  (d/label {:class "ap-press__pick"}
                           (d/input {:type "checkbox" :checked (boolean picked?) :on-change on-pick})
                           (d/span (t (if picked? :press/selected :press/select))))
@@ -312,14 +312,15 @@
                  ($ downloads {:image image :compact? true})))))
 
 (defnc zip-links
-  "A ZIP of these images per size, with its total size."
+  "A ZIP of these images per size, with its total size: one segmented
+   control, a cell per size (a grid of four on phones)."
   [{:keys [name images uids]}]
-  (<>
-   (for [k tiers
-         :let [bytes (reduce + (keep #(get-in % [:dl k :bytes]) images))]
-         :when (pos? bytes)]
-     (d/a {:key (cljs.core/name k) :class "ap-press__btn" :href (zip-url name uids (cljs.core/name k))}
-          (str (tier-name k) " · " (mb bytes))))))
+  (d/span {:class "ap-seg"}
+          (for [k tiers
+                :let [bytes (reduce + (keep #(get-in % [:dl k :bytes]) images))]
+                :when (pos? bytes)]
+            (d/a {:key (cljs.core/name k) :href (zip-url name uids (cljs.core/name k))}
+                 (d/b (tier-name k)) (d/span (mb bytes))))))
 
 (defn- slug [s]
   (-> (str s) (.normalize "NFKD") (str/replace #"[\u0300-\u036f]" "") str/lower-case
@@ -337,8 +338,9 @@
                (d/h3 {:class "m-0"}
                      (d/button {:type "button" :class "ap-pgroup__toggle" :aria-expanded (boolean open?)
                                 :aria-controls body :on-click on-toggle}
-                               (d/span {:class "ap-pgroup__name"} name)
-                               (d/span {:class "ap-label ap-muted ap-pgroup__n"} (t :press/group-n {:n (count items)}))
+                               (d/span {:class "ap-pgroup__heading"}
+                                       (d/span {:class "ap-pgroup__name"} name)
+                                       (d/span {:class "ap-label ap-muted ap-pgroup__n"} (t :press/group-n {:n (count items)})))
                                (d/svg {:class "ap-pgroup__chev" :viewBox "0 0 16 16" :aria-hidden true}
                                       (d/path {:d "M3 6l5 5 5-5" :fill "none" :stroke "currentColor" :stroke-width 1.6}))))
                (when (seq note) (d/p {:class "ap-body-s ap-muted m-0 ap-pgroup__note"} note))
@@ -353,7 +355,7 @@
                          (d/span {:class "ap-label ap-muted"} (t :press/zips-group {:n (count items)}))
                          ($ zip-links {:name (str "armenian-pavilion-press-" (or (not-empty (slug name)) "other"))
                                        :images items :uids uids})
-                         (d/button {:type "button" :class "ap-press__btn"
+                         (d/button {:type "button" :class "ap-press__link"
                                     :on-click #(set-picked! (if all? (apply disj picked uids) (into picked uids)))}
                                    (if all? (t :press/clear) (t :press/pick-group))))
                   (d/ul {:id body :class "ap-press"}
@@ -416,7 +418,7 @@
                    (d/span {:class "ap-label ap-muted"} (t (if sec :press/zips-section :press/zips-all) {:n (count shown)}))
                    ($ zip-links {:name (str "armenian-pavilion-press-" (if sec (if (= sec "") "other" sec) "all"))
                                  :images shown :uids (when sec (map :uid shown))})
-                   (d/button {:type "button" :class "ap-press__btn"
+                   (d/button {:type "button" :class "ap-press__link"
                               :on-click #(set-picked! (if all-shown?
                                                         (apply disj picked (map :uid shown))
                                                         (into picked (map :uid shown))))}
@@ -425,9 +427,11 @@
        (d/p {:class "ap-body ap-muted py-12"} (t :press/on-way))
        (d/div {:class "ap-pgroups pb-16 lg:pb-24"}
               (when (> (count blocks) 1)
-                (d/button {:type "button" :class "ap-press__btn ap-pgroups__all"
-                           :on-click #(set-opened! (if all-open? #{} (set (map (comp :id first) blocks))))}
-                          (if all-open? (t :press/groups-close) (t :press/groups-open))))
+                (d/div {:class "ap-pgroups__all"}
+                       (d/span {:class "ap-label ap-muted"} (t :press/groups-n {:n (count blocks)}))
+                       (d/button {:type "button" :class "ap-press__link"
+                                  :on-click #(set-opened! (if all-open? #{} (set (map (comp :id first) blocks))))}
+                                 (if all-open? (t :press/groups-close) (t :press/groups-open)))))
               (for [[g items] blocks
                     :let [gid (:id g)]]
                 ($ press-group {:key (or (not-empty gid) "other") :group (-> g (update :name m) (update :note m))
