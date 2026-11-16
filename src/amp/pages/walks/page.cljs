@@ -56,6 +56,8 @@
 (defn- works-n "A count of works: a number, or a range such as 3–6." [w]
   (if (number? w) (i18n/number w {}) (str w)))
 
+(defn- boat? "Does this walk go by boat?" [w] (= "boat" (:by w)))
+
 (defn- loop-title [id] (ts (keyword "walks" (str "loop." id))))
 
 (defn- photo-key [path] (str/replace (last (str/split path #"/")) #"\.\w+$" ""))
@@ -199,13 +201,16 @@
                       (d/svg {:viewBox "0 0 1600 1082" :class "ap-wk-map__svg" :role "img"
                               :aria-label (i18n/ts :walks/map.aria {:n (:n walk) :title (:title walk)})}
                              (d/path {:class "ap-wk-map__others is-planned"
-                                      :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (not= :walked (:status w)))]
+                                      :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (not= :walked (:status w)) (not (boat? w)))]
                                                      (get-in routes [:walks (:id w) :d])))})
                              (d/path {:class "ap-wk-map__others"
-                                      :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (= :walked (:status w)))]
+                                      :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (= :walked (:status w)) (not (boat? w)))]
+                                                     (get-in routes [:walks (:id w) :d])))})
+                             (d/path {:class "ap-wk-map__others is-boat"
+                                      :d (str/join (for [w walks :when (and (not= (:id w) (:id walk)) (boat? w))]
                                                      (get-in routes [:walks (:id w) :d])))})
                              (d/path {:class "ap-wk-map__ghost" :d (:d line)})
-                             (d/path {:class "ap-wk-map__casing" :d (:d line) :style dash})
+                             (d/path {:class (str "ap-wk-map__casing" (when (boat? walk) " is-boat")) :d (:d line) :style dash})
                              (d/path {:class "ap-wk-map__line" :d (:d line) :style dash})
                              (d/g {:transform (str "translate(" px " " py ")")}
                                   (d/rect {:class "ap-wk-map__ap" :x -17 :y -17 :width 34 :height 34})
@@ -232,6 +237,8 @@
                           (d/li (d/i {:class "is-this"}) (i18n/t :walks/map.key-this))
                           (d/li (d/i {:class "is-walked"}) (i18n/t :walks/walked))
                           (d/li (d/i {:class "is-planned"}) (i18n/t :walks/map.key-planned))
+                          (when (some boat? walks)
+                            (d/li (d/i {:class "is-boat"}) (i18n/t :walks/map.key-boat)))
                           (d/li (d/i {:class "is-ap"}) (i18n/t :walks/map.key-ap)))
                     (when photo
                       (d/figure {:key photo :class "ap-wk-map__here m-0"}
@@ -372,8 +379,8 @@
      (d/section {:class "ap-wk-counts" :aria-label (ts :walks/counts.aria)}
                 (d/dl {:class "ap-wrap ap-wk-counts__row"}
                       (d/div (d/dt {:class "ap-label"} (t :walks/counts.walks)) (d/dd (count done)))
-                      (d/div (d/dt {:class "ap-label"} (t :walks/works-carried)) (d/dd (reduce + (map :works done))))
-                      (d/div (d/dt {:class "ap-label"} (t :walks/counts.km)) (d/dd (dec1 (reduce + (map :km done)))))
+                      (d/div (d/dt {:class "ap-label"} (t :walks/works-carried)) (d/dd (reduce + (filter number? (map :works done)))))
+                      (d/div (d/dt {:class "ap-label"} (t :walks/counts.km)) (d/dd (dec1 (reduce + (map :km (remove boat? done))))))
                       (when nxt
                         (d/div {:class "is-next"}
                                (d/dt {:class "ap-label"} (t :walks/counts.next {:time (:depart nxt) :works (works-n (:works nxt))}))
@@ -428,7 +435,7 @@
                           (d/span {:class "ap-wk-list__text"}
                                   (d/span {:class "ap-label"} (str (short-date date) " · " (status-label w)))
                                   (d/span {:class "ap-wk-list__title"} title)
-                                  (d/span {:class "ap-caption"} (t :walks/list.meta {:works (works-n works) :km (km-n km) :duration (duration minutes)}))))))))
+                                  (d/span {:class "ap-caption"} (t (if (boat? w) :walks/list.meta-boat :walks/list.meta) {:works (works-n works) :km (km-n km) :duration (duration minutes)}))))))))
 
 (defnc walk-detail [{:keys [walk]}]
   (let [{:keys [id n date title works depart minutes km wide fresh via note stops status]} walk
@@ -450,9 +457,12 @@
                              (d/div (d/dt {:class "ap-label"} (t :walks/leaves)) (d/dd {:class "ap-data"} depart))
                              (d/div (d/dt {:class "ap-label"} (t :walks/back)) (d/dd {:class "ap-data"} (str "≈ " back)))
                              (d/div (d/dt {:class "ap-label"} (t :walks/works-carried)) (d/dd {:class "ap-data"} (works-n works)))
-                             (d/div (d/dt {:class "ap-label"} (t :walks/detail.dist)) (d/dd {:class "ap-data"} (str (t :walks/km {:km (km-n km)}) " · " (duration minutes))))
-                             (d/div {:class "col-span-2"} (d/dt {:class "ap-label"} (t :walks/detail.wide))
-                                    (d/dd {:class "ap-data"} (t :walks/detail.wide-val {:wide wide :fresh fresh}))))
+                             (d/div (d/dt {:class "ap-label"} (t :walks/detail.dist)) (d/dd {:class "ap-data"} (str (t (if (boat? walk) :walks/km-boat :walks/km) {:km (km-n km)}) " · " (duration minutes))))
+                             (if (boat? walk)
+                               (d/div {:class "col-span-2"} (d/dt {:class "ap-label"} (t :walks/detail.by))
+                                      (d/dd {:class "ap-data"} (t :walks/detail.by-boat)))
+                               (d/div {:class "col-span-2"} (d/dt {:class "ap-label"} (t :walks/detail.wide))
+                                      (d/dd {:class "ap-data"} (t :walks/detail.wide-val {:wide wide :fresh fresh})))))
                        (when (seq via)
                          (d/p {:class "ap-body-s m-0"} (d/span {:class "ap-label ap-muted block mb-2"} (t :walks/detail.via)) (str/join " · " via)))
                        (when note (d/p {:class "ap-caption m-0"} (t :walks/detail.note {:note note})))
@@ -460,7 +470,7 @@
                          ($ accademia-links {})))
                 (d/ol {:class "ap-wk-itin"}
                       (d/li (d/span {:class "ap-data"} depart) (d/i {:class "is-ap"} "AP")
-                            (d/span {:class "ap-wk-itin__name"} (t :walks/itin.leave)))
+                            (d/span {:class "ap-wk-itin__name"} (if (boat? walk) (t :walks/itin.leave-boat) (t :walks/itin.leave))))
                       (for [[i {:keys [name t detail arrive]}] (map-indexed vector stops)
                             :let [photo (get-in stop-photos [id i])]]
                         (d/li {:key name}
@@ -474,7 +484,7 @@
                               (d/span {:class "ap-wk-itin__photo"}
                                       (when photo ($ picture {:src (str media photo) :alt name :sizes "200px"})))))
                       (d/li (d/span {:class "ap-data"} (str "≈ " back)) (d/i {:class "is-ap"} "AP")
-                            (d/span {:class "ap-wk-itin__name"} (i18n/t :walks/itin.home)))))
+                            (d/span {:class "ap-wk-itin__name"} (if (boat? walk) (i18n/t :walks/itin.home-boat) (i18n/t :walks/itin.home))))))
      (when (or (seq fs) (seq ps))
        (d/section {:class "ap-wrap ap-wk-media" :aria-label (i18n/ts :walks/media.title)}
                   (d/div {:class "ap-wk-media__head"}
@@ -506,15 +516,19 @@
                       (d/div {:class "ap-wk-days" :role "group" :aria-label (ts :walks/sched.days)}
                              (for [dd (range 5 23)
                                    :let [iso (str "2026-11-" (.padStart (str dd) 2 "0"))
-                                         w (by-date iso)]]
-                               (d/button {:key dd :type "button" :disabled (nil? w)
+                                         w (by-date iso)
+                                         closing? (= iso (:date wm/closing))]]
+                               (d/button {:key dd :type "button" :disabled (and (nil? w) (not closing?))
                                           :aria-pressed (= (:id w) (:id walk))
-                                          :aria-label (if w (ts :walks/sched.day {:date (short-date iso) :title (:title w)}) (ts :walks/sched.no-walk {:date (short-date iso)}))
-                                          :data-status (when w (name (:status w)))
-                                          :on-click #(when w (on-pick (:id w)))}
+                                          :aria-label (cond w (ts :walks/sched.day {:date (short-date iso) :title (:title w)})
+                                                            closing? (ts :walks/sched.day {:date (short-date iso) :title (ts :walks/close.title)})
+                                                            :else (ts :walks/sched.no-walk {:date (short-date iso)}))
+                                          :data-status (cond w (name (:status w)) closing? "closing")
+                                          :on-click #(cond w (on-pick (:id w))
+                                                           closing? (some-> (js/document.getElementById "closing") (.scrollIntoView #js {:block "center" :behavior "smooth"})))}
                                          (d/span {:class "ap-label"} (weekday-abbr iso))
                                          (d/span {:class "ap-wk-days__d"} dd)
-                                         (d/span {:class "ap-caption"} (when w (works-n (:works w)))))))
+                                         (d/span {:class "ap-caption"} (cond w (works-n (:works w)) closing? (t :walks/close.tag))))))
                       (d/div {:class "ap-wk-table"}
                              (d/table
                               (d/thead (d/tr {:class "ap-label"}
@@ -528,7 +542,15 @@
                                        (d/td {:class "ap-data"} (at-time depart minutes))
                                        (d/td (d/a {:href "#walks-map" :on-click #(on-pick id)} title))
                                        (d/td {:class "ap-data"} (works-n works))
-                                       (d/td {:class "ap-data text-right"} (t :walks/km {:km (km-n km)})))))))))))
+                                       (d/td {:class "ap-data text-right"} (t (if (boat? w) :walks/km-boat :walks/km) {:km (km-n km)}))))
+                               (let [{:keys [date time]} wm/closing]
+                                 (d/tr {:id "closing" :key "closing" :class "is-closing"}
+                                       (d/td {:class "ap-data whitespace-nowrap"} (short-date date))
+                                       (d/td {:class "ap-data"} (or time (t :walks/close.time-tba)))
+                                       (d/td {:class "ap-data"} "")
+                                       (d/td (d/b (t :walks/close.title)) (d/span {:class "block ap-caption"} (t :walks/close.text)))
+                                       (d/td {:class "ap-data"} "")
+                                       (d/td {:class "ap-data text-right"} ""))))))))))
 
 (defnc walked
   "The walks so far, newest first: only those with a film or photographs,
