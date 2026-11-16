@@ -1358,6 +1358,8 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-wk-map__others.is-planned { stroke-width: 3.5; stroke-dasharray: 9 7; stroke-linecap: butt; opacity: .5; }
 .ap-wk-map__ghost { stroke: var(--ink); stroke-width: 5; opacity: .15; }
 .ap-wk-map__casing { stroke: #141312; stroke-width: 10; }
+.ap-wk-map__others.is-boat { stroke: var(--turquoise); stroke-width: 3.5; stroke-dasharray: 2 7; stroke-linecap: round; opacity: .9; }
+.ap-wk-map__casing.is-boat { stroke: var(--turquoise); }
 .ap-wk-map__line { stroke: var(--yellow); stroke-width: 5.5; }
 .ap-wk-map__ap { fill: var(--red); }
 .ap-wk-map__ap-label { fill: var(--on-red); font: 600 14px var(--font-display); }
@@ -1376,6 +1378,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-wk-map__key .is-this { height: 6px; background: var(--yellow); outline: 2px solid #141312; }
 .ap-wk-map__key .is-walked { border-top: 3px solid var(--ink); opacity: .7; }
 .ap-wk-map__key .is-planned { border-top: 3px dashed var(--ink); opacity: .6; }
+.ap-wk-map__key .is-boat { border-top: 3px dotted var(--turquoise); }
 .ap-wk-map__key .is-ap { width: 12px; height: 12px; margin-inline: 6px; background: var(--red); }
 @media (max-width: 640px) { .ap-wk-map__key { display: none; } }
 .ap-wk-map__here { position: absolute; right: var(--space-3); bottom: var(--space-3); width: clamp(140px, 24%, 240px); background: var(--paper); border: 1px solid var(--ink); animation: ap-wk-in var(--dur-base) var(--ease-place); }
@@ -1472,6 +1475,7 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-wk-days button { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-height: 92px; padding: 10px 8px; border: 1px solid transparent; background: #2d5287; color: #fff; text-align: left; cursor: pointer; }
 .ap-wk-days button:disabled { background: transparent; border-color: color-mix(in srgb, var(--on-night) 18%, transparent); color: color-mix(in srgb, var(--on-night) 55%, transparent); cursor: default; }
 .ap-wk-days button[data-status="walked"] { background: var(--on-night); color: var(--night); }
+.ap-wk-days button[data-status="closing"] { background: var(--red); color: var(--on-red); }
 .ap-wk-days button[aria-pressed="true"] { background: var(--yellow); color: var(--on-yellow); }
 .ap-wk-days .ap-caption { color: inherit; min-height: 19px; }
 .ap-wk-days__d { font: 500 32px/1 var(--font-display); }
@@ -1479,6 +1483,9 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-wk-table table { width: 100%; min-width: 760px; border-collapse: collapse; }
 .ap-wk-table th { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--on-night); font-weight: 500; text-align: left; color: color-mix(in srgb, var(--on-night) 70%, transparent); }
 .ap-wk-table td { padding: 14px 12px 14px 0; border-bottom: 1px solid color-mix(in srgb, var(--on-night) 18%, transparent); }
+.ap-wk-table tr.is-closing td { color: var(--on-night); }
+.ap-wk-table tr.is-closing b { font: 500 18px var(--font-text); }
+.ap-wk-table tr.is-closing .ap-caption { color: color-mix(in srgb, var(--on-night) 70%, transparent); }
 .ap-wk-table td a { color: var(--on-night); font: 400 18px var(--font-text); text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 .ap-wk-done { display: grid; gap: var(--space-8); }

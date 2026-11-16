@@ -13,7 +13,14 @@
   "Newest first. :kind is the filter tag (its label is kind.<kind>); :tone
    picks its pigment; :cover-ar is the cover's width / height, so its space
    is held before it loads."
-  [{:slug        "the-weight-of-the-flag"
+  [{:slug        "this-fits-this"
+    :date        "2026-11-13"
+    :kind        "Studio"
+    :tone        :turquoise
+    :cover-image "https://media.armenianpavilion.org/journal/26-10-25/conversation.jpg"
+    :cover-ar    1.7778}
+
+   {:slug        "the-weight-of-the-flag"
     :date        "2026-11-05"
     :kind        "Venice"
     :tone        :red

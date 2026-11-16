@@ -10,7 +10,11 @@
 (defcatalog "films")
 
 (def ^:private entries
-  [{:slug "the-weight-of-the-flag"
+  [{:slug "jasper-johns"
+    :duration 136 :poster 23
+    :playback-id "C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4"}
+
+   {:slug "the-weight-of-the-flag"
     :duration 172 :poster 12
     :playback-id "MwHUHhUaOUvc97m01QmU6JBaf1ctSXWoz00s9dI302zEUo"}
 

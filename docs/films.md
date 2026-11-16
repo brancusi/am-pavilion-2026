@@ -5,6 +5,7 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 | Film | Source file | Length | Asset | Playback ID |
 |---|---|---|---|---|
+| Jasper Johns | `11/jasper_johns_edit.mp4` (uploaded 13 Nov; filmed 25 Oct, edit Bibiana Juritz) | 2:16 | `pDfjrIn83qZhz8VAQp4021I8bkmEV9NB63uCYX8ATo4c` | `C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4` |
 | Seven Steps to Heaven | `10/steps_to_heaven_1_edit_4k_10-30-26.mp4` (uploaded 30 Oct) | 2:26 | `B2Ijd6weptJXB11NipcaHmLBFTSOXtv02KhHrAQKkdmo` | `uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM` |
 | The Italian Flag | `10/italian_flag_edit_4k.mp4` | 2:57 | `FAoWwgVbffOXKMd77clal7qd2hsMiLfuELfbX92MKfY` | `CR1rPwf1QHVhvNMICOawghM2g5QnylGxbMs0201QQxlLM` |
 | Carrying | `10/carrying_edit_4k.mp4` | 2:04 | `T2tJiZU4oBo4f452nVvyg0025ldCXTVtrokoz100Yh94M` | `El6mWAaeWtIxqHERgu7fYE00pcLH7szuH8EG16lbn7CE` |
@@ -16,6 +17,9 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 ## What's in them
 
+- **Jasper Johns:** a long white plaster base engraved "Jasper Johns" with coloured slabs slotted in, in Tesa 41.
+  Zadik on the joint "like a handshake", the mould, nothing fixed; Aram on a sword in a sheath, repetition and
+  "we'll never have this arrangement again". Captions burned in. Recorder: `DJI_09_20261025_170622.WAV`.
 - **Seven Steps to Heaven:** a white stair carried along the water and into Tesa 41, skimmed, sanded and
   painted; the team on cubes, a "viaggio" with no clear finish, the present; Zadikian on steps that take you
   "mentally, or emotionally"; closing in Italian (subtitled) on "the climb to heaven in a relatively small

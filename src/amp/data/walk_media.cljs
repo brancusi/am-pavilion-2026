@@ -99,6 +99,12 @@
    :event-url "https://www.accademiavenezia.it/eventi/zadik-zadikian-performance-e-incontro-con-l-artista-905.html"
    :instagram "https://www.instagram.com/p/DfjyUypoaud/"})
 
+(def closing
+  "Closing day, 22 November: not a walk but a gathering at the pavilion, with
+   talks with the artist and the curator (text: walks catalog, close.*). :time
+   is nil until it is set."
+  {:date "2026-11-22" :time nil})
+
 (def hero-photo "walks/2026-11-06/dsc07975.tif")
 
 ;; ── Dates and times ─────────────────────────────────────────────────────
@@ -142,10 +148,11 @@
     (str (quot x 60) ":" (.padStart (str (mod x 60)) 2 "0"))))
 
 (defn clock
-  "Minutes after leaving Tesa 41 at `t` (0–1) along `walk`: walking time at
-   3 km/h plus the stays at the stops already left behind."
-  [{:keys [km stops]} t]
-  (+ (* t km 20) (reduce + (keep #(when (< (:t %) (- t 1e-4)) (:stay % 8)) stops))))
+  "Minutes after leaving Tesa 41 at `t` (0–1) along `walk`: time on the way
+   at its :pace (minutes per km: 20 on foot; by boat, whatever brings it home on time) plus the stays at the
+   stops already left behind."
+  [{:keys [km stops pace]} t]
+  (+ (* t km (or pace 20)) (reduce + (keep #(when (< (:t %) (- t 1e-4)) (:stay % 8)) stops))))
 
 (defn duration
   "Minutes as hours and minutes: 1 h 15."
