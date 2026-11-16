@@ -37,7 +37,9 @@
 
 (def photos
   "Photographs from each walk, with :ar (width / height) so the gallery holds
-   their space. The 6 November set is the day's photographs (Dropbox
+   their space. The 14 November set is twelve of the day's photographs as
+   they are in the press library (R2 press/<uid>, uploaded by npm run press;
+   Dropbox the_studio/media/photo/2026/11/14). The 6 November set is the day's photographs (Dropbox
    the_studio/media/photo/2026/11/06); 5 November is stills from the film.
    Title and alt text: walks catalog, photo.<file name without extension>."
   {"w01" [{:path "walks/2026-11-05/portico.jpg" :ar 1.7778}
@@ -57,21 +59,36 @@
           {:path "walks/2026-11-06/dsc08098.tif" :ar 0.8438}
           {:path "walks/2026-11-06/dsc08099.jpg" :ar 1.8694}
           {:path "walks/2026-11-06/dsc08135.tif" :ar 1.0390}
-          {:path "walks/2026-11-06/dsc08205.tif" :ar 1.4999}]})
+          {:path "walks/2026-11-06/dsc08205.tif" :ar 1.4999}]
+   "w03" [{:path "press/74f8c15580" :ar 1.5000}
+          {:path "press/e9ee937203" :ar 1.5000}
+          {:path "press/df29e54a02" :ar 1.9555}
+          {:path "press/753790e634" :ar 1.4999}
+          {:path "press/bf37979a50" :ar 1.5000}
+          {:path "press/d0726896ef" :ar 1.8705}
+          {:path "press/2d2fb66733" :ar 1.9739}
+          {:path "press/fca6016671" :ar 0.8472}
+          {:path "press/8255662971" :ar 1.5000}
+          {:path "press/5fca9ec4d3" :ar 1.1504}
+          {:path "press/ad67b4fede" :ar 1.7306}
+          {:path "press/72135a5e47" :ar 0.8631}]})
 
 (def photographers
   "Who took each walk's photographs (as credited in the press set). Walks
    without an entry show film stills."
-  {"w02" "Mina Biasutti"})
+  {"w02" "Mina Biasutti"
+   "w03" "Mina Biasutti"})
 
 (def gallery-walk
-  "The walk whose photographs fill the Walks page's gallery."
-  "w02")
+  "The walk whose photographs fill the Walks page's gallery (its text:
+   walks catalog, gallery.text.<id>)."
+  "w03")
 
 (def stop-photos
   "The photograph for each stop, in stop order."
   {"w01" ["walks/2026-11-05/portico.jpg" "walks/2026-11-05/church-front.jpg" "walks/2026-11-05/campo-canal.jpg"]
-   "w02" ["walks/2026-11-06/dsc07975.tif" "walks/2026-11-06/dsc08090.tif" "walks/2026-11-06/dsc08135.tif"]})
+   "w02" ["walks/2026-11-06/dsc07975.tif" "walks/2026-11-06/dsc08090.tif" "walks/2026-11-06/dsc08135.tif"]
+   "w03" ["press/753790e634" "press/2d2fb66733"]})
 
 (def walk-films
   "The finished film of a walk, by walk id: a :slug in amp.data.films."

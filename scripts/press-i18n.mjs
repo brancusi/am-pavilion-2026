@@ -1,4 +1,5 @@
-// The English source of the press images' text, for translation: every title,
+// The English source of the press images' text, for translation: every group's
+// name and note, every title,
 // date, materials line, caption, credit and alt text in the press list, and the
 // home page's two lines and alt text per image, written to
 // resources/i18n/en/data-media.json as a source-keyed catalog (each string
@@ -23,6 +24,8 @@ export function writeMediaCatalog(images, home) {
   const put = (s) => { if (typeof s === 'string' && s.trim()) out[s] = s; };
   for (const i of images) for (const f of IMAGE_FIELDS) put(i[f]);
   for (const i of home) for (const f of HOME_FIELDS) put(i[f]);
+  // The groups of the press list (press.mjs writes them beside the images).
+  for (const g of JSON.parse(readFileSync('resources/data/press/press.json', 'utf8')).groups || []) { put(g.name); put(g.note); }
   writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
   console.log(`Media text: ${Object.keys(out).length} strings in ${OUT}`);
 }
