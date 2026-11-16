@@ -12,6 +12,11 @@
 // The project's Sync button runs scripts/press-sync.sh, which runs this and
 // publishes the list.
 //
+// The list is grouped by the project's selection "Press kit" (id `press`):
+// its groups, in order, each with a name and a note, and its images in its
+// order; included images in no group come last. The page shows each group as
+// a block that opens and closes.
+//
 // Images already uploaded and unchanged (same size and mtime) are skipped.
 // Images left out are only dropped from the list; nothing is deleted from R2.
 // Set DRY=1 to build without uploading (media.mjs).
@@ -107,8 +112,22 @@ await Promise.all(Array.from({ length: JOBS }, async () => {
   for (let r; (r = queue.shift());) await upload(r);
 }));
 
-const images = rows.map((r) => ({
+// The "Press kit" selection: the groups and the order of the list.
+const sel = (project.selections || []).find((s) => s.id === 'press');
+const groups = (sel?.groups || []).map((g) => ({ id: g.id, name: name(g.name), note: name(g.note) }));
+const groupOf = new Map((sel?.items || []).map((x) => [x.uid, x.group || '']));
+const rank = new Map((sel?.items || []).map((x, i) => [x.uid, i]));
+const gi = new Map(groups.map((g, i) => [g.id, i]));
+const place = (r) => [groupOf.has(r.uid) && gi.has(groupOf.get(r.uid)) ? gi.get(groupOf.get(r.uid)) : groups.length,
+  rank.get(r.uid) ?? Infinity];
+const ordered = rows.map((r, i) => [r, i]).sort(([a, i], [b, j]) => {
+  const [ga, ra] = place(a), [gb, rb] = place(b);
+  return ga - gb || (ra === rb ? i - j : ra - rb);
+}).map(([r]) => r);
+
+const images = ordered.map((r) => ({
   uid: r.uid,
+  group: gi.has(groupOf.get(r.uid)) ? groupOf.get(r.uid) : '',
   file: saveAs(r),
   key: seen[r.uid].key,
   w: seen[r.uid].w,
@@ -128,10 +147,12 @@ const images = rows.map((r) => ({
   // Per download: s, m, l, raw → {key, name, w, h, bytes, crc} (raw adds ext).
   ...(seen[r.uid].tiers ? { dl: Object.fromEntries(['s', 'm', 'l', 'raw'].map((t) => [t, seen[r.uid].tiers[t]])) } : {}),
 }));
-writeFileSync(OUT, JSON.stringify({ project: project.name, images }, null, 1) + '\n');
+writeFileSync(OUT, JSON.stringify({ project: project.name, groups, images }, null, 1) + '\n');
 const cell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
 const cols = ['title', 'date', 'artist', 'materials', 'caption', 'credit', 'section'];
 writeFileSync(CSV, [['file', ...cols].join(','),
   ...images.map((i) => [i.file, ...cols.map((c) => i[c])].map(cell).join(','))].join('\n') + '\n');
 console.log(`Listed ${images.length} images`);
-writeHome(images);
+// The home page keeps the project's own order, not the groups'.
+const projectAt = new Map(rows.map((r, i) => [r.uid, i]));
+writeHome([...images].sort((a, b) => projectAt.get(a.uid) - projectAt.get(b.uid)));

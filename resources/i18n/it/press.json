@@ -93,5 +93,11 @@
   "pitch-card": "Comunicato stampa: il Tricolore portato a piedi per Venezia. In italiano e in inglese, con video e immagini.",
   "letter-name": "Padiglione Armenia",
   "biennale-alt": "La Biennale di Venezia · 61. Esposizione Internazionale d’Arte · Partecipazioni Nazionali",
-  "quoted": "«{text}»"
+  "quoted": "«{text}»",
+  "group-n": "{n, plural, one {# immagine} other {# immagini}}",
+  "group-other": "Altre immagini",
+  "zips-group": "Scarica · Questo gruppo ({n})",
+  "pick-group": "Seleziona queste",
+  "groups-open": "Apri tutti",
+  "groups-close": "Chiudi tutti"
 }

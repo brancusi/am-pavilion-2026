@@ -15,7 +15,10 @@
    Small, Medium and Large JPEG (1200, 2400, 4000 px on the long edge) and the
    original file (:dl in each image). amp.data.press-images carries a copy of
    the list so the page is laid out at once; the live list replaces it (a Sync changes it
-   without a new build). Images can be picked one by one, by section or all,
+   without a new build). The list is in the groups of the project's \"Press
+   kit\" selection (press.json :groups, each image's :group), each a block that
+   opens and closes; the section filter narrows them. Images can be picked one
+   by one, by group, by section or all,
    and download as one ZIP made by the site Worker (/press/zip/…), with the
    captions as CSV inside (in English).
 
@@ -149,7 +152,7 @@
 (defn- use-press
   "The image list: the copy built into the kit at once, then the live one."
   []
-  (let [[data set-data!] (hooks/use-state {:images press-images/images})]
+  (let [[data set-data!] (hooks/use-state {:images press-images/images :groups press-images/groups})]
     (hooks/use-effect
      :once
      ;; Revalidated each time: a Sync replaces the list without a new build.
@@ -318,8 +321,51 @@
      (d/a {:key (cljs.core/name k) :class "ap-press__btn" :href (zip-url name uids (cljs.core/name k))}
           (str (tier-name k) " · " (mb bytes))))))
 
+(defn- slug [s]
+  (-> (str s) (.normalize "NFKD") (str/replace #"[\u0300-\u036f]" "") str/lower-case
+      (str/replace #"[^a-z0-9]+" "-") (str/replace #"^-+|-+$" "")))
+
+(defnc press-group
+  "One group of the list: its name, count and note, a strip of its first
+   pictures while closed, its downloads, and its cards while open."
+  [{:keys [group items open? on-toggle picked set-picked! on-open]}]
+  (let [{:keys [id name note]} group
+        body (str "pg-" (or (not-empty id) "other"))
+        uids (map :uid items)
+        all? (every? picked uids)]
+    (d/section {:class "ap-pgroup" :data-open (when open? "")}
+               (d/h3 {:class "m-0"}
+                     (d/button {:type "button" :class "ap-pgroup__toggle" :aria-expanded (boolean open?)
+                                :aria-controls body :on-click on-toggle}
+                               (d/span {:class "ap-pgroup__name"} name)
+                               (d/span {:class "ap-label ap-muted ap-pgroup__n"} (t :press/group-n {:n (count items)}))
+                               (d/svg {:class "ap-pgroup__chev" :viewBox "0 0 16 16" :aria-hidden true}
+                                      (d/path {:d "M3 6l5 5 5-5" :fill "none" :stroke "currentColor" :stroke-width 1.6}))))
+               (when (seq note) (d/p {:class "ap-body-s ap-muted m-0 ap-pgroup__note"} note))
+               (when-not open?
+                 (d/button {:type "button" :class "ap-pgroup__strip" :tab-index -1 :aria-hidden true :on-click on-toggle}
+                           (for [image (take 6 items)]
+                             (d/span {:key (:uid image) :class "ap-pgroup__thumb"}
+                                     ($ picture {:src (src image) :alt "" :sizes "160px"})))))
+               (when open?
+                 (<>
+                  (d/div {:class "ap-press__zips ap-pgroup__zips"}
+                         (d/span {:class "ap-label ap-muted"} (t :press/zips-group {:n (count items)}))
+                         ($ zip-links {:name (str "armenian-pavilion-press-" (or (not-empty (slug name)) "other"))
+                                       :images items :uids uids})
+                         (d/button {:type "button" :class "ap-press__btn"
+                                    :on-click #(set-picked! (if all? (apply disj picked uids) (into picked uids)))}
+                                   (if all? (t :press/clear) (t :press/pick-group))))
+                  (d/ul {:id body :class "ap-press"}
+                        (for [image items
+                              :let [uid (:uid image)]]
+                          ($ press-card {:key uid :id uid :image image
+                                         :picked? (picked uid)
+                                         :on-pick #(set-picked! (if (picked uid) (disj picked uid) (conj picked uid)))
+                                         :on-open #(on-open uid)}))))))))
+
 (defnc library
-  [{:keys [images]}]
+  [{:keys [images groups]}]
   (let [present (set (map :section images))
         filters (filter #(present (first %)) (sections))
         [sec set-sec!] (hooks/use-state nil)
@@ -339,7 +385,20 @@
                     (show-item! "images" uid)))
         _ (use-hash set-open!)
         _ (hooks/use-effect :once (when open (js/setTimeout #(show-item! "images" open) 600)))
-        all-shown? (and (seq shown) (every? #(picked (:uid %)) shown))]
+        all-shown? (and (seq shown) (every? #(picked (:uid %)) shown))
+        ;; The groups with something to show, in the selection's order; images in
+        ;; no group (or one the list doesn't name) after them, as Other images.
+        known (set (map :id groups))
+        blocks (->> (concat (map (fn [g] [g (filterv #(= (:id g) (:group %)) shown)]) groups)
+                            [[{:id "" :name (ts :press/group-other) :note ""}
+                              (filterv #(not (known (:group %))) shown)]])
+                    (filter (comp seq second)))
+        group-of (into {} (map (juxt :uid :group)) images)
+        ;; Open: the first group, and the group of an image the address names.
+        [opened set-opened!] (hooks/use-state
+                              #(cond-> #{(:id (first groups))} open (conj (group-of open ""))))
+        all-open? (every? #(opened (:id (first %))) blocks)
+        index (into {} (map-indexed (fn [i x] [(:uid x) i])) shown)]
     (<>
      (d/div {:class "ap-press__tools"}
             (d/p {:class "ap-label ap-muted m-0 max-w-[70ch] leading-relaxed"}
@@ -364,15 +423,18 @@
                              (if all-shown? (t :press/clear) (t :press/pick-all)))))
      (if (empty? shown)
        (d/p {:class "ap-body ap-muted py-12"} (t :press/on-way))
-       (d/ul {:class "ap-press pb-16 lg:pb-24"}
-             (map-indexed
-              (fn [i image]
-                (let [uid (:uid image)]
-                  ($ press-card {:key uid :id uid :image image
-                                 :picked? (picked uid)
-                                 :on-pick #(set-picked! (if (picked uid) (disj picked uid) (conj picked uid)))
-                                 :on-open #(set-at! i)})))
-              shown)))
+       (d/div {:class "ap-pgroups pb-16 lg:pb-24"}
+              (when (> (count blocks) 1)
+                (d/button {:type "button" :class "ap-press__btn ap-pgroups__all"
+                           :on-click #(set-opened! (if all-open? #{} (set (map (comp :id first) blocks))))}
+                          (if all-open? (t :press/groups-close) (t :press/groups-open))))
+              (for [[g items] blocks
+                    :let [gid (:id g)]]
+                ($ press-group {:key (or (not-empty gid) "other") :group (-> g (update :name m) (update :note m))
+                                :items items :open? (opened gid)
+                                :on-toggle #(set-opened! (if (opened gid) (disj opened gid) (conj opened gid)))
+                                :picked picked :set-picked! set-picked!
+                                :on-open #(set-at! (index %))}))))
      ;; The selection bar, fixed at the foot of the window while anything is picked.
      (when (seq chosen)
        (d/div {:class "ap-press__bar" :role "region" :aria-label (ts :press/selected)}
@@ -756,7 +818,7 @@
                                         ($ note-images {:uids (:images note) :by-uid by-uid}))))
 
                            "images"
-                           ($ library {:images images})
+                           ($ library {:images images :groups (:groups data)})
 
                            "films"
                            ($ film-list {:video video})

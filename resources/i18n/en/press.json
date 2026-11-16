@@ -93,5 +93,11 @@
   "pitch-card": "Press release: the Italian flag, carried through Venice on foot. In English and Italian, with films and images.",
   "letter-name": "Armenian Pavilion",
   "biennale-alt": "La Biennale di Venezia · 61. Esposizione Internazionale d’Arte · Partecipazioni Nazionali",
-  "quoted": "“{text}”"
+  "quoted": "“{text}”",
+  "group-n": "{n, plural, one {# image} other {# images}}",
+  "group-other": "Other images",
+  "zips-group": "Download · This group ({n})",
+  "pick-group": "Select these",
+  "groups-open": "Open all",
+  "groups-close": "Close all"
 }

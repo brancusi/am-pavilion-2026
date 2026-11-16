@@ -93,5 +93,11 @@
   "pitch-card": "Մամուլի հաղորդագրություն. Իտալիայի դրոշը՝ ոտքով Վենետիկով մեկ։ Անգլերեն և իտալերեն, ֆիլմերով և լուսանկարներով։",
   "letter-name": "Հայաստանի տաղավար",
   "biennale-alt": "La Biennale di Venezia · 61. Esposizione Internazionale d’Arte · Partecipazioni Nazionali",
-  "quoted": "«{text}»"
+  "quoted": "«{text}»",
+  "group-n": "{n, plural, one {# պատկեր} other {# պատկեր}}",
+  "group-other": "Այլ պատկերներ",
+  "zips-group": "Ներբեռնել · Այս խումբը ({n})",
+  "pick-group": "Ընտրել սրանք",
+  "groups-open": "Բացել բոլորը",
+  "groups-close": "Փակել բոլորը"
 }

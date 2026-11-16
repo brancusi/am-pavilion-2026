@@ -623,7 +623,7 @@
                                     (t :walks/gallery.eyebrow {:n (:n walk) :date (long-date (:date walk))}))
                                (d/h2 {:id "gallery-title" :class "ap-display-l m-0"} (:title walk)))
                         (d/p {:class "ap-body m-0 max-w-[30em]"}
-                             (t :walks/gallery.text {:works (:works walk) :photos (count ps) :by (or by "none")})))
+                             (t (keyword "walks" (str "gallery.text." (:id walk))) {:works (:works walk) :photos (count ps) :by (or by "none")})))
                  (d/div {:class "ap-wk-gallery__rows"}
                         (for [row (justify (map-indexed #(assoc %2 :i %1) ps) 4.2)]
                           (d/div {:key (:path (first row)) :class "ap-wk-gallery__row"}

@@ -6231,5 +6231,1055 @@
     "crc": 2962111295
    }
   }
+ },
+ "74f8c15580": {
+  "key": "press/74f8c15580",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77907172:1794677255271",
+  "tiers": {
+   "stamp": "77907172:1794677255271",
+   "s": {
+    "key": "press/74f8c15580-s.jpg",
+    "name": "armenian-pavilion-lined-up-before-setting-off-74f8c15580-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 139119,
+    "crc": 2295053648
+   },
+   "m": {
+    "key": "press/74f8c15580-m.jpg",
+    "name": "armenian-pavilion-lined-up-before-setting-off-74f8c15580-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 479942,
+    "crc": 2825208157
+   },
+   "l": {
+    "key": "press/74f8c15580-l.jpg",
+    "name": "armenian-pavilion-lined-up-before-setting-off-74f8c15580-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1378765,
+    "crc": 2766311982
+   },
+   "raw": {
+    "key": "press/74f8c15580-raw.tif",
+    "name": "armenian-pavilion-lined-up-before-setting-off-74f8c15580.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77907172,
+    "crc": 690638457
+   }
+  }
+ },
+ "a0fe7d6b33": {
+  "key": "press/a0fe7d6b33",
+  "w": 10799,
+  "h": 4390,
+  "stamp": "142256138:1794722299948",
+  "tiers": {
+   "stamp": "142256138:1794722299948",
+   "s": {
+    "key": "press/a0fe7d6b33-s.jpg",
+    "name": "armenian-pavilion-in-a-row-in-the-low-sun-a0fe7d6b33-small.jpg",
+    "w": 1200,
+    "h": 488,
+    "bytes": 117257,
+    "crc": 4284067837
+   },
+   "m": {
+    "key": "press/a0fe7d6b33-m.jpg",
+    "name": "armenian-pavilion-in-a-row-in-the-low-sun-a0fe7d6b33-medium.jpg",
+    "w": 2400,
+    "h": 976,
+    "bytes": 509944,
+    "crc": 3429779983
+   },
+   "l": {
+    "key": "press/a0fe7d6b33-l.jpg",
+    "name": "armenian-pavilion-in-a-row-in-the-low-sun-a0fe7d6b33-large.jpg",
+    "w": 4000,
+    "h": 1626,
+    "bytes": 1770104,
+    "crc": 2784131988
+   },
+   "raw": {
+    "key": "press/a0fe7d6b33-raw.tif",
+    "name": "armenian-pavilion-in-a-row-in-the-low-sun-a0fe7d6b33.tif",
+    "w": 10799,
+    "h": 4390,
+    "ext": "tif",
+    "bytes": 142256138,
+    "crc": 577553445
+   }
+  }
+ },
+ "bb1cbf9d46": {
+  "key": "press/bb1cbf9d46",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77904864:1794677904456",
+  "tiers": {
+   "stamp": "77904864:1794677904456",
+   "s": {
+    "key": "press/bb1cbf9d46-s.jpg",
+    "name": "armenian-pavilion-over-a-bridge-in-castello-bb1cbf9d46-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 111208,
+    "crc": 3569874286
+   },
+   "m": {
+    "key": "press/bb1cbf9d46-m.jpg",
+    "name": "armenian-pavilion-over-a-bridge-in-castello-bb1cbf9d46-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 387144,
+    "crc": 4157063777
+   },
+   "l": {
+    "key": "press/bb1cbf9d46-l.jpg",
+    "name": "armenian-pavilion-over-a-bridge-in-castello-bb1cbf9d46-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1162995,
+    "crc": 4206921203
+   },
+   "raw": {
+    "key": "press/bb1cbf9d46-raw.tif",
+    "name": "armenian-pavilion-over-a-bridge-in-castello-bb1cbf9d46.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77904864,
+    "crc": 1001377964
+   }
+  }
+ },
+ "e9ee937203": {
+  "key": "press/e9ee937203",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77909518:1794677835098",
+  "tiers": {
+   "stamp": "77909518:1794677835098",
+   "s": {
+    "key": "press/e9ee937203-s.jpg",
+    "name": "armenian-pavilion-over-the-bridge-at-the-arsenale-gate-e9ee937203-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 154568,
+    "crc": 3256971296
+   },
+   "m": {
+    "key": "press/e9ee937203-m.jpg",
+    "name": "armenian-pavilion-over-the-bridge-at-the-arsenale-gate-e9ee937203-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 531762,
+    "crc": 1236853574
+   },
+   "l": {
+    "key": "press/e9ee937203-l.jpg",
+    "name": "armenian-pavilion-over-the-bridge-at-the-arsenale-gate-e9ee937203-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1447550,
+    "crc": 2744755882
+   },
+   "raw": {
+    "key": "press/e9ee937203-raw.tif",
+    "name": "armenian-pavilion-over-the-bridge-at-the-arsenale-gate-e9ee937203.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77909518,
+    "crc": 2108969975
+   }
+  }
+ },
+ "df29e54a02": {
+  "key": "press/df29e54a02",
+  "w": 6240,
+  "h": 3191,
+  "stamp": "59767042:1794677799342",
+  "tiers": {
+   "stamp": "59767042:1794677799342",
+   "s": {
+    "key": "press/df29e54a02-s.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-df29e54a02-small.jpg",
+    "w": 1200,
+    "h": 614,
+    "bytes": 204086,
+    "crc": 3308159504
+   },
+   "m": {
+    "key": "press/df29e54a02-m.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-df29e54a02-medium.jpg",
+    "w": 2400,
+    "h": 1227,
+    "bytes": 851285,
+    "crc": 449040250
+   },
+   "l": {
+    "key": "press/df29e54a02-l.jpg",
+    "name": "armenian-pavilion-along-the-arsenale-canal-df29e54a02-large.jpg",
+    "w": 4000,
+    "h": 2046,
+    "bytes": 2459224,
+    "crc": 2410504609
+   },
+   "raw": {
+    "key": "press/df29e54a02-raw.tif",
+    "name": "armenian-pavilion-along-the-arsenale-canal-df29e54a02.tif",
+    "w": 6240,
+    "h": 3191,
+    "ext": "tif",
+    "bytes": 59767042,
+    "crc": 57352822
+   }
+  }
+ },
+ "b2fc8190ee": {
+  "key": "press/b2fc8190ee",
+  "w": 12480,
+  "h": 8320,
+  "stamp": "311536242:1794721896902",
+  "tiers": {
+   "stamp": "311536242:1794721896902",
+   "s": {
+    "key": "press/b2fc8190ee-s.jpg",
+    "name": "armenian-pavilion-on-the-riva-degli-schiavoni-b2fc8190ee-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 87315,
+    "crc": 2821071629
+   },
+   "m": {
+    "key": "press/b2fc8190ee-m.jpg",
+    "name": "armenian-pavilion-on-the-riva-degli-schiavoni-b2fc8190ee-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 263935,
+    "crc": 1175738964
+   },
+   "l": {
+    "key": "press/b2fc8190ee-l.jpg",
+    "name": "armenian-pavilion-on-the-riva-degli-schiavoni-b2fc8190ee-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 756417,
+    "crc": 1544924262
+   },
+   "raw": {
+    "key": "press/b2fc8190ee-raw.tif",
+    "name": "armenian-pavilion-on-the-riva-degli-schiavoni-b2fc8190ee.tif",
+    "w": 12480,
+    "h": 8320,
+    "ext": "tif",
+    "bytes": 311536242,
+    "crc": 4167209079
+   }
+  }
+ },
+ "753790e634": {
+  "key": "press/753790e634",
+  "w": 6064,
+  "h": 4043,
+  "stamp": "73585826:1794677756023",
+  "tiers": {
+   "stamp": "73585826:1794677756023",
+   "s": {
+    "key": "press/753790e634-s.jpg",
+    "name": "armenian-pavilion-into-the-crowd-on-the-riva-753790e634-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 162406,
+    "crc": 245075306
+   },
+   "m": {
+    "key": "press/753790e634-m.jpg",
+    "name": "armenian-pavilion-into-the-crowd-on-the-riva-753790e634-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 541026,
+    "crc": 2610265239
+   },
+   "l": {
+    "key": "press/753790e634-l.jpg",
+    "name": "armenian-pavilion-into-the-crowd-on-the-riva-753790e634-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1497006,
+    "crc": 2809380840
+   },
+   "raw": {
+    "key": "press/753790e634-raw.tif",
+    "name": "armenian-pavilion-into-the-crowd-on-the-riva-753790e634.tif",
+    "w": 6064,
+    "h": 4043,
+    "ext": "tif",
+    "bytes": 73585826,
+    "crc": 3623977947
+   }
+  }
+ },
+ "733b6303f5": {
+  "key": "press/733b6303f5",
+  "w": 12480,
+  "h": 8320,
+  "stamp": "311530190:1794677556477",
+  "tiers": {
+   "stamp": "311530190:1794677556477",
+   "s": {
+    "key": "press/733b6303f5-s.jpg",
+    "name": "armenian-pavilion-against-the-sky-733b6303f5-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 45784,
+    "crc": 1358724290
+   },
+   "m": {
+    "key": "press/733b6303f5-m.jpg",
+    "name": "armenian-pavilion-against-the-sky-733b6303f5-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 132694,
+    "crc": 528743253
+   },
+   "l": {
+    "key": "press/733b6303f5-l.jpg",
+    "name": "armenian-pavilion-against-the-sky-733b6303f5-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 404364,
+    "crc": 4085447513
+   },
+   "raw": {
+    "key": "press/733b6303f5-raw.tif",
+    "name": "armenian-pavilion-against-the-sky-733b6303f5.tif",
+    "w": 12480,
+    "h": 8320,
+    "ext": "tif",
+    "bytes": 311530190,
+    "crc": 667881955
+   }
+  }
+ },
+ "bf37979a50": {
+  "key": "press/bf37979a50",
+  "w": 11865,
+  "h": 7910,
+  "stamp": "281601350:1794721826135",
+  "tiers": {
+   "stamp": "281601350:1794721826135",
+   "s": {
+    "key": "press/bf37979a50-s.jpg",
+    "name": "armenian-pavilion-the-salute-across-the-water-bf37979a50-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 179975,
+    "crc": 3727645896
+   },
+   "m": {
+    "key": "press/bf37979a50-m.jpg",
+    "name": "armenian-pavilion-the-salute-across-the-water-bf37979a50-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 600281,
+    "crc": 2854763567
+   },
+   "l": {
+    "key": "press/bf37979a50-l.jpg",
+    "name": "armenian-pavilion-the-salute-across-the-water-bf37979a50-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1665382,
+    "crc": 3214530192
+   },
+   "raw": {
+    "key": "press/bf37979a50-raw.tif",
+    "name": "armenian-pavilion-the-salute-across-the-water-bf37979a50.tif",
+    "w": 11865,
+    "h": 7910,
+    "ext": "tif",
+    "bytes": 281601350,
+    "crc": 1033913889
+   }
+  }
+ },
+ "d0726896ef": {
+  "key": "press/d0726896ef",
+  "w": 9330,
+  "h": 4988,
+  "stamp": "139652312:1794721657590",
+  "tiers": {
+   "stamp": "139652312:1794721657590",
+   "s": {
+    "key": "press/d0726896ef-s.jpg",
+    "name": "armenian-pavilion-before-the-basilica-d0726896ef-small.jpg",
+    "w": 1200,
+    "h": 642,
+    "bytes": 153425,
+    "crc": 3275149370
+   },
+   "m": {
+    "key": "press/d0726896ef-m.jpg",
+    "name": "armenian-pavilion-before-the-basilica-d0726896ef-medium.jpg",
+    "w": 2400,
+    "h": 1283,
+    "bytes": 544516,
+    "crc": 2803241175
+   },
+   "l": {
+    "key": "press/d0726896ef-l.jpg",
+    "name": "armenian-pavilion-before-the-basilica-d0726896ef-large.jpg",
+    "w": 4000,
+    "h": 2138,
+    "bytes": 1606311,
+    "crc": 2717339455
+   },
+   "raw": {
+    "key": "press/d0726896ef-raw.tif",
+    "name": "armenian-pavilion-before-the-basilica-d0726896ef.tif",
+    "w": 9330,
+    "h": 4988,
+    "ext": "tif",
+    "bytes": 139652312,
+    "crc": 2728752610
+   }
+  }
+ },
+ "f52bac83af": {
+  "key": "press/f52bac83af",
+  "w": 12316,
+  "h": 6250,
+  "stamp": "230963286:1794721293835",
+  "tiers": {
+   "stamp": "230963286:1794721293835",
+   "s": {
+    "key": "press/f52bac83af-s.jpg",
+    "name": "armenian-pavilion-under-the-procuratie-f52bac83af-small.jpg",
+    "w": 1200,
+    "h": 609,
+    "bytes": 131252,
+    "crc": 3862696231
+   },
+   "m": {
+    "key": "press/f52bac83af-m.jpg",
+    "name": "armenian-pavilion-under-the-procuratie-f52bac83af-medium.jpg",
+    "w": 2400,
+    "h": 1218,
+    "bytes": 450771,
+    "crc": 68633157
+   },
+   "l": {
+    "key": "press/f52bac83af-l.jpg",
+    "name": "armenian-pavilion-under-the-procuratie-f52bac83af-large.jpg",
+    "w": 4000,
+    "h": 2030,
+    "bytes": 1323093,
+    "crc": 792022871
+   },
+   "raw": {
+    "key": "press/f52bac83af-raw.tif",
+    "name": "armenian-pavilion-under-the-procuratie-f52bac83af.tif",
+    "w": 12316,
+    "h": 6250,
+    "ext": "tif",
+    "bytes": 230963286,
+    "crc": 188881201
+   }
+  }
+ },
+ "2d2fb66733": {
+  "key": "press/2d2fb66733",
+  "w": 12169,
+  "h": 6165,
+  "stamp": "225101504:1794721044725",
+  "tiers": {
+   "stamp": "225101504:1794721044725",
+   "s": {
+    "key": "press/2d2fb66733-s.jpg",
+    "name": "armenian-pavilion-piazza-san-marco-2d2fb66733-small.jpg",
+    "w": 1200,
+    "h": 608,
+    "bytes": 136542,
+    "crc": 22759372
+   },
+   "m": {
+    "key": "press/2d2fb66733-m.jpg",
+    "name": "armenian-pavilion-piazza-san-marco-2d2fb66733-medium.jpg",
+    "w": 2400,
+    "h": 1216,
+    "bytes": 551116,
+    "crc": 1305611317
+   },
+   "l": {
+    "key": "press/2d2fb66733-l.jpg",
+    "name": "armenian-pavilion-piazza-san-marco-2d2fb66733-large.jpg",
+    "w": 4000,
+    "h": 2026,
+    "bytes": 1788606,
+    "crc": 3063382948
+   },
+   "raw": {
+    "key": "press/2d2fb66733-raw.tif",
+    "name": "armenian-pavilion-piazza-san-marco-2d2fb66733.tif",
+    "w": 12169,
+    "h": 6165,
+    "ext": "tif",
+    "bytes": 225101504,
+    "crc": 3211756957
+   }
+  }
+ },
+ "eeabf4f80a": {
+  "key": "press/eeabf4f80a",
+  "w": 11087,
+  "h": 5410,
+  "stamp": "179978674:1794720952052",
+  "tiers": {
+   "stamp": "179978674:1794720952052",
+   "s": {
+    "key": "press/eeabf4f80a-s.jpg",
+    "name": "armenian-pavilion-shadows-in-the-piazza-eeabf4f80a-small.jpg",
+    "w": 1200,
+    "h": 586,
+    "bytes": 147992,
+    "crc": 344663267
+   },
+   "m": {
+    "key": "press/eeabf4f80a-m.jpg",
+    "name": "armenian-pavilion-shadows-in-the-piazza-eeabf4f80a-medium.jpg",
+    "w": 2400,
+    "h": 1171,
+    "bytes": 614012,
+    "crc": 4115817189
+   },
+   "l": {
+    "key": "press/eeabf4f80a-l.jpg",
+    "name": "armenian-pavilion-shadows-in-the-piazza-eeabf4f80a-large.jpg",
+    "w": 4000,
+    "h": 1952,
+    "bytes": 2075465,
+    "crc": 2877164562
+   },
+   "raw": {
+    "key": "press/eeabf4f80a-raw.tif",
+    "name": "armenian-pavilion-shadows-in-the-piazza-eeabf4f80a.tif",
+    "w": 11087,
+    "h": 5410,
+    "ext": "tif",
+    "bytes": 179978674,
+    "crc": 2356581168
+   }
+  }
+ },
+ "fca6016671": {
+  "key": "press/fca6016671",
+  "w": 6086,
+  "h": 7184,
+  "stamp": "131205942:1794720664972",
+  "tiers": {
+   "stamp": "131205942:1794720664972",
+   "s": {
+    "key": "press/fca6016671-s.jpg",
+    "name": "armenian-pavilion-by-the-campanile-fca6016671-small.jpg",
+    "w": 1017,
+    "h": 1200,
+    "bytes": 176686,
+    "crc": 327876162
+   },
+   "m": {
+    "key": "press/fca6016671-m.jpg",
+    "name": "armenian-pavilion-by-the-campanile-fca6016671-medium.jpg",
+    "w": 2033,
+    "h": 2400,
+    "bytes": 701756,
+    "crc": 298324819
+   },
+   "l": {
+    "key": "press/fca6016671-l.jpg",
+    "name": "armenian-pavilion-by-the-campanile-fca6016671-large.jpg",
+    "w": 3389,
+    "h": 4000,
+    "bytes": 2431081,
+    "crc": 1838141930
+   },
+   "raw": {
+    "key": "press/fca6016671-raw.tif",
+    "name": "armenian-pavilion-by-the-campanile-fca6016671.tif",
+    "w": 6086,
+    "h": 7184,
+    "ext": "tif",
+    "bytes": 131205942,
+    "crc": 3322644755
+   }
+  }
+ },
+ "8b7b6c9bd2": {
+  "key": "press/8b7b6c9bd2",
+  "w": 11895,
+  "h": 5665,
+  "stamp": "202187828:1794720372026",
+  "tiers": {
+   "stamp": "202187828:1794720372026",
+   "s": {
+    "key": "press/8b7b6c9bd2-s.jpg",
+    "name": "armenian-pavilion-under-a-red-section-8b7b6c9bd2-small.jpg",
+    "w": 1200,
+    "h": 572,
+    "bytes": 68981,
+    "crc": 255339481
+   },
+   "m": {
+    "key": "press/8b7b6c9bd2-m.jpg",
+    "name": "armenian-pavilion-under-a-red-section-8b7b6c9bd2-medium.jpg",
+    "w": 2400,
+    "h": 1143,
+    "bytes": 211390,
+    "crc": 3365102937
+   },
+   "l": {
+    "key": "press/8b7b6c9bd2-l.jpg",
+    "name": "armenian-pavilion-under-a-red-section-8b7b6c9bd2-large.jpg",
+    "w": 4000,
+    "h": 1905,
+    "bytes": 586625,
+    "crc": 4143705828
+   },
+   "raw": {
+    "key": "press/8b7b6c9bd2-raw.tif",
+    "name": "armenian-pavilion-under-a-red-section-8b7b6c9bd2.tif",
+    "w": 11895,
+    "h": 5665,
+    "ext": "tif",
+    "bytes": 202187828,
+    "crc": 1065457994
+   }
+  }
+ },
+ "8255662971": {
+  "key": "press/8255662971",
+  "w": 12075,
+  "h": 8050,
+  "stamp": "291650254:1794719972798",
+  "tiers": {
+   "stamp": "291650254:1794719972798",
+   "s": {
+    "key": "press/8255662971-s.jpg",
+    "name": "armenian-pavilion-through-the-piazza-8255662971-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 125023,
+    "crc": 3122919580
+   },
+   "m": {
+    "key": "press/8255662971-m.jpg",
+    "name": "armenian-pavilion-through-the-piazza-8255662971-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 435393,
+    "crc": 729114203
+   },
+   "l": {
+    "key": "press/8255662971-l.jpg",
+    "name": "armenian-pavilion-through-the-piazza-8255662971-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 1281396,
+    "crc": 936826523
+   },
+   "raw": {
+    "key": "press/8255662971-raw.tif",
+    "name": "armenian-pavilion-through-the-piazza-8255662971.tif",
+    "w": 12075,
+    "h": 8050,
+    "ext": "tif",
+    "bytes": 291650254,
+    "crc": 2608741167
+   }
+  }
+ },
+ "572647c5b8": {
+  "key": "press/572647c5b8",
+  "w": 12364,
+  "h": 6617,
+  "stamp": "245472412:1794718991339",
+  "tiers": {
+   "stamp": "245472412:1794718991339",
+   "s": {
+    "key": "press/572647c5b8-s.jpg",
+    "name": "armenian-pavilion-the-carriers-572647c5b8-small.jpg",
+    "w": 1200,
+    "h": 642,
+    "bytes": 110765,
+    "crc": 1116417074
+   },
+   "m": {
+    "key": "press/572647c5b8-m.jpg",
+    "name": "armenian-pavilion-the-carriers-572647c5b8-medium.jpg",
+    "w": 2400,
+    "h": 1284,
+    "bytes": 397785,
+    "crc": 2754919174
+   },
+   "l": {
+    "key": "press/572647c5b8-l.jpg",
+    "name": "armenian-pavilion-the-carriers-572647c5b8-large.jpg",
+    "w": 4000,
+    "h": 2141,
+    "bytes": 1308909,
+    "crc": 4233034375
+   },
+   "raw": {
+    "key": "press/572647c5b8-raw.tif",
+    "name": "armenian-pavilion-the-carriers-572647c5b8.tif",
+    "w": 12364,
+    "h": 6617,
+    "ext": "tif",
+    "bytes": 245472412,
+    "crc": 1436581747
+   }
+  }
+ },
+ "5fca9ec4d3": {
+  "key": "press/5fca9ec4d3",
+  "w": 9507,
+  "h": 8264,
+  "stamp": "235738266:1794718523336",
+  "tiers": {
+   "stamp": "235738266:1794718523336",
+   "s": {
+    "key": "press/5fca9ec4d3-s.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-in-piazza-san-marco-5fca9ec4d3-small.jpg",
+    "w": 1200,
+    "h": 1043,
+    "bytes": 147498,
+    "crc": 1895293367
+   },
+   "m": {
+    "key": "press/5fca9ec4d3-m.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-in-piazza-san-marco-5fca9ec4d3-medium.jpg",
+    "w": 2400,
+    "h": 2086,
+    "bytes": 523608,
+    "crc": 885967988
+   },
+   "l": {
+    "key": "press/5fca9ec4d3-l.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-in-piazza-san-marco-5fca9ec4d3-large.jpg",
+    "w": 4000,
+    "h": 3477,
+    "bytes": 2095442,
+    "crc": 1388021858
+   },
+   "raw": {
+    "key": "press/5fca9ec4d3-raw.tif",
+    "name": "armenian-pavilion-zadik-zadikian-in-piazza-san-marco-5fca9ec4d3.tif",
+    "w": 9507,
+    "h": 8264,
+    "ext": "tif",
+    "bytes": 235738266,
+    "crc": 4256717396
+   }
+  }
+ },
+ "ad67b4fede": {
+  "key": "press/ad67b4fede",
+  "w": 12374,
+  "h": 7150,
+  "stamp": "265457626:1794717942683",
+  "tiers": {
+   "stamp": "265457626:1794717942683",
+   "s": {
+    "key": "press/ad67b4fede-s.jpg",
+    "name": "armenian-pavilion-hand-to-hand-ad67b4fede-small.jpg",
+    "w": 1200,
+    "h": 693,
+    "bytes": 90639,
+    "crc": 2811785833
+   },
+   "m": {
+    "key": "press/ad67b4fede-m.jpg",
+    "name": "armenian-pavilion-hand-to-hand-ad67b4fede-medium.jpg",
+    "w": 2400,
+    "h": 1387,
+    "bytes": 302434,
+    "crc": 1582517531
+   },
+   "l": {
+    "key": "press/ad67b4fede-l.jpg",
+    "name": "armenian-pavilion-hand-to-hand-ad67b4fede-large.jpg",
+    "w": 4000,
+    "h": 2311,
+    "bytes": 1094753,
+    "crc": 829429478
+   },
+   "raw": {
+    "key": "press/ad67b4fede-raw.tif",
+    "name": "armenian-pavilion-hand-to-hand-ad67b4fede.tif",
+    "w": 12374,
+    "h": 7150,
+    "ext": "tif",
+    "bytes": 265457626,
+    "crc": 1406275352
+   }
+  }
+ },
+ "84cfe9e8f3": {
+  "key": "press/84cfe9e8f3",
+  "w": 5230,
+  "h": 6523,
+  "stamp": "102386296:1794717562402",
+  "tiers": {
+   "stamp": "102386296:1794717562402",
+   "s": {
+    "key": "press/84cfe9e8f3-s.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-with-a-carrier-84cfe9e8f3-small.jpg",
+    "w": 962,
+    "h": 1200,
+    "bytes": 139816,
+    "crc": 3735323899
+   },
+   "m": {
+    "key": "press/84cfe9e8f3-m.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-with-a-carrier-84cfe9e8f3-medium.jpg",
+    "w": 1924,
+    "h": 2400,
+    "bytes": 601322,
+    "crc": 4070268679
+   },
+   "l": {
+    "key": "press/84cfe9e8f3-l.jpg",
+    "name": "armenian-pavilion-zadik-zadikian-with-a-carrier-84cfe9e8f3-large.jpg",
+    "w": 3207,
+    "h": 4000,
+    "bytes": 2621829,
+    "crc": 2172691333
+   },
+   "raw": {
+    "key": "press/84cfe9e8f3-raw.tif",
+    "name": "armenian-pavilion-zadik-zadikian-with-a-carrier-84cfe9e8f3.tif",
+    "w": 5230,
+    "h": 6523,
+    "ext": "tif",
+    "bytes": 102386296,
+    "crc": 717122200
+   }
+  }
+ },
+ "debba7fc9a": {
+  "key": "press/debba7fc9a",
+  "w": 12474,
+  "h": 6986,
+  "stamp": "261465364:1794717119397",
+  "tiers": {
+   "stamp": "261465364:1794717119397",
+   "s": {
+    "key": "press/debba7fc9a-s.jpg",
+    "name": "armenian-pavilion-green-white-and-red-debba7fc9a-small.jpg",
+    "w": 1200,
+    "h": 672,
+    "bytes": 111952,
+    "crc": 1537539266
+   },
+   "m": {
+    "key": "press/debba7fc9a-m.jpg",
+    "name": "armenian-pavilion-green-white-and-red-debba7fc9a-medium.jpg",
+    "w": 2400,
+    "h": 1344,
+    "bytes": 436834,
+    "crc": 1127409000
+   },
+   "l": {
+    "key": "press/debba7fc9a-l.jpg",
+    "name": "armenian-pavilion-green-white-and-red-debba7fc9a-large.jpg",
+    "w": 4000,
+    "h": 2240,
+    "bytes": 1478384,
+    "crc": 163924991
+   },
+   "raw": {
+    "key": "press/debba7fc9a-raw.tif",
+    "name": "armenian-pavilion-green-white-and-red-debba7fc9a.tif",
+    "w": 12474,
+    "h": 6986,
+    "ext": "tif",
+    "bytes": 261465364,
+    "crc": 3487337124
+   }
+  }
+ },
+ "84f9881313": {
+  "key": "press/84f9881313",
+  "w": 6240,
+  "h": 4160,
+  "stamp": "77901794:1794714384249",
+  "tiers": {
+   "stamp": "77901794:1794714384249",
+   "s": {
+    "key": "press/84f9881313-s.jpg",
+    "name": "armenian-pavilion-reaching-across-84f9881313-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 61083,
+    "crc": 3093439929
+   },
+   "m": {
+    "key": "press/84f9881313-m.jpg",
+    "name": "armenian-pavilion-reaching-across-84f9881313-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 178757,
+    "crc": 905936341
+   },
+   "l": {
+    "key": "press/84f9881313-l.jpg",
+    "name": "armenian-pavilion-reaching-across-84f9881313-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 517132,
+    "crc": 2053032175
+   },
+   "raw": {
+    "key": "press/84f9881313-raw.tif",
+    "name": "armenian-pavilion-reaching-across-84f9881313.tif",
+    "w": 6240,
+    "h": 4160,
+    "ext": "tif",
+    "bytes": 77901794,
+    "crc": 1953214810
+   }
+  }
+ },
+ "72135a5e47": {
+  "key": "press/72135a5e47",
+  "w": 7060,
+  "h": 8180,
+  "stamp": "173292774:1794716125409",
+  "tiers": {
+   "stamp": "173292774:1794716125409",
+   "s": {
+    "key": "press/72135a5e47-s.jpg",
+    "name": "armenian-pavilion-home-by-the-arsenale-tower-72135a5e47-small.jpg",
+    "w": 1036,
+    "h": 1200,
+    "bytes": 118274,
+    "crc": 152497614
+   },
+   "m": {
+    "key": "press/72135a5e47-m.jpg",
+    "name": "armenian-pavilion-home-by-the-arsenale-tower-72135a5e47-medium.jpg",
+    "w": 2071,
+    "h": 2400,
+    "bytes": 398986,
+    "crc": 3311446550
+   },
+   "l": {
+    "key": "press/72135a5e47-l.jpg",
+    "name": "armenian-pavilion-home-by-the-arsenale-tower-72135a5e47-large.jpg",
+    "w": 3452,
+    "h": 4000,
+    "bytes": 1569947,
+    "crc": 3004018187
+   },
+   "raw": {
+    "key": "press/72135a5e47-raw.tif",
+    "name": "armenian-pavilion-home-by-the-arsenale-tower-72135a5e47.tif",
+    "w": 7060,
+    "h": 8180,
+    "ext": "tif",
+    "bytes": 173292774,
+    "crc": 299613000
+   }
+  }
+ },
+ "c64024eef9": {
+  "key": "press/c64024eef9",
+  "w": 12210,
+  "h": 4628,
+  "stamp": "169557412:1794716394656",
+  "tiers": {
+   "stamp": "169557412:1794716394656",
+   "s": {
+    "key": "press/c64024eef9-s.jpg",
+    "name": "armenian-pavilion-the-line-home-c64024eef9-small.jpg",
+    "w": 1200,
+    "h": 455,
+    "bytes": 100969,
+    "crc": 3844034449
+   },
+   "m": {
+    "key": "press/c64024eef9-m.jpg",
+    "name": "armenian-pavilion-the-line-home-c64024eef9-medium.jpg",
+    "w": 2400,
+    "h": 910,
+    "bytes": 388286,
+    "crc": 2236666394
+   },
+   "l": {
+    "key": "press/c64024eef9-l.jpg",
+    "name": "armenian-pavilion-the-line-home-c64024eef9-large.jpg",
+    "w": 4000,
+    "h": 1516,
+    "bytes": 1530632,
+    "crc": 402396680
+   },
+   "raw": {
+    "key": "press/c64024eef9-raw.tif",
+    "name": "armenian-pavilion-the-line-home-c64024eef9.tif",
+    "w": 12210,
+    "h": 4628,
+    "ext": "tif",
+    "bytes": 169557412,
+    "crc": 3257546133
+   }
+  }
+ },
+ "6ee14d32c1": {
+  "key": "press/6ee14d32c1",
+  "w": 12356,
+  "h": 8237,
+  "stamp": "305361884:1794716443982",
+  "tiers": {
+   "stamp": "305361884:1794716443982",
+   "s": {
+    "key": "press/6ee14d32c1-s.jpg",
+    "name": "armenian-pavilion-against-the-green-6ee14d32c1-small.jpg",
+    "w": 1200,
+    "h": 800,
+    "bytes": 109925,
+    "crc": 1211763251
+   },
+   "m": {
+    "key": "press/6ee14d32c1-m.jpg",
+    "name": "armenian-pavilion-against-the-green-6ee14d32c1-medium.jpg",
+    "w": 2400,
+    "h": 1600,
+    "bytes": 544266,
+    "crc": 4252823291
+   },
+   "l": {
+    "key": "press/6ee14d32c1-l.jpg",
+    "name": "armenian-pavilion-against-the-green-6ee14d32c1-large.jpg",
+    "w": 4000,
+    "h": 2667,
+    "bytes": 2787182,
+    "crc": 3201830368
+   },
+   "raw": {
+    "key": "press/6ee14d32c1-raw.tif",
+    "name": "armenian-pavilion-against-the-green-6ee14d32c1.tif",
+    "w": 12356,
+    "h": 8237,
+    "ext": "tif",
+    "bytes": 305361884,
+    "crc": 1927795243
+   }
+  }
  }
 }
