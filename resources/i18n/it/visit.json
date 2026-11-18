@@ -10,7 +10,6 @@
   "facts.hall-v": "Tesa 41",
   "facts.foot": "A piedi",
   "facts.foot-v": "≈ 8 min dal Leone",
-
   "guide.label": "Guida · {no}",
   "guide.walk-title": "A piedi dal Leone del Pireo",
   "guide.walk-meta": "Circa 8 minuti attraverso l’Arsenale",
@@ -25,7 +24,6 @@
   "guide.open-maps": "Apri in Maps",
   "guide.driver-card": "Scheda conducente",
   "guide.address": "Indirizzo",
-
   "walk.label": "A piedi · circa 8 min",
   "walk.start-dist": "PARTENZA",
   "walk.start-title": "Il Leone del Pireo",
@@ -36,7 +34,6 @@
   "walk.end-dist": "≈ 8 MIN",
   "walk.end-title": "Tesa 41",
   "walk.end-body": "Padiglione Armenia, Arsenale Militare.",
-
   "water.label": "Taxi acqueo · accesso autorizzato",
   "water.head-1": "Laguna Nord",
   "water.head-2": "Unico ingresso",
@@ -47,7 +44,6 @@
   "water.step-3": "Proseguire verso sud lungo il Rio delle Galeazze, seguendo il percorso indicato sulla mappa.",
   "water.step-4": "Raggiungere l’approdo del Padiglione Armenia.",
   "water.gabrielli": "Percorso completo dall’Hotel Gabrielli",
-
   "card.label": "Mostrare al conducente",
   "card.show-it": "Mostra in italiano",
   "card.show-own": "Mostra in italiano",
@@ -68,18 +64,21 @@
   "card.map-caption": "Percorso del taxi acqueo — entrare dalla Laguna Nord tramite il Rio delle Galeazze e proseguire verso sud fino all’approdo del padiglione",
   "card.legend-water": "Percorso in acqua",
   "card.legend-pav": "Padiglione Armenia",
-
+  "card.send-label": "Invia questa scheda a un ospite",
+  "card.send-text": "In taxi acqueo al Padiglione Armenia: mostrate questa scheda al conducente",
+  "card.copy": "Copia il link",
+  "card.copied": "Link copiato",
+  "card.share": "Condividi…",
+  "card.directions": "Tutte le indicazioni per il padiglione",
   "about.title": "Il padiglione",
   "about.p1": "Il Padiglione Armenia si sviluppa su <b>due sedi</b> all’interno dello storico Arsenale di Venezia: uno <b>studio interno di circa 465 metri quadrati</b> e una monumentale <b>scultura all’aperto</b> alle porte del complesso.",
   "about.p2": "Insieme formano un’unica costellazione: <i>un luogo per studiare, lavorare, creare, condividere ed esporre</i>. Per sei mesi il padiglione non funziona come una mostra statica ma come un laboratorio vivo: aperto, in evoluzione, costruito in tempo reale.",
-
   "studio.eyebrow": "Interno · Tesa 41",
   "studio.title": "Lo studio",
   "studio.p1": "La <b>Tesa 41</b> è il principale spazio di lavoro ed esposizione del Padiglione Armenia: <b>circa 465 metri quadrati</b> di ampio volume industriale all’interno dell’Arsenale, che è il <i>cuore operativo e concettuale</i> del progetto.",
   "studio.p2": "Qui il padiglione funziona come uno <b>studio di lavoro</b> più che come una mostra statica: un luogo in cui si continua a <b>fare</b>, <b>impilare</b>, <b>smontare</b> e <b>ricostruire</b>. Il volume interno permette all’opera di espandersi in <b>orizzontale</b> e in <b>verticale</b>, accogliendo sia composizioni monumentali sia momenti raccolti di attenzione alla materia.",
   "studio.p3": "Definito da scala, chiarezza e sobrietà architettonica, lo spazio è pensato per un lavoro continuo di <b>fabbricazione</b>, <b>assemblaggio</b> e <b>riconfigurazione</b> per tutta la durata della Biennale.",
   "studio.p4": "La Tesa 41 è l’ancora fisica e filosofica del padiglione, e fa <i>dello studio l’opera stessa</i>.",
-
   "outdoor.eyebrow": "Esterno · Attraversamento dell’Arsenale",
   "outdoor.title": "L’opera all’aperto",
   "outdoor.p1": "L’opera all’aperto sarà installata nello storico spazio di attraversamento vicino al <b>Leone del Pireo</b>, uno dei riferimenti più noti sulla via dell’Arsenale. In un punto chiave del passaggio pedonale, questo luogo è attraversato da un <b>flusso di persone eccezionalmente alto</b> per tutti i sei mesi della mostra.",
@@ -87,7 +86,6 @@
   "outdoor.p3": "Una forma autoportante, a scala architettonica, che è insieme <i>scultura, segnale e preludio</i>.",
   "outdoor.slide-caption": "Attraversamento all’Arsenale",
   "outdoor.slide-credit": "Render 2026",
-
   "arsenale.eyebrow": "Storia",
   "arsenale.title": "Arsenale Militare",
   "arsenale.p1": "L’<b>Arsenale di Venezia</b> è uno dei più grandi e antichi complessi cantieristici del mondo. Fondato nel <b>XII secolo</b>, è stato per oltre <b>sette secoli</b> il motore della potenza navale veneziana: al suo apice impiegava 16.000 lavoratori ed era in grado di allestire una nave da guerra completa in un solo giorno.",

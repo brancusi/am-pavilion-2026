@@ -63,6 +63,7 @@ const PAGES = {
   "/portage": { key: "portage", image: `${media}share/portage.jpg` },
   "/armenian-as-well": { key: "story", image: `${media}share/armenian-as-well.jpg` },
   "/route-from-hotel-gabrielli": { key: "taxi", image: `${media}share/visit.jpg` },
+  "/taxi": { key: "card", image: `${media}share/visit.jpg` },
   "/delivery": { key: "delivery", image: `${media}share/visit.jpg` },
   "/subscribed": { key: "subscribed", image: `${media}share/home.jpg` },
   // The journal index shows its newest post's cover (posts.json is newest first).

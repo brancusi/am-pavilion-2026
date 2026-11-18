@@ -87,6 +87,12 @@
                 :title :site/title-subscribed
                 :view subscribed-view}
 
+               ;; The water-taxi driver card on its own, the link guests are sent.
+               {:id ::taxi-card
+                :path "taxi"
+                :title :site/title-taxi-card
+                :view (lazy-component amp.pages.venue.page/taxi-view)}
+
                {:id ::water-taxi
                 :path "route-from-hotel-gabrielli"
                 :title :site/title-water-taxi
