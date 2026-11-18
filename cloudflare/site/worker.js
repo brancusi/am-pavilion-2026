@@ -64,6 +64,8 @@ const PAGES = {
   "/armenian-as-well": { key: "story", image: `${media}share/armenian-as-well.jpg` },
   "/route-from-hotel-gabrielli": { key: "taxi", image: `${media}share/visit.jpg` },
   "/taxi": { key: "card", image: `${media}share/visit.jpg` },
+  // Unlisted, sent to one guest: kept out of search engines.
+  "/taxi/gabrielli": { key: "taxigab", image: `${media}share/visit.jpg`, noindex: true },
   "/delivery": { key: "delivery", image: `${media}share/visit.jpg` },
   "/subscribed": { key: "subscribed", image: `${media}share/home.jpg` },
   // The journal index shows its newest post's cover (posts.json is newest first).
@@ -138,8 +140,12 @@ async function route(request, env, res, path, bare, locale) {
     // The home page keeps the site's own card in English (index.html); the others get their texts.
     if (trimmed === "/" && locale === "en") return res;
     const sized = page.image?.startsWith(`${media}share/`);   // the share cards are 1200×630
-    return preview(res, { path: at(locale, trimmed), title: T[`${page.key}.title`], description: T[`${page.key}.description`],
-                          image: page.image, ...(sized && { width: 1200, height: 630 }), type: "website", locale });
+    const out = preview(res, { path: at(locale, trimmed), title: T[`${page.key}.title`], description: T[`${page.key}.description`],
+                               image: page.image, ...(sized && { width: 1200, height: 630 }), type: "website", locale });
+    if (!page.noindex) return out;
+    const hidden = new Response(out.body, out);
+    hidden.headers.set("x-robots-tag", "noindex");
+    return hidden;
   }
 
   const pm = bare.match(/^\/press(?:\/([a-z-]+)(?:\/([A-Za-z0-9-]+))?)?\/?$/);

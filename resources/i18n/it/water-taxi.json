@@ -10,7 +10,6 @@
   "head.eyebrow": "Hotel Gabrielli → Arsenale Militare",
   "head.title": "In taxi acqueo",
   "head.lede": "Dall’approdo dell’<b>Hotel Gabrielli</b> in Riva degli Schiavoni direttamente all’approdo del padiglione, all’interno dell’<b>Arsenale Militare</b>. Il tragitto risale i canali di Castello verso nord, esce nella Laguna Nord e rientra dal <b>Rio delle Galeazze</b>: circa <b>15–20 minuti</b> di navigazione.",
-
   "intro": "Chiedete all’hotel di prenotare il taxi e mostrate questa pagina al conducente. L’accesso all’Arsenale è coordinato da <b>Julda</b>: il conducente deve chiamare prima di entrare.",
   "from-title": "Partenza",
   "to-title": "Arrivo",
@@ -20,7 +19,6 @@
   "contacts.secondary": "Contatto secondario · Luca",
   "contacts.third": "Terzo contatto · Aram",
   "contacts.third-note": "Parla solo inglese.",
-
   "route.eyebrow": "Hotel Gabrielli → Padiglione Armenia",
   "route.title": "Il percorso",
   "route.body": "Verso ovest lungo il Bacino, poi verso nord lungo <b>Rio della Pietà</b>, <b>Rio di Sant’Antonin</b> e <b>Rio di Santa Giustina</b>. Nella Laguna Nord il taxi svolta a est, supera la fermata Celestia e rientra nell’Arsenale dal <b>Rio delle Galeazze</b> — l’unico ingresso consentito — fino all’approdo accanto alla <b>Tesa 41</b>.",
@@ -28,11 +26,9 @@
   "route.legend-water": "Percorso del taxi",
   "route.legend-start": "Hotel Gabrielli",
   "route.legend-pav": "Padiglione Armenia",
-
   "driver.eyebrow": "Per il conducente",
   "driver.title": "Istruzioni per il conducente",
   "driver.intro": "Mostrate questa sezione al conducente del taxi.",
-
   "card.show-it": "Mostra in italiano",
   "card.show-own": "Mostra in italiano",
   "card.subtitle": "Hotel Gabrielli → Padiglione Armenia · Arsenale Militare",
@@ -56,5 +52,8 @@
   "card.step-5": "Entrare dall’unico ingresso consentito: Galeazze – Rio delle Galeazze.",
   "card.step-6": "Proseguire verso sud lungo il Rio delle Galeazze fino all’approdo del Padiglione Armenia, accanto alla Tesa 41.",
   "card.legend-water": "Percorso in acqua",
-  "card.legend-pav": "Padiglione Armenia"
+  "card.legend-pav": "Padiglione Armenia",
+  "card.show-driver": "Da mostrare al conducente",
+  "card.julda-only": "Julda",
+  "card.questions": "Per qualsiasi domanda, chiamare Julda"
 }
