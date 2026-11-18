@@ -2,6 +2,17 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-18 — Film "Building Blocks" and the journal post "Off the Shelf"
+
+**Rationale:** The new film of the work coming off the shelves belongs with the other films, in the press kit and in the journal, in the week of the closing.
+**Summary:** "Building Blocks" (2:03, Tesa 41, edited by Bibiana Juritz) is on Mux at 2160p with generated English captions and MP4 downloads. It leads the home films reel and the press kit's films, and has its own journal post, "Off the Shelf", on the closing, placement and value being in the structure, with graded stills of the 16 November assembly. English, Italian and Armenian.
+
+### Changes
+
+- Mux asset `ZXSDuObzbTWFYHP6aA00jsb39qSYbz01bXxo6dH8yf8Q00`, playback `02SaO6mNpCpxkPop7I0100PnLh1R9GKCYU2pXo01xY2HEmk`; `src/amp/data/films.cljs`, `films.json` catalogs, `docs/films.md`.
+- Press kit: `building-blocks` block in Dropbox `press_kit/video{,.it,.hy}.md`, regenerated with `npm run press:kit`.
+- Post `src/amp/pages/blog/posts/off_the_shelf.cljs`, catalogs `post-off-the-shelf.json`; stills on R2 `journal/26-11-16/` (blackbox, filmic look, balanced on the white plaster). Quotes from the film's subtitles and its Instagram caption (Notion "Building Blocks").
+
 ## 2026-11-13 — Film "Jasper Johns" and the journal post "This Fits This"
 
 **Rationale:** The new film, posted on Instagram today, belongs with the other films, in the press kit and in the journal.

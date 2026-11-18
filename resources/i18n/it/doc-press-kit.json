@@ -545,6 +545,15 @@
   "title": null,
   "films": [
    {
+    "slug": "building-blocks",
+    "held": false,
+    "title": "Building Blocks",
+    "date": "novembre 2026",
+    "credit": "Film: Bibiana Juritz e Aram Zadikian. Montaggio: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "Riposta su uno scaffale, l’opera ha pochissima presenza; tolta e montata sui tavoli dello studio, prende vita: sulla semplicità, sul gioco e sul blocco da costruzione.",
+    "html": "<p>Nella Tesa 41 la squadra monta l’opera pezzo per pezzo sui tavoli dello studio: blocchi di gesso bianco, lastre colorate inclinate, basse basi verdi e blu. Il pigmento viene dosato nei bicchieri, il gesso fresco steso in piano, i bordi puliti con una lama. Aram Zadikian dice che sullo scaffale l’opera «ha pochissima presenza»; Zadik Zadikian, studiando una nuova disposizione, dice che «più le cose sono semplici, meglio è». Aram parla di qualcosa di giocattolo, «come un blocco da costruzione»; Zadik risponde che la scala «non intimidisce», è «molto giocosa». Una visitatrice, in tedesco, pensa al Bauhaus. Sottotitoli in inglese impressi nell’immagine.</p>\n"
+   },
+   {
     "slug": "jasper-johns",
     "held": false,
     "title": "Jasper Johns",

@@ -545,6 +545,15 @@
   "title": null,
   "films": [
    {
+    "slug": "building-blocks",
+    "held": false,
+    "title": "Building Blocks",
+    "date": "November 2026",
+    "credit": "Film: Bibiana Juritz and Aram Zadikian. Edit: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "Put away on a shelf, the work has very little presence; taken out and assembled on the studio tables, it comes alive: on simplicity, play and the building block.",
+    "html": "<p>In Tesa 41 the team assembles the work piece by piece on the studio tables: white plaster blocks, coloured slabs leaning at an angle, low green and blue bases. Pigment is measured into mixing cups, wet plaster is spread flat, edges are cleaned with a blade. Aram Zadikian says that on the shelf the work &quot;has very little presence&quot;; Zadik Zadikian, studying a new arrangement, says &quot;the simpler things get, the better&quot;. Aram speaks of a toy-like element, &quot;like a building block&quot;; Zadik answers that the scale is &quot;not intimidating&quot;, &quot;very playful&quot;. A visitor, speaking German, thinks of the Bauhaus. English subtitles are burned in.</p>\n"
+   },
+   {
     "slug": "jasper-johns",
     "held": false,
     "title": "Jasper Johns",

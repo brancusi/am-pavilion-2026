@@ -5,6 +5,7 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 | Film | Source file | Length | Asset | Playback ID |
 |---|---|---|---|---|
+| Building Blocks | `11/packing_edit_4k.mp4` (uploaded 18 Nov; filmed in Tesa 41, edit Bibiana Juritz) | 2:03 | `ZXSDuObzbTWFYHP6aA00jsb39qSYbz01bXxo6dH8yf8Q00` | `02SaO6mNpCpxkPop7I0100PnLh1R9GKCYU2pXo01xY2HEmk` |
 | Jasper Johns | `11/jasper_johns_edit.mp4` (uploaded 13 Nov; filmed 25 Oct, edit Bibiana Juritz) | 2:16 | `pDfjrIn83qZhz8VAQp4021I8bkmEV9NB63uCYX8ATo4c` | `C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4` |
 | Seven Steps to Heaven | `10/steps_to_heaven_1_edit_4k_10-30-26.mp4` (uploaded 30 Oct) | 2:26 | `B2Ijd6weptJXB11NipcaHmLBFTSOXtv02KhHrAQKkdmo` | `uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM` |
 | The Italian Flag | `10/italian_flag_edit_4k.mp4` | 2:57 | `FAoWwgVbffOXKMd77clal7qd2hsMiLfuELfbX92MKfY` | `CR1rPwf1QHVhvNMICOawghM2g5QnylGxbMs0201QQxlLM` |
@@ -17,6 +18,11 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 ## What's in them
 
+- **Building Blocks:** the work taken down from the shelves and assembled on the studio tables in Tesa 41: white
+  plaster blocks, coloured slabs leaning at an angle, low bases; pigment measured, plaster spread, edges cleaned.
+  Aram on "very little presence" on the shelf and a toy-like building block; Zadik on "something peaceful and
+  simple" and a playful scale; a German-speaking visitor on the Bauhaus (the Mux transcript garbles her; the
+  Instagram caption in Notion "Building Blocks" has the translation). Subtitles burned in. Assembly footage: 16 Nov, FX3.
 - **Jasper Johns:** a long white plaster base engraved "Jasper Johns" with coloured slabs slotted in, in Tesa 41.
   Zadik on the joint "like a handshake", the mould, nothing fixed; Aram on a sword in a sheath, repetition and
   "we'll never have this arrangement again". Captions burned in. Recorder: `DJI_09_20261025_170622.WAV`.
