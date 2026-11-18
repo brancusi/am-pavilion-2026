@@ -10,7 +10,11 @@
 (defcatalog "films")
 
 (def ^:private entries
-  [{:slug "jasper-johns"
+  [{:slug "building-blocks"
+    :duration 123 :poster 50
+    :playback-id "02SaO6mNpCpxkPop7I0100PnLh1R9GKCYU2pXo01xY2HEmk"}
+
+   {:slug "jasper-johns"
     :duration 136 :poster 23
     :playback-id "C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4"}
 

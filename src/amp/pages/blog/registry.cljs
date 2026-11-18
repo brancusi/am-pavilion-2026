@@ -14,10 +14,12 @@
    [amp.pages.blog.posts.seven-steps-to-heaven :as post-steps]
    [amp.pages.blog.posts.the-studio-play-balance :as post-studio]
    [amp.pages.blog.posts.the-weight-of-the-flag :as post-weight]
-   [amp.pages.blog.posts.this-fits-this :as post-fits]))
+   [amp.pages.blog.posts.this-fits-this :as post-fits]
+   [amp.pages.blog.posts.off-the-shelf :as post-shelf]))
 
 (def ^:private components
-  {"this-fits-this"          post-fits/post-content
+  {"off-the-shelf"           post-shelf/post-content
+   "this-fits-this"          post-fits/post-content
    "the-weight-of-the-flag"  post-weight/post-content
    "seven-steps-to-heaven"   post-steps/post-content
    "making-a-flag"           post-flag/post-content
