@@ -5,7 +5,10 @@
    Press kit selection's groups in order (each image's :group is one's :id).")
 
 (def groups
- [{:id "press-g01"
+ [{:id "press-g10"
+   :name "Walking the Work · 18 November, the Accademia and San Marco"
+   :note "Twelve works by boat to the Accademia di Belle Arti, carried into its cloister, then across the Bacino to Piazza San Marco. Photographs by Mina Biasutti."}
+  {:id "press-g01"
    :name "Walking the Work · 14 November, San Marco"
    :note "The fourth walk: twelve works from Tesa 41 along the Riva degli Schiavoni to Piazza San Marco and home. Photographs by Mina Biasutti."}
   {:id "press-g02"
@@ -34,7 +37,2269 @@
    :note "The gold spaces and gold works, Yellow Space and Red Space, One Thousand Gold Bricks."}])
 
 (def images
- [{:uid "74f8c15580"
+ [{:uid "efc5b7e42e"
+   :group "press-g10"
+   :file "armenian-pavilion-the-cloister-before-the-works-arrive-efc5b7e42e"
+   :key "press/efc5b7e42e"
+   :w 6188
+   :h 4125
+   :section "process"
+   :title "The cloister before the works arrive"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The cloister of the Accademia di Belle Arti before the works arrive.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "The cloister before the works arrive, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/efc5b7e42e-s.jpg"
+            :name "armenian-pavilion-the-cloister-before-the-works-arrive-efc5b7e42e-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 201894
+            :crc 4092479348}
+        :m {:key "press/efc5b7e42e-m.jpg"
+            :name "armenian-pavilion-the-cloister-before-the-works-arrive-efc5b7e42e-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 858474
+            :crc 1836625489}
+        :l {:key "press/efc5b7e42e-l.jpg"
+            :name "armenian-pavilion-the-cloister-before-the-works-arrive-efc5b7e42e-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 2819238
+            :crc 3912382030}
+        :raw {:key "press/efc5b7e42e-raw.jpg"
+              :name "armenian-pavilion-the-cloister-before-the-works-arrive-efc5b7e42e.jpg"
+              :w 6188
+              :h 4125
+              :ext "jpg"
+              :bytes 19812454
+              :crc 424072819}}}
+  {:uid "2d42391bf6"
+   :group "press-g10"
+   :file "armenian-pavilion-into-the-cloister-2d42391bf6"
+   :key "press/2d42391bf6"
+   :w 4401
+   :h 1767
+   :section "process"
+   :title "Into the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works carried into the cloister of the Accademia.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Into the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/2d42391bf6-s.jpg"
+            :name "armenian-pavilion-into-the-cloister-2d42391bf6-small.jpg"
+            :w 1200
+            :h 482
+            :bytes 120126
+            :crc 3883441380}
+        :m {:key "press/2d42391bf6-m.jpg"
+            :name "armenian-pavilion-into-the-cloister-2d42391bf6-medium.jpg"
+            :w 2400
+            :h 964
+            :bytes 492072
+            :crc 54990009}
+        :l {:key "press/2d42391bf6-l.jpg"
+            :name "armenian-pavilion-into-the-cloister-2d42391bf6-large.jpg"
+            :w 4000
+            :h 1606
+            :bytes 1551717
+            :crc 1372972761}
+        :raw {:key "press/2d42391bf6-raw.jpg"
+              :name "armenian-pavilion-into-the-cloister-2d42391bf6.jpg"
+              :w 4401
+              :h 1767
+              :ext "jpg"
+              :bytes 6350295
+              :crc 2610796139}}}
+  {:uid "70d1098923"
+   :group "press-g10"
+   :file "armenian-pavilion-a-green-section-70d1098923"
+   :key "press/70d1098923"
+   :w 2111
+   :h 4017
+   :section "process"
+   :title "A green section"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier walks through the cloister under a green section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "A green section, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/70d1098923-s.jpg"
+            :name "armenian-pavilion-a-green-section-70d1098923-small.jpg"
+            :w 630
+            :h 1200
+            :bytes 93527
+            :crc 516469614}
+        :m {:key "press/70d1098923-m.jpg"
+            :name "armenian-pavilion-a-green-section-70d1098923-medium.jpg"
+            :w 1261
+            :h 2400
+            :bytes 377855
+            :crc 397936255}
+        :l {:key "press/70d1098923-l.jpg"
+            :name "armenian-pavilion-a-green-section-70d1098923-large.jpg"
+            :w 2102
+            :h 4000
+            :bytes 1376279
+            :crc 3751805191}
+        :raw {:key "press/70d1098923-raw.jpg"
+              :name "armenian-pavilion-a-green-section-70d1098923.jpg"
+              :w 2111
+              :h 4017
+              :ext "jpg"
+              :bytes 5441834
+              :crc 926257513}}}
+  {:uid "dca2cb21a0"
+   :group "press-g10"
+   :file "armenian-pavilion-a-red-section-dca2cb21a0"
+   :key "press/dca2cb21a0"
+   :w 2381
+   :h 3751
+   :section "process"
+   :title "A red section"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier under a red section in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "A red section, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/dca2cb21a0-s.jpg"
+            :name "armenian-pavilion-a-red-section-dca2cb21a0-small.jpg"
+            :w 762
+            :h 1200
+            :bytes 99729
+            :crc 285767015}
+        :m {:key "press/dca2cb21a0-m.jpg"
+            :name "armenian-pavilion-a-red-section-dca2cb21a0-medium.jpg"
+            :w 1523
+            :h 2400
+            :bytes 392606
+            :crc 1393085759}
+        :l {:key "press/dca2cb21a0-l.jpg"
+            :name "armenian-pavilion-a-red-section-dca2cb21a0-large.jpg"
+            :w 2381
+            :h 3751
+            :bytes 1244280
+            :crc 2167637630}
+        :raw {:key "press/dca2cb21a0-raw.jpg"
+              :name "armenian-pavilion-a-red-section-dca2cb21a0.jpg"
+              :w 2381
+              :h 3751
+              :ext "jpg"
+              :bytes 5140246
+              :crc 4263124463}}}
+  {:uid "76ba65df0d"
+   :group "press-g10"
+   :file "armenian-pavilion-under-the-green-76ba65df0d"
+   :key "press/76ba65df0d"
+   :w 2316
+   :h 3909
+   :section "process"
+   :title "Under the green"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier walks out from under a green section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Under the green, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/76ba65df0d-s.jpg"
+            :name "armenian-pavilion-under-the-green-76ba65df0d-small.jpg"
+            :w 711
+            :h 1200
+            :bytes 129737
+            :crc 1135249021}
+        :m {:key "press/76ba65df0d-m.jpg"
+            :name "armenian-pavilion-under-the-green-76ba65df0d-medium.jpg"
+            :w 1422
+            :h 2400
+            :bytes 563141
+            :crc 3446605300}
+        :l {:key "press/76ba65df0d-l.jpg"
+            :name "armenian-pavilion-under-the-green-76ba65df0d-large.jpg"
+            :w 2316
+            :h 3909
+            :bytes 1814348
+            :crc 3338241662}
+        :raw {:key "press/76ba65df0d-raw.jpg"
+              :name "armenian-pavilion-under-the-green-76ba65df0d.jpg"
+              :w 2316
+              :h 3909
+              :ext "jpg"
+              :bytes 6757309
+              :crc 3688209825}}}
+  {:uid "3c0b8a03ed"
+   :group "press-g10"
+   :file "armenian-pavilion-crossing-the-cloister-3c0b8a03ed"
+   :key "press/3c0b8a03ed"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Crossing the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier crosses the cloister with a red section, others behind.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Crossing the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/3c0b8a03ed-s.jpg"
+            :name "armenian-pavilion-crossing-the-cloister-3c0b8a03ed-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 155730
+            :crc 45008706}
+        :m {:key "press/3c0b8a03ed-m.jpg"
+            :name "armenian-pavilion-crossing-the-cloister-3c0b8a03ed-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 629370
+            :crc 872397063}
+        :l {:key "press/3c0b8a03ed-l.jpg"
+            :name "armenian-pavilion-crossing-the-cloister-3c0b8a03ed-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2235546
+            :crc 3426245922}
+        :raw {:key "press/3c0b8a03ed-raw.jpg"
+              :name "armenian-pavilion-crossing-the-cloister-3c0b8a03ed.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 18722589
+              :crc 2005610505}}}
+  {:uid "5b8a8203ba"
+   :group "press-g10"
+   :file "armenian-pavilion-the-well-5b8a8203ba"
+   :key "press/5b8a8203ba"
+   :w 6224
+   :h 4149
+   :section "process"
+   :title "The well"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works across the cloister, beyond its well.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "The well, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/5b8a8203ba-s.jpg"
+            :name "armenian-pavilion-the-well-5b8a8203ba-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 168082
+            :crc 4095587943}
+        :m {:key "press/5b8a8203ba-m.jpg"
+            :name "armenian-pavilion-the-well-5b8a8203ba-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 758126
+            :crc 2700269398}
+        :l {:key "press/5b8a8203ba-l.jpg"
+            :name "armenian-pavilion-the-well-5b8a8203ba-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 2611924
+            :crc 4059597084}
+        :raw {:key "press/5b8a8203ba-raw.jpg"
+              :name "armenian-pavilion-the-well-5b8a8203ba.jpg"
+              :w 6224
+              :h 4149
+              :ext "jpg"
+              :bytes 18909962
+              :crc 3195562676}}}
+  {:uid "40a09981cf"
+   :group "press-g10"
+   :file "armenian-pavilion-spread-out-under-the-arcades-40a09981cf"
+   :key "press/40a09981cf"
+   :w 5981
+   :h 3316
+   :section "process"
+   :title "Spread out under the arcades"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers spread out across the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Spread out under the arcades, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/40a09981cf-s.jpg"
+            :name "armenian-pavilion-spread-out-under-the-arcades-40a09981cf-small.jpg"
+            :w 1200
+            :h 665
+            :bytes 151024
+            :crc 1212955515}
+        :m {:key "press/40a09981cf-m.jpg"
+            :name "armenian-pavilion-spread-out-under-the-arcades-40a09981cf-medium.jpg"
+            :w 2400
+            :h 1331
+            :bytes 641560
+            :crc 3577112217}
+        :l {:key "press/40a09981cf-l.jpg"
+            :name "armenian-pavilion-spread-out-under-the-arcades-40a09981cf-large.jpg"
+            :w 4000
+            :h 2218
+            :bytes 2199936
+            :crc 1127483040}
+        :raw {:key "press/40a09981cf-raw.jpg"
+              :name "armenian-pavilion-spread-out-under-the-arcades-40a09981cf.jpg"
+              :w 5981
+              :h 3316
+              :ext "jpg"
+              :bytes 15152191
+              :crc 265683857}}}
+  {:uid "1a72bb7d43"
+   :group "press-g10"
+   :file "armenian-pavilion-in-line-with-a-camera-1a72bb7d43"
+   :key "press/1a72bb7d43"
+   :w 5976
+   :h 3984
+   :section "process"
+   :title "In line, with a camera"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers line up across the cloister as a camera films them.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "In line, with a camera, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/1a72bb7d43-s.jpg"
+            :name "armenian-pavilion-in-line-with-a-camera-1a72bb7d43-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 211777
+            :crc 3295031307}
+        :m {:key "press/1a72bb7d43-m.jpg"
+            :name "armenian-pavilion-in-line-with-a-camera-1a72bb7d43-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 897614
+            :crc 1709066773}
+        :l {:key "press/1a72bb7d43-l.jpg"
+            :name "armenian-pavilion-in-line-with-a-camera-1a72bb7d43-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2969785
+            :crc 2926352819}
+        :raw {:key "press/1a72bb7d43-raw.jpg"
+              :name "armenian-pavilion-in-line-with-a-camera-1a72bb7d43.jpg"
+              :w 5976
+              :h 3984
+              :ext "jpg"
+              :bytes 19998481
+              :crc 1349406085}}}
+  {:uid "c0f7505a0c"
+   :group "press-g10"
+   :file "armenian-pavilion-in-rows-across-the-cloister-c0f7505a0c"
+   :key "press/c0f7505a0c"
+   :w 6022
+   :h 3839
+   :section "process"
+   :title "In rows across the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers stand in rows across the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "In rows across the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/c0f7505a0c-s.jpg"
+            :name "armenian-pavilion-in-rows-across-the-cloister-c0f7505a0c-small.jpg"
+            :w 1200
+            :h 765
+            :bytes 189328
+            :crc 2394846765}
+        :m {:key "press/c0f7505a0c-m.jpg"
+            :name "armenian-pavilion-in-rows-across-the-cloister-c0f7505a0c-medium.jpg"
+            :w 2400
+            :h 1530
+            :bytes 816436
+            :crc 1385234661}
+        :l {:key "press/c0f7505a0c-l.jpg"
+            :name "armenian-pavilion-in-rows-across-the-cloister-c0f7505a0c-large.jpg"
+            :w 4000
+            :h 2550
+            :bytes 2730303
+            :crc 885729248}
+        :raw {:key "press/c0f7505a0c-raw.jpg"
+              :name "armenian-pavilion-in-rows-across-the-cloister-c0f7505a0c.jpg"
+              :w 6022
+              :h 3839
+              :ext "jpg"
+              :bytes 18706750
+              :crc 2342303558}}}
+  {:uid "ff07d14201"
+   :group "press-g10"
+   :file "armenian-pavilion-the-line-along-the-arcade-ff07d14201"
+   :key "press/ff07d14201"
+   :w 5915
+   :h 3533
+   :section "process"
+   :title "The line along the arcade"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works stand in a line along one side of the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "The line along the arcade, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/ff07d14201-s.jpg"
+            :name "armenian-pavilion-the-line-along-the-arcade-ff07d14201-small.jpg"
+            :w 1200
+            :h 717
+            :bytes 182391
+            :crc 181486990}
+        :m {:key "press/ff07d14201-m.jpg"
+            :name "armenian-pavilion-the-line-along-the-arcade-ff07d14201-medium.jpg"
+            :w 2400
+            :h 1434
+            :bytes 787600
+            :crc 2038734259}
+        :l {:key "press/ff07d14201-l.jpg"
+            :name "armenian-pavilion-the-line-along-the-arcade-ff07d14201-large.jpg"
+            :w 4000
+            :h 2389
+            :bytes 2622977
+            :crc 3898190654}
+        :raw {:key "press/ff07d14201-raw.jpg"
+              :name "armenian-pavilion-the-line-along-the-arcade-ff07d14201.jpg"
+              :w 5915
+              :h 3533
+              :ext "jpg"
+              :bytes 17277304
+              :crc 3117029076}}}
+  {:uid "8c47262a4b"
+   :group "press-g10"
+   :file "armenian-pavilion-turning-out-of-line-8c47262a4b"
+   :key "press/8c47262a4b"
+   :w 6114
+   :h 3505
+   :section "process"
+   :title "Turning out of line"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier turns out of the line with a green section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Turning out of line, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/8c47262a4b-s.jpg"
+            :name "armenian-pavilion-turning-out-of-line-8c47262a4b-small.jpg"
+            :w 1200
+            :h 688
+            :bytes 169474
+            :crc 3102377981}
+        :m {:key "press/8c47262a4b-m.jpg"
+            :name "armenian-pavilion-turning-out-of-line-8c47262a4b-medium.jpg"
+            :w 2400
+            :h 1376
+            :bytes 718035
+            :crc 3554181183}
+        :l {:key "press/8c47262a4b-l.jpg"
+            :name "armenian-pavilion-turning-out-of-line-8c47262a4b-large.jpg"
+            :w 4000
+            :h 2293
+            :bytes 2383498
+            :crc 1276369273}
+        :raw {:key "press/8c47262a4b-raw.jpg"
+              :name "armenian-pavilion-turning-out-of-line-8c47262a4b.jpg"
+              :w 6114
+              :h 3505
+              :ext "jpg"
+              :bytes 16847091
+              :crc 17711098}}}
+  {:uid "730fea73ca"
+   :group "press-g10"
+   :file "armenian-pavilion-along-the-line-730fea73ca"
+   :key "press/730fea73ca"
+   :w 6055
+   :h 4037
+   :section "process"
+   :title "Along the line"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier walks along the line of works.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Along the line, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/730fea73ca-s.jpg"
+            :name "armenian-pavilion-along-the-line-730fea73ca-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 150354
+            :crc 3130892294}
+        :m {:key "press/730fea73ca-m.jpg"
+            :name "armenian-pavilion-along-the-line-730fea73ca-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 577400
+            :crc 2525912859}
+        :l {:key "press/730fea73ca-l.jpg"
+            :name "armenian-pavilion-along-the-line-730fea73ca-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2030362
+            :crc 2261082179}
+        :raw {:key "press/730fea73ca-raw.jpg"
+              :name "armenian-pavilion-along-the-line-730fea73ca.jpg"
+              :w 6055
+              :h 4037
+              :ext "jpg"
+              :bytes 15600092
+              :crc 2064515048}}}
+  {:uid "30d7a57f61"
+   :group "press-g10"
+   :file "armenian-pavilion-the-line-close-30d7a57f61"
+   :key "press/30d7a57f61"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "The line, close"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The line of carriers, seen from its head.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "The line, close, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/30d7a57f61-s.jpg"
+            :name "armenian-pavilion-the-line-close-30d7a57f61-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 148459
+            :crc 447012358}
+        :m {:key "press/30d7a57f61-m.jpg"
+            :name "armenian-pavilion-the-line-close-30d7a57f61-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 576868
+            :crc 2071861675}
+        :l {:key "press/30d7a57f61-l.jpg"
+            :name "armenian-pavilion-the-line-close-30d7a57f61-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2033442
+            :crc 1573910772}
+        :raw {:key "press/30d7a57f61-raw.jpg"
+              :name "armenian-pavilion-the-line-close-30d7a57f61.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 17947531
+              :crc 1592582985}}}
+  {:uid "61b330a15d"
+   :group "press-g10"
+   :file "armenian-pavilion-out-of-the-line-61b330a15d"
+   :key "press/61b330a15d"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Out of the line"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier steps forward with a green section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Out of the line, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/61b330a15d-s.jpg"
+            :name "armenian-pavilion-out-of-the-line-61b330a15d-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 176747
+            :crc 2769601323}
+        :m {:key "press/61b330a15d-m.jpg"
+            :name "armenian-pavilion-out-of-the-line-61b330a15d-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 754761
+            :crc 2532488832}
+        :l {:key "press/61b330a15d-l.jpg"
+            :name "armenian-pavilion-out-of-the-line-61b330a15d-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2616639
+            :crc 972687416}
+        :raw {:key "press/61b330a15d-raw.jpg"
+              :name "armenian-pavilion-out-of-the-line-61b330a15d.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 20672241
+              :crc 3687150852}}}
+  {:uid "f44096ee92"
+   :group "press-g10"
+   :file "armenian-pavilion-talking-in-the-cloister-f44096ee92"
+   :key "press/f44096ee92"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Talking in the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Carriers and visitors talk in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Talking in the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/f44096ee92-s.jpg"
+            :name "armenian-pavilion-talking-in-the-cloister-f44096ee92-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 188103
+            :crc 2640526206}
+        :m {:key "press/f44096ee92-m.jpg"
+            :name "armenian-pavilion-talking-in-the-cloister-f44096ee92-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 805557
+            :crc 1360121357}
+        :l {:key "press/f44096ee92-l.jpg"
+            :name "armenian-pavilion-talking-in-the-cloister-f44096ee92-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2741684
+            :crc 1470177365}
+        :raw {:key "press/f44096ee92-raw.jpg"
+              :name "armenian-pavilion-talking-in-the-cloister-f44096ee92.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 21115907
+              :crc 3860324344}}}
+  {:uid "a306a9af6a"
+   :group "press-g10"
+   :file "armenian-pavilion-moving-through-the-cloister-a306a9af6a"
+   :key "press/a306a9af6a"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Moving through the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works move through the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Moving through the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/a306a9af6a-s.jpg"
+            :name "armenian-pavilion-moving-through-the-cloister-a306a9af6a-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 168660
+            :crc 4115080978}
+        :m {:key "press/a306a9af6a-m.jpg"
+            :name "armenian-pavilion-moving-through-the-cloister-a306a9af6a-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 660905
+            :crc 2547910561}
+        :l {:key "press/a306a9af6a-l.jpg"
+            :name "armenian-pavilion-moving-through-the-cloister-a306a9af6a-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2212584
+            :crc 696085373}
+        :raw {:key "press/a306a9af6a-raw.jpg"
+              :name "armenian-pavilion-moving-through-the-cloister-a306a9af6a.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 17789258
+              :crc 1529295857}}}
+  {:uid "c49a7d273c"
+   :group "press-g10"
+   :file "armenian-pavilion-among-the-works-c49a7d273c"
+   :key "press/c49a7d273c"
+   :w 6236
+   :h 4157
+   :section "process"
+   :title "Among the works"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A woman in a long black coat walks among the works.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Among the works, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/c49a7d273c-s.jpg"
+            :name "armenian-pavilion-among-the-works-c49a7d273c-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 122192
+            :crc 135873958}
+        :m {:key "press/c49a7d273c-m.jpg"
+            :name "armenian-pavilion-among-the-works-c49a7d273c-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 439309
+            :crc 2122744320}
+        :l {:key "press/c49a7d273c-l.jpg"
+            :name "armenian-pavilion-among-the-works-c49a7d273c-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 1613608
+            :crc 3408500143}
+        :raw {:key "press/c49a7d273c-raw.jpg"
+              :name "armenian-pavilion-among-the-works-c49a7d273c.jpg"
+              :w 6236
+              :h 4157
+              :ext "jpg"
+              :bytes 14548538
+              :crc 3492733365}}}
+  {:uid "9d7b6af6f8"
+   :group "press-g10"
+   :file "armenian-pavilion-crossing-paths-9d7b6af6f8"
+   :key "press/9d7b6af6f8"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Crossing paths"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers cross paths in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Crossing paths, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/9d7b6af6f8-s.jpg"
+            :name "armenian-pavilion-crossing-paths-9d7b6af6f8-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 175783
+            :crc 1927326228}
+        :m {:key "press/9d7b6af6f8-m.jpg"
+            :name "armenian-pavilion-crossing-paths-9d7b6af6f8-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 730691
+            :crc 538792596}
+        :l {:key "press/9d7b6af6f8-l.jpg"
+            :name "armenian-pavilion-crossing-paths-9d7b6af6f8-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2498032
+            :crc 4232487666}
+        :raw {:key "press/9d7b6af6f8-raw.jpg"
+              :name "armenian-pavilion-crossing-paths-9d7b6af6f8.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 19669717
+              :crc 3257977559}}}
+  {:uid "9dfa2a50f8"
+   :group "press-g10"
+   :file "armenian-pavilion-red-and-white-9dfa2a50f8"
+   :key "press/9dfa2a50f8"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Red and white"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A red and a white section, close by.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Red and white, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/9dfa2a50f8-s.jpg"
+            :name "armenian-pavilion-red-and-white-9dfa2a50f8-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 121107
+            :crc 2940017275}
+        :m {:key "press/9dfa2a50f8-m.jpg"
+            :name "armenian-pavilion-red-and-white-9dfa2a50f8-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 470461
+            :crc 1857520412}
+        :l {:key "press/9dfa2a50f8-l.jpg"
+            :name "armenian-pavilion-red-and-white-9dfa2a50f8-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1714581
+            :crc 2379305713}
+        :raw {:key "press/9dfa2a50f8-raw.jpg"
+              :name "armenian-pavilion-red-and-white-9dfa2a50f8.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 15488192
+              :crc 1714659010}}}
+  {:uid "11ecade310"
+   :group "press-g10"
+   :file "armenian-pavilion-carriers-at-rest-11ecade310"
+   :key "press/11ecade310"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Carriers at rest"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Two carriers stand at rest in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Carriers at rest, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/11ecade310-s.jpg"
+            :name "armenian-pavilion-carriers-at-rest-11ecade310-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 158799
+            :crc 3830991714}
+        :m {:key "press/11ecade310-m.jpg"
+            :name "armenian-pavilion-carriers-at-rest-11ecade310-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 659172
+            :crc 832918510}
+        :l {:key "press/11ecade310-l.jpg"
+            :name "armenian-pavilion-carriers-at-rest-11ecade310-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2264128
+            :crc 2614957560}
+        :raw {:key "press/11ecade310-raw.jpg"
+              :name "armenian-pavilion-carriers-at-rest-11ecade310.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 18392107
+              :crc 512977161}}}
+  {:uid "e3fc2d4aaa"
+   :group "press-g10"
+   :file "armenian-pavilion-across-the-cloister-e3fc2d4aaa"
+   :key "press/e3fc2d4aaa"
+   :w 6207
+   :h 2637
+   :section "process"
+   :title "Across the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers scattered across the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Across the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/e3fc2d4aaa-s.jpg"
+            :name "armenian-pavilion-across-the-cloister-e3fc2d4aaa-small.jpg"
+            :w 1200
+            :h 510
+            :bytes 133321
+            :crc 2300527567}
+        :m {:key "press/e3fc2d4aaa-m.jpg"
+            :name "armenian-pavilion-across-the-cloister-e3fc2d4aaa-medium.jpg"
+            :w 2400
+            :h 1020
+            :bytes 572297
+            :crc 3331513377}
+        :l {:key "press/e3fc2d4aaa-l.jpg"
+            :name "armenian-pavilion-across-the-cloister-e3fc2d4aaa-large.jpg"
+            :w 4000
+            :h 1699
+            :bytes 1872036
+            :crc 2818089227}
+        :raw {:key "press/e3fc2d4aaa-raw.jpg"
+              :name "armenian-pavilion-across-the-cloister-e3fc2d4aaa.jpg"
+              :w 6207
+              :h 2637
+              :ext "jpg"
+              :bytes 13437442
+              :crc 4270220111}}}
+  {:uid "e7a592c78e"
+   :group "press-g10"
+   :file "armenian-pavilion-facing-the-arcade-e7a592c78e"
+   :key "press/e7a592c78e"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Facing the arcade"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works face the arcade at the end of the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Facing the arcade, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/e7a592c78e-s.jpg"
+            :name "armenian-pavilion-facing-the-arcade-e7a592c78e-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 196621
+            :crc 987783534}
+        :m {:key "press/e7a592c78e-m.jpg"
+            :name "armenian-pavilion-facing-the-arcade-e7a592c78e-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 873586
+            :crc 3637100867}
+        :l {:key "press/e7a592c78e-l.jpg"
+            :name "armenian-pavilion-facing-the-arcade-e7a592c78e-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2921592
+            :crc 1827444134}
+        :raw {:key "press/e7a592c78e-raw.jpg"
+              :name "armenian-pavilion-facing-the-arcade-e7a592c78e.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 21616891
+              :crc 732319381}}}
+  {:uid "86bf7f4a27"
+   :group "press-g10"
+   :file "armenian-pavilion-between-two-sections-86bf7f4a27"
+   :key "press/86bf7f4a27"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Between two sections"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A view between a white and a turquoise section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Between two sections, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/86bf7f4a27-s.jpg"
+            :name "armenian-pavilion-between-two-sections-86bf7f4a27-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 80207
+            :crc 453436881}
+        :m {:key "press/86bf7f4a27-m.jpg"
+            :name "armenian-pavilion-between-two-sections-86bf7f4a27-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 328967
+            :crc 921673522}
+        :l {:key "press/86bf7f4a27-l.jpg"
+            :name "armenian-pavilion-between-two-sections-86bf7f4a27-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1463101
+            :crc 1578727829}
+        :raw {:key "press/86bf7f4a27-raw.jpg"
+              :name "armenian-pavilion-between-two-sections-86bf7f4a27.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 16099973
+              :crc 2710027517}}}
+  {:uid "4837b7df4e"
+   :group "press-g10"
+   :file "armenian-pavilion-recording-in-the-cloister-4837b7df4e"
+   :key "press/4837b7df4e"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Recording in the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A sound recordist at work among the carriers.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Recording in the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/4837b7df4e-s.jpg"
+            :name "armenian-pavilion-recording-in-the-cloister-4837b7df4e-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 94747
+            :crc 2066115220}
+        :m {:key "press/4837b7df4e-m.jpg"
+            :name "armenian-pavilion-recording-in-the-cloister-4837b7df4e-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 354747
+            :crc 2636007748}
+        :l {:key "press/4837b7df4e-l.jpg"
+            :name "armenian-pavilion-recording-in-the-cloister-4837b7df4e-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1435647
+            :crc 66665431}
+        :raw {:key "press/4837b7df4e-raw.jpg"
+              :name "armenian-pavilion-recording-in-the-cloister-4837b7df4e.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 15033463
+              :crc 1099252698}}}
+  {:uid "09b00fbf45"
+   :group "press-g10"
+   :file "armenian-pavilion-conversation-in-the-cloister-09b00fbf45"
+   :key "press/09b00fbf45"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Conversation in the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Conversations among the carriers.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Conversation in the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/09b00fbf45-s.jpg"
+            :name "armenian-pavilion-conversation-in-the-cloister-09b00fbf45-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 119643
+            :crc 1397400314}
+        :m {:key "press/09b00fbf45-m.jpg"
+            :name "armenian-pavilion-conversation-in-the-cloister-09b00fbf45-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 418974
+            :crc 1798010115}
+        :l {:key "press/09b00fbf45-l.jpg"
+            :name "armenian-pavilion-conversation-in-the-cloister-09b00fbf45-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1567308
+            :crc 1444281464}
+        :raw {:key "press/09b00fbf45-raw.jpg"
+              :name "armenian-pavilion-conversation-in-the-cloister-09b00fbf45.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 15101530
+              :crc 3385147757}}}
+  {:uid "dca61a0bf0"
+   :group "press-g10"
+   :file "armenian-pavilion-listening-dca61a0bf0"
+   :key "press/dca61a0bf0"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Listening"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier listens in a conversation in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Listening, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/dca61a0bf0-s.jpg"
+            :name "armenian-pavilion-listening-dca61a0bf0-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 105078
+            :crc 1727390919}
+        :m {:key "press/dca61a0bf0-m.jpg"
+            :name "armenian-pavilion-listening-dca61a0bf0-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 390686
+            :crc 185022916}
+        :l {:key "press/dca61a0bf0-l.jpg"
+            :name "armenian-pavilion-listening-dca61a0bf0-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1531572
+            :crc 461612138}
+        :raw {:key "press/dca61a0bf0-raw.jpg"
+              :name "armenian-pavilion-listening-dca61a0bf0.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 14560746
+              :crc 2516697513}}}
+  {:uid "4f87fa6e8b"
+   :group "press-g10"
+   :file "armenian-pavilion-talking-under-a-white-section-4f87fa6e8b"
+   :key "press/4f87fa6e8b"
+   :w 6117
+   :h 4078
+   :section "process"
+   :title "Talking under a white section"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier talks under a white section.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Talking under a white section, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/4f87fa6e8b-s.jpg"
+            :name "armenian-pavilion-talking-under-a-white-section-4f87fa6e8b-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 97814
+            :crc 3987094556}
+        :m {:key "press/4f87fa6e8b-m.jpg"
+            :name "armenian-pavilion-talking-under-a-white-section-4f87fa6e8b-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 382322
+            :crc 1914951674}
+        :l {:key "press/4f87fa6e8b-l.jpg"
+            :name "armenian-pavilion-talking-under-a-white-section-4f87fa6e8b-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1522383
+            :crc 2658633813}
+        :raw {:key "press/4f87fa6e8b-raw.jpg"
+              :name "armenian-pavilion-talking-under-a-white-section-4f87fa6e8b.jpg"
+              :w 6117
+              :h 4078
+              :ext "jpg"
+              :bytes 13415221
+              :crc 1396270644}}}
+  {:uid "45aaff8229"
+   :group "press-g10"
+   :file "armenian-pavilion-waiting-in-the-cloister-45aaff8229"
+   :key "press/45aaff8229"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Waiting in the cloister"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Carriers wait in the cloister.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Waiting in the cloister, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/45aaff8229-s.jpg"
+            :name "armenian-pavilion-waiting-in-the-cloister-45aaff8229-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 112366
+            :crc 3545946938}
+        :m {:key "press/45aaff8229-m.jpg"
+            :name "armenian-pavilion-waiting-in-the-cloister-45aaff8229-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 422027
+            :crc 1412231942}
+        :l {:key "press/45aaff8229-l.jpg"
+            :name "armenian-pavilion-waiting-in-the-cloister-45aaff8229-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1630054
+            :crc 1587440128}
+        :raw {:key "press/45aaff8229-raw.jpg"
+              :name "armenian-pavilion-waiting-in-the-cloister-45aaff8229.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 16224116
+              :crc 74528686}}}
+  {:uid "82700d42d4"
+   :group "press-g10"
+   :file "armenian-pavilion-between-the-works-82700d42d4"
+   :key "press/82700d42d4"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Between the works"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. People talk between the works.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "Between the works, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/82700d42d4-s.jpg"
+            :name "armenian-pavilion-between-the-works-82700d42d4-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 149024
+            :crc 3643041246}
+        :m {:key "press/82700d42d4-m.jpg"
+            :name "armenian-pavilion-between-the-works-82700d42d4-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 551362
+            :crc 2418348811}
+        :l {:key "press/82700d42d4-l.jpg"
+            :name "armenian-pavilion-between-the-works-82700d42d4-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1905773
+            :crc 1301404427}
+        :raw {:key "press/82700d42d4-raw.jpg"
+              :name "armenian-pavilion-between-the-works-82700d42d4.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 16252333
+              :crc 2159873603}}}
+  {:uid "8e73480553"
+   :group "press-g10"
+   :file "armenian-pavilion-in-a-row-under-the-arcade-8e73480553"
+   :key "press/8e73480553"
+   :w 5771
+   :h 1811
+   :section "process"
+   :title "In a row under the arcade"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works set down in a row along the arcade.\n\nAccademia di Belle Arti di Venezia, Dorsoduro, Venice"
+   :caption_short "In a row under the arcade, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/8e73480553-s.jpg"
+            :name "armenian-pavilion-in-a-row-under-the-arcade-8e73480553-small.jpg"
+            :w 1200
+            :h 376
+            :bytes 83188
+            :crc 1934056627}
+        :m {:key "press/8e73480553-m.jpg"
+            :name "armenian-pavilion-in-a-row-under-the-arcade-8e73480553-medium.jpg"
+            :w 2400
+            :h 753
+            :bytes 328240
+            :crc 3861023522}
+        :l {:key "press/8e73480553-l.jpg"
+            :name "armenian-pavilion-in-a-row-under-the-arcade-8e73480553-large.jpg"
+            :w 4000
+            :h 1255
+            :bytes 1113934
+            :crc 3524799768}
+        :raw {:key "press/8e73480553-raw.jpg"
+              :name "armenian-pavilion-in-a-row-under-the-arcade-8e73480553.jpg"
+              :w 5771
+              :h 1811
+              :ext "jpg"
+              :bytes 7816407
+              :crc 251973530}}}
+  {:uid "2177d90373"
+   :group "press-g10"
+   :file "armenian-pavilion-on-the-water-2177d90373"
+   :key "press/2177d90373"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "On the water"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. On the boat across the Bacino, San Giorgio Maggiore behind.\n\nBacino di San Marco, Venice"
+   :caption_short "On the water, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/2177d90373-s.jpg"
+            :name "armenian-pavilion-on-the-water-2177d90373-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 49170
+            :crc 713530285}
+        :m {:key "press/2177d90373-m.jpg"
+            :name "armenian-pavilion-on-the-water-2177d90373-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 224539
+            :crc 388215581}
+        :l {:key "press/2177d90373-l.jpg"
+            :name "armenian-pavilion-on-the-water-2177d90373-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1218069
+            :crc 607818484}
+        :raw {:key "press/2177d90373-raw.jpg"
+              :name "armenian-pavilion-on-the-water-2177d90373.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 11385145
+              :crc 1005416730}}}
+  {:uid "9d54246880"
+   :group "press-g10"
+   :file "armenian-pavilion-the-works-by-boat-9d54246880"
+   :key "press/9d54246880"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "The works by boat"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works cross the Bacino di San Marco by boat, San Giorgio Maggiore behind.\n\nBacino di San Marco, Venice"
+   :caption_short "The works by boat, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/9d54246880-s.jpg"
+            :name "armenian-pavilion-the-works-by-boat-9d54246880-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 99847
+            :crc 1250909145}
+        :m {:key "press/9d54246880-m.jpg"
+            :name "armenian-pavilion-the-works-by-boat-9d54246880-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 427669
+            :crc 247236023}
+        :l {:key "press/9d54246880-l.jpg"
+            :name "armenian-pavilion-the-works-by-boat-9d54246880-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1687765
+            :crc 1746722816}
+        :raw {:key "press/9d54246880-raw.jpg"
+              :name "armenian-pavilion-the-works-by-boat-9d54246880.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 14144365
+              :crc 2452615977}}}
+  {:uid "7d1ef5dcf4"
+   :group "press-g10"
+   :file "armenian-pavilion-across-the-bacino-7d1ef5dcf4"
+   :key "press/7d1ef5dcf4"
+   :w 5886
+   :h 3293
+   :section "process"
+   :title "Across the Bacino"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The boat with the works on the open water.\n\nBacino di San Marco, Venice"
+   :caption_short "Across the Bacino, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/7d1ef5dcf4-s.jpg"
+            :name "armenian-pavilion-across-the-bacino-7d1ef5dcf4-small.jpg"
+            :w 1200
+            :h 671
+            :bytes 50982
+            :crc 2393102759}
+        :m {:key "press/7d1ef5dcf4-m.jpg"
+            :name "armenian-pavilion-across-the-bacino-7d1ef5dcf4-medium.jpg"
+            :w 2400
+            :h 1343
+            :bytes 240062
+            :crc 2597213136}
+        :l {:key "press/7d1ef5dcf4-l.jpg"
+            :name "armenian-pavilion-across-the-bacino-7d1ef5dcf4-large.jpg"
+            :w 4000
+            :h 2238
+            :bytes 1123577
+            :crc 1373645535}
+        :raw {:key "press/7d1ef5dcf4-raw.jpg"
+              :name "armenian-pavilion-across-the-bacino-7d1ef5dcf4.jpg"
+              :w 5886
+              :h 3293
+              :ext "jpg"
+              :bytes 8766126
+              :crc 2072540694}}}
+  {:uid "40eb0dc367"
+   :group "press-g10"
+   :file "armenian-pavilion-unloading-40eb0dc367"
+   :key "press/40eb0dc367"
+   :w 6203
+   :h 4135
+   :section "process"
+   :title "Unloading"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A white section lifted off the boat at the landing.\n\nSan Marco, Venice"
+   :caption_short "Unloading, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/40eb0dc367-s.jpg"
+            :name "armenian-pavilion-unloading-40eb0dc367-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 142471
+            :crc 2784890960}
+        :m {:key "press/40eb0dc367-m.jpg"
+            :name "armenian-pavilion-unloading-40eb0dc367-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 538487
+            :crc 3549935662}
+        :l {:key "press/40eb0dc367-l.jpg"
+            :name "armenian-pavilion-unloading-40eb0dc367-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 1840631
+            :crc 160028643}
+        :raw {:key "press/40eb0dc367-raw.jpg"
+              :name "armenian-pavilion-unloading-40eb0dc367.jpg"
+              :w 6203
+              :h 4135
+              :ext "jpg"
+              :bytes 14630605
+              :crc 376659297}}}
+  {:uid "e779ead83b"
+   :group "press-g10"
+   :file "armenian-pavilion-unloading-the-green-e779ead83b"
+   :key "press/e779ead83b"
+   :w 6204
+   :h 4136
+   :section "process"
+   :title "Unloading the green"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A green section handed up onto the landing.\n\nSan Marco, Venice"
+   :caption_short "Unloading the green, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/e779ead83b-s.jpg"
+            :name "armenian-pavilion-unloading-the-green-e779ead83b-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 125875
+            :crc 466289375}
+        :m {:key "press/e779ead83b-m.jpg"
+            :name "armenian-pavilion-unloading-the-green-e779ead83b-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 500122
+            :crc 2303814232}
+        :l {:key "press/e779ead83b-l.jpg"
+            :name "armenian-pavilion-unloading-the-green-e779ead83b-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1778583
+            :crc 2607256241}
+        :raw {:key "press/e779ead83b-raw.jpg"
+              :name "armenian-pavilion-unloading-the-green-e779ead83b.jpg"
+              :w 6204
+              :h 4136
+              :ext "jpg"
+              :bytes 14542501
+              :crc 1254026786}}}
+  {:uid "f6033aa655"
+   :group "press-g10"
+   :file "armenian-pavilion-unloading-the-red-f6033aa655"
+   :key "press/f6033aa655"
+   :w 6197
+   :h 4131
+   :section "process"
+   :title "Unloading the red"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A red section lifted from the boat.\n\nSan Marco, Venice"
+   :caption_short "Unloading the red, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/f6033aa655-s.jpg"
+            :name "armenian-pavilion-unloading-the-red-f6033aa655-small.jpg"
+            :w 1200
+            :h 799
+            :bytes 133346
+            :crc 3288814374}
+        :m {:key "press/f6033aa655-m.jpg"
+            :name "armenian-pavilion-unloading-the-red-f6033aa655-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 535134
+            :crc 2781280105}
+        :l {:key "press/f6033aa655-l.jpg"
+            :name "armenian-pavilion-unloading-the-red-f6033aa655-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 1861155
+            :crc 901808738}
+        :raw {:key "press/f6033aa655-raw.jpg"
+              :name "armenian-pavilion-unloading-the-red-f6033aa655.jpg"
+              :w 6197
+              :h 4131
+              :ext "jpg"
+              :bytes 14660831
+              :crc 2938981622}}}
+  {:uid "66737a8274"
+   :group "press-g10"
+   :file "armenian-pavilion-into-piazza-san-marco-66737a8274"
+   :key "press/66737a8274"
+   :w 6217
+   :h 2320
+   :section "process"
+   :title "Into Piazza San Marco"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works carried into Piazza San Marco among the pigeons.\n\nSan Marco, Venice"
+   :caption_short "Into Piazza San Marco, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/66737a8274-s.jpg"
+            :name "armenian-pavilion-into-piazza-san-marco-66737a8274-small.jpg"
+            :w 1200
+            :h 448
+            :bytes 131637
+            :crc 2609903487}
+        :m {:key "press/66737a8274-m.jpg"
+            :name "armenian-pavilion-into-piazza-san-marco-66737a8274-medium.jpg"
+            :w 2400
+            :h 896
+            :bytes 545927
+            :crc 1356359232}
+        :l {:key "press/66737a8274-l.jpg"
+            :name "armenian-pavilion-into-piazza-san-marco-66737a8274-large.jpg"
+            :w 4000
+            :h 1493
+            :bytes 1701093
+            :crc 1217819030}
+        :raw {:key "press/66737a8274-raw.jpg"
+              :name "armenian-pavilion-into-piazza-san-marco-66737a8274.jpg"
+              :w 6217
+              :h 2320
+              :ext "jpg"
+              :bytes 11245702
+              :crc 3060091434}}}
+  {:uid "4feddb4a8c"
+   :group "press-g10"
+   :file "armenian-pavilion-set-down-in-the-piazza-4feddb4a8c"
+   :key "press/4feddb4a8c"
+   :w 6225
+   :h 1954
+   :section "process"
+   :title "Set down in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works set down in a line in Piazza San Marco.\n\nSan Marco, Venice"
+   :caption_short "Set down in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/4feddb4a8c-s.jpg"
+            :name "armenian-pavilion-set-down-in-the-piazza-4feddb4a8c-small.jpg"
+            :w 1200
+            :h 376
+            :bytes 86922
+            :crc 765807515}
+        :m {:key "press/4feddb4a8c-m.jpg"
+            :name "armenian-pavilion-set-down-in-the-piazza-4feddb4a8c-medium.jpg"
+            :w 2400
+            :h 753
+            :bytes 375868
+            :crc 168281406}
+        :l {:key "press/4feddb4a8c-l.jpg"
+            :name "armenian-pavilion-set-down-in-the-piazza-4feddb4a8c-large.jpg"
+            :w 4000
+            :h 1256
+            :bytes 1246948
+            :crc 3912478402}
+        :raw {:key "press/4feddb4a8c-raw.jpg"
+              :name "armenian-pavilion-set-down-in-the-piazza-4feddb4a8c.jpg"
+              :w 6225
+              :h 1954
+              :ext "jpg"
+              :bytes 9256414
+              :crc 3328925384}}}
+  {:uid "f798441561"
+   :group "press-g10"
+   :file "armenian-pavilion-the-line-in-the-piazza-f798441561"
+   :key "press/f798441561"
+   :w 6162
+   :h 4108
+   :section "process"
+   :title "The line in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works in a line across Piazza San Marco.\n\nSan Marco, Venice"
+   :caption_short "The line in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/f798441561-s.jpg"
+            :name "armenian-pavilion-the-line-in-the-piazza-f798441561-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 159597
+            :crc 741991309}
+        :m {:key "press/f798441561-m.jpg"
+            :name "armenian-pavilion-the-line-in-the-piazza-f798441561-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 680275
+            :crc 2308774112}
+        :l {:key "press/f798441561-l.jpg"
+            :name "armenian-pavilion-the-line-in-the-piazza-f798441561-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2348836
+            :crc 3742787727}
+        :raw {:key "press/f798441561-raw.jpg"
+              :name "armenian-pavilion-the-line-in-the-piazza-f798441561.jpg"
+              :w 6162
+              :h 4108
+              :ext "jpg"
+              :bytes 17902700
+              :crc 2151511415}}}
+  {:uid "83ac87fb65"
+   :group "press-g10"
+   :file "armenian-pavilion-a-word-in-the-piazza-83ac87fb65"
+   :key "press/83ac87fb65"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "A word in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier speaks into a microphone in Piazza San Marco.\n\nSan Marco, Venice"
+   :caption_short "A word in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/83ac87fb65-s.jpg"
+            :name "armenian-pavilion-a-word-in-the-piazza-83ac87fb65-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 100126
+            :crc 3035465297}
+        :m {:key "press/83ac87fb65-m.jpg"
+            :name "armenian-pavilion-a-word-in-the-piazza-83ac87fb65-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 381171
+            :crc 3722173045}
+        :l {:key "press/83ac87fb65-l.jpg"
+            :name "armenian-pavilion-a-word-in-the-piazza-83ac87fb65-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1642568
+            :crc 3861479994}
+        :raw {:key "press/83ac87fb65-raw.jpg"
+              :name "armenian-pavilion-a-word-in-the-piazza-83ac87fb65.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 15938235
+              :crc 1681896915}}}
+  {:uid "a0a7632eaf"
+   :group "press-g10"
+   :file "armenian-pavilion-a-selfie-a0a7632eaf"
+   :key "press/a0a7632eaf"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "A selfie"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Carriers take a selfie beside a red section.\n\nSan Marco, Venice"
+   :caption_short "A selfie, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/a0a7632eaf-s.jpg"
+            :name "armenian-pavilion-a-selfie-a0a7632eaf-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 136579
+            :crc 531238868}
+        :m {:key "press/a0a7632eaf-m.jpg"
+            :name "armenian-pavilion-a-selfie-a0a7632eaf-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 497900
+            :crc 1241694723}
+        :l {:key "press/a0a7632eaf-l.jpg"
+            :name "armenian-pavilion-a-selfie-a0a7632eaf-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1781863
+            :crc 1359875419}
+        :raw {:key "press/a0a7632eaf-raw.jpg"
+              :name "armenian-pavilion-a-selfie-a0a7632eaf.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 16475455
+              :crc 1478591601}}}
+  {:uid "965c1dbaba"
+   :group "press-g10"
+   :file "armenian-pavilion-the-microphone-965c1dbaba"
+   :key "press/965c1dbaba"
+   :w 8830
+   :h 4037
+   :section "process"
+   :title "The microphone"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A microphone held out among the carriers.\n\nSan Marco, Venice"
+   :caption_short "The microphone, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/965c1dbaba-s.jpg"
+            :name "armenian-pavilion-the-microphone-965c1dbaba-small.jpg"
+            :w 1200
+            :h 549
+            :bytes 56077
+            :crc 2680312303}
+        :m {:key "press/965c1dbaba-m.jpg"
+            :name "armenian-pavilion-the-microphone-965c1dbaba-medium.jpg"
+            :w 2400
+            :h 1097
+            :bytes 204861
+            :crc 1224485059}
+        :l {:key "press/965c1dbaba-l.jpg"
+            :name "armenian-pavilion-the-microphone-965c1dbaba-large.jpg"
+            :w 4000
+            :h 1829
+            :bytes 882544
+            :crc 605602798}
+        :raw {:key "press/965c1dbaba-raw.jpg"
+              :name "armenian-pavilion-the-microphone-965c1dbaba.jpg"
+              :w 8830
+              :h 4037
+              :ext "jpg"
+              :bytes 19364018
+              :crc 750770891}}}
+  {:uid "1ce39fcb06"
+   :group "press-g10"
+   :file "armenian-pavilion-before-the-basilica-1ce39fcb06"
+   :key "press/1ce39fcb06"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Before the Basilica"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A crowd gathers in front of the works before the Basilica.\n\nSan Marco, Venice"
+   :caption_short "Before the Basilica, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/1ce39fcb06-s.jpg"
+            :name "armenian-pavilion-before-the-basilica-1ce39fcb06-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 187589
+            :crc 938627852}
+        :m {:key "press/1ce39fcb06-m.jpg"
+            :name "armenian-pavilion-before-the-basilica-1ce39fcb06-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 744005
+            :crc 2404581901}
+        :l {:key "press/1ce39fcb06-l.jpg"
+            :name "armenian-pavilion-before-the-basilica-1ce39fcb06-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2474403
+            :crc 2842191596}
+        :raw {:key "press/1ce39fcb06-raw.jpg"
+              :name "armenian-pavilion-before-the-basilica-1ce39fcb06.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 18741892
+              :crc 2813455290}}}
+  {:uid "a0954f53f9"
+   :group "press-g10"
+   :file "armenian-pavilion-gathered-before-the-basilica-a0954f53f9"
+   :key "press/a0954f53f9"
+   :w 6153
+   :h 3266
+   :section "process"
+   :title "Gathered before the Basilica"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The group before the works and the Basilica.\n\nSan Marco, Venice"
+   :caption_short "Gathered before the Basilica, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/a0954f53f9-s.jpg"
+            :name "armenian-pavilion-gathered-before-the-basilica-a0954f53f9-small.jpg"
+            :w 1200
+            :h 637
+            :bytes 160634
+            :crc 377462797}
+        :m {:key "press/a0954f53f9-m.jpg"
+            :name "armenian-pavilion-gathered-before-the-basilica-a0954f53f9-medium.jpg"
+            :w 2400
+            :h 1274
+            :bytes 664825
+            :crc 1156162068}
+        :l {:key "press/a0954f53f9-l.jpg"
+            :name "armenian-pavilion-gathered-before-the-basilica-a0954f53f9-large.jpg"
+            :w 4000
+            :h 2123
+            :bytes 2137325
+            :crc 4266386231}
+        :raw {:key "press/a0954f53f9-raw.jpg"
+              :name "armenian-pavilion-gathered-before-the-basilica-a0954f53f9.jpg"
+              :w 6153
+              :h 3266
+              :ext "jpg"
+              :bytes 14766248
+              :crc 2603754404}}}
+  {:uid "818ee9de8a"
+   :group "press-g10"
+   :file "armenian-pavilion-zadik-zadikian-in-the-piazza-818ee9de8a"
+   :key "press/818ee9de8a"
+   :w 6183
+   :h 4122
+   :section "process"
+   :title "Zadik Zadikian in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Zadik Zadikian listens as a carrier speaks into a microphone.\n\nSan Marco, Venice"
+   :caption_short "Zadik Zadikian in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/818ee9de8a-s.jpg"
+            :name "armenian-pavilion-zadik-zadikian-in-the-piazza-818ee9de8a-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 116704
+            :crc 1293606889}
+        :m {:key "press/818ee9de8a-m.jpg"
+            :name "armenian-pavilion-zadik-zadikian-in-the-piazza-818ee9de8a-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 425320
+            :crc 2128990003}
+        :l {:key "press/818ee9de8a-l.jpg"
+            :name "armenian-pavilion-zadik-zadikian-in-the-piazza-818ee9de8a-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1620752
+            :crc 1969229724}
+        :raw {:key "press/818ee9de8a-raw.jpg"
+              :name "armenian-pavilion-zadik-zadikian-in-the-piazza-818ee9de8a.jpg"
+              :w 6183
+              :h 4122
+              :ext "jpg"
+              :bytes 14310794
+              :crc 1142244350}}}
+  {:uid "65627fbfff"
+   :group "press-g10"
+   :file "armenian-pavilion-filmed-before-the-basilica-65627fbfff"
+   :key "press/65627fbfff"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Filmed before the Basilica"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. A carrier speaks to the camera before the Basilica.\n\nSan Marco, Venice"
+   :caption_short "Filmed before the Basilica, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/65627fbfff-s.jpg"
+            :name "armenian-pavilion-filmed-before-the-basilica-65627fbfff-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 123568
+            :crc 173051576}
+        :m {:key "press/65627fbfff-m.jpg"
+            :name "armenian-pavilion-filmed-before-the-basilica-65627fbfff-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 452472
+            :crc 3011430134}
+        :l {:key "press/65627fbfff-l.jpg"
+            :name "armenian-pavilion-filmed-before-the-basilica-65627fbfff-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1671547
+            :crc 515267955}
+        :raw {:key "press/65627fbfff-raw.jpg"
+              :name "armenian-pavilion-filmed-before-the-basilica-65627fbfff.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 16314272
+              :crc 271428158}}}
+  {:uid "07e20a6e90"
+   :group "press-g10"
+   :file "armenian-pavilion-an-interview-before-the-works-07e20a6e90"
+   :key "press/07e20a6e90"
+   :w 6119
+   :h 4079
+   :section "process"
+   :title "An interview before the works"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. An interview in front of the works.\n\nSan Marco, Venice"
+   :caption_short "An interview before the works, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/07e20a6e90-s.jpg"
+            :name "armenian-pavilion-an-interview-before-the-works-07e20a6e90-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 136535
+            :crc 2948321127}
+        :m {:key "press/07e20a6e90-m.jpg"
+            :name "armenian-pavilion-an-interview-before-the-works-07e20a6e90-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 506329
+            :crc 1605116330}
+        :l {:key "press/07e20a6e90-l.jpg"
+            :name "armenian-pavilion-an-interview-before-the-works-07e20a6e90-large.jpg"
+            :w 4000
+            :h 2666
+            :bytes 1775835
+            :crc 527085135}
+        :raw {:key "press/07e20a6e90-raw.jpg"
+              :name "armenian-pavilion-an-interview-before-the-works-07e20a6e90.jpg"
+              :w 6119
+              :h 4079
+              :ext "jpg"
+              :bytes 15397938
+              :crc 295149525}}}
+  {:uid "bf60086dca"
+   :group "press-g10"
+   :file "armenian-pavilion-waiting-in-the-piazza-bf60086dca"
+   :key "press/bf60086dca"
+   :w 6129
+   :h 3515
+   :section "process"
+   :title "Waiting in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Carriers and visitors wait by the works.\n\nSan Marco, Venice"
+   :caption_short "Waiting in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/bf60086dca-s.jpg"
+            :name "armenian-pavilion-waiting-in-the-piazza-bf60086dca-small.jpg"
+            :w 1200
+            :h 688
+            :bytes 107231
+            :crc 3719603601}
+        :m {:key "press/bf60086dca-m.jpg"
+            :name "armenian-pavilion-waiting-in-the-piazza-bf60086dca-medium.jpg"
+            :w 2400
+            :h 1376
+            :bytes 385246
+            :crc 385069128}
+        :l {:key "press/bf60086dca-l.jpg"
+            :name "armenian-pavilion-waiting-in-the-piazza-bf60086dca-large.jpg"
+            :w 4000
+            :h 2294
+            :bytes 1392240
+            :crc 1071218926}
+        :raw {:key "press/bf60086dca-raw.jpg"
+              :name "armenian-pavilion-waiting-in-the-piazza-bf60086dca.jpg"
+              :w 6129
+              :h 3515
+              :ext "jpg"
+              :bytes 12796309
+              :crc 1163251635}}}
+  {:uid "50bf0a70f6"
+   :group "press-g10"
+   :file "armenian-pavilion-zadik-zadikian-with-the-carriers-50bf0a70f6"
+   :key "press/50bf0a70f6"
+   :w 6105
+   :h 4070
+   :section "process"
+   :title "Zadik Zadikian with the carriers"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Zadik Zadikian among the carriers by the Doge’s Palace.\n\nSan Marco, Venice"
+   :caption_short "Zadik Zadikian with the carriers, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/50bf0a70f6-s.jpg"
+            :name "armenian-pavilion-zadik-zadikian-with-the-carriers-50bf0a70f6-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 135295
+            :crc 1757082674}
+        :m {:key "press/50bf0a70f6-m.jpg"
+            :name "armenian-pavilion-zadik-zadikian-with-the-carriers-50bf0a70f6-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 482494
+            :crc 13010666}
+        :l {:key "press/50bf0a70f6-l.jpg"
+            :name "armenian-pavilion-zadik-zadikian-with-the-carriers-50bf0a70f6-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1752110
+            :crc 797240517}
+        :raw {:key "press/50bf0a70f6-raw.jpg"
+              :name "armenian-pavilion-zadik-zadikian-with-the-carriers-50bf0a70f6.jpg"
+              :w 6105
+              :h 4070
+              :ext "jpg"
+              :bytes 14769229
+              :crc 1357099888}}}
+  {:uid "937fdfbd4d"
+   :group "press-g10"
+   :file "armenian-pavilion-listening-together-937fdfbd4d"
+   :key "press/937fdfbd4d"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Listening together"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. Zadik Zadikian and the carriers in a close group.\n\nSan Marco, Venice"
+   :caption_short "Listening together, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/937fdfbd4d-s.jpg"
+            :name "armenian-pavilion-listening-together-937fdfbd4d-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 149146
+            :crc 3711703856}
+        :m {:key "press/937fdfbd4d-m.jpg"
+            :name "armenian-pavilion-listening-together-937fdfbd4d-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 555294
+            :crc 2840157486}
+        :l {:key "press/937fdfbd4d-l.jpg"
+            :name "armenian-pavilion-listening-together-937fdfbd4d-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 1955490
+            :crc 1978551402}
+        :raw {:key "press/937fdfbd4d-raw.jpg"
+              :name "armenian-pavilion-listening-together-937fdfbd4d.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 17110359
+              :crc 1594978082}}}
+  {:uid "9315582916"
+   :group "press-g10"
+   :file "armenian-pavilion-gathered-in-the-piazza-9315582916"
+   :key "press/9315582916"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "Gathered in the Piazza"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The group gathers by the works.\n\nSan Marco, Venice"
+   :caption_short "Gathered in the Piazza, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/9315582916-s.jpg"
+            :name "armenian-pavilion-gathered-in-the-piazza-9315582916-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 180097
+            :crc 3640256420}
+        :m {:key "press/9315582916-m.jpg"
+            :name "armenian-pavilion-gathered-in-the-piazza-9315582916-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 703169
+            :crc 2534628558}
+        :l {:key "press/9315582916-l.jpg"
+            :name "armenian-pavilion-gathered-in-the-piazza-9315582916-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2333429
+            :crc 102123765}
+        :raw {:key "press/9315582916-raw.jpg"
+              :name "armenian-pavilion-gathered-in-the-piazza-9315582916.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 18421879
+              :crc 2356096127}}}
+  {:uid "8fc4398bd2"
+   :group "press-g10"
+   :file "armenian-pavilion-in-front-of-the-line-8fc4398bd2"
+   :key "press/8fc4398bd2"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "In front of the line"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers stand in a line before the works.\n\nSan Marco, Venice"
+   :caption_short "In front of the line, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/8fc4398bd2-s.jpg"
+            :name "armenian-pavilion-in-front-of-the-line-8fc4398bd2-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 187667
+            :crc 313040712}
+        :m {:key "press/8fc4398bd2-m.jpg"
+            :name "armenian-pavilion-in-front-of-the-line-8fc4398bd2-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 761086
+            :crc 3425120342}
+        :l {:key "press/8fc4398bd2-l.jpg"
+            :name "armenian-pavilion-in-front-of-the-line-8fc4398bd2-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2559226
+            :crc 526220982}
+        :raw {:key "press/8fc4398bd2-raw.jpg"
+              :name "armenian-pavilion-in-front-of-the-line-8fc4398bd2.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 20160607
+              :crc 995873535}}}
+  {:uid "12b722d0f8"
+   :group "press-g10"
+   :file "armenian-pavilion-embrace-12b722d0f8"
+   :key "press/12b722d0f8"
+   :w 6168
+   :h 2919
+   :section "process"
+   :title "Embrace"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The carriers embrace in a huddle.\n\nSan Marco, Venice"
+   :caption_short "Embrace, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/12b722d0f8-s.jpg"
+            :name "armenian-pavilion-embrace-12b722d0f8-small.jpg"
+            :w 1200
+            :h 567
+            :bytes 131540
+            :crc 2250813735}
+        :m {:key "press/12b722d0f8-m.jpg"
+            :name "armenian-pavilion-embrace-12b722d0f8-medium.jpg"
+            :w 2400
+            :h 1136
+            :bytes 513465
+            :crc 3926911435}
+        :l {:key "press/12b722d0f8-l.jpg"
+            :name "armenian-pavilion-embrace-12b722d0f8-large.jpg"
+            :w 4000
+            :h 1893
+            :bytes 1650429
+            :crc 1668312371}
+        :raw {:key "press/12b722d0f8-raw.jpg"
+              :name "armenian-pavilion-embrace-12b722d0f8.jpg"
+              :w 6168
+              :h 2919
+              :ext "jpg"
+              :bytes 12086942
+              :crc 1166195779}}}
+  {:uid "1cfbac06ac"
+   :group "press-g10"
+   :file "armenian-pavilion-through-the-crowd-1cfbac06ac"
+   :key "press/1cfbac06ac"
+   :w 6214
+   :h 3003
+   :section "process"
+   :title "Through the crowd"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works move through the crowd in the Piazza.\n\nSan Marco, Venice"
+   :caption_short "Through the crowd, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/1cfbac06ac-s.jpg"
+            :name "armenian-pavilion-through-the-crowd-1cfbac06ac-small.jpg"
+            :w 1200
+            :h 580
+            :bytes 143865
+            :crc 2214345816}
+        :m {:key "press/1cfbac06ac-m.jpg"
+            :name "armenian-pavilion-through-the-crowd-1cfbac06ac-medium.jpg"
+            :w 2400
+            :h 1160
+            :bytes 549172
+            :crc 3286463821}
+        :l {:key "press/1cfbac06ac-l.jpg"
+            :name "armenian-pavilion-through-the-crowd-1cfbac06ac-large.jpg"
+            :w 4000
+            :h 1933
+            :bytes 1745101
+            :crc 2823603725}
+        :raw {:key "press/1cfbac06ac-raw.jpg"
+              :name "armenian-pavilion-through-the-crowd-1cfbac06ac.jpg"
+              :w 6214
+              :h 3003
+              :ext "jpg"
+              :bytes 12660492
+              :crc 145955753}}}
+  {:uid "0d611b201b"
+   :group "press-g10"
+   :file "armenian-pavilion-past-the-doge-s-palace-0d611b201b"
+   :key "press/0d611b201b"
+   :w 3480
+   :h 4160
+   :section "process"
+   :title "Past the Doge’s Palace"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works carried past the Doge’s Palace.\n\nSan Marco, Venice"
+   :caption_short "Past the Doge’s Palace, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/0d611b201b-s.jpg"
+            :name "armenian-pavilion-past-the-doge-s-palace-0d611b201b-small.jpg"
+            :w 1004
+            :h 1200
+            :bytes 181607
+            :crc 3180117457}
+        :m {:key "press/0d611b201b-m.jpg"
+            :name "armenian-pavilion-past-the-doge-s-palace-0d611b201b-medium.jpg"
+            :w 2008
+            :h 2400
+            :bytes 649958
+            :crc 3303322768}
+        :l {:key "press/0d611b201b-l.jpg"
+            :name "armenian-pavilion-past-the-doge-s-palace-0d611b201b-large.jpg"
+            :w 3346
+            :h 4000
+            :bytes 2204818
+            :crc 697761439}
+        :raw {:key "press/0d611b201b-raw.jpg"
+              :name "armenian-pavilion-past-the-doge-s-palace-0d611b201b.jpg"
+              :w 3480
+              :h 4160
+              :ext "jpg"
+              :bytes 8924895
+              :crc 234908474}}}
+  {:uid "cbbcb085a1"
+   :group "press-g10"
+   :file "armenian-pavilion-by-the-campanile-cbbcb085a1"
+   :key "press/cbbcb085a1"
+   :w 6240
+   :h 4160
+   :section "process"
+   :title "By the Campanile"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The line of works by the Campanile, a Christmas tree beside it.\n\nSan Marco, Venice"
+   :caption_short "By the Campanile, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/cbbcb085a1-s.jpg"
+            :name "armenian-pavilion-by-the-campanile-cbbcb085a1-small.jpg"
+            :w 1200
+            :h 800
+            :bytes 195252
+            :crc 3909008578}
+        :m {:key "press/cbbcb085a1-m.jpg"
+            :name "armenian-pavilion-by-the-campanile-cbbcb085a1-medium.jpg"
+            :w 2400
+            :h 1600
+            :bytes 869794
+            :crc 3653268108}
+        :l {:key "press/cbbcb085a1-l.jpg"
+            :name "armenian-pavilion-by-the-campanile-cbbcb085a1-large.jpg"
+            :w 4000
+            :h 2667
+            :bytes 2918564
+            :crc 268468576}
+        :raw {:key "press/cbbcb085a1-raw.jpg"
+              :name "armenian-pavilion-by-the-campanile-cbbcb085a1.jpg"
+              :w 6240
+              :h 4160
+              :ext "jpg"
+              :bytes 21256940
+              :crc 573985214}}}
+  {:uid "4555ae731b"
+   :group "press-g10"
+   :file "armenian-pavilion-between-the-columns-4555ae731b"
+   :key "press/4555ae731b"
+   :w 6104
+   :h 3229
+   :section "process"
+   :title "Between the columns"
+   :date "18 November 2026"
+   :materials "EPS foam and paint"
+   :caption "\"Walking the Work Through Venice\" 18 November 2026. The works in a line between the columns of San Marco and San Todaro.\n\nSan Marco, Venice"
+   :caption_short "Between the columns, 18 November 2026"
+   :credit "Photo Mina Biasutti"
+   :artist "Zadik Zadikian"
+   :dl {:s {:key "press/4555ae731b-s.jpg"
+            :name "armenian-pavilion-between-the-columns-4555ae731b-small.jpg"
+            :w 1200
+            :h 635
+            :bytes 97244
+            :crc 3213003616}
+        :m {:key "press/4555ae731b-m.jpg"
+            :name "armenian-pavilion-between-the-columns-4555ae731b-medium.jpg"
+            :w 2400
+            :h 1270
+            :bytes 406516
+            :crc 243722364}
+        :l {:key "press/4555ae731b-l.jpg"
+            :name "armenian-pavilion-between-the-columns-4555ae731b-large.jpg"
+            :w 4000
+            :h 2116
+            :bytes 1491209
+            :crc 4214314993}
+        :raw {:key "press/4555ae731b-raw.jpg"
+              :name "armenian-pavilion-between-the-columns-4555ae731b.jpg"
+              :w 6104
+              :h 3229
+              :ext "jpg"
+              :bytes 11313840
+              :crc 251131879}}}
+  {:uid "74f8c15580"
    :group "press-g01"
    :file "armenian-pavilion-lined-up-before-setting-off-74f8c15580"
    :key "press/74f8c15580"
