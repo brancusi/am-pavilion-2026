@@ -10,7 +10,6 @@
   "head.eyebrow": "Hotel Gabrielli → Arsenale Militare",
   "head.title": "Ջրային տաքսիով",
   "head.lede": "Riva degli Schiavoni-⁠ի վրա գտնվող <b>Hotel Gabrielli</b>-ի նավամատույցից ուղիղ դեպի տաղավարի սեփական նավամատույցը՝ <b>Arsenale Militare</b>-ի ներսում։ Ճանապարհը Castello-⁠ի ջրանցքներով բարձրանում է հյուսիս, դուրս է գալիս Հյուսիսային լագունա և վերադառնում <b>Rio delle Galeazze</b>-ով — ջրի վրա մոտ <b>15–20 րոպե</b>։",
-
   "intro": "Խնդրեք հյուրանոցին պատվիրել տաքսին, ապա ցույց տվեք այս էջը վարորդին։ Arsenale մուտքը համակարգում է <b>Julda</b>-ն․ վարորդը պետք է զանգահարի մինչև ներս մտնելը։",
   "from-title": "Մեկնում",
   "to-title": "Ժամանում",
@@ -20,7 +19,6 @@
   "contacts.secondary": "Երկրորդ կոնտակտ · Luca",
   "contacts.third": "Երրորդ կոնտակտ · Aram",
   "contacts.third-note": "Միայն անգլերեն։",
-
   "route.eyebrow": "Hotel Gabrielli → Հայաստանի տաղավար",
   "route.title": "Երթուղին",
   "route.body": "Դեպի արևմուտք Bacino-⁠ի երկայնքով, ապա դեպի հյուսիս՝ <b>Rio della Pietà</b>-ով, <b>Rio di Sant’Antonin</b>-ով և <b>Rio di Santa Giustina</b>-ով։ Հյուսիսային լագունայում տաքսին թեքվում է դեպի արևելք, անցնում Celestia կանգառի մոտով, ապա դեպի հարավ մտնում Arsenale <b>Rio delle Galeazze</b>-ով — միակ թույլատրված մուտքով — մինչև <b>Tesa 41</b>-ի կողքի նավամատույցը։",
@@ -28,11 +26,9 @@
   "route.legend-water": "Տաքսու երթուղի",
   "route.legend-start": "Hotel Gabrielli",
   "route.legend-pav": "Հայաստանի տաղավար",
-
   "driver.eyebrow": "Վարորդի համար",
   "driver.title": "Հրահանգներ վարորդի համար",
   "driver.intro": "Ցույց տվեք այս բաժինը ձեր վարորդին։",
-
   "card.show-it": "Ցույց տալ իտալերենով",
   "card.show-own": "Ցույց տալ հայերենով",
   "card.subtitle": "Hotel Gabrielli → Հայաստանի տաղավար · Arsenale Militare",
@@ -56,5 +52,8 @@
   "card.step-5": "Մտեք միակ թույլատրված մուտքով՝ Galeazze – Rio delle Galeazze։",
   "card.step-6": "Շարունակեք դեպի հարավ Rio delle Galeazze-⁠ով մինչև Հայաստանի տաղավարի նավամատույցը՝ Tesa 41-⁠ի կողքին։",
   "card.legend-water": "Ջրային երթուղի",
-  "card.legend-pav": "Հայաստանի տաղավար"
+  "card.legend-pav": "Հայաստանի տաղավար",
+  "card.show-driver": "Ցույց տվեք սա վարորդին",
+  "card.julda-only": "Julda",
+  "card.questions": "Հարցերի դեպքում զանգահարեք Julda-⁠ին"
 }

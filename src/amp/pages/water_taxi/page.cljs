@@ -108,3 +108,26 @@
          ($ essentials)
          ($ route)
          ($ driver)))
+
+;; ── /taxi/gabrielli: the card alone, in Italian ────────────────────────────
+
+(defnc gabrielli-card-view
+  "/taxi/gabrielli: the driver card for a guest leaving from Hotel
+   Gabrielli, in Italian whatever the site language, with Julda as the one
+   contact. Unlisted (no link to it on the site; the Worker sends it
+   noindex): a link to send to one guest."
+  [_props]
+  (let [it #(i18n/t-in "it" (keyword "water-taxi" %))
+        c (assoc (card-copy "it")
+                 :contacts [[(it "card.julda-only") julda-contact]]
+                 :before-note nil)]
+    (d/div {:class "bg-paper text-ink" :lang "it"}
+           (d/section {:class "ap-sec bg-paper-sunk ap-taxipage"}
+                      (d/div {:class "ap-wrap flex flex-col gap-6 !max-w-[880px]"}
+                             (d/div
+                              (d/p {:class "ap-label ap-muted m-0 mb-1"} (it "card.show-driver"))
+                              (d/h1 {:class "ap-h1"} (it "driver.title")))
+                             ($ wf/driver-card {:lang "it" :c c})
+                             (d/div {:class "ap-taxisend"}
+                                    (d/p {:class "ap-label ap-muted m-0"} (it "card.questions"))
+                                    ($ wf/tel-row {:label (it "card.julda-only") :contact julda-contact})))))))

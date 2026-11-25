@@ -192,22 +192,68 @@
 
 ;; ── Water taxi driver card ────────────────────────────────────────────────
 
-(defnc taxi-card []
+(def ^:private site "https://armenianpavilion.org")
+
+(defnc send-card
+  "Send the driver card on: its own short link (/taxi, in the page's
+   language), copied, by WhatsApp or through the phone's share sheet."
+  []
+  (let [link (str site (i18n/href "/taxi"))
+        text (ts :visit/card.send-text)
+        [copied? set-copied!] (hooks/use-state false)
+        share? (some? (.-share js/navigator))]
+    (d/div {:class "ap-taxisend"}
+           (d/p {:class "ap-label ap-muted m-0"} (t :visit/card.send-label))
+           (d/a {:class "ap-taxisend__link" :href (i18n/href "/taxi")}
+                (subs link (count "https://")))
+           (d/div {:class "ap-taxisend__actions"}
+                  (d/button {:type "button" :class "ap-btn ap-btn--ghost" :aria-live "polite"
+                             :on-click #(-> (.writeText js/navigator.clipboard link)
+                                            (.then (fn []
+                                                     (set-copied! true)
+                                                     (js/setTimeout (fn [] (set-copied! false)) 2000))))}
+                            (t (if copied? :visit/card.copied :visit/card.copy)))
+                  (d/a {:class "ap-btn ap-btn--ghost" :target "_blank" :rel "noopener noreferrer"
+                        :href (str "https://wa.me/?text=" (js/encodeURIComponent (str text " " link)))}
+                       "WhatsApp")
+                  (when share?
+                    (d/button {:type "button" :class "ap-btn ap-btn--ghost"
+                               :on-click #(-> (.share js/navigator #js {:title text :text text :url link})
+                                              (.catch (fn [_])))}
+                              (t :visit/card.share)))))))
+
+(defnc taxi-card
+  "The driver card. On /visit a section of the page; with `page?` the whole
+   of /taxi, the link guests are sent."
+  [{:keys [page?]}]
   (let [[l italian? set-italian!] (wf/use-card-locale)
         c (water-taxi-copy l)]
-    (d/section {:class "ap-sec bg-paper-sunk" :id "taxi"}
+    (d/section {:class (str "ap-sec bg-paper-sunk" (when page? " ap-taxipage")) :id "taxi"}
                (d/div {:class "ap-wrap flex flex-col gap-6 !max-w-[880px]"}
                       (d/div {:class "ap-head-row !m-0"}
                              (d/div
                               (d/p {:class "ap-label ap-muted m-0 mb-1"} (t :visit/card.label))
-                              (d/h2 {:class "ap-h1" :lang l} (:title c)))
+                              (if page?
+                                (d/h1 {:class "ap-h1" :lang l} (:title c))
+                                (d/h2 {:class "ap-h1" :lang l} (:title c))))
                              ($ wf/card-lang-toggle {:italian? italian? :on-change set-italian!
                                                      :to-italian (i18n/t-in "it" :visit/card.show-it)
                                                      :back (t :visit/card.show-own)}))
                       ($ wf/driver-card {:lang l :c c})
-                      (d/a {:class "ap-link ap-body-s self-start py-3"
-                            :href (i18n/href "/route-from-hotel-gabrielli")}
-                           (t :visit/water.gabrielli))))))
+                      ($ send-card)
+                      (d/div {:class "flex flex-wrap gap-x-8"}
+                             (when page?
+                               (d/a {:class "ap-link ap-body-s py-3" :href (i18n/href "/visit")}
+                                    (t :visit/card.directions)))
+                             (d/a {:class "ap-link ap-body-s py-3"
+                                   :href (i18n/href "/route-from-hotel-gabrielli")}
+                                  (t :visit/water.gabrielli)))))))
+
+(defnc taxi-view
+  "/taxi: the driver card on its own, to send to a guest before they travel."
+  [_props]
+  (d/div {:class "bg-paper text-ink"}
+         ($ taxi-card {:page? true})))
 
 ;; ── About ──────────────────────────────────────────────────────────────────
 

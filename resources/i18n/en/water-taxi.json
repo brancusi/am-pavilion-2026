@@ -10,7 +10,6 @@
   "head.eyebrow": "Hotel Gabrielli → Arsenale Militare",
   "head.title": "By Water Taxi",
   "head.lede": "From the <b>Hotel Gabrielli</b> landing on Riva degli Schiavoni straight to the pavilion’s own landing inside the <b>Arsenale Militare</b>. The ride threads north through the canals of Castello, out into the North Lagoon and back in through <b>Rio delle Galeazze</b> — roughly <b>15 to 20 minutes</b> on the water.",
-
   "intro": "Ask the hotel to book the taxi, then show this page to the driver. Access to the Arsenale is coordinated by <b>Julda</b>: the driver must call before entering.",
   "from-title": "From",
   "to-title": "To",
@@ -20,7 +19,6 @@
   "contacts.secondary": "Secondary contact · Luca",
   "contacts.third": "Third contact · Aram",
   "contacts.third-note": "English only.",
-
   "route.eyebrow": "Hotel Gabrielli → Armenian Pavilion",
   "route.title": "The Route",
   "route.body": "West along the Bacino, then north through <b>Rio della Pietà</b>, <b>Rio di Sant’Antonin</b> and <b>Rio di Santa Giustina</b>. Out in the North Lagoon the taxi turns east past the Celestia stop, then south into the Arsenale through <b>Rio delle Galeazze</b> — the only permitted entrance — to the landing beside <b>Tesa 41</b>.",
@@ -28,11 +26,9 @@
   "route.legend-water": "Taxi route",
   "route.legend-start": "Hotel Gabrielli",
   "route.legend-pav": "Armenian Pavilion",
-
   "driver.eyebrow": "For the driver",
   "driver.title": "Driver Instructions",
   "driver.intro": "Show this section to your driver.",
-
   "card.show-it": "Show in Italian",
   "card.show-own": "Show in English",
   "card.subtitle": "Hotel Gabrielli → Armenian Pavilion · Arsenale Militare",
@@ -56,5 +52,8 @@
   "card.step-5": "Enter through the only permitted entrance: Galeazze – Rio delle Galeazze.",
   "card.step-6": "Continue south along Rio delle Galeazze to the Armenian Pavilion landing, beside Tesa 41.",
   "card.legend-water": "Water route",
-  "card.legend-pav": "Armenian Pavilion"
+  "card.legend-pav": "Armenian Pavilion",
+  "card.show-driver": "Show this to the driver",
+  "card.julda-only": "Julda",
+  "card.questions": "Any questions: call Julda"
 }

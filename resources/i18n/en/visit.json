@@ -10,7 +10,6 @@
   "facts.hall-v": "Tesa 41",
   "facts.foot": "On foot",
   "facts.foot-v": "≈ 8 min from the Lion",
-
   "guide.label": "Guide · {no}",
   "guide.walk-title": "On foot from the Piraeus Lion",
   "guide.walk-meta": "About 8 minutes through the Arsenale",
@@ -25,7 +24,6 @@
   "guide.open-maps": "Open in Maps",
   "guide.driver-card": "Driver card",
   "guide.address": "Address",
-
   "walk.label": "On foot · about 8 min",
   "walk.start-dist": "START",
   "walk.start-title": "The Piraeus Lion",
@@ -36,7 +34,6 @@
   "walk.end-dist": "≈ 8 MIN",
   "walk.end-title": "Tesa 41",
   "walk.end-body": "Armenian Pavilion, Arsenale Militare.",
-
   "water.label": "Water taxi · authorised access",
   "water.head-1": "North Lagoon",
   "water.head-2": "Only entrance",
@@ -47,7 +44,6 @@
   "water.step-3": "Continue south along Rio delle Galeazze, following the route shown on the map.",
   "water.step-4": "Proceed to the Armenian Pavilion landing.",
   "water.gabrielli": "Full route from Hotel Gabrielli",
-
   "card.label": "Show this to your driver",
   "card.show-it": "Show in Italian",
   "card.show-own": "Show in English",
@@ -68,18 +64,21 @@
   "card.map-caption": "Water taxi route — enter from the North Lagoon via Rio delle Galeazze and continue south to the pavilion drop-off point",
   "card.legend-water": "Water route",
   "card.legend-pav": "Armenian Pavilion",
-
+  "card.send-label": "Send this card to a guest",
+  "card.send-text": "Water taxi to the Armenian Pavilion: show this card to your driver",
+  "card.copy": "Copy link",
+  "card.copied": "Link copied",
+  "card.share": "Share…",
+  "card.directions": "All directions to the pavilion",
   "about.title": "About",
   "about.p1": "The Armenian Pavilion unfolds across <b>two sites</b> within the historic Arsenale of Venice—a <b>5,000-square-foot interior studio</b> and a monumental <b>outdoor sculpture</b> at the gates of the complex.",
   "about.p2": "Together they form a single constellation: <i>a place for study, for work, to create, share, and exhibit</i>. Over six months the Pavilion operates not as a static exhibition but as a living workshop—open, evolving, and built in real time.",
-
   "studio.eyebrow": "Interior · Tesa 41",
   "studio.title": "The Studio",
   "studio.p1": "<b>Tesa 41</b> is the primary studio and exhibition space for the Armenian Pavilion—<b>5,000 square feet</b> of expansive industrial volume within the Arsenale that functions as the <i>operational and conceptual heart</i> of the project.",
   "studio.p2": "Here, the Pavilion operates as a <b>working studio</b> rather than a static exhibition—a place of continuous <b>making</b>, <b>stacking</b>, <b>dismantling</b>, and <b>rebuilding</b>. The interior volume allows the work to expand <b>horizontally</b> and <b>vertically</b>, accommodating both monumental arrangements and intimate moments of material attention.",
   "studio.p3": "Defined by scale, clarity, and architectural restraint, the space is built for sustained <b>fabrication</b>, <b>assembly</b>, and <b>reconfiguration</b> across the full duration of the Biennale.",
   "studio.p4": "Tesa 41 anchors the Pavilion physically and philosophically—establishing <i>the studio as the artwork itself</i>.",
-
   "outdoor.eyebrow": "Exterior · Arsenale Crossing",
   "outdoor.title": "The Outdoor Piece",
   "outdoor.p1": "The outdoor artwork will be installed at the historic crossing grounds near the <b>Piraeus Lion</b>, one of the most recognized landmarks marking the approach to the Arsenale. Positioned at a critical pedestrian junction, this site receives <b>exceptionally high foot traffic</b> throughout the six-month exhibition period.",
@@ -87,7 +86,6 @@
   "outdoor.p3": "A freestanding, architecturally scaled form—functioning simultaneously as <i>sculpture, signal, and prelude</i>.",
   "outdoor.slide-caption": "Crossing at the Arsenale",
   "outdoor.slide-credit": "Render 2026",
-
   "arsenale.eyebrow": "History",
   "arsenale.title": "Arsenale Militare",
   "arsenale.p1": "The <b>Arsenale di Venezia</b> is one of the largest and oldest shipbuilding complexes in the world. Founded in the <b>12th century</b>, it served as the engine of Venetian naval power for over <b>seven centuries</b>—at its peak employing 16,000 workers and capable of producing a fully outfitted warship in a single day.",
