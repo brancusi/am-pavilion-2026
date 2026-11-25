@@ -2,6 +2,16 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-25 — 18 November photographs: the Accademia and San Marco
+
+**Rationale:** The walk to the Accademia di Belle Arti and on to Piazza San Marco belongs on /walks and in the press library, like the 6 and 14 November walks.
+**Summary:** All 58 of Mina Biasutti's photographs from 18 November (the cloister of the Accademia, the boat across the Bacino, Piazza San Marco and the Piazzetta) are in the press set as a new first group, "Walking the Work · 18 November, the Accademia and San Marco", and fill the gallery on /walks as walk 6's photographs. Captions and alt text in English, Italian and Armenian.
+
+### Changes
+
+- Caption Genius "Pavilion — Press": source `walk_2026-11-18`, group `press-g10` in the "Press kit" selection; `npm run press` uploaded them to R2 `press/<uid>`.
+- `src/amp/data/walk_media.cljs`: w06 photos, photographer, stop photo; `gallery-walk` is w06. `gallery.text.w06` and `photo.<uid>.*` in the walks catalogs; Italian and Armenian in `data-media.json`.
+
 ## 2026-11-18 — Water-taxi driver card at /taxi
 
 **Rationale:** Guests need the driver card on their phone before they get in a taxi; a link straight to it is easier to send than the Visit page.

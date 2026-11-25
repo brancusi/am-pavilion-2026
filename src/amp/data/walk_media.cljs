@@ -37,7 +37,9 @@
 
 (def photos
   "Photographs from each walk, with :ar (width / height) so the gallery holds
-   their space. The 14 November set is twelve of the day's photographs as
+   their space. The 18 November set is all of the day's photographs, at the
+   Accademia di Belle Arti, on the water and in Piazza San Marco, as they are
+   in the press library (Dropbox the_studio/media/photo/2026/11/18). The 14 November set is twelve of the day's photographs as
    they are in the press library (R2 press/<uid>, uploaded by npm run press;
    Dropbox the_studio/media/photo/2026/11/14). The 6 November set is the day's photographs (Dropbox
    the_studio/media/photo/2026/11/06); 5 November is stills from the film.
@@ -71,24 +73,84 @@
           {:path "press/8255662971" :ar 1.5000}
           {:path "press/5fca9ec4d3" :ar 1.1504}
           {:path "press/ad67b4fede" :ar 1.7306}
-          {:path "press/72135a5e47" :ar 0.8631}]})
+          {:path "press/72135a5e47" :ar 0.8631}]
+   "w06" [{:path "press/efc5b7e42e" :ar 1.5001}
+          {:path "press/2d42391bf6" :ar 2.4907}
+          {:path "press/70d1098923" :ar 0.5255}
+          {:path "press/dca2cb21a0" :ar 0.6348}
+          {:path "press/76ba65df0d" :ar 0.5925}
+          {:path "press/3c0b8a03ed" :ar 1.5000}
+          {:path "press/5b8a8203ba" :ar 1.5001}
+          {:path "press/40a09981cf" :ar 1.8037}
+          {:path "press/1a72bb7d43" :ar 1.5000}
+          {:path "press/c0f7505a0c" :ar 1.5686}
+          {:path "press/ff07d14201" :ar 1.6742}
+          {:path "press/8c47262a4b" :ar 1.7444}
+          {:path "press/730fea73ca" :ar 1.4999}
+          {:path "press/30d7a57f61" :ar 1.5000}
+          {:path "press/61b330a15d" :ar 1.5000}
+          {:path "press/f44096ee92" :ar 1.5000}
+          {:path "press/a306a9af6a" :ar 1.5000}
+          {:path "press/c49a7d273c" :ar 1.5001}
+          {:path "press/9d7b6af6f8" :ar 1.5000}
+          {:path "press/9dfa2a50f8" :ar 1.5000}
+          {:path "press/11ecade310" :ar 1.5000}
+          {:path "press/e3fc2d4aaa" :ar 2.3538}
+          {:path "press/e7a592c78e" :ar 1.5000}
+          {:path "press/86bf7f4a27" :ar 1.5000}
+          {:path "press/4837b7df4e" :ar 1.5000}
+          {:path "press/09b00fbf45" :ar 1.5000}
+          {:path "press/dca61a0bf0" :ar 1.5000}
+          {:path "press/4f87fa6e8b" :ar 1.5000}
+          {:path "press/45aaff8229" :ar 1.5000}
+          {:path "press/82700d42d4" :ar 1.5000}
+          {:path "press/8e73480553" :ar 3.1866}
+          {:path "press/2177d90373" :ar 1.5000}
+          {:path "press/9d54246880" :ar 1.5000}
+          {:path "press/7d1ef5dcf4" :ar 1.7874}
+          {:path "press/40eb0dc367" :ar 1.5001}
+          {:path "press/e779ead83b" :ar 1.5000}
+          {:path "press/f6033aa655" :ar 1.5001}
+          {:path "press/66737a8274" :ar 2.6797}
+          {:path "press/4feddb4a8c" :ar 3.1858}
+          {:path "press/f798441561" :ar 1.5000}
+          {:path "press/83ac87fb65" :ar 1.5000}
+          {:path "press/a0a7632eaf" :ar 1.5000}
+          {:path "press/965c1dbaba" :ar 2.1873}
+          {:path "press/1ce39fcb06" :ar 1.5000}
+          {:path "press/a0954f53f9" :ar 1.8840}
+          {:path "press/818ee9de8a" :ar 1.5000}
+          {:path "press/65627fbfff" :ar 1.5000}
+          {:path "press/07e20a6e90" :ar 1.5001}
+          {:path "press/bf60086dca" :ar 1.7437}
+          {:path "press/50bf0a70f6" :ar 1.5000}
+          {:path "press/937fdfbd4d" :ar 1.5000}
+          {:path "press/9315582916" :ar 1.5000}
+          {:path "press/8fc4398bd2" :ar 1.5000}
+          {:path "press/12b722d0f8" :ar 2.1131}
+          {:path "press/1cfbac06ac" :ar 2.0693}
+          {:path "press/0d611b201b" :ar 0.8365}
+          {:path "press/cbbcb085a1" :ar 1.5000}
+          {:path "press/4555ae731b" :ar 1.8904}]})
 
 (def photographers
   "Who took each walk's photographs (as credited in the press set). Walks
    without an entry show film stills."
   {"w02" "Mina Biasutti"
-   "w03" "Mina Biasutti"})
+   "w03" "Mina Biasutti"
+   "w06" "Mina Biasutti"})
 
 (def gallery-walk
   "The walk whose photographs fill the Walks page's gallery (its text:
    walks catalog, gallery.text.<id>)."
-  "w03")
+  "w06")
 
 (def stop-photos
   "The photograph for each stop, in stop order."
   {"w01" ["walks/2026-11-05/portico.jpg" "walks/2026-11-05/church-front.jpg" "walks/2026-11-05/campo-canal.jpg"]
    "w02" ["walks/2026-11-06/dsc07975.tif" "walks/2026-11-06/dsc08090.tif" "walks/2026-11-06/dsc08135.tif"]
-   "w03" ["press/753790e634" "press/2d2fb66733"]})
+   "w03" ["press/753790e634" "press/2d2fb66733"]
+   "w06" ["press/40a09981cf"]})
 
 (def walk-films
   "The finished film of a walk, by walk id: a :slug in amp.data.films."
