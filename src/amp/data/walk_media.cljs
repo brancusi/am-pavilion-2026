@@ -150,7 +150,7 @@
   {"w01" ["walks/2026-11-05/portico.jpg" "walks/2026-11-05/church-front.jpg" "walks/2026-11-05/campo-canal.jpg"]
    "w02" ["walks/2026-11-06/dsc07975.tif" "walks/2026-11-06/dsc08090.tif" "walks/2026-11-06/dsc08135.tif"]
    "w03" ["press/753790e634" "press/2d2fb66733"]
-   "w06" ["press/40a09981cf"]})
+   "w06" ["press/40a09981cf" "press/4feddb4a8c"]})
 
 (def walk-films
   "The finished film of a walk, by walk id: a :slug in amp.data.films."

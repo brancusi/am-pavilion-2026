@@ -2,6 +2,17 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-25 — A link for each walk; the 18 November route by boat to San Marco
+
+**Rationale:** Each walk should be shareable on its own, and the 18 November route went on from the Accademia to Piazza San Marco before going home.
+**Summary:** `/walks/<date>` (e.g. `/walks/2026-11-18`, in all three languages) opens the Walks page on that walk. The address bar follows the walk picked, and each walk has "Copy link to this walk" and Share. Shared links get a preview with the walk's number, date, title and first stop photo. Walk 6 is now AP → Accademia → Piazza San Marco (50 min) → AP by boat.
+
+### Changes
+
+- Router: `walks/:walk` in the Walks group. `walks-view` reads the date, opens that walk and scrolls to the map, and `replaceState`s on each pick.
+- `scripts/walks.mjs`: boat walks can have several stops, using `onward` lines (one per further stop, then home). The w06 plan has the San Marco stop and the lines, and its note is updated in EN, IT and HY.
+- `build/og-posts.js` writes `cloudflare/site/walks.json`; the Worker previews `/walks/<date>` (`walk.title`, `walk.description` in meta.json).
+
 ## 2026-11-25 — 18 November photographs: the Accademia and San Marco
 
 **Rationale:** The walk to the Accademia di Belle Arti and on to Piazza San Marco belongs on /walks and in the press library, like the 6 and 14 November walks.

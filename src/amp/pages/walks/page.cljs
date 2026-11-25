@@ -437,6 +437,36 @@
                                   (d/span {:class "ap-wk-list__title"} title)
                                   (d/span {:class "ap-caption"} (t (if (boat? w) :walks/list.meta-boat :walks/list.meta) {:works (works-n works) :km (km-n km) :duration (duration minutes)}))))))))
 
+;; Each walk has its own link, /walks/<date> (in the page's language): the
+;; address bar follows the walk picked, so it can be copied as it is.
+
+(defn- walk-path [date] (i18n/href (str "/walks/" date)))
+
+(defn- linked-walk
+  "The walk the address names (/walks/2026-11-18), by id."
+  [walks]
+  (when-let [date (second (re-find #"/walks/(\d{4}-\d{2}-\d{2})/?$" (.. js/location -pathname)))]
+    (some #(when (= date (:date %)) (:id %)) walks)))
+
+(defnc share-walk
+  "Copy this walk's link, or send it through the phone's share sheet."
+  [{:keys [walk]}]
+  (let [link (str (.-origin js/location) (walk-path (:date walk)))
+        [copied? set-copied!] (hooks/use-state false)
+        share? (some? (.-share js/navigator))]
+    (d/div {:class "ap-wk-share"}
+           (d/button {:type "button" :class "ap-btn ap-btn--ghost" :aria-live "polite"
+                      :on-click #(-> (.writeText js/navigator.clipboard link)
+                                     (.then (fn []
+                                              (set-copied! true)
+                                              (js/setTimeout (fn [] (set-copied! false)) 2000))))}
+                     (t (if copied? :walks/share.copied :walks/share.copy)))
+           (when share?
+             (d/button {:type "button" :class "ap-btn ap-btn--ghost"
+                        :on-click #(-> (.share js/navigator #js {:title (:title walk) :url link})
+                                       (.catch (fn [_])))}
+                       (t :walks/share.share))))))
+
 (defnc walk-detail [{:keys [walk]}]
   (let [{:keys [id n date title works depart minutes km wide fresh via note stops status]} walk
         back (at-time depart minutes)
@@ -453,6 +483,7 @@
                                       (d/span {:class "ap-h2 block"} (i18n/date date {:month "long" :year "numeric"}))))
                        (d/h2 {:id "walk-title" :class "ap-h1 m-0"} title)
                        (d/p {:class "ap-wk-tag ap-label m-0" :data-status (name status)} (status-label walk))
+                       ($ share-walk {:walk walk})
                        (d/dl {:class "ap-wk-facts"}
                              (d/div (d/dt {:class "ap-label"} (t :walks/leaves)) (d/dd {:class "ap-data"} depart))
                              (d/div (d/dt {:class "ap-label"} (t :walks/back)) (d/dd {:class "ap-data"} (str "≈ " back)))
@@ -690,7 +721,20 @@
 
 (defnc walks-view []
   (let [walks (mapv localize (hooks/use-memo :once (wm/with-status)))
-        [sel set-sel!] (hooks/use-state (first-pick walks))
+        linked (hooks/use-memo :once (linked-walk walks))
+        [sel set-sel] (hooks/use-state (or linked (first-pick walks)))
+        set-sel! (hooks/use-callback
+                  :once
+                  (fn [id]
+                    (set-sel id)
+                    (when-let [w (some #(when (= id (:id %)) %) walks)]
+                      (.replaceState js/history (.-state js/history) "" (walk-path (:date w))))))
+        _ (hooks/use-effect
+           :once
+           ;; A walk's own link opens on it: the map, the list and the walk.
+           (when linked
+             (let [tm (js/setTimeout #(some-> (js/document.getElementById "walks-map") (.scrollIntoView)) 700)]
+               #(js/clearTimeout tm))))
         [show set-show!] (hooks/use-state :all)
         walk (some #(when (= sel (:id %)) %) walks)
         [ref {near? :in?}] (use-in-view :root-margin "100% 0px")

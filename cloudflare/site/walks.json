@@ -1,0 +1,52 @@
+{
+ "2026-11-05": {
+  "id": "w01",
+  "n": 1,
+  "image": "https://media.armenianpavilion.org/walks/2026-11-05/portico.jpg",
+  "title": {
+   "en": "Vigna, Zanipolo, Formosa",
+   "it": "Vigna, Zanipolo, Formosa",
+   "hy": "Vigna, Zanipolo, Formosa"
+  }
+ },
+ "2026-11-06": {
+  "id": "w02",
+  "n": 2,
+  "image": "https://media.armenianpavilion.org/walks/2026-11-06/dsc07975.jpg",
+  "title": {
+   "en": "The Arsenale gate to the Giardini",
+   "it": "Dalla porta dell’Arsenale ai Giardini",
+   "hy": "Arsenale-⁠ի դարպասից մինչև Giardini"
+  }
+ },
+ "2026-11-14": {
+  "id": "w03",
+  "n": 3,
+  "image": "https://media.armenianpavilion.org/press/753790e634-s.jpg",
+  "title": {
+   "en": "The Riva to Piazza San Marco",
+   "it": "Lungo la Riva fino a Piazza San Marco",
+   "hy": "Riva-⁠ով մինչև Piazza San Marco"
+  }
+ },
+ "2026-11-18": {
+  "id": "w06",
+  "n": 4,
+  "image": "https://media.armenianpavilion.org/press/40a09981cf-s.jpg",
+  "title": {
+   "en": "Walking the Work to the Accademia",
+   "it": "Walking the Work fino all’Accademia",
+   "hy": "Walking the Work՝ մինչև Accademia"
+  }
+ },
+ "2026-11-21": {
+  "id": "w09",
+  "n": 5,
+  "image": "https://media.armenianpavilion.org/share/walks.jpg",
+  "title": {
+   "en": "Finale: to Piazza San Marco",
+   "it": "Finale: fino a Piazza San Marco",
+   "hy": "Եզրափակիչ՝ դեպի Սան Մարկո հրապարակ"
+  }
+ }
+}

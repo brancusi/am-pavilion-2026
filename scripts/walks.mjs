@@ -13,8 +13,10 @@
 // stop gives its own "stay" in minutes (and an optional "detail" line, and
 // "arrive", a confirmed arrival time shown instead of the estimate).
 // A walk with "by": "boat" goes by water instead: "water" is its line from
-// the pavilion's water gate to its (one) stop, drawn on the map and run out
-// and back at BOAT_KMH; it uses no streets, so it leaves the others' routes be.
+// the pavilion's water gate to its first stop, run out and back the same way
+// at BOAT_KMH; or, with "onward" (one line per further stop, then one home,
+// each starting where the last ended), on from stop to stop and home. It uses
+// no streets, so it leaves the others' routes be.
 //
 // Writes:
 //   resources/data/walks/routes.json            the lines, in the base map's pixels
@@ -167,23 +169,30 @@ plan.forEach((w, wi) => {
   console.log(`${w.date}  ${w.title.padEnd(38)} ${(L / 1000).toFixed(1)} km  ${minutes} min  wide ${Math.round(wide / L * 100)}%  new ${Math.round((1 - reused / L) * 100)}%`);
 });
 
-// A walk by boat: out along its water line, the stay, and back the same way.
-// With a confirmed arrival, the time out is the confirmed one.
+// A walk by boat: out along its water line to the first stop, then on from
+// stop to stop along its "onward" lines and home (or, without them, back the
+// same way). With a confirmed arrival at the first stop, the time out is the
+// confirmed one.
 function boat(w, wi) {
-  const out = w.water, coords = [...out, ...out.slice(0, -1).reverse()];
+  const out = w.water, onward = w.onward || [];
+  if (onward.length && onward.length !== w.stops.length) throw new Error(`${w.id}: one onward line per further stop, then one home`);
+  const legs = onward.length ? [out, ...onward] : [out, [...out].reverse()];
+  const coords = [...legs[0]], ends = [legs[0].length - 1];
+  for (const l of legs.slice(1)) { coords.push(...l.slice(1)); ends.push(coords.length - 1); }
   const cum = [0];
   for (let i = 1; i < coords.length; i++) cum.push(cum[i - 1] + metres(coords[i - 1], coords[i]));
-  const L = cum[cum.length - 1], leg = L / 2 / 1000 / BOAT_KMH * 60;
-  const s = w.stops[0], stay = s.stay ?? STOP_MIN;
-  const away = s.arrive ? hm(s.arrive) - hm(w.depart) : leg;
-  const minutes = Math.round((away + stay + leg) / 5) * 5;
-  const px = coords.map(xy), [sx, sy] = xy(out[out.length - 1]);
+  const L = cum[cum.length - 1], travel = L / 1000 / BOAT_KMH * 60, first = cum[ends[0]] / 1000 / BOAT_KMH * 60;
+  const stays = w.stops.map(s => s.stay ?? STOP_MIN), stay = stays.reduce((a, b) => a + b, 0);
+  const s0 = w.stops[0], late = s0.arrive ? hm(s0.arrive) - hm(w.depart) - first : 0;
+  const minutes = Math.round((travel + late + stay) / 5) * 5;
+  const px = coords.map(xy);
+  const ts = w.stops.map((_, i) => cum[ends[i]] / L);
   lines.push({ id: w.id, by: 'boat', d: 'M' + px.map(([x, y]) => `${r1(x)} ${r1(y)}`).join('L'),
-    pts: px.map(([x, y]) => [r1(x), r1(y)]), stops: [[r1(sx), r1(sy), 0.5]] });
+    pts: px.map(([x, y]) => [r1(x), r1(y)]), stops: w.stops.map((_, i) => [r1(px[ends[i]][0]), r1(px[ends[i]][1]), Math.round(ts[i] * 1e4) / 1e4]) });
   list.push({ id: w.id, n: wi + 1, date: w.date, works: w.works, depart: w.depart, title: w.title, note: w.note || null,
     // pace: the minutes per km that bring the player's clock home at `minutes`
     by: 'boat', pace: Math.round((minutes - stay) / (L / 1000) * 10) / 10, km: Math.round(L / 10) / 100, minutes, wide: null, fresh: null, via: [],
-    stops: [{ name: s.name, t: 0.5, stay, detail: s.detail || null, arrive: s.arrive || null }] });
+    stops: w.stops.map((s, i) => ({ name: s.name, t: Math.round(ts[i] * 1e4) / 1e4, stay: stays[i], detail: s.detail || null, arrive: s.arrive || null })) });
   console.log(`${w.date}  ${w.title.padEnd(38)} ${(L / 1000).toFixed(1)} km  ${minutes} min  by boat`);
 }
 

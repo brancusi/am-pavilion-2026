@@ -141,6 +141,12 @@
                                   [[path route-data]
                                    [(str path "/:sheet")
                                     (assoc route-data :name ::portage-sheet)]])
+                      ;; Walks: the page + one link per walk (/walks/2026-11-18),
+                      ;; one page (:group) that picks the walk itself.
+                      ::walks (let [route-data (assoc route-data :group id)]
+                                [[path route-data]
+                                 [(str path "/:walk")
+                                  (assoc route-data :name ::walks-walk)]])
                       ;; Press: the overview + one route per section, one page
                       ;; (:group) that swaps its sections itself (:inner-swap).
                       ::press
