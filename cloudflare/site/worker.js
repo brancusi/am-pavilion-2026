@@ -126,6 +126,18 @@ function localize(res, locale, bare) {
     .transform(res);
 }
 
+// "18 November" / "18 novembre" / "նոյեմբերի 18", as the site writes dates
+// (spelled out here: the Worker's Intl has no Armenian).
+const MONTHS = {
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  it: ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+  hy: ["հունվարի", "փետրվարի", "մարտի", "ապրիլի", "մայիսի", "հունիսի", "հուլիսի", "օգոստոսի", "սեպտեմբերի", "հոկտեմբերի", "նոյեմբերի", "դեկտեմբերի"],
+};
+function dayMonth(iso, locale) {
+  const [, m, d] = iso.split("-").map(Number), month = (MONTHS[locale] || MONTHS.en)[m - 1];
+  return locale === "hy" ? `${month} ${d}` : `${d} ${month}`;
+}
+
 // The preview for a page: bare is the path without its locale prefix.
 async function route(request, env, res, path, bare, locale) {
   const T = meta[locale];
@@ -139,8 +151,7 @@ async function route(request, env, res, path, bare, locale) {
   const wm = bare.match(/^\/walks\/(\d{4}-\d{2}-\d{2})\/?$/);
   if (wm && walks[wm[1]]) {
     const w = walks[wm[1]];
-    let date = wm[1];
-    try { date = new Intl.DateTimeFormat(locale === "hy" ? "hy-AM" : locale, { day: "numeric", month: "long", timeZone: "UTC" }).format(new Date(`${wm[1]}T12:00:00Z`)); } catch {}
+    const date = dayMonth(wm[1], locale);
     const title = T["walk.title"].replace("{n}", w.n).replace("{date}", date).replace("{title}", w.title[locale] || w.title.en);
     return preview(res, { path: at(locale, `/walks/${wm[1]}`), title, description: T["walk.description"], image: w.image, type: "website", locale });
   }
