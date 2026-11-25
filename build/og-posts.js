@@ -62,6 +62,29 @@ if (!Object.keys(films).length) throw new Error("og-posts: no films found in fil
 fs.writeFileSync(path.join(__dirname, "../cloudflare/site/films.json"), JSON.stringify(films, null, 1) + "\n");
 console.log(`og-posts: ${Object.keys(films).length} films`);
 
+// And cloudflare/site/walks.json, for each walk's link (/walks/<date>): its
+// number, title in each language (data-walks catalogs) and the photograph of
+// its first stop (amp.data.walk-media stop-photos; a press image's Small
+// download, or the Walks share card).
+const walkSrc = fs.readFileSync(path.join(__dirname, "../src/amp/data/walks.cljs"), "utf8");
+const mediaSrc = fs.readFileSync(path.join(__dirname, "../src/amp/data/walk_media.cljs"), "utf8");
+const photosSrc = mediaSrc.slice(mediaSrc.indexOf("(def stop-photos"), mediaSrc.indexOf("(def walk-films"));
+const walkPhoto = (id) => {
+  const p = (photosSrc.match(new RegExp(`"${id}" \\["([^"]+)"`)) || [])[1];
+  if (!p) return `${media}share/walks.jpg`;
+  return p.startsWith("press/") ? `${media}${p}-s.jpg` : jpeg(media + p);
+};
+const walks = {};
+for (const block of walkSrc.split(/\{:id /).slice(1)) {
+  const id = block.match(/^"([^"]+)"/)[1], n = Number(block.match(/:n (\d+)/)[1]);
+  const title = field(block, "title");
+  walks[field(block, "date")] = { id, n, image: walkPhoto(id),
+    title: Object.fromEntries(locales.map((l) => [l, catalog(l, "data-walks")[title] || title])) };
+}
+if (!Object.keys(walks).length) throw new Error("og-posts: no walks found in walks.cljs");
+fs.writeFileSync(path.join(__dirname, "../cloudflare/site/walks.json"), JSON.stringify(walks, null, 1) + "\n");
+console.log(`og-posts: ${Object.keys(walks).length} walks`);
+
 // cloudflare/site/meta.json: the section previews and press texts per locale.
 const meta = Object.fromEntries(locales.map((l) => [l, { ...catalog("en", "meta"), ...catalog(l, "meta") }]));
 fs.writeFileSync(path.join(__dirname, "../cloudflare/site/meta.json"), JSON.stringify(meta, null, 1) + "\n");

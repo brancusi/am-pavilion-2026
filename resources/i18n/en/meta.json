@@ -4,6 +4,8 @@
   "home.description": "Zadik Zadikian: The Studio. Curators Tony Shafrazi and Tina Chakarian. Armenian Pavilion, 61st International Art Exhibition — La Biennale di Venezia. Arsenale Militare, Tesa 41, 9 May – 22 November 2026.",
   "walks.title": "Walks",
   "walks.description": "The studio carries the works out of Tesa 41 and through Venice, sets them down in a campo, on a fondamenta or before a church, and carries them home another way. The schedule, the routes and every walk so far.",
+  "walk.title": "Walk {n}, {date}: {title}",
+  "walk.description": "Walking the Work: the studio carries the works out of Tesa 41 and through Venice. The route, the itinerary, the photographs and the films of this walk.",
   "visit.title": "Getting to the pavilion",
   "visit.description": "The pavilion sits inside the Arsenale, about an eight-minute walk from the crossing at the Piraeus Lion. Guests by water taxi enter from the North Lagoon. Tuesday to Sunday, 10:00–17:30, 9 May – 22 November 2026.",
   "artist.title": "Zadik Zadikian",

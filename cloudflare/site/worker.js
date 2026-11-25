@@ -14,6 +14,7 @@
 // press images come from press.json, the list the page reads.
 import posts from "./posts.json";
 import films from "./films.json";
+import walks from "./walks.json";
 import meta from "./meta.json";
 import mediaText from "./media.json";
 import { plan, send } from "./zip.js";
@@ -125,6 +126,18 @@ function localize(res, locale, bare) {
     .transform(res);
 }
 
+// "18 November" / "18 novembre" / "նոյեմբերի 18", as the site writes dates
+// (spelled out here: the Worker's Intl has no Armenian).
+const MONTHS = {
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  it: ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+  hy: ["հունվարի", "փետրվարի", "մարտի", "ապրիլի", "մայիսի", "հունիսի", "հուլիսի", "օգոստոսի", "սեպտեմբերի", "հոկտեմբերի", "նոյեմբերի", "դեկտեմբերի"],
+};
+function dayMonth(iso, locale) {
+  const [, m, d] = iso.split("-").map(Number), month = (MONTHS[locale] || MONTHS.en)[m - 1];
+  return locale === "hy" ? `${month} ${d}` : `${d} ${month}`;
+}
+
 // The preview for a page: bare is the path without its locale prefix.
 async function route(request, env, res, path, bare, locale) {
   const T = meta[locale];
@@ -132,6 +145,15 @@ async function route(request, env, res, path, bare, locale) {
   if (fm && films[fm[1]]) {
     const f = inLocale(films[fm[1]], locale);
     return preview(res, { path: at(locale, `/films/${fm[1]}`), title: f.title, description: f.summary, image: f.image, width: 1200, height: 630, type: "video.other", locale });
+  }
+
+  // One walk: /walks/2026-11-18 (walks.json, from build/og-posts.js).
+  const wm = bare.match(/^\/walks\/(\d{4}-\d{2}-\d{2})\/?$/);
+  if (wm && walks[wm[1]]) {
+    const w = walks[wm[1]];
+    const date = dayMonth(wm[1], locale);
+    const title = T["walk.title"].replace("{n}", w.n).replace("{date}", date).replace("{title}", w.title[locale] || w.title.en);
+    return preview(res, { path: at(locale, `/walks/${wm[1]}`), title, description: T["walk.description"], image: w.image, type: "website", locale });
   }
 
   const trimmed = bare.replace(/\/+$/, "") || "/";   // /walks/ previews like /walks
