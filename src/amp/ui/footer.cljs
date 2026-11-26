@@ -12,7 +12,7 @@
    [amp.state.provider :refer [use-main-state]]
    [amp.ui.share-bar :refer [share-bar]]
    [amp.ui.social-links :refer [social-links]]
-   [amp.ui.studio-mark :refer [studio-mark-3d]]
+   [amp.ui.studio-mark :refer [studio-mark]]
    [helix.core :refer [$]]
    [helix.dom :as d]
    [helix.hooks :as hooks]))
@@ -114,7 +114,7 @@
      (d/div {:class "ap-footer__in"}
             (d/div {:class "ap-footer__lead"}
                    (d/a {:class "ap-footer__brand" :href (i18n/href "/")}
-                        ($ studio-mark-3d {:variants #{:pigment} :label nil})
+                        ($ studio-mark {:variants #{:pigment} :label nil})
                         (d/span {:class "ap-label"} (t :footer/brand)))
                    (d/p {:class "ap-display-l m-0"} "Zadik Zadikian: The Studio")
                    (d/p {:class "ap-footer__when ap-label m-0"}
