@@ -38,11 +38,19 @@ A post is a ClojureScript namespace with a hand-written body, plus a listing ent
 1. Find candidates on the proxies: `blackbox look <words>`, `blackbox search <words>`, then
    `blackbox frame <frame-id>` (or `<file>@<seconds>`) to get a proxy JPEG path, and `Read` it to judge
    it. Sweep a shot with `blackbox frame FILE.MOV --at <t>` at several times.
-2. Order full-resolution stills from the originals (rendered on the Mac mini, minutes):
-   `blackbox still new <id>=<name> <id>=<name> --look filmic --out <scratchpad>/stills`
-   (`--look neutral` for documentary, `filmic` for the post's lead images; `~white=x,y` fixes a colour
-   cast). `blackbox still show <request-id> --wait` reports the paths when they are back.
-3. Upload as below. Proxy frames are only for choosing, never for publishing.
+2. Order full-resolution stills from the originals (rendered on the Mac mini, minutes), in the neutral
+   look as 16-bit TIFF: `blackbox still new <id>=<name> <id>=<name> --look neutral --tiff --out
+   <scratchpad>/base` (`~white=x,y` fixes a colour cast). `blackbox still show <request-id> --wait`
+   reports the paths when they are back. Neutral is flat and log-like: never publish it as it is.
+3. Grade them to the photographs with `scripts/grade.mjs`:
+   `node scripts/grade.mjs apply --look mina-2026-11-18 <scratchpad>/base/*.tif --out <scratchpad>/graded
+   --sheet <scratchpad>/sheet.jpg`, then `Read` the before | after sheet. The look `mina-2026-11-18`
+   (`scripts/grade/looks/`) is fitted to Mina Biasutti's graded photographs of 18 November: warm stone,
+   deep cool blacks, flag red and emerald green (a camera's teal green is moved onto hers). For another
+   set of references, `node scripts/grade.mjs fit <folder> --name <look>`; tune a look through its
+   `trim` values (kept on refit). `node scripts/grade.mjs measure <image>` prints what it sees.
+   Blackbox's `filmic` look turns the flag's green teal: don't use it for the flag.
+4. Upload as below. Proxy frames are only for choosing, never for publishing.
 
 ### Upload to R2
 

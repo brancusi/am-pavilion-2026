@@ -8,8 +8,9 @@
    and Argento Celant are named as in that caption; Zadik Zadikian (14
    November) and Tony Shafrazi (18 November) by their recorded voices; the
    young man at the film's end is quoted unnamed. Photographs: Mina
-   Biasutti, 18 November (press/<uid>). Stills: neutral frames of the camera
-   originals of 21 November (R2 journal/26-11-21/). Text: the
+   Biasutti, 18 November (press/<uid>). Stills: frames of the camera originals of
+   21 November, graded to Mina's photographs with scripts/grade.mjs (look
+   mina-2026-11-18; R2 journal/26-11-21-graded/). Text: the
    post-an-alive-gesture catalog."
   (:require
    [amp.i18n :refer [t ts] :refer-macros [defcatalog]]
@@ -27,7 +28,7 @@
 
 (def ^:private film-id "3c01Wf00iM02lCNyblC001ehBYv3Vjq9Eln9XtpbMPWelYI")
 
-(def ^:private stills (str media-host "journal/26-11-21/"))
+(def ^:private stills (str media-host "journal/26-11-21-graded/"))
 
 (defn- figure
   "One captioned photograph of 18 November (press/<uid>), in the post's

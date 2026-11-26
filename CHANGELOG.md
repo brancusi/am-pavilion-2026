@@ -2,6 +2,15 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-26 — Graded stills, and a grading script
+
+- The 21 November stills in **An Alive Gesture** were flat (Black Box's neutral look). They are now graded to
+  match Mina Biasutti's photographs of 18 November (R2 journal/26-11-21-graded/).
+- `scripts/grade.mjs` grades stills to a set of reference photographs. `fit` measures the references into a look
+  (`scripts/grade/looks/<look>.json`): tone and chroma curves, the split tone of the neutrals, the sky, and the
+  strong colours (the flag's red and green). `apply` moves each still toward it, in OKLab. The look
+  `mina-2026-11-18` is the one to use for stills of the walks; the journal-post skill has the steps.
+
 ## 2026-11-26 — The Last Walk: film, press kit, walks and a journal post
 
 - New film **The Last Walk** (2:53, 4K, edit Bibiana Juritz) of the last flag walks: on the home films reel
