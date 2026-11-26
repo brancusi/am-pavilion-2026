@@ -301,6 +301,7 @@
    "66126f601c"
   ],
   "films": [
+   "the-last-walk",
    "the-weight-of-the-flag",
    "italian-flag",
    "carrying"
@@ -544,6 +545,15 @@
  "video": {
   "title": null,
   "films": [
+   {
+    "slug": "the-last-walk",
+    "held": false,
+    "title": "The Last Walk",
+    "date": "November 2026",
+    "credit": "Film: Bibiana Juritz and Aram Zadikian. Edit: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "The last flag walks: the tricolore carried through Venice piece by piece, on foot and by boat, to the cloister of the Accademia di Belle Arti and to Piazza San Marco: on pride, and the hesitation to show it.",
+    "html": "<p>On 18 November the sections of the Italian flag leave the pavilion by boat, cross the Bacino and are carried by students into the cloister of the Accademia di Belle Arti di Venezia, then set out in a line in Piazza San Marco; on 21 November, the last walk, they cross the Piazza again. Leonardo Costerman says that Italy is the country most loved abroad, and that the only ones who despise it are perhaps the Italians themselves; Zadik Zadikian notes that so far nobody has come out to honour Italy: &quot;We are the first ones.&quot; Tony Shafrazi says Italians are embarrassed by their flag, and asks that it be brought to participation: &quot;Make it come alive.&quot; Argento Celant calls the walk &quot;an alive gesture&quot;. In Italian and English, with English subtitles burned in.</p>\n"
+   },
    {
     "slug": "building-blocks",
     "held": false,

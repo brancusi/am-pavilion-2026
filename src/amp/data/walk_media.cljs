@@ -153,8 +153,12 @@
    "w06" ["press/40a09981cf" "press/4feddb4a8c"]})
 
 (def walk-films
-  "The finished film of a walk, by walk id: a :slug in amp.data.films."
-  {"w01" "the-weight-of-the-flag"})
+  "The finished film of a walk, by walk id: a :slug in amp.data.films. The
+   Last Walk is cut from both the 18 November walk (by boat to the Accademia
+   and San Marco) and the 21 November finale."
+  {"w01" "the-weight-of-the-flag"
+   "w06" "the-last-walk"
+   "w09" "the-last-walk"})
 
 (def solo-walk
   "Before the walks: Aram Zadikian carried one red unit out of Tesa 41 alone

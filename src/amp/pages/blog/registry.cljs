@@ -7,6 +7,7 @@
    4. Require the namespace here and add it to `components`."
   (:require
    [amp.data.journal :as journal]
+   [amp.pages.blog.posts.an-alive-gesture :as post-alive]
    [amp.pages.blog.posts.blue-yellow-maquette :as post-byby]
    [amp.pages.blog.posts.carried-by-hand :as post-carried]
    [amp.pages.blog.posts.carrying :as post-carrying]
@@ -18,7 +19,8 @@
    [amp.pages.blog.posts.off-the-shelf :as post-shelf]))
 
 (def ^:private components
-  {"off-the-shelf"           post-shelf/post-content
+  {"an-alive-gesture"        post-alive/post-content
+   "off-the-shelf"           post-shelf/post-content
    "this-fits-this"          post-fits/post-content
    "the-weight-of-the-flag"  post-weight/post-content
    "seven-steps-to-heaven"   post-steps/post-content

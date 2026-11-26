@@ -516,22 +516,28 @@
                                       (when photo ($ picture {:src (str media photo) :alt name :sizes "200px"})))))
                       (d/li (d/span {:class "ap-data"} (str "≈ " back)) (d/i {:class "is-ap"} "AP")
                             (d/span {:class "ap-wk-itin__name"} (if (boat? walk) (i18n/t :walks/itin.home-boat) (i18n/t :walks/itin.home))))))
-     (when (or (seq fs) (seq ps))
+     (when (or film (seq fs) (seq ps))
        (d/section {:class "ap-wrap ap-wk-media" :aria-label (i18n/ts :walks/media.title)}
                   (d/div {:class "ap-wk-media__head"}
                          (d/h3 {:class "ap-h2 m-0"} (t :walks/media.title))
-                         (d/span {:class "ap-label ap-muted"} (t :walks/media.count {:film (if film "yes" "no") :loops (count fs) :photos (count ps)})))
+                         (d/span {:class "ap-label ap-muted"}
+                                 (str/join " · " (cond-> []
+                                                   film (conj (i18n/ts :walks/media.film))
+                                                   (seq fs) (conj (i18n/ts :walks/media.loops {:n (count fs)}))
+                                                   (seq ps) (conj (i18n/ts :walks/media.photos {:n (count ps)}))))))
                   (when film ($ walk-film {:film film :walk walk}))
-                  (d/div {:class "ap-wk-films"}
-                         (for [f fs] ($ loop-film {:key (:id f) :& f})))
-                  (d/div {:class "ap-wk-photos"}
+                  (when (seq fs)
+                    (d/div {:class "ap-wk-films"}
+                           (for [f fs] ($ loop-film {:key (:id f) :& f}))))
+                  (when (seq ps)
+                   (d/div {:class "ap-wk-photos"}
                          (for [[i {:keys [path title alt]}] (map-indexed vector ps)]
                            (d/figure {:key path :class "m-0"}
                                      (d/button {:type "button" :class "ap-wk-photos__frame"
                                                 :aria-label (ts :walks/photo.view {:title title})
                                                 :on-click #(set-viewing! i)}
                                                ($ picture {:src (str media path) :alt alt :sizes "(min-width: 960px) 25vw, 50vw"}))
-                                     (d/figcaption {:class "ap-caption"} (fig-caption date i title (get wm/photographers id))))))
+                                     (d/figcaption {:class "ap-caption"} (fig-caption date i title (get wm/photographers id)))))))
                   ($ still-viewer {:photos ps :date date :by (get wm/photographers id) :at viewing :on-go set-viewing! :on-close #(set-viewing! nil)}))))))
 
 (defnc schedule [{:keys [walks walk on-pick]}]
