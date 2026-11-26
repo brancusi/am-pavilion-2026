@@ -377,6 +377,8 @@ body { font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
 .ap-footer__lead { display: grid; gap: var(--space-4); justify-items: start; }
 .ap-footer__brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; }
 .ap-footer__brand .ap-mark { width: 28px; height: 28px; }
+/* The ink tile would vanish into the night ground: draw it in the footer's text colour. */
+.ap-footer__brand .ap-mark--pigment .ap-mark__tile:nth-child(9n+9) { fill: var(--on-night); }
 .ap-footer__when { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); color: #b5ad9e; }
 .ap-footer__h { margin: 0 0 var(--space-2); font: 500 12px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); }
 .ap-footer__map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-6); padding-top: var(--space-8); border-top: 1px solid rgba(255, 255, 255, .2); }
