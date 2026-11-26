@@ -6,7 +6,7 @@
             [amp.lib.defnc :refer [defnc]]
             [amp.ui.lang-switch :refer [lang-switch]]
             [amp.state.provider :refer [use-main-state]]
-            [amp.ui.studio-mark :refer [studio-mark-3d]]
+            [amp.ui.studio-mark :refer [studio-mark]]
             [amp.ui.theme-toggle :refer [theme-toggle]]
             [helix.core :refer [$ <>]]
             [helix.dom :as d]
@@ -80,7 +80,7 @@
     (<>
      (d/header {:class "ap-header" :data-scrolled (when scrolled? "")}
                (d/a {:class "ap-header__brand" :href (i18n/href "/") :on-click close!}
-                    ($ studio-mark-3d {:variants #{:pigment} :label nil})
+                    ($ studio-mark {:variants #{:pigment} :label nil})
                     (d/span {:class "ap-header__name"}
                             (t :site/brand-name) (d/br)
                             (d/span {:class "ap-muted"} (t :site/brand-sub))))
