@@ -8,7 +8,8 @@
             [amp.pages.subscribed :refer [subscribed-view]]
             [amp.utils.lazy-loading :refer-macros [lazy-component]]
             [reitit.frontend.controllers :as rfc]
-            [reitit.frontend.easy :as rfe]))
+            [reitit.frontend.easy :as rfe]
+            [reitit.frontend.history :as rfh]))
 
 ;; ---------------------------------------------------------------------------
 ;; Scroll restoration — push navigations scroll to top, pop (back/forward)
@@ -277,7 +278,13 @@
          (routes)
          {})
         route-change-callback
-        {:use-fragment false})
+        ;; A link marked download (the press ZIPs, PDFs, logos) is a file:
+        ;; let the browser fetch it, even when its path matches a route
+        ;; (/press/zip/… matches the press-kit pages).
+        {:use-fragment false
+         :ignore-anchor-click? (fn [router e el uri]
+                                 (and (not (.hasAttribute el "download"))
+                                      (rfh/ignore-anchor-click? router e el uri)))})
 
        (set-is-ready! true)
 

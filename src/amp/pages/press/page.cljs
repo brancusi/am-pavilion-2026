@@ -319,7 +319,7 @@
           (for [k tiers
                 :let [bytes (reduce + (keep #(get-in % [:dl k :bytes]) images))]
                 :when (pos? bytes)]
-            (d/a {:key (cljs.core/name k) :href (zip-url name uids (cljs.core/name k))}
+            (d/a {:key (cljs.core/name k) :href (zip-url name uids (cljs.core/name k)) :download true}
                  (d/b (tier-name k)) (d/span (mb bytes))))))
 
 (defn- slug [s]
