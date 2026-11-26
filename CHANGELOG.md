@@ -2,6 +2,15 @@
 
 <!-- Append new entries above this line -->
 
+## 2026-11-26 — The Last Walk: film, press kit, walks and a journal post
+
+- New film **The Last Walk** (2:53, 4K, edit Bibiana Juritz) of the last flag walks: on the home films reel
+  (/films/the-last-walk), in the press kit's films with MP4 downloads and in the tricolore release's films, and
+  as the film of walks 4 (18 November) and 5 (21 November) on /walks.
+- Journal post **An Alive Gesture** (/blog/an-alive-gesture), from the film's caption in Notion: the flag as a
+  shared image, the hesitation to be seen with it. Photographs by Mina Biasutti (18 November) and stills of 21
+  November (R2 journal/26-11-21/). English, Italian and Armenian.
+
 ## 2026-11-25 — A link for each walk; the 18 November route by boat to San Marco
 
 **Rationale:** Each walk should be shareable on its own, and the 18 November route went on from the Accademia to Piazza San Marco before going home.

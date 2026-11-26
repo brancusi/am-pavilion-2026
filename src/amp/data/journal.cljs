@@ -13,7 +13,14 @@
   "Newest first. :kind is the filter tag (its label is kind.<kind>); :tone
    picks its pigment; :cover-ar is the cover's width / height, so its space
    is held before it loads."
-  [{:slug        "off-the-shelf"
+  [{:slug        "an-alive-gesture"
+    :date        "2026-11-26"
+    :kind        "Venice"
+    :tone        :red
+    :cover-image "https://media.armenianpavilion.org/press/4555ae731b"
+    :cover-ar    1.8904}
+
+   {:slug        "off-the-shelf"
     :date        "2026-11-18"
     :kind        "Studio"
     :tone        :blue

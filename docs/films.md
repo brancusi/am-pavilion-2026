@@ -5,6 +5,7 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 | Film | Source file | Length | Asset | Playback ID |
 |---|---|---|---|---|
+| The Last Walk | `11/flagwalk_last.mp4` (uploaded 26 Nov; 14, 18, 21 and 24 Nov footage, edit Bibiana Juritz) | 2:53 | `pge77W76YrV28QSBzK9Re3IZypLZ8ag6HTrIUat55U8` | `3c01Wf00iM02lCNyblC001ehBYv3Vjq9Eln9XtpbMPWelYI` |
 | Building Blocks | `11/packing_edit_4k.mp4` (uploaded 18 Nov; filmed in Tesa 41, edit Bibiana Juritz) | 2:03 | `ZXSDuObzbTWFYHP6aA00jsb39qSYbz01bXxo6dH8yf8Q00` | `02SaO6mNpCpxkPop7I0100PnLh1R9GKCYU2pXo01xY2HEmk` |
 | Jasper Johns | `11/jasper_johns_edit.mp4` (uploaded 13 Nov; filmed 25 Oct, edit Bibiana Juritz) | 2:16 | `pDfjrIn83qZhz8VAQp4021I8bkmEV9NB63uCYX8ATo4c` | `C5R8t1rSof29dpHeXQ00TvXhkm5FMSvpKE1EEsnpqmw4` |
 | Seven Steps to Heaven | `10/steps_to_heaven_1_edit_4k_10-30-26.mp4` (uploaded 30 Oct) | 2:26 | `B2Ijd6weptJXB11NipcaHmLBFTSOXtv02KhHrAQKkdmo` | `uyEyjNf6mZ0200wJrP00QxFkarX00VubNrfhXaY00QnYqemM` |
@@ -18,6 +19,14 @@ Uploaded 29 October 2026 from Dropbox `Else Run/projects/the_studio/media/video/
 
 ## What's in them
 
+- **The Last Walk** (title card "the last walk part 1"): the last flag walks. 18 Nov by boat from the
+  pavilion across the Bacino, into the Accademia cloister, then Piazza San Marco and the Piazzetta; 21 Nov the
+  finale in the Piazza; interviews. Leonardo Costerman (Italian, 18 Nov, Green recorder) opens: Italy "the country
+  most loved abroad"; Zadik Zadikian (14 Nov, Orange) "nobody has come out to honour Italy, we are the first ones";
+  Tony Shafrazi (18 Nov, TX1; voice match) on Italians "embarrassed" by the flag, "bring the flag to
+  participation"; Argento Celant (21 Nov, FX3 B003C069) "an alive gesture"; Riccardo (24 Nov interview, Green)
+  closes in Italian on politics and "buttati". English subtitles burned in; Mux's generated track is English only.
+  Names as in the Notion caption "Last Walk"; speakers checked with Black Box.
 - **Building Blocks:** the work taken down from the shelves and assembled on the studio tables in Tesa 41: white
   plaster blocks, coloured slabs leaning at an angle, low bases; pigment measured, plaster spread, edges cleaned.
   Aram on "very little presence" on the shelf and a toy-like building block; Zadik on "something peaceful and

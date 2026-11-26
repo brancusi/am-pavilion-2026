@@ -301,6 +301,7 @@
    "66126f601c"
   ],
   "films": [
+   "the-last-walk",
    "the-weight-of-the-flag",
    "italian-flag",
    "carrying"
@@ -544,6 +545,15 @@
  "video": {
   "title": null,
   "films": [
+   {
+    "slug": "the-last-walk",
+    "held": false,
+    "title": "The Last Walk",
+    "date": "novembre 2026",
+    "credit": "Film: Bibiana Juritz e Aram Zadikian. Montaggio: Bibiana Juritz. Courtesy Zadik Zadikian Studio",
+    "line": "Le ultime passeggiate della bandiera: il tricolore portato per Venezia pezzo per pezzo, a piedi e in barca, fino al chiostro dell’Accademia di Belle Arti e in Piazza San Marco: sull’orgoglio e sull’esitazione a mostrarlo.",
+    "html": "<p>Il 18 novembre le sezioni della bandiera italiana lasciano il padiglione in barca, attraversano il Bacino e sono portate dagli studenti nel chiostro dell’Accademia di Belle Arti di Venezia, poi messe in fila in Piazza San Marco; il 21 novembre, l’ultima passeggiata, attraversano di nuovo la Piazza. Leonardo Costerman dice che l’Italia è il paese più amato all’estero, e che le uniche persone che forse la disprezzano sono proprio gli italiani; Zadik Zadikian osserva che finora nessuno è sceso in strada a rendere omaggio all’Italia: «Siamo i primi». Tony Shafrazi dice che gli italiani si vergognano della loro bandiera e chiede di portarla alla partecipazione: «Farla vivere». Argento Celant chiama la passeggiata «un gesto vivo». In italiano e in inglese, con sottotitoli in inglese impressi nell’immagine.</p>\n"
+   },
    {
     "slug": "building-blocks",
     "held": false,

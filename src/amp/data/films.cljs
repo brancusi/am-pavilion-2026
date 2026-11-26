@@ -10,7 +10,11 @@
 (defcatalog "films")
 
 (def ^:private entries
-  [{:slug "building-blocks"
+  [{:slug "the-last-walk"
+    :duration 173 :poster 112
+    :playback-id "3c01Wf00iM02lCNyblC001ehBYv3Vjq9Eln9XtpbMPWelYI"}
+
+   {:slug "building-blocks"
     :duration 123 :poster 50
     :playback-id "02SaO6mNpCpxkPop7I0100PnLh1R9GKCYU2pXo01xY2HEmk"}
 
