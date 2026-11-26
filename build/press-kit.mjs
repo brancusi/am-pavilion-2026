@@ -39,11 +39,14 @@ const HELD = ['tesa-41-september'];
 // Logo files on R2 (exported 31 Oct 2026 from Dropbox the_studio/marketing/identity;
 // new files go under a new folder, keys are cached for a year).
 const LOGO_HOST = 'https://media.armenianpavilion.org/press/kit/logos-261031/';
+// The Studio in colour (26 Nov 2026; vector from the site's own tile shapes,
+// Dropbox the_studio/marketing/identity/the_studio/colour).
+const LOGO_HOST_2 = 'https://media.armenianpavilion.org/press/kit/logos-261126-2/';
 // Their names and file labels per locale.
 const LOGO_TEXT = {
-  en: { colour: 'colour', black: 'black', negative: 'negative', np: 'National Participations', pdf: 'PDF vector' },
-  it: { colour: 'colori', black: 'nero', negative: 'negativo', np: 'Partecipazioni Nazionali', pdf: 'PDF vettoriale' },
-  hy: { colour: 'գունավոր', black: 'սև', negative: 'նեգատիվ', np: 'Ազգային մասնակցություններ', pdf: 'PDF վեկտորային' },
+  en: { colour: 'colour', black: 'black', negative: 'negative', onDark: 'colour, for dark backgrounds', np: 'National Participations', pdf: 'PDF vector' },
+  it: { colour: 'colori', black: 'nero', negative: 'negativo', onDark: 'colori, per fondi scuri', np: 'Partecipazioni Nazionali', pdf: 'PDF vettoriale' },
+  hy: { colour: 'գունավոր', black: 'սև', negative: 'նեգատիվ', onDark: 'գունավոր՝ մուգ ֆոնի համար', np: 'Ազգային մասնակցություններ', pdf: 'PDF վեկտորային' },
 };
 const LOGOS = (l) => {
   const x = LOGO_TEXT[l];
@@ -51,10 +54,12 @@ const LOGOS = (l) => {
     [`La Biennale · ${x.np}, ${x.colour}`, 'biennale-61-national-participations-RGB', ['png', 'pdf', 'eps'], { cmyk: true }],
     [`La Biennale · ${x.np}, ${x.black}`, 'biennale-61-national-participations-BLACK', ['png', 'pdf', 'eps']],
     [`La Biennale · ${x.np}, ${x.negative}`, 'biennale-61-national-participations-NEG', ['png', 'pdf', 'eps'], { dark: true }],
-    ['The Studio', 'the-studio-square', ['png', 'pdf', 'eps']],
+    [`The Studio, ${x.colour}`, 'the-studio-colour', ['png', 'svg', 'pdf', 'eps'], { host: LOGO_HOST_2 }],
+    [`The Studio, ${x.onDark}`, 'the-studio-colour-negative', ['png', 'svg', 'pdf', 'eps'], { host: LOGO_HOST_2, dark: true }],
+    [`The Studio, ${x.black}`, 'the-studio-square', ['png', 'pdf', 'eps']],
   ].map(([name, base, kinds, o = {}]) => ({
-    name, preview: `${LOGO_HOST}${base}.png`, dark: !!o.dark,
-    files: [...kinds.map((k) => ({ label: k === 'png' ? 'PNG' : k === 'pdf' ? x.pdf : 'EPS', url: `${LOGO_HOST}${base}.${k}` })),
+    name, preview: `${o.host || LOGO_HOST}${base}.png`, dark: !!o.dark,
+    files: [...kinds.map((k) => ({ label: { png: 'PNG', svg: 'SVG', pdf: x.pdf }[k] || 'EPS', url: `${o.host || LOGO_HOST}${base}.${k}` })),
             ...(o.cmyk ? [{ label: 'EPS CMYK', url: `${LOGO_HOST}biennale-61-national-participations-CMYK.eps` }] : [])],
   }));
 };
